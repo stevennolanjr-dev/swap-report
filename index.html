@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE SWAP REPORT — April 13, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f0e8;--fg:#1a1a1a;--muted:#6b6b6b;--accent:#8b0000;--border:#d4cfc4;--card:#fff;--card-border:#e0dbd2;--hover-bg:#eee8da;--tag-bg:#e8e2d6;--bluf-bg:rgba(139,0,0,0.06);--market-up:#2e7d32;--market-down:#c62828;--oil-up:#c62828;--tab-inactive:#999}
+[data-theme=light]{--bg:#ffffff;--fg:#1a1a1a;--muted:#777;--border:#e0e0e0;--card:#f9f9f9;--card-border:#e8e8e8;--hover-bg:#f0f0f0;--tag-bg:#eee;--bluf-bg:rgba(139,0,0,0.05)}
+[data-theme=dark]{--bg:#1a1a2e;--fg:#d4d4d4;--muted:#888;--accent:#cc4444;--border:#333;--card:#22223a;--card-border:#333;--hover-bg:#2a2a4a;--tag-bg:#2a2a4a;--bluf-bg:rgba(204,68,68,0.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;background:var(--bg);color:var(--fg);line-height:1.7;font-size:15px;transition:background .3s,color .3s}
+.wrap{max-width:960px;margin:0 auto;padding:20px 16px}
+.masthead{text-align:center;padding:20px 0 8px;border-bottom:2px solid var(--accent)}
+.masthead h1{font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.masthead .dateline{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:1px}
+.masthead .tagline{font-family:Georgia,serif;font-size:13px;color:var(--muted);margin-top:4px;font-style:italic}
+.theme-toggle{position:absolute;top:16px;right:16px;display:flex;gap:6px}
+.theme-toggle button{background:none;border:1px solid var(--border);border-radius:4px;padding:4px 8px;cursor:pointer;font-size:14px;transition:border-color .2s}
+.theme-toggle button:hover{border-color:var(--accent)}
+.theme-toggle button.active{border-color:var(--accent);background:var(--bluf-bg)}
+header{position:relative}
+.weather-row{display:flex;gap:16px;margin:16px 0 8px;flex-wrap:wrap}
+.weather-card{flex:1;min-width:280px;padding:12px 14px;border:1px solid var(--border);border-radius:4px;background:var(--card)}
+.weather-card h3{font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);margin-bottom:6px}
+.weather-card .temp{font-size:28px;font-weight:bold;margin-bottom:2px}
+.weather-card .details{font-size:13px;color:var(--muted);line-height:1.5}
+.weather-search{margin:4px 0 12px;display:flex;gap:8px}
+.weather-search input{flex:1;padding:6px 10px;font-family:'IBM Plex Mono',monospace;font-size:12px;border:1px solid var(--border);border-radius:4px;background:var(--bg);color:var(--fg)}
+.weather-search button{padding:6px 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:1px;border:1px solid var(--accent);color:var(--accent);background:none;border-radius:4px;cursor:pointer}
+.market-strip{display:flex;flex-wrap:wrap;gap:10px;padding:10px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:12px}
+.market-item{font-family:'IBM Plex Mono',monospace;font-size:12px;white-space:nowrap}
+.market-item .label{color:var(--muted)}
+.market-item .up{color:var(--market-up)}
+.market-item .down{color:var(--market-down)}
+.market-item .oil-up{color:var(--oil-up)}
+.tab-bar{display:flex;flex-wrap:wrap;gap:0;border-bottom:2px solid var(--border);margin-bottom:16px}
+.tab-bar button{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:1px;padding:8px 14px;border:none;background:none;color:var(--tab-inactive);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:color .2s,border-color .2s}
+.tab-bar button:hover{color:var(--fg)}
+.tab-bar button.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab-content{display:none}
+.tab-content.active{display:block}
+.bluf{padding:14px 18px;background:var(--bluf-bg);border-left:3px solid var(--accent);border-radius:0 4px 4px 0;margin-bottom:20px}
+.bluf .bluf-label{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);margin-bottom:8px}
+.bluf p{font-size:15px;line-height:1.8}
+.section-header{font-family:'IBM Plex Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin:24px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.story{margin-bottom:14px;padding:10px 14px;border-radius:4px;position:relative;transition:background .15s}
+.story:hover{background:var(--hover-bg)}
+.story a.hl{color:var(--fg);text-decoration:none;font-weight:600;font-size:15px;line-height:1.5}
+.story a.hl:hover{color:var(--accent)}
+.story .synopsis{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.6;display:none}
+.story:hover .synopsis{display:block}
+.tag{font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.5px;background:var(--tag-bg);color:var(--muted);padding:2px 6px;border-radius:2px;margin-left:6px;white-space:nowrap}
+.tag.social{background:rgba(139,0,0,0.1);color:var(--accent)}
+.sft{font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--accent);opacity:0.7;margin-right:6px}
+.deep-card{border:1px solid var(--card-border);border-radius:4px;padding:16px;margin-bottom:16px;background:var(--card)}
+.deep-card .sl{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:4px}
+.deep-card h4{margin-bottom:6px}
+.deep-card h4 a{color:var(--fg);text-decoration:none;font-size:15px}
+.deep-card h4 a:hover{color:var(--accent)}
+.deep-card .sum{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:10px}
+.deep-card .pw{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:8px}
+.st{margin-top:12px;padding:10px 14px;background:var(--bluf-bg);border-left:3px solid var(--accent);border-radius:0 4px 4px 0}
+.st .stl{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:6px}
+.st p{font-size:13px;line-height:1.7}
+.sc{margin-bottom:14px;padding:14px 16px;border:1px solid var(--border);border-radius:4px}
+.sc.early{border-left:3px solid var(--accent)}
+.sc .badge{font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:1px;background:var(--accent);color:#fff;padding:2px 6px;border-radius:2px;margin-right:8px}
+.sc .meta{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.sc .ps{font-size:14px;line-height:1.6;margin-bottom:8px}
+.sc .conv{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);padding-left:12px;margin-bottom:8px;font-style:italic}
+.sc .an{font-size:13px;line-height:1.5;color:var(--muted)}
+.sc .sl2{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);text-decoration:none;margin-top:4px;display:inline-block}
+.wi{padding:8px 14px;border-left:2px solid var(--accent);margin-bottom:10px;font-size:14px;line-height:1.6}
+.ls{margin-bottom:24px}
+.ls h3{font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);margin-bottom:10px}
+.footer{text-align:center;padding:24px 0;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);border-top:1px solid var(--border);margin-top:30px}
+@media(max-width:700px){.weather-row{flex-direction:column}.market-strip{justify-content:center}.theme-toggle{position:static;justify-content:center;margin:10px 0}.tab-bar{justify-content:center}}
+</style>
+</head>
+<body data-theme="warm">
+<div class="wrap">
+<header>
+<div class="theme-toggle">
+<button onclick="setTheme('light')" id="t-light">Light</button>
+<button onclick="setTheme('warm')" id="t-warm" class="active">Warm</button>
+<button onclick="setTheme('dark')" id="t-dark">Dark</button>
+</div>
+<div class="masthead">
+<h1>The SWAP Report</h1>
+<div class="dateline">Monday, April 13, 2026 &middot; 0530 CT</div>
+<div class="tagline">What it means. Whether the logic holds. What to watch.</div>
+</div>
+</header>
+
+<div class="weather-row">
+<div class="weather-card">
+<h3>Altus, OK</h3>
+<div class="temp">65&deg;F</div>
+<div class="details">Partly cloudy &middot; High 79&deg;F / Low 54&deg;F<br>Wind: E 11 mph, gusts 15 mph &middot; Humidity: 73%<br>Visibility: 9 mi &middot; Pressure: 29.81&quot; steady<br>Sunrise 6:49 AM / Sunset 8:23 PM<br><em>Quiet stretch ahead; active weather returns mid-week</em></div>
+</div>
+<div class="weather-card">
+<h3>Charleston, SC</h3>
+<div class="temp">60&deg;F</div>
+<div class="details">Partly cloudy &middot; High 74&deg;F / Low 63&deg;F<br>Wind: E 4 mph &middot; Humidity: 60%<br>Visibility: 10 mi &middot; 51% chance isolated T-storms<br><em>Warming trend; dry stretch ahead</em></div>
+</div>
+</div>
+<div class="weather-search">
+<input type="text" id="wx-input" placeholder="Search weather by city...">
+<button onclick="searchWeather()">Search</button>
+</div>
+<div id="wx-result"></div>
+
+<div class="market-strip">
+<div class="market-item"><span class="label">S&amp;P 500</span> 6,814 <span class="down">-0.61%</span></div>
+<div class="market-item"><span class="label">DOW</span> 47,873 <span class="down">-0.53%</span></div>
+<div class="market-item"><span class="label">NASDAQ</span> 25,115 <span class="down">-0.66%</span></div>
+<div class="market-item"><span class="label">NIKKEI</span> 50,863 <span class="down">-1.09%</span></div>
+<div class="market-item"><span class="label">FTSE</span> 10,349 <span class="down">-0.84%</span></div>
+<div class="market-item"><span class="label">DAX</span> 22,922 <span class="down">-1.06%</span></div>
+<div class="market-item"><span class="label">WTI</span> $104.58 <span class="oil-up">+8.29%</span></div>
+<div class="market-item"><span class="label">BRENT</span> $101.82 <span class="oil-up">+6.95%</span></div>
+<div class="market-item"><span class="label">GOLD</span> $4,710 <span class="down">-0.3%</span></div>
+<div class="market-item"><span class="label">VIX</span> 21.22 <span class="oil-up">+10.4%</span></div>
+<div class="market-item"><span class="label">FED RATE</span> 4.25-4.50% hold</div>
+</div>
+
+<div class="tab-bar">
+<button class="active" onclick="showTab('overview')">Overview</button>
+<button onclick="showTab('defense')">Defense</button>
+<button onclick="showTab('strategic')">Strategic</button>
+<button onclick="showTab('domestic')">Domestic</button>
+<button onclick="showTab('deep-reads')">Deep Reads</button>
+<button onclick="showTab('social')">Social/Signal</button>
+<button onclick="showTab('local')">Local</button>
+<button onclick="showTab('lighter')">Lighter Fare</button>
+</div>
+
+<!-- ===== OVERVIEW ===== -->
+<div id="overview" class="tab-content active">
+<div class="bluf">
+<div class="bluf-label">BLUF</div>
+<p>Twenty-one hours of talks in Islamabad produced nothing. Trump responded with immediate escalation: a full naval blockade of Iranian ports, effective 1000 ET today. The load-bearing assumption behind last week's market rally, that the ceasefire was a glide path to a deal, just cracked. Oil surged past $104, futures dropped across the board, and the two-week diplomatic window is now a coercion window. The Pentagon claims decisive victory in Operation Epic Fury: 13,000 targets struck, 80% of Iran's nuclear and missile infrastructure destroyed. But target counts are not political outcomes. Iran's strategy from the start has been to shift the war from firepower to endurance, and six weeks in, the Strait of Hormuz, open when the war began, remains effectively closed. Air superiority has not produced the political capitulation it was supposed to buy. North Vietnam absorbed years of strategic bombing without bending; the question is whether this administration has a theory of victory that connects military outputs to political outcomes, or whether the blockade is escalation in search of a strategy. Meanwhile, the domestic machinery of war-making is under unprecedented internal strain: Hegseth has fired over a dozen generals during a shooting war, a federal judge says the Pentagon is defying a court order on press access, and Trump is openly considering pulling out of NATO because allies refused to join the fight. On the far side of the table, China watches closely. Bonnie Glaser's assessment that Taiwan action remains unlikely near-term is significant, but Xi's PLA ideological rectification campaign suggests a leader tightening internal control, not one satisfied with his military's readiness.</p>
+</div>
+
+<div class="section-header">Watch List</div>
+<div class="wi">Whether Iranian oil tankers resume loading at Kharg Island in the coming days will be the observable indicator of whether the blockade has real teeth, or whether Iran finds workarounds through the East-West pipeline and transshipment via allied ports.</div>
+<div class="wi">Bank earnings this week (Goldman, JPMorgan, Citi, BofA) will reveal whether war-driven volatility helped or hurt trading desks and whether loan-loss provisions are ticking up on energy-sector exposure.</div>
+<div class="wi">Colorado State forecasts 13 named storms and 6 hurricanes for the 2026 Atlantic season. FEMA's surge capacity during a shooting war is an untested proposition. March was the hottest on record for the Lower 48, and a forecast El Nino could compound the energy shock with agricultural disruption.</div>
+<div class="wi">China's response to the Hormuz blockade matters more than anyone in Washington is discussing. Beijing imports roughly 40% of its crude through the strait. A prolonged closure forces China to either accelerate alternative supply chains or insert itself diplomatically in ways that reshape the post-war order.</div>
+
+<div class="section-header">Today's Top Stories</div>
+
+<div class="story"><a class="hl" href="https://www.nbcnews.com/world/iran/live-blog/live-updates-us-iran-fail-reach-deal-peace-talks-day-negotiations-rcna315918">Trump Orders Strait of Hormuz Blockade After Islamabad Talks Collapse</a><span class="tag">HORMUZ CRISIS</span><span class="tag">IRAN WAR</span><div class="synopsis">CENTCOM begins blocking all maritime traffic to/from Iranian ports at 1000 ET. VP Vance departed after 21 hours without a deal, citing Iran's refusal to halt nuclear ambitions. Tehran sought strait control, reparations, and unfrozen assets. The IRGC warned it will respond to approaching vessels "harshly and decisively." Watch Saudi Arabia's restored East-West pipeline capacity as the key variable for whether prices stay below $110.</div></div>
+
+<div class="story"><a class="hl" href="https://breakingdefense.com/2026/04/as-2-week-ceasefire-takes-hold-pentagon-touts-decisive-military-victory/">Pentagon Claims 'Decisive Victory' as 13,000 Targets Struck... But What Did It Buy?</a><span class="tag">IRAN WAR</span><span class="tag">AIR CAMPAIGN</span><div class="synopsis">Hegseth calls Operation Epic Fury "historic and overwhelming." 80% of Iran's nuclear base destroyed, 80% of missile facilities, 20 naval production sites. 1,700 ballistic missiles intercepted. But one F-15E was downed and the situation remains "complicated and dangerous." The gap between target counts and political outcomes is where wars go to die.</div></div>
+
+<div class="story"><a class="hl" href="https://finance.yahoo.com/news/live/stock-market-today-dow-sp-500-nasdaq-futures-fall-as-the-us-and-iran-fail-to-agree-to-peace-us-blockades-hormuz-225150283.html">Markets Sink, Oil Surges Past $104 on Failed Talks and Blockade</a><span class="tag">HORMUZ CRISIS</span><span class="tag">MARKETS</span><div class="synopsis">WTI crude jumps 8.3% to $104.58, Brent up 7% to $101.82. Dow futures down 256 points. VIX spikes 10% to 21.22. Gas at $4.13/gallon, up $1.14 since the war began. The ceasefire rally that lifted the S&amp;P 3.6% last week is unwinding. Bank earnings start today.</div></div>
+
+<div class="story"><a class="hl" href="https://www.militarytimes.com/news/pentagon-congress/2026/04/02/hegseth-asks-armys-top-general-to-retire-immediately-as-iran-war-rages/">Hegseth Forces Army Chief of Staff to Retire, Fires Two More Generals</a><span class="tag">LEADERSHIP PURGE</span><div class="synopsis">Gen. Randy George is out after less than three years. Since taking office, Hegseth has fired over a dozen flag officers including CJCS Gen. C.Q. Brown and CNO Adm. Franchetti. A wartime purge of this scale has no modern precedent. The institutional knowledge walking out the door is irreplaceable on the timeline of this conflict.</div></div>
+
+<div class="story"><span class="sft">SOCIAL FEED</span><a class="hl" href="https://x.com/BonnieGlaser/status/2043097881830154446">Glaser: PLA 'Ideological Rectification' Campaign Underway at Xi's Direction</a><span class="tag">CHINA</span><span class="tag social">SOCIAL CONVERGENCE</span><div class="synopsis">Analyst Bonnie Glaser flagged a high-level PLA cadre training event where Xi called for ideological rectification. This surfaced before any official U.S. readout. A leader who trusts his military doesn't launch political loyalty campaigns. Combined with her separate assessment that Taiwan action remains unlikely near-term, the picture is one of a PLA being disciplined, not unleashed.</div></div>
+
+<div class="story"><a class="hl" href="https://time.com/article/2026/04/01/trump-considering-pulling-us-out-of-nato-iran-war-legal-options/">Trump Openly Weighs NATO Withdrawal as Allies Refuse to Join Iran Fight</a><span class="tag">NATO</span><span class="tag">ALLIANCE</span><div class="synopsis">Trump called NATO a "paper tiger." Rubio says the U.S. may "re-examine" the relationship. Congress passed a law in 2023 requiring Senate consent for withdrawal, but the law is untested. Even the threat erodes deterrence, which is the only thing NATO's conventional posture actually provides.</div></div>
+
+<div class="story"><a class="hl" href="https://www.aljazeera.com/news/2026/4/12/us-and-iran-fail-to-reach-peace-deal-after-marathon-talks-in-pakistan">Pakistan's Mediation Play Collapses, but the Diplomatic Geometry Has Shifted</a><span class="tag">DIPLOMACY</span><div class="synopsis">Pakistan's 45-day Islamabad Accord proposal failed. Washington sees a useful intermediary. Tehran sees face-saving. Islamabad sees relevance. Beijing is watching to see if a non-Western mediation model can be replicated. If the U.S. is seen as choosing escalation over compromise, the narrative damage extends beyond this conflict.</div></div>
+
+<div class="story"><span class="sft">SOCIAL FEED</span><a class="hl" href="https://x.com/CSIS/status/2043434018897580178">CSIS: Iran Controls Key Waterways Without a Navy, Mirroring Ukraine's Effect on Russia</a><span class="tag">ASYMMETRIC</span><span class="tag social">SOCIAL CONVERGENCE</span><div class="synopsis">CSIS draws a direct parallel: neither Iran nor Ukraine required conventional surface forces to reshape the maritime domain. Iran's drones, mines, and missiles closed the world's most important chokepoint despite losing 90% of its navy. You don't need a fleet to control a strait. You need willingness to make transit unacceptably expensive.</div></div>
+
+<div class="story"><a class="hl" href="https://en.wikipedia.org/wiki/Portal:Current_events/April_2026">Hungary's Orban Loses Power After 16 Years as Peter Magyar Wins Landslide</a><span class="tag">EUROPE</span><div class="synopsis">Tisza party wins a two-thirds supermajority, enough to amend the constitution. Orban's defeat removes Putin's most reliable EU ally and Trump's closest European partner simultaneously. The timing reshapes European security politics at the exact moment the continent must decide whether to build autonomous defense.</div></div>
+
+<div class="story"><a class="hl" href="https://foreignpolicy.com/2026/04/08/energy-crisis-iran-war-trump-gas-oil-strait-hormuz/">The Energy Crisis Won't End Even If the War Does</a><span class="tag">ENERGY</span><span class="tag">HORMUZ CRISIS</span><div class="synopsis">The Strait remains closed. Damaged oil and gas fields will take years to resume. Oil is up 80% year-to-date. Blackouts in Asia, fuel rationing in Europe. This is the biggest supply disruption ever, exceeding the 1973 embargo. The pain persists regardless of ceasefire timing.</div></div>
+</div>
+
+<!-- ===== DEFENSE ===== -->
+<div id="defense" class="tab-content">
+<div class="section-header">Around the Force</div>
+
+<div class="story"><a class="hl" href="https://www.nbcnews.com/world/iran/live-blog/live-updates-us-iran-fail-reach-deal-peace-talks-day-negotiations-rcna315918">CENTCOM Implements Naval Blockade of Iranian Ports, Begins Mine-Clearing in Hormuz</a><span class="tag">HORMUZ CRISIS</span><div class="synopsis">Blockade effective 1000 ET. Two guided-missile destroyers conducting mine-clearing since April 11. CENTCOM clarifies the blockade applies only to Iran-bound ships. The mine-clearing is the operational reality check: clearing mines under contested conditions is slow, dangerous work. The blockade is a political declaration; the mine-clearing is the actual war.</div></div>
+
+<div class="story"><a class="hl" href="https://breakingdefense.com/2026/04/as-2-week-ceasefire-takes-hold-pentagon-touts-decisive-military-victory/">Pentagon Touts 'Decisive Military Victory' in Operation Epic Fury</a><span class="tag">AIR CAMPAIGN</span><div class="synopsis">13,000 targets. 1,700 missiles intercepted. 80% of nuclear infrastructure reportedly destroyed. But experts say the picture is more complicated than the victory lap. Claiming full air dominance while operating in an environment that shot down an F-15E is the kind of gap between briefing slides and reality that gets people killed.</div></div>
+
+<div class="story"><a class="hl" href="https://www.militarytimes.com/news/pentagon-congress/2026/04/02/hegseth-asks-armys-top-general-to-retire-immediately-as-iran-war-rages/">Hegseth Forces Army Chief Gen. George to Retire, Fires Two More Generals</a><span class="tag">LEADERSHIP PURGE</span><div class="synopsis">Over a dozen flag officers fired since January, including CJCS and CNO. Executing a leadership purge during an active war is operationally reckless by any historical standard. Institutional memory and relationship networks don't transfer with a change of command order. Self-inflicted friction at the strategic level.</div></div>
+
+<div class="story"><a class="hl" href="https://www.militarytimes.com/news/pentagon-congress/2026/04/03/trumps-budget-proposes-massive-defense-spending-with-10-cut-to-other-programs/">FY27 Budget: $1.5T Defense, F-47 Gets $5B, Navy's F/A-XX Gets $140M</a><span class="tag">BUDGET</span><div class="synopsis">50% increase in defense spending. 5-7% military pay raise. Golden Dome missile defense. $65.8B for 34 new ships. The F-47 gets $5B while the Navy's next-gen fighter gets $140M, a 36:1 funding ratio that signals clear service priority. The question: can Congress fund a war budget and a modernization budget simultaneously?</div></div>
+
+<div class="story"><a class="hl" href="https://www.defenseone.com/threats/2026/04/pentagon-claims-we-control-sky-over-iran-experts-say-air-war-isnt-simple/412741/">Pentagon Claims 'We Control the Sky' Over Iran. Experts Disagree.</a><span class="tag">AIR CAMPAIGN</span><div class="synopsis">Former officials say painting a simple picture "overlooks the weapons that downed an F-15E." Air dominance claims during an active air defense threat are more messaging than assessment. The question isn't whether we control the sky. It's what controlling the sky is supposed to produce politically.</div></div>
+
+<div class="story"><a class="hl" href="https://www.military.com/daily-news/2026/04/10/federal-judge-finds-pentagon-violating-court-order-restore-access-reporters.html">Federal Judge Rules Pentagon Violating Court Order on Press Access</a><span class="tag">PRESS FREEDOM</span><div class="synopsis">Judge Friedman found Hegseth's team created escort rules to evade his March 20 order. Restricting press access during a war is not new. Defying a federal court order to do it is. The pattern: fire generals, restrict reporters, claim victory. Together, they describe an information environment being shaped from the inside.</div></div>
+
+<div class="story"><a class="hl" href="https://www.militarytimes.com/news/pentagon-congress/2026/04/10/pentagon-faa-sign-agreement-on-deploying-anti-drone-laser-system-near-mexico/">Pentagon, FAA Deploy Anti-Drone Laser System on Mexico Border</a><span class="tag">COUNTER-UAS</span><div class="synopsis">Agreement follows a Feb. 25 incident where the military accidentally shot down a government drone with the system. The technology works; the targeting protocols need work. Deploying directed energy on the border while running a Middle East war stretches the counter-UAS operator pool.</div></div>
+
+<div class="story"><a class="hl" href="https://breakingdefense.com/2026/04/iran-pilot-rescue-hh60-jolly-green-helicopter-trump/">HH-60W: First Combat Rescue Behind Enemy Lines... But No Money for More</a><span class="tag">COMBAT RESCUE</span><div class="synopsis">The Jolly Green II extracted a downed F-15E pilot in Iran. Trump called it "fabulous." The FY27 budget includes zero dollars for more. Fourth straight year of congressional fights over a helicopter that just proved its worth in the exact scenario it was designed for.</div></div>
+</div>
+
+<!-- ===== STRATEGIC ===== -->
+<div id="strategic" class="tab-content">
+<div class="section-header">Strategic Picture</div>
+
+<div class="story"><a class="hl" href="https://www.aljazeera.com/news/2026/4/12/us-and-iran-fail-to-reach-peace-deal-after-marathon-talks-in-pakistan">Islamabad Talks Collapse: Iran Demands Reparations, Strait Control, Unfrozen Assets</a><span class="tag">IRAN WAR</span><span class="tag">DIPLOMACY</span><div class="synopsis">Iran's 10-point counterproposal: permanent end to regional conflicts, sanctions lifted, enrichment rights, war reparations, frozen assets, Hormuz administration. The gap isn't a negotiating stance. Iran is negotiating for regime survival. The U.S. is negotiating for regime capitulation. Those aren't positions that split the difference.</div></div>
+
+<div class="story"><a class="hl" href="https://www.cnn.com/2026/04/13/world/live-news/iran-us-war-trump-hormuz">IRGC Warns Any Vessel Approaching Hormuz 'Will Be Dealt With Harshly'</a><span class="tag">HORMUZ CRISIS</span><div class="synopsis">Two competing blockades in a 21-mile-wide strait. CENTCOM says its blockade targets only Iran-bound ships. The IRGC threatens everything. One misidentified vessel, one miscalculated intercept, and the ceasefire becomes a footnote. The Gulf of Tonkin didn't start with a plan either.</div></div>
+
+<div class="story"><a class="hl" href="https://www.timesofisrael.com/liveblog-april-13-2026/">Israel Nearly Captures Hezbollah Stronghold of Bint Jbeil in Lebanon</a><span class="tag">LEBANON</span><div class="synopsis">98th Division with Paratroopers, Commandos, and Givati. 100+ Hezbollah killed. At least 1,953 total deaths in Lebanon. Israel says the ceasefire doesn't cover Lebanon. Netanyahu wants direct talks on disarming Hezbollah. Israel's Lebanon operation could become the wedge that prevents any broader deal from holding.</div></div>
+
+<div class="story"><a class="hl" href="https://www.aljazeera.com/news/2026/4/8/uae-kuwait-bahrain-report-attacks-despite-iran-us-ceasefire">Gulf States Report Attacks Despite Ceasefire as Iran's Command Frays</a><span class="tag">GULF</span><div class="synopsis">UAE, Kuwait, Bahrain, Saudi Arabia, and Qatar all reported missile/drone attacks after ceasefire. Iran's decentralized military means commands don't reach every cell. Optimistic: communication breakdowns. Pessimistic: decentralized escalation no ceasefire can contain.</div></div>
+
+<div class="story"><a class="hl" href="https://time.com/article/2026/04/01/trump-considering-pulling-us-out-of-nato-iran-war-legal-options/">Trump Threatens NATO Exit, Rubio Says U.S. Must 'Re-Examine' Alliance</a><span class="tag">NATO</span><div class="synopsis">Triggered by allied refusal to support the Iran war. Administration considering closing bases in Spain and Germany as punishment. Sen. Tillis: "fulfilling Putin's greatest dreams." Deterrence is a psychological product, and the psychology just degraded.</div></div>
+
+<div class="story"><a class="hl" href="https://en.wikipedia.org/wiki/Portal:Current_events/April_2026">Hungary's Orban Defeated: Peter Magyar Wins Two-Thirds Supermajority</a><span class="tag">EUROPE</span><div class="synopsis">16 years of Orban end with a landslide. Tisza party can amend the constitution. JD Vance campaigned with Orban, which aged poorly by Sunday. Removes Putin's most reliable EU voice at the exact moment Europe must decide on autonomous defense.</div></div>
+
+<div class="story"><a class="hl" href="https://www.npr.org/sections/world/">Xi Meets KMT Leader in Beijing, Agrees to 'Pursue Peace' on Taiwan</a><span class="tag">CHINA</span><span class="tag">TAIWAN</span><div class="synopsis">Xi met KMT leader Cheng Li-wun April 10. They agreed to "pursue peace." Taiwan's DPP sees it as Beijing undermining democracy through the opposition. Beijing's Taiwan calculus depends on what the Iran war reveals about American military bandwidth and political will.</div></div>
+
+<div class="story"><a class="hl" href="https://www.npr.org/2026/04/12/nx-s1-5782538/u-s-iran-peace-talks-islamabad-collapse">Pope Leo XIV Denounces 'Delusion of Omnipotence,' Heads to Africa</a><span class="tag">VATICAN</span><div class="synopsis">The Pope's 11-day, four-nation Africa tour begins after Trump directly attacked his war stance. A sitting president feuding with the leader of 1.4 billion Catholics while running a war is diplomatically expensive. Papal criticism has staying power that news cycles don't.</div></div>
+</div>
+
+<!-- ===== DOMESTIC ===== -->
+<div id="domestic" class="tab-content">
+<div class="section-header">Domestic</div>
+
+<div class="story"><a class="hl" href="https://www.bloomberg.com/news/articles/2026-04-12/oil-surges-us-futures-drop-on-hormuz-blockade-markets-wrap">Futures Tumble, Oil Past $104 as Blockade Unwinds Relief Rally</a><span class="tag">MARKETS</span><div class="synopsis">S&amp;P futures -0.61%, Dow -0.53%, Nasdaq -0.66%. Initially dropped 1%+ Sunday night. WTI at $104.58. Two-year Treasury yield up to 3.82%. Gold at $4,710. VIX at 21.22 reflects elevated but not panic-level fear. Markets betting this blockade won't be fully enforced. If wrong, $120 oil within a week.</div></div>
+
+<div class="story"><a class="hl" href="https://abc7news.com/live-updates/iran-war-strait-hormuz-ceasefire-trump-stock-market/18847792/">Gas at $4.13/Gallon, Up $1.14 Since War Began</a><span class="tag">ENERGY</span><span class="tag">INFLATION</span><div class="synopsis">For a household driving 25,000 miles/year at 25 mpg, that's ~$1,140 in additional annual fuel costs. This is the pocketbook war: invisible on the battlefield, inescapable at the pump.</div></div>
+
+<div class="story"><a class="hl" href="https://www.cnbc.com/2026/04/12/stock-market-today-live-updates.html">Inflation Hits 3.3%, Fed Locked, Rate Hike Whispers Emerge</a><span class="tag">FED</span><span class="tag">INFLATION</span><div class="synopsis">CPI rose to 3.3% in March, driven by energy. Futures market prices Fed on hold all year. Multiple officials now discussing rate hikes. A rate hike during a war that's causing the inflation would be treating the symptom while feeding the disease.</div></div>
+
+<div class="story"><a class="hl" href="https://www.militarytimes.com/news/pentagon-congress/2026/04/03/trumps-budget-proposes-massive-defense-spending-with-10-cut-to-other-programs/">FY27 Budget: $1.5T for Defense, 10% Cut to Everything Else</a><span class="tag">BUDGET</span><div class="synopsis">50% defense increase, 10% non-defense cut. If Congress accepts mandatory defense carve-outs, it establishes precedent for bypassing appropriations for any "national security" priority. A constitutional confrontation baked into the numbers.</div></div>
+
+<div class="story"><a class="hl" href="https://www.npr.org/sections/politics/">Trump Fires AG Pam Bondi; Todd Blanche Named Acting Attorney General</a><span class="tag">DOJ</span><div class="synopsis">Bondi out. Deputy AG Blanche, Trump's former personal defense attorney in the New York criminal case, steps in as acting AG. Installing your personal lawyer as the nation's top law enforcement officer during a war with active legal controversies speaks for itself.</div></div>
+
+<div class="story"><a class="hl" href="https://www.golocalprov.com/news/5-big-news-stories-overnight-monday-april-13-2026">Swalwell Drops Out of CA Governor's Race Amid Misconduct Allegations</a><span class="tag">ELECTIONS</span><div class="synopsis">Staffers quit, endorsements pulled. Collapse was near-instantaneous. Democrats' overperformance trend in 2025-2026 special elections remains the structural midterm story.</div></div>
+
+<div class="story"><a class="hl" href="https://www.npr.org/sections/politics/">Republicans Announce Plan to End DHS Partial Shutdown</a><span class="tag">GOVERNMENT</span><div class="synopsis">A partial DHS shutdown during a war is not just political. Degraded FEMA capacity entering hurricane season while the military surges overseas creates compounding risk with no clean historical parallel.</div></div>
+
+<div class="story"><a class="hl" href="https://www.cnbc.com/2026/04/12/stock-market-today-live-updates.html">Q1 Earnings Season Opens: Major Banks Report This Week</a><span class="tag">EARNINGS</span><div class="synopsis">Goldman reports today. JPMorgan, Citi, Wells Fargo, BofA, Morgan Stanley follow. The Street wants to know: did war volatility help or hurt trading desks? Bank earnings during wartime are a proxy for how deeply the conflict has penetrated the real economy.</div></div>
+
+<div class="story"><a class="hl" href="https://techstartups.com/2026/04/10/top-tech-news-today-april-10-2026/">Tech: 78,000 Layoffs YTD (48% AI-Driven); Anthropic at $350B Valuation</a><span class="tag">TECH</span><span class="tag">AI</span><div class="synopsis">Nearly half of tech layoffs linked to AI automation. Meanwhile, Anthropic at $350B, TSMC posting blockbuster growth, Intel buying back its Irish fab for $14.2B, and a $7T AI infrastructure pipeline. The tension between AI investment and AI displacement is the economic story that outlasts the war.</div></div>
+
+<div class="story"><a class="hl" href="https://en.wikipedia.org/wiki/Portal:Current_events/April_2026">Trump's Proposed Triumphal Arch: 250-Foot Monument on the National Mall</a><span class="tag">CULTURE</span><div class="synopsis">White-and-gilded, by the Potomac. The last president to propose a personal monument on the Mall was none of them. The arch proposal during an active war and $4+ gas invites its own commentary.</div></div>
+
+<div class="story"><a class="hl" href="https://www.npr.org/2026/04/12/nx-s1-5782538/u-s-iran-peace-talks-islamabad-collapse">Artemis II Crew Returns from First Crewed Lunar Flyby in 50+ Years</a><span class="tag">SPACE</span><div class="synopsis">Four astronauts splashed down after a 10-day mission that surpassed Apollo 13's distance record and captured views of the far side never before seen by human eyes. In a news cycle dominated by war, this is the story that will matter in 50 years.</div></div>
+</div>
+
+<!-- ===== DEEP READS ===== -->
+<div id="deep-reads" class="tab-content">
+<div class="section-header">Deep Reads</div>
+
+<div class="deep-card">
+<div class="sl">Foreign Affairs</div>
+<h4><a href="https://www.foreignaffairs.com/iran/why-ceasefire-iran-will-hold-trump-negotiations">Why the Cease-Fire With Iran Will Hold</a></h4>
+<div class="sum">By Gideon Rose. Argues the ceasefire holds because both sides were hurting and would hurt more from escalation. The de-escalatory logic that produced it is the same logic that sustains it: mutual exhaustion rather than mutual agreement.</div>
+<div class="pw">Source may be paywalled</div>
+<div class="st"><div class="stl">SWAP's Take</div><p>Rose's thesis aged poorly in the twelve hours between publication and the Hormuz blockade announcement. The argument that mutual exhaustion sustains ceasefires has historical support (Korea 1953, the Iran-Iraq War), but it depends on both sides reading the cost-benefit calculus the same way. The problem is asymmetric pain thresholds. America's pain is economic: gas prices, inflation, market volatility. Iran's pain is existential: 80% of its nuclear infrastructure, its navy, its supreme leader. When one side is annoyed and the other is fighting for survival, "mutual exhaustion" doesn't describe the same condition. The better parallel may be the 1991 Gulf War ceasefire: the U.S. stopped short of its maximum military objective and spent the next decade managing the consequences.</p></div>
+</div>
+
+<div class="deep-card">
+<div class="sl">Foreign Affairs</div>
+<h4><a href="https://www.foreignaffairs.com/iran/how-cease-fire-can-lead-disaster">How a Cease-Fire Can Lead to Disaster</a></h4>
+<div class="sum">By Chardell and Helfont. Draws 1991 Gulf War lessons: the greatest challenge is learning to live with a settlement that leaves the regime in place. Half-measures after military campaigns often create worse problems than the original conflict.</div>
+<div class="pw">Source may be paywalled</div>
+<div class="st"><div class="stl">SWAP's Take</div><p>This is the piece the administration should be reading but probably isn't. The 1991 parallel is analytically precise: overwhelming air campaign, impressive target counts, regime survives, and the post-war settlement creates a generation of consequences no one anticipated. The current administration has defined success as Iran without nukes, without a navy, without Hormuz leverage, and without proxy networks. Achieving all four through airpower alone has no historical precedent. Achieving some and living with the rest requires exactly the kind of strategic patience this administration has shown no appetite for. Cite them for the diagnosis. The prescription they don't offer: what does "living with the regime" actually require in terms of deterrent posture, regional architecture, and domestic political messaging?</p></div>
+</div>
+
+<div class="deep-card">
+<div class="sl">Foreign Affairs</div>
+<h4><a href="https://www.foreignaffairs.com/china/what-iran-war-means-china">What the Iran War Means for China</a></h4>
+<div class="sum">By Zongyuan Zoe Liu. The Iran war is the most consequential test of China's strategic restraint. Unlike Ukraine, this conflict threatens China's core interests: energy supply through Hormuz, Belt and Road investments, and the narrative that American military adventurism creates Chinese opportunities.</div>
+<div class="pw">Source may be paywalled</div>
+<div class="st"><div class="stl">SWAP's Take</div><p>Liu identifies the right question but underweights the answer. China's calculus isn't about restraint; it's about harvest. Every week the strait stays closed, China's overland energy infrastructure (Power of Siberia, CPEC, Central Asian routes) appreciates in strategic value. Beijing doesn't need to intervene to win from this war. The longer it runs, the more the global energy architecture shifts toward pipelines China already controls. The social feed today shows Glaser questioning whether China-Iran military coordination is happening without Xi's approval. The smarter question is whether Xi needs to coordinate militarily at all when the economic geography is doing the work for him. The real risk isn't Chinese intervention. It's Chinese patience.</p></div>
+</div>
+
+<div class="deep-card">
+<div class="sl">Foreign Policy</div>
+<h4><a href="https://foreignpolicy.com/2026/04/09/iran-war-ceasefire-diplomacy-trump-vance-pakistan/">The Iran War's Exit Ramp Has Become a Diplomatic Maze</a></h4>
+<div class="sum">The future status of the Strait of Hormuz is the central unresolved question. Iran views it as a toll booth. Trump floated a U.S.-Iran joint venture. Pakistan's framework was rejected. The exit ramp is now a maze of competing demands.</div>
+<div class="st"><div class="stl">SWAP's Take</div><p>The maze metaphor is apt but understates the problem. A maze has a solution. The Hormuz question may not, because the sides aren't negotiating over the same object. For the U.S., the strait is a global commons. For Iran, it's sovereign-adjacent territory and the only leverage that survived the air campaign. You can't split the difference on a waterway. The "joint venture" idea is creative but operationally absurd: imagine the U.S. Navy and the IRGC co-managing vessel inspections. The indicator to watch: if Iran begins allowing non-U.S.-flagged commercial traffic while blocking American vessels, they're testing whether the world will accept a two-tier strait. That would set enormous precedent for other chokepoints worldwide.</p></div>
+</div>
+
+<div class="deep-card">
+<div class="sl">War on the Rocks</div>
+<h4><a href="https://warontherocks.com/2026/04/how-the-war-with-iran-ends/">How the War with Iran Ends</a></h4>
+<div class="sum">Examines three endgames: negotiated settlement, prolonged attrition, or regime collapse from within. Unlike Iraq 2003, Iran's population has repeatedly shown appetite for civil governance. The precision air campaign may give Iranians space to shape what comes next.</div>
+<div class="st"><div class="stl">SWAP's Take</div><p>Within the scope of a practitioner piece, this is a well-constructed argument. The distinction between Iraq 2003 and Iran 2026 is analytically important and underappreciated. But the piece reaches beyond its evidence when it suggests precision strikes can surgically remove coercive capacity while preserving governance. The IRGC isn't a tumor you can excise. It's the circulatory system of the Iranian state, running everything from construction to internet infrastructure. Destroying its military capacity doesn't automatically free civil society; it can create a power vacuum that security forces fill with whatever remains. The optimistic scenario requires something the piece doesn't address: who fills the gap between the IRGC's collapse and civil governance's emergence? That gap is where post-war disasters live.</p></div>
+</div>
+
+<div class="deep-card">
+<div class="sl">CSIS</div>
+<h4><a href="https://www.csis.org/analysis/2026-national-defense-strategy-numbers-radical-changes-moderate-changes-and-some">The 2026 National Defense Strategy by the Numbers</a></h4>
+<div class="sum">CSIS breaks down the NDS: homeland defense, China deterrence, burden-sharing, industrial base. The strategy avoids labeling China a "strategic competitor" and omits Taiwan entirely (despite the NSS emphasizing it). Burden-sharing shifts from encouraged to required.</div>
+<div class="st"><div class="stl">SWAP's Take</div><p>The NDS's refusal to call China a competitor while building a First Island Chain denial defense is strategic doublespeak that only makes sense if you're trying to deter without provoking. The Taiwan omission is the most interesting editorial choice: either deliberate ambiguity or honest reflection of reduced bandwidth during a Middle East war. CSIS correctly identifies that success depends on allies accepting burden-sharing, but the analysis doesn't connect this to the NATO withdrawal threat happening simultaneously. You can't demand 5% GDP defense spending from allies while threatening to leave the alliance that makes the spending meaningful. The NDS describes selective leadership. The administration's behavior describes reflexive threats. Those produce very different allied responses.</p></div>
+</div>
+
+<div class="deep-card">
+<div class="sl">Lawfare</div>
+<h4><a href="https://www.lawfaremedia.org/article/understanding-iran-s-strategy-then--now--and-next">Understanding Iran's Strategy: Then, Now, and Next</a></h4>
+<div class="sum">Despite killing the supreme leader and senior officials, the government remains intact. Mojtaba Khamenei's selection demonstrates continuity. The U.S. and Israel "cannot just kill their way to a change in Iran's grand strategy."</div>
+<div class="st"><div class="stl">SWAP's Take</div><p>Decapitation strikes produce succession, not capitulation. Mojtaba Khamenei's installation was the regime's answer to the air campaign: hereditary succession in a republic founded to reject hereditary rule, justified by existential threat. Pressure that's intense enough to threaten survival but not enough for regime change tends to consolidate the regime's hold. The population rallies around the flag, not the opposition. This is the lesson of every strategic bombing campaign from London to Hanoi to Baghdad: break the state completely or strengthen the government's narrative. There is very little middle ground, and the current campaign appears to be standing in exactly that middle ground.</p></div>
+</div>
+
+<div class="deep-card">
+<div class="sl">Foreign Policy</div>
+<h4><a href="https://foreignpolicy.com/2026/04/08/energy-crisis-iran-war-trump-gas-oil-strait-hormuz/">The Energy Crisis Won't End Right Away (Even if the Iran War Does)</a></h4>
+<div class="sum">The Strait remains effectively closed. Damaged fields will take years to resume. Oil up 80% YTD. Blackouts in Asia, fuel rationing in Europe. This is the biggest supply disruption ever. The piece argues the energy crisis has its own timeline independent of the war's resolution.</div>
+<div class="st"><div class="stl">SWAP's Take</div><p>The critical insight is the time lag between peace and recovery. Even if a deal materialized tomorrow, damaged infrastructure doesn't repair on political timelines. The 1973 comparison understates the problem: that embargo was a political choice by producers who could restart pumping. This disruption includes physically destroyed facilities requiring years of reconstruction. The food crisis angle everyone else is underplaying: the strait carries fertilizer precursors. The UN's three-month warning on planting decisions means agricultural consequences are being locked in now, regardless of diplomacy. This is the cascading risk outside the war's narrative frame that may produce more human suffering than the bombing campaign itself.</p></div>
+</div>
+</div>
+
+<!-- ===== SOCIAL/SIGNAL ===== -->
+<div id="social" class="tab-content">
+<div style="font-family:'IBM Plex Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:16px;">Twitter/X Intelligence Feed <span style="font-size:11px;color:var(--muted);letter-spacing:1px;">24-Hour Window &mdash; Mon, 13 Apr 2026 0901 GMT</span></div>
+
+<div style="margin-bottom:24px;padding:12px 16px;background:var(--bluf-bg);border-left:3px solid var(--accent);border-radius:0 4px 4px 0;">
+<div style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:8px;">Signal Summary</div>
+<p style="font-size:14px;line-height:1.7;">Official command posts emphasize sustained allied interoperability training and forward presence in both the Indo-Pacific and Middle East without signaling acute escalation. Individual analysts, notably Bonnie Glaser, flag potential internal PLA political campaigns and question assumptions around uncoordinated China-Iran military ties, running ahead of institutional consensus. Think tank analysis from CSIS and RAND converges on asymmetric adversary tactics reshaping naval operations, export control evolution, and long-term requirements for human agency in emerging AGI-enabled security architectures. Early signals center on selective weaknesses in Chinese high-tech indigenization alongside calibrated assessments that near-term Taiwan contingencies remain unlikely. Overall the feed reflects persistent theater management, great power industrial and technological frictions, and internal adversary opacity rather than sudden crisis inflection.</p>
+</div>
+
+<div class="sc early"><span class="badge">EARLY</span><div class="meta">Strategic Competition &middot; @BonnieGlaser &middot; Individual Analyst &middot; Notable</div><div class="ps">Glaser commented on a high-level PLA senior cadre training event at National Defense University where Xi called for ideological rectification, potentially indicating an extensive internal political campaign.</div><div class="an">This analyst interpretation of opaque Chinese military meetings surfaces possible PLA cohesion issues before any official U.S. government readout or think tank assessment.</div><a href="https://x.com/BonnieGlaser/status/2043097881830154446" class="sl2">Source</a></div>
+
+<div class="sc early"><span class="badge">EARLY</span><div class="meta">Strategic Competition &middot; @BonnieGlaser &middot; Individual Analyst &middot; Notable</div><div class="ps">Glaser expressed skepticism that China is supplying military support to Iran without Xi Jinping approval, while noting some officials appear interested in aiding Tehran to weaken U.S. standing.</div><div class="an">Directly challenges narratives of uncoordinated Chinese elements running ahead of official U.S. assessments on Beijing-Tehran coordination.</div><a href="https://x.com/BonnieGlaser/status/2043377647183401441" class="sl2">Source</a></div>
+
+<div class="sc early"><span class="badge">EARLY</span><div class="meta">Strategic Competition &middot; @BonnieGlaser &middot; Individual Analyst &middot; Notable</div><div class="ps">Glaser assessed it is unlikely China has decided to move on Taiwan, citing marginal impact of current Iran conflict, PLA purges, and referencing the DNI Annual Threat Assessment.</div><div class="conv">Convergence: Converges with her separate thread on PLA ideological meetings.</div><div class="an">Calibrated near-term assessment contrasts with more alarmist open-source commentary and flags internal PLA constraints.</div><a href="https://x.com/BonnieGlaser/status/2043010143122604476" class="sl2">Source</a></div>
+
+<div class="sc early"><span class="badge">EARLY</span><div class="meta">Strategic Competition &middot; @fravel &middot; Individual Analyst &middot; Notable</div><div class="ps">Fravel thread summarized high-level PLA meeting and Xi emphasis on ideological work, which Glaser connected to possible broader rectification campaign.</div><div class="an">Academic expert on Chinese military strategy surfaces internal drivers that institutions address with more caution, offering early framing for PLA political reliability.</div><a href="https://x.com/fravel/status/2042940709779431731" class="sl2">Source</a></div>
+
+<div class="sc"><div class="meta">Conflict and Crisis &middot; @CSIS &middot; Institutional &middot; High</div><div class="ps">CSIS highlighted how Iran has exerted control over key waterways against the U.S. Navy comparable to Ukraine's impact on the Russian navy, without conventional surface forces.</div><div class="conv">Convergence: Converges with CENTCOM operational updates on sustained Middle East presence and missile defense maintenance.</div><div class="an">Illustrates effectiveness of asymmetric adversary tactics and potential unintended consequences for U.S. naval posture.</div><a href="https://x.com/CSIS/status/2043434018897580178" class="sl2">Source</a></div>
+
+<div class="sc"><div class="meta">Strategic Competition &middot; @CSIS &middot; Institutional &middot; High</div><div class="ps">CSIS detailed evolving U.S. export controls as economic statecraft amid escalating China tensions, including unilateral use and integration into trade negotiations.</div><div class="an">Broadening of great power competition tools beyond military domains, with implications for technology transfer and supply chains.</div><a href="https://x.com/CSIS/status/2043373630193570189" class="sl2">Source</a></div>
+
+<div class="sc"><div class="meta">Defense and Military &middot; @RANDCorporation &middot; Institutional &middot; High</div><div class="ps">RAND released perspectives on AGI requiring preservation of human agency, strategic optionality, and a supporting global security architecture for human-AI coexistence.</div><div class="an">Institutional focus on emerging tech risks ties to long-term defense planning against peer adversaries advancing in AI-enabled systems.</div><a href="https://x.com/RANDCorporation/status/2043459147203579914" class="sl2">Source</a></div>
+
+<div class="sc"><div class="meta">Strategic Competition &middot; @CSIS &middot; Institutional &middot; High</div><div class="ps">CSIS characterized China's commercial aircraft indigenization as a high-tech drive failure, contrasting with successes in EVs and pharma.</div><div class="an">Reveals selective weaknesses that could influence U.S. strategic assumptions about peer economic and military potential.</div><a href="https://x.com/CSIS/status/2043403850502091133" class="sl2">Source</a></div>
+
+<div class="sc"><div class="meta">Defense and Military &middot; @CENTCOM &middot; Institutional &middot; High</div><div class="ps">CENTCOM posted imagery of Patriot missile system maintenance in the Middle East and carrier operations aboard USS Abraham Lincoln.</div><div class="an">Signals continued high readiness of integrated air and missile defense amid persistent threats.</div><a href="https://x.com/CENTCOM/status/2043336077734257131" class="sl2">Source</a></div>
+
+<div class="sc"><div class="meta">Defense and Military &middot; @INDOPACOM &middot; Institutional &middot; High</div><div class="ps">Multilateral maritime cooperative activity April 9-12 by Australia, Philippines, and U.S. forces within the Philippine EEZ.</div><div class="an">Routine interoperability display reinforcing deterrence in contested waters without direct Chinese mention.</div><a href="https://x.com/INDOPACOM/status/2043495447390814302" class="sl2">Source</a></div>
+
+<div class="sc"><div class="meta">U.S. Domestic Policy &middot; @CSIS &middot; Institutional &middot; High</div><div class="ps">Middle East crises have sidelined EU debates on China policy, risking fragmented tools against Beijing's industrial challenge.</div><div class="an">Downstream effects of conflict priorities on allied approaches to strategic competition.</div><a href="https://x.com/CSIS/status/2043362159879508087" class="sl2">Source</a></div>
+
+<div class="sc"><div class="meta">Defense and Military &middot; @INDOPACOM &middot; Institutional &middot; High</div><div class="ps">U.S. Army CBRN training alongside ROK forces in South Korea: chemical threat response, casualty treatment, security operations.</div><div class="an">Routine bilateral readiness underscoring integrated allied preparation on the Korean peninsula.</div><a href="https://x.com/INDOPACOM/status/2042771883548893324" class="sl2">Source</a></div>
+
+<div class="sc"><div class="meta">Defense and Military &middot; @USNavy &middot; Institutional &middot; High</div><div class="ps">U.S. Navy marked the 126th birthday of the Submarine Force, highlighting silent service contributions to deterrence.</div><div class="an">Ceremonial post with substantive undertone on undersea superiority, a critical asymmetric advantage versus Chinese naval expansion.</div><a href="https://x.com/USNavy/status/2043041498883662196" class="sl2">Source</a></div>
+
+<div class="sc"><div class="meta">Conflict and Crisis &middot; @CENTCOM &middot; Institutional &middot; High</div><div class="ps">U.S. Navy sailors preparing aircraft for nighttime operations across CENTCOM's area of responsibility.</div><div class="an">Reinforces ongoing operational tempo without specifying adversary actions or escalation thresholds.</div><a href="https://x.com/CENTCOM/status/2043120780716748986" class="sl2">Source</a></div>
+</div>
+
+<!-- ===== LOCAL ===== -->
+<div id="local" class="tab-content">
+<div class="section-header">Local</div>
+<div class="ls">
+<h3>Altus, OK</h3>
+<div class="story"><a class="hl" href="https://www.altus.af.mil/News/">Altus AFB Honors Month of the Military Child with Proclamation</a><div class="synopsis">Base leadership and Vice Mayor Brady-Lee held a ceremony April 3. More than ceremonial at a training base that cycles families through on 12-18 month rotations. School continuity and family support are retention issues wearing community clothing.</div></div>
+<div class="story"><a class="hl" href="https://www.kswo.com/news/local/">City Tests Storm Warning Sirens Monday; Burn Bans Expire After Weekend Rain</a><div class="synopsis">Routine test ahead of active weather mid-week. Southwest Oklahoma counties cleared after heavy rain. The quieter stretch is temporary.</div></div>
+<div class="story"><a class="hl" href="https://www.altustimes.com/news">Altus Bulldogs Welcome New Head Football Coach Craig Hubbard</a><div class="synopsis">Hubbard returns after a year as DC at Center HS in Texas. Previously spent two years as the Bulldogs' defensive coordinator. The homecoming hire.</div></div>
+<div class="story"><a class="hl" href="https://www.dvidshub.net/image/9597950/purple-up-and-parade-honoring-military-children-altus-afb">Fort Sill Graduates ~350 Soldiers from Basic Combat Training</a><div class="synopsis">Regional pipeline continues feeding the force during wartime. Fort Sill's proximity to Altus means these graduates are the neighbors' kids.</div></div>
+</div>
+
+<div class="ls">
+<h3>Charleston, SC</h3>
+<div class="story"><a class="hl" href="https://www.southcarolinapublicradio.org/sc-news/2026-04-07/joint-base-charleston-announces-a-different-charleston-airshow-event">Joint Base Charleston Moves Airshow Off-Base Due to Middle East Conflict</a><div class="synopsis">Annual airshow becomes a one-day Harbor-Front event May 2 with the Blue Angels. When your airshow has to relocate because of a war, the war is no longer abstract.</div></div>
+<div class="story"><a class="hl" href="https://www.live5news.com/news/">SC Measles Outbreak Nearing End: Three Weeks Without New Case</a><div class="synopsis">If no new infections by April 26, the state declares the worst outbreak in decades over. Public health infrastructure quietly doing its job while the news cycle looks elsewhere.</div></div>
+<div class="story"><a class="hl" href="https://www.postandcourier.com/">MUSC Health Launches $250M Campaign for New Cancer Hospital</a><div class="synopsis">Signals confidence in Charleston's healthcare growth trajectory and research capability.</div></div>
+<div class="story"><a class="hl" href="https://www.postandcourier.com/news/local_state_news/">Charleston Airport First in SC with Touchless TSA PreCheck Screening</a><div class="synopsis">Facial recognition-enabled security lanes. First in South Carolina. The convenience-privacy tradeoff arrives at CHS.</div></div>
+</div>
+</div>
+
+<!-- ===== LIGHTER FARE ===== -->
+<div id="lighter" class="tab-content">
+<div class="section-header">Lighter Fare</div>
+
+<div class="story"><a class="hl" href="https://www.golocalprov.com/news/5-big-news-stories-overnight-monday-april-13-2026">Rory McIlroy Wins Second Straight Masters at Augusta</a><div class="synopsis">Second consecutive green jacket. In a world where everything feels uncertain, at least one Irishman is having a consistent year.</div></div>
+
+<div class="story"><a class="hl" href="https://www.golocalprov.com/news/5-big-news-stories-overnight-monday-april-13-2026">Stampede at Haitian Mountaintop Fortress Kills at Least 25</a><div class="synopsis">The Citadelle Laferriere, built in the early 1800s to defend against French invasion, survived two centuries of history only to become the site of a tourist tragedy. Haiti can't catch a break.</div></div>
+
+<div class="story"><a class="hl" href="https://www.buyhomesincharleston.com/blog/charleston-in-the-news-april-2026-edition">Boeing 787 Dreamliner from North Charleston Voted 'Coolest Thing Made in SC'</a><div class="synopsis">A wide-body jet assembled in the Lowcountry beats out whatever else South Carolina makes. Which includes BMW X-series SUVs. Not a bad bracket.</div></div>
+
+<div class="story"><a class="hl" href="https://scitechdaily.com/">Emperor Penguin Declared Endangered as Climate Change Accelerates</a><div class="synopsis">The most cinematic bird on Earth is officially in trouble. If ice shelves keep collapsing at current rates, 80%+ breeding habitat loss by 2100. March was the hottest on record for the Lower 48, just to underline the point.</div></div>
+</div>
+
+</div>
+
+<div class="footer">THE SWAP REPORT &middot; Analytical product, not news aggregation &middot; What it means. Whether the logic holds. What to watch.</div>
+
+<script>
+let ct='warm';
+function setTheme(t){document.body.setAttribute('data-theme',t);document.querySelectorAll('.theme-toggle button').forEach(b=>b.classList.remove('active'));document.getElementById('t-'+t).classList.add('active');ct=t}
+function showTab(id){document.querySelectorAll('.tab-content').forEach(d=>d.classList.remove('active'));document.querySelectorAll('.tab-bar button').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');event.target.classList.add('active')}
+async function searchWeather(){const city=document.getElementById('wx-input').value.trim();if(!city)return;const r=document.getElementById('wx-result');r.innerHTML='<p style="font-size:13px;color:var(--muted);padding:8px 0">Searching...</p>';try{const geo=await fetch('https://geocoding-api.open-meteo.com/v1/search?name='+encodeURIComponent(city)+'&count=1');const gd=await geo.json();if(!gd.results||!gd.results.length){r.innerHTML='<p style="font-size:13px;color:var(--muted);padding:8px 0">Location not found.</p>';return}const loc=gd.results[0];const wx=await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${loc.latitude}&longitude=${loc.longitude}&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code&temperature_unit=fahrenheit&wind_speed_unit=mph`);const wd=await wx.json();const c=wd.current;const codes={0:'Clear',1:'Mostly clear',2:'Partly cloudy',3:'Overcast',45:'Fog',48:'Rime fog',51:'Light drizzle',53:'Drizzle',55:'Heavy drizzle',61:'Light rain',63:'Rain',65:'Heavy rain',71:'Light snow',73:'Snow',75:'Heavy snow',80:'Rain showers',81:'Moderate showers',82:'Heavy showers',95:'Thunderstorm',96:'T-storm w/hail',99:'Heavy T-storm'};r.innerHTML=`<div class="weather-card" style="margin:8px 0"><h3>${loc.name}, ${loc.admin1||''} ${loc.country_code||''}</h3><div class="temp">${Math.round(c.temperature_2m)}&deg;F</div><div class="details">${codes[c.weather_code]||'N/A'} &middot; Wind: ${Math.round(c.wind_speed_10m)} mph &middot; Humidity: ${c.relative_humidity_2m}%</div></div>`}catch(e){r.innerHTML='<p style="font-size:13px;color:var(--muted);padding:8px 0">Weather lookup failed.</p>'}}
+</script>
+</body>
+</html>
