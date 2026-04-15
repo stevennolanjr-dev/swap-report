@@ -122,6 +122,21 @@
   .top-story { padding: 12px 0; border-bottom: 1px solid var(--border); }
   .top-story:last-child { border-bottom: none; }
 
+  /* Special Editions dropdown */
+  .special-editions { position: relative; display: inline-block; }
+  .se-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; background: var(--tab-bg); border: 1px solid var(--border); color: var(--accent); padding: 5px 10px; border-radius: 3px; cursor: pointer; }
+  .se-btn:hover { border-color: var(--accent); }
+  .se-dropdown { display: none; position: absolute; right: 0; top: calc(100% + 4px); background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; min-width: 260px; box-shadow: 0 4px 12px rgba(0,0,0,0.12); z-index: 200; }
+  .se-dropdown.open { display: block; }
+  .se-dropdown a { display: block; padding: 10px 14px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--fg); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .se-dropdown a:last-child { border-bottom: none; }
+  .se-dropdown a:hover { background: rgba(139,0,0,0.06); color: var(--accent); }
+  .se-date { color: var(--muted); font-size: 10px; display: block; margin-top: 2px; }
+
+  /* Update log */
+  .update-log { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); padding: 6px 14px; background: var(--header-bg); border-radius: 4px; margin-bottom: 12px; }
+  .update-log strong { color: var(--accent); }
+
   /* Responsive */
   @media (max-width: 700px) {
     .weather-grid { flex-direction: column; }
@@ -142,12 +157,25 @@
       <div class="masthead-title">The SWAP Report</div>
       <div class="masthead-sub">Wednesday, April 15, 2026 &nbsp;|&nbsp; 0530 CT &nbsp;|&nbsp; Morning Edition</div>
     </div>
-    <div class="theme-toggle">
-      <button class="theme-btn" onclick="setTheme('theme-light')" title="Light">&#9728;</button>
-      <button class="theme-btn" onclick="setTheme('theme-warm')" title="Warm">&#128305;</button>
-      <button class="theme-btn" onclick="setTheme('theme-dark')" title="Dark">&#9790;</button>
+    <div style="display:flex;gap:8px;align-items:flex-end;">
+      <div class="special-editions">
+        <button class="se-btn" onclick="toggleSE()">Special Editions &#9662;</button>
+        <div class="se-dropdown" id="se-menu">
+          <a href="special-editions/hungary-after-orban.html">Hungary: After Orb&aacute;n<span class="se-date">April 15, 2026</span></a>
+        </div>
+      </div>
+      <div class="theme-toggle">
+        <button class="theme-btn" onclick="setTheme('theme-light')" title="Light">&#9728;</button>
+        <button class="theme-btn" onclick="setTheme('theme-warm')" title="Warm">&#128305;</button>
+        <button class="theme-btn" onclick="setTheme('theme-dark')" title="Dark">&#9790;</button>
+      </div>
     </div>
   </div>
+</div>
+
+<!-- UPDATE LOG -->
+<div class="update-log">
+  <strong>Updated 1730 CT</strong> &mdash; Added Special Edition: Hungary After Orb&aacute;n (full six-dimension analysis of the April 12 election, Magyar state TV confrontation, key player profiles, Thucydidean strategic framing).
 </div>
 
 <!-- WEATHER -->
@@ -709,6 +737,16 @@
 </div><!-- /container -->
 
 <script>
+// Special Editions dropdown
+function toggleSE() {
+  document.getElementById('se-menu').classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.special-editions')) {
+    document.getElementById('se-menu').classList.remove('open');
+  }
+});
+
 // Weather fetch
 function fetchWeather() {
   var city = document.getElementById('ws-input').value.trim();

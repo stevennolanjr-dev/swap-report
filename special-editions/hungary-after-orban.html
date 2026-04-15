@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE SWAP REPORT &mdash; Special Edition: Hungary</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f0e8;
+    --fg: #1a1a1a;
+    --accent: #8b0000;
+    --muted: #666;
+    --border: #d4c9b8;
+    --card-bg: #fffdf8;
+    --header-bg: #ede8df;
+    --tab-bg: #e8e2d8;
+  }
+  .theme-light { --bg:#ffffff; --fg:#1a1a1a; --accent:#8b0000; --muted:#555; --border:#ddd; --card-bg:#f9f9f9; --header-bg:#f0f0f0; --tab-bg:#e8e8e8; }
+  .theme-dark  { --bg:#1a1a2e; --fg:#e0ddd5; --accent:#cc3333; --muted:#9a9a9a; --border:#2e2e4e; --card-bg:#16213e; --header-bg:#0f3460; --tab-bg:#1a1a3e; }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--fg); font-family: Georgia, serif; font-size: 15px; line-height: 1.7; transition: background 0.2s, color 0.2s; }
+  .container { max-width: 960px; margin: 0 auto; padding: 0 16px 40px; }
+
+  .masthead { padding: 24px 0 16px; border-bottom: 2px solid var(--accent); margin-bottom: 20px; }
+  .masthead-title { font-family: 'IBM Plex Mono', monospace; font-size: 22px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); }
+  .masthead-sub { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; margin-top: 4px; }
+  .masthead-controls { display: flex; justify-content: space-between; align-items: flex-end; }
+  .theme-toggle { display: flex; gap: 6px; }
+  .theme-btn { background: var(--tab-bg); border: 1px solid var(--border); cursor: pointer; padding: 4px 8px; font-size: 14px; border-radius: 3px; }
+  .theme-btn:hover { border-color: var(--accent); }
+
+  .tab-bar { display: flex; flex-wrap: wrap; gap: 0; border-bottom: 2px solid var(--border); margin-bottom: 20px; margin-top: 18px; }
+  .tab-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; padding: 8px 12px; cursor: pointer; background: none; border: none; color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -2px; transition: color 0.15s; }
+  .tab-btn:hover { color: var(--fg); }
+  .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  .section-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 6px; margin: 24px 0 14px; }
+  .section-hdr:first-child { margin-top: 0; }
+
+  .bluf { background: rgba(139,0,0,0.05); border-left: 4px solid var(--accent); padding: 14px 18px; margin-bottom: 24px; border-radius: 0 4px 4px 0; }
+  .bluf-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 8px; }
+  .bluf p { font-size: 14px; line-height: 1.75; }
+
+  .story { margin-bottom: 18px; }
+  .headline { font-size: 15px; font-weight: bold; color: var(--fg); }
+  .headline a { color: var(--fg); text-decoration: none; }
+  .headline a:hover { color: var(--accent); text-decoration: underline; }
+  .tags { margin-top: 4px; display: flex; flex-wrap: wrap; gap: 5px; }
+  .tag { font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: var(--tab-bg); color: var(--muted); padding: 1px 6px; border-radius: 2px; }
+
+  .analysis-block { margin-bottom: 20px; }
+  .analysis-block p { margin-bottom: 12px; font-size: 14px; line-height: 1.75; }
+
+  .swaps-take { margin-top: 12px; padding: 10px 14px; background: rgba(139,0,0,0.06); border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0; margin-bottom: 20px; }
+  .swaps-take-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 6px; }
+  .swaps-take p { font-size: 13px; line-height: 1.6; }
+
+  .data-card { border: 1px solid var(--border); background: var(--card-bg); border-radius: 4px; padding: 16px; margin-bottom: 16px; }
+  .data-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 8px; }
+
+  .result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+  .result-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; padding: 14px; text-align: center; }
+  .result-party { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .result-num { font-size: 32px; font-weight: bold; font-family: 'IBM Plex Mono', monospace; }
+  .result-detail { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); margin-top: 4px; }
+  .result-card.winner { border-left: 4px solid #2e7d32; }
+  .result-card.loser { border-left: 4px solid #c62828; }
+
+  .watch-item { border-left: 3px solid var(--accent); padding: 8px 12px; margin-bottom: 12px; background: var(--card-bg); font-size: 13px; line-height: 1.6; }
+  .watch-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+
+  .deep-card { border: 1px solid var(--border); background: var(--card-bg); border-radius: 4px; padding: 16px; margin-bottom: 20px; }
+  .deep-source { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 6px; }
+  .deep-hl { font-size: 15px; font-weight: bold; margin-bottom: 8px; }
+  .deep-hl a { color: var(--fg); text-decoration: none; }
+  .deep-hl a:hover { color: var(--accent); text-decoration: underline; }
+  .deep-sum { font-size: 13px; line-height: 1.65; color: var(--muted); margin-bottom: 10px; }
+
+  .tension-block { background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; padding: 14px 16px; margin-bottom: 14px; }
+  .tension-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 6px; }
+  .tension-block p { font-size: 13px; line-height: 1.65; }
+
+  .footer-note { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); text-align: center; margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border); letter-spacing: 1px; text-transform: uppercase; }
+
+  @media (max-width: 700px) {
+    .result-grid { grid-template-columns: 1fr; }
+    .tab-btn { padding: 7px 9px; font-size: 10px; }
+    .masthead-title { font-size: 17px; letter-spacing: 2px; }
+  }
+</style>
+</head>
+<body class="theme-warm" id="body-el">
+<div class="container">
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-controls">
+    <div>
+      <div class="masthead-title">The SWAP Report</div>
+      <div class="masthead-sub">Special Edition &nbsp;|&nbsp; April 15, 2026 &nbsp;|&nbsp; Hungary: After Orb&aacute;n</div>
+    </div>
+    <div class="theme-toggle">
+      <button class="theme-btn" onclick="setTheme('theme-light')" title="Light">&#9728;</button>
+      <button class="theme-btn" onclick="setTheme('theme-warm')" title="Warm">&#128305;</button>
+      <button class="theme-btn" onclick="setTheme('theme-dark')" title="Dark">&#9790;</button>
+    </div>
+  </div>
+</div>
+
+<!-- ELECTION RESULTS -->
+<div class="result-grid">
+  <div class="result-card winner">
+    <div class="result-party">Tisza (Magyar)</div>
+    <div class="result-num">138</div>
+    <div class="result-detail">seats &middot; 53.6% &middot; supermajority</div>
+  </div>
+  <div class="result-card loser">
+    <div class="result-party">Fidesz (Orb&aacute;n)</div>
+    <div class="result-num">55</div>
+    <div class="result-detail">seats &middot; 37.8% &middot; lost 78 seats</div>
+  </div>
+</div>
+<div class="data-card">
+  <div class="data-label">Turnout</div>
+  <span style="font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;">76.5 &ndash; 79.6%</span>
+  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-left:8px;">Post-communist record. Highest since free elections began in 1990.</span>
+</div>
+
+<!-- BLUF -->
+<div class="bluf">
+  <div class="bluf-label">Bottom Line Up Front</div>
+  <p>This morning, P&eacute;ter Magyar walked into the studio of Hungary's state television, a propaganda outfit that spent two years calling him a traitor, and told the anchor to her face that the operation she works for is a <em>hazugs&aacute;ggy&aacute;r</em>, a factory of lies, that would make Goebbels "lick his fingers." Then he announced he's suspending their news broadcasts. That's not a politician savoring a win. That's a man who understands you don't negotiate with a captured institution. You replace it. The real question now is whether he brings that same instinct to the judiciary, the intelligence services, and the oligarch networks that Orb&aacute;n spent 16 years building. Winning was the easy part. The hard part started this morning.</p>
+</div>
+
+<!-- TAB BAR -->
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('overview')">Overview</button>
+  <button class="tab-btn" onclick="showTab('internal')">Internal</button>
+  <button class="tab-btn" onclick="showTab('eu-nato')">EU &amp; NATO</button>
+  <button class="tab-btn" onclick="showTab('russia')">Russia</button>
+  <button class="tab-btn" onclick="showTab('us-pop')">US &amp; Populism</button>
+  <button class="tab-btn" onclick="showTab('players')">Key Players</button>
+  <button class="tab-btn" onclick="showTab('reads')">Deep Reads</button>
+  <button class="tab-btn" onclick="showTab('watch')">Watch List</button>
+</div>
+
+<!-- ==================== OVERVIEW TAB ==================== -->
+<div id="overview" class="tab-content active">
+
+<div class="section-hdr">What Happened</div>
+<div class="analysis-block">
+<p>On April 12, P&eacute;ter Magyar's Tisza party didn't just beat Viktor Orb&aacute;n. It buried him. 138 seats to 55. A constitutional supermajority built from a party that barely existed two years ago, against the most entrenched illiberal regime in Europe. Turnout hit a post-communist record. That number matters: this wasn't a low-turnout fluke where the opposition caught a break. Hungarians who had never voted, or had stopped voting, showed up specifically to end this.</p>
+<p>Magyar is a former Fidesz insider. He was married into Orb&aacute;n's inner circle. He knows how the machine works because he helped build it. In 2024 he released secret recordings of his ex-wife, Orb&aacute;n's Justice Minister, and blew the system open from inside. That's the source of his credibility, and it's also why Fidesz hates him with a personal intensity that goes beyond normal political rivalry. Orb&aacute;n tried to make the election about war and peace, Brussels versus sovereignty, geopolitical destiny. Voters chose their grocery bills over his grand narrative. The economy stagnated. Healthcare collapsed. Corruption was visible and personal. People noticed.</p>
+</div>
+
+<div class="section-hdr">The Scene This Morning</div>
+<div class="analysis-block">
+<p>Three days after winning a supermajority, Magyar walked into the studio of M1, Hungary's state television network. For context: M1 spent two years running wall-to-wall character assassination against him. It is the flagship of a state media apparatus that Foreign Affairs described as part of Orb&aacute;n's "mafia state," where political loyalty was the currency of access. Magyar sat down across from the anchor, called the operation a <em>hazugs&aacute;ggy&aacute;r</em> (factory of lies), said its propaganda methods would make Goebbels "lick his fingers," and announced on air that his government would suspend news broadcasts and overhaul the entire state media apparatus.</p>
+<p>This is not theater. It's a statement of intent. State media was one of Fidesz's most important instruments of control. Magyar went for it on Day Three. The question that every analyst tracking this transition should be asking: does he move with this speed on the judiciary, the intelligence services, and the procurement networks? Or was this the easy, visible target while the harder institutional fights get bogged down?</p>
+</div>
+
+<div class="section-hdr">Six Dimensions: Why This Matters</div>
+
+<div class="swaps-take">
+  <div class="swaps-take-label">1. Internal: Orbanism Without Orb&aacute;n</div>
+  <p>The supermajority gives Magyar the legal authority to rewrite the constitution, restore judicial independence, and dismantle the media control apparatus. But Fidesz didn't build a political party. It built a state within the state: local government networks, intelligence service loyalists, oligarch patronage chains, media ecosystems, regulatory capture at every level. You can win an election in a night. Ripping out 16 years of institutional capture takes a generation. Thucydides would recognize this problem. Athens won the war at Pylos. It lost the peace by assuming the victory meant the enemy was finished. Orb&aacute;n isn't finished. He's done this before. He lost in 2002. He spent eight years rebuilding. He came back with a supermajority. He knows exactly how to fight from opposition.</p>
+</div>
+
+<div class="swaps-take">
+  <div class="swaps-take-label">2. EU: The Veto Dies, the Money Flows</div>
+  <p>For years, Orb&aacute;n weaponized Hungary's EU veto to block sanctions, stall Ukraine's accession, and extract concessions. That lever is gone. The 90 billion euro Ukraine loan that Budapest blocked will move forward. Between 17 and 35 billion euros in frozen cohesion funds can start flowing once reform benchmarks are met. There's an August 31 RRF deadline with 10.4 billion euros on the line. Magyar doesn't have the luxury of a slow, deliberate reform process. Brussels is holding the checkbook, and the checks have expiration dates. This is the most consequential single-country shift in EU foreign policy consensus since Poland threw out PiS in 2023. It matters structurally, not just symbolically.</p>
+</div>
+
+<div class="swaps-take">
+  <div class="swaps-take-label">3. NATO: The Spoiler Leaves the Table</div>
+  <p>Magyar pledges to raise defense spending toward 5% of GDP by 2035, restore allied relationships, and stop being the member that blocks consensus while providing diplomatic cover for Moscow. That's the floor. The ceiling depends on whether he actually builds military capability or just writes checks. The Trump angle makes this interesting. JD Vance personally flew to Budapest to campaign for Orb&aacute;n. In the final week. During the Iran war. Trump endorsed Orb&aacute;n on Truth Social, offered "the full Economic Might of the United States." Both backed the wrong horse, loudly, in a NATO ally's election. Magyar's government owes this U.S. administration absolutely nothing. In a NATO context where Washington is already questioning commitment, Hungary's realignment strengthens the European pillar at the exact moment it needs strengthening most.</p>
+</div>
+
+<div class="swaps-take">
+  <div class="swaps-take-label">4. Russia: Moscow Lost Its Best European Asset</div>
+  <p>Call it what it was: Orb&aacute;n was Russia's man inside the EU. Not a fellow traveler. Not a useful idiot. A reliable, transactional veto that Moscow could count on to obstruct sanctions, delay aid, and fracture Western consensus. The Atlantic Council's DFR Lab confirms Moscow threw significant intelligence resources at keeping him in power, with "astroturfing and social media manipulation with even less subtlety than usual." Investment: substantial. Return: zero. The margin was too large to manipulate. What Moscow retains is not nothing. Paks II (Rosatom, construction started February 2026) gives Russia a physical, financial, multi-decade infrastructure foothold inside a NATO member state. Hungary still imports 90% of its crude from Russia via Druzhba. Magyar supports Paks II and pegs energy diversification at 2035, not 2027. Moscow lost its veto. It kept its pipeline and its reactor. That's a downgrade, not a defeat.</p>
+</div>
+
+<div class="swaps-take">
+  <div class="swaps-take-label">5. Ukraine: Relief, Not Revolution</div>
+  <p>Zelenskyy called it "victory of light over darkness." The Ukrainian FM offered "meticulous, pragmatic work." Translation: Kyiv is relieved but not naive. The 90 billion euro loan unblocks. Sanctions obstruction ends. The diplomatic tone shifts from active hostility to something functional. But Magyar is not pro-Ukraine in the way Western commentary implies. His position is "peace through negotiation," not "victory for Ukraine." He'll maintain the opt-out on the loan (Hungary won't contribute directly). The ethnic Hungarian minority in Transcarpathia remains an unresolved structural tension. Carnegie's read is the honest one: this shifts Hungary from active sabotage to constructive neutrality. That's significant. It's not a revolution.</p>
+</div>
+
+<div class="swaps-take">
+  <div class="swaps-take-label">6. Global Populism: A Warning, Not a Funeral</div>
+  <p>Bloomberg ran "Trump Gets a Warning Sign." NBC called it "a bloody nose for the Kremlin, Putin, Trump and the global far-right." Both framings are correct and both are incomplete. Orb&aacute;n didn't lose because voters rejected populism as a worldview. He lost because the economy stagnated, corruption was personal and visible, and he stopped listening to his own base. Meloni is still popular in Italy. Fico still governs Slovakia. The AfD persists in Germany. Le Pen adapts in France. The lesson isn't that populism is dying. It's that incumbents who neglect kitchen-table economics to cosplay as geopolitical visionaries get fired. That lesson cuts across ideological lines. And the specific conditions that enabled Magyar, an insider defector with firsthand evidence of corruption, record turnout, 16 years of accumulated fatigue, may not be replicable elsewhere. This is a data point. Not a trend line.</p>
+</div>
+
+</div><!-- /overview -->
+
+<!-- ==================== INTERNAL TAB ==================== -->
+<div id="internal" class="tab-content">
+
+<div class="section-hdr">The State Apparatus Problem</div>
+<div class="analysis-block">
+<p>Magyar inherits a state that was purpose-built to serve one man. Sixteen years of institutional capture means the judiciary answers to Fidesz appointees, the intelligence services are staffed with loyalists, the media ecosystem is owned by allied oligarchs, local government networks run on patronage, and public procurement is a Fidesz profit center. The constitutional supermajority gives Magyar the legal authority to rewrite all of it. But legal authority and operational capacity are different things. Tisza barely existed two years ago. It has a mandate the size of a freight train and the institutional depth of a startup.</p>
+<p>Chatham House nails the core problem: Orb&aacute;n is not leaving politics. He will "lead from opposition," and Fidesz remains "embedded in local networks, institutions and media ecosystems." Magyar will govern against a "defeated, wounded and still highly organized adversary." This is the Thucydidean dynamic that Western celebration ignores. Sparta didn't stop being dangerous when Athens won at Pylos. Orb&aacute;n has done this exact thing before. He lost in 2002, rebuilt for eight years, and came back with a supermajority that he used to rewrite the constitution. He invented this playbook. Assuming he won't run it again is the kind of mistake that only optimists make.</p>
+<p>Foreign Affairs described pre-election Hungary as a "mafia state" where political loyalty was the currency of economic access. Fidesz-connected oligarchs control significant chunks of media, construction, and energy. Unwinding those economic relationships is harder than changing laws because the beneficiaries have the money to fight back, the connections to delay, and the institutional knowledge to sabotage from within.</p>
+</div>
+
+<div class="swaps-take">
+  <div class="swaps-take-label">SWAP's Take</div>
+  <p>Poland is the closest precedent and it's not encouraging on timeline. Tusk's government has been unwinding PiS institutional capture since 2023 and they're still fighting it three years later. Magyar has a bigger mandate (supermajority vs. coalition) but a thinner party (brand new vs. established). The first 90 days will tell us everything. Cabinet appointments, judicial moves, intelligence service shakeups. If he goes fast and deep, like he did with state TV this morning, the optimist case strengthens. If the bureaucracy bogs him down, if he picks the easy fights and avoids the hard ones, the system wins by running out the clock. Watch what he does, not what he says.</p>
+</div>
+
+<div class="section-hdr">Cabinet Formation &amp; Early Moves</div>
+<div class="analysis-block">
+<p>Parliament convenes May 6-7. The president tasks Magyar with government formation. Swearing-in possible by mid-May. Early signals point to four priorities: EU-fund release via rule-of-law milestones, media reform (the state TV confrontation this morning was the opening salvo), standing up anti-corruption offices, and EPPO accession (European Public Prosecutor's Office) for EU-fund corruption probes.</p>
+<p>The fiscal calendar is the forcing function. An August 31 RRF deadline puts 10.4 billion euros at risk if reform milestones aren't met. Magyar is targeting 4 of 27 EU reform conditions initially. That's pragmatic triage, not ambition. He's picking the conditions he can hit fastest to unlock the money he needs to govern. Everything about the early moves says this is a man who understands the difference between a mandate and a capability.</p>
+</div>
+
+<div class="section-hdr">What Actually Drove the Vote</div>
+<div class="analysis-block">
+<p>Orb&aacute;n ran on geopolitics. War versus peace. Brussels versus sovereignty. Ukraine as an existential threat. Voters didn't care. They cared about the economy, corruption, healthcare collapse, education funding, low wages, and high prices. Younger and more educated voters broke heavily for Magyar. The turnout surge suggests this election mobilized people who had previously stayed home rather than converting existing Fidesz voters. That distinction matters for durability: Magyar didn't peel off Orb&aacute;n's base. He activated a different electorate.</p>
+<p>The corruption issue had a specific catalyst that makes this election unusual. Magyar, as a former insider, provided firsthand testimony about the system's internal workings. His credibility as an accuser comes from having been part of the machine. That's a rare thing. Most reform candidates promise to clean house from the outside. This one can describe the house's floor plan from memory, including which closets have skeletons in them. It's his greatest asset and his permanent vulnerability. Fidesz will never let voters forget where he came from.</p>
+</div>
+
+</div><!-- /internal -->
+
+<!-- ==================== EU & NATO TAB ==================== -->
+<div id="eu-nato" class="tab-content">
+
+<div class="section-hdr">EU: The Veto Machine Breaks</div>
+<div class="analysis-block">
+<p>For the better part of a decade, Orb&aacute;n's Hungary was the most predictable obstructionist inside the European Union on anything touching Russia. Budapest blocked or delayed sanctions rounds, stalled Ukraine's EU accession, and extracted concessions, including the December 2025 opt-out on the Ukraine loan, as the price for not vetoing everything else. Every EU foreign policy discussion included the asterisk: "assuming Hungary doesn't block it." That asterisk is gone.</p>
+<p>The immediate unlock is the 90 billion euro EU loan to Ukraine. Magyar will allow Hungary to opt out rather than veto, clearing the path without committing Hungarian funds directly. He's even called on Orb&aacute;n to lift the veto before leaving office, a move that's equal parts practical and humiliating. Beyond the loan, 17 to 35 billion euros in frozen cohesion and recovery funds are tied to 27 reform conditions. The August 31 RRF deadline makes this urgent: 10.4 billion euros evaporates if milestones aren't met. Reform isn't a philosophical commitment. It's a cash-flow problem.</p>
+<p>ECFR frames this as part of a broader pattern: Poland 2023, France's far-right containment, now Hungary. The populist-authoritarian wave looks like it's receding in Europe. Maybe. But ECFR also cautions that institutional inertia and energy dependence constrain how fast any realignment happens. The celebration in Brussels is premature until the benchmarks are actually met.</p>
+</div>
+
+<div class="swaps-take">
+  <div class="swaps-take-label">SWAP's Take</div>
+  <p>One election doesn't fix the EU's structural unanimity problem. Slovakia under Fico can still play spoiler. But Fico is an opportunist, not an ideologue with a Russian infrastructure investment strategy. Hungary was the keystone of Moscow's obstruction architecture inside Europe. Removing it is structurally significant in a way that goes beyond symbolism. The real test isn't whether Magyar wants to reform. It's whether he can hit Brussels' benchmarks fast enough to unlock frozen funds before fiscal pressure forces compromises that undermine the reform agenda itself. The clock is the enemy, not the politics.</p>
+</div>
+
+<div class="section-hdr">NATO: Removing the Friction Point</div>
+<div class="analysis-block">
+<p>Magyar pledges to meet NATO's 5% defense spending target by 2035, restore allied relationships, and integrate into NATO-EU defense planning. At minimum, Hungary stops being the alliance member that blocks consensus and provides diplomatic cover for Moscow. At best, it adds a constructive voice on the eastern flank where the threat is not theoretical.</p>
+<p>The Trump complication is delicious. Vice President Vance personally campaigned for Orb&aacute;n in Budapest during the final week, in the middle of the Iran war. Trump endorsed Orb&aacute;n on Truth Social. Both failed spectacularly. Magyar's orientation is toward Brussels, Berlin, and Paris. Not toward Trump's Washington. In a NATO context where the U.S. is simultaneously threatening withdrawal and demanding higher spending, Hungary's realignment is a net positive for the European pillar of the alliance. It also creates a genuinely awkward bilateral relationship with Washington that didn't need to exist. The U.S. VP publicly backed the losing side in a NATO ally's election. That's not a diplomatic footnote. That's a structural irritant.</p>
+</div>
+
+<div class="swaps-take">
+  <div class="swaps-take-label">SWAP's Take</div>
+  <p>If adversaries were pre-discounting NATO's deterrence value based on U.S. withdrawal signals, Hungary's realignment provides a partial counterweight. The alliance gets more internally coherent at the same moment its largest member is questioning commitment. Net effect: marginal but real strengthening of the European pillar, which matters more, not less, if U.S. commitment stays uncertain. The irony is rich. Trump tried to use Hungary as a showcase for his brand of transactional populism inside NATO. Instead, Hungary became a showcase for why that brand has limited coattails outside American borders.</p>
+</div>
+
+</div><!-- /eu-nato -->
+
+<!-- ==================== RUSSIA TAB ==================== -->
+<div id="russia" class="tab-content">
+
+<div class="section-hdr">Moscow's Loss</div>
+<div class="analysis-block">
+<p>The Atlantic Council put it plainly: "Moscow just lost its most important foothold inside the European Union." That's not hyperbole. Orb&aacute;n wasn't a sympathizer. He was an instrument. A reliable veto on sanctions, aid packages, and accession talks. Moscow could plan around him. That planning horizon just collapsed. The DFR Lab (Emerson Brooking) confirms Moscow committed significant intelligence resources to the election, running "astroturfing and social media manipulation with even less subtlety than usual." The operation failed because the margin was too large to manipulate. You can move a close election with information warfare. You can't move a 16-point blowout.</p>
+<p>Peskov's public reaction was notably muted. Russia "respects the choice." Expects "highly pragmatic engagement." No congratulations. Hungary categorized as "unfriendly." Kremlin sources reportedly braced for the loss before election day. The positioning is managed damage control: we can work with this, we're not panicking, the pipelines still flow. It's the diplomatic equivalent of walking away from a car wreck and straightening your tie.</p>
+</div>
+
+<div class="section-hdr">Below the Surface: Telegram, Analysts, State Media</div>
+<div class="analysis-block">
+<p><strong>Russian Telegram and mil-bloggers</strong> (Rybar, Readovka, Tsargrad, Solovyov, Simonyan channels): The tone is resigned pragmatism with a residual leverage cope. Pre-election, Russian-affiliated channels pushed fear narratives about a Magyar win enabling EU Ukraine aid. Post-election, no "election stolen" conspiracy gained traction, which is itself notable. Instead: acknowledgment that the veto ally is gone, combined with reminders that pipelines and nuclear plants don't change with governments. Rybar flagged Magyar's early signals on Russian oil continuity. Hardliners framed it as a temporary Brussels win. The subtext: "We lost the chess piece but we still have pawns on the board."</p>
+<p><strong>Russian analytical class:</strong> Fyodor Lukyanov (Russia in Global Affairs/Valdai) attributed the defeat primarily to domestic voter fatigue rather than strategic realignment, which is the correct read and also the one that best serves Moscow's narrative. RIAC-adjacent voices echoed the state pragmatism line, framing the result as more of a U.S./EU proxy loss than a Russian setback. The gap between the analytical class and the propaganda class tells you where the real assessment lives: analysts see a managed loss. Propagandists mourn a spoiler they can't replace.</p>
+<p><strong>State media</strong> (RT, TASS, RIA Novosti, Rossiya-1): Coordinated "pragmatic engagement, no panic" line. Elections are Hungary's sovereign choice. The outcome won't affect the Ukraine war. Moscow expects continued dialogue. TASS forwarded Druzhba pipeline questions directly to Budapest, which is the diplomatic equivalent of "we'll wait for you to come to us." Coverage hammers Paks II as a locked-in state-to-state project that transcends politics. They're not wrong about that part.</p>
+</div>
+
+<div class="section-hdr">What Moscow Retains</div>
+<div class="analysis-block">
+<p><strong>Paks II.</strong> This is the leverage that doesn't go away. Rosatom began construction on two new reactor units in February 2026 (2.4 GW combined, eight years behind schedule). Magyar supports the project on energy security and decarbonization grounds, and he's right that cancellation would create a crisis. Rosatom CEO Likhachev went on the record April 14: "ready to answer any questions the new Hungarian government has," framing Paks II as "a pure project in the interests of the Hungarian people" that will supply roughly 70% of Hungary's electricity. A senior Duma Energy Committee member confirmed the contract's "immunity to government change" due to construction stage. Moscow is pre-positioning to make cancellation look like national self-harm. The project is financed by Russian loans, creating long-term financial dependency regardless of who governs. This is the Thucydidean long game: Russia can't prevent Hungary's political realignment, so it's anchoring an economic one that will outlast multiple election cycles.</p>
+<p><strong>Energy dependence.</strong> Hungary imports approximately 90% of its crude oil from Russia, roughly 100,000 barrels per day via the Druzhba pipeline. Magyar has stated explicitly that "diversification does not mean abandoning cheap Russian oil" and pegged 2035 as the realistic timeline for ending Russian energy dependence. That's eight years after the EU's 2027 target. During that window, Hungary is politically Western and energetically Russian. Moscow doesn't need a veto anymore. It has a pipeline.</p>
+</div>
+
+<div class="swaps-take">
+  <div class="swaps-take-label">SWAP's Take</div>
+  <p>The "Russia loses" narrative is half right. Moscow lost its most valuable political asset inside the EU. The veto is gone. Intelligence operations failed. Diplomatic cover evaporated. That's real and it matters. But the structural leverage, Paks II plus Druzhba plus the 2035 diversification timeline, creates an eight-year window that Russia will exploit. A Rosatom megaproject inside a NATO member state, financed by Russian loans, supplying 70% of electricity, is not something you walk away from without an energy crisis. Magyar can't cancel it. He can't keep it without giving Moscow ongoing infrastructure influence. There is no clean answer. The second-order question that nobody in the celebration is asking: does Russia use energy leverage to actively slow Magyar's EU realignment, or does it write Hungary off politically and focus on extracting maximum economic value from what remains? The answer depends on whether Moscow sees Hungary as a recoverable political asset or a sunk cost. Watch Gazprom pricing decisions over the next six months for the signal.</p>
+</div>
+
+</div><!-- /russia -->
+
+<!-- ==================== US & POPULISM TAB ==================== -->
+<div id="us-pop" class="tab-content">
+
+<div class="section-hdr">The Trump-Magyar Disconnect</div>
+<div class="analysis-block">
+<p>Trump explicitly backed Orb&aacute;n. Vance flew to Budapest to campaign for him during the final week. Trump posted on Truth Social offering "the full Economic Might of the United States." CPAC had treated Budapest as a pilgrimage site for American conservatives. All of it, every rally, every endorsement, every performative handshake, failed. Decisively. Publicly. In a NATO ally's election where the results were unambiguous.</p>
+<p>Post-election, Trump pivoted with characteristic shamelessness, calling Magyar a "good man" in a partial distancing from Orb&aacute;n. Vance called the loss "sad" but defended the trip as "the right thing to stand behind" Orb&aacute;n, whose legacy he called "transformational." That's the tell. The administration can't fully abandon Orb&aacute;n without admitting the trip was a mistake, and it can't embrace Magyar without looking like it was wrong about everything it said last week. So it's stuck in a diplomatic no-man's-land of its own creation.</p>
+<p>Magyar owes this administration nothing. His orientation is toward Brussels, Berlin, and Paris. The Washington Post noted pre-election that Trump "likes to back winners in foreign elections" and that Hungary was a test of his international clout. The result: decisive, humiliating failure. Whether that changes Trump's appetite for meddling in allied elections is an open question, but the lesson from the test case is clear.</p>
+</div>
+
+<div class="swaps-take">
+  <div class="swaps-take-label">SWAP's Take</div>
+  <p>The Vance trip is going to age poorly. A sitting U.S. Vice President flew to a NATO ally's capital during an active war to campaign for a Russia-aligned incumbent, and that incumbent got blown out. NBC's framing ("bloody nose for the Kremlin, Putin, Trump and the global far-right") is directionally correct. The international coattails of Trump-style transactional populism are shorter than the movement believes. The domestic coattails are a separate question that Hungary doesn't answer.</p>
+</div>
+
+<div class="section-hdr">Populism: Dead or Napping?</div>
+<div class="analysis-block">
+<p>The optimist narrative writes itself: Hungary proves illiberal capture is reversible. Poland, France, now Hungary. European democracies can self-correct. Authoritarian populism peaked and is receding.</p>
+<p>The skeptic narrative is stronger. Orb&aacute;n lost because the economy stagnated and corruption was impossible to ignore, not because voters had a philosophical epiphany about liberal democracy. Anti-incumbent sentiment drove this, not pro-liberal-democracy sentiment. Meloni remains popular in Italy. Fico still governs Slovakia. The AfD persists in Germany. Le Pen's movement adapts rather than collapses. The specific conditions that enabled Magyar, an insider defector with secret recordings, a collapsing economy, 16 years of accumulated fatigue, record turnout mobilizing previously disengaged voters, constitute a very particular set of circumstances. Assume they're replicable elsewhere at your own risk.</p>
+</div>
+
+<div class="swaps-take">
+  <div class="swaps-take-label">SWAP's Take</div>
+  <p>Here's the honest version: Orb&aacute;n's defeat is good news for EU/NATO cohesion and bad news for Moscow's influence architecture inside Europe. It is not evidence that populism is dying. It is evidence that incumbents who neglect domestic economics to cosplay as geopolitical strategists get fired. That lesson applies to every incumbent, left or right, in every democracy. The global populism narrative wants this to be a turning point. It's a correction. Orb&aacute;n ran a corrupt, stagnating government for too long and a credible insider called him on it. The lesson for other populist leaders isn't "you'll lose too." It's "don't let the economy rot while you're playing world leader." Plenty of them are smart enough to avoid that mistake.</p>
+</div>
+
+</div><!-- /us-pop -->
+
+<!-- ==================== KEY PLAYERS TAB ==================== -->
+<div id="players" class="tab-content">
+
+<div class="section-hdr">Hungarian Internal</div>
+
+<div class="data-card">
+  <div class="data-label">P&eacute;ter Magyar &mdash; PM-Elect, Tisza Party Leader</div>
+  <p style="font-size:13px;line-height:1.65;">Former Fidesz insider, lawyer, diplomat. Ex-husband of Judit Varga (Orb&aacute;n's former Justice Minister). Broke publicly in 2024 by releasing secret recordings of Varga that detonated Fidesz's internal credibility. Built Tisza from nothing in under two years. Positions as a pro-EU conservative focused on anti-corruption and rule-of-law, while keeping center-right stances on migration and family policy. His insider credibility is both his greatest asset (he knows where the bodies are buried) and his permanent vulnerability (he helped bury some of them).</p>
+  <p style="font-size:13px;line-height:1.65;margin-top:8px;"><strong>Playing for:</strong> Rapid EU reintegration, funds unlock, "regime change" legacy. <strong>72-hour action:</strong> Walked into state TV, called it a Goebbels-grade propaganda factory, announced news broadcast suspension. Met President Sulyok April 15, called for his resignation. Government formation by mid-May.</p>
+</div>
+
+<div class="data-card">
+  <div class="data-label">Viktor Orb&aacute;n &mdash; Fidesz Leader, Opposition</div>
+  <p style="font-size:13px;line-height:1.65;">Architect of Hungary's illiberal state over 16 years. One of Europe's most skilled political operators, full stop. The critical precedent: Orb&aacute;n lost in 2002, rebuilt from opposition, and returned in 2010 with a supermajority he used to rewrite the constitution. Eight years. He invented the comeback playbook. Fidesz shows no public fracture. Consolidation around core loyalists, quiet hedging by some insiders. The local government networks, oligarch connections, and media ownership structures he built remain substantially intact.</p>
+  <p style="font-size:13px;line-height:1.65;margin-top:8px;"><strong>Playing for:</strong> Preserve the Fidesz core, block full de-Orbanization, run the long game. <strong>72-hour action:</strong> Conceded swiftly on election night, pledged to "serve the nation" from opposition. The quick concession is strategic: it denies Magyar a legitimacy crisis and positions Orb&aacute;n as the dignified statesman. He's already playing for 2030.</p>
+</div>
+
+<div class="data-card">
+  <div class="data-label">Tam&aacute;s Sulyok &mdash; President of Hungary</div>
+  <p style="font-size:13px;line-height:1.65;">Fidesz-backed former Constitutional Court president. Ceremonial head of state whose key function now is tasking Magyar with government formation. Magyar has publicly called for his resignation after the handover, framing it as part of the "regime change." This is an aggressive opening move. Magyar isn't waiting for the institutional clock to run. He's pushing it.</p>
+  <p style="font-size:13px;line-height:1.65;margin-top:8px;"><strong>72-hour action:</strong> Met Magyar at S&aacute;ndor Palace April 15. Under pressure for swift transition.</p>
+</div>
+
+<div class="data-card">
+  <div class="data-label">L&aacute;szl&oacute; Toroczkai &mdash; Mi Haz&aacute;nk (Our Homeland) Leader</div>
+  <p style="font-size:13px;line-height:1.65;">Far-right nationalist. Mi Haz&aacute;nk won roughly 6% and parliamentary seats, making it the third force. Hardline sovereignty, anti-EU, anti-migration. Currently challenging results citing "Meta interference." The play: position as the only "true" opposition while Fidesz regroups. Could become Fidesz's coalition partner for a future run, or could fragment the right by competing for the same base. Worth watching as the far-right spoiler who benefits most from Magyar being perceived as "Brussels' man."</p>
+  <p style="font-size:13px;line-height:1.65;margin-top:8px;"><strong>72-hour action:</strong> "We are the only political force that was not swept away." Vows result challenge.</p>
+</div>
+
+<div class="data-card">
+  <div class="data-label">Judit Varga &mdash; Former Fidesz Justice Minister</div>
+  <p style="font-size:13px;line-height:1.65;">Magyar's ex-wife. Served as Orb&aacute;n's Justice Minister 2019-2023. Central to the 2024 pardon scandal that launched Magyar's break with Fidesz. Sidelined from active politics. Plays a symbolic role in Fidesz "betrayal" narratives. No major recent statements. Her importance is historical: she's the reason Magyar had the recordings that blew the system open.</p>
+</div>
+
+<div class="section-hdr">EU / Brussels</div>
+
+<div class="data-card">
+  <div class="data-label">Ursula von der Leyen &mdash; European Commission President</div>
+  <p style="font-size:13px;line-height:1.65;">Controls the EU funds lever and drives rule-of-law conditionality. Her play: welcome Magyar warmly while holding reform benchmarks firm. The warmth is real; the benchmarks are the leverage. EC officials are heading to Budapest for negotiations on fund release conditions. <strong>72-hour quote:</strong> "Hungary has chosen Europe... A country returns to its European path."</p>
+</div>
+
+<div class="data-card">
+  <div class="data-label">Roberta Metsola &mdash; European Parliament President</div>
+  <p style="font-size:13px;line-height:1.65;">Symbolic EU voice on democracy. <strong>72-hour quote:</strong> "Hungary's place is at the heart of Europe." Supportive framing for the democratic reset. The EP has been the most aggressive EU institution on Article 7 proceedings against Hungary. Magyar's win takes the pressure off.</p>
+</div>
+
+<div class="section-hdr">NATO / United States</div>
+
+<div class="data-card">
+  <div class="data-label">Mark Rutte &mdash; NATO Secretary General</div>
+  <p style="font-size:13px;line-height:1.65;">Focused on alliance unity and burden-sharing. No Hungary-specific statement in the first 72 hours beyond general eastern-flank support. His play: welcome Magyar's 5% GDP pledge, use Hungary's realignment to demonstrate alliance cohesion, avoid drawing attention to the Vance embarrassment.</p>
+</div>
+
+<div class="data-card">
+  <div class="data-label">JD Vance &mdash; U.S. Vice President</div>
+  <p style="font-size:13px;line-height:1.65;">Campaigned personally for Orb&aacute;n in Budapest during the final week. Called the loss "sad" but defended the trip as "the right thing to stand behind" a leader whose legacy he called "transformational." The awkward reality: the sitting U.S. VP publicly backed the losing side in a NATO ally's election during an active war. Magyar's government has zero obligation to this administration. The bilateral relationship starts from an unnecessarily difficult place because of a campaign trip that accomplished nothing.</p>
+</div>
+
+<div class="section-hdr">Russia</div>
+
+<div class="data-card">
+  <div class="data-label">Dmitry Peskov &mdash; Kremlin Spokesman</div>
+  <p style="font-size:13px;line-height:1.65;">Gatekeeper of the official line. "Respects the choice." Expects "highly pragmatic contacts." No congratulations. Hungary categorized as "unfriendly." The pragmatic rhetoric is cover for the real assessment: managed loss. Moscow is positioning to exploit energy continuity as the durable leverage point while writing off the political asset.</p>
+</div>
+
+<div class="data-card">
+  <div class="data-label">Alexei Likhachev &mdash; Rosatom CEO</div>
+  <p style="font-size:13px;line-height:1.65;">Oversees Paks II, Moscow's most tangible remaining leverage inside Hungary. <strong>April 14 statement:</strong> "Ready to answer any questions the new Hungarian government has." Framed Paks II as "a pure project in the interests of the Hungarian people" supplying ~70% of electricity. This is textbook pre-positioning: make cancellation look like self-harm. The project's advanced construction stage and Russian loan financing make reversal catastrophically expensive.</p>
+</div>
+
+<div class="section-hdr">Ukraine</div>
+
+<div class="data-card">
+  <div class="data-label">Volodymyr Zelenskyy &mdash; Ukrainian President</div>
+  <p style="font-size:13px;line-height:1.65;">Hailed Magyar's win as "victory of light over darkness." Called for "pragmatic, friendly" relations. The tone is cautious optimism: relief at removing the EU's most consistent antagonist on Ukraine, but no illusion of full alignment. Magyar's "peace through negotiation" framing is not what Kyiv wants to hear. It's still a universe better than Orb&aacute;n's active obstruction.</p>
+</div>
+
+<div class="data-card">
+  <div class="data-label">Andrii Sybiha &mdash; Ukrainian Foreign Minister</div>
+  <p style="font-size:13px;line-height:1.65;">Operational diplomacy lead. Play: advance a "new chapter" on minority rights and energy while unlocking EU aid flow. <strong>72-hour quote:</strong> "Ready to advance mutually beneficial cooperation, find solutions to old problems." The Transcarpathia ethnic-Hungarian minority issue is the structural tension that outlasts any government change. It's been the irritant in Hungarian-Ukrainian relations for decades and Magyar won't drop it.</p>
+</div>
+
+<div class="section-hdr">Regional</div>
+
+<div class="data-card">
+  <div class="data-label">Robert Fico &mdash; Slovak Prime Minister</div>
+  <p style="font-size:13px;line-height:1.65;">The last Orb&aacute;n-adjacent leader in the EU. Shares energy dependence on Russia and skepticism toward Ukraine. Hungary's shift potentially isolates him within the Visegr&aacute;d Group and inside EU councils. <strong>72-hour action:</strong> Congratulated Magyar, offered "intensive cooperation," and thanked Orb&aacute;n for defending sovereignty. The dual message tells you everything: he's hedging. Open door to the new government, public loyalty to the old one's principles. Classic small-state survival behavior.</p>
+</div>
+
+<div class="data-card">
+  <div class="data-label">Donald Tusk &mdash; Polish Prime Minister</div>
+  <p style="font-size:13px;line-height:1.65;">The model for post-illiberal recovery. Tusk's government has been unwinding PiS institutional capture since 2023 and knows exactly how hard it is. Closest available precedent for what Magyar faces. <strong>72-hour action:</strong> "Welcome back to Europe!" Spoke with Magyar, invited him to Warsaw. The Tusk-Magyar axis will be the primary channel for reform playbook transfer. Tusk can tell Magyar which fights are worth it in the first 90 days and which ones look important but drain political capital for no return.</p>
+</div>
+
+<div class="section-hdr">Relationship Map</div>
+<div class="data-card">
+  <div class="data-label">Alliances</div>
+  <p style="font-size:13px;line-height:1.65;">Magyar &harr; Tusk / von der Leyen (EU reset, reform playbook, funds unlock)<br>
+  Fico &harr; remaining Orb&aacute;n networks (V4 remnant, energy sovereignty)<br>
+  Peskov / Likhachev &harr; Hungarian energy infrastructure (Paks II, Druzhba)</p>
+  <div class="data-label" style="margin-top:12px;">Rivalries</div>
+  <p style="font-size:13px;line-height:1.65;">Magyar &harr; Orb&aacute;n / Fidesz loyalists / Sulyok / Toroczkai<br>
+  Magyar &harr; Vance/Trump orbit (backed the wrong horse, bilateral friction)<br>
+  Zelenskyy &harr; residual Orb&aacute;n-era tensions (Transcarpathia minority rights)</p>
+  <div class="data-label" style="margin-top:12px;">Dependencies</div>
+  <p style="font-size:13px;line-height:1.65;">Magyar depends on supermajority for constitutional changes + EU funds for fiscal survival<br>
+  Russia depends on Paks II / Druzhba for ongoing leverage beyond the lost veto<br>
+  EU depends on Magyar's reform delivery to validate the "democratic correction" narrative<br>
+  Orb&aacute;n depends on Fidesz institutional depth + time to run the 2002-2010 playbook again<br>
+  Vance/Trump orbit depends on European populist remnants for credibility of the "global movement" thesis</p>
+</div>
+
+</div><!-- /players -->
+
+<!-- ==================== DEEP READS TAB ==================== -->
+<div id="reads" class="tab-content">
+
+<div class="section-hdr">Essential Reading</div>
+
+<div class="deep-card">
+  <div class="deep-source">Chatham House</div>
+  <div class="deep-hl"><a href="https://www.chathamhouse.org/2026/04/hungary-election-orban-has-been-defeated-will-orbanism-survive" target="_blank">Orb&aacute;n Has Been Defeated &mdash; But Will Orbanism Survive?</a></div>
+  <div class="deep-sum">Start here. The essential contrarian read when everyone else is celebrating. Argues Orbanism may survive in opposition as "a source of resistance, political sabotage and narrative warfare." Best available analysis of why winning the election is the beginning of the problem, not the end.</div>
+</div>
+
+<div class="deep-card">
+  <div class="deep-source">Carnegie Endowment</div>
+  <div class="deep-hl"><a href="https://carnegieendowment.org/russia-eurasia/politika/2026/04/russia-hungary-no-orban" target="_blank">Will Hungary's New Leader Really Change EU Policy on Russia and Ukraine?</a></div>
+  <div class="deep-sum">The coldest water on the celebration. Argues cooperation with Russia will remain "anchored in pragmatic reality." Strongest on the structural constraints (energy, Paks II, geography) that limit how far and fast Hungary can realign regardless of who governs. Read this when the euphoria gets loud.</div>
+</div>
+
+<div class="deep-card">
+  <div class="deep-source">Council on Foreign Relations</div>
+  <div class="deep-hl"><a href="https://www.cfr.org/articles/the-opposition-is-leading-in-hungary-but-winning-is-the-easy-part" target="_blank">Winning Is the Easy Part</a></div>
+  <div class="deep-sum">Pre-election analysis that reads as prescient now. Core argument: dismantling institutional capture will take far longer than winning the election. The state apparatus, local networks, and economic patronage system are the real obstacles. Written before the results; validated by them.</div>
+</div>
+
+<div class="deep-card">
+  <div class="deep-source">Council on Foreign Relations</div>
+  <div class="deep-hl"><a href="https://www.cfr.org/articles/orbans-fall-in-hungary-opens-a-door-for-europe-and-closes-one-for-russia" target="_blank">Orb&aacute;n's Fall Opens a Door for Europe &mdash; and Closes One for Russia</a></div>
+  <div class="deep-sum">Comprehensive post-election analysis covering EU, NATO, and Russia dimensions. Strongest on the Ukraine loan unlock and NATO realignment. Best single source for the "what changes tomorrow" question.</div>
+</div>
+
+<div class="deep-card">
+  <div class="deep-source">European Council on Foreign Relations</div>
+  <div class="deep-hl"><a href="https://ecfr.eu/article/hungarys-election-and-europes-struggle-with-inevitability/" target="_blank">Hungary's Election and Europe's Struggle with Inevitability</a></div>
+  <div class="deep-sum">Frames the election within broader European democratic patterns. Useful for the "is populism receding" question. Correctly cautions that institutional inertia constrains speed of change.</div>
+</div>
+
+<div class="deep-card">
+  <div class="deep-source">European Council on Foreign Relations</div>
+  <div class="deep-hl"><a href="https://ecfr.eu/article/alignment-or-isolation-hungarys-foreign-policy-after-its-parliamentary-election/" target="_blank">Alignment or Isolation: Hungary's Foreign Policy After Its Election</a></div>
+  <div class="deep-sum">Strongest on foreign policy specifics: energy dependence timeline, Paks II constraints, limits of Ukraine realignment. The piece to read when you want to know what Magyar actually can and can't do on the international stage.</div>
+</div>
+
+<div class="deep-card">
+  <div class="deep-source">Atlantic Council</div>
+  <div class="deep-hl"><a href="https://www.atlanticcouncil.org/dispatches/hungary-just-voted-out-viktor-orban-heres-what-to-expect-in-europe-and-beyond/" target="_blank">Experts React: Hungary Just Voted Out Orb&aacute;n</a></div>
+  <div class="deep-sum">Multi-expert roundup. Key data: DFR Lab's Emerson Brooking confirms significant Russian intelligence interference that failed because the margin was too large. Daniel Fried nails the domestic read: economic performance, not geopolitics, drove the outcome.</div>
+</div>
+
+<div class="deep-card">
+  <div class="deep-source">Foreign Affairs</div>
+  <div class="deep-hl"><a href="https://www.foreignaffairs.com/hungary/last-chance-hungary" target="_blank">A Last Chance for Hungary</a></div>
+  <div class="deep-sum">Pre-election analysis characterizing Orb&aacute;n's Hungary as a "mafia state" where political loyalty was the currency of economic access. The piece that best explains what Magyar is actually fighting against: not a party, but an economic ecosystem.</div>
+</div>
+
+<div class="deep-card">
+  <div class="deep-source">Foreign Policy</div>
+  <div class="deep-hl"><a href="https://foreignpolicy.com/2026/04/12/hungary-election-viktor-orban-fidesz-peter-magyar-tisza/" target="_blank">Why Orb&aacute;n's Fidesz Lost</a></div>
+  <div class="deep-sum">Post-election results analysis. Strongest on the domestic drivers: economic stagnation, corruption fatigue, healthcare/education collapse. Best source for "what did voters actually care about" versus the geopolitical narratives that analysts prefer.</div>
+</div>
+
+</div><!-- /reads -->
+
+<!-- ==================== WATCH LIST TAB ==================== -->
+<div id="watch" class="tab-content">
+
+<div class="section-hdr">What to Watch</div>
+
+<div class="watch-item">
+  <div class="watch-label">State TV &amp; Media Reform (Now)</div>
+  Magyar went for state media on Day Three. That's the easy target. The harder media fight is the oligarch-owned private media ecosystem that Fidesz built through economic patronage. Watch whether the media reform extends beyond the state broadcaster into ownership structures. If it doesn't, the propaganda apparatus survives in private hands.
+</div>
+
+<div class="watch-item">
+  <div class="watch-label">Cabinet Formation (May 6-7 &rarr; Mid-May)</div>
+  First appointments signal everything. Justice ministry = judicial reform speed. Defense ministry = NATO credibility. Foreign ministry = EU/Russia orientation. An anti-corruption appointment = whether he's serious about dismantling the patronage system or just talking about it. Speed of formation itself tells you about institutional readiness.
+</div>
+
+<div class="watch-item">
+  <div class="watch-label">Fidesz Opposition Strategy (Next 30 Days)</div>
+  Does Fidesz fracture or consolidate around Orb&aacute;n? Early signals: defections to Tisza, internal leadership challenges, media posture. Consolidation means a potent, organized opposition running the 2002-2010 comeback playbook. Fracture means faster reform but potentially a more extreme right flank (Mi Haz&aacute;nk absorbs Fidesz refugees).
+</div>
+
+<div class="watch-item">
+  <div class="watch-label">EU Funds &amp; August 31 RRF Deadline</div>
+  10.4 billion euros on the line. Magyar is targeting 4 of 27 reform conditions initially. EC officials heading to Budapest. The clock is the constraint, not the politics. If milestones slip, money evaporates, and the entire reform agenda loses its fiscal foundation.
+</div>
+
+<div class="watch-item">
+  <div class="watch-label">Judicial Reform (60-90 Days)</div>
+  Constitutional court appointments, anti-corruption body independence, EPPO accession. This is the benchmark Brussels will use to determine fund releases. It's also where Fidesz's institutional depth will fight hardest, because judicial capture is the cornerstone of everything else.
+</div>
+
+<div class="watch-item">
+  <div class="watch-label">Paks II &amp; Russian Energy (Ongoing)</div>
+  Any review, renegotiation, or reaffirmation of the Rosatom contract. Watch financing terms, timeline adjustments, any third-party involvement. Also watch Gazprom pricing decisions on Druzhba crude, the clearest signal of whether Moscow is trying to use energy leverage actively or passively.
+</div>
+
+<div class="watch-item">
+  <div class="watch-label">Trump Administration Posture (Ongoing)</div>
+  How does Washington handle a NATO ally whose government it publicly opposed? The Vance trip created an unnecessary bilateral irritant. Watch for any signals on the relationship: diplomatic scheduling, trade posture, defense cooperation tone. Does the awkwardness get papered over or does it harden into friction?
+</div>
+
+<div class="section-hdr">Analytical Tensions to Track</div>
+
+<div class="tension-block">
+  <div class="tension-label">The "Brussels Manager" Risk</div>
+  <p>Hungarian-language X commentary is already flagging this. If Magyar is perceived as Brussels' man rather than Hungary's reformer, the nationalist space opens wide for Fidesz and Mi Haz&aacute;nk. He's smart enough to see it: he's keeping the border fence, family tax exemptions, and Druzhba oil priority. That's selective Europeanism, not wholesale adoption. But anti-corruption rhetoric that outpaces delivery on kitchen-table issues is the fastest way to hand the opposition a narrative. Orb&aacute;n will use it. He's already positioning.</p>
+</div>
+
+<div class="tension-block">
+  <div class="tension-label">Euphoria vs. Institutional Reality</div>
+  <p>Every Western capital is celebrating. The analytical community is more cautious. The gap between what Magyar can promise and what he can deliver is measured in years, not weeks. Poland's experience is the precedent: Tusk has been fighting PiS institutional capture for three years and he's still not done. Magyar has a bigger mandate but a thinner party. The euphoria is understandable. It's also dangerous if it creates expectations that no government could meet on any timeline.</p>
+</div>
+
+<div class="tension-block">
+  <div class="tension-label">Energy Dependence vs. Geopolitical Realignment</div>
+  <p>Politically Western, energetically Russian. For eight years. That's the timeline Magyar himself set. Moscow doesn't need a veto when it has a pipeline supplying the majority of your crude and a nuclear plant supplying the majority of your electricity. The tension is structural and it doesn't resolve with goodwill or good intentions. It resolves with infrastructure that doesn't exist yet.</p>
+</div>
+
+<div class="tension-block">
+  <div class="tension-label">The Paks II Paradox</div>
+  <p>A Rosatom megaproject inside a NATO member state, financed by Russian loans, eight years behind schedule, and impossible to cancel without creating an energy crisis. Magyar supports it for rational reasons. Moscow will use it for strategic ones. There is no clean answer. Anyone who tells you there is hasn't looked at the financing terms.</p>
+</div>
+
+<div class="tension-block">
+  <div class="tension-label">The Orb&aacute;n Comeback</div>
+  <p>He did it before. Lost in 2002, spent eight years rebuilding, came back and rewrote the constitution. He's 63, he controls the opposition infrastructure, and he knows every pressure point in the system he built. The worst mistake Magyar could make is assuming the election settled anything permanently. Thucydides could tell you: the defeated power that retains its organizational capacity is the one that comes back. Athens learned that lesson. Magyar should study it.</p>
+</div>
+
+</div><!-- /watch -->
+
+<div class="footer-note">
+  SWAP Report Special Edition &middot; Hungary: After Orb&aacute;n &middot; April 15, 2026<br>
+  Sources: CFR, ECFR, Chatham House, Carnegie, Atlantic Council, Foreign Affairs, Foreign Policy, Bloomberg, PBS, CNN, Al Jazeera, NBC, CNBC, Euronews, Novaya Gazeta, Reuters, OSW, Politico, NYT, AP, The Hill, Washington Post<br>
+  Grok cross-reference integrated April 15, 2026 &middot; Thucydidean framework applied
+</div>
+
+</div><!-- /container -->
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+function setTheme(t) {
+  const b = document.getElementById('body-el');
+  b.className = t;
+}
+</script>
+</body>
+</html>
