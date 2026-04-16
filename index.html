@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THE SWAP REPORT — April 15, 2026</title>
+<title>THE SWAP REPORT — April 16, 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #f5f0e8;
-    --fg: #1a1a1a;
+    --fg: #2c2c2c;
     --accent: #8b0000;
     --muted: #666;
     --border: #d4c9b8;
@@ -16,8 +16,18 @@
     --header-bg: #ede8df;
     --tab-bg: #e8e2d8;
   }
-  .theme-light { --bg:#ffffff; --fg:#1a1a1a; --accent:#8b0000; --muted:#555; --border:#ddd; --card-bg:#f9f9f9; --header-bg:#f0f0f0; --tab-bg:#e8e8e8; }
-  .theme-dark  { --bg:#1a1a2e; --fg:#e0ddd5; --accent:#cc3333; --muted:#9a9a9a; --border:#2e2e4e; --card-bg:#16213e; --header-bg:#0f3460; --tab-bg:#1a1a3e; }
+  .theme-light {
+    --bg:#ffffff; --fg:#1a1a1a; --accent:#8b0000; --muted:#555;
+    --border:#ddd; --card-bg:#f9f9f9; --header-bg:#f0f0f0; --tab-bg:#e8e8e8;
+  }
+  .theme-warm {
+    --bg:#f5f0e8; --fg:#2c2c2c; --accent:#8b0000; --muted:#666;
+    --border:#d4c9b8; --card-bg:#fffdf8; --header-bg:#ede8df; --tab-bg:#e8e2d8;
+  }
+  .theme-dark {
+    --bg:#1a1a2e; --fg:#e0e0e0; --accent:#ff6b6b; --muted:#9a9a9a;
+    --border:#2e2e4e; --card-bg:#16213e; --header-bg:#0f3460; --tab-bg:#1a1a3e;
+  }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); color: var(--fg); font-family: Georgia, serif; font-size: 15px; line-height: 1.7; transition: background 0.2s, color 0.2s; }
@@ -25,38 +35,44 @@
 
   /* Masthead */
   .masthead { padding: 24px 0 16px; border-bottom: 2px solid var(--accent); margin-bottom: 20px; }
+  .masthead-flex { display: flex; justify-content: space-between; align-items: flex-start; }
   .masthead-title { font-family: 'IBM Plex Mono', monospace; font-size: 22px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); }
   .masthead-sub { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; margin-top: 4px; }
-  .masthead-controls { display: flex; justify-content: space-between; align-items: flex-end; }
+  .masthead-epigraph { font-style: italic; font-size: 13px; color: var(--muted); margin-top: 6px; }
   .theme-toggle { display: flex; gap: 6px; }
-  .theme-btn { background: var(--tab-bg); border: 1px solid var(--border); cursor: pointer; padding: 4px 8px; font-size: 14px; border-radius: 3px; }
+  .theme-btn { background: var(--tab-bg); border: 1px solid var(--border); cursor: pointer; padding: 4px 10px; font-size: 15px; border-radius: 3px; transition: border-color 0.15s; }
   .theme-btn:hover { border-color: var(--accent); }
+  .theme-btn.active { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
 
   /* Weather */
   .weather-grid { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
-  .weather-card { flex: 1; min-width: 200px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; padding: 12px 14px; }
+  .weather-card { flex: 1; min-width: 240px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; padding: 12px 14px; }
   .weather-loc { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 6px; }
   .weather-temp { font-size: 26px; font-weight: bold; font-family: 'IBM Plex Mono', monospace; }
   .weather-detail { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); margin-top: 4px; line-height: 1.6; }
-  .weather-alert { color: #c62828; font-size: 11px; font-family: 'IBM Plex Mono', monospace; margin-top: 4px; }
 
   /* Weather search */
-  .weather-search { font-family: 'IBM Plex Mono', monospace; font-size: 11px; margin-top: 8px; }
-  .weather-search input { background: var(--bg); border: 1px solid var(--border); color: var(--fg); padding: 3px 6px; font-size: 11px; font-family: 'IBM Plex Mono', monospace; border-radius: 2px; }
-  .weather-search button { background: var(--accent); color: #fff; border: none; padding: 3px 8px; font-size: 11px; cursor: pointer; border-radius: 2px; margin-left: 4px; }
+  .weather-search-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; padding: 10px 14px; margin-bottom: 16px; }
+  .weather-search-box label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); }
+  .weather-search-row { display: flex; gap: 6px; margin-top: 6px; align-items: center; }
+  .weather-search-row input { background: var(--bg); border: 1px solid var(--border); color: var(--fg); padding: 5px 8px; font-size: 12px; font-family: 'IBM Plex Mono', monospace; border-radius: 3px; flex: 1; max-width: 300px; }
+  .weather-search-row button { background: var(--accent); color: #fff; border: none; padding: 5px 12px; font-size: 11px; font-family: 'IBM Plex Mono', monospace; cursor: pointer; border-radius: 3px; text-transform: uppercase; letter-spacing: 1px; }
+  .weather-search-result { margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); line-height: 1.6; }
 
   /* Market strip */
-  .market-strip { display: flex; flex-wrap: wrap; gap: 10px 20px; padding: 10px 14px; background: var(--header-bg); border-radius: 4px; margin-bottom: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
-  .market-item { display: flex; gap: 5px; align-items: baseline; }
+  .market-strip { display: flex; flex-wrap: wrap; gap: 8px 18px; padding: 10px 14px; background: var(--header-bg); border-radius: 4px; margin-bottom: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
+  .market-item { display: flex; gap: 5px; align-items: baseline; white-space: nowrap; }
   .market-label { color: var(--muted); font-size: 10px; text-transform: uppercase; }
   .market-val { font-weight: 600; }
   .up { color: #2e7d32; }
   .dn { color: #c62828; }
+  .theme-dark .up { color: #66bb6a; }
+  .theme-dark .dn { color: #ef5350; }
   .neutral { color: var(--muted); }
 
   /* Tab bar */
   .tab-bar { display: flex; flex-wrap: wrap; gap: 0; border-bottom: 2px solid var(--border); margin-bottom: 20px; margin-top: 18px; }
-  .tab-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; padding: 8px 12px; cursor: pointer; background: none; border: none; color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -2px; transition: color 0.15s; }
+  .tab-btn { font-family: 'IBM Plex Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; padding: 8px 12px; cursor: pointer; background: none; border: none; color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -2px; transition: color 0.15s; }
   .tab-btn:hover { color: var(--fg); }
   .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
   .tab-content { display: none; }
@@ -64,19 +80,21 @@
 
   /* Section headers */
   .section-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 6px; margin: 24px 0 14px; }
+  .section-hdr:first-child { margin-top: 0; }
 
-  /* Headlines / stories */
+  /* Stories */
   .story { margin-bottom: 18px; position: relative; }
   .headline { font-size: 15px; font-weight: bold; cursor: default; color: var(--fg); }
   .headline a { color: var(--fg); text-decoration: none; }
   .headline a:hover { color: var(--accent); text-decoration: underline; }
   .tags { margin-top: 4px; display: flex; flex-wrap: wrap; gap: 5px; }
   .tag { font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: var(--tab-bg); color: var(--muted); padding: 1px 6px; border-radius: 2px; }
-  .tag-social { background: rgba(139,0,0,0.1); color: var(--accent); }
+  .tag-social { background: rgba(139,0,0,0.12); color: var(--accent); }
+  .tag-early { background: var(--accent); color: #fff; font-weight: 600; }
 
   /* Tooltip */
   .story:hover .tt-box { display: block; }
-  .tt-box { display: none; position: absolute; left: 0; top: calc(100% + 4px); z-index: 100; background: var(--card-bg); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 10px 14px; max-width: 440px; font-size: 13px; line-height: 1.6; color: var(--fg); border-radius: 0 4px 4px 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+  .tt-box { display: none; position: absolute; left: 0; top: calc(100% + 4px); z-index: 100; background: var(--card-bg); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 10px 14px; max-width: 420px; font-size: 13px; line-height: 1.6; color: var(--fg); border-radius: 0 4px 4px 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
   .tt-box p { margin: 0; }
 
   /* BLUF */
@@ -85,7 +103,7 @@
   .bluf p { font-size: 14px; line-height: 1.75; }
 
   /* Watch list */
-  .watch-item { border-left: 3px solid var(--accent); padding: 8px 12px; margin-bottom: 12px; background: var(--card-bg); font-size: 13px; line-height: 1.6; }
+  .watch-item { border-left: 3px solid var(--accent); padding: 8px 12px; margin-bottom: 12px; background: var(--card-bg); font-size: 13px; line-height: 1.6; border-radius: 0 4px 4px 0; }
   .watch-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
 
   /* Deep Reads */
@@ -95,694 +113,799 @@
   .deep-hl a { color: var(--fg); text-decoration: none; }
   .deep-hl a:hover { color: var(--accent); text-decoration: underline; }
   .deep-sum { font-size: 13px; line-height: 1.65; color: var(--muted); margin-bottom: 10px; }
-  .deep-paywall { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-bottom: 8px; font-style: italic; }
   .swaps-take { margin-top: 12px; padding: 10px 14px; background: rgba(139,0,0,0.06); border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0; }
   .swaps-take-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 6px; }
-  .swaps-take p { font-size: 13px; line-height: 1.6; }
+  .swaps-take p { font-size: 13px; line-height: 1.65; }
 
-  /* Social/Signal */
-  .signal-masthead { font-family: 'IBM Plex Mono', monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 6px; }
-  .signal-sources-note { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-bottom: 16px; }
-  .signal-summary-block { margin-bottom: 24px; padding: 12px 16px; background: rgba(139,0,0,0.06); border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0; }
-  .signal-summary-block-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 8px; }
-  .signal-summary-block p { font-size: 14px; line-height: 1.7; }
-  .signal-card { margin-bottom: 16px; padding: 14px 16px; border: 1px solid var(--border); border-radius: 4px; background: var(--card-bg); }
-  .signal-card.early { border-left: 3px solid var(--accent); }
-  .signal-card.unverified { opacity: 0.7; }
-  .signal-meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
-  .signal-body { font-size: 14px; line-height: 1.6; margin-bottom: 8px; }
-  .signal-conv { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); padding-left: 12px; margin-bottom: 8px; font-style: italic; border-left: 2px solid var(--border); }
-  .signal-note { font-size: 13px; line-height: 1.5; color: var(--muted); }
-  .signal-link { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--accent); text-decoration: none; display: inline-block; margin-top: 6px; }
-  .early-badge { font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; background: var(--accent); color: #fff; padding: 2px 6px; border-radius: 2px; margin-right: 8px; vertical-align: middle; }
-  .unverified-badge { font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); border: 1px solid var(--muted); padding: 1px 5px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
-  .social-feed-tag { font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; color: var(--muted); background: var(--tab-bg); padding: 1px 5px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+  /* Social / Signal */
+  .signal-summary { background: rgba(139,0,0,0.05); border-left: 4px solid var(--accent); padding: 14px 18px; margin-bottom: 24px; border-radius: 0 4px 4px 0; }
+  .signal-summary-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 8px; }
+  .signal-summary p { font-size: 14px; line-height: 1.75; }
 
-  /* Top stories in overview */
-  .top-story { padding: 12px 0; border-bottom: 1px solid var(--border); }
-  .top-story:last-child { border-bottom: none; }
+  .social-entry { margin-bottom: 18px; padding: 10px 14px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; }
+  .social-entry.early-signal { border-left: 3px solid var(--accent); }
+  .social-meta { font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 4px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .early-badge { background: var(--accent); color: #fff; padding: 1px 6px; border-radius: 2px; font-weight: 600; font-size: 9px; letter-spacing: 1px; }
+  .social-post { font-size: 13px; line-height: 1.6; margin-bottom: 6px; }
+  .social-convergence { font-size: 12px; line-height: 1.5; color: var(--muted); margin-bottom: 4px; font-style: italic; }
+  .social-note { font-size: 12px; line-height: 1.5; color: var(--muted); }
+  .social-link { font-family: 'IBM Plex Mono', monospace; font-size: 11px; margin-top: 6px; }
+  .social-link a { color: var(--accent); text-decoration: none; }
+  .social-link a:hover { text-decoration: underline; }
 
-  /* Special Editions dropdown */
-  .special-editions { position: relative; display: inline-block; }
-  .se-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; background: var(--tab-bg); border: 1px solid var(--border); color: var(--accent); padding: 5px 10px; border-radius: 3px; cursor: pointer; }
-  .se-btn:hover { border-color: var(--accent); }
-  .se-dropdown { display: none; position: absolute; right: 0; top: calc(100% + 4px); background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; min-width: 260px; box-shadow: 0 4px 12px rgba(0,0,0,0.12); z-index: 200; }
-  .se-dropdown.open { display: block; }
-  .se-dropdown a { display: block; padding: 10px 14px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--fg); text-decoration: none; border-bottom: 1px solid var(--border); }
-  .se-dropdown a:last-child { border-bottom: none; }
-  .se-dropdown a:hover { background: rgba(139,0,0,0.06); color: var(--accent); }
-  .se-date { color: var(--muted); font-size: 10px; display: block; margin-top: 2px; }
+  /* Local */
+  .local-section-title { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin: 20px 0 10px; padding-bottom: 4px; border-bottom: 1px solid var(--border); }
 
-  /* Update log */
-  .update-log { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); padding: 6px 14px; background: var(--header-bg); border-radius: 4px; margin-bottom: 12px; }
-  .update-log strong { color: var(--accent); }
+  /* Lighter Fare */
+  .lighter-card { margin-bottom: 16px; padding: 12px 14px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; }
+  .lighter-hl { font-size: 15px; font-weight: bold; margin-bottom: 6px; }
+  .lighter-hl a { color: var(--fg); text-decoration: none; }
+  .lighter-hl a:hover { color: var(--accent); text-decoration: underline; }
+  .lighter-body { font-size: 13px; line-height: 1.65; color: var(--muted); }
 
-  /* Responsive */
-  @media (max-width: 700px) {
-    .weather-grid { flex-direction: column; }
-    .market-strip { gap: 8px 14px; font-size: 11px; }
-    .tab-btn { padding: 7px 9px; font-size: 10px; }
-    .masthead-title { font-size: 17px; letter-spacing: 2px; }
-    .tt-box { max-width: 300px; position: fixed; left: 10px; right: 10px; top: auto; bottom: 20px; }
+  /* Footer */
+  .footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); text-align: center; letter-spacing: 1px; text-transform: uppercase; }
+
+  @media (max-width: 600px) {
+    .masthead-title { font-size: 16px; letter-spacing: 2px; }
+    .tab-btn { font-size: 10px; padding: 6px 8px; }
+    .tt-box { max-width: 90vw; left: 0; right: 0; }
+    .weather-card { min-width: 100%; }
   }
 </style>
 </head>
-<body class="theme-warm" id="body-el">
+<body class="theme-warm">
 <div class="container">
 
 <!-- MASTHEAD -->
 <div class="masthead">
-  <div class="masthead-controls">
+  <div class="masthead-flex">
     <div>
-      <div class="masthead-title">The SWAP Report</div>
-      <div class="masthead-sub">Wednesday, April 15, 2026 &nbsp;|&nbsp; 0530 CT &nbsp;|&nbsp; Morning Edition</div>
+      <div class="masthead-title">The Swap Report</div>
+      <div class="masthead-sub">Thursday, April 16, 2026 &nbsp;|&nbsp; 0530 CT</div>
+      <div class="masthead-epigraph">&ldquo;What it satisfies to call thinking.&rdquo;</div>
     </div>
-    <div style="display:flex;gap:8px;align-items:flex-end;">
-      <div class="special-editions">
-        <button class="se-btn" onclick="toggleSE()">Special Editions &#9662;</button>
-        <div class="se-dropdown" id="se-menu">
-          <a href="special-editions/hungary-after-orban.html">Hungary: After Orb&aacute;n<span class="se-date">April 15, 2026</span></a>
-        </div>
-      </div>
-      <div class="theme-toggle">
-        <button class="theme-btn" onclick="setTheme('theme-light')" title="Light">&#9728;</button>
-        <button class="theme-btn" onclick="setTheme('theme-warm')" title="Warm">&#128305;</button>
-        <button class="theme-btn" onclick="setTheme('theme-dark')" title="Dark">&#9790;</button>
-      </div>
+    <div class="theme-toggle">
+      <button class="theme-btn" onclick="setTheme('light')" title="Light theme">&#9728;&#65039;</button>
+      <button class="theme-btn active" onclick="setTheme('warm')" title="Warm theme">&#127806;</button>
+      <button class="theme-btn" onclick="setTheme('dark')" title="Dark theme">&#127769;</button>
     </div>
   </div>
-</div>
-
-<!-- UPDATE LOG -->
-<div class="update-log">
-  <strong>Updated 1730 CT</strong> &mdash; Added Special Edition: Hungary After Orb&aacute;n (full six-dimension analysis of the April 12 election, Magyar state TV confrontation, key player profiles, Thucydidean strategic framing).
 </div>
 
 <!-- WEATHER -->
 <div class="weather-grid">
   <div class="weather-card">
-    <div class="weather-loc">Altus, OK &nbsp;&middot;&nbsp; 97 AMW / KLTS</div>
-    <div class="weather-temp">63&deg;F</div>
-    <div class="weather-detail">
-      Mostly Cloudy &middot; High 85&deg; / Low 52&deg;<br>
-      S Wind 15 mph, gusts 23 mph &middot; 70% Precip<br>
-      Sunrise 7:01a &middot; Sunset 8:05p
-    </div>
-    <div class="weather-alert">&#9888; SEVERE WEATHER RISK &mdash; Thunderstorms, some severe early. Damaging winds, large hail, isolated tornado. Flash flood watch in effect.</div>
+    <div class="weather-loc">Altus, OK</div>
+    <div class="weather-temp">87&deg;F</div>
+    <div class="weather-detail">Sunny. Winds S at 12 mph.<br>High 90 / Low 62.</div>
   </div>
   <div class="weather-card">
-    <div class="weather-loc">Charleston, SC &nbsp;&middot;&nbsp; JB CHS / KCHS</div>
-    <div class="weather-temp">73&deg;F</div>
-    <div class="weather-detail">
-      Partly Cloudy &middot; High 73&deg; / Low 61&deg;<br>
-      SE Wind 11 mph &middot; 20% Precip<br>
-      Sunrise 6:42a &middot; Sunset 7:52p
-    </div>
-  </div>
-  <div class="weather-card" style="flex:0 0 auto;min-width:180px;">
-    <div class="weather-loc" style="margin-bottom:8px;">Search Location</div>
-    <div class="weather-search">
-      <input type="text" id="ws-input" placeholder="City, State" style="width:110px;">
-      <button onclick="fetchWeather()">Go</button>
-      <div id="ws-result" style="margin-top:6px;line-height:1.5;font-size:11px;"></div>
-    </div>
+    <div class="weather-loc">Charleston, SC</div>
+    <div class="weather-temp">84&deg;F</div>
+    <div class="weather-detail">Mostly Sunny. Unseasonably warm.<br>High 87 / Low 68. Beaches in the 70s with onshore breeze.</div>
   </div>
 </div>
 
-<!-- MARKET STRIP -->
-<div class="market-strip">
-  <div class="market-item"><span class="market-label">S&amp;P 500</span><span class="market-val up">~5,840 +1.1%</span></div>
-  <div class="market-item"><span class="market-label">DOW</span><span class="market-val up">~43,250 +0.6%</span></div>
-  <div class="market-item"><span class="market-label">NASDAQ</span><span class="market-val up">~18,200 +2.0%</span></div>
-  <div class="market-item"><span class="market-label">NIKKEI</span><span class="market-val up">58,400 +1.0%</span></div>
-  <div class="market-item"><span class="market-label">FTSE 100</span><span class="market-val neutral">~8,350 flat</span></div>
-  <div class="market-item"><span class="market-label">DAX</span><span class="market-val up">~22,800 +0.4%</span></div>
-  <div class="market-item"><span class="market-label">WTI</span><span class="market-val dn">$93.50 -3.3%</span></div>
-  <div class="market-item"><span class="market-label">BRENT</span><span class="market-val dn">$95.91 -3.5%</span></div>
-  <div class="market-item"><span class="market-label">FED FUNDS</span><span class="market-val neutral">4.25%</span></div>
+<!-- Weather Search -->
+<div class="weather-search-box">
+  <label>Search Weather</label>
+  <div class="weather-search-row">
+    <input type="text" id="wxSearchInput" placeholder="Enter city name..." onkeydown="if(event.key==='Enter')searchWeather()">
+    <button onclick="searchWeather()">Search</button>
+  </div>
+  <div id="wxSearchResult" class="weather-search-result"></div>
 </div>
-<div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);padding:4px 0 0 4px;margin-bottom:2px;">Oil sub-$96 on Iran deal optimism. Nasdaq 10-day win streak. S&amp;P approaching record. Approximate figures at 0530 CT.</div>
+
+<!-- MARKET DATA STRIP -->
+<div class="market-strip">
+  <div class="market-item"><span class="market-label">S&amp;P 500</span> <span class="market-val">7,012</span> <span class="up">+0.80%</span></div>
+  <div class="market-item"><span class="market-label">Dow</span> <span class="market-val">42,285</span> <span class="dn">-0.15%</span></div>
+  <div class="market-item"><span class="market-label">Nasdaq</span> <span class="market-val">20,128</span> <span class="up">+1.59%</span></div>
+  <div class="market-item"><span class="market-label">Nikkei</span> <span class="market-val">59,575</span> <span class="up">+2.38%</span></div>
+  <div class="market-item"><span class="market-label">FTSE</span> <span class="market-val">10,578</span> <span class="dn">-0.29%</span></div>
+  <div class="market-item"><span class="market-label">DAX</span> <span class="market-val">24,134</span> <span class="up">+0.28%</span></div>
+  <div class="market-item"><span class="market-label">WTI</span> <span class="market-val">$92.53</span> <span class="dn">+1.2%</span></div>
+  <div class="market-item"><span class="market-label">Brent</span> <span class="market-val">$94.80</span> <span class="dn">+0.9%</span></div>
+  <div class="market-item"><span class="market-label">Fed Rate</span> <span class="market-val neutral">4.25-4.50%</span></div>
+</div>
 
 <!-- TAB BAR -->
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="showTab('overview',this)">Overview</button>
-  <button class="tab-btn" onclick="showTab('defense',this)">Defense</button>
-  <button class="tab-btn" onclick="showTab('strategic',this)">Strategic</button>
-  <button class="tab-btn" onclick="showTab('domestic',this)">Domestic</button>
-  <button class="tab-btn" onclick="showTab('deepreads',this)">Deep Reads</button>
-  <button class="tab-btn" onclick="showTab('social',this)">Social/Signal</button>
-  <button class="tab-btn" onclick="showTab('local',this)">Local</button>
-  <button class="tab-btn" onclick="showTab('lighter',this)">Lighter Fare</button>
+  <button class="tab-btn active" onclick="showTab('overview')">Overview</button>
+  <button class="tab-btn" onclick="showTab('defense')">Defense</button>
+  <button class="tab-btn" onclick="showTab('strategic')">Strategic</button>
+  <button class="tab-btn" onclick="showTab('domestic')">Domestic</button>
+  <button class="tab-btn" onclick="showTab('deepreads')">Deep Reads</button>
+  <button class="tab-btn" onclick="showTab('social')">Social/Signal</button>
+  <button class="tab-btn" onclick="showTab('local')">Local</button>
+  <button class="tab-btn" onclick="showTab('lighter')">Lighter Fare</button>
 </div>
 
-<!-- ================================================ -->
-<!-- OVERVIEW TAB -->
-<!-- ================================================ -->
+<!-- ============================== OVERVIEW ============================== -->
 <div id="tab-overview" class="tab-content active">
 
-  <div class="bluf">
-    <div class="bluf-label">BLUF &mdash; Bottom Line Up Front</div>
-    <p>Three threads connect the April 15 report. The April 21 ceasefire expiry is the governing date for nearly everything: oil prices, market optimism, NATO cohesion, and nuclear deal prospects all hinge on whether a second round of U.S.-Iran talks materializes before Tuesday. The 15-year enrichment gap &mdash; Washington wants a 20-year moratorium, Tehran offered 5 years &mdash; hasn&rsquo;t closed, and markets pricing &ldquo;deal optimism&rdquo; are running ahead of the actual negotiating positions. The Indonesia story deserves more attention than it&rsquo;s receiving: Prabowo signed a U.S. defense pact and flew to Moscow on the same day, showing every swing state in the Indo-Pacific exactly how to extract from both great powers while yielding to neither. And the domestic architecture of the Iran war is quietly fracturing &mdash; SCOTUS killed Trump&rsquo;s tariff authority in February, NATO allies are openly refusing the campaign, and the administration is now threatening to exit the alliance entirely, which has a way of becoming self-fulfilling once adversaries start planning around the possibility. Watch all three threads together. They don&rsquo;t resolve independently.</p>
-  </div>
-
-  <div class="section-hdr">Today&rsquo;s Top Stories</div>
-
-  <div class="top-story">
-    <div class="story">
-      <div class="headline"><a href="https://www.bloomberg.com/news/articles/2026-04-14/us-iran-seek-more-ceasefire-talks-amid-hormuz-blockade" target="_blank">Second Round of U.S.&ndash;Iran Talks Under Discussion &mdash; April 21 Expiry Looms Large</a></div>
-      <div class="tags"><span class="tag">[&rarr; IRAN-DEADLINE]</span><span class="tag">[&rarr; HORMUZ]</span></div>
-      <div class="tt-box"><p>The White House is vetting dates and venues for a second round of talks before the ceasefire expires April 21. VP Vance expected to lead for the U.S. First-round talks in Islamabad collapsed after 21 hours with the core gap unresolved: a 15-year spread on enrichment duration. Markets are pricing deal optimism that the negotiating positions haven&rsquo;t earned yet. Observable indicator: Pakistan gets a formal invitation before this weekend. No invitation by Saturday morning likely means the second round isn&rsquo;t happening before the expiry &mdash; which means the blockade outlives the ceasefire.</p></div>
-    </div>
-  </div>
-
-  <div class="top-story">
-    <div class="story">
-      <div class="headline"><a href="https://foreignpolicy.com/2026/04/15/prabowo-indonesia-russia-putin-visit-us-defense-agreement/" target="_blank">Prabowo Signs U.S. Defense Pact and Visits Putin on the Same Day &mdash; Jakarta&rsquo;s Playbook Emerges</a></div>
-      <div class="tags"><span class="tag">[&rarr; INDO-PACIFIC]</span><span class="tag">[&rarr; SWING-STATES]</span><span class="tag tag-social">[&rarr; SOCIAL CONVERGENCE]</span></div>
-      <div class="tt-box"><p>Indonesian President Prabowo signed a Major Defense Cooperation Partnership with the Pentagon &mdash; covering technology, interoperability, military education &mdash; and the same day flew to Moscow for energy cooperation with Putin. A separate U.S. overflight LOI for blanket access through Indonesian airspace is still in preliminary draft. Jakarta denies it&rsquo;s part of the signed deal. Individual analysts flagged this dual-play 6-8 hours before institutional coverage caught up. This is the hedge management template every Indo-Pacific swing state is now studying.</p></div>
-    </div>
-  </div>
-
-  <div class="top-story">
-    <div class="story">
-      <div class="headline"><a href="https://breakingdefense.com/2026/04/as-2-week-ceasefire-takes-hold-pentagon-touts-decisive-military-victory/" target="_blank">Pentagon Claims &ldquo;Decisive Military Victory&rdquo; From Operation Epic Fury &mdash; 13,000 Targets, 1,700 Missiles Intercepted</a></div>
-      <div class="tags"><span class="tag">[&rarr; IRAN-DEADLINE]</span><span class="tag">[&rarr; THEORY-OF-VICTORY]</span><span class="tag tag-social">[&rarr; SOCIAL CONVERGENCE]</span></div>
-      <div class="tt-box"><p>Pentagon messaging touts decisive results; War on the Rocks drove sustained contrary coverage &mdash; air strikes don&rsquo;t alter IRGC ideological commitment, tactical success isn&rsquo;t strategic success, Phase II is operationally incomplete. The divergence between institutional victory messaging and think-tank skepticism is itself a signal. When multiple credible outlets converge on the same gap on the same day, the gap carries analytical weight. Watch whether official messaging begins articulating measurable political objectives &mdash; the absence of that metric is the tell.</p></div>
-    </div>
-  </div>
-
-  <div class="top-story">
-    <div class="story">
-      <div class="headline"><a href="https://time.com/article/2026/04/01/trump-considering-pulling-us-out-of-nato-iran-war-legal-options/" target="_blank">Trump Threatens NATO Withdrawal &mdash; Allies Openly Refusing Iran War Support</a></div>
-      <div class="tags"><span class="tag">[&rarr; NATO-FRACTURE]</span></div>
-      <div class="tt-box"><p>Spain blocked joint-base use. Germany called it &ldquo;not our war.&rdquo; UK permitted only defensive missions. Trump is now mulling full NATO withdrawal; Rubio called for a &ldquo;reexamination of NATO&rsquo;s value.&rdquo; Congressional approval is required for formal withdrawal &mdash; but adversaries begin planning around the possibility regardless of what Congress does. That anticipatory planning is what changes alliance deterrence, not the formal legal outcome. Meanwhile Trump threatened to unpick the U.S.-UK trade deal over London&rsquo;s refusal, bringing economic levers into the alliance management fight.</p></div>
-    </div>
-  </div>
-
-  <div class="top-story">
-    <div class="story">
-      <div class="headline"><a href="https://www.csis.org/analysis/fragile-us-iran-ceasefire-issues-watch" target="_blank">CSIS: Four Landmines Beneath the Ceasefire Surface &mdash; Nuclear Ambitions, Lebanon Ambiguity, Hormuz Ownership, Proxy Terrorism</a></div>
-      <div class="tags"><span class="tag">[&rarr; IRAN-DEADLINE]</span></div>
-      <div class="tt-box"><p>CSIS identifies four active structural problems: Iran&rsquo;s nuclear program unresolved; Lebanon&rsquo;s inclusion in the ceasefire disputed (Iran/Pakistan say yes; U.S./Israel say no); Hormuz control rights ambiguous at the treaty level; terrorism risk elevated post-strikes. Each independently could detonate the truce. The root cause connecting all four: the ceasefire was negotiated under time pressure without resolving definitional questions. April 21 is the consequence of that choice.</p></div>
-    </div>
-  </div>
-
-  <div class="top-story">
-    <div class="story">
-      <div class="headline"><a href="https://www.defenseone.com/technology/2026/04/put-nuclear-reactors-space-within-few-years-white-house-tells-pentagon/412847/" target="_blank">White House Orders Nuclear Reactors to Space by 2028 &mdash; Pentagon and NASA Get an Aggressive Mandate</a></div>
-      <div class="tags"><span class="tag">[&rarr; SPACE-NUCLEAR]</span></div>
-      <div class="tt-box"><p>Nuclear fission reactors to orbit by 2028, lunar surface by 2030. Military applications: space-based data centers, missile warning, strategic comms. The timeline is aggressive; the mandate signals deliberate prioritization of cislunar operations that adversaries will read as strategic. China&rsquo;s response to this announcement &mdash; whether public silence or accelerated cislunar activity &mdash; is more analytically interesting than the announcement itself.</p></div>
-    </div>
-  </div>
-
-  <div class="top-story">
-    <div class="story">
-      <span class="social-feed-tag">Social Feed</span><span class="early-badge">EARLY</span>
-      <div class="headline" style="margin-top:5px;">@DarkWireIntel: Hormuz Standoff Puts Oil at $104 &mdash; Largest Inflation Risk Since 2022</div>
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-top:4px;">Individual Analyst &middot; Conflict and Crisis &middot; Notable</div>
-      <div style="font-size:13px;line-height:1.6;color:var(--muted);margin-top:6px;">Flagged the active naval standoff&rsquo;s energy and inflation implications for Japan, South Korea, India, and China before institutional framing caught up. Oil has since retreated below $96 on deal optimism &mdash; the analyst was ahead of both the peak narrative and the pullback.</div>
-    </div>
-  </div>
-
-  <div class="top-story">
-    <div class="story">
-      <span class="social-feed-tag">Social Feed</span><span class="early-badge">EARLY</span>
-      <div class="headline" style="margin-top:5px;">@WarOnTheRocks: Dead Sea Bromine Supplies in Missile Range &mdash; Semiconductor Memory Chips at Risk</div>
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-top:4px;">Institutional &middot; Conflict and Crisis &middot; High</div>
-      <div style="font-size:13px;line-height:1.6;color:var(--muted);margin-top:6px;">The global bromine supply for DRAM and NAND memory chips sits within missile range of current conflict zones. No mainstream outlet has picked this up. A conflict expansion could cascade into defense and commercial microelectronics within weeks. Defense procurement implication is direct.</div>
-    </div>
-  </div>
-
-  <div class="section-hdr">Watch List</div>
-
-  <div class="watch-item">
-    <div class="watch-label">April 21 Ceasefire Expiry</div>
-    Watch for a formal Pakistan invitation or alternative venue announcement before this weekend. No invitation by Saturday morning = second round likely isn&rsquo;t happening before expiry. Blockade outliving the ceasefire is a structurally different crisis.
-  </div>
-  <div class="watch-item">
-    <div class="watch-label">Iran Enrichment Gap</div>
-    U.S. wants 20 years; Iran offered 5. Watch for any reporting of a proposed midpoint (10&ndash;12 years) as a signal the gap is closeable. No midpoint proposal by end of week = talks are performative.
-  </div>
-  <div class="watch-item">
-    <div class="watch-label">NATO Congressional Action</div>
-    Formal NATO withdrawal requires Congressional approval. Watch whether House Armed Services or Senate Foreign Relations move to bind the executive &mdash; or stay quiet, which is its own signal about institutional deference.
-  </div>
-  <div class="watch-item">
-    <div class="watch-label">Bromine / Semiconductor Supply Chain</div>
-    The underreported chokepoint. Monitor chip producers &mdash; Samsung, Micron, SK Hynix &mdash; for any production guidance language on input supply risk. Dead Sea bromine has no fast substitute.
-  </div>
-
+<div class="bluf">
+  <div class="bluf-label">BLUF &mdash; Bottom Line Up Front</div>
+  <p>The ceasefire-blockade paradox enters its fourth day with both sides publicly denying what the AP reports they privately agreed to: an in-principle extension of the truce past April 21. Pakistan's army chief landed in Tehran yesterday carrying a message from Washington, which means the channel is active even while the blockade squeezes. Markets are buying the optimism at face value, pushing the S&amp;P past 7,000 for the first time and treating the war as a solved problem. They are pricing the political timeline, not the physical one. Even a signed deal won't reopen Hormuz overnight: mine-clearing alone takes weeks, damaged Iranian oil infrastructure takes years, and the fertilizer-precursor cascade is already in motion. Meanwhile, the IMF's April outlook quantifies what everyone can feel: growth slashed to 3.1% in the best case, 2% in the severe scenario, and Russia pocketing an estimated $45&ndash;151 billion windfall that directly funds its Sumy offensive. The war America is fighting is generating revenue for the war America wants to end.</p>
 </div>
 
-<!-- ================================================ -->
-<!-- DEFENSE TAB -->
-<!-- ================================================ -->
+<div class="section-hdr">Watch List</div>
+
+<div class="watch-item">
+  <div class="watch-label">Watch 1</div>
+  Pakistan formal invitation for second round by Saturday April 18 remains the observable signal. Without it, the April 21 expiry forces a binary: extend unilaterally or let the ceasefire lapse with the blockade in effect.
+</div>
+<div class="watch-item">
+  <div class="watch-label">Watch 2</div>
+  The Rich Starry precedent. A sanctioned Chinese tanker successfully transited the blockade on Day 1. If Beijing tests again with escort, the blockade becomes a great-power confrontation overnight.
+</div>
+<div class="watch-item">
+  <div class="watch-label">Watch 3</div>
+  SCOTUS birthright citizenship and agency-power decisions due before term ends. Either could reshape executive authority at a moment when the administration is leaning on emergency powers for both defense spending and trade.
+</div>
+<div class="watch-item">
+  <div class="watch-label">Watch 4</div>
+  Russia's Sumy drone barrage (327+ confirmed, possibly 1,000+) may signal the 2026 spring offensive. Watch whether ground advances follow or this is attritional pressure without territorial objectives.
+</div>
+
+<div class="section-hdr">Today's Top Stories</div>
+
+<!-- Story 1 -->
+<div class="story">
+  <div class="headline"><a href="https://www.mediaite.com/media/news/breaking-us-and-iran-reportedly-reach-in-principle-agreement-to-extend-ceasefire/" target="_blank">1. Ceasefire extension &lsquo;in principle&rsquo; &mdash; but nobody will say so on the record</a></div>
+  <div class="tags"><span class="tag">&rarr; Iran Paradox</span></div>
+  <div class="tt-box"><p>AP reports the U.S. and Iran have given an &quot;in principle agreement&quot; to extend the ceasefire past April 21. A senior U.S. official says Washington has not formally agreed. Pakistan&rsquo;s army chief is in Tehran with a new message from Washington. The gap between the AP report and the U.S. denial is itself analytically significant: both sides want the extension but neither can afford to be seen asking for it.</p></div>
+</div>
+
+<!-- Story 2 -->
+<div class="story">
+  <div class="headline"><a href="https://www.aljazeera.com/news/2026/4/16/trump-says-israel-and-lebanons-leaders-will-speak-on-thursday" target="_blank">2. Israel and Lebanon leaders to speak for first time in 34 years</a></div>
+  <div class="tags"><span class="tag">&rarr; Iran Paradox</span></div>
+  <div class="tt-box"><p>Trump announced the leaders will speak Thursday, following a trilateral meeting convened by Rubio on April 14 with Israeli and Lebanese ambassadors. The first major diplomatic contact since 1993 suggests Washington is building a parallel track to isolate the Lebanon front from Iran negotiations. Watch whether Israel agrees to pause Operation Eternal Darkness as a confidence measure.</p></div>
+</div>
+
+<!-- Story 3 -->
+<div class="story">
+  <div class="headline"><a href="https://www.cnbc.com/2026/04/15/us-strait-of-hormuz-blockade-navy-iran-seaborne-trade-oil.html" target="_blank">3. U.S. blockade &lsquo;fully implemented&rsquo; &mdash; 8 tankers turned back, one Chinese tanker slipped through</a></div>
+  <div class="tags"><span class="tag">&rarr; Iran Paradox</span> <span class="tag">&rarr; China Calculus</span></div>
+  <div class="tt-box"><p>CENTCOM reports 10,000+ personnel enforcing the blockade with 21+ warships. Eight Iran-linked tankers intercepted and turned back. But the sanctioned Chinese tanker Rich Starry transited after initial interception. The Rich Starry is the most underreported data point in today&rsquo;s coverage: it tests whether the blockade is against Iran or against anyone trading with Iran, and the answer has different implications for Beijing.</p></div>
+</div>
+
+<!-- Story 4 -->
+<div class="story">
+  <div class="headline"><a href="https://www.imf.org/en/publications/weo/issues/2026/04/14/world-economic-outlook-april-2026" target="_blank">4. IMF slashes growth to 3.1%, warns of 2% recession scenario</a></div>
+  <div class="tags"><span class="tag">&rarr; Economic Fallout</span></div>
+  <div class="tt-box"><p>The April World Economic Outlook projects 3.1% growth assuming a short conflict, 2.5% if oil stays at $100, and 2% in the severe case. Global inflation forecast raised to 4.4%. The Middle East growth forecast cratered from 3.9% to 1.1%. The IMF&rsquo;s most dangerous finding isn&rsquo;t the headline number; it&rsquo;s that even the optimistic scenario has already been downgraded.</p></div>
+</div>
+
+<!-- Story 5 -->
+<div class="story">
+  <div class="headline"><a href="https://www.cnbc.com/2026/04/15/stock-market-today-live-updates.html" target="_blank">5. S&amp;P 500 breaks 7,000 &mdash; markets erase all Iran war losses</a></div>
+  <div class="tags"><span class="tag">&rarr; Economic Fallout</span></div>
+  <div class="tt-box"><p>The S&amp;P 500 and Nasdaq hit record highs Wednesday, completing a two-week recovery that erased all war-related losses. Markets are pricing deal optimism while the IMF projects recession scenarios. The disconnect between market euphoria and IMF warning is the tension to watch. If the ceasefire lapses April 21, the correction will be sharper for having climbed this high.</p></div>
+</div>
+
+<!-- Story 6 -->
+<div class="story">
+  <div class="headline"><a href="https://kyivindependent.com/ukraine-war-latest-russian-ignores-easter-ceasefire/" target="_blank">6. Russia hammers Ukraine with 327+ drones, dozens of missiles in largest single attack</a></div>
+  <div class="tags"><span class="tag">&rarr; Russia Windfall</span></div>
+  <div class="tt-box"><p>Russia launched its biggest aerial barrage of the war overnight April 14&ndash;15, killing at least 16 civilians. Pro-Ukrainian analysts claim 1,000+ drones total. ISW confirms ground advances in Sumy Oblast. The Perplexity cross-check flags the 1,000 figure as single-source (YouTube channel) against the official 327 count. Treat with caution, but the operational direction is clear.</p></div>
+</div>
+
+<!-- Story 7 -->
+<div class="story">
+  <div class="headline"><a href="https://www.npr.org/2026/04/15/nx-s1-5786715/live-nation-ticketmaster-antitrust-verdict-monopoly" target="_blank">7. Live Nation found to be illegal monopoly</a></div>
+  <div class="tags"><span class="tag">&rarr; Antitrust</span></div>
+  <div class="tt-box"><p>A federal jury found Live Nation and Ticketmaster illegally monopolized the concert ticketing market, overcharging fans $1.72 per ticket. The DOJ had settled before trial, but state AGs continued the case. A second trial will determine remedies including possible breakup. This is the most consequential antitrust verdict since AT&amp;T, and it happened because state AGs rejected the federal settlement.</p></div>
+</div>
+
+<!-- Story 8 -->
+<div class="story">
+  <div class="headline"><a href="https://x.com/Southcom/status/2044602968704504194" target="_blank">8. SOUTHCOM kills three on narco-trafficking vessel in Eastern Pacific</a></div>
+  <div class="tags"><span class="tag tag-social">Social Feed</span></div>
+  <div class="tt-box"><p>Joint Task Force Southern Spear conducted a lethal kinetic strike on a narco-trafficking vessel, killing three individuals linked to designated terrorist organizations. No U.S. forces harmed. The strike demonstrates lethal-force willingness against narco-terror networks in international waters while attention is focused on Iran.</p></div>
+</div>
+
+<!-- Story 9 -->
+<div class="story">
+  <div class="headline"><a href="https://x.com/usairforce/status/2044524068146188619" target="_blank">9. Air Force and Space Force both hit FY26 recruiting goals five months early</a></div>
+  <div class="tags"><span class="tag tag-social">Social Feed</span></div>
+  <div class="tt-box"><p>The Air Force enlisted 32,750 active-duty airmen for FY26, five months ahead of schedule, with the largest Delayed Entry Program in a decade. The Space Force hit its 730-Guardian goal on the same timeline. Simultaneous early recruiting wins in technically oriented services are a positive personnel signal at a time when retention and readiness are under scrutiny.</p></div>
+</div>
+
+<!-- Story 10 -->
+<div class="story">
+  <div class="headline"><a href="https://breakingdefense.com/2026/04/the-pentagon-wants-a-188-percent-bump-for-missile-procurement-can-industry-deliver/" target="_blank">10. Pentagon wants 188% missile procurement increase &mdash; can industry deliver?</a></div>
+  <div class="tags"><span class="tag">&rarr; Budget Reality</span></div>
+  <div class="tt-box"><p>The FY27 budget requests nearly quadrupling AMRAAM production from 464 to 1,811. The question isn&rsquo;t whether the money is in the budget; it&rsquo;s whether the industrial base can physically produce at that rate. CSIS cost tracking shows the Iran war has already consumed substantial munition stocks, and the $1.5T budget depends on $350B in reconciliation that Congress hasn&rsquo;t passed.</p></div>
+</div>
+
+</div><!-- /overview -->
+
+<!-- ============================== DEFENSE ============================== -->
 <div id="tab-defense" class="tab-content">
-  <div class="section-hdr">Around the Force</div>
 
-  <div class="story">
-    <div class="headline"><a href="https://breakingdefense.com/2026/04/as-2-week-ceasefire-takes-hold-pentagon-touts-decisive-military-victory/" target="_blank">Pentagon Touts &ldquo;Decisive Victory&rdquo; From Operation Epic Fury &mdash; War on the Rocks Asks: Toward What End?</a></div>
-    <div class="tags"><span class="tag">[&rarr; IRAN-DEADLINE]</span><span class="tag">[&rarr; THEORY-OF-VICTORY]</span></div>
-    <div class="tt-box"><p>13,000 targets struck, 1,700 ballistic missiles intercepted by U.S. and Gulf partner forces. Defense production capacity across Iran described as &ldquo;crippled.&rdquo; What&rsquo;s missing from the messaging: a measurable political objective, evidence that Iran&rsquo;s nuclear calculus has shifted, or acknowledgment that IRGC ideology is unrelated to the number of buildings destroyed. Tactical success is documented. Strategic success requires evidence the other side changed something that matters.</p></div>
-  </div>
+<div class="section-hdr">Around the Force</div>
 
-  <div class="story">
-    <div class="headline"><a href="https://www.defenseone.com/technology/2026/04/put-nuclear-reactors-space-within-few-years-white-house-tells-pentagon/412847/" target="_blank">White House Orders Pentagon and NASA: Nuclear Reactors in Orbit by 2028, Moon by 2030</a></div>
-    <div class="tags"><span class="tag">[&rarr; SPACE-NUCLEAR]</span></div>
-    <div class="tt-box"><p>The mandate covers fission reactors for space-based data centers, persistent missile warning, and strategic comms infrastructure. The 2028 orbital timeline is 22 months out &mdash; aggressive for nuclear certification. The strategic signal matters more than the timeline: the U.S. is explicitly prioritizing cislunar power projection. Adversary response, especially Chinese acceleration of lunar military infrastructure, is what to watch for in the 90-day window after this announcement.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline"><a href="https://www.stripes.com/branches/air_force/2026-04-14/air-force-270-million-lightweight-drones-21374635.html" target="_blank">Air Force Strikes $270M Deal for Solar-Powered Lightweight UAS &mdash; Ukraine-Tested Software Included</a></div>
-    <div class="tags"><span class="tag">[&rarr; UAS-ACQUISITION]</span></div>
-    <div class="tt-box"><p>The K1000ULE by Kraus Hamdani Aerospace: solar-powered, two-person deployable scout drone already in limited use with Army Special Forces and the 1st Multi-Domain Task Force. Software incorporates Ukraine-Russia combat lessons. This is the acquisition bureaucracy actually moving at the pace an active conflict demands &mdash; field testing, demonstrated reliability, procurement follow-through in under 18 months.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline"><a href="https://www.defenseone.com/policy/2026/04/Air-Force-F-47-fighter-jet-navy/412632/" target="_blank">F-47 Nets $3.5B in Total Funding &mdash; Navy&rsquo;s F/A-XX Gets Millions While Air Force Gets Billions</a></div>
-    <div class="tags"><span class="tag">[&rarr; BUDGET]</span></div>
-    <div class="tt-box"><p>F-47 received $2.5B base budget plus $900M reconciliation. Navy F/A-XX received a fraction. The disparity reflects either deliberate Air Force prioritization of sixth-gen capability or a budget fight the Navy is quietly losing. Given that carrier air power was directly employed in the Iran campaign, F/A-XX advocates on the Hill have a timely argument to make &mdash; watch whether they use it in the supplemental cycle.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline"><a href="https://breakingdefense.com/2026/04/pentagon-boeing-announce-plan-to-triple-patriot-pac-3-seeker-production/" target="_blank">Pentagon and Boeing Plan to Triple Patriot PAC-3 Seeker Production After Blockbuster Intercept Count</a></div>
-    <div class="tags"><span class="tag">[&rarr; MUNITIONS-SURGE]</span></div>
-    <div class="tt-box"><p>Following 1,700 reported intercepts in Epic Fury, the PAC-3 inventory drawdown was real. Tripling seeker production is the expected response &mdash; but the defense industrial base bottleneck isn&rsquo;t the budget line, it&rsquo;s factory floor capacity and supply chain depth. Watch for facility expansion announcements and workforce hiring signals as the more reliable leading indicators of actual delivery timelines.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline"><a href="https://breakingdefense.com/2026/04/the-pentagon-wants-a-188-percent-bump-for-missile-procurement-can-industry-deliver/" target="_blank">Pentagon Requests 188% Missile Procurement Increase &mdash; Experts Say Industry Can&rsquo;t Keep Up</a></div>
-    <div class="tags"><span class="tag">[&rarr; MUNITIONS-SURGE]</span></div>
-    <div class="tt-box"><p>A 188% procurement spike collides with multi-year lead times for precision munitions manufacturing. Pouring money into a budget line doesn&rsquo;t manufacture missiles faster if factory capacity, workforce, and supply chains can&rsquo;t match. The gap between what&rsquo;s budgeted and what&rsquo;s actually delivered in 36 months will likely be significant. Factory expansion announcements are the leading indicator to watch, not the budget request itself.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline"><a href="https://www.defenseone.com/technology/2026/04/aircraft-losses-mount-pentagon-wants-software-fix-see-through-fog-war/412667/" target="_blank">Aircraft Losses Reveal Common Operating Picture Gap &mdash; DIU Seeks Software Fix From Epic Fury Lessons</a></div>
-    <div class="tags"><span class="tag">[&rarr; LESSONS-LEARNED]</span></div>
-    <div class="tt-box"><p>The Defense Innovation Unit is soliciting open-architecture software to fuse real-time data on moving objects, threats, and conditions &mdash; driven directly by U.S. aircraft lacking a common operating picture during Epic Fury. Iranian air defense performance against this gap will be analyzed closely by both China and Russia. The acquisition pathway and fielding timeline will determine whether the fix arrives before the next contingency or after it.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline"><a href="https://www.militarytimes.com/news/pentagon-congress/2026/04/14/pentagons-women-in-combat-review-reassigned-deadline-extended/" target="_blank">Women-in-Combat Review Transferred from IDA to Johns Hopkins APL &mdash; Deadline Extended</a></div>
-    <div class="tags"><span class="tag">[&rarr; PERSONNEL-POLICY]</span></div>
-    <div class="tt-box"><p>Mid-process reassignment of a politically sensitive review is itself a signal. Either IDA was producing outputs the Pentagon found unhelpful, or the new administrator wants different framing. APL products tend to be more operationally oriented than IDA&rsquo;s policy-focused work. Watch the final report for how performance data is weighted against operational cohesion arguments &mdash; the weighting will reveal the predetermined conclusion more than the data will.</p></div>
-  </div>
-
+<!-- Defense 1 -->
+<div class="story">
+  <div class="headline"><a href="https://www.cnbc.com/2026/04/15/us-strait-of-hormuz-blockade-navy-iran-seaborne-trade-oil.html" target="_blank">1. U.S. blockade enters Day 4 &mdash; Adm. Cooper completes second regional swing in 15 days</a></div>
+  <div class="tags"><span class="tag">&rarr; Iran Paradox</span></div>
+  <div class="tt-box"><p>CENTCOM commander visited six countries and U.S. forces on the ground during his second Middle East trip in two weeks. The operational tempo signals sustained command focus on partner coordination. Two regional swings in 15 days during a ceasefire that is supposed to be winding down tells you the command isn&rsquo;t planning for peace.</p></div>
 </div>
 
-<!-- ================================================ -->
-<!-- STRATEGIC TAB -->
-<!-- ================================================ -->
+<!-- Defense 2 -->
+<div class="story">
+  <div class="headline"><a href="https://breakingdefense.com/2026/04/the-pentagon-wants-a-188-percent-bump-for-missile-procurement-can-industry-deliver/" target="_blank">2. Pentagon wants 188% missile procurement bump &mdash; 1,811 AMRAAMs in FY27</a></div>
+  <div class="tags"><span class="tag">&rarr; Budget Reality</span></div>
+  <div class="tt-box"><p>The Air Force and Navy request nearly quadrupled AMRAAM production in FY27. The Iran war is consuming missiles faster than the industrial base replaces them. The CSIS cost tracker shows $11.3B spent in the first six days alone. The gap between budget ambition and industrial capacity is the load-bearing assumption in the entire $1.5T request.</p></div>
+</div>
+
+<!-- Defense 3 -->
+<div class="story">
+  <div class="headline"><a href="https://www.defenseone.com/technology/2026/04/aircraft-losses-mount-pentagon-wants-software-fix-see-through-fog-war/412667/" target="_blank">3. Aircraft losses mount &mdash; Pentagon wants software fix for fog of war</a></div>
+  <div class="tags"><span class="tag">&rarr; Iran Paradox</span></div>
+  <div class="tt-box"><p>U.S. aircraft lost in the Middle East since Operation Epic Fury all lacked a common operating picture with relevant intelligence and data integration. The Pentagon is developing software solutions to close the gap. When every downed aircraft traces to the same deficiency, that&rsquo;s not bad luck; it&rsquo;s a systemic failure in information architecture that doctrine assumed had been solved.</p></div>
+</div>
+
+<!-- Defense 4 -->
+<div class="story">
+  <div class="headline"><a href="https://www.airforcetimes.com/news/pentagon-congress/2026/04/14/pentagons-women-in-combat-review-reassigned-deadline-extended/" target="_blank">4. Women-in-combat study reassigned to JHU Applied Physics Lab</a></div>
+  <div class="tags"><span class="tag">&rarr; Force Structure</span></div>
+  <div class="tt-box"><p>The Pentagon moved its women-in-combat review from IDA to Johns Hopkins APL, extending the deadline by 12 months. Now called the Performance, Readiness, and Integrated Mission Effectiveness Assessment. The name change and institutional shift suggest the study is being repositioned. Whether the APL study produces a different conclusion than IDA would have is the question nobody is asking publicly.</p></div>
+</div>
+
+<!-- Defense 5 -->
+<div class="story">
+  <div class="headline"><a href="https://www.stripes.com/branches/air_force/2026-04-08/air-force-fy-2026-aviation-bonus-program-21319341.html" target="_blank">5. Air Force and Space Force hit FY26 recruiting goals five months early</a></div>
+  <div class="tags"><span class="tag">&rarr; Force Structure</span></div>
+  <div class="tt-box"><p>USAF enlisted 32,750 active-duty airmen ahead of schedule with the largest Delayed Entry Program in a decade. Space Force hit its 730-Guardian goal on the same timeline. Two technically-oriented services achieving early recruiting success is a positive personnel signal. The question is whether a war economy is driving enlistment or whether institutional reforms are working.</p></div>
+</div>
+
+<!-- Defense 6 -->
+<div class="story">
+  <div class="headline"><a href="https://www.airforcetimes.com/news/your-military/2026/04/09/the-air-force-is-putting-big-money-behind-its-effort-to-keep-aviators-in-the-service/" target="_blank">6. Air Force aviation bonuses hit $50K annually to retain pilots</a></div>
+  <div class="tags"><span class="tag">&rarr; Force Structure</span></div>
+  <div class="tt-box"><p>Updated aviation bonus programs offer higher compensation for shorter contract lengths, particularly in fighter, bomber, and U-2 communities. The Air Force is paying market rates for talent it can&rsquo;t afford to lose. When bonus programs grow this large, the underlying retention problem hasn&rsquo;t been solved by institutional reforms; it&rsquo;s being masked by cash.</p></div>
+</div>
+
+<!-- Defense 7 -->
+<div class="story">
+  <div class="headline"><a href="https://www.airforcetimes.com/news/pentagon-congress/2026/04/10/pentagon-faa-sign-agreement-on-deploying-anti-drone-laser-system-near-mexico/" target="_blank">7. Pentagon/FAA deploy anti-drone laser system near Mexico border</a></div>
+  <div class="tags"><span class="tag">&rarr; Homeland</span></div>
+  <div class="tt-box"><p>The FAA signed off on a high-energy laser counter-drone system along the southern border after testing validated safety controls. The overlap between counter-drone technology developed for theaters like Iran and homeland applications is accelerating. Technology designed for Hormuz is being deployed on the Rio Grande.</p></div>
+</div>
+
+<!-- Defense 8 -->
+<div class="story">
+  <div class="headline"><a href="https://x.com/USSpaceForce/status/2044526859673616789" target="_blank">8. Space Force releases Future Operating Environment and Objective Force documents</a></div>
+  <div class="tags"><span class="tag">&rarr; Force Structure</span></div>
+  <div class="tt-box"><p>The Chief of Space Operations released doctrinal planning documents ahead of schedule, outlining the future force design for the space domain. Doctrinal releases alongside recruiting wins suggest a service building its institutional identity on purpose, not by accident.</p></div>
+</div>
+
+</div><!-- /defense -->
+
+<!-- ============================== STRATEGIC ============================== -->
 <div id="tab-strategic" class="tab-content">
-  <div class="section-hdr">Strategic Picture</div>
 
-  <div class="story">
-    <div class="headline"><a href="https://foreignpolicy.com/2026/04/15/prabowo-indonesia-russia-putin-visit-us-defense-agreement/" target="_blank">Prabowo Visits Putin, Signs U.S. Defense Pact Same Day &mdash; The Indo-Pacific Hedge Template Is Live</a></div>
-    <div class="tags"><span class="tag">[&rarr; INDO-PACIFIC]</span><span class="tag">[&rarr; SWING-STATES]</span><span class="tag tag-social">[&rarr; SOCIAL CONVERGENCE]</span></div>
-    <div class="tt-box"><p>Indonesia&rsquo;s Major Defense Cooperation Partnership with the Pentagon covers tech development, operational readiness, military education. A separate overflight LOI for blanket U.S. military access through Indonesian airspace is still in preliminary draft &mdash; neither final nor binding. Jakarta&rsquo;s denial that the overflight agreement is part of the signed deal is technically accurate and diplomatically useful: it preserves the ability to slow-roll the airspace provision if Chinese pressure becomes severe, while collecting partnership benefits in the interim. Beijing is studying this, not alarmed by it.</p></div>
-  </div>
+<div class="section-hdr">Strategic Picture</div>
 
-  <div class="story">
-    <div class="headline"><a href="https://time.com/article/2026/04/01/trump-considering-pulling-us-out-of-nato-iran-war-legal-options/" target="_blank">Trump Threatens NATO Withdrawal as Allies Refuse Iran War Support &mdash; Alliance Architecture at Risk</a></div>
-    <div class="tags"><span class="tag">[&rarr; NATO-FRACTURE]</span></div>
-    <div class="tt-box"><p>Spain blocked joint-base access. Germany: &ldquo;not our war.&rdquo; UK: defensive missions only. Trump now mulling full withdrawal; Rubio calling for &ldquo;reexamination.&rdquo; Congressional approval is required for formal exit &mdash; but the strategic damage doesn&rsquo;t wait for the legal process. Adversaries begin planning around the possibility regardless of Congressional action. The practical risk: once that planning assumption is baked in, the deterrence value of NATO is degraded before a single treaty article changes. Meanwhile, Trump threatened to kill the U.S.-UK trade deal &mdash; bringing economic leverage into alliance management for the first time in the modern period.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline"><a href="https://www.bloomberg.com/news/articles/2026-04-14/us-iran-seek-more-ceasefire-talks-amid-hormuz-blockade" target="_blank">U.S.&ndash;Iran Second Round Talks Under Discussion &mdash; Enrichment Gap and April 21 Are Both Unresolved</a></div>
-    <div class="tags"><span class="tag">[&rarr; IRAN-DEADLINE]</span><span class="tag">[&rarr; HORMUZ]</span></div>
-    <div class="tt-box"><p>Vance expected to lead a second round if a meeting is arranged. The core problem: 15-year spread on enrichment duration hasn&rsquo;t moved. Iran calling the White House April 14 is a signal of willingness to negotiate, not a concession on terms. Blockade in effect, ceasefire expiring in six days, and markets pricing deal optimism that the actual positions don&rsquo;t support. The observable indicator is a Pakistan invitation by Saturday. Without one, the diplomatic language is covering an impasse.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline"><a href="https://warontherocks.com/2026/04/how-the-war-with-iran-ends/" target="_blank">War on the Rocks: How the Iran War Ends &mdash; Three Scenarios, None Easy</a></div>
-    <div class="tags"><span class="tag">[&rarr; IRAN-DEADLINE]</span><span class="tag">[&rarr; THEORY-OF-VICTORY]</span></div>
-    <div class="tt-box"><p>Three endings examined: negotiated settlement with nuclear constraints, prolonged attrition, or internal regime collapse. The administration has defined success as Iran without nukes, navy, Hormuz leverage, AND proxy networks &mdash; achieving all four through airpower alone has no historical precedent. The 1991 parallel is the right one: regime survived, post-war settlement produced a generation of consequences. The piece&rsquo;s implicit warning is that failure to build a day-after plan before the shooting stops is how &ldquo;victory&rdquo; becomes the predecessor to the next crisis.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline"><a href="https://www.imf.org/en/news/articles/2026/04/14/tr-04142026-press-briefing-transcript-world-economic-outlook-spring-meetings-2026" target="_blank">IMF Cuts Global Growth to 3.1%, Raises Inflation to 4.4% &mdash; Iran War Is Primary Driver</a></div>
-    <div class="tags"><span class="tag">[&rarr; GLOBAL-ECONOMY]</span></div>
-    <div class="tt-box"><p>Low-income energy importers &mdash; South Asia, Sub-Saharan Africa &mdash; are &ldquo;highly exposed&rdquo; with limited fiscal buffers. The inflation print at 4.4% globally while the Fed sits at 4.25% creates a dilemma: a peace deal that reopens Hormuz could allow a June cut; a collapsed ceasefire pushes that window to late 2026 at best. The Fed&rsquo;s options are materially constrained by a geopolitical variable outside its control. That constraint is itself an argument for a deal &mdash; if the administration is listening to it.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline"><a href="https://www.csis.org/analysis/irans-real-war-against-global-economy" target="_blank">CSIS: Iran&rsquo;s Real War Is Against the Global Economy &mdash; Hormuz as Coercive Lever, Not Battlefield</a></div>
-    <div class="tags"><span class="tag">[&rarr; HORMUZ]</span><span class="tag">[&rarr; GLOBAL-ECONOMY]</span></div>
-    <div class="tt-box"><p>Iran closed Hormuz not to win a military confrontation but to impose economic costs on parties &mdash; India, China, Japan, South Korea, Europe &mdash; who have no role in the U.S.-Iran conflict and can&rsquo;t translate their pain into direct pressure on the negotiating table. This is coercive leverage against the global system, not a military strategy against the U.S. The doctrine implication: you don&rsquo;t need a fleet to close a strait. Iran demonstrated this despite losing 90% of its navy. That lesson is not lost on Beijing.</p></div>
-  </div>
-
+<!-- Strategic 1 -->
+<div class="story">
+  <div class="headline"><a href="https://www.aljazeera.com/news/2026/4/15/us-iran-talks-whats-the-latest-on-mediation-efforts" target="_blank">1. Ceasefire extension nearing &lsquo;in principle&rsquo; &mdash; Pakistan army chief in Tehran</a></div>
+  <div class="tags"><span class="tag">&rarr; Iran Paradox</span></div>
+  <div class="tt-box"><p>AP reports an in-principle agreement to extend the truce. U.S. denies formal agreement. Pakistan&rsquo;s Gen. Asim Munir landed in Tehran carrying a message from Washington. Three sticking points: nuclear program (15-year enrichment gap), Strait of Hormuz reopening, and compensation for war damages. The gap between what&rsquo;s reported privately and denied publicly is itself a negotiating tool. Both sides need the extension but neither can afford domestic optics of asking.</p></div>
 </div>
 
-<!-- ================================================ -->
-<!-- DOMESTIC TAB -->
-<!-- ================================================ -->
+<!-- Strategic 2 -->
+<div class="story">
+  <div class="headline"><a href="https://www.cnbc.com/2026/04/16/trump-israel-lebanon-talks-hezbollah-ceasefire-conflict.html" target="_blank">2. Israel-Lebanon diplomatic breakthrough &mdash; first leader-level contact since 1993</a></div>
+  <div class="tags"><span class="tag">&rarr; Iran Paradox</span></div>
+  <div class="tt-box"><p>Trump brokered a call between Israeli and Lebanese leaders following April 14 trilateral meeting. Lebanon was pulled into the war March 2 when Hezbollah fired rockets at Israel. Israel&rsquo;s Operation Eternal Darkness hit Hezbollah command and control despite the ceasefire. The parallel track isolates Lebanon from Iran talks, which Tehran does not want since it insists Lebanon is part of any deal.</p></div>
+</div>
+
+<!-- Strategic 3 -->
+<div class="story">
+  <div class="headline"><a href="https://www.dw.com/en/iran-war-us-blockade-of-hormuz-tests-chinas-restraint/a-76777251" target="_blank">3. China calls blockade &lsquo;dangerous and irresponsible&rsquo; &mdash; Rich Starry tanker tests enforcement</a></div>
+  <div class="tags"><span class="tag">&rarr; China Calculus</span></div>
+  <div class="tt-box"><p>China&rsquo;s MFA condemned the blockade. The sanctioned Chinese tanker Rich Starry was intercepted but later transited. DW reports U.S. may be trying to draw Beijing into pressure role on Tehran. Western outlets frame this as a U.S.-Iran story; non-Western outlets frame it as a great-power test. The framing divergence is the most analytically significant finding from the Perplexity cross-check.</p></div>
+</div>
+
+<!-- Strategic 4 -->
+<div class="story">
+  <div class="headline"><a href="https://www.imf.org/en/publications/weo/issues/2026/04/14/world-economic-outlook-april-2026" target="_blank">4. IMF: Global Economy in the Shadow of War &mdash; 3.1% to 2% growth range</a></div>
+  <div class="tags"><span class="tag">&rarr; Economic Fallout</span></div>
+  <div class="tt-box"><p>The April WEO presents three scenarios from 3.1% to 2% global growth. MENA growth cratered from 3.9% to 1.1%. Inflation forecast raised to 4.4%. The severe scenario (2% growth) has been breached only four times since 1980. The IMF&rsquo;s framing implicitly acknowledges that even the optimistic scenario depends on a political timeline that current negotiating positions don&rsquo;t support.</p></div>
+</div>
+
+<!-- Strategic 5 -->
+<div class="story">
+  <div class="headline"><a href="https://www.csis.org/analysis/what-are-unintended-consequences-us-iran-conflict-defense-and-security" target="_blank">5. Russia&rsquo;s $45&ndash;151B windfall from high energy prices funds Sumy offensive</a></div>
+  <div class="tags"><span class="tag">&rarr; Russia Windfall</span></div>
+  <div class="tt-box"><p>CSIS analysis finds Russia could accrue $45&ndash;151B in additional 2026 budget revenues from elevated energy prices. This directly underwrites Moscow&rsquo;s war machine in Ukraine, including the current Sumy pressure. The Iran war is generating revenue for the adversary the U.S. most wants to constrain elsewhere. That&rsquo;s not a side effect; it&rsquo;s a strategic contradiction.</p></div>
+</div>
+
+<!-- Strategic 6 -->
+<div class="story">
+  <div class="headline"><a href="https://empr.media/news/war/russia-ukraine-war-updates-key-developments-as-of-april-14-2026/" target="_blank">6. Russia launches biggest aerial barrage of the war &mdash; Sumy under pressure</a></div>
+  <div class="tags"><span class="tag">&rarr; Russia Windfall</span></div>
+  <div class="tt-box"><p>327+ drones and dozens of missiles overnight April 14&ndash;15, at least 16 killed. Ukrainian forces pulled back near Myropilske. Russia has 50,000 troops near Sumy. The Perplexity cross-check flags the 1,000-drone figure as single-source. ISW confirms ground advances but has not classified this as a strategic offensive pivot. Watch whether territorial gains follow or this remains attritional.</p></div>
+</div>
+
+<!-- Strategic 7 -->
+<div class="story">
+  <div class="headline"><a href="https://x.com/Globalsurv/status/2044463454556168666" target="_blank">7. North Korea opportunism window as multi-theater strain grows</a></div>
+  <div class="tags"><span class="tag">&rarr; Second-Order</span></div>
+  <div class="tt-box"><p>Analysts flag that ongoing multi-theater conflicts create openings for Pyongyang. North Korea continues supplying ammunition, missiles, and troops to Russia in exchange for technology and currency. Indo-Pacific commands are exercising against the scenario. The connection between resource strain across theaters and adversary opportunism is being tracked by analysts faster than institutions.</p></div>
+</div>
+
+<!-- Strategic 8 -->
+<div class="story">
+  <div class="headline"><a href="https://www.axios.com/2026/04/15/iran-war-negotiations-deal-pakistan" target="_blank">8. Axios: U.S. and Iran &lsquo;inch toward framework deal&rsquo;</a></div>
+  <div class="tags"><span class="tag">&rarr; Iran Paradox</span></div>
+  <div class="tt-box"><p>U.S. officials tell Axios a new round of direct talks will likely take place before April 21. No date set. The three sticking points (nuclear, Hormuz, damages) remain structurally unresolved. The 15-year enrichment gap (U.S. wants 20 years, Iran offered 5) is not the kind of distance that closes in a week.</p></div>
+</div>
+
+</div><!-- /strategic -->
+
+<!-- ============================== DOMESTIC ============================== -->
 <div id="tab-domestic" class="tab-content">
-  <div class="section-hdr">Domestic</div>
 
-  <div class="story">
-    <div class="headline"><a href="https://www.cnbc.com/2026/02/20/supreme-court-trump-tariffs-ruling.html" target="_blank">SCOTUS Killed Trump&rsquo;s Tariffs in February &mdash; $175B in Potential Refunds, Congress Seeking Replacement Authority</a></div>
-    <div class="tags"><span class="tag">[&rarr; TARIFF-WAR]</span></div>
-    <div class="tt-box"><p>6-3 ruling in February struck down IEEPA-based tariffs, potentially triggering $175B in refunds. Trump announced a new 10% global tariff the same day and directed Treasury to leverage other statutes. Congress is now weighing affirmative tariff authority &mdash; a vote that puts Republicans in a difficult position ahead of midterms since their districts are absorbing cost increases while the legal foundation is litigated. Watch for a reconciliation vehicle that buries the authority grant inside a larger bill where the vote is less visible.</p></div>
-  </div>
+<div class="section-hdr">Domestic</div>
 
-  <div class="story">
-    <div class="headline"><a href="https://www.cnbc.com/2026/04/14/trump-iran-war-strait-of-hormuz-negotiations.html" target="_blank">White House Says More Iran Talks in Discussion as Blockade Enters Day Three</a></div>
-    <div class="tags"><span class="tag">[&rarr; IRAN-DEADLINE]</span></div>
-    <div class="tt-box"><p>The domestic politics of the Iran war are increasingly complicated: gas prices elevated, inflation sticky, tariff authority invalidated by SCOTUS, NATO allies refusing participation. The president&rsquo;s approval trajectory is tied to a Middle East outcome that is structurally difficult to produce before April 21. And the midterm environment is the dominant variable shaping how aggressively the administration pursues a deal &mdash; or pursues the appearance of one.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline"><a href="https://www.militarytimes.com/news/pentagon-congress/2026/04/03/trumps-budget-proposes-massive-defense-spending-with-10-cut-to-other-programs/" target="_blank">$1.5T Defense Budget Proposes 5-7% Military Pay Raise, 10% Non-Defense Cut &mdash; Mandatory Carve-Out Structure Is the Constitutional Story</a></div>
-    <div class="tags"><span class="tag">[&rarr; BUDGET]</span></div>
-    <div class="tt-box"><p>The $350B mandatory defense carve-out in the reconciliation bill treats defense like Social Security &mdash; insulated from the annual appropriations process. That structural precedent matters more than the topline. If Congress accepts it, future administrations inherit it. The question isn&rsquo;t whether $1.5T for defense is appropriate post-Epic Fury &mdash; it&rsquo;s whether the mechanism used to appropriate it is constitutional and what it does to Congress&rsquo;s power of the purse going forward.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline"><a href="https://www.militarytimes.com/news/your-military/2026/04/14/bill-from-vets-in-congress-would-keep-military-roles-open-to-women/" target="_blank">Bipartisan Veterans Caucus Introduces Legislation to Codify Women&rsquo;s Combat Role Eligibility</a></div>
-    <div class="tags"><span class="tag">[&rarr; PERSONNEL-POLICY]</span></div>
-    <div class="tt-box"><p>A veteran coalition in Congress is affirmatively codifying what has been executive/DoD domain policy &mdash; direct counter-move to the ongoing Pentagon review. The veteran coalition sponsorship provides bipartisan political cover that makes the vote harder to oppose than a purely partisan measure. Timing alongside an active conflict where women are serving in those roles creates practical political tension for those supporting the review.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline"><a href="https://www.military.com/daily-news/2026/04/10/federal-judge-finds-pentagon-violating-court-order-restore-access-reporters.html" target="_blank">Federal Judge Finds Pentagon in Violation of Court Order on Reporter Access &mdash; Contempt Risk Grows</a></div>
-    <div class="tags"><span class="tag">[&rarr; CIVIL-MILITARY]</span></div>
-    <div class="tt-box"><p>DoD press operations are under active judicial oversight, and the contempt risk creates a legal pressure point the administration has to manage during an active conflict where information control is operationally significant. Watch whether the administration appeals, formally complies, or finds a technical workaround that satisfies the court on paper without changing the operational posture. Each choice has different downstream consequences for civil-military relations in the media space.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline"><a href="https://www.militarytimes.com/industry/techwatch/2026/04/13/us-military-eyes-high-energy-laser-dome-for-domestic-air-defense/" target="_blank">Pentagon-FAA Reach Landmark Safety Agreement on Laser Air Defense Deployment Inside the U.S.</a></div>
-    <div class="tags"><span class="tag">[&rarr; HOMELAND-DEFENSE]</span></div>
-    <div class="tt-box"><p>The LOCUST laser system is cleared for counter-drone operations at the U.S.-Mexico border after an FAA safety vetting of its automatic shutoff under aircraft-in-area conditions. The border context provides a politically acceptable testing ground for what will eventually be a broader domestic air defense capability. The drone threat driving this is the same threat Apache crews are training against in Germany &mdash; it&rsquo;s the same problem on different continents.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline"><a href="https://breakingdefense.com/2026/04/space-force-to-finalize-acquisition-portfolio-structure-over-next-two-months/" target="_blank">Space Force to Complete Acquisition Reorganization by June &mdash; Nine PAE Offices, Including Space Control and Orbital Warfare</a></div>
-    <div class="tags"><span class="tag">[&rarr; SPACE-NUCLEAR]</span></div>
-    <div class="tt-box"><p>The final three of nine Portfolio Acquisition Executive offices will be established by June, covering space control, orbital warfare, and related domains. This creates the institutional machinery the White House nuclear reactor mandate will need to actually execute. PAEs establish clear acquisition ownership &mdash; historically the missing ingredient in Space Force program management. June completion is the prerequisite for the 2028 timeline being credible at all.</p></div>
-  </div>
-
+<!-- Domestic 1 -->
+<div class="story">
+  <div class="headline"><a href="https://www.npr.org/2026/04/15/nx-s1-5786715/live-nation-ticketmaster-antitrust-verdict-monopoly" target="_blank">1. Live Nation found to be illegal monopoly &mdash; breakup trial next</a></div>
+  <div class="tags"><span class="tag">&rarr; Antitrust</span></div>
+  <div class="tt-box"><p>Federal jury found Live Nation/Ticketmaster monopolized concert ticketing, overcharging fans $1.72/ticket with 86% market control. DOJ had settled but state AGs rejected the deal and continued. Remedies trial will determine possible breakup. The state AG coalition that rejected the federal settlement and won anyway is the institutional story here. Federal agencies settled; states fought and won.</p></div>
 </div>
 
-<!-- ================================================ -->
-<!-- DEEP READS TAB -->
-<!-- ================================================ -->
+<!-- Domestic 2 -->
+<div class="story">
+  <div class="headline"><a href="https://www.cnbc.com/2026/04/15/iran-war-trump-peace-deal-us-talks-stock-market-oil-prices-.html" target="_blank">2. Trump says war &lsquo;very close to over&rsquo; &mdash; markets rally</a></div>
+  <div class="tags"><span class="tag">&rarr; Iran Paradox</span> <span class="tag">&rarr; Economic Fallout</span></div>
+  <div class="tt-box"><p>Trump told CNBC the war is almost done and the stock market will boom. The S&amp;P hit 7,000. The disconnect: the IMF projects recession scenarios, the blockade is in its fourth day, the ceasefire expires in five days, and the nuclear gap hasn&rsquo;t closed. &lsquo;Very close to over&rsquo; is a market signal, not a military assessment.</p></div>
+</div>
+
+<!-- Domestic 3 -->
+<div class="story">
+  <div class="headline"><a href="https://breakingdefense.com/2026/04/trump-to-propose-1-5-trillion-defense-budget-banking-on-350-billion-from-reconciliation/" target="_blank">3. FY2027 defense budget: $1.5T requested, $350B depends on reconciliation</a></div>
+  <div class="tags"><span class="tag">&rarr; Budget Reality</span></div>
+  <div class="tt-box"><p>The White House requested $1.5T for defense ($1.15T discretionary + $350B reconciliation). Golden Dome gets $17.5B but only $400M in base budget. OMB out-year projections show the number dropping to $1.28T in FY28 without future reconciliation. 23% of the topline depends on a legislative vehicle Congress hasn&rsquo;t passed.</p></div>
+</div>
+
+<!-- Domestic 4 -->
+<div class="story">
+  <div class="headline"><a href="https://finance.yahoo.com/news/live/stock-market-today-dow-sp-500-nasdaq-futures-rise-after-record-closes-q1-earnings-roll-in-230116311.html" target="_blank">4. S&amp;P 500 breaks 7,000 for first time &mdash; Iran war losses fully erased</a></div>
+  <div class="tags"><span class="tag">&rarr; Economic Fallout</span></div>
+  <div class="tt-box"><p>Two-week recovery erased all war-related losses. Nasdaq at record highs. Markets pricing deal optimism. Netflix, PepsiCo, Schwab report Thursday. The market&rsquo;s confidence in deal completion is running ahead of the diplomatic positions. If April 21 passes without extension, the repricing will be violent.</p></div>
+</div>
+
+<!-- Domestic 5 -->
+<div class="story">
+  <div class="headline"><a href="https://www.scotusblog.com/" target="_blank">5. SCOTUS nears term end with birthright citizenship, agency power still pending</a></div>
+  <div class="tags"><span class="tag">&rarr; Constitutional</span></div>
+  <div class="tt-box"><p>The court has heard 49 arguments but issued only 18 opinions. Birthright citizenship (Trump attended arguments April 1), presidential removal power (Trump v. Slaughter), campaign finance, and voting rights all pending. Any one of these decisions could reshape the executive power landscape. Multiple could land simultaneously.</p></div>
+</div>
+
+<!-- Domestic 6 -->
+<div class="story">
+  <div class="headline"><a href="https://taxfoundation.org/research/all/federal/trump-tariffs-trade-war/" target="_blank">6. Supreme Court struck down IEEPA tariffs</a></div>
+  <div class="tags"><span class="tag">&rarr; Constitutional</span> <span class="tag">&rarr; Economic Fallout</span></div>
+  <div class="tt-box"><p>The Court ended the legal basis for tariffs imposed under the International Emergency Economic Powers Act. The 10% universal tariff remains under a 150-day window until July 24. China still faces 145%. The IEEPA ruling constrains executive tariff authority but the administration has alternative statutory paths. The market barely blinked.</p></div>
+</div>
+
+<!-- Domestic 7 -->
+<div class="story">
+  <div class="headline"><a href="https://x.com/WSJopinion/status/2044516137572975008" target="_blank">7. WSJ/Vought: Reconciliation as vehicle for defense industrial base expansion</a></div>
+  <div class="tags"><span class="tag">&rarr; Budget Reality</span></div>
+  <div class="tt-box"><p>OMB Director Russell Vought tied defense procurement capacity directly to fiscal reconciliation tools in a WSJ interview. This signals the administration views industrial base growth as inseparable from the reconciliation bill. If reconciliation stalls, both Golden Dome and the 188% missile procurement bump are unfunded mandates.</p></div>
+</div>
+
+<!-- Domestic 8 -->
+<div class="story">
+  <div class="headline"><a href="https://oilprice.com/" target="_blank">8. Oil at $92&ndash;95 as blockade continues &mdash; energy costs compress consumers</a></div>
+  <div class="tags"><span class="tag">&rarr; Economic Fallout</span></div>
+  <div class="tt-box"><p>WTI at $92.53, Brent at $94.80. Volatility persists as traders assess Hormuz developments. IEA forecasts consumption drop. The $92 floor is already above the IMF&rsquo;s base-case assumption of $82 normalization. If the floor holds, the adverse scenario becomes the base case.</p></div>
+</div>
+
+<!-- Domestic 9 -->
+<div class="story">
+  <div class="headline"><a href="https://taxfoundation.org/research/all/federal/trump-tariffs-trade-war/" target="_blank">9. Trump tariffs: 10% universal remains, IEEPA authority struck down, 145% on China</a></div>
+  <div class="tags"><span class="tag">&rarr; Economic Fallout</span></div>
+  <div class="tt-box"><p>The tariff landscape: universal 10% baseline through July 24, threatened increase to 15% after; 145% on China; IEEPA-based tariffs invalidated by SCOTUS. The largest U.S. tax increase as % of GDP since 1993, averaging $1,500 per household. Auto sales already showing pull-forward effects.</p></div>
+</div>
+
+<!-- Domestic 10 -->
+<div class="story">
+  <div class="headline"><a href="https://www.live5news.com/2026/04/06/2026-charleston-airshow-relocated-scaled-single-day-event/" target="_blank">10. Charleston airshow relocated due to &lsquo;current global events&rsquo;</a></div>
+  <div class="tags"><span class="tag">&rarr; Iran Paradox</span></div>
+  <div class="tt-box"><p>Joint Base Charleston moved its annual airshow from base to a single-day harbor event, citing increased operational requirements amid global events. The euphemism is transparent: the base is surging for Iran operations and can&rsquo;t spare the runway time. When the airshow gets relocated, the ops tempo is real.</p></div>
+</div>
+
+</div><!-- /domestic -->
+
+<!-- ============================== DEEP READS ============================== -->
 <div id="tab-deepreads" class="tab-content">
-  <div class="section-hdr">Deep Reads</div>
 
-  <div class="deep-card">
-    <div class="deep-source">CSIS</div>
-    <div class="deep-hl"><a href="https://www.csis.org/analysis/fragile-us-iran-ceasefire-issues-watch" target="_blank">The Fragile U.S.-Iran Ceasefire: Issues to Watch</a></div>
-    <div class="deep-sum">CSIS maps four active structural problems beneath the ceasefire surface: Iran&rsquo;s nuclear program remains unresolved with a wide moratorium gap; Lebanon&rsquo;s inclusion is actively disputed between the parties; Hormuz control rights are ambiguous at the treaty level; and terrorism risk by Iranian proxies has risen post-strikes. Each independently could collapse the truce. The piece argues the ceasefire is a pause, not a settlement, and identifies which triggers are most likely to detonate it first. The April 21 expiry is the consequence of negotiating under time pressure without resolving definitional questions &mdash; not the cause of the fragility.</div>
-    <div class="swaps-take">
-      <div class="swaps-take-label">SWAP&rsquo;s Take</div>
-      <p>Within the scope of a rapid policy brief, this piece does what good CSIS work does: maps the landmines without pretending to defuse them. The four-issue framework is analytically honest. But it thins at prescription &mdash; it identifies what could go wrong without offering a theory of what would need to go right, and in what sequence. The most interesting analytical gap is Lebanon: if the U.S. and Israel genuinely believe Lebanon is outside the ceasefire while Iran and Pakistan genuinely believe it isn&rsquo;t, that&rsquo;s not a miscommunication &mdash; it&rsquo;s a structural disagreement that will produce an incident regardless of what both principals want. The root cause connecting all four issues is the same: the ceasefire was negotiated under time pressure without resolving definitional questions. Cite this for the diagnosis. The prescription the piece doesn&rsquo;t write is what matters now.</p>
-    </div>
+<div class="section-hdr">Deep Reads</div>
+
+<!-- Deep 1 -->
+<div class="deep-card">
+  <div class="deep-source">War on the Rocks</div>
+  <div class="deep-hl"><a href="https://warontherocks.com/bonus-in-brief-choke-point-the-risks-and-realities-of-americas-iran-blockade/" target="_blank">&ldquo;Choke Point: The Risks and Realities of America&rsquo;s Iran Blockade&rdquo;</a></div>
+  <div class="deep-sum">Analysis of the operational, legal, and strategic dimensions of the U.S. naval blockade of Iranian ports. Examines the complexity of enforcing a blockade in a 21-mile strait bordered by hostile territory, the mine-clearing challenge, and the escalation risks inherent in interdicting third-party shipping.</div>
+  <div class="swaps-take">
+    <div class="swaps-take-label">SWAP&rsquo;s Take</div>
+    <p>The blockade works as a pressure tool precisely because it doesn&rsquo;t need to be perfect to be effective. Stopping 90% of Iranian trade while a sanctioned Chinese tanker slips through is still economic strangulation. The operational risk isn&rsquo;t enforcement failure; it&rsquo;s escalation from within: an Iranian mine, a drone swarm, or a third-party vessel that refuses to comply. The 1988 Operation Praying Mantis parallel is instructive: the last time the U.S. fought Iran in these waters, a one-day engagement destroyed half of Iran&rsquo;s navy. Iran&rsquo;s surviving asymmetric capability is the variable that keeps CENTCOM deploying 10,000 personnel for what is technically a peacetime operation during a ceasefire.</p>
   </div>
-
-  <div class="deep-card">
-    <div class="deep-source">Foreign Policy</div>
-    <div class="deep-hl"><a href="https://foreignpolicy.com/2026/04/08/energy-crisis-iran-war-trump-gas-oil-strait-hormuz/" target="_blank">The Energy Crisis Won&rsquo;t End Right Away (Even if the Iran War Does)</a></div>
-    <div class="deep-sum">The piece argues that even a negotiated peace deal won&rsquo;t resolve the energy crisis on a short timeline because the physical destruction of Iranian oil and gas infrastructure requires years of reconstruction. The 1973 embargo comparison understates the problem: that was a political choice by producers who could restart quickly. This involves physically destroyed facilities, trained workforce displacement, and insurance and shipping supply chains that rebuilt around Hormuz avoidance. The agricultural cascade &mdash; fertilizer precursors moving through the Strait &mdash; adds a food-security dimension with a 6-12 month lag from disruption to dinner table. Markets pricing deal optimism at $95 oil are not pricing any of this.</div>
-    <div class="deep-paywall">Source may be paywalled &mdash; summary from available preview text</div>
-    <div class="swaps-take">
-      <div class="swaps-take-label">SWAP&rsquo;s Take</div>
-      <p>This is the most analytically important piece in today&rsquo;s read pile, and it&rsquo;s not close. The core insight &mdash; that the energy crisis has its own timeline independent of war resolution &mdash; is one that markets, negotiators, and policymakers are actively avoiding pricing. Oil below $96 on &ldquo;deal optimism&rdquo; is a market betting on the political solution while ignoring the physical reconstruction timeline. The 1973 comparison the piece makes is correct but understated: in 1973, producers could turn the spigots back on because the infrastructure was intact. That is simply not the case here. The food security angle is the most underreported second-order risk in the entire Iran story: fertilizer precursor disruption doesn&rsquo;t show up in food prices immediately &mdash; it appears 6-9 months after planting seasons are missed. By the time it shows up in CPI data, the political window for attributing it to the war will have closed and the human cost will already be locked in. The piece earns its conclusion. Any negotiated settlement needs a concrete reconstruction financing mechanism, not just a ceasefire announcement. Nobody in the public diplomatic conversation is discussing that.</p>
-    </div>
-  </div>
-
-  <div class="deep-card">
-    <div class="deep-source">War on the Rocks</div>
-    <div class="deep-hl"><a href="https://warontherocks.com/2026/04/how-the-war-with-iran-ends/" target="_blank">How the War with Iran Ends</a></div>
-    <div class="deep-sum">Three possible endings examined: negotiated settlement with nuclear constraints, prolonged attrition, or internal regime collapse. The piece argues the administration has defined success as Iran without nukes, navy, Hormuz leverage, or proxy networks &mdash; and that achieving all four through airpower alone has no historical precedent. The 1991 Gulf War parallel is invoked: regime survived, post-war settlement produced a generation of consequences including Saddam&rsquo;s 2003 invasion and the post-invasion chaos. The Chardell-Helfont framework from Foreign Affairs is cited: half-measures after military campaigns create worse problems than the original conflict.</div>
-    <div class="swaps-take">
-      <div class="swaps-take-label">SWAP&rsquo;s Take</div>
-      <p>The three-endings framework is clean and the 1991 parallel is the right one, but the piece is doing something more important than it acknowledges: it&rsquo;s surfacing the definitional problem at the center of U.S. strategy. The administration defined four objectives without a theory connecting airpower to simultaneous achievement of all four. Destroying infrastructure doesn&rsquo;t eliminate nuclear knowledge. Sinking ships doesn&rsquo;t end maritime harassment by asymmetric means. Degrading proxy networks doesn&rsquo;t sever the ideological supply chain that regenerates them. The 1991 lesson isn&rsquo;t just &ldquo;regime survival produces consequences&rdquo; &mdash; it&rsquo;s that failure to build a day-after plan before the shooting stops is how &ldquo;victory&rdquo; becomes the predecessor to the next war. The administration appears to be repeating that error in real time. Ask: what does the day-after plan for Iran actually require, and is anyone in the interagency building it? The War on the Rocks piece implies the answer is no. That implication deserves a direct answer.</p>
-    </div>
-  </div>
-
-  <div class="deep-card">
-    <div class="deep-source">Foreign Policy</div>
-    <div class="deep-hl"><a href="https://foreignpolicy.com/2026/04/15/prabowo-indonesia-russia-putin-visit-us-defense-agreement/" target="_blank">Prabowo Visits Putin in Moscow</a></div>
-    <div class="deep-sum">Foreign Policy&rsquo;s April 15 piece covers Indonesia&rsquo;s simultaneous diplomatic plays: the MDCP with the Pentagon (tech development, operational readiness, military education) and Prabowo&rsquo;s Moscow visit for energy and economic cooperation &mdash; executed on the same day. The article examines Indonesia&rsquo;s deliberate strategic ambiguity, the overflight LOI status, and the implications for the Malacca Strait and Indo-Pacific competition. Each party believes it received something valuable; Jakarta ensured none of them are wrong about that.</div>
-    <div class="swaps-take">
-      <div class="swaps-take-label">SWAP&rsquo;s Take</div>
-      <p>Indonesia just showed the playbook every swing state in the Indo-Pacific is going to try to run. Extract economic ties from Russia and China, extract security architecture from the U.S., and maintain enough strategic ambiguity that neither power can call you a client. Prabowo&rsquo;s positioning is more sophisticated than the coverage gives it credit for: by denying the overflight LOI is part of the signed MDCP, Jakarta preserves the ability to slow-roll or walk back the airspace provision if Chinese pressure becomes severe, while collecting partnership benefits in the interim. The U.S. is getting access to geography that materially matters &mdash; blanket Indonesian airspace changes the logistics calculus for any Malacca contingency &mdash; but is paying for it in a currency (partnership legitimacy) that doesn&rsquo;t require Jakarta to actually show up when it matters. Beijing is not alarmed by this deal. Beijing is studying it. Vietnam, the Philippines, and Malaysia are next.</p>
-    </div>
-  </div>
-
-  <div class="deep-card">
-    <div class="deep-source">CSIS</div>
-    <div class="deep-hl"><a href="https://www.csis.org/analysis/irans-real-war-against-global-economy" target="_blank">Iran&rsquo;s Real War Is Against the Global Economy</a></div>
-    <div class="deep-sum">CSIS argues that Iran&rsquo;s strategic logic in closing Hormuz was always economic coercion rather than military confrontation &mdash; the strait is the lever, not the battlefield. Closing it maximizes Iran&rsquo;s coercive leverage against the international community by creating pain for parties (India, China, Japan, South Korea, Europe) that have no role in the military conflict and can&rsquo;t translate their economic pain into direct pressure on the U.S.-Iran negotiating table. The piece explores why this is structurally harder to counter than a conventional military challenge.</div>
-    <div class="swaps-take">
-      <div class="swaps-take-label">SWAP&rsquo;s Take</div>
-      <p>The CSIS framing is analytically correct but undersells its own finding. Iran closing Hormuz isn&rsquo;t just economic coercion &mdash; it&rsquo;s a demonstration that a country with a severely degraded conventional military can still impose strategic costs on the global system by controlling a geographic chokepoint. The Ukraine parallel extends this: just as Ukraine&rsquo;s naval drones removed Russia&rsquo;s Black Sea fleet from the strategic equation despite Russian air dominance, Iran&rsquo;s mines, drones, and IRGC vessels closed the world&rsquo;s most important waterway despite losing 90% of its conventional navy. You don&rsquo;t need a fleet to close a strait. The doctrine implication for contested maritime scenarios involving the Taiwan Strait, South China Sea, and Malacca is direct and immediate &mdash; and the CSIS piece gestures at it but stops short of the full implication. That gap is where the most important planning work needs to happen.</p>
-    </div>
-  </div>
-
 </div>
 
-<!-- ================================================ -->
-<!-- SOCIAL/SIGNAL TAB -->
-<!-- ================================================ -->
+<!-- Deep 2 -->
+<div class="deep-card">
+  <div class="deep-source">War on the Rocks</div>
+  <div class="deep-hl"><a href="https://warontherocks.com/tactical-success-strategic-failure-washington-walks-the-path-to-defeat-in-iran/" target="_blank">&ldquo;Tactical Success, Strategic Failure? Washington Walks the Path to Defeat in Iran&rdquo;</a></div>
+  <div class="deep-sum">Argues that six weeks after launching Operation Epic Fury, the U.S. has achieved tactical objectives (destroyed nuclear facilities, killed the supreme leader) but lacks a coherent political end state. The ceasefire is already fracturing. The piece questions whether the administration defined success before it defined the campaign.</div>
+  <div class="swaps-take">
+    <div class="swaps-take-label">SWAP&rsquo;s Take</div>
+    <p>The piece asks the Clausewitzian question that the administration hasn&rsquo;t answered publicly: what political object does the military action serve? Killing a supreme leader and destroying nuclear facilities are means, not ends. If the end state is Iran without nukes, navy, Hormuz leverage, or proxy networks, airpower alone has never achieved all four simultaneously in any historical case. The closest parallel is Iraq 1991: tactical brilliance, strategic ambiguity, and a generation of consequences. Cite the diagnosis. Build your own prescription.</p>
+  </div>
+</div>
+
+<!-- Deep 3 -->
+<div class="deep-card">
+  <div class="deep-source">CSIS</div>
+  <div class="deep-hl"><a href="https://www.csis.org/analysis/what-are-unintended-consequences-us-iran-conflict-defense-and-security" target="_blank">&ldquo;What Are the Unintended Consequences of the U.S.-Iran Conflict for Defense and Security?&rdquo;</a></div>
+  <div class="deep-sum">Expert roundtable identifying second- and third-order effects including Russia&rsquo;s $45&ndash;151B energy windfall, accelerated Russia-Iran-China axis consolidation, munitions diversion from Pacific theater readiness, Gulf state investment in Ukrainian defense industry, and perceptions of U.S. strategic overextension.</div>
+  <div class="swaps-take">
+    <div class="swaps-take-label">SWAP&rsquo;s Take</div>
+    <p>The most consequential finding is the Russia windfall: every dollar of elevated oil revenue from the Hormuz disruption funds Russian operations in Ukraine. The U.S. is fighting a war whose economic spillover strengthens the adversary it most needs to weaken elsewhere. The Gulf-Ukraine defense industry connection is the unexpected upside: countries that just experienced what Iranian drones can do are now investing in Ukrainian counter-drone expertise. Wartime learning creating peacetime markets.</p>
+  </div>
+</div>
+
+<!-- Deep 4 -->
+<div class="deep-card">
+  <div class="deep-source">International Monetary Fund</div>
+  <div class="deep-hl"><a href="https://www.imf.org/en/publications/weo/issues/2026/04/14/world-economic-outlook-april-2026" target="_blank">World Economic Outlook, April 2026: &ldquo;Global Economy in the Shadow of War&rdquo;</a></div>
+  <div class="deep-sum">Three scenarios from 3.1% to 2% global growth depending on conflict duration. Inflation raised to 4.4%. MENA growth cratered from 3.9% to 1.1%. The severe scenario (2% growth) has been breached only four times since 1980. Risks described as decisively on the downside.</div>
+  <div class="swaps-take">
+    <div class="swaps-take-label">SWAP&rsquo;s Take</div>
+    <p>The IMF is doing something unusual: publishing a forecast that explicitly says the baseline is already stale. Their 3.1% assumes oil normalizes to $82; it&rsquo;s at $93 today. Their adverse scenario assumes $100 oil; Brent is $95 and the blockade is still tightening. By the IMF&rsquo;s own framework, the world is already tracking between the base case and the adverse scenario, with conditions that could tip toward the severe one if April 21 passes without a deal. When the institution whose job is optimistic framing says risks are &ldquo;decisively on the downside,&rdquo; the downside is worse than they&rsquo;re printing.</p>
+  </div>
+</div>
+
+<!-- Deep 5 -->
+<div class="deep-card">
+  <div class="deep-source">War on the Rocks</div>
+  <div class="deep-hl"><a href="https://warontherocks.com/regime-change-in-iran-underpants-gnomes-and-the-phase-ii-problem/" target="_blank">&ldquo;Regime Change in Iran, Underpants Gnomes, and the Phase II Problem&rdquo;</a></div>
+  <div class="deep-sum">Argues that the administration&rsquo;s end state implicitly requires regime change but no one will say so. The title references the South Park episode where gnomes steal underpants with a plan of Phase 1: Collect Underpants, Phase 2: ?, Phase 3: Profit. The piece argues U.S. Iran policy has the same gap: Phase 1 (destroy stuff), Phase 2 (?), Phase 3 (Iran complies).</div>
+  <div class="swaps-take">
+    <div class="swaps-take-label">SWAP&rsquo;s Take</div>
+    <p>The Phase II problem is the sharpest framing of the war&rsquo;s strategic gap. Destroying nuclear facilities is Phase I. A compliant Iran is Phase III. But Phase II requires either regime change (which the administration denies seeking), regime capitulation (which has no historical precedent under these conditions), or permanent military coercion (which the IMF just quantified as globally destabilizing). The piece is right that the gap between tactical achievement and political outcome is where wars go to become permanent commitments. Iraq, Afghanistan, and Libya all had brilliant Phase Is and catastrophic Phase IIs.</p>
+  </div>
+</div>
+
+<!-- Deep 6 -->
+<div class="deep-card">
+  <div class="deep-source">War on the Rocks</div>
+  <div class="deep-hl"><a href="https://warontherocks.com/2026/04/irans-other-front-the-war-over-the-internet" target="_blank">&ldquo;Iran&rsquo;s Other Front: The War Over the Internet&rdquo;</a></div>
+  <div class="deep-sum">Examines Iran&rsquo;s information warfare campaign running parallel to the kinetic conflict. Iran has leveraged internet shutdowns, disinformation, and narrative control domestically while proxy media networks amplify anti-U.S. messaging regionally.</div>
+  <div class="swaps-take">
+    <div class="swaps-take-label">SWAP&rsquo;s Take</div>
+    <p>The information front is where Iran retains capability even after losing 80% of its nuclear infrastructure and most of its navy. You can bomb a centrifuge but not a narrative. Iran&rsquo;s domestic internet control serves dual purpose: suppressing internal dissent while controlling the war&rsquo;s framing for an Iranian audience. The lesson from Ukraine&rsquo;s information war success is that the side that controls its own narrative domestically has strategic resilience even when losing kinetically.</p>
+  </div>
+</div>
+
+</div><!-- /deepreads -->
+
+<!-- ============================== SOCIAL/SIGNAL ============================== -->
 <div id="tab-social" class="tab-content">
-  <div class="signal-masthead">Twitter/X Intelligence Feed <span style="font-size:11px;color:var(--muted);letter-spacing:1px;">24-Hour Window &mdash; April 15, 2026 0900 GMT</span></div>
-  <div class="signal-sources-note">Sources: Make.com Feed (Source A) &middot; Grok Direct Email (Source B) &middot; Chrome Scrape Confirmed (Source B extended) &middot; Merged and deduplicated by handle + topic</div>
 
-  <div class="signal-summary-block">
-    <div class="signal-summary-block-label">Signal Summary</div>
-    <p>The dominant theme across the last 24 hours is the deepening Iran-Hormuz crisis, with credible think-tank analysis converging on operational, economic, and strategic second-order effects that institutions have not yet addressed in public messaging. War on the Rocks drove sustained, multi-angle coverage &mdash; from naval reopening asymmetries and bromine supply-chain chokepoints to food-security risks and regime-stability questions &mdash; while individual analysts surfaced energy-market and inflation implications ahead of broader reporting. Indonesia&rsquo;s simultaneous Putin visit and U.S. defense pact emerges as the clearest early indicator of sophisticated swing-state management, flagged by individual accounts 6-8 hours before institutional coverage. U.S. service accounts demonstrated quiet modernization progress (B-21 refueling, Apache counter-drone tactics, FPV integration in the Philippines) alongside the Gulf crisis. A Hegseth AI directive hinted at executive-branch tempo outpacing institutional rollout. Individual and think-tank voices are driving the analytical conversation on the Gulf crisis while official accounts remain in capability-highlight mode &mdash; that divergence is the pattern to watch for early signals of posture or policy adjustment.</p>
-  </div>
-
-  <!-- EARLY entries -->
-  <div class="signal-card early">
-    <div class="signal-meta"><span class="early-badge">EARLY</span>Conflict and Crisis &nbsp;&middot;&nbsp; @DarkWireIntel &nbsp;&middot;&nbsp; Individual Analyst &nbsp;&middot;&nbsp; Notable</div>
-    <div class="signal-body">The account described the active naval standoff in the Strait of Hormuz as affecting energy imports for Japan, South Korea, India, and China simultaneously, with oil prices surpassing $104 and climbing &mdash; framing it as the largest global inflation risk since 2022.</div>
-    <div class="signal-conv">Convergence: Directly corroborates War on the Rocks operational and economic analyses of Hormuz closure scenarios. Flagged independently across multiple collection passes &mdash; ahead of institutional framing at this scale.</div>
-    <div class="signal-note">By quantifying near-term energy and inflation spillovers for specific Asian economies, this post surfaced market and allied-impact dimensions before official channels framed them. Oil has since retreated below $96 on deal optimism &mdash; the analyst was ahead of both the peak narrative and the pullback.</div>
-    <a class="signal-link" href="https://x.com/DarkWireIntel/status/2043864315858452572" target="_blank">Source &rarr;</a>
-  </div>
-
-  <div class="signal-card early">
-    <div class="signal-meta"><span class="early-badge">EARLY</span>Conflict and Crisis &nbsp;&middot;&nbsp; @WarOnTheRocks &nbsp;&middot;&nbsp; Institutional &nbsp;&middot;&nbsp; High</div>
-    <div class="signal-body">Two U.S. admirals examined the operational asymmetry of reopening the Strait of Hormuz &mdash; underscoring that closing a strait takes days while reopening it against a defended adversary takes weeks to months of sustained risk, casualty exposure, and naval commitment.</div>
-    <div class="signal-conv">Convergence: Multiple concurrent War on the Rocks posts address Hormuz operational, supply-chain, and food-security dimensions. Cross-source confirmation across Source A and Source B collection passes.</div>
-    <div class="signal-note">This surfaces a practical vulnerability in U.S. crisis-response planning that public official statements have not acknowledged. Closing-versus-reopening asymmetry is not being priced into either the diplomatic calendar or market assumptions. The operational implication: any deal that doesn&rsquo;t include an ironclad Hormuz reopening mechanism doesn&rsquo;t actually solve the energy problem.</div>
-    <a class="signal-link" href="https://x.com/WarOnTheRocks/status/2044298432613913063" target="_blank">Source &rarr;</a>
-  </div>
-
-  <div class="signal-card early">
-    <div class="signal-meta"><span class="early-badge">EARLY</span>Conflict and Crisis &nbsp;&middot;&nbsp; @WarOnTheRocks &nbsp;&middot;&nbsp; Institutional &nbsp;&middot;&nbsp; High</div>
-    <div class="signal-body">War on the Rocks detailed how the Middle East conflict threatens the global bromine supply chain &mdash; a critical, hard-to-substitute input for semiconductor memory chip production &mdash; with sourcing infrastructure located within missile range of current conflict zones.</div>
-    <div class="signal-conv">Convergence: Part of the same outlet&rsquo;s broader Hormuz/Iran crisis cluster. No mainstream outlet has picked this up at the time of collection.</div>
-    <div class="signal-note">This is a narrow but strategically vital single-point-of-failure chokepoint receiving no coverage in daily crisis reporting. Dead Sea bromine feeds directly into DRAM and NAND manufacturing. A conflict expansion could cascade into defense and commercial microelectronics within weeks &mdash; and the defense procurement implication is direct.</div>
-    <a class="signal-link" href="https://x.com/WarOnTheRocks/status/2044343777926533542" target="_blank">Source &rarr;</a>
-  </div>
-
-  <div class="signal-card early">
-    <div class="signal-meta"><span class="early-badge">EARLY</span>Strategic Competition &nbsp;&middot;&nbsp; @____iiiiii__ &nbsp;&middot;&nbsp; Other &nbsp;&middot;&nbsp; Notable</div>
-    <div class="signal-body">Indonesian President Prabowo visited Moscow and simultaneously signed a major U.S. defense agreement &mdash; including negotiations for blanket U.S. overflight access through Indonesian airspace &mdash; amid the Iran blockade and concerns over Malacca Strait access. The dual timing was deliberate.</div>
-    <div class="signal-conv">Convergence: Corroborated by @newmind99 and multiple analyst posts linking timing to Iran operations and China containment. Flagged independently across multiple collection passes &mdash; significantly ahead of institutional coverage by several hours.</div>
-    <div class="signal-note">Sophisticated hedging by Jakarta: securing Russian and Chinese economic ties while granting U.S. operational access. The strategic geography (Malacca) is the tell. Individual reporting surfaced this dual engagement before institutional coverage framed its strategic significance.</div>
-    <a class="signal-link" href="https://foreignpolicy.com/2026/04/15/prabowo-indonesia-russia-putin-visit-us-defense-agreement/" target="_blank">Source &rarr;</a>
-  </div>
-
-  <div class="signal-card early">
-    <div class="signal-meta"><span class="early-badge">EARLY</span>Conflict and Crisis &nbsp;&middot;&nbsp; @WarOnTheRocks &nbsp;&middot;&nbsp; Institutional &nbsp;&middot;&nbsp; High</div>
-    <div class="signal-body">The potential closure of the Strait of Hormuz was connected to missed planting seasons and global food-security disruptions &mdash; emphasizing that fertilizer precursor flows through the Strait underpin agricultural supply chains for import-dependent nations.</div>
-    <div class="signal-note">By connecting the blockade to downstream agricultural calendars, this surfaces a longer-term humanitarian and economic consequence that markets and policymakers are not pricing. The lag between planting disruption and food price spikes is 6-9 months &mdash; the human cost will be locked in before the political attribution window opens. Monitor grain and fertilizer shipping data out of Gulf ports.</div>
-    <a class="signal-link" href="https://x.com/WarOnTheRocks/status/2044275826145866162" target="_blank">Source &rarr;</a>
-  </div>
-
-  <!-- STANDARD entries -->
-  <div class="signal-card">
-    <div class="signal-meta">Conflict and Crisis &nbsp;&middot;&nbsp; @CENTCOM &nbsp;&middot;&nbsp; Institutional &nbsp;&middot;&nbsp; High</div>
-    <div class="signal-body">CENTCOM released a statement from Adm. Brad Cooper describing ongoing blockade operations. U.S. Navy guided-missile destroyers are executing an impartial blockade mission impacting Iranian ports &mdash; framed as rules-based enforcement rather than coercion of Iran specifically.</div>
-    <div class="signal-conv">Convergence: Aligns with multiple official releases and analyst commentary on Hormuz enforcement dynamics.</div>
-    <div class="signal-note">The &ldquo;impartial&rdquo; framing is notable &mdash; it positions CENTCOM to claim neutrality in the enforcement mechanism even as the target is explicitly Iran. That framing will matter diplomatically if challenged at the UN or by neutral third parties. Watch for other nations&rsquo; responses to the &ldquo;impartial&rdquo; characterization.</div>
-    <a class="signal-link" href="https://x.com/CENTCOM/status/2044214177099567564" target="_blank">Source &rarr;</a>
-  </div>
-
-  <div class="signal-card">
-    <div class="signal-meta">Defense and Military &nbsp;&middot;&nbsp; @usairforce &nbsp;&middot;&nbsp; Institutional &nbsp;&middot;&nbsp; High</div>
-    <div class="signal-body">The U.S. Air Force spotlighted aerial refueling of the B-21 Raider, framing it as evidence of the bomber&rsquo;s rapid integration into operational forces and its role in strengthening nuclear deterrence and allied assurance.</div>
-    <div class="signal-note">Measurable progress in fielding next-generation strike capability on an accelerated timeline. The social post reflects institutional communications strategy of tying B-21 milestones to deterrence messaging during active conflict &mdash; timing is deliberate. Watch for basing announcements that would complicate adversary targeting calculations further.</div>
-    <a class="signal-link" href="https://x.com/usairforce/status/2044205365663826286" target="_blank">Source &rarr;</a>
-  </div>
-
-  <div class="signal-card">
-    <div class="signal-meta">Defense and Military &nbsp;&middot;&nbsp; @USArmy &nbsp;&middot;&nbsp; Institutional &nbsp;&middot;&nbsp; High</div>
-    <div class="signal-body">U.S. Army Apache crews demonstrated drone-hunting tactics &mdash; &ldquo;if it flies, it dies&rdquo; &mdash; with AH-64E helicopters during Exercise Skyfall in Germany, showcasing kinetic counter-UAS capabilities in a European training environment.</div>
-    <div class="signal-note">The European training context matters: this is explicitly targeted at the drone-proliferation environment Russia created in Ukraine. The doctrine is migrating from observation to training to likely Indo-Pacific integration within 18 months. Secondary relevance to the Hegseth AI/Maven directive, which identifies counter-UAS as a priority domain.</div>
-    <a class="signal-link" href="https://x.com/USArmy/status/2044038715903758669" target="_blank">Source &rarr;</a>
-  </div>
-
-  <div class="signal-card">
-    <div class="signal-meta">U.S. Domestic Policy &nbsp;&middot;&nbsp; @Newsforce &nbsp;&middot;&nbsp; Journalist &nbsp;&middot;&nbsp; Medium</div>
-    <div class="signal-body">A directive under Secretary Hegseth was reported as making AI central to military decision-making using the Maven system for intelligence processing and target development, while also eliminating the &ldquo;combat inactive&rdquo; personnel category to increase deployable force availability.</div>
-    <div class="signal-conv">Convergence: Echoed in individual analyst commentary on accelerated Hegseth-led procurement and AI integration shifts.</div>
-    <div class="signal-note">The &ldquo;combat inactive&rdquo; category elimination is the less-noticed element: it increases the deployable pool without a formal end-strength increase. Downstream effects on training pipelines, family readiness, and retention in already-stressed career fields are not publicly quantified. Watch for retention data in the next DACOWITS report.</div>
-    <a class="signal-link" href="https://x.com/Newsforce/status/2044253126182531443" target="_blank">Source &rarr;</a>
-  </div>
-
-  <div class="signal-card">
-    <div class="signal-meta">Strategic Competition &nbsp;&middot;&nbsp; @POLITICOEurope &nbsp;&middot;&nbsp; Journalist &nbsp;&middot;&nbsp; High</div>
-    <div class="signal-body">Trump threatened to unpick the U.S.-UK trade deal over British opposition to Iran military action &mdash; bringing economic levers into alliance management and marking a qualitative escalation in how the administration is managing allied resistance.</div>
-    <div class="signal-conv">Convergence: Aligns with broader NATO fracture reporting and War on the Rocks analysis of strategic failure risks.</div>
-    <div class="signal-note">The trade deal threat is qualitatively different from the NATO withdrawal threat: it doesn&rsquo;t require Congressional approval and can move quickly. London&rsquo;s calculation changes materially if the price of limited cooperation is unilateral trade concessions &mdash; that&rsquo;s a more credible lever than alliance exit, and a more dangerous one for long-term relationship management.</div>
-    <a class="signal-link" href="https://www.politico.eu/article/donald-trump-keir-starmer-threatens-unpick-trade-deal-iran-war-opposition/" target="_blank">Source &rarr;</a>
-  </div>
-
-  <div class="signal-card">
-    <div class="signal-meta">Conflict and Crisis &nbsp;&middot;&nbsp; @WarOnTheRocks &nbsp;&middot;&nbsp; Institutional &nbsp;&middot;&nbsp; High</div>
-    <div class="signal-body">Analysis argued that air strikes alone cannot alter the ideological commitment of Iran&rsquo;s Revolutionary Guards &mdash; framing regime-change ambitions as operationally incomplete without addressing Phase II stabilization realities. The tactical ledger must connect to a defined theory of victory.</div>
-    <div class="signal-conv">Convergence: Multiple War on the Rocks posts converge on the same diagnostic across Source A and Source B passes.</div>
-    <div class="signal-note">The piece cautions against assuming kinetic success translates to political outcomes &mdash; a lesson U.S. operations have produced repeatedly without producing changes in planning doctrine. Tracking internal Iranian cohesion indicators beyond damage assessments is the right analytical move for the next 30 days.</div>
-    <a class="signal-link" href="https://x.com/WarOnTheRocks/status/2044287153123869002" target="_blank">Source &rarr;</a>
-  </div>
-
-  <div class="signal-card unverified">
-    <div class="signal-meta"><span class="unverified-badge">Unverified</span>&nbsp;U.S. Domestic Policy &nbsp;&middot;&nbsp; @researchUSAI &nbsp;&middot;&nbsp; Individual Analyst &nbsp;&middot;&nbsp; Notable</div>
-    <div class="signal-body">Pentagon under Secretary Hegseth is shifting toward unmatched forces via accelerated procurement in hypersonics and AI. Analyst projects quarterly budget monitoring will confirm procurement surges and modular fleet emphasis by 2030.</div>
-    <div class="signal-note">Analyst synthesis of Hegseth directives &mdash; treat as analytical framing, not confirmed reporting. Directionally plausible given other signals but not independently verified. Retain as context; do not act on without corroboration.</div>
-  </div>
-
+<div class="signal-summary">
+  <div class="signal-summary-label">Twitter Signal Summary</div>
+  <p>The last 24 hours were dominated by visible U.S. operational activity centered on the Iran file, with CENTCOM repeatedly surfacing blockade enforcement, Marine training, and commander travel across six regional partners. Individual analysts are explicitly framing these moves as synchronized pressure and preparation for possible renewed confrontation even amid the truce. In parallel, SOUTHCOM&rsquo;s lethal strike on a narco-terror vessel shows counter-threat efforts continuing without pause. On the force-health side, both the Air Force and Space Force announced early FY26 recruiting target achievement, a rare simultaneous positive signal on personnel pipelines. The Space Force also released its Future Operating Environment and Objective Force papers. Analysts outside official channels are drawing tighter causal links between multi-theater strain and potential North Korean opportunism, while Indo-Pacific Command training updates quietly reinforce readiness posture. The pattern to watch: whether the Iran blockade remains static or whether partner engagements presage a posture adjustment.</p>
 </div>
 
-<!-- ================================================ -->
-<!-- LOCAL TAB -->
-<!-- ================================================ -->
+<div class="section-hdr">Signal Feed</div>
+
+<!-- Social 1 -->
+<div class="social-entry">
+  <div class="social-meta">
+    <span>Standard</span> <span>|</span> <span>Conflict and Crisis</span> <span>|</span> <span>@CENTCOM</span> <span>|</span> <span>Institutional</span> <span>|</span> <span>High</span>
+  </div>
+  <div class="social-post">U.S. Central Command posted video of service members actively monitoring and patrolling regional waters to enforce the ongoing U.S. blockade of vessels entering or departing Iranian ports.</div>
+  <div class="social-convergence">Convergence: Converges with additional CENTCOM reporting on Marine training aboard USS Tripoli and independent analyst commentary framing U.S. naval reinforcement as preparation for potential renewed confrontation.</div>
+  <div class="social-note">Analytical Note: The visible enforcement actions keep pressure on Iranian maritime access without direct kinetic escalation. This posture maintains leverage while diplomatic interpretations of any truce remain fluid.</div>
+  <div class="social-link"><a href="https://x.com/CENTCOM/status/2044623566696493308" target="_blank">x.com/CENTCOM &rarr;</a></div>
+</div>
+
+<!-- Social 2 -->
+<div class="social-entry">
+  <div class="social-meta">
+    <span>Standard</span> <span>|</span> <span>Conflict and Crisis</span> <span>|</span> <span>@CENTCOM</span> <span>|</span> <span>Institutional</span> <span>|</span> <span>High</span>
+  </div>
+  <div class="social-post">CENTCOM released images of U.S. Marines conducting live hoist training on the flight deck of USS Tripoli (LHA 7) while the ship executes the blockade mission.</div>
+  <div class="social-convergence">Convergence: Directly converges with parallel CENTCOM updates on blockade patrols.</div>
+  <div class="social-note">Analytical Note: Training integrates directly with the active blockade, signaling high readiness for potential escalation even as diplomatic language around a truce circulates.</div>
+  <div class="social-link"><a href="https://x.com/CENTCOM/status/2044716931890967033" target="_blank">x.com/CENTCOM &rarr;</a></div>
+</div>
+
+<!-- Social 3 -->
+<div class="social-entry">
+  <div class="social-meta">
+    <span>Standard</span> <span>|</span> <span>Conflict and Crisis</span> <span>|</span> <span>@Southcom</span> <span>|</span> <span>Institutional</span> <span>|</span> <span>High</span>
+  </div>
+  <div class="social-post">SOUTHCOM announced Joint Task Force Southern Spear conducted a lethal kinetic strike on a narco-trafficking vessel in the Eastern Pacific, killing three individuals linked to designated terrorist organizations.</div>
+  <div class="social-note">Analytical Note: Demonstrates SOUTHCOM&rsquo;s willingness to use lethal force against narco-terror networks in international waters. Highlights overlap between criminal smuggling routes and designated terrorist activity.</div>
+  <div class="social-link"><a href="https://x.com/Southcom/status/2044602968704504194" target="_blank">x.com/Southcom &rarr;</a></div>
+</div>
+
+<!-- Social 4 -->
+<div class="social-entry">
+  <div class="social-meta">
+    <span>Standard</span> <span>|</span> <span>Defense and Military</span> <span>|</span> <span>@CENTCOM</span> <span>|</span> <span>Institutional</span> <span>|</span> <span>High</span>
+  </div>
+  <div class="social-post">Adm. Brad Cooper completed his second Middle East trip in 15 days, meeting regional partners in six countries and visiting U.S. troops on the ground.</div>
+  <div class="social-note">Analytical Note: Frequent senior-leader engagement aligns with visible naval operations and underscores sustained U.S. command focus on partner coordination amid Gulf tensions.</div>
+  <div class="social-link"><a href="https://x.com/CENTCOM/status/2044559393778512150" target="_blank">x.com/CENTCOM &rarr;</a></div>
+</div>
+
+<!-- Social 5 -->
+<div class="social-entry">
+  <div class="social-meta">
+    <span>Standard</span> <span>|</span> <span>Defense and Military</span> <span>|</span> <span>@USSpaceForce</span> <span>|</span> <span>Institutional</span> <span>|</span> <span>High</span>
+  </div>
+  <div class="social-post">Space Force released its Future Operating Environment and Objective Force documents ahead of schedule and announced 730 active-duty Guardians recruited five months early for FY26.</div>
+  <div class="social-convergence">Convergence: Converges with the U.S. Air Force&rsquo;s announcement of exceeding its own FY26 enlistment goal early.</div>
+  <div class="social-note">Analytical Note: Simultaneous early recruiting successes and doctrinal releases point to healthy personnel pipelines and deliberate long-term force design.</div>
+  <div class="social-link"><a href="https://x.com/USSpaceForce/status/2044526859673616789" target="_blank">x.com/USSpaceForce &rarr;</a></div>
+</div>
+
+<!-- Social 6 -->
+<div class="social-entry">
+  <div class="social-meta">
+    <span>Standard</span> <span>|</span> <span>U.S. Domestic Policy</span> <span>|</span> <span>@usairforce</span> <span>|</span> <span>Institutional</span> <span>|</span> <span>High</span>
+  </div>
+  <div class="social-post">The U.S. Air Force announced it had enlisted 32,750 active-duty Airmen for FY26 five months ahead of schedule, noting the largest Delayed Entry Program in a decade.</div>
+  <div class="social-convergence">Convergence: Converges with Space Force&rsquo;s parallel announcement.</div>
+  <div class="social-note">Analytical Note: Early enlistment target achievement signals strong recruiting momentum for technically oriented military careers.</div>
+  <div class="social-link"><a href="https://x.com/usairforce/status/2044524068146188619" target="_blank">x.com/usairforce &rarr;</a></div>
+</div>
+
+<!-- Social 7 -->
+<div class="social-entry">
+  <div class="social-meta">
+    <span>Standard</span> <span>|</span> <span>U.S. Domestic Policy</span> <span>|</span> <span>@USSpaceForce</span> <span>|</span> <span>Institutional</span> <span>|</span> <span>High</span>
+  </div>
+  <div class="social-post">Space Force reported hitting its FY26 active-duty recruiting goal of 730 Guardians five months early.</div>
+  <div class="social-convergence">Convergence: Converges with USAF&rsquo;s early recruiting success.</div>
+  <div class="social-note">Analytical Note: Consistent early recruiting wins suggest effective outreach to technical talent pools. Could ease near-term personnel pressure.</div>
+  <div class="social-link"><a href="https://x.com/USSpaceForce/status/2044522588387361042" target="_blank">x.com/USSpaceForce &rarr;</a></div>
+</div>
+
+<!-- Social 8 -->
+<div class="social-entry">
+  <div class="social-meta">
+    <span>Standard</span> <span>|</span> <span>U.S. Domestic Policy</span> <span>|</span> <span>@WSJopinion</span> <span>|</span> <span>Journalist</span> <span>|</span> <span>High</span>
+  </div>
+  <div class="social-post">WSJ Opinion published Kim Strassel and OMB Director Vought discussing reconciliation funding for DHS, defense industrial base expansion, and economic reform.</div>
+  <div class="social-note">Analytical Note: Linking defense procurement capacity to fiscal reconciliation tools indicates administration interest in accelerating industrial-base growth as part of broader budget strategy.</div>
+  <div class="social-link"><a href="https://x.com/WSJopinion/status/2044516137572975008" target="_blank">x.com/WSJopinion &rarr;</a></div>
+</div>
+
+<!-- Social 9 — EARLY -->
+<div class="social-entry early-signal">
+  <div class="social-meta">
+    <span class="early-badge">EARLY</span> <span>Strategic Competition</span> <span>|</span> <span>@pundit_2026</span> <span>|</span> <span>Individual Analyst</span> <span>|</span> <span>Notable</span>
+  </div>
+  <div class="social-post">Reported that the U.S. is expanding its naval and amphibious footprint even as a fragile truce holds, widening options should confrontation resume.</div>
+  <div class="social-convergence">Convergence: Converges with CENTCOM updates and separate analyst commentary on synchronized pressure.</div>
+  <div class="social-note">Analytical Note: By explicitly tying visible force posture to preparation for escalation during a declared lull, the post surfaces an interpretive layer that official messaging has not yet emphasized.</div>
+  <div class="social-link"><a href="https://x.com/pundit_2026/status/2044362549961830859" target="_blank">x.com/pundit_2026 &rarr;</a></div>
+</div>
+
+<!-- Social 10 -->
+<div class="social-entry">
+  <div class="social-meta">
+    <span>Standard</span> <span>|</span> <span>Strategic Competition</span> <span>|</span> <span>@go21stcentury</span> <span>|</span> <span>Individual Analyst</span> <span>|</span> <span>Notable</span>
+  </div>
+  <div class="social-post">Assessed that the administration is applying synchronized soft- and hard-power tools in real time to raise pressure until Iran reaches a negotiation pain threshold.</div>
+  <div class="social-convergence">Convergence: Converges with CENTCOM documented blockade operations and analyst framing of naval expansion during the truce.</div>
+  <div class="social-note">Analytical Note: Emphasis on real-time power synchronization offers context for operational tempo visible in official channels.</div>
+  <div class="social-link"><a href="https://x.com/go21stcentury/status/2044259103292207574" target="_blank">x.com/go21stcentury &rarr;</a></div>
+</div>
+
+<!-- Social 11 -->
+<div class="social-entry">
+  <div class="social-meta">
+    <span>Standard</span> <span>|</span> <span>Strategic Competition</span> <span>|</span> <span>@Globalsurv</span> <span>|</span> <span>Individual Analyst</span> <span>|</span> <span>Notable</span>
+  </div>
+  <div class="social-post">Highlighted that ongoing multi-theater conflicts could create openings for North Korean provocations, noting Pyongyang&rsquo;s continued supply of ammunition, missiles, and troops to Russia.</div>
+  <div class="social-note">Analytical Note: Connects resource strain across theaters to potential North Korean opportunism.</div>
+  <div class="social-link"><a href="https://x.com/Globalsurv/status/2044463454556168666" target="_blank">x.com/Globalsurv &rarr;</a></div>
+</div>
+
+<!-- Social 12 -->
+<div class="social-entry">
+  <div class="social-meta">
+    <span>Standard</span> <span>|</span> <span>Strategic Competition</span> <span>|</span> <span>@INDOPACOM</span> <span>|</span> <span>Institutional</span> <span>|</span> <span>High</span>
+  </div>
+  <div class="social-post">Marines from the 11th MEU conducted quick-reaction-force drill aboard USS Portland (LPD 27) in the Pacific.</div>
+  <div class="social-note">Analytical Note: Routine drills maintain forward-deployed readiness in the China competition theater. Visible reassurance to allies while signaling sustained power-projection capacity.</div>
+  <div class="social-link"><a href="https://x.com/INDOPACOM/status/2044577862565388766" target="_blank">x.com/INDOPACOM &rarr;</a></div>
+</div>
+
+</div><!-- /social -->
+
+<!-- ============================== LOCAL ============================== -->
 <div id="tab-local" class="tab-content">
 
-  <div class="section-hdr">Local &mdash; Altus, OK &nbsp;|&nbsp; Jackson County</div>
+<div class="section-hdr">Local</div>
 
-  <div class="story">
-    <div class="headline" style="color:var(--accent);">&#9888; SEVERE WEATHER DAY &mdash; Thunderstorms Likely, Some Severe, Flash Flood Watch in Effect</div>
-    <div class="tt-box"><p>NWS has a severe weather risk in effect for southwestern Oklahoma through tonight. Thunderstorms expected this afternoon and evening, some potentially severe with damaging winds, large hail, and an isolated tornado threat. Flash flood watch in effect given 70% precipitation probability and soil saturation risk. Altus AFB units should monitor base ops for any weather-related flight restrictions, shelter-in-place guidance, or safety stand-downs. Personal vehicles should avoid low-water crossings.</p></div>
-  </div>
+<div class="local-section-title">Altus, OK</div>
 
-  <div class="story">
-    <div class="headline"><a href="https://www.kswo.com/2026/04/03/58th-airlift-squadron-celebrates-30th-anniversary-c-17-arrival-altus-afb/" target="_blank">58th Airlift Squadron Marks 30 Years of C-17 Operations at Altus AFB</a></div>
-    <div class="tt-box"><p>The 58th Airlift Squadron and 97 AMW celebrated the 30th anniversary of the first C-17 Globemaster III arriving at Altus AFB in 1996. The wing has since trained thousands of mobility aircrew. With C-17 operations central to any Indo-Pacific or Middle East logistics surge, Altus&rsquo;s training throughput is directly relevant to the operational tempo demands of the current campaign. The anniversary is a low-key reminder that the base&rsquo;s output, not its profile, is its strategic contribution.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline">Craig Hubbard Named Altus Bulldogs Head Football Coach &mdash; Returns from Texas</div>
-    <div class="tt-box"><p>Altus Public Schools welcomed Craig Hubbard as the new Head Football Coach for the Altus Bulldogs. Hubbard returns after a year as defensive coordinator at Center High School in Texas and previously served at Altus. His return signals program continuity heading into summer training.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline">Committee of 100 Hosts Newcomer Welcome Event for Altus AFB Families</div>
-    <div class="tt-box"><p>The Committee of 100 of Altus hosted a family welcome event Sunday at the Jackson County Expo Center for recently assigned military families. The event connects newcomers with community resources, local contacts, and service organizations. With operational tempo elevated, community integration events like this carry practical readiness and retention implications that don&rsquo;t show up in base statistics.</p></div>
-  </div>
-
-  <div class="section-hdr">Local &mdash; Charleston, SC &nbsp;|&nbsp; Lowcountry</div>
-
-  <div class="story">
-    <div class="headline">Hanahan City Councilman Appears in Federal Court on Child Sexual Abuse Material Charges</div>
-    <div class="tt-box"><p>Hanahan Councilman Kevin Hedgpeth appeared in federal court on charges related to child sexual abuse material. Federal charges carry significantly stiffer penalties than state equivalents. This is a developing story; no conviction has been entered at the time of publication.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline">SC Measles Outbreak Nearing End &mdash; Three Weeks Clear, Declaration Possible April 26</div>
-    <div class="tt-box"><p>South Carolina&rsquo;s measles outbreak has recorded no new confirmed infections in three weeks. If that holds through April 26, the state can officially declare the outbreak closed &mdash; the worst outbreak in decades. A clean declaration would mark a public health win for SC DHEC and demonstrate that the vaccination outreach response worked faster than the initial spread suggested it would.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline">Charleston International First SC Airport to Deploy Touchless TSA Facial Recognition PreCheck</div>
-    <div class="tt-box"><p>CHS became the first South Carolina airport to offer touchless TSA PreCheck screening using facial recognition, enabling faster passage through dedicated lanes for enrolled passengers. Personnel with security clearances traveling through CHS may want to review the biometric data collection policy before enrolling &mdash; specifically what&rsquo;s collected, retained, and shared under the PreCheck program.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline">Motorcyclist Plunges from I-26 Ramp, Temporarily Closes Charleston Crosstown</div>
-    <div class="tt-box"><p>A motorcyclist fell from an I-26 elevated ramp over the Crosstown interchange, prompting emergency response and a brief closure of the elevated section. The Crosstown remains one of Charleston&rsquo;s most congested and structurally aging interchange points. Status of the motorcyclist was not confirmed at publication time.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline">Gary Santos Park Construction Underway in Mount Pleasant &mdash; $40M Complex, 2027 Completion</div>
-    <div class="tt-box"><p>Construction is underway on the $40 million Gary Santos Park in Mount Pleasant, scheduled for 2027 completion. The complex will feature a gym, playing fields, basketball, pickleball, and tennis courts, along with arts and music programming. The park represents one of the larger public investment projects in Lowcountry infrastructure in the current cycle.</p></div>
-  </div>
-
+<div class="story">
+  <div class="headline"><a href="https://www.kswo.com/2026/04/14/committee-100-hosts-family-event-altus-air-force-base-newcomers/" target="_blank">Committee of 100 hosts family event for Altus AFB newcomers</a></div>
+  <div class="tt-box"><p>The Committee of 100 held a family event at the Jackson County Expo Center welcoming newcomers to Altus Air Force Base. Community-base integration events are routine but valued for retention in a small-market assignment.</p></div>
 </div>
 
-<!-- ================================================ -->
-<!-- LIGHTER FARE TAB -->
-<!-- ================================================ -->
+<div class="story">
+  <div class="headline"><a href="https://www.altustimes.com/" target="_blank">Altus Public Schools welcomes new head football coach</a></div>
+  <div class="tt-box"><p>Coach Craig Hubbard returns to Altus after a year as defensive coordinator at Center High School in Texas. New head coaching hires in small-town Oklahoma are community events.</p></div>
+</div>
+
+<div class="story">
+  <div class="headline"><a href="https://www.altus.af.mil/News/Article-Display/Article/4451556/purple-up-and-parade-on-honoring-military-children-at-altus-afb/" target="_blank">Month of the Military Child recognized at Altus AFB</a></div>
+  <div class="tt-box"><p>The Altus AFB command team and Altus Vice Mayor signed a proclamation recognizing the Month of the Military Child at the Child Development Center on April 3.</p></div>
+</div>
+
+<div class="local-section-title">Charleston, SC</div>
+
+<div class="story">
+  <div class="headline"><a href="https://www.live5news.com/2026/04/06/2026-charleston-airshow-relocated-scaled-single-day-event/" target="_blank">Charleston airshow relocated to harbor &mdash; ops tempo cited</a></div>
+  <div class="tt-box"><p>Joint Base Charleston moved its annual airshow from the base to a single-day harbor event, citing increased operational requirements amid current global events. The Blue Angels will perform over the harbor May 2.</p></div>
+</div>
+
+<div class="story">
+  <div class="headline"><a href="https://www.postandcourier.com/" target="_blank">Lowcountry county becomes fastest-growing in America</a></div>
+  <div class="tt-box"><p>A Lowcountry county has risen from third to first in U.S. growth rankings. The Greenville-Anderson-Greer metro area surpassed 1 million residents for the first time.</p></div>
+</div>
+
+<div class="story">
+  <div class="headline"><a href="https://www.postandcourier.com/" target="_blank">Charleston approves millions for drainage and flood mitigation</a></div>
+  <div class="tt-box"><p>Charleston set to approve significant investment in drainage and flood infrastructure projects. Lowcountry Rapid Transit project moves forward after Charleston County approved a land acquisition step.</p></div>
+</div>
+
+<div class="story">
+  <div class="headline"><a href="https://www.live5news.com/" target="_blank">SC measles outbreak may officially end April 26</a></div>
+  <div class="tt-box"><p>South Carolina has not reported a case of measles since March 17. If no new infections surface, the state can declare an end to the worst outbreak in decades on April 26.</p></div>
+</div>
+
+</div><!-- /local -->
+
+<!-- ============================== LIGHTER FARE ============================== -->
 <div id="tab-lighter" class="tab-content">
-  <div class="section-hdr">Lighter Fare</div>
 
-  <div class="story">
-    <div class="headline">Artemis II Had a Toilet Problem on Launch Day &mdash; Humanity&rsquo;s Return to Deep Space, Briefly Complicated by Plumbing</div>
-    <div class="tt-box"><p>Shortly after Artemis II launched into orbit on April 1, the toilet on board stopped accepting urine from the astronauts for several tense minutes. The issue was reportedly resolved. The engineering lesson &mdash; that life support systems include the unglamorous ones &mdash; is one NASA apparently needed to relearn. The astronauts&rsquo; composure under these specific circumstances has not been publicly documented, but may be inferred from the fact that they continued the mission.</p></div>
-  </div>
+<div class="section-hdr">Lighter Fare</div>
 
-  <div class="story">
-    <div class="headline">Massachusetts Emu Recaptured for Second Time &mdash; Turns Out It Belongs to a Cop&rsquo;s Father</div>
-    <div class="tt-box"><p>Animal control officers in Massachusetts rounded up an escaped emu identified as a repeat offender. The bird was determined to belong to the father of one of the responding officers, a plot twist that the local police department presumably has feelings about. The emu was returned safely. The family dynamics at the subsequent dinner table are not documented in the public record.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline">UK Court of Appeal Receives Paternity Case Involving Identical Twins and a Four-Day Interval</div>
-    <div class="tt-box"><p>A woman brought a paternity case to the UK Court of Appeal after having sexual relations with both of a pair of identical twins four days apart and subsequently becoming pregnant. One twin was named the father; the other twin objected. DNA testing cannot distinguish between identical twins. The Court of Appeal must now determine who, legally, is the father. British jurisprudence will not emerge from this proceeding unchanged.</p></div>
-  </div>
-
-  <div class="story">
-    <div class="headline">Alberta University Breaks Guinness Record: 682 People in Dinosaur Costumes Simultaneously</div>
-    <div class="tt-box"><p>An Alberta university gathered 682 people in dinosaur costumes at its 60th anniversary celebration, breaking the Guinness World Record for most people simultaneously dressed as dinosaurs. The previous record was not disclosed, but it was apparently fewer than 682. The logistics of sourcing 682 dinosaur costumes in Alberta on short notice represent an achievement that the Guinness Book does not adequately capture.</p></div>
-  </div>
-
+<div class="lighter-card">
+  <div class="lighter-hl"><a href="https://www.npr.org/2026/04/15/nx-s1-5786715/live-nation-ticketmaster-antitrust-verdict-monopoly" target="_blank">Live Nation loses, music fans may actually win for once</a></div>
+  <div class="lighter-body">After the jury found Ticketmaster is a monopoly, the internet collectively asked: does this mean concert tickets will finally be affordable? The answer is probably not anytime soon, but at least we got to watch a monopoly get called a monopoly in court.</div>
 </div>
+
+<div class="lighter-card">
+  <div class="lighter-hl"><a href="https://aviationweek.com/space/space-exploration/nasas-petro-confident-april-2026-artemis-ii-launch-date" target="_blank">Artemis II: NASA &lsquo;confident&rsquo; of April launch date</a></div>
+  <div class="lighter-body">NASA&rsquo;s Artemis II mission to send astronauts around the Moon is on track for its April 2026 launch window. The last time America sent humans toward the Moon was 1972. Fifty-four years between trips.</div>
+</div>
+
+<div class="lighter-card">
+  <div class="lighter-hl"><a href="https://www.military.com" target="_blank">Army auctioning off Chinook helicopters</a></div>
+  <div class="lighter-body">The U.S. Army is auctioning off Boeing CH-47F Chinook transport helicopters, potentially to make way for Block II models. If you&rsquo;ve ever wanted a helicopter, this is your moment. Bidding presumably starts higher than your car.</div>
+</div>
+
+<div class="lighter-card">
+  <div class="lighter-hl"><a href="https://www.npr.org/sections/news/" target="_blank">Without interpreters at doctors&rsquo; offices, non-English speakers face bad outcomes</a></div>
+  <div class="lighter-body">AP reports that inadequate medical interpretation services are leading to serious, sometimes fatal, health outcomes for non-English speakers. A quiet public health story that never makes the front page.</div>
+</div>
+
+</div><!-- /lighter -->
+
+<!-- FOOTER -->
+<div class="footer">The Swap Report &mdash; April 16, 2026 &mdash; 0530 CT</div>
 
 </div><!-- /container -->
 
 <script>
-// Special Editions dropdown
-function toggleSE() {
-  document.getElementById('se-menu').classList.toggle('open');
-}
-document.addEventListener('click', function(e) {
-  if (!e.target.closest('.special-editions')) {
-    document.getElementById('se-menu').classList.remove('open');
-  }
-});
+// Theme
+let currentTheme = 'warm';
 
-// Weather fetch
-function fetchWeather() {
-  var city = document.getElementById('ws-input').value.trim();
-  if (!city) return;
-  var result = document.getElementById('ws-result');
-  result.textContent = 'Fetching...';
-  fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + encodeURIComponent(city) + '&count=1&language=en&format=json')
-    .then(function(r){ return r.json(); })
-    .then(function(geo){
-      if (!geo.results || !geo.results[0]) { result.textContent = 'Location not found.'; return; }
-      var loc = geo.results[0];
-      return fetch('https://api.open-meteo.com/v1/forecast?latitude=' + loc.latitude + '&longitude=' + loc.longitude + '&current=temperature_2m,weathercode,windspeed_10m&temperature_unit=fahrenheit&windspeed_unit=mph')
-        .then(function(r){ return r.json(); })
-        .then(function(wx){
-          var c = wx.current;
-          result.innerHTML = '<strong>' + loc.name + '</strong><br>' + Math.round(c.temperature_2m) + '&deg;F &middot; Wind ' + Math.round(c.windspeed_10m) + ' mph';
-        });
-    })
-    .catch(function(){ result.textContent = 'Error fetching weather.'; });
+function setTheme(t) {
+  currentTheme = t;
+  document.body.className = 'theme-' + t;
+  document.querySelectorAll('.theme-btn').forEach(function(b, i) {
+    var themes = ['light','warm','dark'];
+    b.classList.toggle('active', themes[i] === t);
+  });
 }
-document.getElementById('ws-input').addEventListener('keydown', function(e){ if(e.key==='Enter') fetchWeather(); });
 
 // Tabs
-function showTab(id, btn) {
-  document.querySelectorAll('.tab-content').forEach(function(el){ el.classList.remove('active'); });
-  document.querySelectorAll('.tab-btn').forEach(function(el){ el.classList.remove('active'); });
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(function(el) {
+    el.classList.remove('active');
+  });
+  document.querySelectorAll('.tab-btn').forEach(function(el) {
+    el.classList.remove('active');
+  });
   document.getElementById('tab-' + id).classList.add('active');
-  if (btn) btn.classList.add('active');
+  // Find matching button
+  var tabs = ['overview','defense','strategic','domestic','deepreads','social','local','lighter'];
+  var idx = tabs.indexOf(id);
+  if (idx >= 0) {
+    document.querySelectorAll('.tab-btn')[idx].classList.add('active');
+  }
 }
 
-// Theme
-var currentTheme = 'theme-warm';
-function setTheme(t) {
-  document.getElementById('body-el').classList.remove(currentTheme);
-  document.getElementById('body-el').classList.add(t);
-  currentTheme = t;
+// Tooltip position awareness
+document.addEventListener('mouseover', function(e) {
+  var story = e.target.closest('.story');
+  if (!story) return;
+  var tt = story.querySelector('.tt-box');
+  if (!tt) return;
+  // Reset
+  tt.style.left = '0';
+  tt.style.right = 'auto';
+  tt.style.top = 'calc(100% + 4px)';
+  tt.style.bottom = 'auto';
+  // Check if tooltip overflows viewport
+  requestAnimationFrame(function() {
+    var rect = tt.getBoundingClientRect();
+    var vw = window.innerWidth;
+    var vh = window.innerHeight;
+    if (rect.right > vw - 16) {
+      tt.style.left = 'auto';
+      tt.style.right = '0';
+    }
+    if (rect.bottom > vh - 16) {
+      tt.style.top = 'auto';
+      tt.style.bottom = 'calc(100% + 4px)';
+    }
+  });
+});
+
+// Weather search via Open-Meteo
+function searchWeather() {
+  var input = document.getElementById('wxSearchInput').value.trim();
+  var result = document.getElementById('wxSearchResult');
+  if (!input) { result.textContent = 'Enter a city name.'; return; }
+  result.textContent = 'Searching...';
+  // Geocode
+  fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + encodeURIComponent(input) + '&count=1&language=en&format=json')
+    .then(function(r) { return r.json(); })
+    .then(function(geo) {
+      if (!geo.results || geo.results.length === 0) {
+        result.textContent = 'City not found.';
+        return;
+      }
+      var loc = geo.results[0];
+      var name = loc.name + (loc.admin1 ? ', ' + loc.admin1 : '') + (loc.country ? ', ' + loc.country : '');
+      // Fetch weather
+      return fetch('https://api.open-meteo.com/v1/forecast?latitude=' + loc.latitude + '&longitude=' + loc.longitude + '&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code&daily=temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=auto&forecast_days=1')
+        .then(function(r) { return r.json(); })
+        .then(function(wx) {
+          var c = wx.current;
+          var d = wx.daily;
+          var codes = {0:'Clear',1:'Mostly Clear',2:'Partly Cloudy',3:'Overcast',45:'Fog',48:'Rime Fog',51:'Light Drizzle',53:'Drizzle',55:'Heavy Drizzle',61:'Light Rain',63:'Rain',65:'Heavy Rain',71:'Light Snow',73:'Snow',75:'Heavy Snow',80:'Light Showers',81:'Showers',82:'Heavy Showers',95:'Thunderstorm',96:'T-storm w/ Hail',99:'Severe T-storm'};
+          var desc = codes[c.weather_code] || 'Code ' + c.weather_code;
+          result.innerHTML = '<strong>' + name + '</strong><br>' +
+            Math.round(c.temperature_2m) + '&deg;F &mdash; ' + desc +
+            '<br>Wind: ' + Math.round(c.wind_speed_10m) + ' mph | Humidity: ' + c.relative_humidity_2m + '%' +
+            '<br>High ' + Math.round(d.temperature_2m_max[0]) + ' / Low ' + Math.round(d.temperature_2m_min[0]);
+        });
+    })
+    .catch(function(err) {
+      result.textContent = 'Error fetching weather. Try again.';
+    });
 }
 </script>
 </body>
