@@ -853,7 +853,7 @@ function searchWeather() {
   var geoUrl = 'https://nominatim.openstreetmap.org/search?q=' + encodeURIComponent(input) +
     '&format=json&addressdetails=1&limit=1&accept-language=en';
 
-  fetch(geoUrl, { headers: { 'Accept-Language': 'en', 'User-Agent': 'theswap.report/1.0' } })
+  fetch(geoUrl)
     .then(function(r) { return r.json(); })
     .then(function(geo) {
       if (!geo || geo.length === 0) {
