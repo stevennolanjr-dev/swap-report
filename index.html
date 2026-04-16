@@ -844,20 +844,41 @@ document.addEventListener('mouseover', function(e) {
   });
 });
 
-// Weather search via wttr.in image embed (no fetch/CORS)
+// Weather search via wttr.in JSON
 function searchWeather() {
   var input = document.getElementById('wxSearchInput').value.trim();
   var result = document.getElementById('wxSearchResult');
-  if (!input) { result.innerHTML = 'Enter a city, ZIP, or airport code.'; return; }
+  if (!input) { result.textContent = 'Enter a city, ZIP, or airport code.'; return; }
+  result.textContent = 'Searching…';
   var encoded = encodeURIComponent(input.replace(/\s+/g, '+'));
-  var imgUrl = 'https://wttr.in/' + encoded + '.png?1';
-  var avLink = 'https://www.aviationweather.gov/metar/data?ids=' + encodeURIComponent(input.trim().toUpperCase()) + '&format=decoded&date=0&hours=0&taf=on';
-  result.innerHTML =
-    '<img src="' + imgUrl + '" ' +
-    'style="max-width:100%;border-radius:3px;display:block;" ' +
-    'onerror="this.style.display=&quot;none&quot;;document.getElementById(&quot;wxErr&quot;).style.display=&quot;block&quot;" ' +
-    'alt="Weather for ' + input + '">' +
-    '<span id="wxErr" style="display:none;color:var(--muted);font-size:11px;">Location not found. Try adding a state (e.g. \'Altus OK\') or use a ZIP code.</span>';
+  fetch('https://wttr.in/' + encoded + '?format=j1')
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var c = d.current_condition[0];
+      var a = d.nearest_area[0];
+      var w = d.weather[0];
+      var city   = a.areaName[0].value;
+      var region = a.region[0].value;
+      var country = a.country[0].value;
+      var label  = city + (region && region !== city ? ', ' + region : '') +
+                   (country === 'United States of America' ? '' : ', ' + country);
+      var desc   = c.weatherDesc[0].value;
+      var hi = w.maxtempF, lo = w.mintempF;
+      var precip = 0;
+      if (w.hourly) { w.hourly.forEach(function(h) { var p = parseInt(h.chanceofrain)||0; if (p > precip) precip = p; }); }
+      result.innerHTML =
+        '<strong style="color:var(--accent);letter-spacing:1px;text-transform:uppercase;font-size:11px;">' + label + '</strong><br>' +
+        '<span style="font-size:22px;font-weight:bold;">' + c.temp_F + '&deg;F</span>' +
+        ' &nbsp;<span style="color:var(--muted);">' + desc + '</span><br>' +
+        'Wind: ' + c.winddir16Point + ' ' + c.windspeedMiles + ' mph' +
+        ' &nbsp;&bull;&nbsp; Humidity: ' + c.humidity + '%' +
+        ' &nbsp;&bull;&nbsp; Feels like: ' + c.FeelsLikeF + '&deg;F<br>' +
+        'High <strong>' + hi + '</strong> / Low <strong>' + lo + '</strong>' +
+        (precip ? ' &nbsp;&bull;&nbsp; Rain chance: ' + precip + '%' : '');
+    })
+    .catch(function() {
+      result.textContent = 'Location not found. Try "Altus OK", a ZIP code, or an ICAO identifier.';
+    });
 }
 
 function searchAvWx() {
