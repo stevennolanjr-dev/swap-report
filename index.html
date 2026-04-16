@@ -844,47 +844,100 @@ document.addEventListener('mouseover', function(e) {
   });
 });
 
-// Weather search via wttr.in JSON
+// Weather search — wttr.in current + Open-Meteo 5-day
 function searchWeather() {
   var input = document.getElementById('wxSearchInput').value.trim();
   var result = document.getElementById('wxSearchResult');
   if (!input) { result.textContent = 'Enter a city, ZIP, or airport code.'; return; }
-  result.textContent = 'Searching…';
+  result.textContent = 'Searching\u2026';
   var encoded = encodeURIComponent(input.replace(/\s+/g, '+'));
   fetch('https://wttr.in/' + encoded + '?format=j1')
     .then(function(r) { return r.json(); })
     .then(function(d) {
-      var c = d.current_condition[0];
-      var a = d.nearest_area[0];
-      var w = d.weather[0];
-      var city   = a.areaName[0].value;
-      var region = a.region[0].value;
-      var country = a.country[0].value;
-      var label  = city + (region && region !== city ? ', ' + region : '') +
-                   (country === 'United States of America' ? '' : ', ' + country);
-      var desc   = c.weatherDesc[0].value;
-      var hi = w.maxtempF, lo = w.mintempF;
-      var precip = 0;
-      if (w.hourly) { w.hourly.forEach(function(h) { var p = parseInt(h.chanceofrain)||0; if (p > precip) precip = p; }); }
-      result.innerHTML =
-        '<strong style="color:var(--accent);letter-spacing:1px;text-transform:uppercase;font-size:11px;">' + label + '</strong><br>' +
-        '<span style="font-size:22px;font-weight:bold;">' + c.temp_F + '&deg;F</span>' +
-        ' &nbsp;<span style="color:var(--muted);">' + desc + '</span><br>' +
-        'Wind: ' + c.winddir16Point + ' ' + c.windspeedMiles + ' mph' +
-        ' &nbsp;&bull;&nbsp; Humidity: ' + c.humidity + '%' +
-        ' &nbsp;&bull;&nbsp; Feels like: ' + c.FeelsLikeF + '&deg;F<br>' +
-        'High <strong>' + hi + '</strong> / Low <strong>' + lo + '</strong>' +
-        (precip ? ' &nbsp;&bull;&nbsp; Rain chance: ' + precip + '%' : '');
+      var c  = d.current_condition[0];
+      var a  = d.nearest_area[0];
+      var w0 = d.weather[0];
+      var lat = parseFloat(a.latitude), lon = parseFloat(a.longitude);
+      var city = a.areaName[0].value, region = a.region[0].value, country = a.country[0].value;
+      var label = city + (region && region !== city ? ', ' + region : '') +
+                  (country === 'United States of America' ? '' : ', ' + country);
+      var wttr = { label:label, c:c, sunrise:w0.astronomy[0].sunrise, sunset:w0.astronomy[0].sunset };
+      return fetch('https://api.open-meteo.com/v1/forecast?latitude='+lat+'&longitude='+lon+
+        '&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode,sunrise,sunset' +
+        '&hourly=precipitation_probability&temperature_unit=fahrenheit&timezone=auto&forecast_days=5')
+        .then(function(r) { return r.json(); })
+        .then(function(om) { renderWeather(result, wttr, om); });
     })
     .catch(function() {
       result.textContent = 'Location not found. Try "Altus OK", a ZIP code, or an ICAO identifier.';
     });
 }
 
+function renderWeather(el, w, om) {
+  var c = w.c;
+  var wDesc = {0:'Clear',1:'Mostly Clear',2:'Partly Cloudy',3:'Overcast',45:'Fog',48:'Rime Fog',
+    51:'Lt Drizzle',53:'Drizzle',55:'Hvy Drizzle',61:'Lt Rain',63:'Rain',65:'Hvy Rain',
+    71:'Lt Snow',73:'Snow',75:'Hvy Snow',80:'Showers',81:'Showers',82:'Hvy Showers',
+    95:'T-storm',96:'T-storm/Hail',99:'Severe T-storm'};
+  var dNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+  // Current conditions
+  var html =
+    '<div style="margin-bottom:8px;">' +
+    '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:10px;color:var(--accent);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">' + w.label + '</div>' +
+    '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:28px;font-weight:600;">' + c.temp_F + '&deg;F</span>' +
+    '&nbsp;<span style="font-size:13px;color:var(--muted);">' + c.weatherDesc[0].value + '</span><br>' +
+    '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:var(--muted);">' +
+    'Wind: ' + c.winddir16Point + ' ' + c.windspeedMiles + ' mph' +
+    ' &nbsp;&bull;&nbsp; Humidity: ' + c.humidity + '%' +
+    ' &nbsp;&bull;&nbsp; Feels like: ' + c.FeelsLikeF + '&deg;F' +
+    '</span><br>' +
+    '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:var(--muted);">' +
+    '&#9728;&nbsp;' + w.sunrise + ' &nbsp;&nbsp; &#9790;&nbsp;' + w.sunset +
+    '</span></div>';
+
+  // 24-hr precip bars
+  var now = new Date();
+  var h24 = om.hourly.precipitation_probability.slice(now.getHours(), now.getHours() + 24);
+  while (h24.length < 24) h24.push(0);
+  html += '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:9px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;">24-Hr Precip %</div>';
+  html += '<div style="display:flex;align-items:flex-end;gap:1px;height:28px;margin-bottom:2px;">';
+  for (var i = 0; i < 24; i++) {
+    var p = h24[i] || 0;
+    var bh = Math.max(2, Math.round(p * 0.26));
+    var bc = p >= 70 ? 'var(--accent)' : p >= 40 ? '#b05050' : 'var(--border)';
+    html += '<div style="flex:1;background:' + bc + ';height:' + bh + 'px;border-radius:1px;" title="Hour +'+(i)+': '+p+'%"></div>';
+  }
+  html += '</div>';
+  html += '<div style="display:flex;justify-content:space-between;font-family:\'IBM Plex Mono\',monospace;font-size:9px;color:var(--muted);margin-bottom:10px;"><span>Now</span><span>+6h</span><span>+12h</span><span>+18h</span><span>+24h</span></div>';
+
+  // 5-day forecast
+  html += '<div style="display:flex;gap:3px;">';
+  for (var i = 0; i < 5; i++) {
+    var dt    = new Date(om.daily.time[i] + 'T12:00:00');
+    var dname = i === 0 ? 'Today' : dNames[dt.getDay()];
+    var code  = om.daily.weathercode[i];
+    var pp    = om.daily.precipitation_probability_max[i] || 0;
+    var sr    = (om.daily.sunrise[i] || '').split('T')[1] || '';
+    var ss    = (om.daily.sunset[i]  || '').split('T')[1] || '';
+    html +=
+      '<div style="flex:1;background:var(--card-bg);border:1px solid var(--border);border-radius:3px;padding:5px 3px;text-align:center;font-family:\'IBM Plex Mono\',monospace;">' +
+      '<div style="font-size:9px;color:var(--accent);font-weight:600;letter-spacing:1px;">' + dname + '</div>' +
+      '<div style="font-size:14px;font-weight:bold;margin:2px 0;">' + Math.round(om.daily.temperature_2m_max[i]) + '&deg;</div>' +
+      '<div style="font-size:11px;color:var(--muted);">' + Math.round(om.daily.temperature_2m_min[i]) + '&deg;</div>' +
+      '<div style="font-size:9px;color:var(--muted);margin-top:2px;">' + (wDesc[code] || '') + '</div>' +
+      '<div style="font-size:9px;color:' + (pp >= 30 ? 'var(--accent)' : 'var(--muted)') + ';margin-top:2px;">' + (pp ? pp + '%' : '&mdash;') + '</div>' +
+      (i === 0 && sr ? '<div style="font-size:8px;color:var(--muted);margin-top:3px;line-height:1.4;">&#9728;' + sr + '<br>&#9790;' + ss + '</div>' : '') +
+      '</div>';
+  }
+  html += '</div>';
+  el.innerHTML = html;
+}
+
 function searchAvWx() {
   var input = document.getElementById('wxSearchInput').value.trim().toUpperCase();
   if (!input) { document.getElementById('wxSearchResult').textContent = 'Enter an airport code (e.g. KLAW).'; return; }
-  window.open('https://www.aviationweather.gov/metar/data?ids=' + encodeURIComponent(input) + '&format=decoded&date=0&hours=0&taf=on', '_blank');
+  window.open('https://aviationweather.gov/api/data/metar?ids=' + encodeURIComponent(input) + '&format=decoded&taf=true', '_blank');
 }
 </script>
 </body>
