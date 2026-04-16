@@ -855,7 +855,7 @@ function searchWeather() {
   result.innerHTML =
     '<img src="' + imgUrl + '" ' +
     'style="max-width:100%;border-radius:3px;display:block;" ' +
-    'onerror="this.style.display='none';document.getElementById('wxErr').style.display='block'" ' +
+    'onerror="this.style.display=&quot;none&quot;;document.getElementById(&quot;wxErr&quot;).style.display=&quot;block&quot;" ' +
     'alt="Weather for ' + input + '">' +
     '<span id="wxErr" style="display:none;color:var(--muted);font-size:11px;">Location not found. Try adding a state (e.g. \'Altus OK\') or use a ZIP code.</span>';
 }
