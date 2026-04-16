@@ -187,13 +187,14 @@
 <!-- WEATHER -->
 <div class="weather-section">
   <div class="weather-map-wrap">
-    <iframe src="https://embed.ventusky.com/?p=38;-97;4&l=rain-3h" allowfullscreen loading="lazy" title="Ventusky Weather Map"></iframe>
+    <iframe src="https://embed.ventusky.com/?p=38;-97;4&l=rain-3h" allowfullscreen loading="lazy" title="Ventusky Weather Map" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe>
   </div>
   <div class="weather-search-box">
-    <label>Local Conditions &mdash; Enter city or ZIP</label>
+    <label>Local Conditions &mdash; City, ZIP, or Airport Code (e.g. KLAW)</label>
     <div class="weather-search-row">
-      <input type="text" id="wxSearchInput" placeholder="e.g. Oklahoma City or 29401" onkeydown="if(event.key==='Enter')searchWeather()">
+      <input type="text" id="wxSearchInput" placeholder="e.g. Altus OK &bull; 73521 &bull; KLAW" onkeydown="if(event.key==='Enter')searchWeather()">
       <button onclick="searchWeather()">Search</button>
+      <button onclick="searchAvWx()" style="background:var(--muted);">Aviation WX</button>
     </div>
     <div id="wxSearchResult" class="weather-search-result"></div>
   </div>
@@ -843,42 +844,26 @@ document.addEventListener('mouseover', function(e) {
   });
 });
 
-// Weather search via wttr.in
+// Weather search via wttr.in image embed (no fetch/CORS)
 function searchWeather() {
   var input = document.getElementById('wxSearchInput').value.trim();
   var result = document.getElementById('wxSearchResult');
-  if (!input) { result.textContent = 'Enter a city, ZIP, or base name.'; return; }
-  result.textContent = 'Searching...';
-  fetch('https://wttr.in/' + encodeURIComponent(input) + '?format=j1')
-    .then(function(r) {
-      if (!r.ok) { throw new Error('HTTP ' + r.status); }
-      return r.json();
-    })
-    .then(function(d) {
-      var c = d.current_condition[0];
-      var a = d.nearest_area[0];
-      var w = d.weather[0];
-      var city = a.areaName[0].value;
-      var region = a.region[0].value;
-      var country = a.country[0].value;
-      var label = city + (region && region !== city ? ', ' + region : '') +
-                  (country === 'United States of America' ? '' : ', ' + country);
-      var desc = c.weatherDesc[0].value;
-      var temp = c.temp_F;
-      var wind = c.windspeedMiles + ' mph ' + c.winddir16Point;
-      var humidity = c.humidity + '%';
-      var hi = w.maxtempF;
-      var lo = w.mintempF;
-      var precip = w.hourly ? Math.max.apply(null, w.hourly.map(function(h){ return parseInt(h.chanceofrain)||0; })) : null;
-      result.innerHTML = '<strong>' + label + '</strong><br>' +
-        temp + '&deg;F &mdash; ' + desc +
-        '<br>Wind: ' + wind + ' &nbsp;|&nbsp; Humidity: ' + humidity +
-        '<br>High ' + hi + ' / Low ' + lo +
-        (precip !== null ? ' &nbsp;|&nbsp; Rain chance: ' + precip + '%' : '');
-    })
-    .catch(function(err) {
-      result.textContent = 'Not found. Try "City State" (e.g. Altus OK) or a ZIP code.';
-    });
+  if (!input) { result.innerHTML = 'Enter a city, ZIP, or airport code.'; return; }
+  var encoded = encodeURIComponent(input.replace(/\s+/g, '+'));
+  var imgUrl = 'https://wttr.in/' + encoded + '.png?1';
+  var avLink = 'https://www.aviationweather.gov/metar/data?ids=' + encodeURIComponent(input.trim().toUpperCase()) + '&format=decoded&date=0&hours=0&taf=on';
+  result.innerHTML =
+    '<img src="' + imgUrl + '" ' +
+    'style="max-width:100%;border-radius:3px;display:block;" ' +
+    'onerror="this.style.display='none';document.getElementById('wxErr').style.display='block'" ' +
+    'alt="Weather for ' + input + '">' +
+    '<span id="wxErr" style="display:none;color:var(--muted);font-size:11px;">Location not found. Try adding a state (e.g. \'Altus OK\') or use a ZIP code.</span>';
+}
+
+function searchAvWx() {
+  var input = document.getElementById('wxSearchInput').value.trim().toUpperCase();
+  if (!input) { document.getElementById('wxSearchResult').textContent = 'Enter an airport code (e.g. KLAW).'; return; }
+  window.open('https://www.aviationweather.gov/metar/data?ids=' + encodeURIComponent(input) + '&format=decoded&date=0&hours=0&taf=on', '_blank');
 }
 </script>
 </body>
