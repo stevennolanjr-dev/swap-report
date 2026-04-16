@@ -84,6 +84,12 @@
   .tension-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 6px; }
   .tension-block p { font-size: 13px; line-height: 1.65; }
 
+  /* Edition bar */
+  .edition-bar { display: flex; align-items: center; gap: 12px; padding: 8px 14px; background: var(--header-bg); border-radius: 4px; margin-bottom: 12px; flex-wrap: wrap; }
+  .edition-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); }
+  .edition-link { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--accent); text-decoration: none; padding: 2px 8px; border: 1px solid var(--border); border-radius: 3px; transition: border-color 0.15s, background 0.15s; }
+  .edition-link:hover { border-color: var(--accent); background: rgba(139,0,0,0.06); }
+
   .footer-note { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); text-align: center; margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border); letter-spacing: 1px; text-transform: uppercase; }
 
   @media (max-width: 700px) {
@@ -109,6 +115,12 @@
       <button class="theme-btn" onclick="setTheme('theme-dark')" title="Dark">&#9790;</button>
     </div>
   </div>
+</div>
+
+<!-- EDITION NAV -->
+<div class="edition-bar">
+  <a href="../index.html" class="edition-link">&larr; Daily Report</a>
+  <span class="edition-label">Special Edition</span>
 </div>
 
 <!-- ELECTION RESULTS -->
