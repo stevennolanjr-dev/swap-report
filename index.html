@@ -843,58 +843,41 @@ document.addEventListener('mouseover', function(e) {
   });
 });
 
-// Weather search via Nominatim geocoding + Open-Meteo weather
+// Weather search via wttr.in
 function searchWeather() {
   var input = document.getElementById('wxSearchInput').value.trim();
   var result = document.getElementById('wxSearchResult');
   if (!input) { result.textContent = 'Enter a city, ZIP, or base name.'; return; }
   result.textContent = 'Searching...';
-
-  var geoUrl = 'https://nominatim.openstreetmap.org/search?q=' + encodeURIComponent(input) +
-    '&format=json&addressdetails=1&limit=1&accept-language=en';
-
-  fetch(geoUrl)
-    .then(function(r) { return r.json(); })
-    .then(function(geo) {
-      if (!geo || geo.length === 0) {
-        result.textContent = 'Location not found. Try adding a state abbreviation (e.g. "Altus OK") or ZIP code.';
-        return;
-      }
-      var loc = geo[0];
-      var lat = parseFloat(loc.lat);
-      var lon = parseFloat(loc.lon);
-      var addr = loc.address || {};
-      var name = addr.city || addr.town || addr.village || addr.county || loc.display_name.split(',')[0];
-      var state = addr.state || '';
-      var country = addr.country_code === 'us' ? '' : (addr.country || '');
-      var label = name + (state ? ', ' + state : '') + (country ? ', ' + country : '');
-
-      return fetch('https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + lon +
-        '&current=temperature_2m,relative_humidity_2m,wind_speed_10m,wind_direction_10m,weather_code' +
-        '&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max' +
-        '&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=auto&forecast_days=1')
-        .then(function(r) { return r.json(); })
-        .then(function(wx) {
-          var c = wx.current;
-          var d = wx.daily;
-          var codes = {0:'Clear',1:'Mostly Clear',2:'Partly Cloudy',3:'Overcast',
-            45:'Fog',48:'Rime Fog',51:'Light Drizzle',53:'Drizzle',55:'Heavy Drizzle',
-            61:'Light Rain',63:'Rain',65:'Heavy Rain',71:'Light Snow',73:'Snow',75:'Heavy Snow',
-            80:'Light Showers',81:'Showers',82:'Heavy Showers',95:'Thunderstorm',
-            96:'T-storm + Hail',99:'Severe T-storm'};
-          var dirs = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'];
-          var dir = dirs[Math.round(c.wind_direction_10m / 22.5) % 16];
-          var desc = codes[c.weather_code] || 'Code ' + c.weather_code;
-          var precip = d.precipitation_probability_max ? d.precipitation_probability_max[0] : null;
-          result.innerHTML = '<strong>' + label + '</strong><br>' +
-            Math.round(c.temperature_2m) + '&deg;F &mdash; ' + desc +
-            '<br>Wind: ' + dir + ' ' + Math.round(c.wind_speed_10m) + ' mph &nbsp;|&nbsp; Humidity: ' + c.relative_humidity_2m + '%' +
-            '<br>High ' + Math.round(d.temperature_2m_max[0]) + ' / Low ' + Math.round(d.temperature_2m_min[0]) +
-            (precip !== null ? ' &nbsp;|&nbsp; Precip chance: ' + precip + '%' : '');
-        });
+  fetch('https://wttr.in/' + encodeURIComponent(input) + '?format=j1')
+    .then(function(r) {
+      if (!r.ok) { throw new Error('HTTP ' + r.status); }
+      return r.json();
+    })
+    .then(function(d) {
+      var c = d.current_condition[0];
+      var a = d.nearest_area[0];
+      var w = d.weather[0];
+      var city = a.areaName[0].value;
+      var region = a.region[0].value;
+      var country = a.country[0].value;
+      var label = city + (region && region !== city ? ', ' + region : '') +
+                  (country === 'United States of America' ? '' : ', ' + country);
+      var desc = c.weatherDesc[0].value;
+      var temp = c.temp_F;
+      var wind = c.windspeedMiles + ' mph ' + c.winddir16Point;
+      var humidity = c.humidity + '%';
+      var hi = w.maxtempF;
+      var lo = w.mintempF;
+      var precip = w.hourly ? Math.max.apply(null, w.hourly.map(function(h){ return parseInt(h.chanceofrain)||0; })) : null;
+      result.innerHTML = '<strong>' + label + '</strong><br>' +
+        temp + '&deg;F &mdash; ' + desc +
+        '<br>Wind: ' + wind + ' &nbsp;|&nbsp; Humidity: ' + humidity +
+        '<br>High ' + hi + ' / Low ' + lo +
+        (precip !== null ? ' &nbsp;|&nbsp; Rain chance: ' + precip + '%' : '');
     })
     .catch(function(err) {
-      result.textContent = 'Error: ' + (err && err.message ? err.message : String(err));
+      result.textContent = 'Not found. Try "City State" (e.g. Altus OK) or a ZIP code.';
     });
 }
 </script>
