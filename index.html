@@ -52,17 +52,13 @@
   .edition-link:hover { border-color: var(--accent); background: rgba(139,0,0,0.06); }
 
   /* Weather */
-  .weather-grid { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
-  .weather-card { flex: 1; min-width: 240px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; padding: 12px 14px; }
-  .weather-loc { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 6px; }
-  .weather-temp { font-size: 26px; font-weight: bold; font-family: 'IBM Plex Mono', monospace; }
-  .weather-detail { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); margin-top: 4px; line-height: 1.6; }
-
-  /* Weather search */
+  .weather-section { margin-bottom: 16px; }
+  .weather-map-wrap { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin-bottom: 10px; }
+  .weather-map-wrap iframe { display: block; width: 100%; height: 360px; border: none; }
   .weather-search-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; padding: 10px 14px; margin-bottom: 16px; }
   .weather-search-box label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); }
-  .weather-search-row { display: flex; gap: 6px; margin-top: 6px; align-items: center; }
-  .weather-search-row input { background: var(--bg); border: 1px solid var(--border); color: var(--fg); padding: 5px 8px; font-size: 12px; font-family: 'IBM Plex Mono', monospace; border-radius: 3px; flex: 1; max-width: 300px; }
+  .weather-search-row { display: flex; gap: 6px; margin-top: 6px; align-items: center; flex-wrap: wrap; }
+  .weather-search-row input { background: var(--bg); border: 1px solid var(--border); color: var(--fg); padding: 5px 8px; font-size: 12px; font-family: 'IBM Plex Mono', monospace; border-radius: 3px; flex: 1; min-width: 160px; max-width: 300px; }
   .weather-search-row button { background: var(--accent); color: #fff; border: none; padding: 5px 12px; font-size: 11px; font-family: 'IBM Plex Mono', monospace; cursor: pointer; border-radius: 3px; text-transform: uppercase; letter-spacing: 1px; }
   .weather-search-result { margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); line-height: 1.6; }
 
@@ -189,27 +185,18 @@
 </div>
 
 <!-- WEATHER -->
-<div class="weather-grid">
-  <div class="weather-card">
-    <div class="weather-loc">Altus, OK</div>
-    <div class="weather-temp">80&deg;F</div>
-    <div class="weather-detail">Partly cloudy. Severe thunderstorm watch later today.<br>Flash flooding risk, damaging winds, tornado potential.<br>High 85 / Low 52.</div>
+<div class="weather-section">
+  <div class="weather-map-wrap">
+    <iframe src="https://embed.ventusky.com/?p=38;-97;4&l=rain-3h" allowfullscreen loading="lazy" title="Ventusky Weather Map"></iframe>
   </div>
-  <div class="weather-card">
-    <div class="weather-loc">Charleston, SC</div>
-    <div class="weather-temp">78&deg;F</div>
-    <div class="weather-detail">Mostly sunny. Light S wind 8&ndash;13 mph.<br>Tonight mostly cloudy.<br>High 78 / Low 61.</div>
+  <div class="weather-search-box">
+    <label>Local Conditions &mdash; Enter city or ZIP</label>
+    <div class="weather-search-row">
+      <input type="text" id="wxSearchInput" placeholder="e.g. Oklahoma City or 29401" onkeydown="if(event.key==='Enter')searchWeather()">
+      <button onclick="searchWeather()">Search</button>
+    </div>
+    <div id="wxSearchResult" class="weather-search-result"></div>
   </div>
-</div>
-
-<!-- Weather Search -->
-<div class="weather-search-box">
-  <label>Search Weather</label>
-  <div class="weather-search-row">
-    <input type="text" id="wxSearchInput" placeholder="Enter city name..." onkeydown="if(event.key==='Enter')searchWeather()">
-    <button onclick="searchWeather()">Search</button>
-  </div>
-  <div id="wxSearchResult" class="weather-search-result"></div>
 </div>
 
 <!-- MARKET DATA STRIP -->
