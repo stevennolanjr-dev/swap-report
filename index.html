@@ -879,6 +879,10 @@ function renderWeather(el, w, om) {
     51:'Lt Drizzle',53:'Drizzle',55:'Hvy Drizzle',61:'Lt Rain',63:'Rain',65:'Hvy Rain',
     71:'Lt Snow',73:'Snow',75:'Hvy Snow',80:'Showers',81:'Showers',82:'Hvy Showers',
     95:'T-storm',96:'T-storm/Hail',99:'Severe T-storm'};
+  var wIcon = {0:'&#9728;',1:'&#127780;',2:'&#9925;',3:'&#9729;',45:'&#127787;',48:'&#127787;',
+    51:'&#127782;',53:'&#127782;',55:'&#127783;',61:'&#127783;',63:'&#127783;',65:'&#127783;',
+    71:'&#127784;',73:'&#127784;',75:'&#127784;',80:'&#127782;',81:'&#127782;',82:'&#127783;',
+    95:'&#9928;',96:'&#9928;',99:'&#9928;'};
   var dNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 
   // Current conditions
@@ -925,7 +929,8 @@ function renderWeather(el, w, om) {
       '<div style="font-size:9px;color:var(--accent);font-weight:600;letter-spacing:1px;">' + dname + '</div>' +
       '<div style="font-size:14px;font-weight:bold;margin:2px 0;">' + Math.round(om.daily.temperature_2m_max[i]) + '&deg;</div>' +
       '<div style="font-size:11px;color:var(--muted);">' + Math.round(om.daily.temperature_2m_min[i]) + '&deg;</div>' +
-      '<div style="font-size:9px;color:var(--muted);margin-top:2px;">' + (wDesc[code] || '') + '</div>' +
+      '<div style="font-size:18px;line-height:1.2;margin:3px 0;">' + (wIcon[code] || '') + '</div>' +
+      '<div style="font-size:9px;color:var(--muted);">' + (wDesc[code] || '') + '</div>' +
       '<div style="font-size:9px;color:' + (pp >= 30 ? 'var(--accent)' : 'var(--muted)') + ';margin-top:2px;">' + (pp ? pp + '%' : '&mdash;') + '</div>' +
       (i === 0 && sr ? '<div style="font-size:8px;color:var(--muted);margin-top:3px;line-height:1.4;">&#9728;' + sr + '<br>&#9790;' + ss + '</div>' : '') +
       '</div>';
