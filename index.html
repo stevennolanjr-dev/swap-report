@@ -894,7 +894,7 @@ function searchWeather() {
         });
     })
     .catch(function(err) {
-      result.textContent = 'Error fetching weather. Try again.';
+      result.textContent = 'Error: ' + (err && err.message ? err.message : String(err));
     });
 }
 </script>
