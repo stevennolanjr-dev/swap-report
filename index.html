@@ -144,6 +144,12 @@
   .story-hed { font-family: Georgia, serif; font-size: 15px; font-weight: 400; line-height: 1.4; margin-bottom: 5px; }
   .story-hed a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
   .story-hed a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* SOURCING NOTE — visible banner explaining why headlines are unlinked */
+  .sourcing-note { background: #fff4e0; border: 1px solid #c8a06a; border-left: 4px solid #c8a06a; color: #5a3a10; border-radius: 0 4px 4px 0; padding: 10px 14px; margin: 0 0 20px; font-size: 12px; line-height: 1.55; font-family: 'IBM Plex Mono', monospace; }
+  .sourcing-note strong { color: #3a2408; letter-spacing: 0.04em; }
+  [data-theme="dark"] .sourcing-note { background: #2a1e10; border-color: #6a4a28; color: #e8d0a8; }
+  [data-theme="dark"] .sourcing-note strong { color: #ffc98a; }
   .story-src { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-bottom: 6px; }
   .story-src .src-tag { background: var(--tag-bg); color: var(--tag-text); padding: 1px 5px; border-radius: 2px; font-size: 9px; margin-right: 6px; }
   .story-syn { font-size: 13px; color: var(--text); opacity: 0.85; line-height: 1.55; }
@@ -301,6 +307,10 @@
     <div class="bluf-text">Israel and Lebanon agreed to a 10-day ceasefire beginning this morning, brokered by Qatar and France with U.S. backing — but Hezbollah called the Lebanese government's participation a "grave sin" and has not publicly accepted the terms. The Iran maritime blockade enters Day 5; at least one sanctioned Chinese tanker transited despite being on the interception list — the Pentagon has not acknowledged the exception. The Senate war powers clock hits Day 49; OMB Director Vought told Congress this week he cannot estimate the war's cost while requesting $1.5 trillion and a separate $200B supplemental now stalled. Beijing is pressing Tehran to reopen Hormuz to protect its own 5% GDP growth target — which means Iran's most powerful patron is now a source of diplomatic pressure, not cover. NATO's Berlin pledges headline at $60B; the fine print is that Germany's Patriot deliveries don't arrive until 2027 and the burden is falling on a "limited number of countries." The week's connective thread: institutions built for peacetime are bending under a war nobody formally authorized, and the adversaries watching most closely are drawing conclusions faster than Washington is.</div>
   </div>
 
+  <div class="sourcing-note">
+    <strong>Sourcing note.</strong> Headlines in this build are intentionally unlinked. An earlier pass generated plausible-looking article URLs that did not resolve to the cited content; rather than replace them with misleading section-page links, they have been stripped. Publication attributions remain as plain text so you can verify any item directly. Live article-level links will return once the report is wired to a real news API rather than manual synthesis.
+  </div>
+
   <div class="watch-box">
     <div class="watch-label">&#9201; WATCH LIST</div>
     <div class="watch-items">
@@ -325,31 +335,31 @@
   <div class="section-label">Top Stories</div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.reuters.com/world/middle-east/" target="_blank">Israel, Lebanon agree to 10-day ceasefire; hostilities pause as of dawn Friday</a></div>
+    <div class="story-hed">Israel, Lebanon agree to 10-day ceasefire; hostilities pause as of dawn Friday</div>
     <div class="story-src"><span class="src-tag">REUTERS</span> Reuters / AP wires &middot; April 17, 2026</div>
     <div class="story-syn">Qatar and France brokered the agreement with U.S. backing. The Lebanese government signed; IDF ground operations south of the Litani paused at 0400 local. Critical caveat: Hezbollah lawmakers called their own government's engagement a "grave sin" — senior MP Hussein Hajj Hassan said it was a "grave error," while fighters demanded the government boycott talks entirely. Iran welcomed the deal as part of its bilateral framework with Washington; Hezbollah's acceptance is conditional on Israel ceasing hostilities. Four actors, four incompatible framings. No political framework — this is a military pause with an unacknowledged party.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.politico.com/defense" target="_blank">Senate war powers resolution fails 47-52 for fourth time; clock keeps ticking</a></div>
+    <div class="story-hed">Senate war powers resolution fails 47-52 for fourth time; clock keeps ticking</div>
     <div class="story-src"><span class="src-tag">POLITICO</span> Politico &middot; April 17, 2026</div>
     <div class="story-syn">Four senators switched from prior votes. The War Powers Resolution 60-day clock, triggered when Iran operations began March 29, expires approximately May 1. The White House has not invoked any formal authorization; legal advisors are publicly debating whether the blockade constitutes "hostilities" under the statute. Congressional leadership has no appetite for a fifth vote before the clock expires.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.defensenews.com/pentagon/" target="_blank">Pentagon FY27 request: 188% missile procurement surge, F-47 billions dwarf F/A-XX allocation</a></div>
+    <div class="story-hed">Pentagon FY27 request: 188% missile procurement surge, F-47 billions dwarf F/A-XX allocation</div>
     <div class="story-src"><span class="src-tag">DEFENSE NEWS</span> Defense News &middot; April 17, 2026</div>
     <div class="story-syn">The FY27 defense budget request shows a 188% increase in missile procurement — mostly air-to-air and standoff land attack — against a backdrop of accelerated drawdown in Iran theater. F-47 production funding is several times larger than F/A-XX development money, effectively previewing a future force structure debate: the Navy's strike fighter program is being squeezed before it starts.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.iaea.org/newscenter/pressreleases" target="_blank">IAEA: North Korea completes new uranium enrichment facility at Yongbyon</a></div>
+    <div class="story-hed">IAEA: North Korea completes new uranium enrichment facility at Yongbyon</div>
     <div class="story-src"><span class="src-tag">IAEA</span> IAEA Press Release / Reuters &middot; April 17, 2026</div>
     <div class="story-syn">Satellite imagery and intelligence assessments confirm the new facility is operational. The IAEA has no inspection access. The facility adds estimated 20–30% enrichment capacity above prior assessments. Timing — deep into the Iran crisis — is almost certainly deliberate: Pyongyang is testing whether Washington's attention and escalation tolerance can be further exploited.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://apnews.com/hub/nato" target="_blank">NATO Berlin summit pledges $60B Ukraine aid package; alliance cohesion holds — barely</a></div>
+    <div class="story-hed">NATO Berlin summit pledges $60B Ukraine aid package; alliance cohesion holds — barely</div>
     <div class="story-src"><span class="src-tag">AP</span> AP / NATO Communiqu&eacute; &middot; April 17, 2026</div>
     <div class="story-syn">The headline number is real; the delivery schedule is the qualifier. Only $12B is FY26-accessible. Germany's contribution — Patriot missiles and IRIS-T launchers — won't arrive until 2027 at earliest; those are contracts, not deliveries. The UK's 120,000 drones are the largest single drone package pledged, but also contracts. NATO Secretary General Rutte noted a "limited number of countries doing the heavy lifting" — the burden-sharing problem is unresolved and he said so publicly. Hungary abstained. Coverage presenting this as a near-term battlefield impact story is ahead of the evidence.</div>
   </div>
@@ -364,49 +374,49 @@
   <div class="section-label">Defense &amp; Military</div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.defensenews.com/pentagon/" target="_blank">FY27 Budget: Missile procurement up 188%, reflects Iran theater drawdown lessons</a></div>
+    <div class="story-hed">FY27 Budget: Missile procurement up 188%, reflects Iran theater drawdown lessons</div>
     <div class="story-src"><span class="src-tag">DEFENSE NEWS</span> Defense News &middot; April 17</div>
     <div class="story-syn">The budget request prioritizes long-range fires and air-to-air munitions after the Iran blockade revealed standoff weapon inventory gaps. The F-47 gets $14.2B in production funding; the F/A-XX gets $1.8B — a ratio that will define the next decade of Navy aviation. SECDEF framed this as a "magazine depth" priority, not a platform competition. The Navy brass sees it differently.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.stripes.com/theaters/middle_east/" target="_blank">Iran blockade Day 5: 14 vessels turned, no shots fired, one near-incident with IRGCN</a></div>
+    <div class="story-hed">Iran blockade Day 5: 14 vessels turned, no shots fired, one near-incident with IRGCN</div>
     <div class="story-src"><span class="src-tag">STARS &amp; STRIPES</span> Stars &amp; Stripes &middot; April 17</div>
     <div class="story-syn">The blockade is holding kinetically but the logistics math is compressing. Fourteen commercial vessels have been redirected; three Chinese-flagged tankers complied after initial hesitation. One near-incident with an IRGCN patrol boat on April 16 was de-escalated at the tactical level. The ceasefire window opens a narrow diplomatic lane — but CENTCOM has not changed force posture.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.airandspaceforces.com/" target="_blank">F-47 vs. F/A-XX: The budget fight previews a stealth fighter force structure reckoning</a></div>
+    <div class="story-hed">F-47 vs. F/A-XX: The budget fight previews a stealth fighter force structure reckoning</div>
     <div class="story-src"><span class="src-tag">AIR FORCE MAG</span> Air Force Magazine &middot; April 17</div>
     <div class="story-syn">Inside the FY27 numbers: the Air Force's F-47 sixth-gen program gets production funding while the Navy's F/A-XX remains in early development with a fraction of the dollars. Analysts note this divergence, if sustained, locks in an Air Force-dominant strike fighter future — a significant structural decision being made quietly inside a budget request during a hot war.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.defensenews.com/land/" target="_blank">Army reposturing: two BCTs shifted from Europe to CENTCOM AOR as Iran theater demands grow</a></div>
+    <div class="story-hed">Army reposturing: two BCTs shifted from Europe to CENTCOM AOR as Iran theater demands grow</div>
     <div class="story-src"><span class="src-tag">DEFENSE NEWS</span> Defense News &middot; April 17</div>
     <div class="story-syn">Two Brigade Combat Teams previously earmarked for NATO deterrence in Poland are being redirected to the CENTCOM area. NATO allies are privately alarmed; the Pentagon argues the moves are temporary. The shift underscores a real resource constraint: the U.S. military is simultaneously sustaining a naval blockade, supporting Ukraine materially, and trying to maintain European deterrence. Something is being underfunded — the only question is which bucket.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.nytimes.com/section/world/asia" target="_blank">North Korea's Yongbyon expansion: a capability sprint under cover of the Iran crisis</a></div>
+    <div class="story-hed">North Korea's Yongbyon expansion: a capability sprint under cover of the Iran crisis</div>
     <div class="story-src"><span class="src-tag">NYT</span> New York Times &middot; April 17</div>
     <div class="story-syn">The new facility completion is not coincidental in timing. Pyongyang has consistently exploited U.S. attention deficits during major crises: Kosovo 1999, Iraq 2003, now Iran 2026. The IAEA report is a data point but the strategic question is whether the 6-party framework (dormant since 2009) can be revived or whether the international community accepts another fait accompli.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.defense.gov/News/Transcripts/" target="_blank">Hegseth/Caine Pentagon briefing: Operation Epic Fury targets Iranian ports — not the Strait of Hormuz</a></div>
+    <div class="story-hed">Hegseth/Caine Pentagon briefing: Operation Epic Fury targets Iranian ports — not the Strait of Hormuz</div>
     <div class="story-src"><span class="src-tag">PENTAGON POOL</span> DoD Press Briefing &middot; April 16, 2026</div>
     <div class="story-syn">Secretary Hegseth and CJCS Gen. Caine confirmed Operation Epic Fury is a "targeted maritime blockade of Iranian ports" — not a Strait of Hormuz closure. The legal and operational distinction matters: a port blockade has different standing under international maritime law than a strait closure. 13 vessels complied with turn-back orders; a force of 10,000 personnel and over a dozen ships is enforcing the blockade within Iranian territorial seas. Boarding actions are authorized but not yet required. The framing as "active economic denial" rather than deterrence marks a formal doctrinal transition. Watch for Iranian gray-zone retaliation targeting non-U.S. tankers to test coalition cohesion.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.executivebiz.com/" target="_blank">L3Harris breaks ground on $1.265B solid rocket motor facility in Virginia — Javelin, Stinger, THAAD production targeted</a></div>
+    <div class="story-hed">L3Harris breaks ground on $1.265B solid rocket motor facility in Virginia — Javelin, Stinger, THAAD production targeted</div>
     <div class="story-src"><span class="src-tag">EXECUTIVEBIZ</span> ExecutiveBiz / Manufacturing.net &middot; April 16, 2026</div>
     <div class="story-syn">The Virginia Advanced Propulsion Facilities (VAPF) will nearly double L3Harris's solid rocket motor manufacturing space. Targets: Javelin, Stinger, and THAAD interceptors — three systems with documented wartime inventory gaps. Governor Spanberger and Rep. Eugene Vindman framed it explicitly as a response to "War Department" requirements for attrition-reserve munitions. The SRM bottleneck has been the chronic constraint on long-range fires for three years; this is the first industrial-base response at scale. The 188% missile procurement surge in FY27 is only executable if the propulsion capacity exists to fill it.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://theaviationist.com/" target="_blank">&#9650; EARLY — French Rafale deploys laser-guided rocket pods for counter-UAS: first combat verification of cost-imposition approach</a></div>
+    <div class="story-hed">&#9650; EARLY — French Rafale deploys laser-guided rocket pods for counter-UAS: first combat verification of cost-imposition approach</div>
     <div class="story-src"><span class="src-tag">AVIATIONIST</span> The Aviationist / OSINT &middot; April 16, 2026 &middot; <em>Cross-corroborated — verified footage</em></div>
     <div class="story-syn">Ground footage from Erbil, Iraq confirms a French Air Force Rafale using laser-guided rockets to intercept Iranian-made one-way attack drones. The French DGA confirmed to the National Assembly this is a deliberate cost-imposition strategy: high-value MICA missiles cost far more than the OWA drones they'd otherwise destroy. This is the first combat verification of rocket-based counter-UAS at this fidelity. If the math holds, expect rapid pressure on U.S. planners to develop equivalent kits for F-35 and A-10 fleets currently supporting Epic Fury. The cost-of-the-intercept problem is the defining drone-warfare dynamic of this conflict.</div>
   </div>
@@ -429,43 +439,43 @@
   <div class="section-label">Strategic &amp; International</div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://apnews.com/hub/nato" target="_blank">NATO Berlin: $60B Ukraine aid, back-loaded, Hungary abstains; alliance cohesion under pressure</a></div>
+    <div class="story-hed">NATO Berlin: $60B Ukraine aid, back-loaded, Hungary abstains; alliance cohesion under pressure</div>
     <div class="story-src"><span class="src-tag">AP</span> AP &middot; April 17</div>
     <div class="story-syn">The headline number is real; the disbursement schedule is the qualifier. $12B is FY26-accessible. The remaining $48B is pledged against future budgets across 30+ national legislatures, several of which face elections in the next 18 months. The communiqu&eacute; language on "duration of support" softened overnight — a signal of ongoing negotiation within the alliance on how long the commitment holds if the war drags into 2027.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.chathamhouse.org/research" target="_blank">Chatham House: Beijing extracting operational lessons from Iran blockade for Taiwan contingency</a></div>
+    <div class="story-hed">Chatham House: Beijing extracting operational lessons from Iran blockade for Taiwan contingency</div>
     <div class="story-src"><span class="src-tag">CHATHAM HOUSE</span> Chatham House &middot; April 16</div>
     <div class="story-syn">A new Chatham House analysis argues China's PLA Navy is closely studying U.S. Hormuz blockade procedures — ROE, enforcement zones, vessel-turning mechanics, Chinese-flag tanker responses — as operational data for a potential Taiwan Strait contingency. The analysis notes that Chinese-flagged tankers' eventual compliance was observed at senior PLAN levels. This is not a new concern, but the specific operational detail being gathered is notable.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.ft.com/" target="_blank">Iran ceasefire clock: April 22 expiry creates inflection point for regional diplomacy</a></div>
+    <div class="story-hed">Iran ceasefire clock: April 22 expiry creates inflection point for regional diplomacy</div>
     <div class="story-src"><span class="src-tag">FT</span> Financial Times &middot; April 17</div>
     <div class="story-syn">The Israel-Lebanon ceasefire is directly linked to Iran's April 22 blockade window — both tracks were negotiated in parallel by Qatari and French intermediaries. If the Iran talks fail to produce a framework by April 22, the Lebanon ceasefire likely collapses within days. This means the next five days are simultaneously the most productive diplomatic window and the highest risk escalation point of the war so far.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.economist.com/leaders" target="_blank">The Economist: War without authorization — the precedent being set in the Hormuz blockade</a></div>
+    <div class="story-hed">The Economist: War without authorization — the precedent being set in the Hormuz blockade</div>
     <div class="story-src"><span class="src-tag">ECONOMIST</span> The Economist &middot; April 17</div>
     <div class="story-syn">A lead analysis argues that the fourth Senate war powers failure signals that Congress has effectively ceded war authority not through legislation but through repeated inaction. The piece draws a line from the 1973 War Powers Resolution through Kosovo, Iraq, Libya, and now Iran — each episode the statutory clock mattered less. The structural argument: the next president inherits a precedent of unchecked blockade authority.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.foreignaffairs.com/" target="_blank">Russia watching NATO Berlin with interest — and the BCT reposture with more</a></div>
+    <div class="story-hed">Russia watching NATO Berlin with interest — and the BCT reposture with more</div>
     <div class="story-src"><span class="src-tag">FOREIGN AFFAIRS</span> Foreign Affairs &middot; April 17</div>
     <div class="story-syn">The BCT shift from Europe to CENTCOM is being closely tracked in Moscow. The Kremlin's calculus throughout the Iran crisis has been to watch for NATO overextension — the two-BCT move is the clearest signal yet that overextension is not theoretical. Russian military analysts on state media flagged it within hours. The question is whether Moscow accelerates pressure on Ukraine before the BCTs return.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://nikkeiforum.com/foa25en/" target="_blank">China breaks with Tehran: Beijing pressing Iran to open Hormuz — protecting 5% GDP target, potential Trump-Xi summit May</a></div>
+    <div class="story-hed">China breaks with Tehran: Beijing pressing Iran to open Hormuz — protecting 5% GDP target, potential Trump-Xi summit May</div>
     <div class="story-src"><span class="src-tag">NIKKEI ASIA</span> Nikkei Asia &middot; April 16</div>
     <div class="story-syn">Beijing has shifted from silent Iranian support to active diplomatic pressure, urging Tehran to ensure Hormuz remains open despite the U.S. port blockade. Chinese diplomats reportedly warned that sustained disruptions are "unacceptable" to the CCP's 5% GDP growth target. A potential Trump-Xi summit in May aligns with this posture — China is positioning as "responsible mediator" to protect its own economic interests. The Iranian hardliner camp is now being squeezed by both Washington and Beijing simultaneously. That is a structurally different situation than last week.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.scmp.com/topics/defence" target="_blank">&#9650; EARLY — Chinese UUV near Indonesia's Masalembu Islands forces Jakarta's hand on U.S. overflight negotiations</a></div>
+    <div class="story-hed">&#9650; EARLY — Chinese UUV near Indonesia's Masalembu Islands forces Jakarta's hand on U.S. overflight negotiations</div>
     <div class="story-src"><span class="src-tag">SCMP / REUTERS</span> South China Morning Post / Reuters &middot; April 14-16 &middot; <em>Letter contents single-sourced — tracking</em></div>
     <div class="story-syn">A Chinese underwater drone recovered near the Masalembu Islands has exposed a significant gap in Indonesia's sub-surface ISR capability and triggered an internal Jakarta debate. The foreign ministry sent a confidential letter urging postponement of a U.S. "blanket" military overflight agreement, warning of Chinese relationship risk and South China Sea entanglement. The defense ministry had been moving toward signing. The foreign-defense split reflects the classic non-aligned squeeze: maritime incursions are forcing Jakarta to choose between U.S. ISR support or conceding sub-surface control to Beijing. Indonesia governs the Natuna Islands at the southern entrance to the South China Sea — overflight access there is strategically material. The letter's specific contents remain single-sourced through anonymous Indonesian insiders; the story's existence and general shape are confirmed.</div>
   </div>
@@ -488,31 +498,31 @@
   <div class="section-label">Domestic &amp; Policy</div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.politico.com/defense" target="_blank">Senate war powers resolution fails 47-52; four senators flip, clock runs out regardless</a></div>
+    <div class="story-hed">Senate war powers resolution fails 47-52; four senators flip, clock runs out regardless</div>
     <div class="story-src"><span class="src-tag">POLITICO</span> Politico &middot; April 17</div>
     <div class="story-syn">The fourth Senate attempt to invoke the War Powers Resolution failed 47-52, with four senators switching from prior "yes" votes — three citing the Israel-Lebanon ceasefire as evidence the strategy is working. The White House issued a brief statement of appreciation. Constitutional scholars note the irony: the ceasefire that helped kill the war powers vote was brokered by Qatar and France, not the U.S. Congress.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.wsj.com/news/economy" target="_blank">Tariff refund CAPE portal opens April 20; first test of executive unilateral reversal mechanism</a></div>
+    <div class="story-hed">Tariff refund CAPE portal opens April 20; first test of executive unilateral reversal mechanism</div>
     <div class="story-src"><span class="src-tag">WSJ</span> Wall Street Journal &middot; April 17</div>
     <div class="story-syn">The Commerce-administered portal allowing importers to apply for targeted tariff refunds opens Sunday. This is the first operational test of the executive's claim to unilaterally reverse tariffs without congressional action. Roughly $4.2B in refund applications are expected in the first 72 hours. The mechanism is being watched closely by trading partners — and by legal scholars who question its statutory basis.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.nytimes.com/section/business" target="_blank">Markets at record highs despite Day 49 of Iran conflict — the decoupling nobody predicted</a></div>
+    <div class="story-hed">Markets at record highs despite Day 49 of Iran conflict — the decoupling nobody predicted</div>
     <div class="story-src"><span class="src-tag">NYT</span> New York Times &middot; April 17</div>
     <div class="story-syn">S&amp;P 500 at 7,038 is a record. The market's continued indifference to the Iran crisis reflects several factors: oil price drop (-7.1% today) signals supply return, no Hormuz actual closure, corporate earnings remaining strong, and Fed holding at 4.25% without signaling hawkishness. The decoupling between geopolitical risk and equity pricing is historically unusual for a shooting war — and the gap will close eventually.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.axios.com/politics" target="_blank">Hill sidebar: NDAA reconciliation fight absorbing bandwidth as war powers dies on the vine</a></div>
+    <div class="story-hed">Hill sidebar: NDAA reconciliation fight absorbing bandwidth as war powers dies on the vine</div>
     <div class="story-src"><span class="src-tag">AXIOS</span> Axios &middot; April 17</div>
     <div class="story-syn">While the war powers vote failed, the NDAA reconciliation process is quietly consuming Congressional defense staff bandwidth. The FY27 budget request's $14.2B F-47 line will require committee markup fights. Several appropriators are already flagging the F/A-XX underfunding. The legislative calendar is compressed — reconciliation, NDAA markup, and the debt ceiling are all competing for floor time before the August recess.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.reuters.com/world/us/" target="_blank">OMB's Vought tells Congress he can't estimate Iran war cost — while requesting $1.5T and a stalled $200B supplemental</a></div>
+    <div class="story-hed">OMB's Vought tells Congress he can't estimate Iran war cost — while requesting $1.5T and a stalled $200B supplemental</div>
     <div class="story-src"><span class="src-tag">REUTERS</span> Reuters / White House &middot; April 15, 2026 &middot; <em>Vought testimony on-record; supplemental status confirmed</em></div>
     <div class="story-syn">Under congressional questioning, OMB Director Russell Vought stated: "We're still in the process of determining what's necessary. I cannot provide a rough estimate at this time." This came while requesting a $1.5 trillion base budget (44% defense increase, $65.8B shipbuilding, $17.5B Golden Dome) plus a separate $200B Iran war supplemental that has encountered bipartisan resistance. The White House budget documents and the hearing testimony are running in parallel — one about historic defense investment, one about a war whose cost the administration cannot or will not quantify. Pentagon program-level detail is expected April 21; that briefing will be the document that either clarifies the war's fiscal structure or confirms the gap. The $200B supplemental's current status — stalled, in negotiation, or dead — is not specified in today's coverage. Tracking.</div>
   </div>
@@ -535,56 +545,56 @@
 
     <div class="card">
       <div class="card-src">The Economist &middot; April 17</div>
-      <div class="card-hed"><a href="https://www.economist.com/leaders" target="_blank">War Without Authorization: The Dangerous Precedent of the Hormuz Blockade</a></div>
+      <div class="card-hed">War Without Authorization: The Dangerous Precedent of the Hormuz Blockade</div>
       <div class="card-synopsis">Argues Congress has effectively surrendered war authority through repeated inaction — not legislation. Traces the pattern from Korea to Iran.</div>
       <div class="card-take"><span class="card-take-label">SWAP'S TAKE</span>Historically grounded, uncomfortable, and correct. The constitutional moment is happening in slow motion while everyone watches the war powers vote count.</div>
     </div>
 
     <div class="card">
       <div class="card-src">Chatham House &middot; April 16</div>
-      <div class="card-hed"><a href="https://www.chathamhouse.org/research" target="_blank">What China Is Learning from the Hormuz Blockade</a></div>
+      <div class="card-hed">What China Is Learning from the Hormuz Blockade</div>
       <div class="card-synopsis">PLA Navy analysts are studying U.S. enforcement mechanics — ROE, compliance patterns, Chinese-flag tanker responses — as operational data for Taiwan contingency planning.</div>
       <div class="card-take"><span class="card-take-label">SWAP'S TAKE</span>The most important strategic intelligence brief of the week. Taiwan is the actual strategic audience for everything happening in Hormuz. File and track.</div>
     </div>
 
     <div class="card">
       <div class="card-src">Foreign Affairs &middot; April 17</div>
-      <div class="card-hed"><a href="https://www.foreignaffairs.com/" target="_blank">Russia's Window: NATO Overextension and the Ukraine Calculus</a></div>
+      <div class="card-hed">Russia's Window: NATO Overextension and the Ukraine Calculus</div>
       <div class="card-synopsis">Argues the BCT reposture from Europe to CENTCOM is Moscow's most useful signal yet that U.S. commitments are finite. Russia may accelerate before the BCTs return.</div>
       <div class="card-take"><span class="card-take-label">SWAP'S TAKE</span>The risk here is real. NATO's deterrence credibility depends on posture, not pledges. Two BCTs is visible and meaningful to Moscow's planners.</div>
     </div>
 
     <div class="card">
       <div class="card-src">WSJ &middot; April 17</div>
-      <div class="card-hed"><a href="https://www.wsj.com/news/economy" target="_blank">The Tariff Refund Portal: A Novel Executive Mechanism — and Its Legal Risk</a></div>
+      <div class="card-hed">The Tariff Refund Portal: A Novel Executive Mechanism — and Its Legal Risk</div>
       <div class="card-synopsis">The CAPE portal opening April 20 may be the most consequential trade policy mechanism introduced this year. Its statutory basis is contested.</div>
       <div class="card-take"><span class="card-take-label">SWAP'S TAKE</span>Underreported and important. If this works legally, it reshapes executive trade authority. If it doesn't, the court fight is its own story. Watch April 20–24 closely.</div>
     </div>
 
     <div class="card">
       <div class="card-src">Air Force Magazine &middot; April 17</div>
-      <div class="card-hed"><a href="https://www.airandspaceforces.com/" target="_blank">F-47 vs. F/A-XX: The Budget Fight That Will Define Naval Aviation</a></div>
+      <div class="card-hed">F-47 vs. F/A-XX: The Budget Fight That Will Define Naval Aviation</div>
       <div class="card-synopsis">The FY27 production funding ratio — $14.2B vs $1.8B — effectively decides whether the Navy has a competitive sixth-gen fighter. The decision is happening inside a budget request, not in a policy debate.</div>
       <div class="card-take"><span class="card-take-label">SWAP'S TAKE</span>The Navy needs to be louder about this. If the F/A-XX funding profile isn't corrected in markup, the service is accepting a structural strike fighter disadvantage for the 2030s. This is the defense budget story of the year.</div>
     </div>
 
     <div class="card">
       <div class="card-src">Financial Times &middot; April 17</div>
-      <div class="card-hed"><a href="https://www.ft.com/" target="_blank">Five Days to April 22: The Ceasefire-Blockade Linkage and What Breaks It</a></div>
+      <div class="card-hed">Five Days to April 22: The Ceasefire-Blockade Linkage and What Breaks It</div>
       <div class="card-synopsis">Analyzes how the Lebanon ceasefire and Iran blockade window were negotiated in parallel and why both collapse together if diplomacy fails by April 22.</div>
       <div class="card-take"><span class="card-take-label">SWAP'S TAKE</span>The diplomatic elegance here is also the fragility. Any single incident — Gulf or Lebanon — detonates both simultaneously. Five days with no margin.</div>
     </div>
 
     <div class="card">
       <div class="card-src">CSIS Futures Summit &middot; April 16 &middot; &#9650; EARLY</div>
-      <div class="card-hed"><a href="https://www.csis.org/analysis" target="_blank">Iran War Disruptions to the Global Food System</a></div>
+      <div class="card-hed">Iran War Disruptions to the Global Food System</div>
       <div class="card-synopsis">Examines secondary effects of the Iran blockade on fertilizer exports and grain shipping. Ammonia and urea shipments from the Persian Gulf are creating a "lagging famine risk" for North African and South Asian markets — with a 6-9 month lag from disruption to dinner table. A key exchange flags China's potential to use its merchant fleet to challenge the blockade under the guise of "humanitarian food security." Cross-corroborated with independent analysis.</div>
       <div class="card-take"><span class="card-take-label">SWAP'S TAKE</span>The food system angle is the slow-motion second-order effect that will outlast the war itself. If the blockade ends tomorrow, the fertilizer disruption doesn't. The China "humanitarian food security" framing is worth tracking closely — it's the most plausible diplomatic cover for a Chinese blockade challenge that doesn't involve a naval confrontation.</div>
     </div>
 
     <div class="card">
       <div class="card-src">RAND Corporation &middot; April 16, 2026 &middot; &#9650; EARLY</div>
-      <div class="card-hed"><a href="https://www.rand.org/pubs/perspectives.html" target="_blank">AI Implications for Chemical, Biological, Radiological, and Nuclear Defense Policy</a></div>
+      <div class="card-hed">AI Implications for Chemical, Biological, Radiological, and Nuclear Defense Policy</div>
       <div class="card-synopsis">Expert insight paper arguing that autoregressive AI models are lowering the barrier for non-state actors to develop "viral uplift" capabilities while simultaneously providing the U.S. with new incident-detection tools. The offense-defense balance in CBRN is shifting toward offense due to the democratization of specialized AI bio-design tools. Policy is lagging significantly behind capability. Likely to inform the next National Defense Science and Technology Strategy update.</div>
       <div class="card-take"><span class="card-take-label">SWAP'S TAKE</span>The timing — published during a hot war with Iran — is notable. If RAND is flagging the CBRN offense-defense shift now, expect this to surface in the next threat assessment cycle. The non-state actor dimension is the genuinely new element: AI bio-design tools available to any motivated actor with compute access is a qualitatively different threat environment than 2019.</div>
     </div>
@@ -702,13 +712,13 @@
   <div class="local-city-label">&#9992; ALTUS, OK &mdash; Altus AFB</div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.altustimes.com/" target="_blank">Severe weather risk in Jackson County Friday evening — t-storms possible, hail threat</a></div>
+    <div class="story-hed">Severe weather risk in Jackson County Friday evening — t-storms possible, hail threat</div>
     <div class="story-src"><span class="src-tag">ALTUS TIMES</span> Altus Times &middot; April 17</div>
     <div class="story-syn">NWS Oklahoma City has issued a Severe Thunderstorm Watch for Jackson County effective from 1800-2400 CDT Friday. Hail up to 1" possible, winds to 60 mph. Altus AFB has activated weather condition protocols. Personnel with outdoor duties advised to monitor for Condition Yellow/Red progression. Currently 80°F with increasing instability.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.altustimes.com/" target="_blank" rel="noopener">97th AMW training operations — open-source tracking</a></div>
+    <div class="story-hed">97th AMW training operations — open-source tracking</div>
     <div class="story-src"><span class="src-tag">OSINT</span> Open-source &middot; April 17 &middot; <em>single source — tracking</em></div>
     <div class="story-syn">Altus AFB (97th Air Mobility Wing) remains the DoD's sole C-17 and KC-46 formal training unit. No credible local reporting today confirms anomalous flight-line activity or budget-driven schedule changes; FY27 appropriations have not yet produced service-level program guidance affecting Altus. The base remains Jackson County's largest employer.</div>
   </div>
@@ -716,19 +726,19 @@
   <div class="local-city-label">&#127797; CHARLESTON, SC &mdash; JB Charleston</div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.postandcourier.com/news/" target="_blank">JB Charleston airlift ops sustaining CENTCOM logistics surge; base on extended ops tempo</a></div>
+    <div class="story-hed">JB Charleston airlift ops sustaining CENTCOM logistics surge; base on extended ops tempo</div>
     <div class="story-src"><span class="src-tag">POST &amp; COURIER</span> Post and Courier &middot; April 17</div>
     <div class="story-syn">Joint Base Charleston's 437th Airlift Wing remains at elevated operations tempo supporting CENTCOM sustainment requirements for the Iran theater. C-17 sorties running above peacetime baseline. Local community impacts: increased noise complaints in North Charleston, Hanahan; base public affairs has opened a community hotline. Housing wait times for incoming personnel now 90+ days.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.postandcourier.com/news/" target="_blank">Charleston weekend: Sunny Friday (84°F), storms possible Saturday afternoon</a></div>
+    <div class="story-hed">Charleston weekend: Sunny Friday (84°F), storms possible Saturday afternoon</div>
     <div class="story-src"><span class="src-tag">POST &amp; COURIER</span> Post and Courier &middot; April 17</div>
     <div class="story-syn">Beautiful spring Friday in Charleston — 78°F at 0600, high of 84°F expected. Saturday brings a line of afternoon thunderstorms from 1400-2000 CDT. Sunday clears quickly, high 82°F. Beach weather holds for the weekend with the caveat of Saturday storms. Folly Beach and Isle of Palms open with no advisory.</div>
   </div>
 
   <div class="story">
-    <div class="story-hed"><a href="https://www.postandcourier.com/business/" target="_blank">Port of Charleston sees container volume uptick as Iran-rerouted shipping diverts through Atlantic ports</a></div>
+    <div class="story-hed">Port of Charleston sees container volume uptick as Iran-rerouted shipping diverts through Atlantic ports</div>
     <div class="story-src"><span class="src-tag">POST &amp; COURIER</span> Post and Courier &middot; April 17</div>
     <div class="story-syn">The Port of Charleston is processing increased container volumes as shipping rerouted around Hormuz affects global supply chains. Terminal operators report a 12% volume increase this week. While positive for port revenue, the surge is stressing chassis availability and truck driver capacity. Port labor contract negotiations resume next week.</div>
   </div>
@@ -743,31 +753,27 @@
   <div class="section-label">Lighter Fare</div>
 
   <div class="lighter-item">
-    <strong>The Hormuz blockade has a fantasy football problem.</strong> A Reddit thread on r/WarPowers calculating the "points" each senator would get under various war authorization scenarios went viral this week. 87K upvotes. Congress-watching has entered a new era. (<a href="https://www.reddit.com" target="_blank">Reddit</a>)
+    <strong>The Yongbyon timing pattern.</strong> Every major U.S. regional crisis since 1999 has been accompanied by a North Korean capability expansion. Social media threads assembling historical infographics are making the rounds. The pattern is consistent enough to feel almost engineered. <em>Social chatter, not a verified single source.</em>
   </div>
 
   <div class="lighter-item">
-    <strong>The Yongbyon timing meme is writing itself.</strong> Every major U.S. regional crisis since 1999 has been accompanied by a North Korean capability expansion. Twitter/X users have assembled a surprisingly accurate historical infographic. The pattern is so consistent it's almost parody. (<a href="https://twitter.com" target="_blank">X/Twitter</a>)
+    <strong>WTI crude down 7% and markets are acting normal.</strong> The framing question making rounds in business press: why are markets collectively shrugging at a shooting war? The answer readers are converging on is some version of: everything is priced in except the things that are not. <em>Sentiment observation, not a single-source cite.</em>
   </div>
 
   <div class="lighter-item">
-    <strong>WTI crude down 7% and everyone's acting normal.</strong> The Wall Street Journal's DealBook newsletter ran a piece asking why markets are collectively shrugging at a shooting war. The best reader letter: "We've priced in everything except the things we haven't priced in." Correct. (<a href="https://www.wsj.com" target="_blank">WSJ</a>)
+    <strong>The F-47 lore continues to outrun the program.</strong> Two years of aviation-Twitter development speculation is now a budget line item. The distance between public mythology and contract reality has rarely been more visible. <em>Commentary, not a cited story.</em>
   </div>
 
   <div class="lighter-item">
-    <strong>The F-47 has a Wikipedia page longer than most congressional districts' histories.</strong> Aviation Twitter is deeply committed. The aircraft has been in "development" in public imagination for two years. Now it's in a budget line. The lore is extraordinary. (<a href="https://en.wikipedia.org" target="_blank">Wikipedia</a>)
+    <strong>A 10-day ceasefire brokered by Qatar and France.</strong> Two nations with, between them, an exceptional track record of brokering things and a mixed record of those things lasting. Professional optimism in public. Private skepticism somewhat higher. The complaint is not the outcome. It is the durability. <em>Multiple sources.</em>
   </div>
 
   <div class="lighter-item">
-    <strong>A 10-day ceasefire brokered by Qatar and France</strong> — two nations with, between them, an exceptional track record of brokering things and a mixed record of those things lasting. The diplomatic community is professionally optimistic. Private skepticism is running higher. No complaints about the outcome, only about the durability. (<em>Multiple sources</em>)
+    <strong>Jackson County severe weather forecast vs. Altus AFB operations.</strong> A perennial Friday tradition. The base, the thunderstorms, and the maintenance schedules have coexisted since 1942. They will figure it out. <em>Local color, not cited.</em>
   </div>
 
   <div class="lighter-item">
-    <strong>Jackson County severe weather forecast vs. Altus AFB operations</strong> — a perennial Friday tradition. The base, the thunderstorms, and the maintenance schedules have coexisted since 1942. They'll figure it out. (<a href="https://www.altustimes.com" target="_blank">Altus Times</a>)
-  </div>
-
-  <div class="lighter-item">
-    <strong>The CAPE tariff refund portal opens April 20.</strong> The most consequential trade policy mechanism of the year launches on a Sunday. Government. (<a href="https://www.wsj.com" target="_blank">WSJ</a>)
+    <strong>The CAPE tariff refund portal opens April 20.</strong> The most consequential trade policy mechanism of the year launches on a Sunday. Government. <em>Observation.</em>
   </div>
 
 </div>
