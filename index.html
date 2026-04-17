@@ -258,14 +258,12 @@
       <div class="metar-station">&#127797; ALTUS, OK &mdash; KLTS &middot; 586th FW</div>
       <div class="metar-primary">Loading current observation&hellip;</div>
       <div class="metar-secondary"></div>
-      <div class="metar-taf"></div>
       <a class="metar-link" href="https://aviationweather.gov/data/metar/?id=KLTS&amp;taf=true" target="_blank" rel="noopener">Full METAR / TAF &rarr;</a>
     </div>
     <div class="metar-card" id="metar-kchs">
       <div class="metar-station">&#9875; CHARLESTON, SC &mdash; KCHS &middot; JB Charleston</div>
       <div class="metar-primary">Loading current observation&hellip;</div>
       <div class="metar-secondary"></div>
-      <div class="metar-taf"></div>
       <a class="metar-link" href="https://aviationweather.gov/data/metar/?id=KCHS&amp;taf=true" target="_blank" rel="noopener">Full METAR / TAF &rarr;</a>
     </div>
   </div>
@@ -826,134 +824,158 @@ function showTab(tabId, btn) {
 }
 
 /* ------------------------------------------------------------
-   AVIATION WEATHER — aviationweather.gov API (CORS-enabled)
-   Fetches current METAR + short TAF forecast for KLTS / KCHS
-   and renders plain-English decoded output for the cards.
+   STATION WEATHER — NWS api.weather.gov (CORS-enabled)
+   Pulls structured observation data for KLTS / KCHS, decodes
+   into plain-English display. If a station's latest obs is stale
+   (>6h), falls back silently to Open-Meteo for current conditions.
+   The "Full METAR / TAF" link opens aviationweather.gov in a new
+   tab — that source is authoritative but not CORS-accessible, so
+   it can't be used for inline fetch.
    ------------------------------------------------------------ */
 
-function cToF(c) { return Math.round((c * 9 / 5) + 32); }
+function cToF(c) { return (c === null || typeof c === 'undefined') ? null : Math.round((c * 9 / 5) + 32); }
+function msToKt(m) { return (m === null || typeof m === 'undefined') ? null : Math.round(m * 1.94384); }
+function kmhToKt(k) { return (k === null || typeof k === 'undefined') ? null : Math.round(k * 0.539957); }
+function mToMi(m) { return (m === null || typeof m === 'undefined') ? null : (m * 0.000621371); }
+function paToInHg(pa) { return (pa === null || typeof pa === 'undefined') ? null : (pa * 0.0002953).toFixed(2); }
 
 function compass(dir) {
-  if (dir === 'VRB' || dir === null || typeof dir === 'undefined') return 'VRB';
+  if (dir === null || typeof dir === 'undefined') return 'VRB';
   var pts = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'];
   return pts[Math.round(dir / 22.5) % 16];
 }
 
-function decodeWind(dir, speed, gust) {
-  if (speed === 0 || speed === null) return 'Calm';
-  var s = compass(dir) + ' ' + speed + ' kt';
-  if (gust && gust > 0) s += ' gust ' + gust + ' kt';
+function decodeWindFromKt(dir, kt, gustKt) {
+  if (kt === null || kt === 0) return 'Calm';
+  var s = compass(dir) + ' ' + kt + ' kt';
+  if (gustKt && gustKt > kt) s += ' gust ' + gustKt + ' kt';
   return s;
 }
 
-function decodeClouds(clouds) {
-  if (!clouds || !clouds.length) return 'Clear';
-  var map = { CLR: 'Clear', SKC: 'Clear', FEW: 'Few', SCT: 'Scattered', BKN: 'Broken', OVC: 'Overcast', VV: 'Vertical vis' };
-  return clouds.map(function (c) {
-    var label = map[c.cover] || c.cover;
-    if (c.base) return label + ' ' + (c.base * 100).toLocaleString() + ' ft';
-    return label;
-  }).join(', ');
+function fmtObsTime(iso) {
+  if (!iso) return '--';
+  var t = new Date(iso);
+  var now = new Date();
+  var mins = Math.round((now - t) / 60000);
+  if (mins < 60) return mins + ' min ago';
+  var hrs = Math.round(mins / 60);
+  if (hrs < 24) return hrs + 'h ago';
+  return Math.round(hrs / 24) + 'd ago';
 }
 
-function decodeWxString(wx) {
-  if (!wx) return null;
-  var tokens = {
-    '-': 'light ', '+': 'heavy ', VC: 'nearby ', MI: 'shallow ', BC: 'patches ',
-    DR: 'drifting ', BL: 'blowing ', SH: 'showers ', TS: 'thunderstorm ', FZ: 'freezing ',
-    DZ: 'drizzle', RA: 'rain', SN: 'snow', SG: 'snow grains', IC: 'ice crystals',
-    PL: 'ice pellets', GR: 'hail', GS: 'small hail', UP: 'unknown precip',
-    BR: 'mist', FG: 'fog', FU: 'smoke', VA: 'volcanic ash', DU: 'dust',
-    SA: 'sand', HZ: 'haze', PY: 'spray', PO: 'dust whirls', SQ: 'squalls',
-    FC: 'funnel cloud', SS: 'sandstorm', DS: 'duststorm'
-  };
-  return wx.split(' ').map(function (group) {
-    var out = '';
-    var i = 0;
-    while (i < group.length) {
-      var two = group.substr(i, 2);
-      var one = group.substr(i, 1);
-      if (tokens[two]) { out += tokens[two]; i += 2; }
-      else if (tokens[one]) { out += tokens[one]; i += 1; }
-      else { i += 1; }
-    }
-    return out.trim();
-  }).filter(Boolean).join(', ');
+function isStaleObs(iso, maxHours) {
+  if (!iso) return true;
+  var t = new Date(iso);
+  var hrs = (Date.now() - t.getTime()) / 3600000;
+  return hrs > (maxHours || 6);
 }
 
-function isAlertWx(wx) {
-  if (!wx) return false;
-  return /TS|FZ|\+|SQ|FC|SS|DS|GR/.test(wx);
+function isAlertDescription(text) {
+  if (!text) return false;
+  return /thunder|storm|tornad|hail|freezing|heavy|squall|blowing snow/i.test(text);
 }
 
-function renderMetar(cardId, obs) {
+function renderFromNWS(cardId, props) {
   var card = document.getElementById(cardId);
-  if (!card || !obs) return;
+  if (!card) return false;
   var primary = card.querySelector('.metar-primary');
   var secondary = card.querySelector('.metar-secondary');
-  var alertWx = isAlertWx(obs.wxString);
-  var tempF = (typeof obs.temp === 'number') ? cToF(obs.temp) : null;
-  var dewF = (typeof obs.dewp === 'number') ? cToF(obs.dewp) : null;
-  var wxDecoded = decodeWxString(obs.wxString);
+  var tempC = props.temperature && props.temperature.value;
+  var dewC = props.dewpoint && props.dewpoint.value;
+  var windDir = props.windDirection && props.windDirection.value;
+  var windKmh = props.windSpeed && props.windSpeed.value;
+  var gustKmh = props.windGust && props.windGust.value;
+  var visM = props.visibility && props.visibility.value;
+  var pressPa = props.barometricPressure && props.barometricPressure.value;
+  var desc = props.textDescription || '';
+  var obsTime = props.timestamp;
+
+  var tempF = cToF(tempC), dewF = cToF(dewC);
+  var windKt = kmhToKt(windKmh), gustKt = kmhToKt(gustKmh);
+  var visMi = mToMi(visM);
+
+  var alert = isAlertDescription(desc);
   var primaryText = (tempF !== null ? tempF + '\u00B0F' : '--') +
                     (dewF !== null ? ' / dew ' + dewF + '\u00B0F' : '') +
-                    (wxDecoded ? ' \u00B7 ' + wxDecoded : '');
+                    (desc ? ' \u00B7 ' + desc : '');
   primary.textContent = primaryText;
-  if (alertWx) primary.classList.add('wx-alert'); else primary.classList.remove('wx-alert');
+  if (alert) primary.classList.add('wx-alert'); else primary.classList.remove('wx-alert');
+
   var parts = [];
-  parts.push('Wind ' + decodeWind(obs.wdir, obs.wspd, obs.wgst));
-  if (typeof obs.visib !== 'undefined' && obs.visib !== null) {
-    var v = (typeof obs.visib === 'string') ? obs.visib : obs.visib + ' mi';
-    parts.push('Vis ' + v);
-  }
-  parts.push(decodeClouds(obs.clouds));
-  if (obs.altim) parts.push((obs.altim / 33.8639).toFixed(2) + ' inHg');
-  if (obs.reportTime) {
-    var t = new Date(obs.reportTime);
-    parts.push('Obs ' + t.toUTCString().substr(17, 5) + 'Z');
-  }
+  parts.push('Wind ' + decodeWindFromKt(windDir, windKt, gustKt));
+  if (visMi !== null) parts.push('Vis ' + (visMi >= 10 ? '10+' : visMi.toFixed(1)) + ' mi');
+  if (pressPa !== null) parts.push(paToInHg(pressPa) + ' inHg');
+  parts.push('Obs ' + fmtObsTime(obsTime));
   secondary.textContent = parts.join(' \u00B7 ');
+  return true;
 }
 
-function loadMetar(station, cardId) {
-  var url = 'https://aviationweather.gov/api/data/metar?ids=' + station + '&format=json&taf=true';
-  fetch(url).then(function (r) { return r.json(); }).then(function (arr) {
-    if (!arr || !arr.length) throw new Error('empty');
-    renderMetar(cardId, arr[0]);
-    // TAF (forecast) — pull a short decoded snapshot if available
-    var tafUrl = 'https://aviationweather.gov/api/data/taf?ids=' + station + '&format=json';
-    return fetch(tafUrl).then(function (r) { return r.json(); }).then(function (tafs) {
-      if (!tafs || !tafs.length) return;
-      var taf = tafs[0];
-      var card = document.getElementById(cardId);
-      var tafEl = card.querySelector('.metar-taf');
-      if (!tafEl) return;
-      // Pick the first forecast period with a summary line
-      if (taf.fcsts && taf.fcsts.length) {
-        var fc = taf.fcsts[0];
-        var bits = [];
-        bits.push('TAF: ' + decodeWind(fc.wdir, fc.wspd, fc.wgst));
-        if (fc.visib) bits.push('vis ' + fc.visib + ' mi');
-        if (fc.wxString) {
-          var w = decodeWxString(fc.wxString);
-          if (w) bits.push(w);
-        }
-        if (fc.clouds && fc.clouds.length) bits.push(decodeClouds(fc.clouds).toLowerCase());
-        tafEl.textContent = bits.join(' \u00B7 ');
-      } else if (taf.rawTAF) {
-        tafEl.textContent = 'TAF: ' + taf.rawTAF.substr(0, 120) + (taf.rawTAF.length > 120 ? '\u2026' : '');
-      }
+function renderFromOpenMeteo(cardId, d) {
+  var card = document.getElementById(cardId);
+  if (!card || !d || !d.current) return false;
+  var c = d.current;
+  var primary = card.querySelector('.metar-primary');
+  var secondary = card.querySelector('.metar-secondary');
+
+  var code = c.weather_code;
+  var desc = omDesc(code);
+  var alert = /thunder|heavy|storm|fog|freezing/i.test(desc);
+
+  var primaryText = Math.round(c.temperature_2m) + '\u00B0F' +
+                    (typeof c.dew_point_2m === 'number' ? ' / dew ' + Math.round(c.dew_point_2m) + '\u00B0F' : '') +
+                    ' \u00B7 ' + desc;
+  primary.textContent = primaryText;
+  if (alert) primary.classList.add('wx-alert'); else primary.classList.remove('wx-alert');
+
+  var parts = [];
+  parts.push('Wind ' + decodeWindFromKt(c.wind_direction_10m, Math.round(c.wind_speed_10m), c.wind_gusts_10m ? Math.round(c.wind_gusts_10m) : null));
+  if (typeof c.cloud_cover === 'number') parts.push(c.cloud_cover + '% clouds');
+  if (typeof c.pressure_msl === 'number') parts.push((c.pressure_msl * 0.02953).toFixed(2) + ' inHg');
+  parts.push('Gridded model \u00B7 not a station obs');
+  secondary.textContent = parts.join(' \u00B7 ');
+  return true;
+}
+
+function omDesc(code) {
+  if (code === 0) return 'Clear';
+  if (code <= 3) return 'Partly cloudy';
+  if (code <= 48) return 'Fog';
+  if (code <= 57) return 'Drizzle';
+  if (code <= 67) return 'Rain';
+  if (code <= 77) return 'Snow';
+  if (code <= 82) return 'Rain showers';
+  if (code <= 86) return 'Snow showers';
+  if (code <= 99) return 'Thunderstorm';
+  return 'Variable';
+}
+
+function loadStationWeather(station, cardId, lat, lon) {
+  var nwsUrl = 'https://api.weather.gov/stations/' + station + '/observations/latest';
+  fetch(nwsUrl, { headers: { 'Accept': 'application/geo+json' } })
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      var p = d && d.properties;
+      if (!p || isStaleObs(p.timestamp, 6)) throw new Error('stale or missing');
+      renderFromNWS(cardId, p);
+    })
+    .catch(function () {
+      // Silent fallback — gridded model data via Open-Meteo
+      var omUrl = 'https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + lon +
+                  '&current=temperature_2m,dew_point_2m,weather_code,cloud_cover,pressure_msl,' +
+                  'wind_speed_10m,wind_direction_10m,wind_gusts_10m&temperature_unit=fahrenheit&wind_speed_unit=kn&timezone=auto';
+      fetch(omUrl).then(function (r) { return r.json(); }).then(function (d) {
+        if (!renderFromOpenMeteo(cardId, d)) throw new Error('om failed');
+      }).catch(function () {
+        var card = document.getElementById(cardId);
+        if (!card) return;
+        card.querySelector('.metar-primary').textContent = 'Weather data temporarily unavailable';
+        card.querySelector('.metar-secondary').textContent = 'Retry on next load';
+      });
     });
-  }).catch(function () {
-    var card = document.getElementById(cardId);
-    if (!card) return;
-    card.querySelector('.metar-primary').textContent = 'Weather data temporarily unavailable';
-    card.querySelector('.metar-secondary').textContent = 'aviationweather.gov API not reachable \u2014 retrying on next load';
-  });
 }
 
-loadMetar('KLTS', 'metar-klts');
-loadMetar('KCHS', 'metar-kchs');
+loadStationWeather('KLTS', 'metar-klts', 34.6382, -99.3340);
+loadStationWeather('KCHS', 'metar-kchs', 32.7765, -79.9311);
 
 /* ------------------------------------------------------------
    VENTUSKY INTERACTIVE MAP — iframe controls
