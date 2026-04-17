@@ -10,96 +10,100 @@
 <meta property="og:title" content="THE SWAP REPORT — April 17, 2026">
 <meta property="og:description" content="Morning Edition · Day 49 of the Iran War · Israel-Lebanon 10-day ceasefire begins · Senate war powers fails again · Markets at record highs">
 <style>
+  /* DEFAULT = WARM parchment */
   :root {
-    --bg: #f4f1eb;
-    --surface: #ffffff;
-    --border: #d8d0c4;
+    --bg: #f5f0e8;
+    --surface: #fffdf8;
+    --border: #d4c9b8;
     --text: #1a1a1a;
-    --muted: #6b6460;
-    --accent: #8b1a1a;
-    --tab-inactive: #e8e3db;
-    --tab-active: #ffffff;
-    --masthead-bg: #1a1a1a;
-    --masthead-text: #f4f1eb;
-    --strip-bg: #2a2a2a;
-    --strip-text: #e8e3db;
-    --tag-bg: #8b1a1a;
+    --muted: #666666;
+    --accent: #8b0000;
+    --tab-inactive: #e8e2d8;
+    --tab-active: #fffdf8;
+    --header-bg: #ede8df;
+    --tab-bg: #e8e2d8;
+    --tag-bg: #8b0000;
     --tag-text: #ffffff;
     --watch-bg: #fff8f0;
     --watch-border: #c8a06a;
-    --card-bg: #fafaf8;
-    --hover-bg: rgba(139,26,26,0.06);
+    --card-bg: #fffdf8;
+    --hover-bg: rgba(139,0,0,0.06);
+    --footer-bg: #ede8df;
+    --footer-text: #666666;
   }
-  [data-theme="warm"] {
-    --bg: #2c2018;
-    --surface: #3a2e20;
-    --border: #5a4a35;
-    --text: #e8dcc8;
-    --muted: #a89880;
-    --accent: #d4a853;
-    --tab-inactive: #2c2018;
-    --tab-active: #3a2e20;
-    --masthead-bg: #1a1208;
-    --masthead-text: #e8dcc8;
-    --strip-bg: #1a1208;
-    --strip-text: #c8b898;
-    --tag-bg: #d4a853;
-    --tag-text: #1a1208;
-    --watch-bg: #2c2018;
-    --watch-border: #d4a853;
-    --card-bg: #2c2018;
-    --hover-bg: rgba(212,168,83,0.08);
+  [data-theme="light"] {
+    --bg: #ffffff;
+    --surface: #f9f9f9;
+    --border: #e0e0e0;
+    --text: #1a1a1a;
+    --muted: #666666;
+    --accent: #8b0000;
+    --tab-inactive: #f0f0f0;
+    --tab-active: #ffffff;
+    --header-bg: #f5f5f5;
+    --tab-bg: #eeeeee;
+    --tag-bg: #8b0000;
+    --tag-text: #ffffff;
+    --watch-bg: #fff8f0;
+    --watch-border: #c8a06a;
+    --card-bg: #f9f9f9;
+    --hover-bg: rgba(139,0,0,0.06);
+    --footer-bg: #f0f0f0;
+    --footer-text: #666666;
   }
   [data-theme="dark"] {
-    --bg: #111111;
-    --surface: #1c1c1c;
-    --border: #333333;
-    --text: #e2e2e2;
-    --muted: #888888;
-    --accent: #4a9eff;
-    --tab-inactive: #111111;
-    --tab-active: #1c1c1c;
-    --masthead-bg: #000000;
-    --masthead-text: #e2e2e2;
-    --strip-bg: #000000;
-    --strip-text: #aaaaaa;
-    --tag-bg: #4a9eff;
-    --tag-text: #000000;
-    --watch-bg: #1a1a1a;
-    --watch-border: #4a9eff;
-    --card-bg: #1a1a1a;
-    --hover-bg: rgba(74,158,255,0.06);
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --border: #2a2a4a;
+    --text: #e2e8f0;
+    --muted: #8a8fa8;
+    --accent: #cc3333;
+    --tab-inactive: #0f0f23;
+    --tab-active: #16213e;
+    --header-bg: #0f0f23;
+    --tab-bg: #0f0f23;
+    --tag-bg: #cc3333;
+    --tag-text: #ffffff;
+    --watch-bg: #1a1a3a;
+    --watch-border: #cc3333;
+    --card-bg: #1a1a2e;
+    --hover-bg: rgba(204,51,51,0.08);
+    --footer-bg: #0f0f23;
+    --footer-text: #8a8fa8;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); color: var(--text); font-family: Georgia, serif; font-size: 15px; line-height: 1.65; transition: background 0.2s, color 0.2s; }
 
-  /* MASTHEAD */
-  .masthead { background: var(--masthead-bg); color: var(--masthead-text); padding: 18px 24px 14px; border-bottom: 3px solid var(--accent); }
+  /* MASTHEAD — light bg, crimson title, no dark band */
+  .masthead { background: var(--bg); padding: 24px 24px 16px; border-bottom: 2px solid var(--accent); }
   .masthead-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; }
-  .masthead-title { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 22px; letter-spacing: 0.04em; }
-  .masthead-title span { color: var(--accent); }
-  .masthead-meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; opacity: 0.75; margin-top: 2px; }
+  .masthead-title { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 22px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); }
+  .masthead-meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); margin-top: 4px; }
+  .masthead-epigraph { font-style: italic; font-size: 13px; color: var(--muted); margin-top: 4px; font-family: Georgia, serif; }
   .theme-toggle { display: flex; gap: 4px; align-items: center; }
-  .theme-btn { font-size: 14px; padding: 4px 8px; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: var(--masthead-text); cursor: pointer; border-radius: 3px; transition: background 0.15s; line-height: 1; }
-  .theme-btn.active, .theme-btn:hover { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.4); }
+  .theme-btn { font-size: 14px; padding: 4px 8px; border: 1px solid var(--border); background: var(--tab-bg); color: var(--text); cursor: pointer; border-radius: 3px; transition: all 0.15s; line-height: 1; }
+  .theme-btn.active, .theme-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 
-  /* EDITION BAR */
-  .edition-bar { background: var(--accent); color: white; font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 5px 24px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-  .edition-bar a { color: rgba(255,255,255,0.85); text-decoration: underline; text-underline-offset: 2px; }
+  /* EDITION BAR — neutral, not crimson */
+  .edition-bar { background: var(--header-bg); color: var(--muted); border-bottom: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 5px 24px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .edition-bar a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
 
-  /* WEATHER + MARKET STRIP */
-  .info-strip { background: var(--strip-bg); color: var(--strip-text); font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 7px 24px; display: flex; gap: 24px; flex-wrap: wrap; align-items: center; }
-  .info-strip .weather-block { display: flex; gap: 16px; padding-right: 24px; border-right: 1px solid rgba(255,255,255,0.15); }
-  .info-strip .market-block { display: flex; gap: 16px; flex-wrap: wrap; }
+  /* WEATHER CARDS */
+  .weather-section { background: var(--header-bg); border-bottom: 1px solid var(--border); padding: 12px 24px; display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-start; }
+  .weather-card { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 10px 16px; min-width: 150px; flex: 1; max-width: 220px; }
+  .wx-city { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
+  .wx-temp { font-family: 'IBM Plex Mono', monospace; font-size: 30px; font-weight: 600; color: var(--text); line-height: 1; }
+  .wx-cond { font-size: 12px; color: var(--muted); margin: 4px 0 2px; }
+  .wx-hilo { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); }
+  .wx-alert { color: #c8720a; font-weight: 600; }
+
+  /* MARKET STRIP */
+  .market-strip { background: var(--header-bg); border-bottom: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 6px 24px; display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
   .mkt-item { display: flex; flex-direction: column; align-items: flex-start; }
-  .mkt-label { opacity: 0.55; font-size: 9px; }
+  .mkt-label { opacity: 0.6; font-size: 9px; }
   .mkt-val { font-size: 11px; }
-  .up { color: #6dcc6d; }
-  .dn { color: #ff6b6b; }
-  .weather-city { display: flex; flex-direction: column; }
-  .weather-city .city-name { font-size: 9px; opacity: 0.55; }
-  .weather-city .city-wx { font-size: 11px; }
-  .alert-wx { color: #ffcc44; }
+  .up { color: #2a7a2a; }
+  .dn { color: #cc2222; }
 
   /* TABS */
   .tab-bar { background: var(--surface); border-bottom: 1px solid var(--border); display: flex; overflow-x: auto; padding: 0 16px; }
@@ -191,26 +195,28 @@
 
   /* RESPONSIVE */
   @media (max-width: 600px) {
-    .info-strip { flex-direction: column; gap: 10px; }
-    .info-strip .weather-block { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-right: 0; padding-bottom: 8px; }
-    .masthead-title { font-size: 17px; }
+    .weather-section { flex-direction: column; }
+    .weather-card { max-width: 100%; }
+    .market-strip { gap: 12px; }
+    .masthead-title { font-size: 17px; letter-spacing: 2px; }
     .cards-grid { grid-template-columns: 1fr; }
     .tab-btn { padding: 10px 10px; font-size: 10px; }
   }
 </style>
 </head>
-<body data-theme="light">
+<body data-theme="warm">
 
 <!-- MASTHEAD -->
 <div class="masthead">
   <div class="masthead-top">
     <div>
-      <div class="masthead-title">THE SWAP <span>REPORT</span></div>
-      <div class="masthead-meta">Friday, April 17, 2026 &middot; Morning Edition &middot; Day 49 of the Iran War</div>
+      <div class="masthead-title">THE SWAP REPORT</div>
+      <div class="masthead-meta">Friday, April 17, 2026 &middot; 0530 CT &middot; Morning Edition &middot; Day 49 of the Iran War</div>
+      <div class="masthead-epigraph">No authorized war, no estimated cost, no durability guarantee — just a 10-day pause and counting.</div>
     </div>
     <div class="theme-toggle">
-      <button class="theme-btn active" onclick="setTheme('light',this)" title="Light">&#9728;</button>
-      <button class="theme-btn" onclick="setTheme('warm',this)" title="Warm">&#128305;</button>
+      <button class="theme-btn" onclick="setTheme('light',this)" title="Light">&#9728;</button>
+      <button class="theme-btn active" onclick="setTheme('warm',this)" title="Warm">&#128305;</button>
       <button class="theme-btn" onclick="setTheme('dark',this)" title="Dark">&#9790;</button>
     </div>
   </div>
@@ -222,26 +228,33 @@
   <a href="special-editions/hungary-after-orban.html">Hungary: After Orb&aacute;n &rarr;</a>
 </div>
 
-<!-- WEATHER + MARKET STRIP -->
-<div class="info-strip">
-  <div class="weather-block">
-    <div class="weather-city">
-      <span class="city-name">ALTUS OK</span>
-      <span class="city-wx alert-wx">&#9888; 80&deg;F &middot; T-storms possible &middot; Severe Wx Risk</span>
-    </div>
-    <div class="weather-city">
-      <span class="city-name">CHARLESTON SC</span>
-      <span class="city-wx">78&deg;F &middot; Sunny &middot; High 84&deg;F</span>
-    </div>
+<!-- WEATHER CARDS (Open-Meteo API; static fallback shown) -->
+<div class="weather-section">
+  <div class="weather-card">
+    <div class="wx-city">&#127797; ALTUS, OK &mdash; 586th FW</div>
+    <div class="wx-temp" id="wx-altus-temp">80&deg;</div>
+    <div class="wx-cond wx-alert" id="wx-altus-cond">&#9888; T-storms possible &middot; Severe Wx Risk</div>
+    <div class="wx-hilo" id="wx-altus-hilo">High 85&deg;F &middot; Low 64&deg;F</div>
   </div>
-  <div class="market-block">
-    <div class="mkt-item"><span class="mkt-label">S&amp;P 500</span><span class="mkt-val up">7,038 +0.4%</span></div>
-    <div class="mkt-item"><span class="mkt-label">DOW</span><span class="mkt-val up">41,820</span></div>
-    <div class="mkt-item"><span class="mkt-label">NASDAQ</span><span class="mkt-val up">22,910</span></div>
-    <div class="mkt-item"><span class="mkt-label">WTI CRUDE</span><span class="mkt-val dn">$91.20 &minus;7.1%</span></div>
-    <div class="mkt-item"><span class="mkt-label">BRENT</span><span class="mkt-val dn">$94.80</span></div>
-    <div class="mkt-item"><span class="mkt-label">FED RATE</span><span class="mkt-val">4.25%</span></div>
+  <div class="weather-card">
+    <div class="wx-city">&#9875; CHARLESTON, SC &mdash; JB Charleston</div>
+    <div class="wx-temp" id="wx-chs-temp">78&deg;</div>
+    <div class="wx-cond" id="wx-chs-cond">Sunny &middot; Beautiful spring day</div>
+    <div class="wx-hilo" id="wx-chs-hilo">High 84&deg;F &middot; Low 66&deg;F</div>
   </div>
+</div>
+
+<!-- MARKET STRIP -->
+<div class="market-strip">
+  <div class="mkt-item"><span class="mkt-label">S&amp;P 500</span><span class="mkt-val up">7,038 +0.4%</span></div>
+  <div class="mkt-item"><span class="mkt-label">DOW</span><span class="mkt-val up">41,820 +0.3%</span></div>
+  <div class="mkt-item"><span class="mkt-label">NASDAQ</span><span class="mkt-val up">22,910 +0.5%</span></div>
+  <div class="mkt-item"><span class="mkt-label">NIKKEI 225</span><span class="mkt-val up">36,420 +0.2%</span></div>
+  <div class="mkt-item"><span class="mkt-label">FTSE 100</span><span class="mkt-val dn">7,890 &minus;0.1%</span></div>
+  <div class="mkt-item"><span class="mkt-label">DAX</span><span class="mkt-val up">18,340 +0.3%</span></div>
+  <div class="mkt-item"><span class="mkt-label">WTI CRUDE</span><span class="mkt-val dn">$91.20 &minus;7.1%</span></div>
+  <div class="mkt-item"><span class="mkt-label">BRENT</span><span class="mkt-val dn">$94.80 &minus;6.8%</span></div>
+  <div class="mkt-item"><span class="mkt-label">FED RATE</span><span class="mkt-val">4.25%</span></div>
 </div>
 
 <!-- TAB BAR -->
@@ -738,13 +751,14 @@
 </div>
 
 <!-- FOOTER -->
-<div style="background:var(--masthead-bg);color:var(--strip-text);font-family:'IBM Plex Mono',monospace;font-size:10px;padding:16px 24px;margin-top:32px;border-top:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+<div style="background:var(--footer-bg);color:var(--footer-text);font-family:'IBM Plex Mono',monospace;font-size:10px;padding:16px 24px;margin-top:32px;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
   <div>THE SWAP REPORT &middot; Friday, April 17, 2026 &middot; Morning Edition</div>
   <div style="opacity:0.6;">For SWAP &middot; Distribution restricted &middot; Not for public release</div>
 </div>
 
 <script>
-var currentTheme = 'light';
+var currentTheme = 'warm';
+
 function setTheme(theme, btn) {
   currentTheme = theme;
   document.body.setAttribute('data-theme', theme);
@@ -752,6 +766,7 @@ function setTheme(theme, btn) {
   btns.forEach(function(b) { b.classList.remove('active'); });
   if (btn) btn.classList.add('active');
 }
+
 function showTab(tabId, btn) {
   var panels = document.querySelectorAll('.tab-panel');
   panels.forEach(function(p) { p.classList.remove('active'); });
@@ -761,6 +776,46 @@ function showTab(tabId, btn) {
   btns.forEach(function(b) { b.classList.remove('active'); });
   if (btn) btn.classList.add('active');
 }
+
+/* Open-Meteo live weather — falls back to static values on error */
+function wxDesc(code) {
+  if (code === 0) return 'Clear sky';
+  if (code <= 3) return 'Partly cloudy';
+  if (code <= 48) return 'Fog';
+  if (code <= 57) return 'Drizzle';
+  if (code <= 67) return 'Rain';
+  if (code <= 77) return 'Snow';
+  if (code <= 82) return 'Rain showers';
+  if (code <= 86) return 'Snow showers';
+  if (code <= 99) return 'Thunderstorm';
+  return 'Variable';
+}
+
+function loadWeather(locId, tempId, condId, hiloId, lat, lon, alert) {
+  var url = 'https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + lon
+    + '&current=temperature_2m,weathercode&daily=temperature_2m_max,temperature_2m_min,weathercode'
+    + '&temperature_unit=fahrenheit&forecast_days=1&timezone=auto';
+  fetch(url).then(function(r){ return r.json(); }).then(function(d){
+    var temp = Math.round(d.current.temperature_2m);
+    var code = d.current.weathercode;
+    var hi = Math.round(d.daily.temperature_2m_max[0]);
+    var lo = Math.round(d.daily.temperature_2m_min[0]);
+    var desc = wxDesc(code);
+    var isAlert = (code >= 45 && code <= 67) || code >= 80;
+    var tEl = document.getElementById(tempId);
+    var cEl = document.getElementById(condId);
+    var hEl = document.getElementById(hiloId);
+    if (tEl) tEl.innerHTML = temp + '&deg;';
+    if (cEl) {
+      cEl.className = 'wx-cond' + (isAlert || alert ? ' wx-alert' : '');
+      cEl.innerHTML = (isAlert || alert ? '&#9888; ' : '') + desc + (alert ? ' &middot; ' + alert : '');
+    }
+    if (hEl) hEl.innerHTML = 'High ' + hi + '&deg;F &middot; Low ' + lo + '&deg;F';
+  }).catch(function(){ /* keep static fallback */ });
+}
+
+loadWeather('altus', 'wx-altus-temp', 'wx-altus-cond', 'wx-altus-hilo', 34.6382, -99.3340, 'Severe Wx Risk');
+loadWeather('chs', 'wx-chs-temp', 'wx-chs-cond', 'wx-chs-hilo', 32.7765, -79.9311, null);
 </script>
 </body>
 </html>
