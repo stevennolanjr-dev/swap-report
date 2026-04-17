@@ -6,7 +6,7 @@
 <title>THE SWAP REPORT — April 17, 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Georgia:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://stevennolanjr-dev.github.io/swap-report/">
+<meta property="og:url" content="https://theswap.report/">
 <meta property="og:title" content="THE SWAP REPORT — April 17, 2026">
 <meta property="og:description" content="Morning Edition · Day 49 of the Iran War · Israel-Lebanon 10-day ceasefire begins · Senate war powers fails again · Markets at record highs">
 <style>
@@ -74,8 +74,11 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); color: var(--text); font-family: Georgia, serif; font-size: 15px; line-height: 1.65; transition: background 0.2s, color 0.2s; }
 
+  /* UNIFIED PAGE CONTAINER — everything lives in a single centered column */
+  .page { max-width: 960px; margin: 0 auto; background: var(--bg); }
+
   /* MASTHEAD — light bg, crimson title, no dark band */
-  .masthead { background: var(--bg); padding: 24px 24px 16px; border-bottom: 2px solid var(--accent); }
+  .masthead { background: var(--bg); padding: 24px 20px 16px; border-bottom: 2px solid var(--accent); }
   .masthead-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; }
   .masthead-title { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 22px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); }
   .masthead-meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); margin-top: 4px; }
@@ -85,20 +88,35 @@
   .theme-btn.active, .theme-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 
   /* EDITION BAR — neutral, not crimson */
-  .edition-bar { background: var(--header-bg); color: var(--muted); border-bottom: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 5px 24px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .edition-bar { background: var(--header-bg); color: var(--muted); border-bottom: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 5px 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
   .edition-bar a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
 
-  /* WEATHER CARDS */
-  .weather-section { background: var(--header-bg); border-bottom: 1px solid var(--border); padding: 12px 24px; display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-start; }
-  .weather-card { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 10px 16px; min-width: 150px; flex: 1; max-width: 220px; }
-  .wx-city { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
-  .wx-temp { font-family: 'IBM Plex Mono', monospace; font-size: 30px; font-weight: 600; color: var(--text); line-height: 1; }
-  .wx-cond { font-size: 12px; color: var(--muted); margin: 4px 0 2px; }
-  .wx-hilo { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); }
+  /* WEATHER — METAR cards + Ventusky interactive map */
+  .weather-section { background: var(--header-bg); border-bottom: 1px solid var(--border); padding: 12px 20px; display: flex; flex-direction: column; gap: 12px; }
+  .metar-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .metar-card { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 10px 14px; flex: 1; min-width: 220px; }
+  .metar-station { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 4px; font-weight: 600; }
+  .metar-primary { font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: var(--text); font-weight: 600; margin-bottom: 3px; }
+  .metar-secondary { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); line-height: 1.5; }
+  .metar-taf { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 4px; line-height: 1.5; font-style: italic; }
+  .metar-link { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--accent); text-decoration: none; margin-top: 6px; display: inline-block; letter-spacing: 0.05em; }
+  .metar-link:hover { text-decoration: underline; }
   .wx-alert { color: #c8720a; font-weight: 600; }
 
+  .wx-map-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 10px; }
+  .wx-controls { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 8px; font-family: 'IBM Plex Mono', monospace; }
+  .wx-search-form { display: flex; gap: 6px; flex: 1; min-width: 220px; }
+  .wx-search-input { flex: 1; font-family: 'IBM Plex Mono', monospace; font-size: 12px; padding: 5px 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); border-radius: 3px; }
+  .wx-search-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 5px 10px; border: 1px solid var(--accent); background: var(--accent); color: #fff; cursor: pointer; border-radius: 3px; letter-spacing: 0.05em; }
+  .wx-layers { display: flex; gap: 4px; flex-wrap: wrap; }
+  .wx-layer-btn { font-family: 'IBM Plex Mono', monospace; font-size: 10px; padding: 4px 8px; border: 1px solid var(--border); background: var(--tab-bg); color: var(--text); cursor: pointer; border-radius: 3px; letter-spacing: 0.03em; text-transform: uppercase; }
+  .wx-layer-btn.active, .wx-layer-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .wx-iframe { width: 100%; height: 420px; border: 1px solid var(--border); border-radius: 3px; display: block; background: var(--bg); }
+  .wx-credit { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--muted); margin-top: 6px; text-align: right; letter-spacing: 0.04em; }
+  .wx-credit a { color: var(--muted); }
+
   /* MARKET STRIP */
-  .market-strip { background: var(--header-bg); border-bottom: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 6px 24px; display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+  .market-strip { background: var(--header-bg); border-bottom: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 6px 20px; display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
   .mkt-item { display: flex; flex-direction: column; align-items: flex-start; }
   .mkt-label { opacity: 0.6; font-size: 9px; }
   .mkt-val { font-size: 11px; }
@@ -106,15 +124,15 @@
   .dn { color: #cc2222; }
 
   /* TABS */
-  .tab-bar { background: var(--surface); border-bottom: 1px solid var(--border); display: flex; overflow-x: auto; padding: 0 16px; }
+  .tab-bar { background: var(--surface); border-bottom: 1px solid var(--border); display: flex; overflow-x: auto; padding: 0 12px; }
   .tab-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 10px 14px; border: none; border-bottom: 2px solid transparent; background: transparent; color: var(--muted); cursor: pointer; white-space: nowrap; transition: all 0.15s; }
   .tab-btn:hover { color: var(--text); }
   .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
   .tab-panel { display: none; }
   .tab-panel.active { display: block; }
 
-  /* MAIN LAYOUT */
-  .content-wrap { max-width: 900px; margin: 0 auto; padding: 24px 20px; }
+  /* MAIN LAYOUT — content now sits inside .page, no extra width constraint */
+  .content-wrap { max-width: none; margin: 0; padding: 24px 20px; }
 
   /* BLUF */
   .bluf-box { border-left: 3px solid var(--accent); padding: 12px 16px; background: var(--surface); margin-bottom: 20px; border-radius: 0 3px 3px 0; }
@@ -195,8 +213,9 @@
 
   /* RESPONSIVE */
   @media (max-width: 600px) {
-    .weather-section { flex-direction: column; }
-    .weather-card { max-width: 100%; }
+    .metar-row { flex-direction: column; }
+    .metar-card { min-width: 0; }
+    .wx-iframe { height: 320px; }
     .market-strip { gap: 12px; }
     .masthead-title { font-size: 17px; letter-spacing: 2px; }
     .cards-grid { grid-template-columns: 1fr; }
@@ -205,6 +224,8 @@
 </style>
 </head>
 <body data-theme="warm">
+
+<div class="page">
 
 <!-- MASTHEAD -->
 <div class="masthead">
@@ -228,20 +249,47 @@
   <a href="special-editions/hungary-after-orban.html">Hungary: After Orb&aacute;n &rarr;</a>
 </div>
 
-<!-- WEATHER CARDS (Open-Meteo API; static fallback shown) -->
+<!-- WEATHER — Aviation METARs (KLTS, KCHS) + Ventusky interactive map -->
 <div class="weather-section">
-  <div class="weather-card">
-    <div class="wx-city">&#127797; ALTUS, OK &mdash; 586th FW</div>
-    <div class="wx-temp" id="wx-altus-temp">80&deg;</div>
-    <div class="wx-cond wx-alert" id="wx-altus-cond">&#9888; T-storms possible &middot; Severe Wx Risk</div>
-    <div class="wx-hilo" id="wx-altus-hilo">High 85&deg;F &middot; Low 64&deg;F</div>
+
+  <!-- METAR / TAF strip — aviationweather.gov API (CORS-enabled) -->
+  <div class="metar-row">
+    <div class="metar-card" id="metar-klts">
+      <div class="metar-station">&#127797; ALTUS, OK &mdash; KLTS &middot; 586th FW</div>
+      <div class="metar-primary">Loading current observation&hellip;</div>
+      <div class="metar-secondary"></div>
+      <div class="metar-taf"></div>
+      <a class="metar-link" href="https://aviationweather.gov/data/metar/?id=KLTS&amp;taf=true" target="_blank" rel="noopener">Full METAR / TAF &rarr;</a>
+    </div>
+    <div class="metar-card" id="metar-kchs">
+      <div class="metar-station">&#9875; CHARLESTON, SC &mdash; KCHS &middot; JB Charleston</div>
+      <div class="metar-primary">Loading current observation&hellip;</div>
+      <div class="metar-secondary"></div>
+      <div class="metar-taf"></div>
+      <a class="metar-link" href="https://aviationweather.gov/data/metar/?id=KCHS&amp;taf=true" target="_blank" rel="noopener">Full METAR / TAF &rarr;</a>
+    </div>
   </div>
-  <div class="weather-card">
-    <div class="wx-city">&#9875; CHARLESTON, SC &mdash; JB Charleston</div>
-    <div class="wx-temp" id="wx-chs-temp">78&deg;</div>
-    <div class="wx-cond" id="wx-chs-cond">Sunny &middot; Beautiful spring day</div>
-    <div class="wx-hilo" id="wx-chs-hilo">High 84&deg;F &middot; Low 66&deg;F</div>
+
+  <!-- Ventusky interactive map + search + layer toggle -->
+  <div class="wx-map-wrap">
+    <div class="wx-controls">
+      <form class="wx-search-form" onsubmit="return wxSearch(event)">
+        <input type="text" id="wx-search-input" class="wx-search-input" placeholder="Search location (Tokyo, KDEN, 34.64,-99.33)" />
+        <button type="submit" class="wx-search-btn">Go</button>
+      </form>
+      <div class="wx-layers">
+        <button type="button" class="wx-layer-btn active" data-layer="temperature-2m" onclick="wxLayer(this,'temperature-2m')">Temp</button>
+        <button type="button" class="wx-layer-btn" data-layer="wind-10m" onclick="wxLayer(this,'wind-10m')">Wind</button>
+        <button type="button" class="wx-layer-btn" data-layer="rain-3h" onclick="wxLayer(this,'rain-3h')">Precip</button>
+        <button type="button" class="wx-layer-btn" data-layer="clouds" onclick="wxLayer(this,'clouds')">Clouds</button>
+        <button type="button" class="wx-layer-btn" data-layer="radar" onclick="wxLayer(this,'radar')">Radar</button>
+        <button type="button" class="wx-layer-btn" data-layer="gust" onclick="wxLayer(this,'gust')">Gust</button>
+      </div>
+    </div>
+    <iframe id="wx-iframe" class="wx-iframe" src="https://www.ventusky.com/?p=37;-95;4&amp;l=temperature-2m" title="Ventusky interactive weather map" loading="lazy"></iframe>
+    <div class="wx-credit">Interactive map: <a href="https://www.ventusky.com" target="_blank" rel="noopener">Ventusky</a> &middot; Aviation data: <a href="https://aviationweather.gov" target="_blank" rel="noopener">aviationweather.gov</a></div>
   </div>
+
 </div>
 
 <!-- MARKET STRIP -->
@@ -777,45 +825,192 @@ function showTab(tabId, btn) {
   if (btn) btn.classList.add('active');
 }
 
-/* Open-Meteo live weather — falls back to static values on error */
-function wxDesc(code) {
-  if (code === 0) return 'Clear sky';
-  if (code <= 3) return 'Partly cloudy';
-  if (code <= 48) return 'Fog';
-  if (code <= 57) return 'Drizzle';
-  if (code <= 67) return 'Rain';
-  if (code <= 77) return 'Snow';
-  if (code <= 82) return 'Rain showers';
-  if (code <= 86) return 'Snow showers';
-  if (code <= 99) return 'Thunderstorm';
-  return 'Variable';
+/* ------------------------------------------------------------
+   AVIATION WEATHER — aviationweather.gov API (CORS-enabled)
+   Fetches current METAR + short TAF forecast for KLTS / KCHS
+   and renders plain-English decoded output for the cards.
+   ------------------------------------------------------------ */
+
+function cToF(c) { return Math.round((c * 9 / 5) + 32); }
+
+function compass(dir) {
+  if (dir === 'VRB' || dir === null || typeof dir === 'undefined') return 'VRB';
+  var pts = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'];
+  return pts[Math.round(dir / 22.5) % 16];
 }
 
-function loadWeather(locId, tempId, condId, hiloId, lat, lon, alert) {
-  var url = 'https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + lon
-    + '&current=temperature_2m,weathercode&daily=temperature_2m_max,temperature_2m_min,weathercode'
-    + '&temperature_unit=fahrenheit&forecast_days=1&timezone=auto';
-  fetch(url).then(function(r){ return r.json(); }).then(function(d){
-    var temp = Math.round(d.current.temperature_2m);
-    var code = d.current.weathercode;
-    var hi = Math.round(d.daily.temperature_2m_max[0]);
-    var lo = Math.round(d.daily.temperature_2m_min[0]);
-    var desc = wxDesc(code);
-    var isAlert = (code >= 45 && code <= 67) || code >= 80;
-    var tEl = document.getElementById(tempId);
-    var cEl = document.getElementById(condId);
-    var hEl = document.getElementById(hiloId);
-    if (tEl) tEl.innerHTML = temp + '&deg;';
-    if (cEl) {
-      cEl.className = 'wx-cond' + (isAlert || alert ? ' wx-alert' : '');
-      cEl.innerHTML = (isAlert || alert ? '&#9888; ' : '') + desc + (alert ? ' &middot; ' + alert : '');
+function decodeWind(dir, speed, gust) {
+  if (speed === 0 || speed === null) return 'Calm';
+  var s = compass(dir) + ' ' + speed + ' kt';
+  if (gust && gust > 0) s += ' gust ' + gust + ' kt';
+  return s;
+}
+
+function decodeClouds(clouds) {
+  if (!clouds || !clouds.length) return 'Clear';
+  var map = { CLR: 'Clear', SKC: 'Clear', FEW: 'Few', SCT: 'Scattered', BKN: 'Broken', OVC: 'Overcast', VV: 'Vertical vis' };
+  return clouds.map(function (c) {
+    var label = map[c.cover] || c.cover;
+    if (c.base) return label + ' ' + (c.base * 100).toLocaleString() + ' ft';
+    return label;
+  }).join(', ');
+}
+
+function decodeWxString(wx) {
+  if (!wx) return null;
+  var tokens = {
+    '-': 'light ', '+': 'heavy ', VC: 'nearby ', MI: 'shallow ', BC: 'patches ',
+    DR: 'drifting ', BL: 'blowing ', SH: 'showers ', TS: 'thunderstorm ', FZ: 'freezing ',
+    DZ: 'drizzle', RA: 'rain', SN: 'snow', SG: 'snow grains', IC: 'ice crystals',
+    PL: 'ice pellets', GR: 'hail', GS: 'small hail', UP: 'unknown precip',
+    BR: 'mist', FG: 'fog', FU: 'smoke', VA: 'volcanic ash', DU: 'dust',
+    SA: 'sand', HZ: 'haze', PY: 'spray', PO: 'dust whirls', SQ: 'squalls',
+    FC: 'funnel cloud', SS: 'sandstorm', DS: 'duststorm'
+  };
+  return wx.split(' ').map(function (group) {
+    var out = '';
+    var i = 0;
+    while (i < group.length) {
+      var two = group.substr(i, 2);
+      var one = group.substr(i, 1);
+      if (tokens[two]) { out += tokens[two]; i += 2; }
+      else if (tokens[one]) { out += tokens[one]; i += 1; }
+      else { i += 1; }
     }
-    if (hEl) hEl.innerHTML = 'High ' + hi + '&deg;F &middot; Low ' + lo + '&deg;F';
-  }).catch(function(){ /* keep static fallback */ });
+    return out.trim();
+  }).filter(Boolean).join(', ');
 }
 
-loadWeather('altus', 'wx-altus-temp', 'wx-altus-cond', 'wx-altus-hilo', 34.6382, -99.3340, 'Severe Wx Risk');
-loadWeather('chs', 'wx-chs-temp', 'wx-chs-cond', 'wx-chs-hilo', 32.7765, -79.9311, null);
+function isAlertWx(wx) {
+  if (!wx) return false;
+  return /TS|FZ|\+|SQ|FC|SS|DS|GR/.test(wx);
+}
+
+function renderMetar(cardId, obs) {
+  var card = document.getElementById(cardId);
+  if (!card || !obs) return;
+  var primary = card.querySelector('.metar-primary');
+  var secondary = card.querySelector('.metar-secondary');
+  var alertWx = isAlertWx(obs.wxString);
+  var tempF = (typeof obs.temp === 'number') ? cToF(obs.temp) : null;
+  var dewF = (typeof obs.dewp === 'number') ? cToF(obs.dewp) : null;
+  var wxDecoded = decodeWxString(obs.wxString);
+  var primaryText = (tempF !== null ? tempF + '\u00B0F' : '--') +
+                    (dewF !== null ? ' / dew ' + dewF + '\u00B0F' : '') +
+                    (wxDecoded ? ' \u00B7 ' + wxDecoded : '');
+  primary.textContent = primaryText;
+  if (alertWx) primary.classList.add('wx-alert'); else primary.classList.remove('wx-alert');
+  var parts = [];
+  parts.push('Wind ' + decodeWind(obs.wdir, obs.wspd, obs.wgst));
+  if (typeof obs.visib !== 'undefined' && obs.visib !== null) {
+    var v = (typeof obs.visib === 'string') ? obs.visib : obs.visib + ' mi';
+    parts.push('Vis ' + v);
+  }
+  parts.push(decodeClouds(obs.clouds));
+  if (obs.altim) parts.push((obs.altim / 33.8639).toFixed(2) + ' inHg');
+  if (obs.reportTime) {
+    var t = new Date(obs.reportTime);
+    parts.push('Obs ' + t.toUTCString().substr(17, 5) + 'Z');
+  }
+  secondary.textContent = parts.join(' \u00B7 ');
+}
+
+function loadMetar(station, cardId) {
+  var url = 'https://aviationweather.gov/api/data/metar?ids=' + station + '&format=json&taf=true';
+  fetch(url).then(function (r) { return r.json(); }).then(function (arr) {
+    if (!arr || !arr.length) throw new Error('empty');
+    renderMetar(cardId, arr[0]);
+    // TAF (forecast) — pull a short decoded snapshot if available
+    var tafUrl = 'https://aviationweather.gov/api/data/taf?ids=' + station + '&format=json';
+    return fetch(tafUrl).then(function (r) { return r.json(); }).then(function (tafs) {
+      if (!tafs || !tafs.length) return;
+      var taf = tafs[0];
+      var card = document.getElementById(cardId);
+      var tafEl = card.querySelector('.metar-taf');
+      if (!tafEl) return;
+      // Pick the first forecast period with a summary line
+      if (taf.fcsts && taf.fcsts.length) {
+        var fc = taf.fcsts[0];
+        var bits = [];
+        bits.push('TAF: ' + decodeWind(fc.wdir, fc.wspd, fc.wgst));
+        if (fc.visib) bits.push('vis ' + fc.visib + ' mi');
+        if (fc.wxString) {
+          var w = decodeWxString(fc.wxString);
+          if (w) bits.push(w);
+        }
+        if (fc.clouds && fc.clouds.length) bits.push(decodeClouds(fc.clouds).toLowerCase());
+        tafEl.textContent = bits.join(' \u00B7 ');
+      } else if (taf.rawTAF) {
+        tafEl.textContent = 'TAF: ' + taf.rawTAF.substr(0, 120) + (taf.rawTAF.length > 120 ? '\u2026' : '');
+      }
+    });
+  }).catch(function () {
+    var card = document.getElementById(cardId);
+    if (!card) return;
+    card.querySelector('.metar-primary').textContent = 'Weather data temporarily unavailable';
+    card.querySelector('.metar-secondary').textContent = 'aviationweather.gov API not reachable \u2014 retrying on next load';
+  });
+}
+
+loadMetar('KLTS', 'metar-klts');
+loadMetar('KCHS', 'metar-kchs');
+
+/* ------------------------------------------------------------
+   VENTUSKY INTERACTIVE MAP — iframe controls
+   Layers: temperature-2m, wind-10m, rain-3h, clouds, radar, gust
+   Search: lat,lon direct OR Open-Meteo geocoding for free-text/ICAO
+   ------------------------------------------------------------ */
+
+var wxLayerCurrent = 'temperature-2m';
+var wxCoordsCurrent = '37;-95;4';
+
+function wxBuildUrl() {
+  return 'https://www.ventusky.com/?p=' + wxCoordsCurrent + '&l=' + wxLayerCurrent;
+}
+
+function wxLayer(btn, layer) {
+  wxLayerCurrent = layer;
+  var btns = document.querySelectorAll('.wx-layer-btn');
+  btns.forEach(function (b) { b.classList.remove('active'); });
+  if (btn) btn.classList.add('active');
+  document.getElementById('wx-iframe').src = wxBuildUrl();
+}
+
+function wxGoto(lat, lon, zoom) {
+  wxCoordsCurrent = lat + ';' + lon + ';' + (zoom || 8);
+  document.getElementById('wx-iframe').src = wxBuildUrl();
+}
+
+function wxSearch(e) {
+  e.preventDefault();
+  var q = document.getElementById('wx-search-input').value.trim();
+  if (!q) return false;
+  // Direct lat,lon
+  var ll = q.match(/^(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)$/);
+  if (ll) { wxGoto(ll[1], ll[2], 8); return false; }
+  // ICAO shortcut table for common airports (fast, no geocode round-trip)
+  var icao = { KLTS: [34.6382, -99.3340], KCHS: [32.7765, -79.9311],
+               KDEN: [39.8617, -104.6731], KATL: [33.6407, -84.4277],
+               KSEA: [47.4502, -122.3088], KJFK: [40.6413, -73.7781],
+               KLAX: [33.9416, -118.4085], KORD: [41.9742, -87.9073],
+               KDCA: [38.8512, -77.0402], KIAD: [38.9531, -77.4565],
+               EGLL: [51.4700, -0.4543], LFPG: [49.0097, 2.5479],
+               RJTT: [35.5494, 139.7798], ZBAA: [40.0799, 116.6031],
+               OTHH: [25.2731, 51.6080], OEJN: [21.6796, 39.1565] };
+  var key = q.toUpperCase();
+  if (icao[key]) { wxGoto(icao[key][0], icao[key][1], 9); return false; }
+  // Open-Meteo free-text geocoding fallback
+  fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + encodeURIComponent(q) + '&count=1')
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      if (d && d.results && d.results.length) {
+        var r = d.results[0];
+        wxGoto(r.latitude, r.longitude, 8);
+      }
+    });
+  return false;
+}
 </script>
+</div><!-- /.page -->
 </body>
 </html>
