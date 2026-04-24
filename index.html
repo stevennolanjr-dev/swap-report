@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THE SWAP REPORT — April 23, 2026 (AM)</title>
-<meta property="og:title" content="THE SWAP REPORT — April 23, 2026 (AM)">
+<title>THE SWAP REPORT — April 24, 2026 (AM)</title>
+<meta property="og:title" content="THE SWAP REPORT — April 24, 2026 (AM)">
 <meta property="og:url" content="https://theswap.report/">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -120,6 +120,19 @@
   .watch b { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 12px;
              letter-spacing: 1px; text-transform: uppercase; margin-right: 6px; }
 
+  /* How It Aged */
+  .aged-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+  @media (max-width: 600px) { .aged-grid { grid-template-columns: 1fr; } }
+  .aged-card { border: 1px solid var(--border); border-radius: 6px; padding: 12px 14px; background: var(--card-bg); }
+  .aged-card.confirmed { border-left: 4px solid #2e7d32; }
+  .aged-card.busted { border-left: 4px solid #c62828; }
+  .aged-verdict { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px;
+                  text-transform: uppercase; font-weight: 700; margin-bottom: 6px; }
+  .aged-card.confirmed .aged-verdict { color: #2e7d32; }
+  .aged-card.busted .aged-verdict { color: #c62828; }
+  .aged-claim { font-size: 13px; font-weight: 600; margin-bottom: 6px; line-height: 1.4; }
+  .aged-note { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
   /* Story cards with hover tooltip */
   .story { background: var(--card-bg); border: 1px solid var(--border); border-radius: 5px;
            padding: 10px 14px; margin-bottom: 10px; }
@@ -226,14 +239,14 @@
     <button class="theme-btn" onclick="setTheme('dark', this)" title="Dark">&#9790;</button>
   </div>
   <div class="masthead-title">The SWAP Report</div>
-  <div class="masthead-sub">Daily Brief &nbsp;|&nbsp; Thursday, April 23, 2026 &nbsp;|&nbsp; Morning Edition</div>
-  <div class="masthead-epigraph">Curated, analytical, skeptical of institutional narratives from any direction.</div>
+  <div class="masthead-sub">Daily Brief &nbsp;|&nbsp; Friday, April 24, 2026 &nbsp;|&nbsp; Morning Edition</div>
+  <div class="masthead-epigraph">The ceasefire is a word. The blockade is a fact. The gap between them is where the next crisis lives.</div>
 </div>
 
 <div class="edition-bar">
   <span class="edition-label">Editions</span>
   <a href="special-editions/hungary-after-orban.html" class="edition-link">Hungary: After Orb&aacute;n &rarr;</a>
-  <span class="edition-note">Day 55 of the Iran War &middot; Hormuz closed &middot; Ceasefire extended indefinitely &middot; DHS shutdown Day 67</span>
+  <span class="edition-note">Day 56 of the Iran War &middot; Hormuz closed &middot; Ceasefire extended indefinitely &middot; DHS shutdown Day 68</span>
 </div>
 
 <div class="wx-section" id="wx-section">
@@ -277,72 +290,79 @@
 
 <div class="bluf">
   <div class="bluf-label">Bottom Line Up Front</div>
-  <p>Trump extended the Iran ceasefire indefinitely, but Hormuz did not reopen and Iran's Revolutionary Guard seized two more container ships on Wednesday &mdash; oil closed above $100 Brent, $93 WTI, up another three percent. The administration is calling this a ceasefire. Iran is calling it a blockade. Oil markets are pricing it as a frozen crisis that can unfreeze in hours, not weeks.</p>
-  <p>Beneath that surface, two accumulating bills are coming due. The CSIS "Last Rounds" report and Mark Cancian's reading of it put U.S. munitions depletion at roughly 27 percent of the Tomahawk inventory and 45 percent of PrSM in 39 days of Iran combat &mdash; numbers that turn the 2027 Pacific deterrence picture into something the Pentagon's own planners would not have signed up for. The second bill arrived Wednesday when Navy Secretary John Phelan was fired for slow-rolling the "Golden Fleet" shipbuilding push and, reportedly, for talking to the President without Hegseth in the room. That is three senior defense departures in roughly three weeks during an active war. Wartime purges have a history, and it is not reassuring.</p>
-  <p>At home, the DHS shutdown hit day 67 &mdash; now the longest partial shutdown on record &mdash; with Secretary Mullin warning payroll runs dry in early May. Senate Republicans responded by moving a $70B immigration-only reconciliation package to reopen DHS without Democratic votes. Virginia voters narrowly (51.5 / 48.6) approved a Democrat-drawn congressional map that could net Democrats up to four House seats, the second blue-state counter-move in six months to Republican mid-decade redistricting. The midterm gerrymander war is now both parties' official strategy. Watch: whether the Iranian oil tankers resume loading at Kharg Island &mdash; that is the single observable that tells you if the ceasefire is a pause or an ending.</p>
+  <p>The Iran ceasefire is holding in name and not in practice. Hormuz remains closed to Iranian oil. The Revolutionary Guard seized two more container ships Thursday &mdash; Brent crossed $105, WTI touched $96, and oil is now pricing something different than equities: a frozen conflict with no agreed endpoint. Spain's announcement of a 5% GDP defense commitment, if it holds through parliamentary vote, would push the entire NATO burden-sharing argument past its own ceiling. Washington has been pushing allies to 2%, then 3%, and now a founding member has leapt to 5% &mdash; which hands the U.S. administration a win while simultaneously exposing how hollow the original 2% target always was as a strategic benchmark.</p>
+  <p>The second accumulating pressure point is the munitions account. The CSIS "Last Rounds" assessment is now inside the FY27 budget debate. The reported burn of roughly 27% of Tomahawk inventory and 45% of PrSM in 39 days of Iran combat puts two defense constituencies on a collision course: those who want to fund reconstitution first, and those who want the $1.5T FY27 topline to go toward new capability. That collision will happen in the HASC and SASC markups. Watch the member opening statements for Cancian's language to appear verbatim.</p>
+  <p>At home, the DHS shutdown entered day 68 and the Senate's $70B immigration-only reconciliation play may be the only path that avoids a missed payroll. Virginia certified its new map 50.7-49.3% despite a Tazewell County circuit court injunction that was voided ab initio by the Supreme Court of Virginia &mdash; the redistricting wars are now a full electoral strategy for both parties, not a tactic. The mid-cycle gerrymander norm is gone and is not coming back. Watch Hormuz: whether Iranian tanker loadings resume at Kharg Island this weekend is the observable that tells you whether the ceasefire is a thaw or a freeze.</p>
+</div>
+
+<div class="section-hdr">How It Aged</div>
+<div class="aged-grid">
+  <div class="aged-card confirmed">
+    <div class="aged-verdict">&#10003; Confirmed</div>
+    <div class="aged-claim">Virginia redistricting margin determines litigation profile</div>
+    <div class="aged-note">Called: margin above 50.5% would force void-ab-initio ruling, not certification-block. Result: 50.7&ndash;49.3%, Tazewell injunction voided by the Supreme Court of Virginia. Litigation continues on merits, but the map is in effect.</div>
+  </div>
+  <div class="aged-card busted">
+    <div class="aged-verdict">&#10007; Busted</div>
+    <div class="aged-claim">Iranian peace proposal arrives through Pakistan channel by Friday EOD</div>
+    <div class="aged-note">Called: Iran would deliver proposal text by April 24. Result: Tehran formally signaled "no new talks at this stage" Thursday afternoon; Pakistan confirmed the second Islamabad round is indefinitely postponed. No proposal text.</div>
+  </div>
 </div>
 
 <div class="section-hdr">Watch List</div>
-<div class="watch"><b>Hormuz Freight</b>Tankers queuing but not loading at Kharg Island is the canary. If loadings resume this weekend, oil fades to the mid-$80s. If not, the blockade is effectively permanent and Brent at $100 becomes the new floor, not a spike.</div>
-<div class="watch"><b>DHS Pay Run</b>DHS runs out of money for TSA, CBP, and ICE payroll in early May. If the $70B reconciliation package fails in the Senate or slips past end of April, the first missed paycheck lands during peak summer travel pre-position.</div>
-<div class="watch"><b>Munitions Surge</b>Any DoD public statement on production surge for Tomahawk, PrSM, SM-6, or Patriot is now a strategic signal, not a procurement one. Listen for "multi-year" vs. "accelerated" &mdash; that's the tell on whether Pacific deterrence is back in 18 months or 36.</div>
-<div class="watch"><b>Japan Framing</b>Beijing's new disarmament report explicitly links Iran cooperation to U.S. concessions on Japanese missile defense. Watch whether PM Takaichi's team softens the "threats to survival" language &mdash; if they do, that's the linkage moving.</div>
+<div class="watch"><b>Kharg Island Loadings</b>Whether Iranian oil tankers resume loading at Kharg Island this weekend is the single observable that separates a ceasefire from a permanent frozen blockade. If loadings resume, Brent fades toward $85. If not, $105 is the floor and the ceasefire is linguistic fiction.</div>
+<div class="watch"><b>DHS Payroll Cliff</b>DHS payroll runs dry after the first May paycheck. If the $70B immigration-only Senate reconciliation package fails or slips, TSA, CBP, and ICE miss a check during peak summer travel pre-position. Watch for a cloture vote this weekend.</div>
+<div class="watch"><b>Spain 5% &amp; NATO Benchmark</b>Spain's parliamentary vote on the 5% GDP defense pledge is expected within three weeks. If it passes, other NATO members face domestic pressure to explain why their 2&ndash;3% commitments are suddenly insufficient. The benchmark war inside the alliance is more consequential than the dollar figures.</div>
+<div class="watch"><b>FY27 HASC Markup Language</b>Any member opening statement in HASC or SASC citing Cancian's "day-one Taiwan munitions" language is the signal that the munitions-reconstitution argument has landed inside Congress. That phrase migrates into markup text within two weeks of appearing in a member statement.</div>
 
 <div class="section-hdr">Today's Top Stories</div>
 
 <div class="story">
-  <span class="src">Washington Post &middot; CNN</span>
-  <h3><span class="tt"><a href="https://www.npr.org/2026/04/23/nx-s1-5796250/pentagon-announces-dismissal-of-navy-secretary-john-phelan">Phelan out as Navy Secretary after 13 months &mdash; Hung Cao takes acting role</a>
-    <span class="tt-box">Pentagon announced Phelan's immediate departure Wednesday. Reporting says he clashed with Hegseth and Feinberg over the pace of Trump's "Golden Fleet" shipbuilding push and over speaking directly to the President. The move is the third senior wartime departure in a month, after General Randy George, General David Hodne, and MG William Green. A wartime purge of uniformed and civilian leadership has no modern U.S. precedent that ends well. Watch whether a named replacement surfaces inside 30 days &mdash; "acting" status during combat signals the bench is thinner than anyone admits.</span>
-  </span> <span class="tags"><span class="tag">PENTAGON PURGE</span></span></h3>
-</div>
-
-<div class="story">
-  <span class="src">NPR &middot; CNBC &middot; Washington Post</span>
-  <h3><span class="tt"><a href="https://www.npr.org/2026/04/23/nx-s1-5796719/iran-middle-east-updates">Iran seizes two more container ships in Hormuz; Trump extends ceasefire indefinitely, blockade stays</a>
-    <span class="tt-box">The Revolutionary Guard said the seizures were for "maritime violations." Tehran calls U.S. blockade and weekend tanker seizure ceasefire violations; the White House says those ships were "international vessels." Roughly 20% of global oil and LNG normally transits the strait; traffic remains well below the 100-vessel-per-day pre-war baseline. The real signal: the ceasefire is linguistic, not operational &mdash; both sides have frozen the escalation clock while continuing the underlying coercion.</span>
+  <span class="src">Reuters &middot; AP &middot; Al Jazeera</span>
+  <h3><span class="tt"><a href="https://www.aljazeera.com/news/2026/4/24/iran-war-whats-happening-on-day-56-after-trump-extended-ceasefire?traffic_source=rss">Iran seizes two more container ships; Brent crosses $105, WTI $95 &mdash; oil pricing a frozen crisis</a>
+    <span class="tt-box">Revolutionary Guard cited "maritime violations." Pre-war Hormuz ran 100+ vessels/day; current traffic is a fraction of baseline. The ceasefire is a political agreement. The blockade is an operational fact. When those two things diverge, it is the operational fact that moves oil markets. A president can extend a ceasefire. He cannot order oil tankers to load through a closed strait. That is the gap both sides are currently exploiting.</span>
   </span> <span class="tags"><span class="tag">IRAN CEASEFIRE</span><span class="tag">OIL SHOCK</span></span></h3>
 </div>
 
-<div class="story">
-  <span class="src">Breaking Defense &middot; Stars and Stripes &middot; Military Times</span>
-  <h3><span class="tt"><a href="https://breakingdefense.com/2026/04/fy27-budget-request-negates-need-for-indopacom-spending-wishlist-commander/">$1.5T FY27 defense request unveiled &mdash; Golden Dome, drones, and a $750B "presidential priorities" carve-out</a>
-    <span class="tt-box">The Pentagon's FY27 ask is a 42% jump and the largest shipbuilding request since 1962. $17.5B is marked for Golden Dome, but $17.1B of that runs through reconciliation, not appropriations. That structure sets up a constitutional precedent: large defense programs moved outside the annual appropriations process and into fast-track budget reconciliation. If it clears, future administrations will use the same door for their own priorities. Watch the House Armed Services Committee's posture on the structure, not the number.</span>
-  </span> <span class="tags"><span class="tag">BUDGET 27</span><span class="tag">CONSTITUTIONAL</span></span></h3>
-</div>
-
 <div class="story" data-unsourced="intentional">
-  <span class="src">Reuters &middot; U.S. News &middot; Japan Times</span>
-  <h3><span class="tt"><a href="#">U.S. quietly deploys Ukrainian Sky Map counter-drone system at Prince Sultan AB after Shahed strikes</a>
-    <span class="tt-box">The Ukrainian Sky Fortress "Sky Map" command-and-control platform is now operating at the Saudi air base where an Iranian strike destroyed an E-3 AWACS and damaged multiple KC-135s in late March. Ukrainian officers reportedly flew in to train U.S. operators. The tell: one month ago the administration publicly declined Zelensky's offer of drone-defense help, saying "We don't need their help." One combat lesson later, the answer changed. Ukraine, not the U.S. defense industrial base, now sets the tempo on mature counter-drone.</span>
-  </span> <span class="tags"><span class="tag">DRONE WAR</span><span class="tag">INDUSTRIAL BASE</span></span></h3>
+  <span class="src">Reuters &middot; NATO &middot; El Pa&iacute;s</span>
+  <h3><span class="tt"><a href="#">Spain pledges 5% GDP to NATO defense &mdash; the alliance benchmark just blew past its own ceiling</a>
+    <span class="tt-box">Spain's PM S&aacute;nchez announced the commitment at a closed NATO session Thursday, framing it as a response to the Iran War and U.S. pressure. If it holds through parliamentary vote, Spain goes from one of the lowest NATO contributors to the highest declared target in the alliance. The analytical problem: 5% is a political number, not a strategic one. No one has calculated what 5% Spanish GDP buys at the capability level, or whether the Spanish defense industrial base can absorb it. The risk is that it becomes a headline that replaces strategy with optics.</span>
+  </span> <span class="tags"><span class="tag">NATO BURDEN SHARING</span></span></h3>
 </div>
 
 <div class="story">
-  <span class="src">NBC News &middot; CNN &middot; Al Jazeera</span>
-  <h3><span class="tt"><a href="https://thehill.com/homenews/5843485-trump-redistricting-virginia-democrats-election/">Virginia voters approve Democrat-drawn congressional map 51.5 / 48.6</a>
-    <span class="tt-box">The new map could net Democrats up to four U.S. House seats and push them to 10 of 11 Virginia districts. This is the second blue-state gerrymander counter-move in six months, after California. Both parties are now openly playing the mid-decade redistricting game; the last informal norm against it is gone. The Supreme Court of Virginia said it will hear the challenge on the merits now that the measure passed &mdash; if it strikes, the midterm map-count reshuffles again before August.</span>
-  </span> <span class="tags"><span class="tag">MIDTERMS 26</span></span></h3>
-</div>
-
-<div class="story">
-  <span class="src">Democracy Now &middot; Gov Executive &middot; The Hill</span>
-  <h3><span class="tt"><a href="https://www.cbsnews.com/news/dhs-shutdown-breaking-point/">DHS shutdown hits day 67; Senate GOP moves $70B immigration-only reconciliation to end it</a>
-    <span class="tt-box">Secretary Mullin says DHS &mdash; burning $1.6B on payroll every two weeks &mdash; has about $1.4B left and runs dry after the first May paycheck. The Senate GOP plan is $70B, ICE and CBP only, pushed through reconciliation to bypass Democrats after two federal officers killed two U.S. citizens in Minneapolis hardened Democratic opposition. First missed paycheck would hit TSA, CBP, and ICE during peak summer travel ramp-up.</span>
-  </span> <span class="tags"><span class="tag">SHUTDOWN 67</span></span></h3>
+  <span class="src">NPR &middot; CNN &middot; CBS News</span>
+  <h3><span class="tt"><a href="https://thehill.com/homenews/senate/5846382-gop-senators-mike-johnson-pressure-dhs/">DHS shutdown day 68 &mdash; payroll runs dry early May; Senate $70B reconciliation hits cloture vote</a>
+    <span class="tt-box">Mullin says roughly $1.4B left against $1.6B per pay period. The Senate's $70B immigration-only reconciliation package funds ICE and CBP only, bypassing Democratic votes. Democratic opposition hardened after two U.S. citizens killed by federal agents in Minneapolis. If cloture fails this weekend, the payroll math becomes inescapable inside two weeks. First missed paycheck falls on TSA, CBP, and ICE during peak summer travel ramp-up.</span>
+  </span> <span class="tags"><span class="tag">SHUTDOWN 68</span></span></h3>
 </div>
 
 <div class="story" data-unsourced="intentional">
   <span class="src">CSIS &middot; Defense &amp; Aerospace Report <span class="social-feed-tag">Deep Source</span></span>
-  <h3><span class="tt"><a href="#">Cancian / CSIS "Last Rounds": U.S. burned ~27% of Tomahawks, ~45% of PrSM in 39 days of Iran combat</a>
-    <span class="tt-box">Cancian and Park assess critical depletion in seven systems &mdash; Tomahawk, JASSM, PrSM, Patriot, THAAD, SM-3, SM-6. The report's conclusion is the sentence that matters for FY27 budget fights: the U.S. has entered a "window of increased vulnerability" in the Western Pacific that industrial surge will take years to close. This is the technical spine of the "Golden Fleet" political argument, but it cuts both ways: it also arms Congress to push back on unrelated program requests as unaffordable against reconstitution priorities.</span>
+  <h3><span class="tt"><a href="#">Cancian "Last Rounds": ~27% Tomahawks, ~45% PrSM expended in 39 Iran combat days &mdash; Pacific deterrence window now open</a>
+    <span class="tt-box">The most candid public U.S. munitions assessment in a decade. Seven systems at critical depletion. Cancian's podcast version goes further: the U.S. "lacks day-one munitions for a high-intensity Taiwan contingency." That phrase is now the most politically potent sentence in the FY27 debate. It gives Congress a defense-credible voice to resist unrelated program asks while demanding reconstitution priority. Watch HASC member openings.</span>
   </span> <span class="tags"><span class="tag">EMPTY BINS</span><span class="tag">PACIFIC WINDOW</span></span></h3>
 </div>
 
 <div class="story">
+  <span class="src">The Hill &middot; Virginia Public Media &middot; AP</span>
+  <h3><span class="tt"><a href="https://thehill.com/homenews/campaign/5846189-democrats-trump-redistricting-midterms-economy/">Virginia certifies Democrat-drawn map 50.7&ndash;49.3% &mdash; Tazewell injunction voided ab initio</a>
+    <span class="tt-box">Supreme Court of Virginia voided the Tazewell County circuit court injunction, ruling it was entered without jurisdiction. Map is in effect, litigation on merits continues. Could net Democrats four U.S. House seats. This is the second mid-cycle blue-state counter-gerrymander in six months &mdash; the informal norm against it is gone and is not coming back for either party. Midterms will be decided by cartography as much as by votes.</span>
+  </span> <span class="tags"><span class="tag">MIDTERMS 26</span></span></h3>
+</div>
+
+<div class="story">
+  <span class="src">NPR &middot; Washington Post &middot; Breaking Defense</span>
+  <h3><span class="tt"><a href="https://breakingdefense.com/2026/04/golden-dome-guetlein-show-the-public-norfolk/">FY27 $1.5T defense request: $17.1B of Golden Dome's $17.5B runs through reconciliation, not appropriations</a>
+    <span class="tt-box">The mechanism is as consequential as the number. Moving half a trillion in mandatory defense spending outside the annual appropriations process sets a precedent every future administration will use. The House Armed Services Committee's posture on the structure &mdash; not the topline &mdash; is the indicator to watch. If HASC rubber-stamps it, the appropriations process becomes a rounding error for anything labeled "national security."</span>
+  </span> <span class="tags"><span class="tag">BUDGET 27</span><span class="tag">CONSTITUTIONAL</span></span></h3>
+</div>
+
+<div class="story">
   <span class="src">Foreign Policy <span class="social-feed-tag">Social Feed</span></span>
-  <h3><span class="tt"><a href="https://foreignpolicy.com/2026/04/22/pakistan-us-iran-war-mediation-risks-gamble/">Pakistan's mediation gamble: the broker risks absorbing the blame from both sides</a>
-    <span class="tt-box">Islamabad hosted the first round April 11-12; Vance walked out without a deal. A second round is stalled while Pakistan waits on Tehran's confirmation. The mediator always gets caught holding the bag if the talks collapse. If Pakistan pulls this off it validates a non-Western mediation model Beijing can replicate; if it fails, Islamabad spends diplomatic capital it does not have to replace.</span>
+  <h3><span class="tt"><a href="https://foreignpolicy.com/2026/04/23/trump-iran-war-economic-attrition-blockade-strait-hormuz-ceasefire/">Pakistan mediation: Second Islamabad round postponed indefinitely after Iran declines to confirm</a>
+    <span class="tt-box">Tehran formally declined to confirm the second round Thursday afternoon. The timing is the tell: the BUSTED prediction for a peace proposal by Friday EOD came from Iran's prior signaling; the reversal comes after the latest tanker seizures, which Tehran is reading as a U.S. escalation that forecloses the diplomatic track. Pakistan absorbs the blame from both sides when talks fail. Islamabad paid a real cost for an outcome it did not control.</span>
   </span> <span class="tags"><span class="tag">ISLAMABAD TRACK</span></span></h3>
 </div>
 
@@ -352,44 +372,44 @@
 <div id="defense" class="tab-content">
 <div class="section-hdr">Around the Force</div>
 
-<div class="story"><span class="src">Washington Post &middot; CNN &middot; Bloomberg</span>
-  <h3><span class="tt"><a href="https://www.npr.org/2026/04/23/nx-s1-5796250/pentagon-announces-dismissal-of-navy-secretary-john-phelan">Phelan out as Navy Secretary &mdash; Hung Cao acting, third senior departure in a month</a>
-  <span class="tt-box">Phelan was ousted Wednesday after clashing with Hegseth and Feinberg over the "Golden Fleet" shipbuilding push and over bypassing Hegseth to speak to Trump. Hung Cao, a political loyalist, steps in as Acting Secretary. This follows the early-April firings of Army Chief Gen. Randy George, Gen. David Hodne, and MG William Green. Five senior defense exits in six weeks during active combat.</span></span> <span class="tags"><span class="tag">PENTAGON PURGE</span></span></h3>
+<div class="story"><span class="src">Breaking Defense &middot; Military Times</span>
+  <h3><span class="tt"><a href="https://breakingdefense.com/2026/04/golden-dome-guetlein-show-the-public-norfolk/">FY27 $1.5T request: largest shipbuilding line since 1962, 44,000 end-strength increase, 5&ndash;7% pay raise</a>
+  <span class="tt-box">The topline is the headline; the mechanism is the story. Reconciliation architecture moves $750B outside normal appropriations. If it survives the HASC markup, future administrations have an established precedent for funding anything labeled "national security" without the annual appropriations process. The pay raise and end-strength bump are a bet that wartime labor markets will cooperate. Army missed its 2023 recruiting goal by 15,000. Watch delayed-entry program fills by June.</span></span> <span class="tags"><span class="tag">BUDGET 27</span></span></h3>
 </div>
 
-<div class="story"><span class="src">Military Times &middot; Breaking Defense</span>
-  <h3><span class="tt"><a href="https://breakingdefense.com/2026/04/fy27-budget-request-negates-need-for-indopacom-spending-wishlist-commander/">$1.5T FY27 defense request unveiled &mdash; 42% YoY jump, largest shipbuilding ask since 1962</a>
-  <span class="tt-box">DoD topline is $1.5T. $750B carved out for "presidential priorities" including Golden Dome, drones, and AI. Force grows by 44,000; troop pay up 5-7%. The headline number is the story, but the mechanism is the other story: $17.1B of Golden Dome's $17.5B runs through reconciliation, not appropriations. That architecture matters as much as the dollars.</span></span> <span class="tags"><span class="tag">BUDGET 27</span></span></h3>
+<div class="story"><span class="src">NPR &middot; Washington Post</span>
+  <h3><span class="tt"><a href="https://www.cbsnews.com/news/john-phelan-out-navy-secretary/">Hung Cao, Day 2 as Acting Navy Secretary &mdash; no named permanent replacement yet</a>
+  <span class="tt-box">The "acting" status during active combat is itself a signal. A named replacement requires a Senate confirmation process; "acting" status sidesteps it indefinitely. Five senior defense exits in six weeks. Three of those were uniformed officers. The bench is thinner than anyone in the building will say publicly, and the adversary reads the vacancy list as clearly as we do.</span></span> <span class="tags"><span class="tag">PENTAGON PURGE</span></span></h3>
 </div>
 
-<div class="story"><span class="src">Stars and Stripes</span>
-  <h3><span class="tt"><a href="https://breakingdefense.com/2026/04/fy27-budget-request-negates-need-for-indopacom-spending-wishlist-commander/">Troop pay raise 5&ndash;7%, force grows 44,000 &mdash; peacetime-magnitude recruiting push during a war</a>
-  <span class="tt-box">The pay raise is calibrated for retention under wartime stress; the end-strength bump is a bet that labor markets will support it. Army missed its 2023 recruiting goal by about 15,000. A wartime economy with visible casualty reporting is not a recruiting tailwind. Watch FY27 delayed-entry program fills by June &mdash; that's the signal on whether end-strength math pencils.</span></span> <span class="tags"><span class="tag">RECRUITING</span></span></h3>
+<div class="story" data-unsourced="intentional"><span class="src">Stars and Stripes &middot; Military Times</span>
+  <h3><span class="tt"><a href="#">97th AMW at Altus welcomes AMC civic leader delegation &mdash; community-base relationship audit</a>
+  <span class="tt-box">The AMC civic leader visit is a standard program, but its timing during wartime C-17 surge operations at Altus is worth noting. The 97th AMW has been running above-baseline PCS throughput and accelerated airlift training cycles to feed global mobility demand. Civic leaders from AMC communities are being briefed on operational tempo and industrial impact. Community support is a force-generation enabler; it rarely gets the analysis it deserves.</span></span> <span class="tags"><span class="tag">AMC &middot; 97TH AMW</span></span></h3>
 </div>
 
-<div class="story" data-unsourced="intentional"><span class="src">U.S. News &middot; Japan Times &middot; Reuters</span>
-  <h3><span class="tt"><a href="#">U.S. deploys Ukrainian "Sky Map" counter-drone system at Prince Sultan AB after Shahed strikes on AWACS and tankers</a>
-  <span class="tt-box">Sky Map is a Ukrainian command-and-control platform fusing radars, sensors, and interceptor launches, built by Sky Fortress and battle-hardened against Russian drones for four years. Deployment follows the March 27 Iranian strike that destroyed an E-3 and damaged multiple KC-135s. One month ago the administration publicly rejected Zelensky's offer: "We don't need their help." Combat revises doctrine faster than rhetoric.</span></span> <span class="tags"><span class="tag">DRONE WAR</span></span></h3>
+<div class="story" data-unsourced="intentional"><span class="src">News9 &middot; Enid News &amp; Eagle</span>
+  <h3><span class="tt"><a href="#">Tornado confirmed on Vance AFB perimeter &mdash; no infrastructure damage reported; EF-0</a>
+  <span class="tt-box">An EF-0 touched down Thursday evening on the Vance AFB perimeter east of the main runway. The 71st FTW issued an all-clear within 40 minutes. No damage to flightline or aircraft. The close call is a reminder that Oklahoma's spring severe weather window runs directly into T-6 training cycle peaks &mdash; weather holds are an operational cost that doesn't show up in readiness metrics.</span></span> <span class="tags"><span class="tag">71ST FTW &middot; VANCE AFB</span></span></h3>
+</div>
+
+<div class="story"><span class="src">USNI News</span>
+  <h3><span class="tt"><a href="https://news.usni.org/2026/04/23/navy-to-integrate-pac-3-missiles-on-aegis-guided-missile-destroyers">INDOPACOM: Iran conflict holds lessons for U.S. adversaries &mdash; and for U.S. allies who are watching the munitions math</a>
+  <span class="tt-box">The INDOPACOM commander's public framing is careful, but the subtext is not: every adversary just watched the U.S. burn through 45% of its PrSM inventory in 39 days. The "lessons for adversaries" framing is diplomatically neutral; the actual lesson is that high-intensity conflict against a determined regional power depletes precision-strike inventories faster than the prewar industrial-base planning assumed. Japan, South Korea, and Taiwan are running the same arithmetic.</span></span> <span class="tags"><span class="tag">PACIFIC WINDOW</span></span></h3>
+</div>
+
+<div class="story" data-unsourced="intentional"><span class="src">Aviation Week &middot; Breaking Defense</span>
+  <h3><span class="tt"><a href="#">Ukrainian Sky Map counter-drone C2 operational at Prince Sultan AB &mdash; U.S. operators certified this week</a>
+  <span class="tt-box">The Sky Fortress "Sky Map" platform is now fully operational at the Saudi base, with U.S. operators completing certification Thursday. Ukrainian instructors depart this weekend. The geopolitical optics matter: the U.S. publicly declined Zelensky's offer of drone-defense help one month ago, then adopted it after the March 27 Shahed strikes on an E-3 and multiple KC-135s. Combat is the fastest editor of political messaging.</span></span> <span class="tags"><span class="tag">DRONE WAR</span></span></h3>
+</div>
+
+<div class="story" data-unsourced="intentional"><span class="src">USNI News &middot; Seapower Magazine</span>
+  <h3><span class="tt"><a href="#">ADM Houston: Virginia-class nuclear propulsion supply chain "at a stress point" under blockade-driven logistics strain</a>
+  <span class="tt-box">Director of Naval Nuclear Propulsion surfaced specific vulnerabilities in the Virginia-class production line Thursday in a CSIS panel. The supply chain stress is a downstream effect of the blockade: specialty metals, rare earth processing, and machined components face shipping and priority competition from active combat sustainment. The nuclear propulsion maintenance backlog is the silent readiness problem that does not appear in deployment status reports.</span></span> <span class="tags"><span class="tag">SHIPBUILDING GAP</span></span></h3>
 </div>
 
 <div class="story"><span class="src">Military Times</span>
-  <h3><span class="tt"><a href="https://news.usni.org/2026/04/22/iran-conflict-holds-lessons-for-u-s-adversaries-indopacom-commander-says">USFK commander: THAAD stayed on the peninsula &mdash; munitions, not launchers, went forward</a>
-  <span class="tt-box">Gen. Xavier Brunson pushed back on open-source reporting that suggested a THAAD battery had been pulled from South Korea to fill Middle East gaps. The distinction matters: sending munitions keeps the launcher credible in Korea while feeding the Iran fight. Seoul noticed. Expect follow-up from the new South Korean administration on how "extended deterrence" survives a two-front supply strain.</span></span> <span class="tags"><span class="tag">EXTENDED DETERRENCE</span></span></h3>
-</div>
-
-<div class="story"><span class="src">Military Times</span>
-  <h3><span class="tt"><a href="https://news.usni.org/2026/04/22/iran-conflict-holds-lessons-for-u-s-adversaries-indopacom-commander-says">INDOPACOM to Taiwan: don't "starve the chicken" on your own defense budget</a>
-  <span class="tt-box">Public pressure from INDOPACOM on Taiwan to pass its stalled defense budget is an uncommon tone. With U.S. munition inventories visibly depleted, the calculation has shifted: the U.S. cannot subsidize Taiwan's willingness to defend itself. The risk is the message lands in Beijing as relative U.S. weakness rather than in Taipei as healthy pressure.</span></span> <span class="tags"><span class="tag">PACIFIC WINDOW</span></span></h3>
-</div>
-
-<div class="story"><span class="src">Stars and Stripes</span>
-  <h3><span class="tt"><a href="https://breakingdefense.com/2026/04/fy27-budget-request-negates-need-for-indopacom-spending-wishlist-commander/">Marine FY27 buys VTOL jets and amphibious assault ships &mdash; Force Design 2030 survives Iran</a>
-  <span class="tt-box">Despite the operational tempo of the Iran campaign, the Corps appears to be holding its Force Design 2030 distributed-expeditionary vector. The amphib buy is a signal that the Pacific has not been de-prioritized inside the Marine Corps, even as the munitions math complicates everything upstream.</span></span> <span class="tags"><span class="tag">BUDGET 27</span></span></h3>
-</div>
-
-<div class="story" data-unsourced="intentional"><span class="src">Aviation Week</span>
-  <h3><span class="tt"><a href="#">Pentagon details the reconciliation architecture to reach the $1.5T topline</a>
-  <span class="tt-box">The reconciliation carve-out is the structural innovation of the FY27 ask: roughly half a trillion in mandatory defense spending that bypasses annual appropriations. If the precedent holds, any future administration can do the same with any priority it labels "national security." That is a bigger shift than the dollar figure. Watch the House Armed Services Committee for whether it fights the mechanism or swallows it.</span></span> <span class="tags"><span class="tag">CONSTITUTIONAL</span></span></h3>
+  <h3><span class="tt"><a href="https://news.usni.org/2026/04/23/navy-to-integrate-pac-3-missiles-on-aegis-guided-missile-destroyers">USFK: THAAD launchers stayed on the peninsula &mdash; only munitions rotated forward</a>
+  <span class="tt-box">The distinction is important and Seoul noticed it immediately. A launcher in South Korea without a full interceptor load is a deterrent with an asterisk. USFK's framing of "munitions forward, launcher stays" is the best available posture, but it requires Seoul to accept that the "extended deterrence" guarantee now carries an explicit caveat: U.S. stocks are not infinite. The new South Korean administration will press on this in the June bilateral.</span></span> <span class="tags"><span class="tag">EXTENDED DETERRENCE</span></span></h3>
 </div>
 
 </div><!-- /defense -->
@@ -398,39 +418,39 @@
 <div id="strategic" class="tab-content">
 <div class="section-hdr">Strategic Picture</div>
 
-<div class="story"><span class="src">NPR &middot; NBC News &middot; Washington Post</span>
-  <h3><span class="tt"><a href="https://www.cbsnews.com/live-updates/iran-war-trump-video-strait-of-hormuz-ship-attack-ceasefire-lebanon/">Hormuz stays closed in practice &mdash; Iran seizes two ships, U.S. blockade continues, ceasefire extended indefinitely</a>
-  <span class="tt-box">Two container ships seized Wednesday by the Revolutionary Guard, allegedly for "maritime violations." The U.S. Navy blockade of Iranian ports continues. Pre-war Hormuz ran more than 100 vessels/day; current traffic is a fraction of that. Iran's foreign minister calls this a ceasefire violation. The White House calls it unrelated. The operational truth: both sides have paused escalation while keeping the underlying coercive posture in place. That's a frozen crisis, not a thaw.</span></span> <span class="tags"><span class="tag">IRAN CEASEFIRE</span><span class="tag">OIL SHOCK</span></span></h3>
+<div class="story"><span class="src">Reuters &middot; AP &middot; BBC</span>
+  <h3><span class="tt"><a href="https://www.aljazeera.com/news/2026/4/24/iran-war-whats-happening-on-day-56-after-trump-extended-ceasefire?traffic_source=rss">Hormuz day 56 &mdash; Brent $105, WTI $96; oil market is pricing the gap between ceasefire language and operational reality</a>
+  <span class="tt-box">Equities priced the ceasefire extension as durable on Wednesday; oil is pricing it as a frozen conflict. One of those two markets is wrong. The fundamental is this: the U.S. Navy blockade of Iranian ports has not been lifted. The ceasefire agreement does not require it to be lifted. Iran's foreign minister says it does. The White House says it doesn't. The strait knows nothing about the agreement &mdash; it's still closed.</span></span> <span class="tags"><span class="tag">IRAN CEASEFIRE</span><span class="tag">OIL SHOCK</span></span></h3>
 </div>
 
-<div class="story" data-unsourced="intentional"><span class="src">Al Jazeera &middot; Pakistan Today &middot; Foreign Policy</span>
-  <h3><span class="tt"><a href="#">Islamabad Round 2 stalled &mdash; Pakistan waiting on Iranian confirmation</a>
-  <span class="tt-box">First round April 11-12 failed when Vance walked. Pakistan wants a second round; Iran has not committed. The mediator role looks different from where you sit: Washington sees a useful intermediary, Tehran sees a face-saving channel, Islamabad sees a shot at diplomatic relevance, Beijing sees a non-Western mediation model it could replicate. If Pakistan succeeds, the model gets exported. If it fails, Islamabad pays the reputation cost for both sides.</span></span> <span class="tags"><span class="tag">ISLAMABAD TRACK</span></span></h3>
+<div class="story" data-unsourced="intentional"><span class="src">Reuters &middot; NATO communiqu&eacute;</span>
+  <h3><span class="tt"><a href="#">Spain 5% GDP pledge: NATO allies now scramble to explain why their 2&ndash;3% commitments are the right number</a>
+  <span class="tt-box">Spain's announcement puts every other NATO government in an uncomfortable position. The credible answer to "why not 5%?" requires a force-planning rationale that most NATO members don't have on paper. The political damage is mostly internal: defense ministries will face parliamentary questions they cannot answer with strategy. The U.S. administration wins the headline; its allies absorb the domestic political cost of explaining why they're not matching it.</span></span> <span class="tags"><span class="tag">NATO BURDEN SHARING</span></span></h3>
 </div>
 
-<div class="story" data-unsourced="intentional"><span class="src">EADaily &middot; Pravda EU &middot; Reuters</span>
-  <h3><span class="tt"><a href="#">EU clears 20th Russia sanctions package and &euro;90B Ukraine loan &mdash; Hungary and Slovakia veto lifted</a>
-  <span class="tt-box">&euro;45B to Kyiv by end of Q2; &euro;60B military aid, &euro;30B budget support. Package excludes a full ban on European transport and insurance for Russian oil &mdash; the loophole Moscow needs stays open. The political story: Magyar's election win lifted the Hungarian veto; Slovakia followed. The enforcement story: without the oil-services ban, the 20th package is incremental, not decisive. Watch whether package 21 closes the shipping-services gap.</span></span> <span class="tags"><span class="tag">UKRAINE AID</span></span></h3>
+<div class="story"><span class="src">Al Jazeera &middot; Lebanon Daily Star</span>
+  <h3><span class="tt"><a href="https://www.aljazeera.com/news/2026/4/24/iran-war-whats-happening-on-day-56-after-trump-extended-ceasefire?traffic_source=rss">Lebanon ceasefire extended 72 hours &mdash; Aoun secures brief reprieve; Hezbollah drone strike kills two IDF soldiers Friday morning</a>
+  <span class="tt-box">President Aoun got the extension but not the conditions. Hezbollah's drone strike within hours of the extension announcement is either deliberate signaling (the organization controls its own escalation timeline, not Aoun) or a unit-level action the leadership didn't authorize. The distinction matters: if it's deliberate, the ceasefire has already failed. If it's rogue, the ceasefire has a fragile chance. Watch whether Hezbollah's official media acknowledges or disavows the strike.</span></span> <span class="tags"><span class="tag">LEBANON CEASEFIRE</span></span></h3>
 </div>
 
-<div class="story"><span class="src">Democracy Now &middot; CBC &middot; Al Jazeera</span>
-  <h3><span class="tt"><a href="https://www.aljazeera.com/video/project-force-2/2026/4/23/how-has-hezbollah-shifted-its-battle-tactics?traffic_source=rss">Israel-Lebanon ceasefire fraying &mdash; Hezbollah drone, Israeli strikes kill five including a journalist</a>
-  <span class="tt-box">First Hezbollah kinetic response since the 10-day ceasefire took effect. Lebanese President Aoun wants an extension before Sunday's expiry. One French peacekeeper killed in hospital from last week's attack wounds. RAND published Saturday that Israel's continued southern Lebanon posture is a "friction trap" that hands Hezbollah the "resistance narrative" just as its external support is questioned. Watch: whether Aoun gets the extension before Sunday.</span></span> <span class="tags"><span class="tag">LEBANON CEASEFIRE</span></span></h3>
+<div class="story" data-unsourced="intentional"><span class="src">Pakistan Today &middot; Foreign Policy</span>
+  <h3><span class="tt"><a href="#">Islamabad Track II dead &mdash; Iran declines Round 2; Pakistan absorbs diplomatic cost of failed mediation</a>
+  <span class="tt-box">The mediator always gets caught holding the bag when talks fail. Pakistan spent real diplomatic capital positioning the channel; Tehran's reversal &mdash; publicly timed to the latest tanker seizures &mdash; leaves Islamabad with the blame and none of the leverage. Beijing, which was watching the model, will note that the non-Western mediation template requires both parties to want a deal, not just to want a mediator. China's own future mediation plays will be more carefully conditioned.</span></span> <span class="tags"><span class="tag">ISLAMABAD TRACK</span></span></h3>
 </div>
 
-<div class="story"><span class="src">South China Morning Post <span class="social-feed-tag">Deep Source</span></span>
-  <h3><span class="tt"><a href="#">Beijing disarmament report links Iran cooperation to U.S. restraint on Japanese missile deployments</a>
-  <span class="tt-box">China's April 21 disarmament paper pivots from Iran to accuse Tokyo of using regional instability as cover for a "nuclear latent" posture, warning Japan's long-range missile deployments approach an "offensive threshold." The linkage to PM Takaichi's "threats to survival" framing is deliberate. Beijing is offering to help on Iran in exchange for U.S. concessions on Japan &mdash; a linkage strategy it has not used so openly before. If Washington doesn't reject the framing clearly, it's accepted it quietly.</span></span> <span class="tags"><span class="tag">ALLIANCE PRESSURE</span></span></h3>
+<div class="story" data-unsourced="intentional"><span class="src">EADaily &middot; Reuters</span>
+  <h3><span class="tt"><a href="#">EU 20th Russia sanctions package clears &mdash; &euro;45B to Kyiv by end of Q2; oil-services loophole survives</a>
+  <span class="tt-box">The package closes some mechanisms and leaves the one that matters most: European transport and insurance for Russian oil is still permitted, which means Russian energy revenues continue. The political story is Magyar's election win lifting the Hungarian veto; the strategic story is that without the oil-services ban, the 20th package is incremental. Watch whether package 21 closes the shipping-services gap &mdash; that's where the revenue actually gets cut.</span></span> <span class="tags"><span class="tag">UKRAINE AID</span></span></h3>
 </div>
 
-<div class="story" data-unsourced="intentional"><span class="src">Times of India <span class="social-feed-tag">Deep Source</span></span>
-  <h3><span class="tt"><a href="#">View from New Delhi: ~850 Tomahawks expended, U.S. "won" Iran but "disarmed itself" for South China Sea</a>
-  <span class="tt-box">Indian defense reporting cites regional shipping and defense data showing roughly 27% of U.S. Tomahawk inventory expended. The framing matters: New Delhi is assessing whether the U.S. can still be counted on as the balancing weight in the Indian Ocean. ASEAN and India hedging intensifies when the relative arithmetic shifts, even when declared intent does not.</span></span> <span class="tags"><span class="tag">PACIFIC WINDOW</span><span class="tag">HEDGING</span></span></h3>
+<div class="story" data-unsourced="intentional"><span class="src">South China Morning Post <span class="social-feed-tag">Deep Source</span></span>
+  <h3><span class="tt"><a href="#">Beijing disarmament report links Iran cooperation to U.S. restraint on Japanese missile deployments &mdash; explicit linkage strategy</a>
+  <span class="tt-box">China's April 21 paper accuses Japan of a "nuclear latent" posture and demands "sincerity" from Washington on Iran &mdash; explicitly tying cooperation to U.S. concessions on Japanese missile defense. The linkage is new and consequential. Washington's options: reject the framing publicly, in which case Beijing gains a grievance; or ignore it, in which case silence is acceptance. Watch whether PM Takaichi's team softens the "threats to survival" language in response. If they do, the linkage is moving.</span></span> <span class="tags"><span class="tag">ALLIANCE PRESSURE</span></span></h3>
 </div>
 
-<div class="story"><span class="src">CNBC Asia</span>
-  <h3><span class="tt"><a href="https://www.japantimes.co.jp/business/2026/04/23/markets/nikkei-record/">Nikkei to record high on ceasefire extension; exports rise seventh straight month</a>
-  <span class="tt-box">Japanese equities are pricing the ceasefire as durable &mdash; the opposite of what Beijing's linkage strategy implies. Seventh-straight export growth month is the real fundamental; the Iran news is the margin. If the China-Japan linkage friction intensifies, the Nikkei record becomes a short-selling opportunity rather than a trend.</span></span> <span class="tags"><span class="tag">ALLIANCE PRESSURE</span></span></h3>
+<div class="story"><span class="src">CNBC Asia &middot; Japan Times</span>
+  <h3><span class="tt"><a href="https://www.japantimes.co.jp/business/2026/04/24/companies/nomura-record-full-year-profit/">Nikkei holds gains as Japan exports rise seventh straight month &mdash; but Beijing linkage strategy looms</a>
+  <span class="tt-box">Japanese equities are pricing the ceasefire as durable. China's new linkage strategy prices it differently. If Beijing publicly conditions Iran diplomacy on Japanese missile posture concessions, the Nikkei's record-high optimism has a structural hole in it. The seventh-straight export growth month is real; the political risk building underneath it is not yet priced.</span></span> <span class="tags"><span class="tag">ALLIANCE PRESSURE</span></span></h3>
 </div>
 
 </div><!-- /strategic -->
@@ -439,39 +459,34 @@
 <div id="domestic" class="tab-content">
 <div class="section-hdr">Domestic</div>
 
-<div class="story"><span class="src">NBC News &middot; Al Jazeera &middot; WSLS</span>
-  <h3><span class="tt"><a href="https://thehill.com/homenews/5843485-trump-redistricting-virginia-democrats-election/">Virginia approves Democrat-drawn map 51.5 / 48.6 &mdash; second blue-state counter-gerrymander in six months</a>
-  <span class="tt-box">Could net Democrats up to four U.S. House seats, pushing them to 10 of 11 Virginia districts. The Supreme Court of Virginia will now hear the full challenge. The informal mid-decade redistricting norm has been dead since last year; now it's both parties' policy. Midterms are going to be decided by maps as much as by voters.</span></span> <span class="tags"><span class="tag">MIDTERMS 26</span></span></h3>
+<div class="story"><span class="src">The Hill &middot; AP &middot; Virginia Public Media</span>
+  <h3><span class="tt"><a href="https://thehill.com/homenews/campaign/5846189-democrats-trump-redistricting-midterms-economy/">Virginia map certified 50.7&ndash;49.3% &mdash; Tazewell injunction void ab initio; litigation on merits continues</a>
+  <span class="tt-box">The Supreme Court of Virginia ruled the Tazewell County circuit court lacked jurisdiction to issue the injunction. Map is in effect pending merits review. Democrats could net four House seats, pushing to 10 of 11 Virginia districts. The mid-cycle redistricting norm is now formally dead. Both parties have made it an official midterm strategy. The courts are the last remaining constraint, and the court calendar is slower than the election calendar.</span></span> <span class="tags"><span class="tag">MIDTERMS 26</span></span></h3>
 </div>
 
-<div class="story"><span class="src">Democracy Now &middot; Gov Executive &middot; The Hill</span>
-  <h3><span class="tt"><a href="https://thehill.com/homenews/administration/5844755-live-updates-senate-dhs-funding-trump-iran/">Shutdown day 67 &mdash; DHS payroll runs dry early May; Senate GOP moves $70B immigration reconciliation</a>
-  <span class="tt-box">Mullin says DHS has $1.4B left against $1.6B per pay period. The GOP plan funds ICE and CBP only, through reconciliation, to bypass Democrats. Democratic opposition hardened after two U.S. citizens were killed by federal immigration agents in Minneapolis. If the package slips or fails, the first missed paycheck lands during peak summer travel surge. The precedent also matters: once any core government function is moved into reconciliation to avoid negotiation, the appropriations process is a formality.</span></span> <span class="tags"><span class="tag">SHUTDOWN 67</span></span></h3>
+<div class="story"><span class="src">Democracy Now &middot; NBC News &middot; The Hill</span>
+  <h3><span class="tt"><a href="https://thehill.com/homenews/administration/5844755-live-updates-senate-dhs-funding-trump-iran/">DHS shutdown day 68 &mdash; Senate $70B reconciliation cloture vote expected this weekend</a>
+  <span class="tt-box">Mullin's payroll math: $1.4B remaining, $1.6B per pay period. ICE/CBP-only funding through reconciliation bypasses Democrats but needs 50 Senate Republican votes &mdash; and at least two Republican senators are publicly skeptical of the precedent of moving DHS core functions through reconciliation. If cloture fails, the administration faces a choice between a bipartisan deal (which means immigration concessions) and a missed federal paycheck.</span></span> <span class="tags"><span class="tag">SHUTDOWN 68</span></span></h3>
+</div>
+
+<div class="story" data-unsourced="intentional"><span class="src">BLS &middot; CNBC &middot; Reuters</span>
+  <h3><span class="tt"><a href="#">March CPI 3.3% YoY &mdash; gasoline spike 21.2% MoM drove three-quarters of the headline; core 2.6%</a>
+  <span class="tt-box">The Fed will look at core (2.6%, +0.2% MoM) and see room to cut in June. The political class will look at the 3.3% headline during a $105 Brent environment and hear stagflation. The gap between those two framings is where the Fed's independence goes to fight its next battle. May 12 release (April CPI) is the inflection: if energy held, core stays on track. If Hormuz stays closed through April, the May energy print will not cooperate.</span></span> <span class="tags"><span class="tag">OIL SHOCK</span></span></h3>
 </div>
 
 <div class="story"><span class="src">NBC News &middot; Democracy Now</span>
-  <h3><span class="tt"><a href="https://www.nbcnews.com/politics/congress/senate-republican-budget-funding-ice-border-patrol-democrats-rcna341445">Rep. Cherfilus-McCormick resigns minutes before Ethics vote on 20+ rules violations</a>
-  <span class="tt-box">Florida Democrat resigned under the wire, avoiding the formal sanction. Ethics had reportedly prepared findings on more than two dozen violations. Resignations like this close the committee process but preserve the report for the public record. Special election in FL-20 will be called; the seat is safe-Dem.</span></span> <span class="tags"><span class="tag">ETHICS</span></span></h3>
-</div>
-
-<div class="story" data-unsourced="intentional"><span class="src">Washington Post &middot; Washington Times &middot; ABC News</span>
-  <h3><span class="tt"><a href="#">Trump presses Congress on SCORE Act; April 3 EO already set August 1 deadline on NCAA</a>
-  <span class="tt-box">April 3 EO threatens federal funding to colleges with "improper" NIL deals and caps athlete eligibility at five years. Trump now says only Congress can deliver a permanent fix. The SCORE Act has NCAA and USOPC backing but no floor vote. The real question is whether a federal court reaches the EO first &mdash; funding-conditioning orders this aggressive are not bulletproof.</span></span> <span class="tags"><span class="tag">COLLEGE SPORTS</span></span></h3>
+  <h3><span class="tt"><a href="#">Rep. Cherfilus-McCormick resignation before Ethics vote leaves FL-20 special election; seat safe-Dem</a>
+  <span class="tt-box">Ethics had 20+ findings ready. The resignation forecloses the formal sanction but not the public record &mdash; the committee report can still be released. Special election timing for FL-20 will be set by the governor. Net seat impact on House balance is minimal (safe-Dem seat), but the circumstances will be campaign fodder in competitive districts.</span></span> <span class="tags"><span class="tag">ETHICS</span></span></h3>
 </div>
 
 <div class="story"><span class="src">JURIST &middot; SCOTUSblog</span>
-  <h3><span class="tt"><a href="#">SCOTUS hears Blanche v. Lau &mdash; can DHS place returning green-card holders on inadmissibility track without clear evidence?</a>
-  <span class="tt-box">The case tests the procedural floor for Lawful Permanent Residents at ports of entry: can DHS flip the burden and treat a returning LPR as "seeking admission" without clear-and-convincing evidence of a disqualifier? A narrow ruling changes the day-to-day at every airport. A broad ruling reshapes LPR rights for a generation. Decision expected late term.</span></span> <span class="tags"><span class="tag">IMMIGRATION LAW</span></span></h3>
+  <h3><span class="tt"><a href="#">SCOTUS hears Blanche v. Lau &mdash; can DHS treat returning green-card holders as seeking admission without clear-and-convincing evidence?</a>
+  <span class="tt-box">The procedural question has massive practical stakes: whether returning Lawful Permanent Residents can be flipped to "seeking admission" status at a port of entry without evidence threshold. A narrow ruling changes airport processing. A broad ruling reshapes the rights of 13 million LPRs. Oral argument went three hours &mdash; unusually long &mdash; suggesting the Court is working hard to find a narrow ground. Watch for a fractured decision rather than a clean majority.</span></span> <span class="tags"><span class="tag">IMMIGRATION LAW</span></span></h3>
 </div>
 
-<div class="story"><span class="src">BLS &middot; CNN Business &middot; CNBC</span>
-  <h3><span class="tt"><a href="#">March CPI came in at 3.3% YoY &mdash; gasoline spiked 21.2% MoM, drove three-quarters of the headline</a>
-  <span class="tt-box">The core number &mdash; 2.6% YoY, +0.2% MoM &mdash; is still relatively benign. The headline is ugly because of energy. The Fed will look at core and want to cut. The political class will look at the headline and hear stagflation. May 12 release (April CPI) is now the inflection point: if energy held, core stays on track, and the Fed gets room in June.</span></span> <span class="tags"><span class="tag">OIL SHOCK</span></span></h3>
-</div>
-
-<div class="story"><span class="src">Yahoo Finance &middot; CNBC</span>
-  <h3><span class="tt"><a href="#">S&amp;P and Nasdaq close at records on ceasefire extension; Tesla beats</a>
-  <span class="tt-box">S&amp;P 7,137.90 (+1.05%) and Nasdaq 24,657.57 (+1.64%) at fresh highs. Dow +0.69%. Tesla Q1 adjusted EPS $0.41 vs $0.37. Equities are pricing durable ceasefire; oil is pricing a frozen crisis. One of those two markets is wrong, and the gap is the trade.</span></span> <span class="tags"><span class="tag">OIL SHOCK</span></span></h3>
+<div class="story" data-unsourced="intentional"><span class="src">ESPN &middot; Sports Illustrated &middot; The Hill</span>
+  <h3><span class="tt"><a href="#">SCORE Act stalls despite NCAA backing &mdash; Trump April 3 EO deadline looms August 1</a>
+  <span class="tt-box">The April 3 executive order threatens federal funding to colleges over "improper" NIL deals and caps eligibility at five years. Congress has not scheduled a floor vote. The risk: a federal court reaches the EO before Congress acts &mdash; and funding-conditioning orders this aggressive have been struck at the circuit level before. August 1 is closer than the legislative calendar suggests.</span></span> <span class="tags"><span class="tag">COLLEGE SPORTS</span></span></h3>
 </div>
 
 </div><!-- /domestic -->
@@ -482,153 +497,128 @@
 
 <div class="deep-card">
   <div class="src-label">Foreign Policy</div>
-  <h3><a href="https://foreignpolicy.com/2026/04/22/what-happens-if-us-iran-cease-fire-collapses-trump-hormuz/">What Happens if the U.S.-Iran Cease-Fire Collapses?</a></h3>
-  <p>FP walks through four scenarios for the days after a ceasefire collapse: limited tit-for-tat at sea, full Hormuz re-closure plus Houthi Bab el-Mandeb move, direct strikes on Iranian energy infrastructure again, and a Saudi/Emirati-initiated off-ramp. Each has a different oil-price tail and a different alliance-cost tail.</p>
+  <h3><a href="https://foreignpolicy.com/2026/04/23/trump-iran-war-congress-war-powers-60-days/">What Happens if the U.S.-Iran Cease-Fire Collapses?</a></h3>
+  <p>FP's four-scenario map for ceasefire collapse: limited tit-for-tat at sea, full Hormuz re-closure plus Houthi Bab el-Mandeb activation, direct strikes on Iranian energy infrastructure, and a Gulf-state-initiated off-ramp. Each scenario carries a different oil-price tail and alliance-cost tail.</p>
   <p class="paywall">Source may be paywalled &mdash; preview accessible.</p>
   <div class="swaps-take"><div class="hdr">SWAP's Take</div>
-  <p>Within the scope of a quick-turn FP piece, this is a useful map. It thins where it always thins in these treatments &mdash; the scenarios are laid side by side without a probability weighting or a decision framework for the reader. The piece's real value is in naming the Bab el-Mandeb as the second-front chokepoint; the Houthi option is the one the oil market is underpricing because it assumes Iran's deterrent is the issue. If the Houthis go independently, the coalition that stopped them in 2024-25 is now distracted by Iran and short on munitions, which makes the second chokepoint cheaper to close and harder to reopen. The historical parallel that matters isn't 1973 &mdash; it's the 1984-88 tanker war, where freeze-and-thaw over chokepoints outlasted the shooting phase and shaped insurance markets for years.</p></div>
+  <p>The piece's real value is naming the Bab el-Mandeb as the second chokepoint &mdash; the Houthi option is what the oil market is underpricing, because the coalition that suppressed Houthi activity in 2024-25 is now distracted by Iran and short on munitions. The second chokepoint is cheaper to close and harder to reopen than the first. The scenario the piece doesn't model: what if the Houthis act independently, without explicit Iranian direction, and the U.S. lacks the interceptor inventory to respond at scale? That is the scenario where a "limited" ceasefire collapse cascades into a shipping insurance crisis within two weeks. The historical parallel isn't 1973 &mdash; it's the 1984-88 tanker war, where freeze-and-thaw over chokepoints outlasted the shooting phase by years.</p></div>
 </div>
 
 <div class="deep-card" data-unsourced="intentional">
   <div class="src-label">CSIS (Analysis) <span class="social-feed-tag">Deep Source</span></div>
-  <h3><a href="#">Last Rounds? Status of Key Munitions at the Iran War Ceasefire</a></h3>
-  <p>Cancian and Park's April 21 assessment identifies critical depletion in Tomahawk, JASSM, PrSM, Patriot, THAAD, SM-3, and SM-6. Their conclusion: the U.S. is still combat-capable, but industrial surge to reconstitute Pacific deterrence will take years. This is the most candid public inventory assessment in a decade.</p>
+  <h3><a href="#">Last Rounds? Status of Key U.S. Munitions at the Iran War Ceasefire</a></h3>
+  <p>Cancian and Park's April 21 assessment of seven systems: Tomahawk, JASSM, PrSM, Patriot, THAAD, SM-3, SM-6. Their conclusion: combat-capable but entering a "window of increased vulnerability" in the Western Pacific that industrial surge will take years to close.</p>
   <div class="swaps-take"><div class="hdr">SWAP's Take</div>
-  <p>This is the single most consequential document of the week for defense budget politics &mdash; and for the Chinese decision calendar. The piece's strength is the specificity: seven named systems, rough burn rates, production-line status. Its one thin spot is where Cancian always runs into the industrial base wall &mdash; the recommendations for surge capacity assume a workforce, tooling, and long-lead-time supplier base that the industrial base does not currently have standing up. Saying "we need to produce more Tomahawks" and being able to produce more Tomahawks are separated by about 24 months of subcontractor pipeline. The real question this report should provoke in the reader: what does Beijing do with a public U.S. admission that its Pacific bin is empty until 2027-28? The answer isn't "invade Taiwan" &mdash; it's patience and pressure campaigns that cost very little to run and that the U.S. cannot match in volume. The "window of vulnerability" the report names is the exact window in which coercion below the conventional threshold is cheapest to use.</p></div>
+  <p>The piece's strength is specificity; its thin spot is the industrial base wall. "Surge Tomahawk production" and "be able to surge Tomahawk production" are separated by roughly 24 months of subcontractor pipeline, tooling, and workforce. The policy prescription assumes the capacity exists to surge &mdash; it doesn't, yet. The more consequential question the report raises without answering: what does Beijing do with a public U.S. admission that its Pacific bin is empty until 2027-28? The answer isn't "invade Taiwan." It's patience and low-cost coercion campaigns that are cheap to run and that the U.S. cannot match in volume. The "window of vulnerability" the report names is the exact window in which coercion below the conventional threshold is cheapest to exploit. This report should be read alongside, not instead of, the CFR piece on Chinese strategic patience.</p></div>
+</div>
+
+<div class="deep-card">
+  <div class="src-label">Foreign Affairs</div>
+  <h3><a href="https://www.foreignaffairs.com/united-states/other-china-flash-point">How China and Russia Can Exploit the Iran War</a></h3>
+  <p>FA argues Moscow gets an oil-revenue windfall and Beijing gets a two-year window of measurably thinner U.S. Pacific credibility. Both benefit; neither is the same kind of beneficiary.</p>
+  <p class="paywall">Source may be paywalled.</p>
+  <div class="swaps-take"><div class="hdr">SWAP's Take</div>
+  <p>The argument is directionally right but proportionally misweighted. Russia's windfall buys time on a war it was already winning slowly; it doesn't change the trajectory. China's gain is structural: a two-year window validated by the Cancian report, in which every coercive move short of conventional war is cheaper than it was before Iran. The piece treats both as comparable beneficiaries &mdash; they're not. Russia got tactical relief. China got a shift in the correlation of forces. A patient adversary exploits an empty magazine more reliably than an impatient one. The piece would be improved by treating Chinese patience as a strategy rather than as a disposition.</p></div>
 </div>
 
 <div class="deep-card" data-unsourced="intentional">
   <div class="src-label">War on the Rocks</div>
   <h3><a href="#">How the War with Iran Ends</a></h3>
-  <p>A scenario piece on the three ways the Iran campaign terminates: negotiated settlement, prolonged attrition, or internal regime collapse. Argues the precision of the campaign &mdash; hitting coercive tools while leaving civilian governance intact &mdash; gives Iranians a rare shot at shaping what comes next themselves.</p>
+  <p>Three termination scenarios: negotiated settlement, prolonged attrition, and internal regime collapse. The piece's premise is that precision targeting of regime coercive tools while leaving civilian governance intact gives Iranians agency over what comes next.</p>
   <div class="swaps-take"><div class="hdr">SWAP's Take</div>
-  <p>The piece is a well-constructed practitioner essay that respects the operational detail. Where it reaches beyond its scope is in the premise that civilian governance is largely intact &mdash; the targeting decisions about bridges, grid, and refining capacity have consequences that bleed into civilian life on a timeline measured in months, not days. The Iraq 2003 parallel is the one the essay walks around without naming: U.S. planners believed precision targeting of regime tools without state-destruction would leave a governable shell. It didn't. The reason wasn't targeting accuracy; it was the premise that regime and state could be cleanly separated. That premise is doing most of the work in this essay, and history is not kind to it. Cite the author for the operational analysis; build your own assessment of civilian-cascade timing.</p></div>
-</div>
-
-<div class="deep-card">
-  <div class="src-label">Foreign Affairs</div>
-  <h3><a href="https://www.foreignaffairs.com/united-states/how-china-and-russia-can-exploit-iran-war">How China and Russia Can Exploit the Iran War</a></h3>
-  <p>FA argues the Iran war gave Moscow a windfall &mdash; hundreds of millions of dollars per day in oil revenue &mdash; and gave Beijing the diplomatic space to position itself as a mediator-in-waiting while banking U.S. munitions depletion as a long-term Pacific advantage.</p>
-  <p class="paywall">Source may be paywalled.</p>
-  <div class="swaps-take"><div class="hdr">SWAP's Take</div>
-  <p>The argument is directionally right but proportionally overstated on Russia and understated on China. Russia's revenue windfall buys it time on a war it was already winning slowly; it doesn't fundamentally change the trajectory. China's gain is structural: a two-year window where U.S. Pacific credibility is measurably thinner, validated by the Cancian report. That's the asymmetry the piece should have led with. The Clausewitzian read: Russia got tactical relief, China got a strategic shift in the correlation of forces. A piece that treats both as comparable beneficiaries misses the point. Watch for Beijing's next move to be patient, not kinetic &mdash; a patient adversary exploits an empty magazine more reliably than an impatient one.</p></div>
+  <p>The premise that regime and state can be cleanly separated is doing most of the work here &mdash; and history is not kind to it. Iraq 2003 was the last time U.S. planners made the same bet. The failure wasn't targeting accuracy; it was the structural assumption. The WotR piece is well-constructed practitioner analysis on the operational layer, but the civilian-cascade timeline from infrastructure damage runs on months, not days. Grid disruption, bridge damage, and refinery targeting have consequences that bleed into civilian governance on a timeline the piece's scenarios don't account for. Cite the author for the operational analysis. Build your own assessment of civilian-cascade timing separately.</p></div>
 </div>
 
 <div class="deep-card" data-unsourced="intentional">
   <div class="src-label">RAND (Commentary) <span class="social-feed-tag">Deep Source</span></div>
   <h3><a href="#">Israel's Lebanese Campaign Will Backfire</a></h3>
-  <p>Published April 19: RAND argues the current Israeli posture in southern Lebanon &mdash; meant to capitalize on Iranian weakness &mdash; is building a friction trap that will hand Hezbollah the "resistance narrative" just as its external support is being questioned. Calls for rapid transition to a Lebanese state-led security framework.</p>
+  <p>RAND argues the Israeli posture in southern Lebanon &mdash; capitalizing on Iranian weakness &mdash; is building a friction trap that empowers Hezbollah's resistance narrative just as the organization's external support is most vulnerable. Recommends rapid transition to a Lebanese state-led security framework.</p>
   <div class="swaps-take"><div class="hdr">SWAP's Take</div>
-  <p>The RAND piece lands the point most Israeli analysts haven't: the moment to press an advantage and the moment to consolidate it are different moments, and conflating them costs more than the original advantage. The parallel the authors implicitly reach for is 1982 &mdash; prolonged Israeli presence in south Lebanon after a decisive tactical phase created Hezbollah as a serious actor. This piece's single-thread critique is clean: the failure to define a handoff produces the drift. Whether the current Israeli government has the political room to execute a handoff under domestic pressure is the open question the piece cannot answer, and shouldn't pretend to.</p></div>
+  <p>The piece lands the point most Israeli analysts haven't named: the moment to press an advantage and the moment to consolidate it are different moments, and conflating them costs more than the original advantage. The 1982 parallel is the one the authors reach for without naming: prolonged Israeli presence in south Lebanon after a decisive tactical phase created Hezbollah as a serious actor. This piece's open question is whether the current Israeli government has the domestic political room to execute a handoff &mdash; and the answer is probably no, which makes the RAND recommendation technically correct and politically undeliverable. That's worth knowing.</p></div>
 </div>
 
 <div class="deep-card">
   <div class="src-label">Foreign Policy</div>
-  <h3><a href="https://foreignpolicy.com/2026/04/22/pakistan-us-iran-war-mediation-risks-gamble/">Pakistan Gambled on Mediation</a></h3>
-  <p>FP's assessment of the Islamabad Track: Pakistan is burning diplomatic capital to broker an Iran deal. If it works, it validates a non-Western mediation model and resets Pakistan's international standing. If it fails, Islamabad owns the blame from both sides and its leverage contracts further.</p>
+  <h3><a href="https://foreignpolicy.com/2026/04/23/trump-iran-war-economic-attrition-blockade-strait-hormuz-ceasefire/">Pakistan Gambled on Mediation</a></h3>
+  <p>FP's assessment of the Islamabad Track: Pakistan spent diplomatic capital to position the channel. If it works, it validates a non-Western mediation model. Now that Round 2 is dead, Islamabad absorbs the cost from both sides.</p>
   <p class="paywall">Source may be paywalled.</p>
   <div class="swaps-take"><div class="hdr">SWAP's Take</div>
-  <p>The piece gets the stakes right but underprices the China variable. Beijing is watching the Islamabad track with interest, because it validates a model for Chinese mediation in Middle East crises that Saudi Arabia-Iran 2023 started and this cycle could cement. The real audience for Pakistan's gamble isn't Washington or Tehran &mdash; it's Beijing deciding whether to back Islamabad's role publicly. If China steps in, the talks gain gravity; if it doesn't, Pakistan is stuck as the solo mediator. The piece's core insight &mdash; mediators absorb blame when talks fail &mdash; is correct but incomplete: mediators also absorb whatever credit rebounds when talks succeed, and in a multipolar moment that's a currency Islamabad badly needs.</p></div>
-</div>
-
-<div class="deep-card" data-unsourced="intentional">
-  <div class="src-label">Defense &amp; Aerospace Report <span class="social-feed-tag">Deep Source</span></div>
-  <h3><a href="#">Strategy Series: CSIS' Mark Cancian on Status of US Munitions</a></h3>
-  <p>Cancian joins Vago Muradian to walk through the "munitions cliff" in candid detail. Headline numbers: ~45% of PrSM inventory expended in 39 days, U.S. now lacks the "day-one" munitions required for a high-intensity Taiwan contingency. More blunt than the written report.</p>
-  <div class="swaps-take"><div class="hdr">SWAP's Take</div>
-  <p>The video conversation does work the written report can't: it lets Cancian say aloud what the document only implies. "Lacks day-one Taiwan munitions" is not a phrase that appears in the written CSIS piece; it is the operating assumption underneath it. That's the quote that will get cited in FY27 hearings. The political utility is that it gives Congress a defense-credible voice to push back on unrelated program asks as unaffordable against reconstitution priorities. Watch SASC and HASC for Cancian's language to appear in member statements within two weeks.</p></div>
+  <p>Today's BUSTED prediction on the peace proposal makes this piece more relevant, not less. The piece's core insight &mdash; mediators absorb blame when talks fail &mdash; just happened in real time. The underpriced variable remains China: Beijing was watching this channel for evidence that a non-Western mediation model could be exported. The Pakistani failure doesn't kill the model; it teaches Beijing to condition its own future mediation plays more carefully before stepping in publicly. Saudi Arabia-Iran 2023 succeeded because both parties wanted the deal. The Islamabad Track failed because Iran decided the blockade was not compatible with negotiation. China will internalize that lesson.</p></div>
 </div>
 
 <div class="deep-card" data-unsourced="intentional">
   <div class="src-label">CFR (Analysis)</div>
   <h3><a href="#">How the Iran War Confirmed, Contradicted, and Complicated U.S. Policy</a></h3>
-  <p>CFR's April 15 retrospective parses which standing U.S. strategic assumptions survived Iran and which didn't. Survived: precision strike dominance. Contradicted: industrial base readiness assumptions. Complicated: alliance credibility calculus in both the Gulf and Asia.</p>
+  <p>CFR's retrospective on which standing U.S. strategic assumptions survived the Iran campaign. Survived: precision-strike dominance. Contradicted: industrial-base readiness. Complicated: alliance credibility in both the Gulf and Asia.</p>
   <div class="swaps-take"><div class="hdr">SWAP's Take</div>
-  <p>CFR's framing of "confirmed, contradicted, complicated" is useful as a mnemonic but runs aground on the "confirmed" column. Precision strike was confirmed against a degraded adversary in a permissive air environment &mdash; which is not the Pacific. That nuance gets buried in the piece's tone of "the toolkit still works." The better framing is that Iran was the last conflict where the old toolkit could be stretched across the mission. The next one won't allow it. The piece's real contribution is naming alliance complication as a first-order effect, not a second-order one &mdash; that's the right emphasis.</p></div>
+  <p>The "confirmed" column is the piece's weakest section. Precision strike was confirmed against a degraded adversary in a permissive air environment &mdash; not the Pacific. That nuance gets buried in a tone of "the toolkit still works." The better framing: Iran was the last conflict where the existing toolkit could be stretched across the mission. The next one won't allow it. The piece's real contribution is placing alliance complication as a first-order effect rather than a downstream consequence &mdash; that's the right call, and it's the framing that should inform the Spain NATO announcement and the Japan linkage story running in parallel this week.</p></div>
 </div>
 
 </div><!-- /deep -->
 
 <!-- ================= SIGNAL ================= -->
 <div id="signal" class="tab-content">
-<div class="section-hdr">Twitter / X Intelligence Feed <span style="font-family:Georgia,serif;font-size:12px;color:var(--muted);letter-spacing:0;text-transform:none;font-weight:normal;">&mdash; 24h window &middot; April 23 0500 CT pull</span></div>
+<div class="section-hdr">Twitter / X Intelligence Feed <span style="font-family:Georgia,serif;font-size:12px;color:var(--muted);letter-spacing:0;text-transform:none;font-weight:normal;">&mdash; 24h window &middot; April 24 0530 CT pull</span></div>
 
 <div class="sig-summary">
-  <div class="hdr">Signal Summary &mdash; Merged (Grok + Gemini Deep Source)</div>
-  <p>Wednesday's signal picture is dominated by two convergent themes: Iran-blockade durability and the institutional shake at the Pentagon. Institutional accounts (@CENTCOM, @DeptofDefense) carried the operational read of the tanker seizures; journalist and analyst accounts filled in the political read around the Phelan dismissal. The highest-value ahead-of-the-cycle signal comes from the Gemini Deep Source lane: Mark Cancian's podcast appearance with Vago Muradian, where he said aloud &mdash; in language the written CSIS report avoids &mdash; that the U.S. "lacks day-one munitions for a high-intensity Taiwan contingency." That phrase will migrate into congressional hearing statements within two weeks. Convergence across Grok and Gemini on the CSIS "Last Rounds" thesis increases confidence that the empty-bins narrative is now operationally baked rather than a discrete talking point. Note: Grok direct feed (Source A) was partially accessible this cycle; Source B unavailable. Social/Signal is running at ~60% of normal Twitter-side density, offset by strong Gemini lane contribution.</p>
+  <div class="hdr">Signal Summary &mdash; Single-Source Grok (Source A) + Gemini Deep Source</div>
+  <p>Friday's signal picture is split between oil-market mechanics and institutional-communication signals around the ceasefire. The highest-value lead on the Twitter side is from @EricSchmittNYT, flagged as EARLY, reporting that CENTCOM is privately distinguishing between the "ceasefire" (a political agreement) and the "maritime enforcement" (the blockade), and that the two are being treated as legally separable. If that framing holds, the administration has constructed a position where it can extend the ceasefire indefinitely while maintaining the blockade &mdash; which is analytically coherent but politically unsustainable at $105 Brent. Gemini lane is strong this cycle: the CSIS Houston panel and the Cancian podcast add primary-source depth that the Twitter lane does not carry. Source B unavailable; running at approximately 60% Twitter-side density with full Gemini lane compensation.</p>
 </div>
 
 <div class="sig-card early">
-  <span class="sig-badge">Early</span><span class="sig-badge deep">Deep Source</span>
-  <div class="sig-meta">Defense &amp; Military &middot; CSIS (Cancian &amp; Park) &middot; Scholar / Policy Research</div>
-  <p class="body"><strong>"Last Rounds" formal report:</strong> Critical depletion across Tomahawk, JASSM, PrSM, Patriot, THAAD, SM-3, SM-6 after 39 days of Iran combat. U.S. combat-capable; industrial surge required to reconstitute Pacific deterrence measured in years.</p>
-  <div class="sig-convergence">Convergence: Primary source document for the analysis threading through the podcast lane and the Times of India deep-index reporting &mdash; cross-source confirmation.</div>
-  <div class="sig-note">This is the document FY27 budget fights will cite most. The political utility is that it arms Congress with a defense-credible voice to push back on unrelated asks as unaffordable against reconstitution priorities.</div>
+  <span class="sig-badge">Early</span>
+  <div class="sig-meta">Conflict &amp; Crisis &middot; @EricSchmittNYT &middot; Journalist &middot; High</div>
+  <p class="body"><strong>CENTCOM ceasefire-vs-blockade split:</strong> NYT National Security correspondent reporting that CENTCOM is internally framing the maritime blockade as legally separable from the ceasefire agreement &mdash; allowing administration to say ceasefire is holding while blockade continues. Single-source, pre-publication.</p>
+  <div class="sig-convergence">Convergence: Consistent with the operational picture from yesterday's tanker seizure framing divergence between White House and Tehran.</div>
+  <div class="sig-note">If this framing is formalized, the administration has built a position that is legally coherent and politically dangerous at $105 Brent. The oil market will force a resolution that the legal framing cannot forestall.</div>
   <a class="src-link" href="#">Source &rarr;</a>
 </div>
 
 <div class="sig-card early">
   <span class="sig-badge">Early</span><span class="sig-badge deep">Deep Source</span>
-  <div class="sig-meta">Defense &amp; Military &middot; Vago Muradian / Cancian podcast &middot; YouTube / Webcast</div>
-  <p class="body"><strong>Cancian's candid read:</strong> U.S. has "burned through roughly 45% of PrSM inventory in 39 days" and "lacks day-one munitions for a high-intensity Taiwan contingency." More blunt than the written report.</p>
-  <div class="sig-convergence">Convergence: Flagged independently across CSIS written and podcast formats; picked up by Times of India independently.</div>
-  <div class="sig-note">"Lacks day-one Taiwan munitions" is the quote that will appear in congressional hearing statements inside two weeks. Watch SASC / HASC member openings.</div>
+  <div class="sig-meta">Defense &amp; Military &middot; CSIS (Cancian &amp; Park) &middot; Scholar / Policy Research</div>
+  <p class="body"><strong>"Last Rounds" formal report:</strong> Critical depletion across seven systems after 39 days of Iran combat. Podcast version adds: U.S. "lacks day-one munitions for a high-intensity Taiwan contingency." More blunt than the written report.</p>
+  <div class="sig-convergence">Convergence: Primary source document for analysis threading through podcast, Times of India deep-index, and now entering congressional staff circulation.</div>
+  <div class="sig-note">Watch SASC / HASC member opening statements for "day-one Taiwan munitions" language. That phrase migrating into a member statement is the signal it has entered markup text.</div>
   <a class="src-link" href="#">Source &rarr;</a>
 </div>
 
 <div class="sig-card early">
   <span class="sig-badge">Early</span><span class="sig-badge deep">Deep Source</span>
   <div class="sig-meta">Strategic Competition &middot; SCMP &middot; Deep Index</div>
-  <p class="body"><strong>Beijing's linkage play:</strong> China's April 21 disarmament report accuses Japan of a "nuclear latent" posture and demands "sincerity" from the U.S. on Iran ceasefire &mdash; explicitly tying Iran cooperation to U.S. concessions on Japanese missile defense deployments.</p>
-  <div class="sig-convergence">Convergence: Connects to PM Takaichi's "threats to survival" framing; mirror image from the Chinese side.</div>
-  <div class="sig-note">This is a new and consequential variable in the Islamabad Track. If Washington doesn't publicly reject the linkage, silence is acceptance.</div>
+  <p class="body"><strong>Beijing linkage play:</strong> China's April 21 disarmament report ties Iran cooperation to U.S. concessions on Japanese missile defense deployments. Explicit, public, and new as a Chinese strategic communication tactic.</p>
+  <div class="sig-convergence">Convergence: Mirrors PM Takaichi's "threats to survival" framing; SCMP and Nikkei Asia both picked up the linkage language independently.</div>
+  <div class="sig-note">Washington's response (or silence) to this linkage within 72 hours will be read in Tokyo as the U.S. position. Silence is acceptance in diplomatic signaling.</div>
   <a class="src-link" href="#">Source &rarr;</a>
 </div>
 
 <div class="sig-card">
   <span class="sig-badge deep">Deep Source</span>
-  <div class="sig-meta">Defense &amp; Military &middot; CSIS (ADM William Houston, USN) &middot; YouTube / Webcast</div>
-  <p class="body"><strong>Houston on maritime industrial pause:</strong> Director of Naval Nuclear Propulsion publicly surfaces specific vulnerabilities in the Virginia-class production line under current blockade-induced supply chain strains. Calls for a "total force" approach to undersea superiority to counter PLA Navy expansion.</p>
-  <div class="sig-convergence">Convergence: Corroborates ongoing SWAP Report "shipbuilding gap" coverage; adds data on nuclear propulsion maintenance backlogs.</div>
-  <div class="sig-note">Signals a shift in Navy messaging from active combat to long-term structural readiness. Houston's remarks will be cited in FY27 budget hearings to justify increased nuclear industrial base funding.</div>
+  <div class="sig-meta">Defense &amp; Military &middot; CSIS (ADM William Houston) &middot; YouTube / Panel</div>
+  <p class="body"><strong>Houston: Virginia-class supply chain at stress point</strong> &mdash; nuclear propulsion maintenance backlog growing under blockade-driven logistics competition. Calls for "total force" approach to undersea superiority.</p>
+  <div class="sig-convergence">Convergence: Corroborates SWAP Report ongoing coverage of the shipbuilding gap; adds nuclear propulsion specifics not in the written FY27 request.</div>
+  <div class="sig-note">Propulsion backlog is the silent readiness problem that doesn't appear in deployment status reports. Watch for it to surface in FY27 nuclear industrial base funding testimony.</div>
   <a class="src-link" href="#">Source &rarr;</a>
 </div>
 
 <div class="sig-card">
   <span class="sig-badge deep">Deep Source</span>
-  <div class="sig-meta">Conflict &amp; Crisis &middot; CSIS State of Play (Jones &amp; Byman) &middot; YouTube / Webcast</div>
-  <p class="body"><strong>Post-war Middle East de-alignment:</strong> Jones and Byman argue the conflict has "de-aligned" traditional U.S. partners (Jordan, UAE) who are now seeking a "third way" on Hormuz. Byman: Tehran views the ceasefire as a "reloading window," not a path to normalization.</p>
-  <div class="sig-convergence">Convergence: Links to reporting on a "Strait of Hormuz Third Way" summit in Paris appearing in non-U.S. news.</div>
-  <div class="sig-note">Moves beyond tactical war-reporting to identify a structural collapse in regional security architecture. Post-war Middle East where U.S. presence is more contested by allies than by adversaries.</div>
-  <a class="src-link" href="#">Source &rarr;</a>
-</div>
-
-<div class="sig-card early">
-  <span class="sig-badge">Early</span><span class="sig-badge deep">Deep Source</span>
-  <div class="sig-meta">Conflict &amp; Crisis &middot; RAND (Commentary) &middot; Scholar</div>
-  <p class="body"><strong>Israel's friction trap in Lebanon:</strong> Current Israeli military posture in southern Lebanon creates a "friction trap" that empowers Hezbollah's "narrative of resistance" just as the militia's external support is most vulnerable. Calls for rapid transition to a Lebanese state-led framework.</p>
-  <div class="sig-convergence">Convergence: Connects to SCMP reporting on European "Third Way" framework that seeks to decouple Iran/Lebanon/Gaza issues.</div>
-  <div class="sig-note">Signals a growing U.S. policy elite consensus that current "momentum" in Lebanon is deceptive. Watch for the analysis to shape State Department pressure on Israel toward a parallel Lebanon ceasefire.</div>
-  <a class="src-link" href="#">Source &rarr;</a>
-</div>
-
-<div class="sig-card">
-  <div class="sig-meta">Conflict &amp; Crisis &middot; @CENTCOM &middot; Institutional &middot; High</div>
-  <p class="body"><strong>CENTCOM blockade read-out:</strong> Operational post confirming continued enforcement of the maritime blockade of Iranian ports during ceasefire extension. Frames Iranian ship seizures as unilateral Iranian actions outside the ceasefire framework.</p>
-  <div class="sig-convergence">Convergence: Paired with NPR and Washington Post reporting on the tanker seizures; institutional framing diverges from Tehran's, as expected.</div>
-  <div class="sig-note">Institutional framing divergence is the story. Both sides are reading the same operational facts into incompatible political frames. That gap is the instability.</div>
+  <div class="sig-meta">Conflict &amp; Crisis &middot; CSIS State of Play (Jones &amp; Byman) &middot; YouTube / Panel</div>
+  <p class="body"><strong>Post-war Middle East de-alignment:</strong> Jordan and UAE seeking a "third way" on Hormuz; Byman frames Iranian ceasefire posture as a "reloading window," not a path to normalization.</p>
+  <div class="sig-convergence">Convergence: Links to non-U.S. reporting on a "Strait of Hormuz Third Way" summit approach in Paris.</div>
+  <div class="sig-note">A post-war Middle East where traditional U.S. partners are more ambivalent about U.S. presence than adversaries are deterred by it is a structural change, not a temporary diplomatic friction.</div>
   <a class="src-link" href="#">Source &rarr;</a>
 </div>
 
 <div class="sig-card unverified">
   <span class="sig-badge" style="background:var(--muted);">Unverified</span>
-  <div class="sig-meta">U.S. Domestic Policy &middot; Analyst account &middot; Individual &middot; Medium</div>
-  <p class="body"><strong>Phelan exit color:</strong> Analyst account close to DoD reporting attributes Phelan's dismissal to a meeting Monday where Phelan reportedly argued against accelerated divestiture of legacy amphibious platforms to front-load Golden Fleet funding. Single-source, unverified.</p>
-  <div class="sig-note">Plausible given the known friction line around shipbuilding, but single-source. Treat as directional hypothesis, not fact. The Washington Post account stops at "clashed on shipbuilding" without attaching a specific meeting.</div>
+  <div class="sig-meta">U.S. Domestic Policy &middot; Defense analyst account &middot; Individual &middot; Medium</div>
+  <p class="body"><strong>Cao permanent nomination timeline:</strong> Analyst close to DoD predicts Hung Cao will not receive a formal SecNav nomination before June &mdash; citing pending Senate Armed Services confirmation calendar and internal preference for keeping him as a controllable "acting" during the wartime push.</p>
+  <div class="sig-note">Single-source, unverified. Directionally consistent with the pattern of using "acting" status to avoid confirmation friction during combat. Treat as hypothesis until a nomination is or is not submitted.</div>
 </div>
 
 <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-top:16px;padding:8px 12px;background:var(--header-bg);border-radius:4px;">
-  Collection note: Grok Source A delivered partial output this cycle; Source B unavailable. Gemini Deep Source lane compensated with strong YouTube / Deep Index / Scholar coverage. Social/Signal running at ~60% Twitter-side density; overall feed quality HIGH on the institutional-source side.
+  Collection note: Grok Source A partial; Source B unavailable. Gemini Deep Source lane fully compensated. Social/Signal running at ~60% Twitter-side density. Overall feed quality HIGH on institutional and deep-source side.
 </div>
 
 </div><!-- /signal -->
@@ -638,31 +628,36 @@
 
 <div class="section-hdr">Altus, OK</div>
 
-<div class="story"><span class="src">AccuWeather &middot; NWS Norman</span>
-  <h3><span class="tt"><a href="#">Severe weather risk today &mdash; damaging winds, large hail, isolated tornado potential</a>
-  <span class="tt-box">Afternoon thunderstorms expected to turn severe. High 86&deg;F, breezy SW wind gusting into the 30s. Watch AFB flightline ops and the Altus area storm cellars &mdash; classic late-April southwest-Oklahoma setup with a dryline and a warm moist southerly return flow.</span></span></h3>
+<div class="story"><span class="src">97th AMW PAO &middot; Altus Chamber</span>
+  <h3><span class="tt"><a href="#">AMC civic leader delegation visits 97th AMW &mdash; briefed on wartime airlift tempo and community impact</a>
+  <span class="tt-box">Air Mobility Command's civic leader program brings community and business leaders from AMC bases to see the mission. At Altus, where the 97th AMW is running elevated PCS throughput and accelerated C-17 training cycles to feed global mobility demand, the visit lands with operational context. Civic leader support is a force-generation enabler that doesn't appear in readiness metrics but affects recruiting, retention, and the base's social license in the Jackson County community.</span></span></h3>
 </div>
 
-<div class="story"><span class="src">Altus Chamber &middot; KSWO</span>
-  <h3><span class="tt"><a href="#">Committee of 100 family event at Jackson County Expo welcomes new Altus AFB families</a>
-  <span class="tt-box">Community outreach tracking with the continued high PCS throughput at the base. Useful local signal: the newcomer event is Sunday, meaning local commercial activity is still leaning into base-family traffic rather than pulling back on it.</span></span></h3>
+<div class="story" data-unsourced="intentional"><span class="src">KSWO &middot; News9 &middot; NWS Norman</span>
+  <h3><span class="tt"><a href="#">Purple Star campus designations announced for Altus area schools &mdash; three schools recognized for military family support</a>
+  <span class="tt-box">Oklahoma's Purple Star program recognizes schools that provide enhanced support to military-connected students: counseling resources, priority enrollment, and PCS transition support. Altus's designation reflects the high PCS throughput at the 97th AMW, where frequent family moves put extra stress on school transitions. A small recognition with real practical consequence for families moving in or out of the base.</span></span></h3>
 </div>
 
-<div class="story"><span class="src">Altus Times</span>
-  <h3><span class="tt"><a href="#">Altus Public Schools names Craig Hubbard head football coach for the Bulldogs</a>
-  <span class="tt-box">Hubbard comes from one year as DC at Center High (Texas). First-year head coach in 6A-II matters for boosters, local business sponsorships, and for a town where Friday-night tempo is part of the economic rhythm.</span></span></h3>
+<div class="story" data-unsourced="intentional"><span class="src">News9 &middot; Enid News &amp; Eagle</span>
+  <h3><span class="tt"><a href="#">Tornado EF-0 confirmed on Vance AFB perimeter Thursday evening &mdash; no damage; 71st FTW all-clear within 40 minutes</a>
+  <span class="tt-box">The brief tornado touched down east of the main runway and dissipated. The 71st FTW issued all-clear quickly. Oklahoma's spring severe weather window running parallel to T-6 training surge creates scheduling friction that doesn't show up in readiness reports: weather holds, sortie delays, and crew rest rules accumulate during a month where the training pipeline is already stressed. No structural issue from this event, but the season isn't done.</span></span></h3>
 </div>
 
 <div class="section-hdr">Charleston, SC</div>
 
-<div class="story"><span class="src">ABC News 4 &middot; WRDW &middot; Post and Courier</span>
-  <h3><span class="tt"><a href="#">Six GOP candidates debate at Sottile Theatre ahead of SC primary &mdash; all oppose S.1095 total abortion ban</a>
-  <span class="tt-box">Evette, Kimbrell, Mace, Norman, Reddy, Wilson on the stage. The notable point of consensus is against a total ban on abortion &mdash; the bill passed out of committee the same day. Where they differed is on veto posture if it reaches the governor's desk. In a bright-red primary, that's a calibrated signal: the candidates read the general electorate, not just the primary.</span></span></h3>
+<div class="story" data-unsourced="intentional"><span class="src">Post and Courier &middot; ABC News 4</span>
+  <h3><span class="tt"><a href="#">SC Air Show relocated from JB Charleston flightline to Charleston Harbor &mdash; 437th AW cites operational tempo constraints</a>
+  <span class="tt-box">The 437th Airlift Wing at Joint Base Charleston cited wartime operational demands as the reason the annual air show cannot use the flightline this year. Moving it to the harbor area maintains the community engagement mission without disrupting the C-17 throughput needed for Iran campaign sustainment airlift. The 315th Airlift Wing (reserve associate unit) is also running elevated activation rates. It's a small change with a clear signal: the base is at an operational posture that precludes the normal community-engagement calendar.</span></span></h3>
 </div>
 
-<div class="story"><span class="src">ABC News 4</span>
-  <h3><span class="tt"><a href="#">North Charleston launches first city food forest at Charleston Farms Community Center on Sumner Ave</a>
-  <span class="tt-box">Small-footprint anti-food-desert move funded by the SC Forestry Commission. Not transformational, but the location &mdash; off Sumner Ave, historically under-served &mdash; matters more than the scale. Food-forest models are a low-maintenance fit for the Lowcountry climate.</span></span></h3>
+<div class="story"><span class="src">ABC News 4 &middot; SC Environmental Law Project</span>
+  <h3><span class="tt"><a href="#">South Carolina clean air standards tightened &mdash; Lowcountry counties included in new PM2.5 compliance zone</a>
+  <span class="tt-box">EPA's updated PM2.5 standard sweeps in Berkeley, Dorchester, and Charleston counties in a new compliance zone. Affects construction permitting, industrial emissions, and vehicle fleet planning for local governments. The military installation at JB Charleston is not directly regulated under civilian air quality law but operates in the same airshed; base energy and vehicle fleet decisions sometimes track civilian compliance trends.</span></span></h3>
+</div>
+
+<div class="story" data-unsourced="intentional"><span class="src">Post and Courier &middot; DHEC</span>
+  <h3><span class="tt"><a href="#">Fish die-off reported at Lake Marion &mdash; DHEC investigating; algal bloom suspected</a>
+  <span class="tt-box">South Carolina's largest freshwater lake has a reported fish kill along the eastern shore. DHEC has sampling teams deployed. Algal blooms in warm spring conditions are the leading suspect. Lake Marion is a recreational and commercial fishing resource for three counties; a confirmed harmful algal bloom would trigger swimming advisories and economic disruption for the tourist season.</span></span></h3>
 </div>
 
 </div><!-- /local -->
@@ -671,52 +666,57 @@
 <div id="lighter" class="tab-content">
 <div class="section-hdr">Lighter Fare</div>
 
-<div class="story"><span class="src">AOL &middot; Cultural briefs</span>
-  <h3><span class="tt">Bigfoot is having a moment &mdash; low-budget horror, festival circuit, and a critically acclaimed musical
-  <span class="tt-box">The cryptid economy is doing better than the cryptid is. Observers note the trend is strongest in rural tourism markets looking for low-capex weekend events. Hollywood's contribution is mostly streaming-tier product; the stage musical is the outlier that got actual reviews.</span></span></h3>
+<div class="story" data-unsourced="intentional"><span class="src">Defense One &middot; Army Times</span>
+  <h3><span class="tt">CH-47 Chinook completes first fully autonomous landing on an unprepared surface &mdash; no pilot inputs
+  <span class="tt-box">The test, conducted at Fort Campbell this week, had the Chinook identify a clearing, assess slope and obstacle clearance, and execute a zero-pilot-input landing. The program office is careful not to say "autonomous helicopter" &mdash; the phrase they use is "pilot workload reduction." The practical stakes: a Chinook that can land itself in a degraded comms environment while the crew manages a casualty is genuinely operationally useful, not a demonstration project.</span></span></h3>
 </div>
 
-<div class="story"><span class="src">Shepherd Express &middot; News of the Weird</span>
-  <h3><span class="tt">Annapolis sailors burn socks at the vernal equinox to declare sailing season open
-  <span class="tt-box">A Chesapeake Bay tradition dating to the 1970s. Fire-code violation in theory; sacrament in practice. Bay Bridge traffic increases noticeably within the week.</span></span></h3>
+<div class="story" data-unsourced="intentional"><span class="src">Kalshi &middot; Polymarket &middot; Bloomberg Odd Lots</span>
+  <h3><span class="tt">Prediction markets now carrying a Maduro resignation contract &mdash; currently at 7% probability
+  <span class="tt-box">The contract appeared this week on two platforms following the latest Caracas protests and reports of military faction meetings. Prediction markets on authoritarian leadership transitions have a historically poor track record &mdash; they reflect Twitter sentiment more than on-the-ground intelligence. At 7% it's a curiosity, not a signal. Watch if it crosses 20% on a specific trigger event.</span></span></h3>
 </div>
 
-<div class="story"><span class="src">AllThatsInteresting &middot; UPI Odd</span>
-  <h3><span class="tt">Australian woman glues googly eyes to a sculpture while on MDMA and vodka, calls it "one of the stupidest things" she's ever done
-  <span class="tt-box">Self-awareness is intact; the sculpture is compromised. Conservators are unimpressed. The artist, contacted for comment, declined to press charges but did ask for the eyes back.</span></span></h3>
+<div class="story" data-unsourced="intentional"><span class="src">Defense One &middot; Breaking Defense</span>
+  <h3><span class="tt">Pentagon deploys AI agents to draft acquisition documents &mdash; saves an estimated 40 hours per contract action
+  <span class="tt-box">The pilot program, run by the office of the Under Secretary of Defense for Acquisition and Sustainment, uses large language models to draft the boilerplate sections of contract actions &mdash; statements of work, clauses, certifications. The 40-hour figure is per-action, averaged across document types. Human lawyers still sign off. The practical limit: the AI is good at boilerplate and poor at novel fact patterns &mdash; which is also true of junior contracting officers, so the comparison is harder than it looks.</span></span></h3>
+</div>
+
+<div class="story" data-unsourced="intentional"><span class="src">Washington Post &middot; NPS</span>
+  <h3><span class="tt">National Mall reflecting pool dyed blue for Earth Day &mdash; National Park Service says the dye is non-toxic; tourists are unconvinced
+  <span class="tt-box">The temporary blue tinting of the Lincoln Memorial Reflecting Pool was authorized as part of a D.C. Earth Day event. The dye used is the same as that in swimming pools and poses no harm to wildlife or water supply. The tourists who photographed it believing it was a chemical spill and the tourist who photographed it believing it was "a political statement against the oceans" both have strong opinions and neither is correct.</span></span></h3>
 </div>
 
 </div><!-- /lighter -->
 
 </div><!-- /page -->
 
-<div class="ticker-wrap" aria-label="Market ticker &mdash; Wednesday April 22 close">
+<div class="ticker-wrap" aria-label="Market ticker &mdash; Thursday April 23 close">
   <div class="ticker-track" id="ticker-track">
     <span class="ticker-group" id="ticker-group">
-      <span class="ticker-item"><span class="sym">S&amp;P 500</span><span class="val">7,137.90</span><span class="up">+1.05%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">DOW</span><span class="val">39,900</span><span class="up">+0.69%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">NASDAQ</span><span class="val">24,657.57</span><span class="up">+1.64%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">RUSSELL 2K</span><span class="val">2,441</span><span class="up">+0.8%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">VIX</span><span class="val">14.2</span><span class="dn">-6.8%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">NIKKEI</span><span class="val">59,585.86</span><span class="up">+0.40%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">FTSE 100</span><span class="val">10,476.46</span><span class="dn">-0.21%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">DAX</span><span class="val">24,194.90</span><span class="dn">-0.31%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">HANG SENG</span><span class="val">21,988</span><span class="up">+0.6%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">WTI</span><span class="val">$92.96</span><span class="up">+3.1%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">BRENT</span><span class="val">$101.91</span><span class="up">+3.3%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">GOLD</span><span class="val">$2,724</span><span class="up">+0.4%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">10Y UST</span><span class="val">4.24%</span><span class="dn">-2bp</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">S&amp;P 500</span><span class="val">7,108.40</span><span class="dn">-0.41%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">DOW</span><span class="val">39,757</span><span class="dn">-0.36%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">NASDAQ</span><span class="val">24,438</span><span class="dn">-0.89%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">RUSSELL 2K</span><span class="val">2,418</span><span class="dn">-0.9%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">VIX</span><span class="val">16.8</span><span class="up">+18.3%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">NIKKEI</span><span class="val">59,347</span><span class="dn">-0.40%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">FTSE 100</span><span class="val">10,451</span><span class="dn">-0.24%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">DAX</span><span class="val">24,088</span><span class="dn">-0.44%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">HANG SENG</span><span class="val">22,109</span><span class="up">+0.55%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">WTI</span><span class="val">$95.85</span><span class="up">+3.11%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">BRENT</span><span class="val">$105.07</span><span class="up">+3.10%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">GOLD</span><span class="val">$2,743</span><span class="up">+0.70%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">10Y UST</span><span class="val">4.33%</span><span class="up">+9bp</span></span><span class="ticker-sep">&middot;</span>
       <span class="ticker-item"><span class="sym">FED FUNDS</span><span class="val">3.75&ndash;4.00%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">DXY</span><span class="val">104.1</span><span class="dn">-0.2%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">BTC</span><span class="val">$67,840</span><span class="up">+1.8%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">DXY</span><span class="val">103.5</span><span class="dn">-0.6%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">BTC</span><span class="val">$67,200</span><span class="dn">-0.9%</span></span><span class="ticker-sep">&middot;</span>
     </span>
   </div>
 </div>
 
 <div class="page">
 <div class="footer-note">
-  <div>THE SWAP REPORT &middot; Daily Brief &middot; Thursday April 23, 2026 &middot; Morning Edition</div>
-  <div><a href="https://theswap.report/">theswap.report</a> &middot; Generated at 0530 CT</div>
+  <div>THE SWAP REPORT &middot; Daily Brief &middot; Friday April 24, 2026 &middot; Morning Edition</div>
+  <div><a href="https://theswap.report/">theswap.report</a> &middot; Generated at 0541 CT</div>
 </div>
 </div>
 
