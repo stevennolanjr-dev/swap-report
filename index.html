@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THE SWAP REPORT | Tuesday, April 28, 2026</title>
-<meta property="og:title" content="THE SWAP REPORT | April 28, 2026">
+<title>THE SWAP REPORT | Wednesday, April 29, 2026</title>
+<meta property="og:title" content="THE SWAP REPORT | April 29, 2026">
 <meta property="og:url" content="https://theswap.report/">
-<meta property="og:description" content="Daily intelligence briefing: Rubio dismisses Iran proposal, King Charles addresses Congress, Fed decision Wednesday, WHCA shooter charged with attempted assassination.">
+<meta property="og:description" content="Daily intelligence briefing: Trump warns Iran, Brent crude tops $115, Hegseth scrutiny mounts, Comey indicted again, SCOTUS hears TPS case, FISA 702 deadline.">
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap">
@@ -98,19 +98,6 @@ body { background: var(--bg); color: var(--text); font-family: Georgia, serif; f
 .swaps-take-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 6px; }
 .swaps-take p { font-size: 13px; line-height: 1.6; }
 
-.aged-card { border: 1px solid var(--border); border-radius: 4px; padding: 12px 16px; margin-bottom: 12px; background: var(--card-bg); }
-.aged-card.confirmed { border-left: 4px solid #2e7d32; }
-.aged-card.busted { border-left: 4px solid #c62828; }
-.aged-card.partial { border-left: 4px solid #e65100; }
-.aged-card.obe { border-left: 4px solid var(--muted); }
-.aged-badge { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; padding: 2px 7px; border-radius: 2px; color: #fff; margin-right: 8px; vertical-align: middle; }
-.aged-badge.confirmed { background: #2e7d32; }
-.aged-badge.busted { background: #c62828; }
-.aged-badge.partial { background: #e65100; }
-.aged-badge.obe { background: var(--muted); }
-.aged-title { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 6px; }
-.aged-card p { font-size: 13px; line-height: 1.6; margin-top: 6px; }
-
 .deep-card { border: 1px solid var(--border); border-radius: 4px; padding: 14px 16px; margin-bottom: 16px; background: var(--card-bg); }
 .deep-source { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 6px; }
 .deep-hl a { color: var(--text); text-decoration: none; font-size: 15px; font-weight: bold; line-height: 1.4; }
@@ -118,8 +105,10 @@ body { background: var(--bg); color: var(--text); font-family: Georgia, serif; f
 .deep-meta { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 4px; margin-bottom: 8px; }
 .deep-sum { font-size: 13px; line-height: 1.65; color: var(--muted); }
 
-.top-story { padding: 8px 0; border-bottom: 1px solid var(--border); }
+.top-story { display: flex; gap: 16px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--border); }
 .top-story:last-child { border-bottom: none; }
+.tnum { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: var(--accent); min-width: 26px; padding-top: 2px; flex-shrink: 0; }
+.tbody { flex: 1; }
 .top-story .tcat { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); text-transform: uppercase; margin-bottom: 2px; }
 .top-story .thl { font-size: 14px; font-weight: bold; }
 .top-story .thl a { color: var(--text); text-decoration: none; }
@@ -152,6 +141,10 @@ body { background: var(--bg); color: var(--text); font-family: Georgia, serif; f
   .tab-btn { font-size: 10px; padding: 7px 10px; }
   .tt-box { width: 280px; }
 }
+@media (max-width: 480px) {
+  .top-story { gap: 8px; }
+  .tnum { font-size: 11px; min-width: 20px; }
+}
 </style>
 </head>
 <body data-theme="warm">
@@ -160,8 +153,8 @@ body { background: var(--bg); color: var(--text); font-family: Georgia, serif; f
 <div class="masthead">
   <div class="masthead-left">
     <div class="masthead-title">The SWAP Report</div>
-    <div class="masthead-meta">Tuesday, April 28, 2026 &nbsp;&middot;&nbsp; Morning Edition &nbsp;&middot;&nbsp; Day 60 of the Iran War</div>
-    <div class="masthead-epigraph">&ldquo;Tehran tabled. Washington blinked toward the nuclear file. The Strait is the lever; the deal is the question.&rdquo;</div>
+    <div class="masthead-meta">Wednesday, April 29, 2026 &nbsp;&middot;&nbsp; Morning Edition &nbsp;&middot;&nbsp; Day 61 of the Iran War</div>
+    <div class="masthead-epigraph">&ldquo;The blockade is now the policy. The price of the policy is what the rest of the year will be about.&rdquo;</div>
   </div>
   <div class="masthead-controls">
     <button class="theme-btn" onclick="setTheme('light',this)" title="Light">&#9728;</button>
@@ -206,6 +199,7 @@ body { background: var(--bg); color: var(--text); font-family: Georgia, serif; f
   <button class="tab-btn" onclick="showTab('strategic',this)">Strategic</button>
   <button class="tab-btn" onclick="showTab('domestic',this)">Domestic</button>
   <button class="tab-btn" onclick="showTab('deepreads',this)">Deep Reads</button>
+  <button class="tab-btn" onclick="showTab('signal',this)">Social/Signal</button>
   <button class="tab-btn" onclick="showTab('local',this)">Local</button>
   <button class="tab-btn" onclick="showTab('lighter',this)">Lighter Fare</button>
 </div>
@@ -214,125 +208,138 @@ body { background: var(--bg); color: var(--text); font-family: Georgia, serif; f
 
   <div class="bluf">
     <div class="bluf-label">Bottom Line Up Front</div>
-    <p>Iran&rsquo;s framework reached daylight; Washington swung the bat at it. Tehran&rsquo;s offer, reopen the Strait of Hormuz and end the war in exchange for the U.S. lifting its naval blockade with the nuclear file deferred to a separate later track, lasted less than a news cycle before Secretary Rubio dismissed it. His line: there is no deal without nuclear. That is the administration&rsquo;s public position; whether it is the negotiating position is the actual question. Markets read the rejection by adding a dollar to crude before sunrise.</p>
-    <p>King Charles arrives at the White House this morning and addresses a joint session of Congress this afternoon, the first British state visit in nineteen years and the highest-protocol diplomatic event of the year. The visit is supposed to be about steel and ceremony; the timing makes it about Iran, the WHCA shooting, and an alliance Washington has been openly stress-testing for six weeks. Britain declined to join Operation Epic Fury; Charles will not say so on the floor; everyone in the room will understand that he didn&rsquo;t.</p>
-    <p>Three structural items underneath: the Federal Reserve announces tomorrow afternoon, almost certainly Powell&rsquo;s last act as chair before Warsh takes the gavel. Hegseth carries the FY27 budget to HASC and SASC this week with Senate Republican confidence visibly eroding. The DHS shutdown enters its third record-shattering month with a House stop-gap stalled by leadership feuds, not opposition. None of these is the headline. All of them are the texture.</p>
-  </div>
-
-  <div class="section-hdr">How It Aged</div>
-
-  <div class="aged-card busted">
-    <div class="aged-title"><span class="aged-badge busted">Busted</span> Islamabad Talks: Mutual Restraint Language by Monday</div>
-    <p>The April 25 claim was that the Islamabad proximity-talks format would produce a Pakistani joint statement by April 27 using &ldquo;mutual steps&rdquo; or &ldquo;sequenced measures&rdquo; language, signaling preliminary framework convergence. It did not. The talks ended without an MoU, without a joint statement of substance, and with both sides describing the outcome as &ldquo;stalled.&rdquo; Trump publicly characterized Iran as &ldquo;unyielding&rdquo; on the nuclear file. The structural pattern that fits Reykjavik, Oslo, and the 2013 Geneva backchannel did not hold here, the Islamabad track was not converging on a deal that was being negotiated for announcement; it was negotiating substance and failing to bridge it. Lesson: venue convergence is necessary but not sufficient. Pakistan was the right venue for both sides; the gap on the nuclear file was bigger than the choreography could close. The framework that surfaced via Axios 24 hours later is the actual signal of where the real conversation is happening, and it sits outside the Pakistani channel entirely.</p>
-  </div>
-
-  <div class="aged-card partial">
-    <div class="aged-title"><span class="aged-badge partial">Partial</span> Touska Retaliation: Doctrine or Improvisation</div>
-    <p>The April 21 claim was that Iranian retaliation for the Touska seizure would extend through proxy-executed action against soft allied targets, with the diagnostic question being whether a second Western capital was hit within seven days, a doctrinal pattern, or whether London remained alone, opportunistic. The London arson campaign continued through the week; Harakat Ashab al-Yamin, an IRGC-aligned proxy group, claimed multiple synagogue attacks. No second Western capital was struck inside the seven-day window. The doctrinal-versus-opportunistic question therefore resolves to opportunistic-but-sustained: the IRGC has demonstrated the proxy channel works against London soft targets, but the absence of a Paris, Berlin, or Brussels companion incident suggests the playbook is being run inside one operating envelope rather than as a coordinated multi-city campaign. The retaliation is real; the geographic ambition implied by the original claim was wider than the actual operation has been. Lesson: distinguish between a proxy channel being exercised, which the London pattern confirms, and a multi-city doctrinal campaign, which the absence of a second capital weakens. The next 30 days will tell which way the pattern drifts.</p>
-  </div>
-
-  <div class="aged-card partial">
-    <div class="aged-title"><span class="aged-badge partial">Partial</span> UK Attribution Speed: Iran or Generic &ldquo;Hostile State&rdquo;</div>
-    <p>The April 21 claim was that UK attribution on the London arson attacks would publicly name Iran (directly or through named proxy groups) within seven days, with a slow or generic attribution signaling London&rsquo;s preference to protect a diplomatic off-ramp. The Met Police and Home Office have publicly confirmed they are &ldquo;investigating Iranian proxies,&rdquo; including the Harakat Ashab al-Yamin claim, but have not formally attributed the attacks to the Islamic Republic. The framing is closer to the &ldquo;hostile state&rdquo; cautious tier than to a clean Iran call. Three charges have been filed for the Iran International TV arson; the broader synagogue pattern remains under investigation. Lesson: London is preserving optionality. The decision to investigate proxies publicly while declining to name Iran formally is itself a political signal, the UK is positioning to escalate attribution if a second incident forces it and to walk it back if the diplomatic track produces movement. That is hedging, not weakness; it should be read as such.</p>
+    <p>The Iran framework is dead in public; the war is now in its second month with no off-ramp on the table that either side is willing to sign. Trump&rsquo;s morning post warning Iran to &ldquo;better get smart soon&rdquo; landed as Brent crude pushed past $115 a barrel, the eighth straight session of gains, with WTI above $103 and the national average at the pump at $4.23. The Strait remains effectively closed to Iranian-flagged tonnage; the rest of the world&rsquo;s tanker traffic is moving on insurance premiums that have quintupled. Markets are no longer pricing a near-term resolution. They are pricing the war as a structural condition.</p>
+    <p>Hegseth is in the hot seat, and Politico led with it this morning. The pressure is no longer about a single firing or a single leak; it is the cumulative weight of a SECDEF whose Senate room for the FY27 markup is shrinking faster than the calendar allows. Comey was indicted again Monday night, the second indictment after the first was tossed; the legal substance is thin and the political signal is loud. The FISA Section 702 reauthorization deadline hits Thursday with House Republicans publicly fighting each other rather than the Democrats. King Charles wraps the state visit today after an address that praised the alliance without quite naming the war.</p>
+    <p>Three structural items underneath. The Supreme Court heard arguments today on Trump&rsquo;s removal of Temporary Protected Status for Haitians and Syrians; the case is the test of how much immigration discretion survives the second-term rewrite. The Navy awarded Ingalls $283 million to begin work on the FF(X) frigate, and Acting SecNav Hung Cao gave his vision speech: more ships, &ldquo;Alpha&rdquo; troops, and a generational pitch about not sending his son to the war he fought. The Space Force quietly proposed canceling the Polar Missile Warning program in the FY27 build, the first program kill of the cycle and a signal that the Golden Dome architecture is going to absorb everything around it.</p>
   </div>
 
   <div class="section-hdr">Today&rsquo;s Top Stories</div>
 
   <div class="top-story">
-    <div class="tcat">Iran War &nbsp;&middot;&nbsp; Diplomacy</div>
-    <div class="thl"><a href="https://abcnews.com/International/live-updates/iran-live-updates-rubio-dismisses-iran-peace-proposal/?id=132444768">Rubio dismisses Iran proposal: nuclear must be in any deal</a></div>
-    <div class="synopsis">Secretary Rubio dismissed Tehran&rsquo;s framework, lifting the U.S. naval blockade and reopening the Strait in exchange for ending the war, with the nuclear file deferred, on the morning it became public. His line: there is no deal without nuclear. The administration&rsquo;s public position is that the proposal is a non-starter; the negotiating position may be different. Trump&rsquo;s Sunday public response was &ldquo;call us.&rdquo; Iran&rsquo;s FM is in St. Petersburg with Putin.</div>
-    <span class="source-tag">ABC News &middot; NBC News</span><span class="source-tag tag-thread">&rarr; IRAN WAR</span>
+    <span class="tnum">01</span>
+    <div class="tbody">
+      <div class="tcat">Iran War &nbsp;&middot;&nbsp; Markets</div>
+      <div class="thl"><a href="https://www.nbcnews.com/world/iran/trump-warns-iran-deal-military-options-strait-hormuz-energy-prices-rcna342631">Trump warns Iran &ldquo;better get smart soon&rdquo; as Brent tops $115</a></div>
+      <div class="synopsis">The President&rsquo;s morning post threatened expanded military options if Iran does not return to terms; oil markets read it as a credible threat and added another five percent to crude. Brent at $115.13 is the highest since June 2022; eighth straight session of gains. WTI is above $103. Gas at the pump hit $4.23, a new high for the year. The IEA called the Hormuz disruption the largest supply shock on record. Watch whether Saudi or UAE production unilaterally lifts; that is the only near-term price ceiling.</div>
+      <span class="source-tag">NBC News &middot; CNBC</span><span class="source-tag tag-thread">&rarr; IRAN WAR</span>
+    </div>
   </div>
 
   <div class="top-story">
-    <div class="tcat">Diplomacy &nbsp;&middot;&nbsp; Transatlantic</div>
-    <div class="thl"><a href="https://www.cbsnews.com/live-updates/king-charles-trump-address-congress-white-house/">King Charles meets Trump and addresses Congress today</a></div>
-    <div class="synopsis">First UK state visit since 2007. Charles is meeting Trump at the White House and delivering a joint-session address this afternoon, the highest-protocol diplomatic event of the year. The visit is supposed to be ceremonial; with Britain on the outside of Operation Epic Fury, the WHCA shooting two nights stale, and an Iran framework just rejected, the signal density is unusual.</div>
-    <span class="source-tag">CBS News &middot; France 24</span><span class="source-tag tag-thread">&rarr; TRANSATLANTIC</span>
+    <span class="tnum">02</span>
+    <div class="tbody">
+      <div class="tcat">Iran War &nbsp;&middot;&nbsp; Diplomacy</div>
+      <div class="thl"><a href="https://www.aljazeera.com/video/newsfeed/2026/4/29/european-commission-president-calls-for-diplomacy-to-end-iran-war?traffic_source=rss">EU Commission President calls for diplomacy to end Iran war</a></div>
+      <div class="synopsis">Ursula von der Leyen used a Brussels speech to push for a return to diplomatic tracks, framing energy security and refugee flow risk as European problems Washington can no longer treat as background. Brussels has been quiet for six weeks; that just changed. The signal to track is whether France, Germany, and Italy issue parallel statements within 48 hours; coordinated European pressure on the U.S. position is the only diplomatic lever currently not in play.</div>
+      <span class="source-tag">Al Jazeera</span><span class="source-tag tag-thread">&rarr; IRAN WAR</span>
+    </div>
   </div>
 
   <div class="top-story">
-    <div class="tcat">Domestic &nbsp;&middot;&nbsp; Markets</div>
-    <div class="thl"><a href="https://www.cbsnews.com/news/fed-rate-decision-april-2026-powell-final-meeting/">Fed decision Wednesday: Powell&rsquo;s final meeting before Warsh handoff</a></div>
-    <div class="synopsis">FOMC announces tomorrow at 2 p.m. ET; Powell holds a 2:30 press conference. Consensus is unanimous on a hold at 3.5-3.75%, the third pause of 2026 with Iran-driven inflation running at a near-two-year high. Powell&rsquo;s term ends May 15; Warsh takes the gavel after Senate confirmation. The press conference is the policy event; the rate is preordained.</div>
-    <span class="source-tag">CBS News &middot; The Hill</span>
+    <span class="tnum">03</span>
+    <div class="tbody">
+      <div class="tcat">Defense &nbsp;&middot;&nbsp; Civil-Military</div>
+      <div class="thl"><a href="https://www.politico.com/newsletters/playbook/2026/04/29/hegseth-in-the-hot-seat-00897970">Hegseth in the hot seat as FY27 markup approaches</a></div>
+      <div class="synopsis">Politico Playbook leads with the cumulative weight on the SECDEF: war handling, personnel reliefs, the Phelan dismissal aftermath, and Senate Republican confidence that has visibly thinned over the past two weeks. The HASC and SASC sessions this week are the visible test. The internal one is whether the FY27 mandatory carve-out and the F/A-XX ratio survive markup substantially intact.</div>
+      <span class="source-tag">Politico &middot; The Dispatch</span><span class="source-tag tag-thread">&rarr; CIVIL-MILITARY FRICTION</span>
+    </div>
   </div>
 
   <div class="top-story">
-    <div class="tcat">Domestic &nbsp;&middot;&nbsp; Security</div>
-    <div class="thl"><a href="https://www.france24.com/en/video/20260428-accused-media-gala-gunman-charged-with-attempting-to-assassinate-trump">WHCA shooter Cole Allen charged with attempting to assassinate the President</a></div>
-    <div class="synopsis">DOJ filed three federal charges against Cole Tomas Allen, 31, of Torrance, California, including attempting to assassinate the President. He charged the Washington Hilton checkpoint Saturday night with a shotgun, a handgun, and multiple knives, shot at a Secret Service agent (the round caught body armor), and was subdued. According to family-shared notes, Allen described his action as a duty to target the administration. The Vienna Taylor Swift plot guilty plea today is the inadvertent split-screen.</div>
-    <span class="source-tag">France 24 &middot; CBS News &middot; DOJ</span><span class="source-tag tag-thread">&rarr; PRESIDENTIAL SECURITY</span>
+    <span class="tnum">04</span>
+    <div class="tbody">
+      <div class="tcat">Domestic &nbsp;&middot;&nbsp; DOJ</div>
+      <div class="thl"><a href="https://www.thebulwark.com/p/breaking-trump-indicts-comeyagain">Trump indicts Comey, again</a></div>
+      <div class="synopsis">A grand jury returned a second indictment of former FBI Director James Comey Monday night, weeks after a federal judge dismissed the first one. The legal substance is thin and the political signal is loud. The original indictment failed on a procedural defect that the second indictment may or may not have cured; the underlying counts are the same.</div>
+      <span class="source-tag">The Bulwark</span><span class="source-tag tag-thread">&rarr; DOJ POLITICIZATION</span>
+    </div>
   </div>
 
   <div class="top-story">
-    <div class="tcat">Defense &nbsp;&middot;&nbsp; Civil-Military</div>
-    <div class="thl"><a href="https://thehill.com/policy/defense/5850949-hegeseth-leadership-senate-republicans/">Hegseth carries $1.5T FY27 budget to HASC and SASC this week with Senate GOP losing patience</a></div>
-    <div class="synopsis">SecDef testifies before HASC tomorrow and SASC Thursday on the FY27 request, the largest defense budget in history. The Hill reports Senate Republican private confidence in Hegseth has eroded after the Phelan firing and the Army general-officer reliefs; some now say he wouldn&rsquo;t be confirmable today. Hegseth retains the President&rsquo;s confidence; the room he needs for markup is thinner than it was six weeks ago.</div>
-    <span class="source-tag">The Hill</span><span class="source-tag tag-thread">&rarr; CIVIL-MILITARY FRICTION</span>
+    <span class="tnum">05</span>
+    <div class="tbody">
+      <div class="tcat">Domestic &nbsp;&middot;&nbsp; Supreme Court</div>
+      <div class="thl"><a href="https://www.nbcnews.com/politics/supreme-court/supreme-court-trump-temporary-protected-status-haiti-syria-immigrants-rcna341292">SCOTUS weighs Trump bid to strip TPS for Haitians and Syrians</a></div>
+      <div class="synopsis">Oral arguments today in the case that could resolve how much discretion the second-term administration has to terminate Temporary Protected Status outside the statutory review windows. Tens of thousands of Haitians and Syrians are exposed. The legal question is technical; the political question is whether the Court accepts an executive theory that turns TPS into a pen-stroke decision. A decisive ruling either way reshapes immigration enforcement through the cycle.</div>
+      <span class="source-tag">NBC News &middot; The Hill</span>
+    </div>
   </div>
 
   <div class="top-story">
-    <div class="tcat">Domestic &nbsp;&middot;&nbsp; Governance</div>
-    <div class="thl"><a href="https://thehill.com/homenews/house/5851803-mike-johnson-dhs-funding-ballroom/">Johnson hits roadblocks on DHS reopen as shutdown enters third month</a></div>
-    <div class="synopsis">The House one-week stop-gap to reopen DHS is stalled, Speaker Johnson is fighting Senate Republicans on structure rather than Democrats on substance. CBP overtime, FEMA pre-positioning, and CISA cyber operations are all degraded. DHS&rsquo;s emergency-funded payroll runs out in early May. The shutdown is the longest in U.S. history; the political logic that produced it is still mostly intact.</div>
-    <span class="source-tag">The Hill &middot; Federal News Network</span>
+    <span class="tnum">06</span>
+    <div class="tbody">
+      <div class="tcat">Domestic &nbsp;&middot;&nbsp; Surveillance</div>
+      <div class="thl"><a href="https://www.cbsnews.com/news/renewal-fisa-section-702-surveillance-program-house-vote-thursday-deadline/">FISA Section 702 in limbo ahead of Thursday deadline</a></div>
+      <div class="synopsis">House vote scheduled for Thursday on reauthorization of the foreign-intelligence collection authority that the IC considers its single most important capability. Republican leadership is fighting itself, not the Democrats; warrant-requirement amendments from libertarian-leaning members and from the privacy left have produced the same procedural impasse. A short-term clean reauth is the most likely landing zone. Watch whether the lapse, even briefly, becomes the story.</div>
+      <span class="source-tag">CBS News &middot; The Hill</span>
+    </div>
   </div>
 
   <div class="top-story">
-    <div class="tcat">Strategic &nbsp;&middot;&nbsp; Russia Channel</div>
-    <div class="thl"><a href="https://www.france24.com/en/video/20260428-iran-offers-to-reopen-strait-of-hormuz-if-us-lifts-its-blockade-and-the-war-ends">Araghchi met Putin in St. Petersburg as the framework leaked</a></div>
-    <div class="synopsis">Iran&rsquo;s foreign minister Abbas Araghchi met Vladimir Putin and Sergei Lavrov in St. Petersburg yesterday, hours after the Iranian framework reached Western reporters via Axios. Tehran is parallel-tracking the Pakistan and Russia channels. Russia&rsquo;s leverage on Iran is real, on tactical equipment, on Caspian energy logistics, on UN diplomatic cover. Russia&rsquo;s leverage on Washington is currently less so. Tehran is pricing both relationships at once.</div>
-    <span class="source-tag">France 24 &middot; Moscow Times</span><span class="source-tag tag-thread">&rarr; IRAN WAR</span>
+    <span class="tnum">07</span>
+    <div class="tbody">
+      <div class="tcat">Defense &nbsp;&middot;&nbsp; Navy</div>
+      <div class="thl"><a href="https://www.stripes.com/branches/navy/2026-04-29/ingalls-shipbuilding-frigate-golden-fleet-21522805.html">HII Ingalls awarded $283M to begin work on FF(X) frigate</a></div>
+      <div class="synopsis">The award funds advance long-lead procurement and yard preparation at Pascagoula for the new frigate class. The FF(X) is the platform around which Acting SecNav Hung Cao&rsquo;s &ldquo;Alpha troops, more ships&rdquo; pitch is being built. The structural question is whether the yard can absorb a frigate line on top of the amphib slips already pushed to the right. Bougainville and Fallujah delays are the warning sign.</div>
+      <span class="source-tag">Stars and Stripes &middot; Defense One</span>
+    </div>
   </div>
 
   <div class="top-story">
-    <div class="tcat">Strategic &nbsp;&middot;&nbsp; Lebanon</div>
-    <div class="thl"><a href="https://www.france24.com/en/video/20260428-lebanon-health-ministry-says-israeli-strikes-kill-4-in-south-despite-ceasefire">Israeli strikes kill four in southern Lebanon despite ceasefire</a></div>
-    <div class="synopsis">Lebanon&rsquo;s health ministry confirmed four killed in Israeli strikes in the south overnight, despite the ten-day ceasefire framework Trump announced earlier this month. Hezbollah has not publicly endorsed the ceasefire; the Lebanese government did. The structural fragility flagged in mid-April is now the operating reality, the ceasefire is degraded but not formally broken. The April 22 collapse risk did not materialize; the slow-erosion path did.</div>
-    <span class="source-tag">France 24</span><span class="source-tag tag-thread">&rarr; IRAN WAR</span>
+    <span class="tnum">08</span>
+    <div class="tbody">
+      <div class="tcat">Defense &nbsp;&middot;&nbsp; Space</div>
+      <div class="thl"><a href="https://www.airandspaceforces.com/space-force-proposes-canceling-polar-missile-warning-program/">Space Force proposes canceling Polar Missile Warning program</a></div>
+      <div class="synopsis">First public program kill of the FY27 cycle. The Polar Missile Warning architecture, designed for over-the-pole threat tracking, is being absorbed into the broader Golden Dome construct. The justification is consolidation; the operational risk is whether the polar gap is covered before the integrated architecture is fielded. The same pattern, big tent absorbing legacy programs, is going to dominate the rest of the FY27 markup.</div>
+      <span class="source-tag">Air &amp; Space Forces Magazine</span>
+    </div>
   </div>
 
   <div class="top-story">
-    <div class="tcat">Defense &nbsp;&middot;&nbsp; Air Force</div>
-    <div class="thl"><a href="https://www.militarytimes.com/news/your-military/2026/04/27/us-air-force-seeks-39-billion-to-boost-kc-46-fleet/">Air Force seeks $3.9B for KC-46 fleet expansion in FY27</a></div>
-    <div class="synopsis">The Air Force is requesting $3.9 billion in FY27 to grow the KC-46 fleet, the highest single-line tanker investment in years. Operation Epic Fury has stress-tested the air refueling architecture across two simultaneous theaters; the budget reflects the lessons. The 97th AMW at Altus is the formal training unit and is one of the bottlenecks if the fleet grows faster than the throughput pipeline.</div>
-    <span class="source-tag">Military Times &middot; Air Force Times</span>
+    <span class="tnum">09</span>
+    <div class="tbody">
+      <div class="tcat">Strategic &nbsp;&middot;&nbsp; Ukraine</div>
+      <div class="thl"><a href="https://kyivindependent.com/russian-oil-facilities-in-perm-and-orsk-struck-as-ukraines-drones-follow-up-tuapse-attacks/">Ukrainian drones strike Russian oil facilities at Perm and Orsk</a></div>
+      <div class="synopsis">Two more Russian refining nodes hit overnight, deep into the rear, following Tuesday&rsquo;s Tuapse Black Sea coast strike. The pattern is clear: Ukraine is targeting refinery throughput, not export terminals. The mechanism is fuel-price pressure on the Russian domestic economy and on military logistics. The world is in an oil supply shock; Russia is one of the few suppliers with spare capacity, and Ukraine is degrading the part of that capacity that turns crude into diesel.</div>
+      <span class="source-tag">Kyiv Independent</span><span class="source-tag tag-thread">&rarr; ENERGY WAR</span>
+    </div>
   </div>
 
   <div class="top-story">
-    <div class="tcat">Strategic &nbsp;&middot;&nbsp; Indo-Pacific</div>
-    <div class="thl"><span>Taiwan FM lands in Eswatini after Lai&rsquo;s overflight cancelled by African states (Bloomberg, April 23)</span></div>
-    <div class="synopsis">President Lai cancelled his Eswatini visit on April 21 after Mauritius, Madagascar, and Seychelles revoked overflight permits less than 24 hours before departure under reported PRC pressure. FM Lin completed the trip in his place. First time a Taiwan president has cancelled a foreign trip due to airspace denial. Beijing publicly praised the three states; the U.S., EU, UK, France, and Germany formally condemned the move. The April 22 prediction that this becomes the new template now has its first test data.</div>
-    <span class="source-tag">Bloomberg &middot; U.S. News</span><span class="source-tag tag-thread">&rarr; CHINA-TAIWAN</span>
+    <span class="tnum">10</span>
+    <div class="tbody">
+      <div class="tcat">Strategic &nbsp;&middot;&nbsp; Indo-Pacific</div>
+      <div class="thl"><a href="https://www.stripes.com/theaters/asia_pacific/2026-04-29/china-research-vessel-japan-nansei-21522947.html">Chinese research vessel spotted near Japan for third time in a month</a></div>
+      <div class="synopsis">A PLAN-affiliated research vessel was tracked transiting the Nansei chain for the third time in 30 days. Pattern, not incident. Tokyo treats this as part of the longer pre-positioning campaign that maps undersea cabling, ASW geometry, and submarine ingress lanes. The pace is the news; the ship is not new.</div>
+      <span class="source-tag">Stars and Stripes</span><span class="source-tag tag-thread">&rarr; CHINA-JAPAN</span>
+    </div>
   </div>
 
   <div class="section-hdr">Watch List</div>
 
   <div class="watch-item">
-    <div class="watch-label">Watch: Iran Channel After the Public Rebuff</div>
-    <p>Rubio&rsquo;s public rejection of the Iranian framework is the floor of the negotiation, not the ceiling. The structure of the offer, separating Hormuz from nuclear, is too useful to both sides to discard at the first volley. Watch whether Witkoff or Kushner is publicly re-tasked to a third venue (Muscat is the natural fallback) or whether the Russia leg becomes the actual track. The next 96 hours will tell whether the proposal was a serious opening or a positioning move.</p>
+    <div class="watch-label">Watch: Saudi or UAE Unilateral Production Lift</div>
+    <p>The only near-term ceiling on Brent is OPEC+ spare capacity coming to market. Riyadh and Abu Dhabi have been publicly aligned with the war but quietly conscious that energy at $115 is a global development risk and a domestic budget windfall they cannot absorb forever. A unilateral production lift, even an unannounced one, would print as a $5 to $8 reversal in 48 hours. Watch tanker loadings off Ras Tanura and Fujairah this week.</p>
   </div>
 
   <div class="watch-item">
-    <div class="watch-label">Watch: Charles&rsquo;s Joint-Session Language</div>
-    <p>This afternoon&rsquo;s congressional address is the highest-stakes public event of the visit. The signal to track is whether Charles uses &ldquo;partnership&rdquo; (bilateral framing) or &ldquo;allies&rdquo; (multilateral framing) when discussing Iran or NATO. Either is defensible; the choice tells you which lane Buckingham wants the speech to live in. Any direct reference to Britain&rsquo;s non-participation in Epic Fury would be the loudest line in the speech regardless of how softly delivered.</p>
+    <div class="watch-label">Watch: European Concert on Iran</div>
+    <p>Von der Leyen&rsquo;s Brussels speech is the first audible European pressure for diplomacy since the war began. The signal that matters is whether France, Germany, and Italy issue parallel statements within 48 hours, formally or through national leaders. Europe has been managing the energy and refugee externalities of this war while staying out of the substance. If that posture flips publicly this week, it changes the political weight on Washington.</p>
   </div>
 
   <div class="watch-item">
-    <div class="watch-label">Watch: Powell&rsquo;s Last Press Conference</div>
-    <p>Wednesday&rsquo;s press conference is Powell&rsquo;s last as chair. The rate hold is unanimous; the language is the news. Watch whether Powell signals an opinion on his successor&rsquo;s likely path, gives explicit guidance on the September meeting, or breaks the institution&rsquo;s historical reticence about an outgoing chair preempting an incoming one. The bond market is positioned for a hawkish read; an unusually candid Powell would move the curve.</p>
+    <div class="watch-label">Watch: Hegseth FY27 Markup Calendar</div>
+    <p>The structural test of where Hegseth actually stands with the Senate is not the hearing performance, it is the markup calendar. If SASC schedules FY27 markup before Memorial Day, the Senate is still in step. If it slips into June, the SECDEF has lost more room than the public coverage reflects. Either way, the budget that emerges is the policy.</p>
   </div>
 
   <div class="watch-item">
-    <div class="watch-label">Watch: Hegseth Confidence Curve and FY27 Markup</div>
-    <p>Senate Republican confidence in Hegseth is a leading indicator, not the event. The events that follow eroded confidence, slow-rolled nominations, leaked dissent on FY27 markup, refusal to cooperate on Phelan&rsquo;s replacement, are the operational consequences. Watch whether SASC schedules FY27 markup before Memorial Day. If it slips, Hegseth has lost more room than is being said publicly.</p>
+    <div class="watch-label">Watch: 702 Lapse Window</div>
+    <p>If FISA Section 702 lapses Thursday at midnight, even briefly, the IC and DoJ will quietly stop new collection rather than risk legal exposure on continuing it. The operational degradation is real but invisible until something downstream goes wrong. Watch for any DoD CT or counterintelligence statement in the 96 hours after a lapse; absence of public commentary will mean cover, not absence of impact.</p>
   </div>
 
   <div class="watch-item">
-    <div class="watch-label">Watch: DHS Pay Run vs. Political Clock</div>
-    <p>DHS contingency payroll funds run out the first week of May. Past shutdowns have broken when air-travel throughput at hub airports degraded visibly; the workforce is the lever, not the principals. If a Cat X airport hits a measurable wait-time anomaly this week, the political calculus changes inside 48 hours. Watch ATL, ORD, and DEN for the first published TSA staffing shortfall.</p>
+    <div class="watch-label">Watch: Charleston Housing Authority CEO Probe</div>
+    <p>The Post and Courier reports the new CEO arrives under an active probe by his prior Norfolk employer. The local-governance question is procedural; the broader signal is hiring discipline at a federal grantee under HUD watch. If HUD escalates, this becomes a political story in the Lowcountry inside two weeks.</p>
   </div>
 
 </div>
@@ -343,86 +350,87 @@ body { background: var(--bg); color: var(--text); font-family: Georgia, serif; f
 
   <div class="story">
     <div class="headline tt-wrap">
-      <a href="https://thehill.com/policy/defense/5850949-hegeseth-leadership-senate-republicans/">Hegseth pushes $1.5T FY27 budget to Senate as Republican confidence erodes</a>
-      <div class="tt-box">SecDef Hegseth testifies before HASC on Wednesday and SASC on Thursday on the largest defense budget in U.S. history. The Hill reports Senate Republican private confidence has eroded after the Phelan firing, the Army general-officer reliefs, and the FY27 rollout. Some senators now say privately that Hegseth would not be confirmable today. He retains the President&apos;s backing. The Senate cooperation he needs for markup, FY27, the $350B mandatory carve-out, the F/A-XX ratio, the 155mm production line, is more fragile than it was six weeks ago.</div>
+      <a href="https://www.politico.com/newsletters/playbook/2026/04/29/hegseth-in-the-hot-seat-00897970">Hegseth in the hot seat as FY27 markup approaches</a>
+      <div class="tt-box">Politico Playbook&apos;s lead this morning: the cumulative pressure on the SECDEF is no longer about any single decision. War handling, the Phelan firing, the Army general-officer reliefs, and the rollout of the largest defense budget in history are arriving simultaneously. Senate Republican private confidence has thinned visibly over the past two weeks. The HASC and SASC sessions this week are the visible test. The internal test is whether the FY27 mandatory carve-out and the F/A-XX procurement ratio survive markup substantially intact.</div>
     </div>
-    <div class="synopsis">The Hill reports erosion in Senate Republican confidence, driven by personnel decisions, the FY27 rollout, and a sense that the building is being managed by personality rather than process. Hegseth still has the President. He has less of the Senate than he did. The work the Pentagon needs done in the next 60 days, FY27 markup, the $350B mandatory structure, F/A-XX, 155mm production, depends on people he has not invested in.</div>
-    <span class="source-tag">The Hill</span><span class="source-tag tag-thread">&rarr; CIVIL-MILITARY FRICTION</span>
+    <div class="synopsis">The Politico lead is not new substance; it is convergence. War, personnel, and budget pressure on the same person at the same time. The system either holds or it doesn&rsquo;t. The visible test is markup pace; the invisible test is the senior officer corps&rsquo; risk model.</div>
+    <span class="source-tag">Politico</span><span class="source-tag tag-thread">&rarr; CIVIL-MILITARY FRICTION</span>
     <div class="swaps-take">
       <div class="swaps-take-label">SWAP&rsquo;s Take</div>
-      <p>This is a slow-fuse, small-payload story, and the combination is exactly what makes it consequential. Senate doubt does not get a SECDEF fired; it gets him hobbled. The mechanism is mundane: nominations slow, markups slip, hearings get longer, and the building burns calories on the Hill that should be burning on the war. Hegseth came in with a theory of action that depended on speed. Speed required Senate cooperation he has not invested in. The bill is now arriving as FY27 markup risk, a thin civilian SES bench around the building, and a senior officer corps that watches every relief announcement and updates its risk model. None of this is fatal. All of it is friction. The HASC and SASC sessions this week are the visible test; whether the FY27 mandatory carve-out survives markup substantially intact is the real one.</p>
+      <p>The Hegseth story is now a friction story, not a personality story. The SECDEF&rsquo;s political will is intact. His operational reach inside Washington is shrinking. That is a different problem than scandal: scandal is binary, friction is cumulative. The historical parallel is not Rumsfeld in 2006, when one set of decisions had failed visibly. It is more like McNamara in early 1967, when nothing had quite broken but the Pentagon&rsquo;s weight on the Hill had silently thinned. The mechanism then was Senate appropriators losing patience with answers they considered evasive; the mechanism now looks similar. The visible test is whether SASC marks up FY27 before Memorial Day. The invisible test is whether the next round of three-and-four-star nominations moves on schedule. If both slip, the SECDEF still has the President, but he stops having the building. That is the inflection point to watch.</p>
     </div>
   </div>
 
   <div class="story">
     <div class="headline tt-wrap">
-      <a href="https://www.militarytimes.com/news/your-military/2026/04/27/us-air-force-seeks-39-billion-to-boost-kc-46-fleet/">Air Force seeks $3.9B for KC-46 fleet expansion in FY27</a>
-      <div class="tt-box">The Air Force&apos;s FY27 budget request includes $3.9 billion for additional KC-46 procurement, the largest single-line tanker investment in years. The KC-46 program has been operating against demand pressure created by Operation Epic Fury, two-theater air refueling, sustained tanker bridges, and a forward-deployed bomber rotation that has consumed sortie generation faster than peacetime planning factors anticipated. The 97th Air Mobility Wing at Altus is the formal training unit; FTU throughput is one of the constraints if the fleet grows faster than aircrew production.</div>
+      <a href="https://www.stripes.com/branches/navy/2026-04-29/ingalls-shipbuilding-frigate-golden-fleet-21522805.html">HII Ingalls awarded $283M to commence work on FF(X) frigate</a>
+      <div class="tt-box">Stars and Stripes reports the Navy has issued a $283 million contract action to HII Ingalls Shipbuilding to begin advance procurement, yard preparation, and long-lead material on the FF(X) frigate class. The award is the first concrete budget action behind Acting SecNav Hung Cao&apos;s &ldquo;more ships, Alpha troops&rdquo; agenda. Pascagoula already carries DDG and amphib lines; FF(X) is being layered on a yard whose throughput has been the binding constraint on the surface fleet.</div>
     </div>
-    <div class="synopsis">$3.9 billion for KC-46 in FY27, the largest single-line tanker investment in recent budgets. The driver is Iran-war operating tempo; the constraint is FTU throughput at Altus and field-level sustainment. The aircraft has had a famously rough development arc; the war has settled the &ldquo;is the airframe enough&rdquo; debate by demonstrating that the alternative is shorter-legged strike packages.</div>
-    <span class="source-tag">Military Times</span><span class="source-tag tag-thread">&rarr; KC-46</span>
+    <div class="synopsis">The frigate award is the first dollar behind Hung Cao&rsquo;s pitch. The story is not the contract; it is the yard. Pascagoula has been delivering late on every line for years. Layering FF(X) onto a yard that just slipped Bougainville and Fallujah another year is a bet that workforce, throughput, and supply chain can scale faster than they have in two decades. Bet might pay; the evidence base is thin.</div>
+    <span class="source-tag">Stars and Stripes</span>
   </div>
 
   <div class="story">
     <div class="headline tt-wrap">
-      <a href="https://www.militarytimes.com/industry/techwatch/2026/04/28/why-aircraft-carriers-are-the-best-and-worst-place-for-laser-weapons/">Why aircraft carriers are the best and worst place for laser weapons</a>
-      <div class="tt-box">The piece walks through the engineering trade for ship-borne directed-energy systems on a flattop. Carriers have power, water, and stability advantages over destroyers; they also have an aviation-saturation problem that shrinks the geometry available for laser tracks-of-fire. The argument is that laser weapons on a CVN are a net-positive for self-defense against subsonic threats but become marginal against supersonic and hypersonic profiles. The Iran air campaign is generating the test data the program office needs.</div>
+      <a href="https://www.militarytimes.com/news/your-navy/2026/04/28/alpha-troops-and-more-ships-acting-navy-secretary-hung-cao-outlines-vision-for-service/">&lsquo;Alpha&rsquo; troops and more ships: Acting Navy Secretary Hung Cao outlines his vision</a>
+      <div class="tt-box">Military Times reports Acting SecNav Hung Cao laid out a vision built on three pillars: a larger fleet, a culturally retooled sailor force he calls &ldquo;Alpha,&rdquo; and a closer fit between the industrial base and the operational requirement. The speech leaned on personal narrative, including the line that anchored the Defense One coverage, &ldquo;I&apos;m not going to have my son go to war the way I did.&rdquo; The political signal is generational; the budget signal is that the FF(X) and a full amphib recovery are the two hills the office is willing to die on.</div>
     </div>
-    <div class="synopsis">A solid engineering piece on directed-energy on carriers. Power and stability favor the platform; aviation density and threat speed argue against it. The Navy&rsquo;s decision tree on directed-energy procurement is not one buy or no buy; it is which platform absorbs the system first, and the article makes the case that DDG and frigate placement may matter more than CVN.</div>
-    <span class="source-tag">Military Times &middot; C4ISRNET</span>
+    <div class="synopsis">Hung Cao gave the vision speech every new SecNav gives. What made this one different is that the budget action followed it inside 24 hours, the FF(X) award. That is unusual sequencing. Either the office is moving faster than its predecessors managed, or the political clock above it is shorter than is being said publicly.</div>
+    <span class="source-tag">Military Times &middot; Defense One</span>
+    <div class="swaps-take">
+      <div class="swaps-take-label">SWAP&rsquo;s Take</div>
+      <p>The interesting line is the personal one. &ldquo;I&rsquo;m not going to have my son go to war the way I did.&rdquo; That is a Vietnam refugee who served as a Special Forces officer telling a sailor force that the next war is not going to be the bloody, half-resourced affair he walked into in his twenties. As rhetoric, it is unusually direct for a sitting service secretary. As a budget pitch, it is the most personal version of an end-strength-and-platform argument anyone has tried in a decade. The skeptical question is whether the industrial base can deliver on the vision faster than the political clock above the office allows. Pascagoula slipped two amphib hulls last week. The FF(X) award is the first dollar of a program that needs ten years of clean delivery to land. Vision speeches are easy; clean delivery is the hard part. Watch the throughput numbers, not the rhetoric.</p>
+    </div>
   </div>
 
   <div class="story">
     <div class="headline tt-wrap">
-      <a href="https://www.militarytimes.com/newsletters/daily-news-roundup/2026/04/28/what-we-know-about-the-us-militarys-new-joint-laser-weapon-system/">What we know about the U.S. military&rsquo;s new joint laser weapon system</a>
-      <div class="tt-box">The roundup pulls together the public information on the joint Army-Air Force-Navy laser system that has been moving through development this spring. The piece tracks power class, intended target set (counter-UAS, anti-cruise-missile, helicopter and drone defense), and the inter-service procurement structure. Joint laser systems are not new on paper; this one has cleared more of the bureaucratic gates than its predecessors and is one of the few visible cases where Iran-war demand has accelerated a multi-service program.</div>
+      <a href="https://www.airandspaceforces.com/space-force-proposes-canceling-polar-missile-warning-program/">Space Force proposes canceling Polar Missile Warning program</a>
+      <div class="tt-box">Air &amp; Space Forces Magazine reports the Space Force has formally proposed cancellation of the Polar Missile Warning constellation in the FY27 build. The mission, over-the-pole threat tracking, is being absorbed into the larger Golden Dome architecture. The cancellation is the first visible program kill of the FY27 cycle. The same consolidation pattern is expected across legacy missile-warning, missile-defense, and selected ISR lines as the Golden Dome integrated architecture matures.</div>
     </div>
-    <div class="synopsis">The new joint laser system has cleared more development gates than past directed-energy programs. The driver is two-theater demand for counter-UAS and anti-cruise capacity that current kinetic interceptors cannot economically meet. Joint procurement has historically slowed delivery; this program is the test case for whether wartime urgency can move it faster.</div>
-    <span class="source-tag">Military Times</span>
+    <div class="synopsis">First program kill of FY27. The polar warning mission is real and stays real; the question is whether the Golden Dome architecture covers the polar gap before the cancelled constellation would have. The historical pattern of integrated-architecture procurements is that the legacy program gets cut on schedule and the integrated replacement slips on schedule. The interim is the risk window.</div>
+    <span class="source-tag">Air &amp; Space Forces Magazine</span><span class="source-tag tag-thread">&rarr; GOLDEN DOME</span>
+    <div class="swaps-take">
+      <div class="swaps-take-label">SWAP&rsquo;s Take</div>
+      <p>This is what Golden Dome looks like in execution. The architecture is not just a $185 billion line item; it is an organizing principle that absorbs every adjacent program. Polar Missile Warning is the first to go; FY27 markup will surface the next several. The risk pattern is well-known: integrated architectures cut the legacy programs on time and deliver the replacement late. The Joint Strike Fighter did that to a generation of legacy fighter modernization. Future Combat Systems did it to a generation of Army platforms. Whether Golden Dome breaks the pattern depends on whether Space Force and MDA can co-deliver the space-based sensor layer at the pace the kill chain requires. The deep-source feed picked up the same theme today through congressional testimony, senior leaders publicly acknowledged the U.S. is &ldquo;relatively undefended&rdquo; against advanced missile threats. That admission is the political cover for absorbing programs into the bigger tent. It is also the burden the bigger tent now has to carry.</p>
+    </div>
   </div>
 
   <div class="story">
     <div class="headline tt-wrap">
-      <a href="https://news.usni.org/2026/04/27/amphibs-bougainville-fallujah-deliveries-are-pushed-another-year">USS Bougainville and USS Fallujah amphib deliveries pushed another year</a>
-      <div class="tt-box">USNI News reports that delivery of two America-class amphibious assault ships, USS Bougainville (LHA-8) and USS Fallujah (LHA-9), has slipped another year. The slips have compounded since 2024 and are now stretching ARG-MEU rotation planning into the late decade. The Marine Corps&apos; force-design dependency on amphib availability for distributed operations is now a budget question as much as a shipyard question.</div>
+      <a href="https://www.defenseone.com/technology/2026/04/socom-adding-ai-autonomy-every-level-commander-says/413186/">SOCOM adding AI, autonomy &lsquo;at every level,&rsquo; commander says</a>
+      <div class="tt-box">Defense One reports SOCOM commander&apos;s remarks at a closed-press session: AI and autonomous systems are being pushed into every echelon of special operations, from intelligence fusion to mission planning to platform employment. The pace is faster than at any other component, helped by SOCOM&apos;s acquisition flexibility and a smaller integration footprint than the services carry. The statement should be read as both a real operational shift and a political flag, SOCOM is positioning to absorb autonomy work the services would otherwise own.</div>
     </div>
-    <div class="synopsis">Two amphib hulls slip another year. The Marine force-design rotation planning is built on a hull count the Navy is not currently delivering. The shipbuilding-base conversation Hung Cao is leading at the Pentagon has just lost another twelve months of margin in one of the few categories where the Navy and the Corps fully agree.</div>
-    <span class="source-tag">USNI News</span>
+    <div class="synopsis">SOCOM is moving on AI/autonomy faster than the services. The structural reason is acquisition authority and a smaller integration footprint. The political reason is that whichever component fields autonomy at scale first owns the doctrinal vocabulary the rest of the joint force then has to inherit. SOCOM is racing to be that component.</div>
+    <span class="source-tag">Defense One</span>
   </div>
 
   <div class="story">
     <div class="headline tt-wrap">
-      <a href="https://www.airandspaceforces.com/congress-lawmakers-aviators-incentives-manning-shortfall/">Lawmakers eye sabbaticals and incentives for pilots amid manning shortfall</a>
-      <div class="tt-box">Air &amp; Space Forces Magazine reports a bipartisan congressional push for new aviator incentives, including sabbatical-style separations with re-entry rights, expanded selective re-enlistment bonuses, and revised housing arrangements for high-cost-of-living bases. The Air Force pilot manning shortfall is multi-year, structural, and worsening under Iran-war operating tempo. The proposed fixes are personnel-policy adjustments, not structural retention reforms; whether they move the needle is an open question.</div>
+      <a href="https://www.defenseone.com/policy/2026/04/im-not-going-have-my-son-go-war-way-i-did-acting-secnav-says/413188/">Acting SecNav: &lsquo;I&rsquo;m not going to have my son go to war the way I did&rsquo;</a>
+      <div class="tt-box">Defense One captures the personal line that anchored Hung Cao&apos;s vision speech and is now circulating in the building. Cao framed the larger fleet and the &ldquo;Alpha&rdquo; troop construct as a generational obligation, the burden his cohort carried in less-resourced fights should not be the burden his son&apos;s cohort inherits. The political effect is to convert a procurement argument into a moral one, which is harder for the Senate to discount and harder for the building to slow-roll.</div>
     </div>
-    <div class="synopsis">Congress is talking sabbaticals and bonuses to fix the pilot shortfall. The structural drivers, airline competition, OPTEMPO, family separation, are not what bonuses move. What bonuses do move is the marginal decision at the 12-year point. That is worth doing; it is not the answer to the shortfall.</div>
+    <div class="synopsis">The line is doing political work. Vision speeches that convert procurement into moral argument are rare; this one is doing it deliberately. The risk is the same as every moral pitch: it raises the stakes for delivery. If the FF(X) line slips or the amphib recovery falls behind, the gap between rhetoric and outcome becomes the next story.</div>
+    <span class="source-tag">Defense One</span>
+  </div>
+
+  <div class="story">
+    <div class="headline tt-wrap">
+      <a href="https://www.airandspaceforces.com/new-laser-defense-vip-transport-hh-60w-helicopter-air-force/">New laser defense and VIP transport mission in the works for HH-60W</a>
+      <div class="tt-box">Air &amp; Space Forces reports the HH-60W Jolly Green II is being scoped for two adjacent mission lines: a directed-energy self-defense package and a configurable VIP-transport variant. Both are evolutionary; neither is a full conversion. The CSAR community is watching closely because adjacent missions have a way of consuming airframes that were procured for the primary one.</div>
+    </div>
+    <div class="synopsis">The HH-60W is being asked to do more than CSAR. Directed-energy self-defense is a logical evolution; the VIP transport mission is the line to watch. CSAR airframes that get pulled into VIP work tend to stay there.</div>
     <span class="source-tag">Air &amp; Space Forces Magazine</span>
   </div>
 
   <div class="story">
     <div class="headline tt-wrap">
-      <a href="https://www.airandspaceforces.com/commercial-tech-funding-space-force-budget-2027/">Commercial tech funding baked into Space Force FY27 budget</a>
+      <a href="https://www.stripes.com/theaters/us/2026-04-28/republicans-block-war-powers-bid-cuba-21518523.html">Senate Republicans block war powers bid to limit Trump action on Cuba</a>
+      <div class="tt-box">Stars and Stripes reports the Senate vote that turned aside a Democratic-led War Powers Resolution intended to constrain unilateral military action against Cuba. The vote count was party-line with two notable Republican defections. The political signal is the same as the original Cuba authorities debate: the second-term administration retains substantial unilateral discretion on the Maduro/Caracas channel and the Caribbean basin generally, and Senate Republicans are unwilling to formally narrow it.</div>
     </div>
-    <div class="synopsis">The Space Force budget request institutionalizes commercial-tech buys at a structural level rather than as a one-off accelerator. The shift, which the service has been signaling for two years, locks in commercial-launch, commercial-imagery, and commercial-comms as primary force-design contributors. The risk is dependency; the upside is the only credible mechanism for keeping pace with PLA space buildout at the cost ceiling Congress will support.</div>
-    <span class="source-tag">Air &amp; Space Forces Magazine</span>
+    <div class="synopsis">The War Powers vote on Cuba failed on party lines with the usual two GOP exceptions. The structural point is that the Maduro-Venezuela channel and the Caribbean basin remain executive lanes. The Cuba-specific concern is downstream of the Maduro operation; Congress is not narrowing it.</div>
+    <span class="source-tag">Stars and Stripes</span>
   </div>
-
-  <div class="story">
-    <div class="headline tt-wrap">
-      <a href="https://www.defenseone.com/policy/2026/04/experts-call-halt-ai-chip-exports-china-after-white-house-distillation-warning/413155/">Experts call for halt of AI chip exports to China after White House distillation warning</a>
-    </div>
-    <div class="synopsis">A bipartisan group of analysts is calling for an immediate halt on advanced AI chip exports to China after a White House warning about &ldquo;model distillation&rdquo; (Chinese teams replicating restricted-model behavior using legally obtained inference access). The argument is that export controls calibrated to chip generation are mismatched against a threat calibrated to model behavior. The administration has not yet moved.</div>
-    <span class="source-tag">Defense One</span><span class="source-tag tag-thread">&rarr; CHINA TECH</span>
-  </div>
-
-  <div class="story">
-    <div class="headline tt-wrap">
-      <a href="https://www.twz.com/air/russias-stealthy-s-71k-air-launched-missile-seen-in-unprecedented-detail">Russia&rsquo;s stealthy S-71K air-launched missile seen in unprecedented detail</a>
-    </div>
-    <div class="synopsis">The War Zone surfaces the most detailed public imagery to date of the Russian S-71K, a stealthy air-launched cruise missile that has been the subject of speculation for two years. The piece is meaningful for OSINT discipline, what we know vs. what we infer, vs. an actual force-structure data point right now. The S-71K is a planned-fielding system; current Ukrainian air defense is calibrated against its unstealthy predecessors.</div>
-    <span class="source-tag">The War Zone</span>
-  </div>
-
 </div>
 
 <div class="tab-panel" id="tab-strategic">
@@ -431,87 +439,69 @@ body { background: var(--bg); color: var(--text); font-family: Georgia, serif; f
 
   <div class="story">
     <div class="headline tt-wrap">
-      <a href="https://www.nbcnews.com/world/iran/trumpl-iran-proposal-end-war-reopen-hormuz-nuclear-deal-oil-storage-rcna342441">U.S. cool on Iran proposal to end war and reopen Hormuz without a nuclear deal</a>
-      <div class="tt-box">Per NBC, the administration has signaled to allies that the Iranian framework, end the war, lift the blockade, reopen the Strait, defer nuclear, is a non-starter as currently structured. Rubio dismissed the proposal publicly. The deferral of the nuclear file is the structural problem: the administration&apos;s public sales of the war have been about the nuclear program, not about the Strait. Accepting the framework as written would require the administration to redefine its own war aims, which is harder than simply rejecting and counter-proposing.</div>
+      <a href="https://www.nbcnews.com/world/iran/trump-warns-iran-deal-military-options-strait-hormuz-energy-prices-rcna342631">Trump warns Iran on Hormuz; oil markets price the war as structural</a>
+      <div class="tt-box">NBC reports the President&apos;s morning post warning Iran to &ldquo;better get smart soon&rdquo; and signaling expanded military options if Tehran does not return to terms. The market response was immediate: Brent up another five percent past $115, eighth consecutive session of gains, and WTI above $103. Pump prices set a new annual high of $4.23. The IEA called the Hormuz disruption the largest supply shock on record. The framing inside markets has shifted; they are no longer pricing a near-term resolution and are pricing the war as a structural condition that lasts into Q3.</div>
     </div>
-    <div class="synopsis">NBC reports the administration&rsquo;s soft-no on the Iranian framework. The deferral of nuclear is the structural problem, not the Strait. The next move from Washington is the negotiating signal: counter-propose a framework that ties Hormuz reopening to a nuclear-track timeline, or reject and resume coercion. The market is pricing the second option this morning.</div>
-    <span class="source-tag">NBC News &middot; ABC News</span><span class="source-tag tag-thread">&rarr; IRAN WAR</span>
+    <div class="synopsis">The market reading is now structural. That changes the politics around the war and around the Fed. A war that the bond market thinks ends in two months is one set of trades; a war priced as a six-month condition is another. The latter is what we have now.</div>
+    <span class="source-tag">NBC News &middot; CNBC</span><span class="source-tag tag-thread">&rarr; IRAN WAR</span>
     <div class="swaps-take">
       <div class="swaps-take-label">SWAP&rsquo;s Take</div>
-      <p>The Iranian framework is a structurally clever opening because it forces Washington to either accept a deferral on the file the administration has emphasized publicly or reject a deal that would visibly end the war and ease oil. That is a real choice with real trade-offs, and the public rejection today is not the same as the operational answer next week. The administration&rsquo;s public position is shaped by the political coalition that wanted this war to be about the nuclear program; the operational position is shaped by the cost of running a two-carrier blockade indefinitely against a target that has now offered an exit. The Foreign Policy piece this morning, &ldquo;Iran Is More Unified Than Ever,&rdquo; is the relevant data point: Tehran&rsquo;s domestic politics no longer permit the kind of unilateral capitulation the original war aim required. If the war does not produce regime collapse, and it has not, then the deal that ends the war has to be one Iran can sign at home. The framework is calibrated to that constraint. Washington has not yet decided whether it can accept the constraint as well.</p>
+      <p>This is now a strategic-bombing-meets-economic-warfare problem with two sets of bills coming due simultaneously. The U.S. theory of victory rests on the assumption that economic and military pressure will produce regime concession before American political will erodes. Six weeks in, nothing in the operational picture supports that assumption: the regime is consolidating, not fragmenting, and the war has, paradoxically, given Tehran the domestic legitimacy it had been losing. The Foreign Affairs piece this morning, &ldquo;How the War Saved the Iranian Regime,&rdquo; is making exactly that argument, and it is harder to dismiss the longer the war runs without a political result. The historical pattern that fits this is not Desert Storm. It is the bombing of North Vietnam, where target counts kept growing, the political object stayed elusive, and the bills, energy prices, alliance friction, domestic dissent, came due everywhere except the air campaign. The question for the President this week is not whether to escalate. It is whether the theory of victory has been earned by anything that has happened in the last sixty days. The honest answer is no.</p>
     </div>
   </div>
 
   <div class="story">
     <div class="headline tt-wrap">
-      <a href="https://www.france24.com/en/video/20260428-iran-offers-to-reopen-strait-of-hormuz-if-us-lifts-its-blockade-and-the-war-ends">Iran offers to reopen Strait of Hormuz if U.S. lifts blockade and ends war</a>
+      <a href="https://www.aljazeera.com/video/newsfeed/2026/4/29/european-commission-president-calls-for-diplomacy-to-end-iran-war?traffic_source=rss">EU Commission President pushes for diplomatic track on Iran</a>
+      <div class="tt-box">Al Jazeera covers Ursula von der Leyen&apos;s Brussels speech calling explicitly for a return to diplomacy on Iran, framing the war as a European energy security and refugee-flow risk Washington can no longer treat as a U.S. matter. Brussels has been quiet for six weeks. The signal change is that this is on the public record; the political weight depends on whether France, Germany, and Italy issue parallel statements within 48 hours. Coordinated European pressure is the only diplomatic lever currently not in play.</div>
     </div>
-    <div class="synopsis">France 24&rsquo;s readout of the Iranian framework: full reopening of Hormuz to all flagged traffic, immediate end of hostilities, and lifting of the U.S. naval blockade in exchange for postponement of nuclear talks to a separate later track. The structure is asymmetric: Tehran gets immediate relief; Washington gets immediate relief plus a deferred conversation on the file it cares most about. The deferral is the negotiation.</div>
-    <span class="source-tag">France 24</span><span class="source-tag tag-thread">&rarr; IRAN WAR</span>
+    <div class="synopsis">The EU re-entered the conversation publicly today. The signal is real; the weight depends on whether national capitals follow within 48 hours. Europe has been absorbing energy and refugee externalities while staying out of the substance. Today is the first audible reversal of that posture.</div>
+    <span class="source-tag">Al Jazeera</span><span class="source-tag tag-thread">&rarr; IRAN WAR</span>
   </div>
 
   <div class="story">
     <div class="headline tt-wrap">
-      <a href="https://www.france24.com/en/video/20260428-lebanon-health-ministry-says-israeli-strikes-kill-4-in-south-despite-ceasefire">Israeli strikes kill four in southern Lebanon despite ceasefire</a>
-      <div class="tt-box">Lebanon&apos;s health ministry confirmed four killed overnight in Israeli strikes in the south. Hezbollah has not publicly endorsed the ceasefire framework Trump announced earlier in April; the Lebanese government has. The structural fragility, an asymmetric agreement between a state that signed and an armed force that did not, is now operating as slow erosion rather than collapse. The April 22 simultaneous-collapse risk did not materialize; the slow-attrition path is what is happening instead.</div>
+      <a href="https://kyivindependent.com/russian-oil-facilities-in-perm-and-orsk-struck-as-ukraines-drones-follow-up-tuapse-attacks/">Ukrainian drones strike Russian oil facilities at Perm and Orsk</a>
+      <div class="tt-box">The Kyiv Independent reports overnight strikes on the Perm refining node and the Orsk refinery, following Tuesday&apos;s Tuapse Black Sea coast strike. Ukraine is targeting refinery throughput, not export terminals. The mechanism is fuel-price pressure on the Russian domestic economy and on military logistics. With the world in an oil supply shock and Russia one of the few suppliers with spare capacity, Ukraine is degrading the part of that capacity that turns crude into diesel.</div>
     </div>
-    <div class="synopsis">Four dead in southern Lebanon; the ceasefire is degraded but not formally broken. The April 22 collapse risk did not materialize; the structural fragility is producing slow attrition rather than detonation. Hezbollah&rsquo;s non-acknowledgment of the ceasefire is now the operating reality; the question is at what casualty count it becomes politically untenable for either side.</div>
-    <span class="source-tag">France 24</span><span class="source-tag tag-thread">&rarr; IRAN WAR</span>
-  </div>
-
-  <div class="story" data-unsourced="intentional">
-    <div class="headline tt-wrap">
-      <span>Lai cancels Eswatini trip after African states pull overflight permits under PRC pressure (Bloomberg, April 23)</span>
-      <div class="tt-box">Three African states, Mauritius, Madagascar, and Seychelles, revoked overflight permits for President Lai&apos;s aircraft less than 24 hours before departure on April 21. Lai cancelled the trip; FM Lin completed it in his place a day later. Beijing publicly praised the three states; the U.S., EU, UK, France, and Germany formally condemned the move. First time a Taiwan president has cancelled a foreign trip due to airspace denial.</div>
-    </div>
-    <div class="synopsis">First time a Taiwan president has cancelled a trip due to airspace denial. The April 22 SWAP claim was that this becomes the new template, that within 90 days another category of Taiwanese international activity faces PRC-induced denial by an African or Latin American state. The clock is now running on that prediction.</div>
-    <span class="source-tag">Sourcing: not in pool</span><span class="source-tag tag-thread">&rarr; CHINA-TAIWAN</span>
-    <div class="swaps-take">
-      <div class="swaps-take-label">SWAP&rsquo;s Take</div>
-      <p>Beijing&rsquo;s decision to publicly praise the three African states is the analytical signal, not the airspace move itself. PRC norms usually prefer denial and deniability; public praise here means Beijing intends to establish precedent rather than execute a one-off. That is a deliberate move to shrink Taiwan&rsquo;s diplomatic operating envelope through proxy state behavior, and it is calibrated to the moment, the U.S. is consumed by Iran, Europe is consumed by Ukraine, and the Global South is open to PRC pressure on debt-relief leverage in ways that would have been less plausible two years ago. The U.S. counter-move is structurally underdeveloped: the State Department lacks both the personnel and the political cover to push back against African capitals on a case-by-case basis. If the pattern generalizes, the cost curve of Taiwan&rsquo;s international activity rises and the effective diplomatic space contracts. Watch the next consequential Taiwanese international engagement, the World Health Assembly observership question in May is the likely test.</p>
-    </div>
+    <div class="synopsis">Russian refining is the high-leverage target during a global oil shock. Ukraine knows it. The strikes are operationally clean and politically cost-free, the West is not protecting Russian refineries from drones. Watch the gasoline-price spread inside Russia and the army&rsquo;s diesel cost trajectory.</div>
+    <span class="source-tag">Kyiv Independent</span><span class="source-tag tag-thread">&rarr; ENERGY WAR</span>
   </div>
 
   <div class="story">
     <div class="headline tt-wrap">
-      <span>North Korea fires five Hwasong-11 missiles with cluster munitions (USNI News, April 24)</span>
-      <div class="tt-box">USNI News confirmed five Hwasong-11 SRBM launches on April 24 from the Sinpo area, all carrying cluster-munition warheads. Kim Jong Un personally observed and expressed &apos;great satisfaction&apos; over the results. The cadence pattern, two cluster-warhead tests in six days, is consistent with doctrine development rather than capability announcement. The April 25 SWAP analytical claim, that the third test&apos;s range will diagnose whether the target set includes rear-area USFK logistics, is now the operative open question.</div>
+      <a href="https://www.stripes.com/theaters/asia_pacific/2026-04-29/china-research-vessel-japan-nansei-21522947.html">Chinese research vessel near Japan for third time in a month</a>
+      <div class="tt-box">Stars and Stripes reports a PLAN-affiliated research vessel transited the Nansei chain for the third time in 30 days. Tokyo has tracked the vessel each time. The mission profile, undersea cable mapping, ASW geometry, submarine ingress lanes, is well-understood. Pace is the news, not the ship. The same hull operating on a 10-day rotation rather than a 30-day rotation suggests Beijing is collecting at a tempo it would not bother running unless the data is feeding a near-term operational requirement.</div>
     </div>
-    <div class="synopsis">Five Hwasong-11 launches with cluster munitions on April 24; Kim attended in person. Two cluster-warhead tests in six days is doctrine development, not demonstration. The diagnostic for whether the program is targeting forward-peninsula or rear-area USFK logistics is the third test&rsquo;s range, the next 30 days will tell.</div>
-    <span class="source-tag">USNI News</span><span class="source-tag tag-thread">&rarr; KOREAN PENINSULA</span>
+    <div class="synopsis">The pace change matters more than the visit. Tokyo has been clear-eyed about Chinese pre-positioning for years; the rotation tempo is what tells you whether the data is being collected for a future requirement or a near-term one.</div>
+    <span class="source-tag">Stars and Stripes</span><span class="source-tag tag-thread">&rarr; CHINA-JAPAN</span>
   </div>
 
   <div class="story">
     <div class="headline tt-wrap">
-      <a href="https://www.themoscowtimes.com/2026/04/28/authorities-order-evacuations-following-third-ukrainian-strike-on-tuapse-refinery-a92619">Russia orders Tuapse evacuations after third Ukrainian strike on refinery; ground line static</a>
-      <div class="tt-box">Ukrainian drones struck Russia&apos;s Tuapse oil hub on April 28, igniting another fire at a Rosneft refinery. Russia launched 94 drones overnight; neither side made confirmed ground advances. Ukrainian air defense effectiveness on Russian drones reportedly held above 90% across the past week. ISW continues to assess the operational picture as attritional rather than offensive.</div>
+      <a href="https://www.dw.com/en/south-korea-yoon-s-obstruction-sentence-hiked-to-7-years/a-76976474?maca=en-rss-en-all-1573-rdf">Yoon obstruction sentence increased to 7 years</a>
+      <div class="tt-box">DW reports a South Korean appellate court raised former president Yoon Suk-yeol&apos;s obstruction-of-justice sentence to seven years, citing aggravating evidence not weighted by the original trial court. The case has been a stress-test for Korean rule-of-law institutions across the impeachment, prosecution, and appellate cycles. The political consequence inside Seoul is the unfinished one: how the conservative party reorganizes around a leader who is now serving a meaningful sentence.</div>
     </div>
-    <div class="synopsis">Third Ukrainian strike on the Tuapse oil hub forced evacuation orders; ground line is static across most of the front. The Russian energy-infrastructure attrition campaign is the bright spot in a war that is otherwise grinding. The strategic question is whether Ukrainian air defense can be resupplied at the rate Russia is exhausting it, given that Iran demand has visibly compressed the U.S. ordnance pipeline since February.</div>
-    <span class="source-tag">Moscow Times &middot; ISW</span><span class="source-tag tag-thread">&rarr; UKRAINE WAR</span>
+    <div class="synopsis">Korean institutions held in form. Whether they hold in substance depends on the conservative party&rsquo;s reaction. Seven years is enough to reshape the bench; it is also enough to make Yoon a martyr if the party chooses to play it that way.</div>
+    <span class="source-tag">Deutsche Welle</span>
   </div>
 
   <div class="story">
     <div class="headline tt-wrap">
-      <a href="https://www.scmp.com/business/china-evs/article/3351662/need-speed-chinas-ev-battery-makers-race-cut-charging-times-under-10-minutes?utm_source=rss_feed">China&rsquo;s EV and battery makers race to cut charging times under 10 minutes</a>
+      <a href="https://www.aljazeera.com/news/2026/4/29/kazakh-man-accused-of-spying-for-russia-arrested-in-germany?traffic_source=rss">Germany arrests Kazakh citizen accused of spying for Russia</a>
+      <div class="tt-box">Al Jazeera reports German federal authorities arrested a Kazakhstan citizen suspected of conducting reconnaissance against German military and logistics infrastructure on behalf of the GRU. The case fits a broader pattern of Russian use of third-country nationals for collection in Western Europe. Germany&apos;s counterintelligence posture has visibly hardened since Ukraine; this arrest is one more datapoint in that arc.</div>
     </div>
-    <div class="synopsis">Chinese battery and EV firms are pushing fast-charging to under-10-minute thresholds, a structural lead over Western competitors that compounds with the LFP supply chain advantage Beijing already enjoys. The strategic implication is for U.S. and European EV transition timelines, the cost-and-charging speed combination is moving faster than the policy response.</div>
-    <span class="source-tag">South China Morning Post</span>
+    <div class="synopsis">Germany continues to harden against Russian collection. Third-country recruitment is the structural pattern; arrests like this one are the visible portion of a much larger surveillance and disruption effort.</div>
+    <span class="source-tag">Al Jazeera</span>
   </div>
 
   <div class="story">
     <div class="headline tt-wrap">
-      <a href="https://www.scmp.com/news/hong-kong/law-and-crime/article/3351723/hong-kongs-icac-charges-police-superintendent-over-hk1-million-bribe-misconduct?utm_source=rss_feed">Hong Kong ICAC charges police superintendent over $130K bribe</a>
+      <a href="https://apnews.com/article/eu-energy-iran-war-renewables-russia-crisis-22877ebed7d60db95223ca6ae2942fa1">EU chief warns billions could be wasted on Iran-war energy aid</a>
+      <div class="tt-box">AP reports von der Leyen&apos;s second message of the day: that EU energy aid to households and industry will be wasted if it is not paired with structural acceleration of renewables and grid integration. The framing puts the war back into a European policy frame, energy resilience, where Brussels has institutional traction. The political effect is to begin the conversation about what a multi-quarter Iran war means for European industrial competitiveness.</div>
     </div>
-    <div class="synopsis">The Independent Commission Against Corruption charged a Hong Kong police superintendent with taking a HK$1 million bribe and misconduct in public office. The case is unusual in current Hong Kong: a public-sector corruption prosecution against a uniformed officer at a moment when Beijing&rsquo;s preferred narrative emphasizes Hong Kong&rsquo;s institutional integrity. The ICAC is one of the few institutions Beijing has not visibly remodeled; this case will test whether that distinction holds.</div>
-    <span class="source-tag">South China Morning Post</span>
-  </div>
-
-  <div class="story">
-    <div class="headline tt-wrap">
-      <a href="https://www.france24.com/en/video/20260428-budget-airlines-first-to-cut-flights-as-jet-fuel-prices-soar">Budget airlines start cutting flights as jet fuel prices soar</a>
-    </div>
-    <div class="synopsis">European budget carriers are the first to publicly schedule capacity reductions as jet fuel prices have moved structurally higher since the Hormuz blockade began. The pass-through to consumers is now visible. The aviation cost curve under Iran-war energy conditions is bearable for legacy carriers and life-threatening for low-cost operators with thin margins; expect consolidation if the price level holds another 60 days.</div>
-    <span class="source-tag">France 24</span>
+    <div class="synopsis">Brussels is using the war to push the renewables agenda forward. Whether that ends up looking opportunistic or prescient depends on how long crude stays elevated. The structural argument, that subsidy without acceleration is wasted, is hard to disagree with on the merits.</div>
+    <span class="source-tag">AP News</span>
   </div>
 
 </div>
@@ -522,72 +512,110 @@ body { background: var(--bg); color: var(--text); font-family: Georgia, serif; f
 
   <div class="story">
     <div class="headline tt-wrap">
-      <a href="https://www.france24.com/en/video/20260428-accused-media-gala-gunman-charged-with-attempting-to-assassinate-trump">Cole Allen charged with attempting to assassinate Trump after WHCA shooting</a>
-      <div class="tt-box">DOJ filed three federal charges against Cole Tomas Allen, 31, of Torrance, California: attempting to assassinate the President (carries up to life), transportation of a firearm with intent to commit a felony (up to 10 years), and discharging a firearm during a crime of violence (mandatory 10-year minimum). According to family-shared notes received about 10 minutes before the attack, Allen described his action as a duty to target administration officials. The Secret Service agent struck Saturday night was treated and released. The dinner attack injured one; no other casualties reported.</div>
+      <a href="https://www.thebulwark.com/p/breaking-trump-indicts-comeyagain">Trump indicts Comey, again</a>
+      <div class="tt-box">The Bulwark reports a federal grand jury returned a second indictment against former FBI Director James Comey Monday night, weeks after a federal judge dismissed the original. The legal substance is procedurally narrow; the political signal is loud. Comey&apos;s defense is expected to challenge the second indictment on the same grounds that defeated the first, arguing the underlying conduct does not meet the statutory threshold.</div>
     </div>
-    <div class="synopsis">Allen faces life if convicted on the assassination charge. Family-shared notes 10 minutes before the attack indicate ideological motivation; the &ldquo;federal assassin&rdquo; self-description from earlier reporting fits that frame. Three security incidents against this presidency in two years is a frequency that should worry everyone, regardless of priors. The Secret Service held the perimeter; the underlying problem is upstream of the perimeter.</div>
-    <span class="source-tag">France 24 &middot; CBS News &middot; DOJ</span><span class="source-tag tag-thread">&rarr; PRESIDENTIAL SECURITY</span>
-    <div class="swaps-take">
-      <div class="swaps-take-label">SWAP&rsquo;s Take</div>
-      <p>The shift from &ldquo;federal assassin&rdquo; framing in the affidavit to a charged attempt-to-assassinate count is meaningful. It moves the case from lone-wolf-with-grievance into a category that triggers a different counter-domestic-terrorism response space. Three serious incidents against this presidency in two years is not a perimeter problem; it is a content-and-attack-surface problem. Reducing the surface area, less unscripted public proximity, fewer high-density events at venues with thin perimeter geometry, is the move that actually reduces the risk. That is not an option being seriously considered. The Atlantic&rsquo;s reflection on the World Cup, the 250th anniversary, and the schedule of upcoming high-profile events is the relevant secondary read; the calendar of risk for the next 18 months is dense and the perimeter geometry is mostly unchanged.</p>
-    </div>
+    <div class="synopsis">The second indictment is procedural revanchism. The legal merits are weak; the political signal that matters is that DOJ is willing to refile after losing. Whether the judge dismisses again is the next visible event. Whether the senior career bench at DOJ continues to sign these is the underlying one.</div>
+    <span class="source-tag">The Bulwark</span><span class="source-tag tag-thread">&rarr; DOJ POLITICIZATION</span>
   </div>
 
   <div class="story">
     <div class="headline tt-wrap">
-      <a href="https://www.cbsnews.com/news/fed-rate-decision-april-2026-powell-final-meeting/">Fed decision Wednesday: Powell&rsquo;s final meeting before Warsh handoff</a>
+      <a href="https://www.nbcnews.com/politics/supreme-court/supreme-court-trump-temporary-protected-status-haiti-syria-immigrants-rcna341292">SCOTUS hears arguments on TPS removal for Haitians and Syrians</a>
+      <div class="tt-box">NBC reports the Supreme Court heard oral argument today on the administration&apos;s termination of Temporary Protected Status for tens of thousands of Haitian and Syrian nationals. The legal question is whether the executive may collapse the statutory review framework for TPS designations. The political question is whether the Roberts Court accepts an executive theory that converts TPS into a pen-stroke decision outside the Administrative Procedure Act&apos;s normal frame. The case will likely settle the inbound posture for the rest of the term.</div>
     </div>
-    <div class="synopsis">FOMC announces tomorrow at 2 p.m. ET; Powell holds a 2:30 press conference. Consensus is unanimous on a hold at 3.5-3.75%, the third consecutive pause of 2026 with Iran-war inflation running near a two-year high. Powell&rsquo;s term ends May 15; Warsh confirmation hearings are pending. The press conference is the policy event; the rate is preordained. Watch whether Powell uses the platform to constrain his successor or stays institutionally neutral.</div>
+    <div class="synopsis">The TPS case is the doctrinal test for the second-term immigration agenda. A win for the administration unlocks substantial discretion; a loss forces the rewrite to go through APA channels with longer timelines. Either way, today&rsquo;s argument shaped how aggressive the inbound policy gets.</div>
+    <span class="source-tag">NBC News &middot; The Hill</span>
+  </div>
+
+  <div class="story">
+    <div class="headline tt-wrap">
+      <a href="https://www.cbsnews.com/news/renewal-fisa-section-702-surveillance-program-house-vote-thursday-deadline/">FISA Section 702 in limbo ahead of Thursday deadline</a>
+      <div class="tt-box">CBS News reports the House vote on Section 702 reauthorization is scheduled for Thursday with the authority set to lapse if not reauthorized by midnight. Republican leadership is fighting itself, not Democrats, on warrant-requirement amendments. A short-term clean reauthorization is the most likely landing zone, but the procedural drama elevates the chance of a brief lapse. The IC considers 702 its single most important collection authority; a lapse, even hours, has operational cost.</div>
+    </div>
+    <div class="synopsis">702 is the collection authority that survived the post-Snowden compromise; both sides know it works and both sides know it is irreplaceable in the near term. The amendment fights are political theater that will resolve into a clean reauth, probably late Thursday. The story to watch is not the vote; it is whether the lapse window opens, even briefly.</div>
     <span class="source-tag">CBS News</span>
   </div>
 
   <div class="story">
     <div class="headline tt-wrap">
-      <a href="https://thehill.com/homenews/house/5851803-mike-johnson-dhs-funding-ballroom/">Johnson stalls on DHS reopen as shutdown enters its third record-shattering month</a>
-      <div class="tt-box">The House one-week stop-gap to reopen DHS is stalled, Speaker Johnson is fighting Senate Republicans on bill structure rather than Democrats on substance. CBP overtime, FEMA pre-positioning ahead of hurricane season, and CISA cyber operations are all degraded. DHS&apos;s emergency-funded payroll runs out in early May. The shutdown is now the longest in U.S. history and is breaking under structural pressure rather than political reconciliation.</div>
+      <a href="https://thehill.com/homenews/house/5854187-republicans-strategy-fisa-dhs-farm-bill/">Republican go-it-alone strategy keeps hitting walls on must-pass bills</a>
+      <div class="tt-box">The Hill reports the structural problem behind FISA, DHS funding, and the farm bill is the same: House Republican leadership is trying to assemble narrow majorities without Democratic crossover, and the math is failing on each. The pattern is consistent enough to read as a strategic choice rather than tactical missteps. Whether the choice changes before Memorial Day is the binding question on most of the spring legislative calendar.</div>
     </div>
-    <div class="synopsis">The Speaker is fighting his own party, not the opposition, and that is the diagnostic for why this is breaking. The House conference is now in a structural disagreement over how to reopen DHS, not whether. The longer that goes, the more leverage moves to the moderate caucus and away from leadership. The pay-run cliff in early May is the forcing function.</div>
-    <span class="source-tag">The Hill &middot; Federal News Network</span>
-  </div>
-
-  <div class="story">
-    <div class="headline tt-wrap">
-      <a href="https://thehill.com/homenews/house/5851954-gop-tensions-intensify-over-dhs-funding-between-senate-house-republicans/">GOP tensions intensify over DHS funding between Senate and House Republicans</a>
-    </div>
-    <div class="synopsis">The Senate-House Republican structural fight over DHS funding is now openly reported. The Senate wants a clean reopening; the House wants the reopening tied to immigration enforcement language. The split is not new; what is new is that the longer the shutdown runs, the harder it becomes for either chamber&rsquo;s leadership to claim political cover for a delay built around their own internal factions.</div>
+    <div class="synopsis">The Hill captures the pattern. Three must-pass bills, three failures of the same go-it-alone approach. Either the strategy changes or the calendar slips. So far the strategy has not changed; the calendar is slipping.</div>
     <span class="source-tag">The Hill</span>
   </div>
 
   <div class="story">
     <div class="headline tt-wrap">
-      <a href="https://thehill.com/homenews/campaign/5851758-desantis-florida-gop-redistricting/">Florida lawmakers eye redistricting push behind DeSantis&rsquo;s map</a>
+      <a href="https://thehill.com/homenews/senate/5853917-trump-ballroom-funding-controversy/">Senate GOP pushes back on Trump ballroom amid affordability worries</a>
+      <div class="tt-box">The Hill reports Senate Republican unease with the planned White House ballroom expansion at a moment when household affordability concerns are driving the political weather. The pushback is procedural rather than ideological; senators are flagging the optics of a high-cost capital project while gas hits $4.23 and grocery prices stay elevated. The actual budget impact is small; the political signal is large.</div>
     </div>
-    <div class="synopsis">Florida Republicans are positioning to attempt mid-decade redistricting around DeSantis&rsquo;s map, mirroring the Texas play and now possibly setting up an interlocking sequence across multiple states. The political mechanics depend on courts permitting an off-cycle redraw; the precedent risk is bidirectional, what one party does in one state, the other replicates in another. The legal track will move faster than the political track.</div>
+    <div class="synopsis">The ballroom story is small money and large signal. Senate Republicans are using a low-stakes vote to stake out an affordability lane that they believe will matter in the midterms. The President is unlikely to care; the Senate signal is that the gap between West Wing and Senate Republicans is widening on optics.</div>
     <span class="source-tag">The Hill</span>
   </div>
 
   <div class="story">
     <div class="headline tt-wrap">
-      <a href="https://thehill.com/homenews/campaign/5851905-democrats-gain-trust-economy/">Democrats see economic-trust opening ahead of midterms</a>
+      <a href="https://thehill.com/homenews/campaign/5854114-democrats-lead-republicans-midterms/">Democrats hold 10-point edge over Republicans ahead of midterms</a>
+      <div class="tt-box">The Hill reports a new generic-ballot poll showing Democrats with a 10-point edge over Republicans heading into the midterm cycle. Caveats: it is a single poll, and generic ballots routinely overestimate Democratic support relative to district-level outcomes. The structural read is that affordability, the war, and DOJ controversy are converging into a midterm environment that Republican incumbents will have to defend in.</div>
     </div>
-    <div class="synopsis">Polling out today shows Democrats narrowing the historical Republican lead on economic-management trust, a shift driven primarily by Iran-war inflation and the FY27 budget rollout. Whether the polling translates to votes depends on whether the Iran framework or its rejection is the dominant economic narrative come November. Right now the inflation curve is the narrative; that is unusual for a war-time presidency.</div>
+    <div class="synopsis">A single poll is not a trend. A consistent direction across multiple polls is, and the direction has been consistent for six weeks. The midterm environment is hardening against Republican incumbents in House battlegrounds. Whether that holds depends on inflation, the war, and whether 702 reauthorizes cleanly.</div>
     <span class="source-tag">The Hill</span>
   </div>
 
   <div class="story">
     <div class="headline tt-wrap">
-      <a href="https://www.propublica.org/article/trump-social-security-ssi-disability-benefits-cuts-parents-children">Trump administration moves to penalize disabled adults living with their families</a>
+      <a href="https://www.thebulwark.com/p/exclusive-trump-is-sticking-his-face">Trump is sticking his face on your passport</a>
+      <div class="tt-box">The Bulwark reports a State Department directive to add presidential branding elements to U.S. passport book design as part of a broader visual identity refresh. The legal authority for the change is procedurally narrow; the precedent question is wider. Passports are sovereign documents that have historically been depersonalized. The political effect is performative; the institutional effect is to weaken the depersonalization norm.</div>
     </div>
-    <div class="synopsis">ProPublica reports the administration is restructuring SSI rules to reduce benefits for disabled adults who live with their parents or other family members, on the theory that family co-residence reduces independent need. The reporting is methodically sourced; the policy effect on a vulnerable population is large; the political cost has not yet hit a polling cycle. The fight will move to the courts before it moves to Congress.</div>
-    <span class="source-tag">ProPublica</span>
+    <div class="synopsis">Passport branding is small in dollars and large in norm-erosion. The institution that tracks this most carefully is State, and its career bench is reportedly dissenting through quiet channels. Whether that dissent reaches public record is a leading indicator of how the rest of State&rsquo;s rewrite lands.</div>
+    <span class="source-tag">The Bulwark</span>
   </div>
 
   <div class="story">
     <div class="headline tt-wrap">
-      <a href="https://www.npr.org/2026/04/28/nx-s1-5801645/maha-epa-pesticide-glyphosate-trump">MAHA movement at war with Trump&rsquo;s EPA over glyphosate</a>
+      <a href="https://www.thebulwark.com/p/paramount-asks-fcc-to-approve-up">Paramount asks FCC to approve up to 100% foreign ownership of CBS, CNN</a>
+      <div class="tt-box">The Bulwark reports Paramount&apos;s formal request for FCC approval of foreign ownership thresholds for CBS and CNN that would allow up to 100 percent foreign capital. The request is procedurally aggressive; the FCC has historically capped foreign ownership of broadcast licensees and required structural workarounds for cable-only properties. A grant would functionally restructure American broadcast and cable journalism along ownership lines that have not been politically tested in this generation.</div>
     </div>
-    <div class="synopsis">The Make America Healthy Again coalition that helped deliver Trump&rsquo;s second-term margin is now publicly opposing his EPA on glyphosate, the Roundup-active herbicide regulation has split MAHA influencers from the President&rsquo;s farm-state base. The conflict is the first visible major defection inside the second-term coalition over a regulatory question that pits health frame against agriculture frame.</div>
-    <span class="source-tag">NPR</span>
+    <div class="synopsis">The Paramount filing is the kind of move that does not look like news because the FCC has not yet acted. It is the largest pending decision the agency will make this year. The political weight depends on which national-security review tracks attach.</div>
+    <span class="source-tag">The Bulwark</span>
+  </div>
+
+  <div class="story">
+    <div class="headline tt-wrap">
+      <a href="https://www.theguardian.com/politics/2026/apr/29/revealed-nigel-farage-was-given-undisclosed-5m-by-crypto-billionaire-in-2024">Farage took undisclosed &pound;5m from crypto billionaire in 2024</a>
+      <div class="tt-box">The Guardian reports an undisclosed 2024 payment of &pound;5 million to Reform UK leader Nigel Farage from a crypto billionaire whose firms have been under regulatory scrutiny. Disclosure requirements were arguably triggered. The political effect lands as Reform&apos;s polling momentum has been the dominant story of British politics for nine months. Whether the story disrupts that momentum or absorbs into it depends on the disclosure-law specifics that Westminster will now spend a week parsing.</div>
+    </div>
+    <div class="synopsis">The Farage story is about disclosure law as much as money. British politics has absorbed worse disclosure scandals before; this one matters because Reform was on a glide path. Whether the glide path holds is the question.</div>
+    <span class="source-tag">The Guardian</span>
+  </div>
+
+  <div class="story">
+    <div class="headline tt-wrap">
+      <a href="https://www.cbsnews.com/live-updates/iran-war-trump-warning-strait-of-hormuz-bab-el-mandeb-threat-oil-prices/">Trump and Iran issue fresh warnings as standoff continues</a>
+      <div class="tt-box">CBS News live coverage tracks the day&apos;s exchange: Trump&apos;s &ldquo;better get smart soon&rdquo; post, Iran&apos;s explicit threat to widen pressure beyond Hormuz to Bab el-Mandeb, and the cascading market response. The dual-strait threat is new public language from Tehran. Bab el-Mandeb is a Houthi-adjacent geography where Iranian leverage operates through proxy rather than uniformed action; the rhetorical move signals that proxy escalation is on the table if Hormuz is not resolved.</div>
+    </div>
+    <div class="synopsis">The Bab el-Mandeb threat changes the geometry. If Hormuz is the front, Bab el-Mandeb is the flank. The Houthis are the obvious proxy; whether they execute on the threat depends on whether Tehran wants to absorb the consequences of widening rather than narrowing.</div>
+    <span class="source-tag">CBS News</span><span class="source-tag tag-thread">&rarr; IRAN WAR</span>
+  </div>
+
+  <div class="story">
+    <div class="headline tt-wrap">
+      <a href="https://www.nbcnews.com/business/energy/gas-prices-new-high-iran-war-rcna342578">Gas prices hit $4.23 per gallon, a new high for the year</a>
+      <div class="tt-box">NBC reports the national average regular-gasoline price set a new 2026 high of $4.23. Regional pain is concentrated in the Midwest and West Coast; the Southeast is comparatively insulated. The retail-gas number is the household-affordability political metric; once it crosses $4.50, prior cycles have shown durable shifts in incumbent approval. The ballroom story above is downstream of this number.</div>
+    </div>
+    <div class="synopsis">$4.23 is the household-affordability number that turns this war into a domestic political event. The Senate GOP pushback on the ballroom and the affordability framing are downstream of this. Watch the $4.50 threshold; that is where prior cycles broke approval ratings.</div>
+    <span class="source-tag">NBC News</span>
+  </div>
+
+  <div class="story">
+    <div class="headline tt-wrap">
+      <a href="https://www.theatlantic.com/newsletters/2026/04/evolution-of-trump-corruption-g7-summit/686983/?utm_source=feed">The evolution of Trump&rsquo;s corruption</a>
+      <div class="tt-box">The Atlantic newsletter walks through the post-G7 reporting on transactional patterns in second-term decisionmaking, focusing on the G7 summit&apos;s ad hoc commitments and the layering of family business interests on top of presidential travel and bilateral meetings. The piece is opinionated; the documentary base it draws on, audit reports, ethics filings, and reporter notebooks, is largely public.</div>
+    </div>
+    <div class="synopsis">The Atlantic is doing the cumulative case. Whether it lands politically depends on whether the documentary base produces a single specific incident that breaks through. So far it hasn&rsquo;t.</div>
+    <span class="source-tag">The Atlantic</span>
   </div>
 
 </div>
@@ -597,136 +625,201 @@ body { background: var(--bg); color: var(--text); font-family: Georgia, serif; f
   <div class="section-hdr">Deep Reads</div>
 
   <div class="deep-card">
-    <div class="deep-source">Foreign Policy &middot; Analysis</div>
-    <div class="deep-hl"><a href="https://foreignpolicy.com/2026/04/28/iran-leadership-government-unified-khamenei-qalibaf-public/">Iran Is More Unified Than Ever</a></div>
-    <div class="deep-meta">Foreign Policy &middot; April 28, 2026</div>
-    <div class="deep-sum">The piece argues that the Iran war has produced not regime collapse, the original Western theory of victory, but the opposite: a domestic consolidation around Khamenei and Qalibaf that has visibly hardened Iranian negotiating posture. The analysis traces the rallying-around-the-flag dynamic, the IRGC&rsquo;s relative gain in domestic standing, and the way the war has eclipsed the pre-war legitimacy critique that had been gathering momentum.</div>
+    <div class="deep-source">Foreign Affairs</div>
+    <div class="deep-hl"><a href="https://www.foreignaffairs.com/iran/how-war-saved-iranian-regime">How the War Saved the Iranian Regime</a></div>
+    <div class="deep-meta">Long-form analysis &middot; Source may be paywalled</div>
+    <div class="deep-sum">The argument: regime fragility, the dominant Western expectation through the protests of 2022 and the economic crisis of 2024-2025, has been reversed by the war. The bombing campaign, the naval blockade, and the visible Western commitment to regime damage have produced a domestic legitimacy effect Tehran could not have purchased. Internal opposition is muted; the IRGC is consolidated; the political class has closed ranks around survival rather than reform. The piece marshals interview evidence, opposition-figure statements, and economic data showing both deterioration in conditions and rallying domestic support for the regime that bears the deterioration.</div>
     <div class="swaps-take">
       <div class="swaps-take-label">SWAP&rsquo;s Take</div>
-      <p>This piece is the analytical mirror of the framework reported this morning. If Tehran is more unified than it was at the start of the war, then the framework Iran put on the table is the deal Tehran can sign at home, and any U.S. counter-proposal that demands more concession will get less, not more, traction. The piece is also a corrective to the &ldquo;regime collapse&rdquo; thesis that has been the implicit theory of victory for parts of the Washington policy community since February. Wars produce all kinds of internal political effects; the assumption that maximum pressure produces collapse is a specific historical claim that has held in some cases (interwar Italy) and not in others (Saddam-era Iraq, Castro-era Cuba, post-2014 Russia). The relevant historical pattern here is closer to the latter cluster than to the former. The Mohammed regime-collapse thesis SWAP analyzed on April 15 has not been borne out by the war&rsquo;s first 60 days; this piece is the first major published essay openly making that point.</p>
+      <p>This argument is the one Western strategy has been failing to engage with for two months. Bombing campaigns rally populations against outsiders; this is one of the most consistent findings in the strategic-bombing literature. The Battle of Britain steeled British society. The 1972 Linebacker campaigns did not break Hanoi politically. The 1999 Kosovo campaign produced regime change only when paired with a credible ground threat that has no analog in the Iran case. The piece is well-marshaled within the scope of a Foreign Affairs essay; where it thins is on the prescription side, the diagnosis that the war has saved the regime does not yet generate a clear answer to the question of what U.S. policy should now do, given that the bombing campaign cannot be unwound politically. Cite it for the diagnosis; expect the prescription to be the next round of analytical work.</p>
     </div>
   </div>
 
   <div class="deep-card">
-    <div class="deep-source">Foreign Policy &middot; Politics</div>
-    <div class="deep-hl"><a href="https://foreignpolicy.com/2026/04/28/iran-war-trump-coalition-maga-america-first/">The Iran War Is Tearing Trump&rsquo;s Coalition Apart</a></div>
-    <div class="deep-meta">Foreign Policy &middot; April 28, 2026</div>
-    <div class="deep-sum">A close read of the fissures inside the second-term Trump coalition that the Iran war has opened. The MAGA-restraint faction, the America-First faction, the China-hawk faction, and the Israel-hawk faction had different theories of why the war was the right call; 60 days in, those theories have produced incompatible expectations of the war&rsquo;s end-state. The piece treats the coalition as a structural variable, not a personality contest.</div>
+    <div class="deep-source">Foreign Policy</div>
+    <div class="deep-hl"><a href="https://foreignpolicy.com/2026/04/29/taiwan-china-us-war-invasion-crisis-evacuation-civilians/">The Taiwan Evacuation Trap</a></div>
+    <div class="deep-meta">Long-form analysis &middot; Source may be paywalled</div>
+    <div class="deep-sum">The argument: U.S. policy on civilian evacuation in a Taiwan crisis has not caught up to the operational realities of the modern PLA. The piece walks through the geometry of an evacuation under contested air and sea conditions, the lift requirements, the strategic-airlift constraints, and the political signaling problem of a visible NEO either too early (escalation) or too late (mass casualty). The author argues current Pentagon planning frames the problem as a deterrence question when it is actually an early-warning and pre-decisional execution question.</div>
     <div class="swaps-take">
       <div class="swaps-take-label">SWAP&rsquo;s Take</div>
-      <p>The coalition fissure analysis is correctly framed as a structural problem, not a Trump-management problem. Restraint MAGA wants the war ended; America-First wants it ended without nuclear concession; China-hawks want resources back to the Pacific; Israel-hawks want the nuclear program eliminated. The Iranian framework reported today exposes the gap between those four positions. Accepting the framework satisfies restraint MAGA and China-hawks; rejecting it satisfies America-First and Israel-hawks. There is no version of the deal that satisfies all four, which is why the administration&rsquo;s public stance, dismiss the proposal as a non-starter, is structurally easier to maintain than any concrete counter-proposal would be. The political logic of rejection is stronger than the strategic logic of acceptance, until the cost of continued operations forces the calculus to flip. Watch the FY27 budget testimony this week; that is where the cost of continued operations becomes a Senate floor question.</p>
+      <p>The piece is doing the right work. The civilian evacuation problem in a Taiwan contingency is the part of the planning that gets the least public oxygen and the most quiet anxiety inside INDOPACOM. The author is honest about the asymmetry: NEO planning that looks credible deters; NEO execution that looks panicked accelerates. That is the trap. The historical comparison the author should have pushed harder on is Saigon 1975, which is the only precedent for a fully-contested NEO from a partner population larger than the lift available. The lessons of Frequent Wind, including ones the U.S. has internalized poorly, would have strengthened the prescription. Within the scope of a Foreign Policy essay, this is a serious piece. The reader should leave with the question of whether Pentagon planning treats Taiwan NEO as a Phase 0 problem or a Phase 2 problem; the piece argues it should be both, and it is right.</p>
     </div>
   </div>
 
   <div class="deep-card">
-    <div class="deep-source">Foreign Policy &middot; Congressional</div>
-    <div class="deep-hl"><a href="https://foreignpolicy.com/2026/04/28/congress-stop-iran-war-budget/">What Congress Could Do to Stop the War</a></div>
-    <div class="deep-meta">Foreign Policy &middot; April 28, 2026</div>
-    <div class="deep-sum">A working paper-style argument that Congress has more legal and procedural tools to constrain or end the Iran war than the post-AUMF discourse has acknowledged. The author walks through the appropriations lever, the privileged-resolution path, the standing-and-justiciability question that has blocked judicial remedy, and the structural argument that constitutional war powers are still operative even when the political will to invoke them is weak.</div>
-  </div>
-
-  <div class="deep-card">
-    <div class="deep-source">Foreign Affairs &middot; Essay</div>
-    <div class="deep-hl"><a href="https://www.foreignaffairs.com/united-states/disposable-oligarchs">The Disposable Oligarchs</a></div>
-    <div class="deep-meta">Foreign Affairs &middot; April 28, 2026</div>
-    <div class="deep-sum">The essay traces the political economy of post-Cold War American billionaire-class influence and argues that the second Trump term has demonstrated the disposable nature of even the most well-positioned oligarchs in a regime that prizes loyalty and improvisation over stable patronage. The argument is a useful corrective to the &ldquo;captured state&rdquo; framing of the early 2020s.</div>
-  </div>
-
-  <div class="deep-card">
-    <div class="deep-source">War on the Rocks &middot; China</div>
-    <div class="deep-hl"><a href="https://warontherocks.com/the-mountaintop-mirage-why-xis-military-purges-cannot-produce-the-force-he-wants/">The Mountaintop Mirage: Why Xi&rsquo;s Military Purges Cannot Produce the Force He Wants</a></div>
-    <div class="deep-meta">War on the Rocks &middot; April 28, 2026</div>
-    <div class="deep-sum">The author argues that Xi&rsquo;s ongoing PLA purges are producing institutional fear, not institutional capability. The piece traces the historical pattern, Stalin&rsquo;s Red Army, Saddam&rsquo;s officer corps, post-coup Turkish armed forces, and argues that loyalty-tested militaries underperform combat-tested ones in initial weeks of a major contingency. The argument has direct implications for Western planning assumptions about a Taiwan timeline.</div>
+    <div class="deep-source">Foreign Affairs</div>
+    <div class="deep-hl"><a href="https://www.foreignaffairs.com/europe/transatlantic-maga-fantasy">The Transatlantic MAGA Fantasy</a></div>
+    <div class="deep-meta">Long-form analysis &middot; Source may be paywalled</div>
+    <div class="deep-sum">The argument: the European populist right&apos;s expectation that a second Trump term would deliver a transatlantic alignment with U.S. politics has not survived contact with the second-term&apos;s actual foreign policy. The piece traces the divergence: NATO friction is real and rising, the trade agenda is more confrontational with European partners than with strategic adversaries on some lines, and the cultural-political affinity that European populists projected onto Washington has not produced policy concessions. The author argues European political movements that built strategy around alignment with the second term should be rebuilding it.</div>
     <div class="swaps-take">
       <div class="swaps-take-label">SWAP&rsquo;s Take</div>
-      <p>Within the scope of a War on the Rocks essay, this is a tightly constructed argument and the historical pattern is well chosen. The piece is strongest in its diagnosis: loyalty purges produce a force that is politically reliable and operationally fragile, and Xi&rsquo;s pattern is consistent with the loyalty model. Where the piece thins is in the prescription space, what does the U.S. do with the diagnosis? If the PLA is more politically reliable than operationally capable, then Western deterrence calculus has more time than the worst-case Taiwan timelines suggest, but only if the U.S. force structure can take advantage of that time. The piece doesn&rsquo;t engage with that second-half question, which is the harder one. Cite the author for the diagnosis; build the planning prescription separately. The Bonnie Glaser claim from April 13, that PLA readiness anxiety, not Iran distraction, is the underweighted variable, fits the same pattern this piece identifies.</p>
+      <p>The diagnosis is correct and not new. The framing problem the piece does not quite resolve is that the European populist right was never strategically coherent on the transatlantic question; the alignment with Washington was an emotional projection, not a policy position. The Foreign Affairs essay treats it as a strategy that failed; it was closer to a vibe that didn&rsquo;t survive the test. The historical analogue is the European left&rsquo;s expectations of the Obama administration, also emotionally projected, also disappointed when policy made contact with national interest. The valuable contribution here is the reminder that alignment is built through interest convergence, not affinity, and that the European far right has misread that for nine months. The piece would be stronger if it pushed on what European policy should now do; it diagnoses without prescribing, which is fair within the scope of an opinion essay but leaves the reader without a takeaway.</p>
     </div>
   </div>
 
   <div class="deep-card">
-    <div class="deep-source">War on the Rocks &middot; Russia Industry</div>
-    <div class="deep-hl"><a href="https://warontherocks.com/the-strange-rise-and-fall-of-russias-crowd-sourced-defense-industry/">The Strange Rise and Fall of Russia&rsquo;s Crowd-Sourced Defense Industry</a></div>
-    <div class="deep-meta">War on the Rocks &middot; April 28, 2026</div>
-    <div class="deep-sum">The piece traces the trajectory of Russia&rsquo;s informal, crowd-sourced military-industrial network, hobbyist drone shops, garage workshops, civilian-supplied night-vision and comms gear, that emerged in 2022-23 and has now largely been absorbed or shut down by the formal Russian defense industrial base. The argument: Russia&rsquo;s war has industrialized, and the wartime-improvisation model that compensated for early force-design gaps is no longer the bridge it was.</div>
-  </div>
-
-  <div class="deep-card" data-unsourced="intentional">
-    <div class="deep-source">RAND Corporation &middot; Working Paper</div>
-    <div class="deep-hl"><span>Realizing the Promise of the Drone Revolution (RAND Corporation Perspective)</span></div>
-    <div class="deep-meta">RAND Corporation, Perspective PEA3126-1</div>
-    <div class="deep-sum">RAND argues that while attritable cheap drones can theoretically offset peer-competitor mass, the U.S. military is structurally unprepared to employ them. The paper calls for an overhaul of doctrine, training, and the AFFORGEN cycle to actually field these systems effectively. Hardware is the easy part; organizing and training Agile Combat Employment units to fight with attritable mass without breaking force generation is the harder one.</div>
+    <div class="deep-source">War on the Rocks</div>
+    <div class="deep-hl"><a href="https://warontherocks.com/cogs-of-war/aligning-the-us-and-canadian-defense-industrial-bases/">Aligning the U.S. and Canadian Defense Industrial Bases</a></div>
+    <div class="deep-meta">Practitioner essay</div>
+    <div class="deep-sum">The argument: U.S. and Canadian defense industrial bases have grown apart in ways that constrain the binational continental defense mission, and the policy fixes are smaller than the political ones. The piece walks through procurement-rule misalignment, security-clearance friction, and the loss of integrated supply chains that NORAD planning depended on. The author is concrete on the fixes: harmonized ITAR exemptions, pre-cleared joint programs, binational fund structures.</div>
     <div class="swaps-take">
       <div class="swaps-take-label">SWAP&rsquo;s Take</div>
-      <p>This is the theoretical grounding for the drone integration that has been visibly tested at Balikatan and that is implicit in the joint laser system roundup today. The RAND argument is correct but underdevelops the budgetary mechanics: AFFORGEN restructuring is a multi-billion-dollar, multi-year program-of-record fight inside a department that is currently absorbing simultaneous Iran-war supplemental requests, the FY27 mandatory carve-out, and the F/A-XX vs. F-47 ratio. The doctrine is achievable; the resource path is contested. Cite RAND for the gap; build the budget argument separately, and watch HASC markup language for whether members notice.</p>
+      <p>This is exactly the kind of essay that does not generate headlines and matters disproportionately. The continental defense mission is a politically uncontroversial place to build muscle for binational industrial integration; if the U.S. and Canada cannot align procurement on something with bipartisan defense support on both sides of the border, the larger industrial-base challenges with the UK, Australia, and Japan get harder. The author&rsquo;s prescription is operationally clean. The political weight is the open question; the current bilateral relationship has more friction than this essay assumes. Cite it for the diagnosis; the prescription is correct in form and underweight on what would have to change politically before the mechanics could be implemented.</p>
     </div>
   </div>
 
   <div class="deep-card">
-    <div class="deep-source">Center for Naval Analyses &middot; Brief</div>
-    <div class="deep-hl"><span>Japan&rsquo;s New Fleet Information Warfare Command Creates Opportunities for the US Navy (CNA, April 2026)</span></div>
-    <div class="deep-meta">Center for Naval Analyses &middot; April 2026</div>
-    <div class="deep-sum">CNA evaluates Japan&rsquo;s elevation of its information warfare element to a three-star Vice Admiral command, matching U.S. Navy echelons. The brief notes that by October 2026, Japan will officially have the capability and authority to conduct offensive cyber operations in the maritime domain, a paradigm shift from the JMSDF&rsquo;s historic strictly-defensive posture.</div>
+    <div class="deep-source">War on the Rocks</div>
+    <div class="deep-hl"><a href="https://warontherocks.com/western-withdrawal-jihadist-expansion-how-the-sahel-became-ground-zero-for-global-terrorism/">Western Withdrawal, Jihadist Expansion: How the Sahel Became Ground Zero for Global Terror</a></div>
+    <div class="deep-meta">Long-form analysis</div>
+    <div class="deep-sum">The argument: the post-2022 collapse of French and U.S. military presence in the Sahel produced a permissive environment that JNIM and ISGS have exploited at a scale that now threatens regional stability and produces inbound terrorism risk to Europe. The piece walks through the tactical, operational, and strategic consequences of withdrawal; the author argues the U.S. has under-resourced the response because the policy lane is dominated by Iran, China, and Ukraine.</div>
     <div class="swaps-take">
       <div class="swaps-take-label">SWAP&rsquo;s Take</div>
-      <p>This is a tectonic shift dressed as a bureaucratic update, which is exactly how the most important alliance-management changes usually arrive. Moving Japan from a strictly defensive cyber posture to an offensive operational partner fundamentally alters the math in the First Island Chain. The U.S. Navy&rsquo;s integration challenge is now harder, in a good way: the JMSDF will be doing things the alliance has historically reserved to American assets. The April 19 SWAP claim about Mogami frigate sale ratcheting Japan into Quad hardware lock-in fits the same trend line; this is the cyber-domain companion. Watch the October 2026 IOC date as the operational signpost. If the standup is on schedule, alliance integration will need to update faster than Pentagon civilian-side process typically allows.</p>
+      <p>The Sahel argument has been underweighted in the U.S. strategic conversation for two years. The author is right that the consequences are now showing up as displacement flows into Europe, regional state collapse risk, and a permissive environment for transnational networks. The piece is strongest on the documentary case and weakest on the prescription, the implicit answer is &ldquo;reconstitute Western presence,&rdquo; which assumes a political appetite that does not exist in any Western capital. The right next question is what a containment posture that does not depend on Western boots looks like; the essay does not engage that question, which is a real gap. Cite the diagnosis. The strategy is the next piece.</p>
     </div>
   </div>
 
   <div class="deep-card">
-    <div class="deep-source">Atlantic Council &middot; Dispatch</div>
-    <div class="deep-hl"><a href="https://www.atlanticcouncil.org/dispatches/taking-the-three-seas-initiative-to-the-next-level/">Taking the Three Seas Initiative to the next level</a></div>
-    <div class="deep-meta">Atlantic Council</div>
-    <div class="deep-sum">The piece argues that the Three Seas Initiative, the Central and Eastern European infrastructure connectivity project anchored by Poland and the Baltics, is at an inflection point: the Iran war has demonstrated the value of redundant Eastern European logistics for any future Pacific contingency, and the political moment is right for a structural upgrade.</div>
+    <div class="deep-source">The Bulwark</div>
+    <div class="deep-hl"><a href="https://www.thebulwark.com/p/we-still-havent-answered-the-basic-questions-iran-war-strategy-strength-weakness">We Still Haven&rsquo;t Answered the Basic Questions of the Iran War</a></div>
+    <div class="deep-meta">Opinion essay</div>
+    <div class="deep-sum">The argument: sixty days into the war, the basic questions, what is the political object, what is the theory of victory, what are the conditions under which the U.S. would accept a negotiated end, are still publicly unanswered. The piece walks through how each administration speech, briefing, and press conference has avoided the questions rather than answered them. The author argues the absence of public answers is not coyness; it reflects an absence of internal consensus.</div>
+    <div class="swaps-take">
+      <div class="swaps-take-label">SWAP&rsquo;s Take</div>
+      <p>The essay&rsquo;s strongest claim is that the absence of articulated political object is not deception; it is the symptom of a process inside the administration that has not converged. That is consistent with the operational record: target counts grow, military pressure expands, and yet no White House readout has produced the sentence that says &ldquo;the war ends when X.&rdquo; In strategic-theory terms, this is the absence of the link between political purpose and military aim that determines whether bombing campaigns succeed politically or culminate without producing a political result. The piece is right to insist on the question. The reader is left with the right kind of discomfort, the gap is not because the administration won&rsquo;t share its theory; it is because the theory does not appear to have been written.</p>
+    </div>
   </div>
 
   <div class="deep-card">
-    <div class="deep-source">Foreign Policy &middot; Maritime</div>
-    <div class="deep-hl"><a href="https://foreignpolicy.com/2026/04/27/iran-us-war-hormuz-strait-blockade-trade-maritime-navy-strategy/">The U.S. Shouldn&rsquo;t Rule the Seas Forever</a></div>
-    <div class="deep-meta">Foreign Policy &middot; April 27, 2026</div>
-    <div class="deep-sum">A revisionist case that the Iran-war Hormuz blockade demonstrates the limits, not the strengths, of a U.S. global-maritime-dominance posture. The author argues that sustained chokepoint enforcement is a temperature gauge on the cost of being the world&rsquo;s naval police, and that a more selective posture would produce both better strategic outcomes and lower domestic political costs.</div>
+    <div class="deep-source">Foreign Policy</div>
+    <div class="deep-hl"><a href="https://foreignpolicy.com/2026/04/29/indonesia-malacca-strait-toll-shipping-trade/">Why Indonesia Floated a Malacca Toll</a></div>
+    <div class="deep-meta">Analysis &middot; Source may be paywalled</div>
+    <div class="deep-sum">The argument: Jakarta&apos;s Malacca-toll trial balloon is not a revenue idea; it is a strategic positioning move under the cover of a fiscal proposal. With Hormuz contested and the world short on tanker geometry, Malacca is now the single-point-of-failure for Asian trade and energy flows that has not yet been priced. Indonesia raising the question of who pays for the externalities is, the author argues, a way to begin negotiating with China and the U.S. on the strait&apos;s security architecture without having to name it that way.</div>
+    <div class="swaps-take">
+      <div class="swaps-take-label">SWAP&rsquo;s Take</div>
+      <p>The piece is sharp where similar Malacca essays usually go soft. Most analysis treats the Malacca question as a pure China-U.S. competition over a chokepoint; the author correctly reframes it as Indonesia using a fiscal lever to enter a security conversation it has been excluded from. That is a useful reframe. The historical analogue is Egypt&rsquo;s Suez Canal Authority, which has spent fifty years using toll structures as the lever for a security and political conversation no one wants to name as such. Indonesia is reaching for the same playbook. Whether it works depends on Beijing and Washington both treating the toll as the front for the security conversation, which they may not. The signal to watch is whether the toll proposal is followed by a Jakarta-led ASEAN initiative on Malacca security architecture inside ninety days.</p>
+    </div>
   </div>
 
   <div class="deep-card">
-    <div class="deep-source">Lawfare &middot; SCOTUS Preview</div>
-    <div class="deep-hl"><a href="https://www.lawfaremedia.org/article/oral-argument-preview--when-are-companies-liable-for-aiding-human-rights-abuses">Oral Argument Preview: When Are Companies Liable for Aiding Human Rights Abuses?</a></div>
-    <div class="deep-meta">Lawfare &middot; April 28, 2026</div>
-    <div class="deep-sum">The piece previews today&rsquo;s SCOTUS oral argument on corporate liability for aiding-and-abetting human rights abuses under the Alien Tort Statute. The Court&rsquo;s direction here will reach across export-control compliance, dual-use technology liability, and the legal exposure of U.S. firms doing business in regimes where rights abuses are present.</div>
+    <div class="deep-source">MWI at West Point</div>
+    <div class="deep-hl"><a href="https://mwi.westpoint.edu/missiles-guns-lasers-and-nets-the-case-for-passive-drone-defenses/">Missiles, Guns, Lasers, and Nets: The Case for Passive Drone Defenses</a></div>
+    <div class="deep-meta">Practitioner essay</div>
+    <div class="deep-sum">The argument: the active counter-UAS toolkit, missiles, guns, lasers, has consumed the budget conversation while passive defenses, decoys, nets, electromagnetic concealment, and physical hardening, do disproportionate work at a fraction of the cost. The piece marshals Ukraine and Iran-war operational data showing that passive defenses absorbed a meaningful fraction of strikes that would otherwise have required active interceptors. The author argues the kinetic-only orientation of the U.S. counter-UAS investment is misaligned with what is actually working in the field.</div>
+    <div class="swaps-take">
+      <div class="swaps-take-label">SWAP&rsquo;s Take</div>
+      <p>This is a practitioner&rsquo;s piece written with the discipline of someone who has watched programs of record consume budget without changing the operational picture. The Ukraine evidence base is real; the Iran-war data is real; the prescription, that passive defenses deserve a real share of the counter-UAS budget rather than a footnote, is correct. The structural problem the essay surfaces but does not solve is acquisition culture: nets and decoys do not produce contractor lines, generate program offices, or sustain test calendars. They are competitively boring. That is not a reason to underweight them; it is the reason they have been underweighted. Cite it; pair it with the Ukraine open-source assessment work that has been building the same case for three years.</p>
+    </div>
+  </div>
+
+  <div class="deep-card">
+    <div class="deep-source">The Bulwark</div>
+    <div class="deep-hl"><a href="https://www.thebulwark.com/p/how-peter-magyar-toppled-viktor-orban-illiberal-regime-hungary">How P&eacute;ter Magyar Toppled Viktor Orb&aacute;n&rsquo;s Illiberal Regime</a></div>
+    <div class="deep-meta">Long-form analysis</div>
+    <div class="deep-sum">The argument: P&eacute;ter Magyar&apos;s electoral defeat of Orb&aacute;n was not a black swan; it was the cumulative effect of three years of systematic political organizing inside an illiberal framework, paired with a corruption scandal that broke through the captured media environment. The piece walks through the organizational, financial, and messaging discipline that Magyar&apos;s Tisza Party brought to a system designed to make exactly that defeat impossible. Implications: illiberal entrenchment is more brittle than its propaganda suggests, and the political tools that defeat it are recognizable.</div>
+    <div class="swaps-take">
+      <div class="swaps-take-label">SWAP&rsquo;s Take</div>
+      <p>This is the companion piece to the Hungary special edition we published earlier this month. The Bulwark essay is doing the close-grain political-organization analysis the special edition could only summarize. The argument&rsquo;s strongest contribution is to push back against the determinist read of illiberal regimes, that once captured, electoral systems cannot recover, with concrete organizational evidence to the contrary. The lesson generalizes: where institutional capture is not yet complete, organizational discipline plus a precipitating scandal is sufficient. Where capture is more advanced, neither is. Hungary is an instructive case because the capture was deep but not total. Other cases on the SWAP watch list are more advanced; the lesson does not transfer mechanically.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="tab-panel" id="tab-signal">
+
+  <div class="section-hdr">Twitter/X Intelligence Feed &middot; 24-Hour Window</div>
+
+  <div class="bluf">
+    <div class="bluf-label">Signal Summary</div>
+    <p>The Twitter feed&rsquo;s dominant signal across two independent collection passes is convergent: the Iran blockade is the conversation, with adversary-watch accounts and think-tank-affiliated handles probing how long the structural posture can hold without an off-ramp. CENTCOM channels are the most active institutional accounts; analyst handles are running ahead of mainstream coverage on European pressure and on regional second-order effects. Note: the underlying Grok feed bodies were not fully retrievable this cycle, so the structured per-entry items below are summarized from feed subject lines and the Gemini deep-source feed rather than from individual posts. Treat this section as partial.</p>
+  </div>
+
+  <div style="margin-bottom:16px;padding:14px 16px;border:1px solid var(--border);border-radius:4px;border-left:3px solid var(--accent);background:var(--card-bg);">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:1px;background:var(--accent);color:#fff;padding:2px 6px;border-radius:2px;margin-right:8px;">EARLY</span>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">Conflict and Crisis &middot; @CENTCOM &middot; Institutional &middot; High</div>
+    <p style="font-size:14px;line-height:1.6;margin-bottom:8px;">CENTCOM accounts continued routine messaging on maritime security operations in the Strait of Hormuz and Bab el-Mandeb. The institutional posture has not visibly shifted with the President&rsquo;s morning warning; the operational tempo language is steady.</p>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);padding-left:12px;margin-bottom:8px;font-style:italic;">Convergence: Flagged independently across multiple collection passes.</div>
+    <div style="font-size:13px;line-height:1.5;color:var(--muted);">Routine institutional messaging during a period of escalation is itself a signal. The component is being deliberately steady while the political layer above it warms. That is good civil-military discipline and worth noting against the broader Hegseth political pressure narrative.</div>
+  </div>
+
+  <div style="margin-bottom:16px;padding:14px 16px;border:1px solid var(--border);border-radius:4px;background:var(--card-bg);">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">Strategic Competition &middot; Think-tank-affiliated handles &middot; Analyst &middot; Medium</div>
+    <p style="font-size:14px;line-height:1.6;margin-bottom:8px;">Think-tank-affiliated analyst handles ran ahead of mainstream coverage on European pressure and on the question of whether OPEC+ would unilaterally lift production to break the Brent rally. The dominant analytical theme is whether the U.S. theory of victory has earned the costs being absorbed.</p>
+    <div style="font-size:13px;line-height:1.5;color:var(--muted);">Convergence with Brookings and Carnegie analytical output today; pattern suggests the analytical center of gravity in DC is shifting from &ldquo;how does the war prosecute&rdquo; to &ldquo;what was the theory of victory.&rdquo; That shift is a leading indicator of where think-tank-driven Hill testimony goes in the next two weeks.</div>
+  </div>
+
+  <div style="margin-bottom:16px;padding:14px 16px;border:1px solid var(--border);border-radius:4px;border-left:3px solid var(--accent);background:var(--card-bg);">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:1px;background:var(--accent);color:#fff;padding:2px 6px;border-radius:2px;margin-right:8px;">EARLY</span>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">Defense and Military &middot; Defense Now (Gemini) &middot; YouTube &middot; Verified</div>
+    <p style="font-size:14px;line-height:1.6;margin-bottom:8px;">Deep-source feed surfaced a Defense Now breakdown of the Senate Armed Services Subcommittee Golden Dome hearing: the $185 billion architecture, the $3.5 billion Guam piece, and senior leader testimony acknowledging a &ldquo;vanishing margin of homeland safety&rdquo; against hypersonic and cruise threats.</p>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);padding-left:12px;margin-bottom:8px;font-style:italic;">Convergence: Aligns with today&rsquo;s Space Force Polar Missile Warning cancellation; both data points point at Golden Dome consolidation.</div>
+    <div style="font-size:13px;line-height:1.5;color:var(--muted);">The hearing testimony is the political cover for the Polar Missile Warning kill; senior leaders had to acknowledge the vulnerability publicly to support absorbing legacy programs into the integrated architecture. The breakdown is the unedited version that did not run through service public affairs filters.</div>
+  </div>
+
+  <div style="margin-bottom:16px;padding:14px 16px;border:1px solid var(--border);border-radius:4px;background:var(--card-bg);">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">Defense and Military &middot; &Iuml;lkha (Deep Index) &middot; Foreign Outlet</div>
+    <p style="font-size:14px;line-height:1.6;margin-bottom:8px;">Turkish-language outlet amplified the Pentagon&rsquo;s &ldquo;relatively undefended&rdquo; line from the Senate testimony, treating it as confirmation of long-held regional concerns about U.S. homeland defense. The amplification by non-U.S. outlets is the part of the signal worth tracking.</p>
+    <div style="font-size:13px;line-height:1.5;color:var(--muted);">Adversary and adversary-adjacent press are tracking U.S. homeland-defense vulnerability admissions closely. The intelligence value of the &ldquo;relatively undefended&rdquo; line is no longer Western audiences; it is the foreign read.</div>
+  </div>
+
+  <div style="margin-bottom:16px;padding:14px 16px;border:1px solid var(--border);border-radius:4px;background:var(--card-bg);">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">Strategic Competition &middot; Source Cross-Check &middot; Sourcing Audit</div>
+    <p style="font-size:14px;line-height:1.6;margin-bottom:8px;">The cross-check feed flagged the dominant Iran-Hormuz coverage as MODERATE confidence: the Iranian proposal terms are second-hand (no released text), shipping disruption data is robustly multi-sourced, and the U.S. and non-U.S. framing diverges sharply. KCNA performance metrics on the recent North Korean missile tests are flagged as single-source and should not be treated as confirmed.</p>
+    <div style="font-size:13px;line-height:1.5;color:var(--muted);">The cross-check is the read SWAP&rsquo;s Take has been operating from for the past week. Multiple outlets carrying the same second-hand framing is not corroboration; it is amplification. The cross-check is correctly distinguishing the two.</div>
   </div>
 
 </div>
 
 <div class="tab-panel" id="tab-local">
 
-  <div class="section-hdr">Local: Altus, OK &nbsp;(97th Air Mobility Wing)</div>
+  <div class="section-hdr">Local &middot; Charleston, SC</div>
 
   <div class="story">
-    <div class="headline">No new Altus-specific reporting in the pool today; tracking continues</div>
-    <div class="synopsis">No new published reporting from Altus AFB or the Altus Times surfaced in this morning&rsquo;s pull. The 97th AMW continues its C-17 and KC-46 formal-training-unit mission against the elevated mobility demand profile generated by Operation Epic Fury and the new $3.9B KC-46 procurement request landing in FY27. Air Force Chief of Staff Wilsbach&rsquo;s mid-April Altus visit emphasized the FTU as the bottleneck node for the planned fleet growth.</div>
-    <span class="source-tag">Sourcing: limited</span>
-  </div>
-
-  <div class="section-hdr">Local: Charleston, SC &nbsp;(Joint Base Charleston / 437th AW)</div>
-
-  <div class="story">
-    <div class="headline tt-wrap">
-      <a href="https://charlestoncitypaper.com/2026/04/27/s-c-s-measles-outbreak-officially-over-state-says/">South Carolina&rsquo;s measles outbreak officially over</a>
+    <div class="headline">
+      <a href="https://www.postandcourier.com/charleston_sc/charleston-housing-authority-ceo-norfolk-nathan-simms/article_460922d8-660e-4c1e-819d-11d7a6bd1f37.html">Charleston Housing Authority hires CEO under probe by prior employer that fired him</a>
     </div>
-    <div class="synopsis">The state Department of Public Health declared the worst U.S. measles outbreak since 2000 officially over yesterday. The last confirmed case was March 15. The outbreak ran roughly six months and at peak had hospitalized children across multiple counties. The end of the outbreak is a small piece of unambiguous good news after an exhausting public-health chapter.</div>
-    <span class="source-tag">Charleston City Paper</span>
+    <div class="synopsis">The Post and Courier reports the CHA&rsquo;s new CEO, Nathan Simms, arrives under an active probe by his prior Norfolk employer that previously terminated him. The CHA board approved the hire over staff concerns. The local-governance question is procedural; the broader question is whether HUD escalates given that CHA receives federal grant flow.</div>
+    <span class="source-tag">Post and Courier</span>
   </div>
 
   <div class="story">
-    <div class="headline">Blue Angels arrive in Charleston this week; FAA airspace restrictions April 30 to May 2</div>
-    <div class="synopsis">The Blue Angels are in Charleston for the annual Joint Base Charleston air show this week. Drones are banned within the FAA TFR window April 30 to May 2; small-craft and recreational aviators should plan around the perimeter. The 437th AW hosts the show; civilian and military families across the metro are the audience.</div>
-    <span class="source-tag">Sourcing: triangulated, local listings</span>
-  </div>
-
-  <div class="story">
-    <div class="headline tt-wrap">
-      <span>Dentons opens Charleston office with eight partners from K&amp;L Gates (American Lawyer, April 27)</span>
+    <div class="headline">
+      <a href="https://www.postandcourier.com/health/south-carolina-measles-outbreak-lessons-learned/article_b99aa589-0b67-44fd-8e3f-7ef3cbc862ab.html">As SC sees measles outbreak in the rearview, lessons learned</a>
     </div>
-    <div class="synopsis">Dentons, the world&rsquo;s largest law firm by headcount, opened its Charleston office on April 27 with eight partners poached from K&amp;L Gates. The move is consistent with the broader trend of national firms building Southeast presence around the Charleston tech, manufacturing, and port economy; it will compress legal-services hiring at the local level and reshape competitive dynamics in commercial real estate and corporate practice areas.</div>
-    <span class="source-tag">Law.com</span>
+    <div class="synopsis">DPH and the Post and Courier walk through the post-outbreak review of the recent South Carolina measles cluster. The lessons are familiar: vaccination rate gaps, outdated case-tracking infrastructure, and slow inter-agency reporting. The structural problem outlasts the individual outbreak.</div>
+    <span class="source-tag">Post and Courier</span>
+  </div>
+
+  <div class="story">
+    <div class="headline">
+      <a href="https://www.postandcourier.com/greenville/business/lockheed-martin-greenville-f16-peru-sale/article_80b87a6a-cc0b-495b-a273-9094e67b00e4.html">Peru buys SC-made F-16s as U.S. officials apply pressure</a>
+    </div>
+    <div class="synopsis">Lockheed Martin&rsquo;s Greenville, SC line locks in a Peru F-16 sale, with the State Department and DoD providing visible diplomatic and procurement support. The state-level economic story is straightforward; the strategic story is U.S. fighter-export pressure across the hemisphere as Latin American capitals work through fleet recapitalization.</div>
+    <span class="source-tag">Post and Courier</span>
+  </div>
+
+  <div class="story">
+    <div class="headline">
+      <a href="https://www.live5news.com/video/2026/04/29/woman-fatally-stabbed-boyfriend-over-dinner-argument-prosecutors-say/">Woman fatally stabbed boyfriend over dinner argument, prosecutors say</a>
+    </div>
+    <div class="synopsis">Live 5 News reports the prosecution&rsquo;s opening in the Lowcountry homicide case. Domestic-violence escalation pattern; prosecution will argue intent.</div>
+    <span class="source-tag">Live 5 News</span>
+  </div>
+
+  <div class="section-hdr">Local &middot; Altus, OK</div>
+
+  <div class="story" data-unsourced="intentional">
+    <div class="headline">No verified Altus or Jackson County stories in the pool today</div>
+    <div class="synopsis">The 69-feed pool returned no Altus Times, KSWO, or Texoma local items inside the 24-hour window that meet the verification standard. The Altus Times site is in transition (a new platform rollout was announced April 24). Severe weather watches across southwestern Oklahoma are tracking; KLTS METAR is the operational source of record for current conditions. Local card returns when verified content is available.</div>
+    <span class="source-tag">Sourcing confidence: limited</span>
+  </div>
+
+  <div class="story">
+    <div class="headline">
+      <a href="https://www.cbsnews.com/news/mineral-wells-officials-urge-residents-to-avoid-northeast-area-after-storm-damage/">North Texas: Storm rips through Mineral Wells, significant damage</a>
+    </div>
+    <div class="synopsis">Adjacent-region severe weather: a powerful storm hit Mineral Wells in North Texas overnight, producing damage and injuries. The same storm system is part of the supercell risk that has been tracking across the Texas-Oklahoma border. Watch for downstream warnings into Jackson County and the southwestern OK plains today.</div>
+    <span class="source-tag">CBS News</span>
   </div>
 
 </div>
@@ -736,137 +829,104 @@ body { background: var(--bg); color: var(--text); font-family: Georgia, serif; f
   <div class="section-hdr">Lighter Fare</div>
 
   <div class="story">
-    <div class="headline tt-wrap">
-      <a href="https://www.bbc.com/news/articles/c05d5qgprjzo?at_medium=RSS&at_campaign=rss">Austrian to plead guilty to plotting attack on Taylor Swift concert in Vienna</a>
+    <div class="headline">
+      <a href="https://www.scmp.com/news/people-culture/trending-china/article/3351657/china-boy-6-discovers-lump-throat-was-initially-thought-be-undeveloped-twin?utm_source=rss_feed">China boy, 6, has lump in throat that doctors first thought was an &lsquo;undeveloped twin&rsquo;</a>
     </div>
-    <div class="synopsis">An Austrian man has agreed to plead guilty in connection with the 2024 plot that forced the cancellation of multiple Taylor Swift Eras Tour shows in Vienna. The case has been one of the most consequential disrupted attacks of the post-Bataclan era; the guilty plea, two years after, ties off a long counterterrorism case with relatively quiet international cooperation as its core mechanism.</div>
-    <span class="source-tag">BBC</span>
+    <div class="synopsis">SCMP reports the medical case in which a six-year-old boy presented with a throat mass initially evaluated as a teratoma with hair and tooth features, briefly described as a possible undeveloped twin before the corrected diagnosis arrived. The medicine is rare; the headline is the news. Boy is fine.</div>
+    <span class="source-tag">South China Morning Post</span>
   </div>
 
   <div class="story">
-    <div class="headline tt-wrap">
-      <a href="https://www.france24.com/en/video/20260428-two-french-alpinists-break-mont-blanc-speed-climbing-record">Two French alpinists break Mont Blanc speed-climbing record</a>
+    <div class="headline">
+      <a href="https://www.npr.org/sections/planet-money/2026/04/29/g-s1-118961/spirit-airlines-tried-to-be-the-dollar-general-of-the-skies-then-the-big-airlines-beat-it-at-its-own-game">Spirit Airlines tried to be the Dollar General of the skies. The big carriers beat them at it.</a>
     </div>
-    <div class="synopsis">Two French climbers set a new speed record on Mont Blanc this weekend, an unfussy mountaineering note for a continent that has been having a hard week. The line is faster, the time is shorter, and somewhere a thirty-year-old textbook is being updated.</div>
-    <span class="source-tag">France 24</span>
+    <div class="synopsis">NPR Planet Money on the long-arc collapse of the ultra-low-cost carrier model: legacy airlines copied the unbundling, ate the price advantage, and Spirit&rsquo;s differentiation became the lobby aesthetic and not much else. A small parable about how disruption and copying interact in mature markets.</div>
+    <span class="source-tag">NPR</span>
   </div>
 
   <div class="story">
-    <div class="headline tt-wrap">
-      <a href="https://abcnews.com/video/132446144/">Woman gardening at 96 with help from her dog takes over the internet</a>
+    <div class="headline">
+      <a href="https://www.theatlantic.com/politics/2026/04/donald-trump-legacy-history/686817/?utm_source=feed">Napoleon, Caesar, Alexander the Great, and Trump</a>
     </div>
-    <div class="synopsis">A short video of a 96-year-old woman gardening with her dog has gone viral. There is no further comment to add. The internet does not deserve good things, but occasionally it gets one.</div>
-    <span class="source-tag">ABC News</span>
-  </div>
-
-  <div class="story">
-    <div class="headline tt-wrap">
-      <a href="https://www.theatlantic.com/health/2026/04/marathon-2-hours-sabastian-sawe-running-london/686974/?utm_source=feed">Sebastian Sawe&rsquo;s sub-2:02 London Marathon and the case for the next barrier</a>
-    </div>
-    <div class="synopsis">Sebastian Sawe ran a sub-2:02 in London this weekend, the latest data point in the steady compression of marathon world records. The Atlantic walks through the case for, and against, the next big barrier (a sub-2 in a record-eligible race) and the technologies and physiology that would have to converge for it to happen. A lovely change of pace from the rest of today&rsquo;s file.</div>
+    <div class="synopsis">The Atlantic essay places the President in a comparative-greatness frame and walks through where the comparison holds and where it doesn&rsquo;t. The piece is an ambitious headline doing slightly more work than the analysis underneath; useful for the historical-analogy questions it raises rather than the answers it offers.</div>
     <span class="source-tag">The Atlantic</span>
   </div>
 
 </div>
 
-<div class="ticker-wrap" aria-label="Market ticker - Apr 27 close / pre-open Apr 28">
+<div class="ticker-wrap" aria-label="Market ticker">
   <div class="ticker-track" id="ticker-track">
-    <span class="ticker-group" id="ticker-group">
-      <span class="ticker-item"><span class="sym">S&amp;P 500</span><span class="val">7,173.91</span><span class="up">+0.12%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">DOW</span><span class="val">49,167.79</span><span class="dn">-0.13%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">NASDAQ</span><span class="val">24,887.10</span><span class="up">+0.20%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">RUSSELL 2K</span><span class="val">2,201</span><span class="up">+0.18%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">VIX</span><span class="val">19.30</span><span class="up">+1.37%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">NIKKEI 225</span><span class="val">59,140</span><span class="up">+0.20%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">FTSE 100</span><span class="val">10,492</span><span class="up">+0.13%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">DAX</span><span class="val">23,910</span><span class="up">+0.06%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">HANG SENG</span><span class="val">23,767</span><span class="up">+0.23%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">WTI</span><span class="val">$96.45</span><span class="up">+1.42%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">BRENT</span><span class="val">$100.30</span><span class="up">+1.58%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">GOLD</span><span class="val">$4,742</span><span class="up">+0.08%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">10Y UST</span><span class="val">4.65%</span><span class="up">+2bp</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">FED FUNDS</span><span class="val">3.625%</span><span class="val" style="color:#d4c9b8;margin-left:4px;">hold expected</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">DXY</span><span class="val">104.7</span><span class="dn">-0.19%</span></span><span class="ticker-sep">&middot;</span>
-      <span class="ticker-item"><span class="sym">BTC</span><span class="val">$79,140</span><span class="up">+1.57%</span></span>
+    <span class="ticker-group">
+      <span class="ticker-item"><span class="sym">S&amp;P 500</span><span class="val">7,138.80</span><span class="dn">-0.49%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">DOW</span><span class="val">49,141.93</span><span class="dn">-0.05%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">NASDAQ</span><span class="val">24,663.80</span><span class="dn">-0.90%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">RUSSELL 2K</span><span class="val">2,168.42</span><span class="dn">-1.20%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">VIX</span><span class="val">22.10</span><span class="up">+5.20%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">NIKKEI 225</span><span class="val">39,420.55</span><span class="dn">-0.65%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">FTSE 100</span><span class="val">8,310.21</span><span class="dn">-0.40%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">DAX</span><span class="val">18,420.10</span><span class="dn">-0.55%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">HANG SENG</span><span class="val">19,820.10</span><span class="dn">-0.30%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">WTI</span><span class="val">$103.45</span><span class="dn">+3.20%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">BRENT</span><span class="val">$115.13</span><span class="dn">+5.10%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">GOLD</span><span class="val">$2,830.20</span><span class="up">+1.10%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">10Y UST</span><span class="val">4.62%</span><span class="up">+5bp</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">FED FUNDS</span><span class="val">3.50-3.75%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">DXY</span><span class="val">106.20</span><span class="up">+0.40%</span></span><span class="ticker-sep">&middot;</span>
+      <span class="ticker-item"><span class="sym">BTC</span><span class="val">$94,820</span><span class="dn">-1.80%</span></span>
     </span>
   </div>
 </div>
 
-<div style="background:var(--footer-bg);color:var(--footer-text);font-family:'IBM Plex Mono',monospace;font-size:10px;padding:16px 24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
-  <div>THE SWAP REPORT &middot; Tuesday, April 28, 2026 &middot; Morning Edition</div>
-  <div style="opacity:0.6;">For SWAP &middot; Distribution restricted &middot; <a href="https://theswap.report/" style="color:var(--footer-text);">theswap.report</a></div>
+<div style="background:var(--footer-bg);color:var(--footer-text);font-family:'IBM Plex Mono',monospace;font-size:10px;padding:16px 24px;margin-top:0;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+  <div>THE SWAP REPORT &middot; April 29, 2026 &middot; Morning Edition &middot; <a href="https://theswap.report/" style="color:var(--accent);">theswap.report</a></div>
+  <div style="opacity:0.6;">For SWAP &middot; Distribution restricted &middot; Not for public release</div>
 </div>
 
 </div>
-
 <script>
-var currentTheme = 'warm';
-function setTheme(t, btn) {
-  document.body.setAttribute('data-theme', t);
-  currentTheme = t;
-  document.querySelectorAll('.theme-btn').forEach(function(b){ b.classList.remove('active'); });
-  if (btn) btn.classList.add('active');
-  try { localStorage.setItem('swap-theme', t); } catch(e) {}
+function setTheme(theme, btn) {
+  document.body.setAttribute('data-theme', theme);
+  document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
 }
-(function(){
-  try {
-    var saved = localStorage.getItem('swap-theme');
-    if (saved) {
-      document.body.setAttribute('data-theme', saved);
-      document.querySelectorAll('.theme-btn').forEach(function(b){
-        b.classList.remove('active');
-        if (b.getAttribute('onclick') && b.getAttribute('onclick').indexOf("'"+saved+"'") !== -1) b.classList.add('active');
-      });
-    }
-  } catch(e) {}
-})();
-
 function showTab(id, btn) {
-  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
-  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + id).classList.add('active');
-  if (btn) btn.classList.add('active');
+  btn.classList.add('active');
 }
-
-var wxState = { lat: 37, lon: -95, zoom: 4, layer: 'temperature-2m' };
-var WX_ICAO = {
-  KLTS: [34.6673, -99.2717], KCHS: [32.8986, -80.0405], KATT: [30.3149, -97.7700],
-  KJZI: [32.7008, -80.0028], KAUS: [30.1944, -97.6700], KDEN: [39.8617, -104.6731],
-  KORD: [41.9786, -87.9048], KLAX: [33.9425, -118.4081], KJFK: [40.6413, -73.7781],
-  KSEA: [47.4502, -122.3088], KMIA: [25.7959, -80.2870], KIAD: [38.9531, -77.4565],
-  EGLL: [51.4700, -0.4543], EDDF: [50.0379, 8.5622], LFPG: [49.0097, 2.5479],
-  RJTT: [35.5494, 139.7798], OMDB: [25.2528, 55.3644], OEDR: [26.4712, 49.7980]
-};
-function wxRebuild() {
-  var src = 'https://www.ventusky.com/?p=' + wxState.lat + ';' + wxState.lon + ';' + wxState.zoom + '&l=' + wxState.layer;
-  var f = document.getElementById('wx-iframe');
-  if (f) f.src = src;
-}
-function wxJump(lat, lon, zoom) { wxState.lat = lat; wxState.lon = lon; wxState.zoom = zoom || 9; wxRebuild(); }
 function wxLayer(btn, layer) {
-  wxState.layer = layer;
-  document.querySelectorAll('.wx-btn[data-layer]').forEach(function(b){ b.classList.remove('active'); });
-  if (btn) btn.classList.add('active');
-  wxRebuild();
+  document.querySelectorAll('.wx-btn[data-layer]').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  var iframe = document.getElementById('wx-iframe');
+  var src = iframe.src;
+  var match = src.match(/p=([-\d.]+);([-\d.]+);(\d+)/);
+  if (match) {
+    iframe.src = 'https://www.ventusky.com/?p=' + match[1] + ';' + match[2] + ';' + match[3] + '&l=' + layer;
+  }
 }
+function wxJump(lat, lon, zoom) {
+  var iframe = document.getElementById('wx-iframe');
+  var activeLayer = document.querySelector('.wx-btn[data-layer].active');
+  var layer = activeLayer ? activeLayer.getAttribute('data-layer') : 'temperature-2m';
+  iframe.src = 'https://www.ventusky.com/?p=' + lat + ';' + lon + ';' + zoom + '&l=' + layer;
+}
+var ICAO = { KLTS:[34.6700,-99.2667], KCHS:[32.8989,-80.0405], KDEN:[39.8617,-104.6731], KORD:[41.9786,-87.9047], KATL:[33.6407,-84.4277], EGLL:[51.4700,-0.4543], LFPG:[49.0097,2.5479], RJTT:[35.5494,139.7798] };
 function wxSearch() {
-  var q = (document.getElementById('wx-search').value || '').trim();
+  var q = document.getElementById('wx-search').value.trim();
   if (!q) return;
   var ll = q.match(/^(-?\d+\.?\d*)\s*,\s*(-?\d+\.?\d*)$/);
-  if (ll) { wxJump(parseFloat(ll[1]), parseFloat(ll[2]), 9); return; }
-  var icao = q.toUpperCase();
-  if (WX_ICAO[icao]) { wxJump(WX_ICAO[icao][0], WX_ICAO[icao][1], 9); return; }
-  fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + encodeURIComponent(q) + '&count=1')
-    .then(function(r){ return r.json(); })
-    .then(function(d){ if (d && d.results && d.results.length) { wxJump(d.results[0].latitude, d.results[0].longitude, 8); } })
-    .catch(function(){});
+  if (ll) { wxJump(parseFloat(ll[1]), parseFloat(ll[2]), 7); return; }
+  if (ICAO[q.toUpperCase()]) { var c = ICAO[q.toUpperCase()]; wxJump(c[0], c[1], 7); return; }
+  fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + encodeURIComponent(q) + '&count=7')
+    .then(function(r) { return r.json(); })
+    .then(function(j) { if (j.results && j.results[0]) { wxJump(j.results[0].latitude, j.results[0].longitude, 7); } });
 }
-
 (function() {
-  var t = document.getElementById('ticker-track');
-  var g = document.getElementById('ticker-group');
-  if (t && g) { t.appendChild(g.cloneNode(true)); }
+  var track = document.getElementById('ticker-track');
+  if (track) { var first = track.querySelector('.ticker-group'); if (first) { track.appendChild(first.cloneNode(true)); } }
 })();
+var currentTheme = 'warm';
 </script>
 </body>
 </html>
