@@ -29,12 +29,12 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Run FORMAT_LOCK gate against index.html
+      - name: FORMAT_LOCK gate (verify_format.py) — index.html
         run: |
           python3 gates/verify_format.py index.html
-          echo "GATE PASSED"
+          echo "::notice::FORMAT_LOCK gate passed for index.html"
 
-      - name: Run FORMAT_LOCK gate against archive snapshots
+      - name: FORMAT_LOCK gate — archive snapshots
         run: |
           shopt -s nullglob
           fail=0
@@ -43,10 +43,27 @@ jobs:
             python3 gates/verify_format.py "$f" || fail=1
           done
           if [ "$fail" = "1" ]; then
-            echo "One or more archive snapshots violate FORMAT_LOCK."
+            echo "::error::One or more archive snapshots violate FORMAT_LOCK."
             exit 1
           fi
-          echo "ALL ARCHIVE SNAPSHOTS PASSED"
+          echo "::notice::All archive snapshots passed FORMAT_LOCK."
+
+      - name: URL reachability gate (verify_urls_reachable.py)
+        env:
+          SWAP_URL_TIMEOUT: "15"
+          SWAP_URL_PARALLEL: "16"
+          SWAP_URL_RETRIES: "2"
+        run: |
+          python3 gates/verify_urls_reachable.py index.html
+          echo "::notice::URL reachability gate passed."
+
+      - name: Build metrics summary
+        run: |
+          if [ -f gates/build_metrics.py ]; then
+            python3 gates/build_metrics.py index.html >> "$GITHUB_STEP_SUMMARY" || true
+          else
+            echo "build_metrics.py not present yet — skipping metrics summary."
+          fi
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
