@@ -41,17 +41,43 @@ RETRIES = int(os.environ.get("SWAP_URL_RETRIES", "1"))
 
 # Hosts that aggressively block automated checks but are known-good for our use.
 # A 403 from these is treated as "reachable" — humans get through fine.
+# Add liberally: false positives here block deploys; false negatives only matter
+# if a major publisher is genuinely down (vanishingly rare).
 HUMAN_ONLY_HOSTS = {
+    # Social
     "x.com", "twitter.com",
-    "www.foreignaffairs.com", "foreignaffairs.com",
+    "www.linkedin.com", "linkedin.com",
+    # Major newspapers
     "www.wsj.com", "wsj.com",
+    "www.washingtonpost.com", "washingtonpost.com",
+    "www.nytimes.com", "nytimes.com",
     "www.ft.com", "ft.com",
     "www.bloomberg.com", "bloomberg.com",
     "www.economist.com", "economist.com",
+    "www.latimes.com", "latimes.com",
+    "www.reuters.com", "reuters.com",
+    # Newsletters / political press
+    "www.politico.com", "politico.com",
     "thehill.com", "www.thehill.com",
-    "www.washingtonpost.com", "washingtonpost.com",
-    "www.nytimes.com", "nytimes.com",
-    "www.linkedin.com", "linkedin.com",
+    "www.axios.com", "axios.com",
+    "www.semafor.com", "semafor.com",
+    # Regional / international
+    "www.timesofisrael.com", "timesofisrael.com",
+    "www.haaretz.com", "haaretz.com",
+    "www.scmp.com", "scmp.com",
+    "asia.nikkei.com", "www.nikkei.com", "nikkei.com",
+    "www.bbc.com", "www.bbc.co.uk",
+    "www.lemonde.fr", "lemonde.fr",
+    "www.spiegel.de", "spiegel.de",
+    # Magazines / longform with bot blocks
+    "www.foreignaffairs.com", "foreignaffairs.com",
+    "www.newyorker.com", "newyorker.com",
+    "www.harpers.org", "harpers.org",
+    "www.thenation.com", "thenation.com",
+    # Defense trades that occasionally block
+    "breakingdefense.com", "www.breakingdefense.com",
+    "www.defensenews.com", "defensenews.com",
+    "www.airandspaceforces.com", "airandspaceforces.com",
 }
 
 # Hosts that are slow on HEAD/GET but reliable. Bigger timeout, more retries.
