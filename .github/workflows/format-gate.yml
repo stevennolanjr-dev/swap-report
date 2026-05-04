@@ -1,0 +1,61 @@
+name: FORMAT_LOCK gate + deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  gate-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run FORMAT_LOCK gate against index.html
+        run: |
+          python3 gates/verify_format.py index.html
+          echo "GATE PASSED"
+
+      - name: Run FORMAT_LOCK gate against archive snapshots
+        run: |
+          shopt -s nullglob
+          fail=0
+          for f in archive/[0-9]*.html; do
+            echo "--- $f ---"
+            python3 gates/verify_format.py "$f" || fail=1
+          done
+          if [ "$fail" = "1" ]; then
+            echo "One or more archive snapshots violate FORMAT_LOCK."
+            exit 1
+          fi
+          echo "ALL ARCHIVE SNAPSHOTS PASSED"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
