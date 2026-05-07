@@ -78,6 +78,22 @@ HUMAN_ONLY_HOSTS = {
     "breakingdefense.com", "www.breakingdefense.com",
     "www.defensenews.com", "defensenews.com",
     "www.airandspaceforces.com", "airandspaceforces.com",
+    # .mil and .gov institutional hosts (default-403 to bot UAs)
+    "www.altus.af.mil", "altus.af.mil",
+    "www.charleston.af.mil", "charleston.af.mil",
+    "www.af.mil", "af.mil",
+    "www.navy.mil", "navy.mil",
+    "www.army.mil", "army.mil",
+    "www.marines.mil", "marines.mil",
+    "www.spaceforce.mil", "spaceforce.mil",
+    "www.defense.gov", "defense.gov",
+    "www.armyupress.army.mil", "armyupress.army.mil",
+    "www.dvidshub.net", "dvidshub.net",
+    "www.cna.org", "cna.org",
+    "www.fdd.org", "fdd.org",
+    "www.atlanticcouncil.org", "atlanticcouncil.org",
+    "www.hudson.org", "hudson.org",
+    "www.heritage.org", "heritage.org",
 }
 
 # Hosts that are slow on HEAD/GET but reliable. Bigger timeout, more retries.
