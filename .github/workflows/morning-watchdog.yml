@@ -1,0 +1,111 @@
+name: SWAP Morning Watchdog
+
+# Cloud-resident watchdog. Runs daily at 0700 CT (1200 UTC) regardless of
+# whether the Mac is awake, Cowork is running, or the scheduled task fired.
+# Fetches theswap.report/status.json, compares edition_date to today, and
+# opens an Issue if the morning brief did not ship. The Issue notification
+# emails SWAP, converting silent failure to loud failure.
+
+on:
+  schedule:
+    # 12:00 UTC = 07:00 America/Chicago (CDT) / 06:00 (CST). Daily.
+    # GitHub cron uses UTC; we accept the 1-hour winter shift.
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check-morning-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch live status.json and compare to today
+        id: check
+        run: |
+          set -e
+          STATUS=$(curl -fsSL https://theswap.report/status.json) || {
+            echo "status.json unreachable"; echo "fail=true" >> "$GITHUB_OUTPUT";
+            echo "reason=status.json unreachable" >> "$GITHUB_OUTPUT"; exit 0; }
+          echo "status.json:"; echo "$STATUS"
+          # Today's date in America/Chicago (date-only, "Month D, YYYY")
+          TODAY=$(TZ='America/Chicago' date '+%B %-d, %Y')
+          EDITION=$(echo "$STATUS" | python3 -c "import sys,json;print(json.load(sys.stdin).get('edition_date',''))")
+          BUILD=$(echo "$STATUS" | python3 -c "import sys,json;print(json.load(sys.stdin).get('build_timestamp_utc',''))")
+          GATE=$(echo "$STATUS" | python3 -c "import sys,json;d=json.load(sys.stdin);g=d.get('gate_results',{});print(f\"format={g.get('format_lock','?')} url={g.get('url_reachability','?')}\")")
+          echo "today_ct=$TODAY"
+          echo "edition=$EDITION"
+          echo "build=$BUILD"
+          echo "gates=$GATE"
+          echo "today_ct=$TODAY" >> "$GITHUB_OUTPUT"
+          echo "edition=$EDITION" >> "$GITHUB_OUTPUT"
+          echo "build=$BUILD" >> "$GITHUB_OUTPUT"
+          echo "gates=$GATE" >> "$GITHUB_OUTPUT"
+          if [ "$EDITION" != "$TODAY" ]; then
+            echo "fail=true" >> "$GITHUB_OUTPUT"
+            echo "reason=edition_date $EDITION does not match today $TODAY" >> "$GITHUB_OUTPUT"
+          else
+            echo "fail=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open issue if morning brief skipped
+        if: steps.check.outputs.fail == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const today = '${{ steps.check.outputs.today_ct }}';
+            const edition = '${{ steps.check.outputs.edition }}';
+            const build = '${{ steps.check.outputs.build }}';
+            const gates = '${{ steps.check.outputs.gates }}';
+            const reason = `${{ steps.check.outputs.reason }}`;
+
+            const title = `SWAP morning brief did not ship for ${today}`;
+            const body = [
+              `**Watchdog tripped at ${new Date().toISOString()}**`,
+              ``,
+              `The morning task did not produce a fresh edition by 0700 CT.`,
+              ``,
+              `**Live status.json:**`,
+              `- edition_date: \`${edition}\``,
+              `- build_timestamp_utc: \`${build}\``,
+              `- gates: \`${gates}\``,
+              `- expected today (CT): \`${today}\``,
+              `- reason: ${reason}`,
+              ``,
+              `**Likely cause:** Cowork was not running on the Mac at 0532 CT, so the scheduled task fired its trigger but no Claude session was created. Same pattern as the recent skips.`,
+              ``,
+              `**Recovery steps:**`,
+              `1. Open Cowork on the Mac.`,
+              `2. Start a session and say: "build today's SWAP report manually from feeds."`,
+              `3. Confirm the workflow runs green and theswap.report updates.`,
+              ``,
+              `This issue was opened automatically by \`.github/workflows/morning-watchdog.yml\`. Closing it does not retry the build; it just acknowledges you saw the alert.`,
+            ].join('\n');
+
+            // Only open one issue per day — search for an existing open watchdog issue with today's date
+            const { data: existing } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'morning-watchdog',
+              per_page: 20,
+            });
+            const dup = existing.find(i => i.title.includes(today));
+            if (dup) {
+              core.notice(`Existing open issue #${dup.number} for ${today}; not opening another.`);
+              return;
+            }
+
+            const { data: issue } = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body,
+              labels: ['morning-watchdog'],
+            });
+            core.notice(`Opened issue #${issue.number}: ${issue.html_url}`);
+
+      - name: Report green
+        if: steps.check.outputs.fail != 'true'
+        run: echo "::notice::Morning brief shipped on time. edition=${{ steps.check.outputs.edition }} gates=${{ steps.check.outputs.gates }}"
