@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE SWAP REPORT | Tuesday, May 5, 2026</title>
+<meta property="og:title" content="THE SWAP REPORT | May 5, 2026">
+<meta property="og:url" content="https://theswap.report/">
+<meta property="og:description" content="Day 67 of the Iran War: Project Freedom turns kinetic as Apache and Seahawk helicopters sink six to seven Iranian boats; Iran strikes a UAE oil facility and hits two ships in the Strait of Hormuz; Putin announces a unilateral Victory Day truce that Kyiv calls cynical; Indiana and Ohio go to the polls; Air Force greenlights T-7A low-rate production.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&display=swap">
+<style>
+:root {
+  --bg: #f5f0e8;
+  --surface: #fffdf8;
+  --border: #d4c9b8;
+  --text: #1a1a1a;
+  --muted: #666666;
+  --accent: #8b0000;
+  --tab-inactive: #e8e2d8;
+  --tab-active: #fffdf8;
+  --header-bg: #ede8df;
+  --tab-bg: #e8e2d8;
+  --tag-bg: #8b0000;
+  --tag-text: #ffffff;
+  --watch-bg: #fff8f0;
+  --watch-border: #c8a06a;
+  --card-bg: #fffdf8;
+  --hover-bg: rgba(139,0,0,0.06);
+  --footer-bg: #ede8df;
+  --footer-text: #666666;
+}
+[data-theme="light"] {
+  --bg: #ffffff; --surface: #f9f9f9; --border: #ddd; --text: #1a1a1a;
+  --muted: #555; --accent: #8b0000; --tab-inactive: #e8e8e8; --tab-active: #ffffff;
+  --header-bg: #f0f0f0; --tab-bg: #e8e8e8; --card-bg: #f9f9f9; --footer-bg: #f0f0f0; --footer-text: #555;
+  --watch-bg: #fff8f0; --watch-border: #c8a06a;
+}
+[data-theme="dark"] {
+  --bg: #1a1a2e; --surface: #16213e; --border: #2e2e4e; --text: #e0ddd5;
+  --muted: #9a9a9a; --accent: #cc3333; --tab-inactive: #1a1a3e; --tab-active: #16213e;
+  --header-bg: #0f3460; --tab-bg: #1a1a3e; --card-bg: #16213e; --footer-bg: #0f3460; --footer-text: #9a9a9a;
+  --watch-bg: #1e1e3a; --watch-border: #6a5030;
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: 'Newsreader', Georgia, serif; font-size: 15px; line-height: 1.65; }
+.page { max-width: 960px; margin: 0 auto; background: var(--bg); }
+
+.masthead { background: var(--bg); padding: 24px 20px 16px; border-bottom: 2px solid var(--accent); display: flex; justify-content: space-between; align-items: flex-start; }
+.masthead-left { flex: 1; }
+.masthead-title { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 22px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); }
+.masthead-meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); margin-top: 4px; letter-spacing: 2px; text-transform: uppercase; }
+.masthead-epigraph { font-style: italic; font-size: 13px; color: var(--muted); margin-top: 6px; font-family: 'Newsreader', Georgia, serif; }
+.masthead-controls { display: flex; gap: 6px; margin-top: 4px; flex-shrink: 0; }
+.theme-btn { background: var(--tab-bg); border: 1px solid var(--border); color: var(--text); padding: 4px 9px; cursor: pointer; font-size: 13px; border-radius: 3px; transition: 0.15s; }
+.theme-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+.edition-bar { background: var(--header-bg); color: var(--muted); border-bottom: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 5px 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.edition-bar a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+.wx-section { padding: 14px 20px; border-bottom: 1px solid var(--border); }
+.wx-header { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 10px; }
+.wx-title { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); }
+.wx-controls { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.wx-search { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 3px; width: 180px; }
+.wx-btn-group { display: flex; gap: 3px; flex-wrap: wrap; }
+.wx-btn { font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; padding: 3px 7px; border: 1px solid var(--border); background: var(--tab-bg); color: var(--text); cursor: pointer; border-radius: 2px; transition: 0.15s; }
+.wx-btn:hover, .wx-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.wx-iframe { width: 100%; height: 360px; border: 1px solid var(--border); border-radius: 3px; }
+.wx-credit { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 6px; display: flex; gap: 14px; flex-wrap: wrap; }
+.wx-credit a { color: var(--accent); }
+
+.ticker-wrap { background: #111; color: #e8e8e8; overflow: hidden; padding: 8px 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; white-space: nowrap; }
+.ticker-track { display: inline-block; animation: ticker-slide 90s linear infinite; will-change: transform; }
+.ticker-wrap:hover .ticker-track { animation-play-state: paused; }
+@keyframes ticker-slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; white-space: normal; display: block; } }
+.ticker-item { display: inline-block; padding: 0 20px; }
+.ticker-item .lbl { color: #888; font-size: 10px; margin-right: 3px; }
+.ticker-item .val { font-weight: 600; }
+.up { color: #3dcc5a; }
+.dn { color: #ff5a5a; }
+.ticker-sep { color: #444; padding: 0 4px; }
+
+.tab-bar { display: flex; flex-wrap: wrap; border-bottom: 2px solid var(--border); background: var(--tab-bg); padding: 0 20px; }
+.tab-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; padding: 9px 12px; border: none; background: transparent; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: 0.15s; white-space: nowrap; }
+.tab-btn:hover { color: var(--accent); }
+.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+.tab-panel { display: none; padding: 20px; }
+.tab-panel.active { display: block; }
+
+.section-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: 16px; margin-top: 28px; }
+.section-hdr:first-child { margin-top: 0; }
+
+.bluf-block { background: var(--hover-bg); border-left: 3px solid var(--accent); padding: 14px 18px; border-radius: 0 4px 4px 0; margin-bottom: 24px; }
+.bluf-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
+.bluf-block ul { padding-left: 18px; font-size: 14px; line-height: 1.65; }
+.bluf-block li { margin-bottom: 7px; }
+.through-line { background: var(--surface); border: 1px solid var(--border); padding: 12px 16px; border-radius: 4px; margin-bottom: 22px; font-size: 13.5px; line-height: 1.65; }
+.through-line-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 8px; }
+
+.top-story { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+.tnum { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: var(--accent); min-width: 26px; padding-top: 2px; flex-shrink: 0; }
+.tbody { flex: 1; }
+
+.story { margin-bottom: 18px; position: relative; }
+.story-headline { font-size: 14.5px; font-weight: 700; font-family: 'Newsreader', Georgia, serif; color: var(--text); text-decoration: none; line-height: 1.45; cursor: default; }
+a.story-headline { cursor: pointer; }
+a.story-headline:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.story-meta { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 3px; letter-spacing: 0.5px; }
+.story-synopsis { font-size: 13px; line-height: 1.55; color: var(--muted); margin-top: 5px; display: none; font-style: italic; }
+.story:hover .story-synopsis { display: block; }
+
+.tag { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: var(--header-bg); color: var(--muted); border: 1px solid var(--border); padding: 1px 6px; border-radius: 2px; margin-left: 6px; }
+.tag-hot { background: var(--accent); color: #fff; border-color: var(--accent); }
+.tag-social { background: var(--watch-bg); color: var(--accent); border-color: var(--watch-border); }
+
+.watch-item { background: var(--watch-bg); border-left: 3px solid var(--watch-border); padding: 10px 14px; border-radius: 0 4px 4px 0; margin-bottom: 10px; font-size: 13.5px; line-height: 1.6; }
+.watch-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--watch-border); font-weight: 600; margin-bottom: 4px; }
+
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; padding: 16px 18px; margin-bottom: 16px; }
+.card-source { font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 6px; }
+.card-source .longform-tag { background: var(--accent); color: #fff; padding: 1px 6px; border-radius: 2px; margin-right: 8px; font-size: 9px; }
+.card-title { font-size: 15px; font-weight: 700; font-family: 'Newsreader', Georgia, serif; line-height: 1.4; margin-bottom: 8px; }
+.card-title a { color: var(--text); text-decoration: none; }
+.card-title a:hover { color: var(--accent); text-decoration: underline; }
+.card-body { font-size: 13.5px; line-height: 1.65; color: var(--text); }
+.card-note { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 6px; }
+.swaps-take { margin-top: 14px; padding: 10px 14px; background: var(--hover-bg); border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0; }
+.swaps-take-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); font-weight: 600; margin-bottom: 6px; }
+.swaps-take p { font-size: 13px; line-height: 1.6; }
+
+.lane4-summary { margin-top: 22px; padding: 12px 16px; border-top: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace; font-size: 11px; line-height: 1.65; color: var(--muted); }
+.lane4-summary strong { color: var(--accent); }
+
+.aged-card { border: 1px solid var(--border); border-radius: 4px; padding: 14px 18px; margin-bottom: 14px; }
+.aged-confirmed { border-left: 4px solid #2e7d32; }
+.aged-busted { border-left: 4px solid #c62828; }
+.aged-partial { border-left: 4px solid #e65100; }
+.aged-obe { border-left: 4px solid var(--muted); }
+.verdict-badge { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; padding: 2px 7px; border-radius: 2px; margin-right: 8px; }
+.badge-confirmed { background: #2e7d32; color: #fff; }
+.badge-busted { background: #c62828; color: #fff; }
+.badge-partial { background: #e65100; color: #fff; }
+.aged-title { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 8px; }
+.aged-body { font-size: 13px; line-height: 1.6; }
+
+.signal-summary { margin-bottom: 22px; padding: 12px 16px; background: var(--hover-bg); border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0; }
+.signal-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 8px; }
+.feed-entry { margin-bottom: 14px; padding: 12px 16px; border: 1px solid var(--border); border-radius: 4px; }
+.feed-early { border-left: 3px solid var(--accent); }
+.feed-unverified { opacity: 0.7; }
+.early-badge { font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; background: var(--accent); color: #fff; padding: 2px 6px; border-radius: 2px; margin-right: 6px; }
+.feed-cat { font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.feed-body { font-size: 13.5px; line-height: 1.6; margin-bottom: 6px; }
+.feed-note { font-size: 12px; color: var(--muted); line-height: 1.5; }
+.feed-link { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--accent); }
+
+.footer { background: var(--footer-bg); color: var(--footer-text); font-family: 'IBM Plex Mono', monospace; font-size: 10px; padding: 16px 20px; margin-top: 32px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+@media (max-width: 700px) {
+  .masthead { flex-direction: column; gap: 10px; }
+  .tab-btn { padding: 7px 9px; font-size: 10px; }
+  .wx-iframe { height: 260px; }
+  .top-story { gap: 8px; }
+  .tnum { font-size: 11px; min-width: 20px; }
+}
+</style>
+</head>
+<body data-theme="warm">
+<div style="background:#8b0000;color:#fff;padding:8px 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-align:center;">Archived edition &middot; 2026-05-05 &middot; <a href="../index.html" style="color:#fff;text-decoration:underline;">Back to today's brief</a> &middot; <a href="index.html" style="color:#fff;text-decoration:underline;">Archive index</a></div>
+
+<div class="page">
+
+<div class="masthead">
+  <div class="masthead-left">
+    <div class="masthead-title">THE SWAP REPORT</div>
+    <div class="masthead-meta">Tuesday, May 5, 2026 &nbsp;|&nbsp; Morning Edition</div>
+    <div class="masthead-epigraph">Day 67 opens with Project Freedom turned kinetic. Apache and Seahawk helicopters sank six to seven Iranian fast boats overnight; Iranian drones hit a UAE oil facility and two ships in Hormuz; Putin announced a unilateral Victory Day truce that Kyiv called cynical. The April 8 ceasefire is operative on paper and not on the water.</div>
+  </div>
+  <div class="masthead-controls">
+    <button class="theme-btn active" onclick="setTheme('warm',this)" title="Warm">&#9728;</button>
+    <button class="theme-btn" onclick="setTheme('light',this)" title="Light">&#128305;</button>
+    <button class="theme-btn" onclick="setTheme('dark',this)" title="Dark">&#9790;</button>
+  </div>
+</div>
+
+<div class="edition-bar">
+  <span>Day 67 of the Iran War</span>
+  <span>&middot;</span>
+  <span>Project Freedom kinetic; UAE struck; ceasefire stressed</span>
+  <span>&middot;</span>
+  <span>Indiana &amp; Ohio primaries today</span>
+  <span>&middot;</span>
+  <span>Brent ~$113 / WTI ~$103</span>
+  <span>&middot;</span>
+  <span>Special Editions: <a href="special-editions/hungary-after-orban.html">Hungary: After Orb&aacute;n</a></span>
+  <span>&middot;</span>
+  <span><a href="./archive/index.html">Archive</a></span>
+</div>
+
+<div class="wx-section">
+  <div class="wx-header">
+    <div class="wx-title">Weather</div>
+    <div class="wx-controls">
+      <input type="text" class="wx-search" id="wx-search" placeholder="ICAO / city / lat,lon" onkeypress="if(event.key==='Enter')wxSearch();">
+      <button class="wx-btn" onclick="wxSearch()">Go</button>
+      <span class="wx-btn-group">
+        <button class="wx-btn active" onclick="wxLayer(this,'temperature-2m')">Temp</button>
+        <button class="wx-btn" onclick="wxLayer(this,'wind-10m')">Wind</button>
+        <button class="wx-btn" onclick="wxLayer(this,'gust')">Gust</button>
+        <button class="wx-btn" onclick="wxLayer(this,'rain-3h')">Rain</button>
+        <button class="wx-btn" onclick="wxLayer(this,'clouds')">Cloud</button>
+        <button class="wx-btn" onclick="wxLayer(this,'radar')">Radar</button>
+      </span>
+    </div>
+  </div>
+  <iframe class="wx-iframe" id="wx-frame" src="https://www.ventusky.com/?p=37;-95;4&l=temperature-2m" title="Ventusky weather map"></iframe>
+  <div class="wx-credit">
+    <span>Map: <a href="https://www.ventusky.com" target="_blank" rel="noopener">Ventusky</a></span>
+    <span>METAR/TAF KLTS (Altus, 97 AMW): <a href="https://aviationweather.gov/data/metar/?id=KLTS&amp;taf=true" target="_blank" rel="noopener">aviationweather.gov</a></span>
+    <span>METAR/TAF KCHS (JB Charleston, 437 AW): <a href="https://aviationweather.gov/data/metar/?id=KCHS&amp;taf=true" target="_blank" rel="noopener">aviationweather.gov</a></span>
+  </div>
+</div>
+
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('overview',this)">Overview</button>
+  <button class="tab-btn" onclick="showTab('defense',this)">Defense</button>
+  <button class="tab-btn" onclick="showTab('strategic',this)">Strategic</button>
+  <button class="tab-btn" onclick="showTab('domestic',this)">Domestic</button>
+  <button class="tab-btn" onclick="showTab('deepreads',this)">Deep Reads</button>
+  <button class="tab-btn" onclick="showTab('social',this)">Social/Signal</button>
+  <button class="tab-btn" onclick="showTab('local',this)">Local</button>
+  <button class="tab-btn" onclick="showTab('lighter',this)">Lighter Fare</button>
+</div>
+
+<div class="tab-panel active" id="tab-overview">
+
+<div class="bluf-block">
+<div class="bluf-label">Bottom Line Up Front</div>
+<ul>
+<li><strong>Project Freedom went kinetic overnight.</strong> U.S. Army AH-64 Apache and Navy MH-60 Seahawk helicopters sank six Iranian fast-attack craft attempting to interfere with the first escorted convoy through Hormuz; CBS reports the running tally at seven. CENTCOM characterized the engagement as defensive; the IRGC characterized it as the act of war the parliament had warned would end the April 8 ceasefire. Both sides are calibrating the next move, and the cordon-and-escort framework no longer separates cleanly from open hostilities.</li>
+<li><strong>Iran struck a UAE oil facility and hit two commercial ships in the strait.</strong> The UAE attack is the first Iranian drone strike on a Gulf-state energy installation in this war and is a deliberate horizontal escalation: Tehran widened the target set rather than pressing harder on shipping. UKMTO and ABC News confirm the two-ship attacks. Sen. Graham called publicly for a "forceful response"; Iranian officials warned Washington and Abu Dhabi against any "military solution" while back-channel talks reportedly continue.</li>
+<li><strong>Putin announced a unilateral Victory Day truce; Kyiv called the appeal cynical and the strikes did not stop.</strong> A Ukrainian drone hit an upmarket Moscow high-rise hours before the parade staging began; the Kyiv Independent reports Russian attacks on Kharkiv Oblast killed seven and injured thirty-five during the same window the Kremlin labeled a truce. The Atlantic Council read is the clean one: dueling unilateral ceasefires are political theater for May 9, not a diplomatic step.</li>
+<li><strong>Indiana and Ohio go to the polls today; the Trump redistricting push gets its first competitive test.</strong> The Hill frames Indiana as the President's revenge-redistricting test; the Atlantic looks at the Ohio "candidate from ICE" race; the broader polling shows GOP midterm odds tightening as Iran-war approval and gas-price politics begin to reshape voter intent. The down-ballot read tonight matters more than the topline.</li>
+<li><strong>The Air Force cleared the T-7A Red Hawk for low-rate production.</strong> Service Acquisition Executive milestone closed the year-long technical hold; Air Force Times, Military Times, and Stars and Stripes confirm. The schoolhouse-replacement timeline shifts forward; the supply-chain question now centers on Boeing's St. Louis line and the engine-supplier cadence. The training-pipeline ripple reaches Vance, Columbus, Sheppard, and Laughlin first; Altus is in the third tier of the next-decade tail.</li>
+</ul>
+</div>
+
+<div class="through-line">
+<div class="through-line-lbl">Through-line</div>
+<p>Yesterday's brief argued the cordon-and-escort framework would survive only if the first convoy transited unmolested. It did not. The IRGC tested the framework with fast boats, the U.S. answered with rotary-wing, and the framework's legal architecture is now downstream of an engagement that produced losses on Tehran's side. Two reciprocal moves followed inside twelve hours: Iran widened the target geometry to the UAE, and Putin announced a Victory Day truce timed to compress the Western news cycle around Moscow's parade staging. Each move is the same shape: an attempt to set the political-acoustics frame ahead of the kinetic frame. Day 67 is the day the Iran war's political-and-military pacing decoupled from the ceasefire architecture; the question is whether the new tempo stabilizes around tit-for-tat or accelerates toward a second-front fight in the Gulf.</p>
+</div>
+
+<div class="section-hdr">Today&rsquo;s Top Stories</div>
+
+<div class="top-story">
+<span class="tnum">01</span>
+<div class="tbody"><div class="story">
+<a class="story-headline" href="https://www.twz.com/news-features/u-s-ah-64-apache-mh-60-seahawk-helicopters-sink-six-iranian-boats">U.S. Apache and Seahawk helicopters sink six Iranian fast boats during Hormuz transit</a><span class="tag tag-hot">IRAN WAR DAY 67</span>
+<div class="story-meta">The War Zone, Task &amp; Purpose, CBS News &middot; May 4-5, 2026 &middot; cross-corroborated</div>
+<div class="story-synopsis">CENTCOM commander confirmed Apache and Seahawk rotary-wing assets engaged and sank six IRGC fast-attack craft attempting to interfere with the first escorted convoy through the strait; CBS's running tally puts the figure at seven. The escort destroyers did not have to fire; the engagement happened in the air-to-surface envelope, which is what the Apache and Seahawk pairing was set up to cover. The choice of rotary-wing rather than naval gunfire is operationally significant: it preserves the destroyers' magazines for follow-on engagements and keeps the surface-engagement narrative inside the IRGC's reach rather than the U.S. Navy's.</div>
+</div></div>
+</div>
+
+<div class="top-story">
+<span class="tnum">02</span>
+<div class="tbody"><div class="story">
+<a class="story-headline" href="https://www.cbsnews.com/live-updates/iran-war-trump-strait-of-hormuz-ship-attack-threat-peace-proposal/">Iran strikes UAE oil facility and hits two commercial ships in the strait</a><span class="tag tag-hot">UAE</span>
+<div class="story-meta">CBS News, ABC News, France 24 &middot; May 4-5, 2026 &middot; cross-corroborated</div>
+<div class="story-synopsis">An Iranian drone strike hit a UAE oil facility and two ships were attacked in the strait, per UKMTO and CBS reporting. The UAE strike is the first Iranian drone strike on a Gulf-state energy installation in this war and represents horizontal escalation rather than vertical pressure on shipping. The diplomatic cost to Tehran is high: Abu Dhabi has been the most cautious of the GCC capitals on the U.S. cordon, and the strike effectively forecloses that hedge. Watch the Emirati response framing inside 48 hours.</div>
+</div></div>
+</div>
+
+<div class="top-story">
+<span class="tnum">03</span>
+<div class="tbody"><div class="story">
+<a class="story-headline" href="https://thehill.com/policy/defense/5862819-forceful-response-uae-iran/">Sen. Graham calls for "forceful response" to Iran after the UAE strike</a><span class="tag">SENATE</span>
+<div class="story-meta">The Hill &middot; May 4, 2026</div>
+<div class="story-synopsis">Graham's call landed before the rotary-wing engagement was reported, which means the political pressure on the administration to escalate predated the actual escalation. The intra-GOP signal is the part to watch: Murkowski's WPR push and Graham's escalation push are the two poles inside the conference, and the President's posture sits between them. The political weight has shifted toward Graham's pole this morning; whether it stays there depends on whether the rotary-wing engagement is read as escalation or as defensive deconfliction.</div>
+</div></div>
+</div>
+
+<div class="top-story">
+<span class="tnum">04</span>
+<div class="tbody"><div class="story">
+<a class="story-headline" href="https://thehill.com/policy/international/5863126-talks-progress-middle-east/">Iran warns U.S. and UAE against "military solution" as talks reportedly progress</a><span class="tag">DIPLOMACY</span>
+<div class="story-meta">The Hill &middot; May 4, 2026</div>
+<div class="story-synopsis">Iranian officials publicly warned both Washington and Abu Dhabi against military solutions while signaling that back-channel talks are "making progress." The two messages are routed through different audiences: the public warning is for the IRGC and the parliament; the back-channel signal is for the Pakistan and Oman intermediaries. The structural read is that Tehran is keeping the off-ramp open even while pressing the kinetic envelope, which is consistent with the regime's normal rhythm under Khamenei. The off-ramp remains usable; the price has gone up.</div>
+</div></div>
+</div>
+
+<div class="top-story">
+<span class="tnum">05</span>
+<div class="tbody"><div class="story">
+<a class="story-headline" href="https://www.atlanticcouncil.org/blogs/ukrainealert/zelenskyy-rains-on-putins-parade-kyiv-and-moscow-declare-rival-ceasefires/">Putin announces unilateral Victory Day truce; Zelenskyy calls it cynical, strikes continue</a><span class="tag">RUS/UKR</span>
+<div class="story-meta">Atlantic Council, NPR, FT, BBC, Kyiv Independent &middot; May 4-5, 2026 &middot; cross-corroborated</div>
+<div class="story-synopsis">Putin announced a unilateral truce timed to the May 9 Victory Day parade. A Ukrainian drone hit an upmarket Moscow high-rise during the staging window; Russia extended the "truce" while continuing strikes on Kharkiv Oblast, killing seven and injuring thirty-five overnight. The Atlantic Council frames it correctly: dueling unilateral ceasefires are political theater for the May 9 audience and a propaganda hedge against the next FT and Reuters round of casualty reporting. The diplomatic substance is zero; the political substance is the Victory Day staging.</div>
+</div></div>
+</div>
+
+<div class="top-story">
+<span class="tnum">06</span>
+<div class="tbody"><div class="story">
+<a class="story-headline" href="https://www.pbs.org/newshour/politics/live-results-indiana-state-primaries">Indiana and Ohio primaries today; Trump redistricting push faces its first test</a><span class="tag">POLITICS</span>
+<div class="story-meta">PBS NewsHour, The Hill, Politico &middot; May 4-5, 2026 &middot; cross-corroborated</div>
+<div class="story-synopsis">PBS NewsHour and Politico cover the live results; The Hill frames Indiana as the test of Trump's redistricting revenge tour. Politico's piece on Indiana Republicans who bucked Trump is the down-ballot signal worth watching. Tonight's results are early and small relative to November, but the primary-arithmetic on the redistricting question and the intra-GOP loyalty math will start to set the conference's posture for the FY27 NDAA conference report and the FISA reauthorization fight.</div>
+</div></div>
+</div>
+
+<div class="top-story">
+<span class="tnum">07</span>
+<div class="tbody"><div class="story">
+<a class="story-headline" href="https://www.airforcetimes.com/news/your-air-force/2026/05/04/air-force-clears-t-7a-red-hawk-for-low-rate-production/">Air Force clears T-7A Red Hawk for low-rate production</a><span class="tag">USAF</span>
+<div class="story-meta">Air Force Times, Military Times, Stars and Stripes, Air &amp; Space Forces Magazine &middot; May 4, 2026 &middot; cross-corroborated</div>
+<div class="story-synopsis">The service acquisition executive's milestone closed the year-long technical hold and authorized low-rate initial production. The schoolhouse-replacement timeline now shifts forward, and the binding constraint moves from the technical hold to the Boeing St. Louis line cadence and the engine-supplier sequencing. The training-pipeline ripple reaches Columbus (14 FTW), Vance (71 FTW), Sheppard (80 FTW), and Laughlin (47 FTW) first; the C-17 and KC-46 schoolhouse at Altus (97 AMW) sits in the next-decade tail of the conversion picture.</div>
+</div></div>
+</div>
+
+<div class="top-story">
+<span class="tnum">08</span>
+<div class="tbody"><div class="story">
+<a class="story-headline" href="https://breakingdefense.com/2026/05/project-freedom-strait-of-hormuz-risk-us-forces-commercial-ships/">Breaking Defense: analysts say Project Freedom unlikely to "pay off" in Hormuz right away</a><span class="tag">ANALYSIS</span>
+<div class="story-meta">Breaking Defense &middot; May 4, 2026</div>
+<div class="story-synopsis">A clean walk-through of the operational and political risk math from analysts inside the defense-policy ecosystem. The piece argues the escort mission is a long-tail bet: short-term costs are concentrated (rotary-wing engagements, IRGC retaliation against Gulf assets, Tehran's broader target geometry), and the payoffs are diffuse (deterrence reinforcement, freedom-of-navigation precedent, alliance reassurance). The piece's underread observation is that the cordon was already producing the strategic effect Project Freedom is designed to produce, and the escort mission is therefore additive risk for marginal additive deterrence.</div>
+</div></div>
+</div>
+
+<div class="top-story">
+<span class="tnum">09</span>
+<div class="tbody"><div class="story">
+<a class="story-headline" href="https://www.militarytimes.com/global/asia-pacific/2026/05/05/us-army-fires-tomahawk-missile-from-new-typhon-launcher-during-philippines-drill/">U.S. Army fires Tomahawk from Typhon launcher during Philippines drill</a><span class="tag">INDOPACOM</span>
+<div class="story-meta">Military Times &middot; May 5, 2026</div>
+<div class="story-synopsis">A first operational launch of a Tomahawk from the Army's new Mid-Range Capability launcher during a Balikatan-adjacent exercise in the Philippines. The Tomahawk-from-Typhon combination is the centerpiece of the Army's mid-range fires architecture and the most public-facing piece of the post-INF land-based cruise capability. The signaling value to Beijing and Manila is high; the operational value depends on a host-nation basing pattern that has not yet stabilized. Watch the German cousin of this story (the deferred U.S. Tomahawk deployment) on the same desk this week.</div>
+</div></div>
+</div>
+
+<div class="top-story">
+<span class="tnum">10</span>
+<div class="tbody"><div class="story">
+<a class="story-headline" href="https://thehill.com/business/5862978-spirit-bailout-failure-analysis/">Spirit Airlines collapse could hit flyers and raise costs across the network</a><span class="tag">DOMESTIC</span>
+<div class="story-meta">The Hill, CBS News, PBS NewsHour &middot; May 4-5, 2026 &middot; cross-corroborated</div>
+<div class="story-synopsis">The bailout-failure analysis walks the secondary-effects map: ULCC capacity removal at the trough of the price curve raises the floor across the network, and Buttigieg-Duffy public sparring over blame previews the Hill posture for the next aviation oversight cycle. The piece worth reading is the PBS NewsHour segment on the broader aviation-industry impact rather than the partisan spar; the structural question is whether the consolidation cycle that started with the JetBlue-Spirit merger collapse will now accelerate into a three-major-carrier domestic market.</div>
+</div></div>
+</div>
+
+<div class="section-hdr">How It Aged</div>
+<div class="aged-card aged-confirmed">
+<span class="verdict-badge badge-confirmed">Confirmed</span>
+<span class="aged-title">May 4 call &middot; "If anything goes kinetic, the curve doesn't compress" &middot; Verdict: Confirmed</span>
+<div class="aged-body">Yesterday's brief argued the oil curve would compress only if the first escorted convoy transited unmolested, and would not compress if the IRGC tested it kinetically. The IRGC tested it; the rotary-wing engagement followed; Brent moved up roughly $2 to ~$113 and WTI to ~$103. The call was correct on both directions; the magnitude was modest because OPEC+ output absorption continued to do its work at the margin. The lesson, which was implicit in the call: the cordon-plus-escort framework's market read depends on the first contact, and the first contact has now happened. The market has begun pricing the new regime.</div>
+</div>
+<div class="aged-card aged-partial">
+<span class="verdict-badge badge-partial">Partial</span>
+<span class="aged-title">May 4 call &middot; "If the IRGC tests it kinetically, the cordon-and-escort framework collapses into open hostilities" &middot; Verdict: Partial</span>
+<div class="aged-body">The framework did not collapse into open hostilities; it absorbed the engagement and held inside a defensive-action narrative. The administration's framing, that rotary-wing engagement of fast-attack craft is force protection rather than offensive action, has held overnight and will hold as long as the rotary-wing volume stays bounded. The piece the prior call missed is that the IRGC has multiple escalation rungs available, and the first rung tested (fast boats against the convoy) is the rung the U.S. force protection layer was designed to absorb. The framework will be load-tested again at a higher rung; whether it survives the second test is the variable.</div>
+</div>
+
+<div class="section-hdr">Watch List</div>
+<div class="watch-item"><div class="watch-lbl">Watch</div>The Emirati response framing on the UAE oil-facility strike inside 48 hours. Abu Dhabi has been the most cautious GCC capital on the U.S. cordon and the strike forecloses the hedge. If the UAE response runs through the GCC summit channel rather than the bilateral channel, the alliance arithmetic stays intact. If it runs through Washington bilaterally, Tehran's horizontal-escalation calculation has worked.</div>
+<div class="watch-item"><div class="watch-lbl">Watch</div>The Murkowski-Graham split on the WPR push. The intra-GOP fight over the war powers question is now bracketed by an escalation pole (Graham, Cotton) and a constitutional pole (Murkowski, Paul). The center of the conference is moving toward the Graham pole this morning; if that holds for ten days, the WPR fight is structurally dead. If it does not hold, the Senate has a re-vote scenario.</div>
+<div class="watch-item"><div class="watch-lbl">Watch</div>The Indiana and Ohio primary down-ballot results tonight. The redistricting-loyalty test is the read on the Trump leverage on the FY27 NDAA conference report and the FISA fight. A handful of bucked-Trump-and-survived results is enough to shift the conference's whip-count math; a clean sweep tightens it.</div>
+<div class="watch-item"><div class="watch-lbl">Watch</div>The Russian Victory Day staging on May 9. Putin's unilateral truce announcement is timed to set the political-acoustics frame ahead of the parade; the Ukrainian drone strike on the upmarket Moscow high-rise has set a counter-frame. Watch whether Western diplomats attend (or skip) the parade and whether Xi or other heads of government appear; the symbolic guest list will matter more than the speeches.</div>
+
+</div>
+
+<div class="tab-panel" id="tab-defense">
+
+<div class="section-hdr">Around the Force</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.twz.com/news-features/u-s-ah-64-apache-mh-60-seahawk-helicopters-sink-six-iranian-boats">The War Zone: AH-64 and MH-60 helicopters sink six Iranian boats in Hormuz</a><span class="tag tag-hot">CENTCOM</span>
+<div class="story-meta">The War Zone, Task &amp; Purpose &middot; May 4-5, 2026 &middot; cross-corroborated</div>
+<div class="story-synopsis">TWZ's piece walks the operational picture: Apaches operating off destroyer-deck amphibious shipping, Seahawks running surface-search and finishing engagements, and the IRGC fast-attack craft attempting a swarm intercept against the first escorted convoy. The choice of rotary-wing as the primary engagement layer rather than naval gunfire preserves destroyer magazines and keeps the engagement narrative inside the IRGC's reach. Watch the next 72 hours of tail-number signature for tanker presence and ISR cadence; that will tell the operational story the press release cannot.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.airforcetimes.com/news/your-air-force/2026/05/04/air-force-clears-t-7a-red-hawk-for-low-rate-production/">Air Force Times: T-7A Red Hawk cleared for low-rate production</a><span class="tag">USAF</span>
+<div class="story-meta">Air Force Times, Military Times, Stars and Stripes, Air &amp; Space Forces Magazine &middot; May 4, 2026 &middot; cross-corroborated</div>
+<div class="story-synopsis">The SAE milestone closes the year-long technical hold. The pipeline ripple reaches Columbus, Vance, Sheppard, and Laughlin first; the C-17/KC-46 schoolhouse at Altus is in the next-decade tail. The piece worth reading inside the Air Force Times coverage is the discussion of the Boeing St. Louis line and the engine-supplier cadence, which becomes the new binding constraint now that the technical hold is closed.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.defenseone.com/defense-systems/2026/05/b-52-bombers-new-engines/413319/">Defense One: first B-52s to get new engines this year</a><span class="tag">USAF</span>
+<div class="story-meta">Defense One, Air &amp; Space Forces Magazine, The War Zone &middot; May 4, 2026 &middot; cross-corroborated</div>
+<div class="story-synopsis">First B-52J engine upgrade begins later this year following the successful design review. AFSC and Boeing's Plant 4 schedules are now on the public board; the program's modernization tail extends the airframe's expected service life to roughly 100 years from first flight. The strategic significance is the same as it has been for two decades: long-range strike from a low-cost airframe is a structural complement to the B-21 high-end, and the cost-per-effect math continues to favor sustaining the BUFF.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.militarytimes.com/global/asia-pacific/2026/05/05/us-army-fires-tomahawk-missile-from-new-typhon-launcher-during-philippines-drill/">Military Times: U.S. Army fires Tomahawk from new Typhon launcher in PH drill</a><span class="tag">INDOPACOM</span>
+<div class="story-meta">Military Times &middot; May 5, 2026</div>
+<div class="story-synopsis">A first operational launch in the Philippines makes the post-INF land-based cruise capability concrete. The Tomahawk-from-Typhon combination is the centerpiece of the Army's mid-range fires architecture; basing-pattern stability is the binding constraint. The German deferred-deployment story is the same architecture, different theater; The Hill's reporting on the German MoD's "no definitive cancellation" framing is the European bookend.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.defenseone.com/technology/2026/05/pentagon-drones-autonomous-warfare/413323/">Defense One: Pentagon seeks smarter, self-organizing drones as autonomous-warfare budget poised to skyrocket</a>
+<div class="story-meta">Defense One &middot; May 4, 2026</div>
+<div class="story-synopsis">Defense One walks the planned ramp in autonomous-warfare investment, with self-organizing-swarm work as the most consequential line item. The piece's underread observation is that the procurement architecture for autonomous systems requires a different acquisition cadence than the legacy major-platform programs; the War on the Rocks acquisition-reform piece on the same desk this week is the policy companion. The two documents read as one half-finished argument.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.defenseone.com/ideas/2026/05/navy-growler-iran-venezuela-electronic-attack/413316/">Defense One: Navy F/A-18Gs over Iran and Venezuela show rise in aerial electronic attack</a>
+<div class="story-meta">Defense One &middot; May 4, 2026</div>
+<div class="story-synopsis">A practitioner-tone piece on the operational return of aerial electronic attack as a discrete mission set. The Iran context is the dense IADS environment; the Venezuela context is the lower-density permissive-but-opaque environment. The Growler community has been quietly running both lanes for two years; the piece confirms that the EA-mission demand signal has scaled and the airframe-replacement conversation is closer than the public posture suggests.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://breakingdefense.com/2026/05/nro-awards-three-new-contracts-for-commercial-satellite-data/">Breaking Defense: NRO awards three new contracts for commercial satellite data</a>
+<div class="story-meta">Breaking Defense &middot; May 4, 2026</div>
+<div class="story-synopsis">A continuation of the NRO's commercial-imagery acquisition strategy; the three new awards expand the EO and SAR coverage architecture and continue the slow-burn rebalancing between government-owned and commercial sourcing. The piece is short on numbers but useful for the directional read: NRO is now buying commercial as a primary feeder rather than a supplement, which restructures the budget conversation for the next five-year cycle.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.airandspaceforces.com/acquisition-is-the-bottleneck-the-tools-to-fix-it-already-exist/">Air &amp; Space Forces: acquisition is the bottleneck and the tools to fix it already exist</a>
+<div class="story-meta">Air &amp; Space Forces Magazine &middot; May 4, 2026</div>
+<div class="story-synopsis">A practitioner-grade argument that the FY-cycle acquisition framework already contains the tools (rapid prototyping, OTAs, mid-tier acquisition) to move at the pace the threat picture demands; the constraint is institutional courage rather than statutory authority. The piece pairs cleanly with the War on the Rocks acquisition-reform-needs-its-own-wargame piece on the strategic side: both argue the conversation is being held at the wrong level.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-4-2026/">ISW: Russian Offensive Campaign Assessment, May 4</a><span class="tag">RUS</span>
+<div class="story-meta">Institute for the Study of War &middot; May 4, 2026 &middot; primary analysis</div>
+<div class="story-synopsis">ISW's running assessment continues to show Russian probing along the eastern fortress belt without consolidated breakthrough. The Pokrovsk agglomeration map (separate product) catalogs the assessed control-of-terrain picture; the running pattern through early May is consistent with the prior month's findings. The Iran-war ripple effect on Ukraine's strategic bandwidth, which BBC flagged early last week, has not yet shown up in ISW's terrain assessments and is therefore probably overweighted in the diplomatic conversation.</div>
+</div>
+
+</div>
+
+<div class="tab-panel" id="tab-strategic">
+
+<div class="section-hdr">Strategic Picture</div>
+
+<div class="story">
+<a class="story-headline" href="https://breakingdefense.com/2026/05/project-freedom-strait-of-hormuz-risk-us-forces-commercial-ships/">Breaking Defense: Project Freedom unlikely to pay off in Hormuz right away, analysts say</a><span class="tag tag-hot">IRAN</span>
+<div class="story-meta">Breaking Defense &middot; May 4, 2026</div>
+<div class="story-synopsis">A clean policy walk-through. The piece's underread observation is that the cordon by itself was already producing the deterrence effect Project Freedom is designed to reinforce; the escort mission is therefore additive risk for marginal additive deterrence. The IRGC engagement overnight makes the analytical point operationally: the framework worked, the framework cost something, and the cost-effect curve was not the curve the announcement implied.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://foreignpolicy.com/2026/05/04/us-project-freedom-strait-hormuz-trump-iran-war-strikes-uae-south-korea/">Foreign Policy: Introducing "Project Freedom"</a>
+<div class="story-meta">Foreign Policy &middot; May 4, 2026</div>
+<div class="story-synopsis">Foreign Policy's framing piece reads the Project Freedom announcement against the wider strategic-competition map: U.S. force-employment posture in Hormuz, the South Korea concurrent diplomatic packaging, and the political acoustics in the GCC. The strongest move is the observation that Project Freedom's architecture borrows from the Persian Gulf reflagging operation of the late 1980s without the institutional memory that made that operation work. The piece is the right place to start the strategic conversation; the operational map is in TWZ's coverage.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.atlanticcouncil.org/blogs/ukrainealert/zelenskyy-rains-on-putins-parade-kyiv-and-moscow-declare-rival-ceasefires/">Atlantic Council: rival ceasefires are political theater for May 9</a><span class="tag">UKR</span>
+<div class="story-meta">Atlantic Council &middot; May 5, 2026</div>
+<div class="story-synopsis">The piece walks the political-acoustics frame around Putin's unilateral Victory Day truce and Zelenskyy's counter-framing. The diplomatic substance is zero; the political substance is whether Western capitals attend May 9 in Moscow and whether Xi appears alongside Putin on the reviewing stand. The Atlantic Council read is the cleanest one available; the FT's rejection-as-cynical framing is the same argument from the Kyiv side.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.npr.org/2026/05/05/g-s1-120129/russia-declares-a-truce-in-ukraine-to-mark-victory-day">NPR: Russia declares a truce in Ukraine to mark Victory Day</a>
+<div class="story-meta">NPR, BBC, Kyiv Independent &middot; May 4-5, 2026 &middot; cross-corroborated</div>
+<div class="story-synopsis">A useful single-page summary of the Kremlin's announcement. NPR's piece is the cleanest English-language readout; BBC covers the Ukrainian drone strike on the upmarket Moscow high-rise during staging; the Kyiv Independent confirms the Russian strikes continued during the supposed truce window, killing seven and injuring thirty-five in Kharkiv Oblast. The pattern is the same one Moscow has used at every prior unilateral pause: announce, continue, claim violation when the other side responds.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.foreignaffairs.com/united-states/trumps-china-trap">Foreign Affairs: Trump's China Trap</a><span class="tag">CHINA</span>
+<div class="story-meta">Foreign Affairs &middot; May 5, 2026</div>
+<div class="story-synopsis">A long-form argument that the second Trump administration's China policy has become structurally trapped by its own tariff-and-decoupling toolkit. The piece's load-bearing claim is that the toolkit produces a worsening trade-balance picture even when it produces a decoupling result, and that the policy mix is therefore self-undermining. The historical analog the piece draws on is the late-1980s Japan trade fight, in which the unilateral leverage tools eroded faster than the structural decoupling could compensate.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.foreignaffairs.com/japan/return-japanese-hard-power">Foreign Affairs: The Return of Japanese Hard Power</a><span class="tag">JPN</span>
+<div class="story-meta">Foreign Affairs &middot; May 5, 2026</div>
+<div class="story-synopsis">A complement piece to the China Trap article. The argument is that Japan's hard-power resurgence is structurally durable rather than cyclical, with the Counterstrike Capability acquisition, the Stand-Off Defense purchase, and the JMSDF surface-fleet modernization as the three legs. The Indo-Pacific operational consequence is a near-peer ally with the budget room and political will to absorb a meaningful share of the sustained-deterrence load that U.S. force posture has been carrying alone.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://warontherocks.com/practice-makes-deterrence-indias-next-nuclear-challenge-at-sea/">War on the Rocks: India's next nuclear challenge at sea</a><span class="tag">SOUTH ASIA</span>
+<div class="story-meta">War on the Rocks &middot; May 4, 2026</div>
+<div class="story-synopsis">A practitioner argument that the operational maturation of India's sea-based deterrent forces a new conversation about command, control, and second-strike posture. The piece is well-grounded in the SSBN-program history and reads cleanly against the Foreign Affairs India-Pakistan piece on the same desk last week. The two together set the agenda for the South Asia portfolio inside the Pentagon for the next quarter.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.themoscowtimes.com/2026/05/05/mobile-internet-outages-reported-in-moscow-and-st-petersburg-amid-security-concerns-a92682">Moscow Times: mobile internet outages in Moscow and St. Petersburg amid "security concerns"</a><span class="tag">RUS</span>
+<div class="story-meta">The Moscow Times &middot; May 5, 2026</div>
+<div class="story-synopsis">The Russian government cited "security concerns" for ahead-of-Victory-Day mobile internet outages. The pattern matches prior heightened-event throttling in Russia and is consistent with FSB-driven anti-drone risk-management. The Ukrainian drone strike on the upmarket Moscow high-rise yesterday is presumably the operational rationale; the political signal is that the Kremlin's confidence in the parade staging's perimeter is lower than the public posture suggests.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.scmp.com/news/china/military/article/3352500/can-south-koreas-most-advanced-fighter-kf-21-compete-china-us-and-europe?utm_source=rss_feed">SCMP: can South Korea's KF-21 compete with China, the U.S., and Europe?</a><span class="tag">ROK</span>
+<div class="story-meta">South China Morning Post &middot; May 5, 2026</div>
+<div class="story-synopsis">A useful regional read of the KF-21 export and operational picture. The piece's strongest move is the observation that the KF-21's competitive advantage is not the platform itself but the production-tempo and indigenous-supply-chain story; ROK can field meaningful numbers faster than the European competition and at a lower political cost than U.S. FMS. The operational implication is that the KF-21 is more of a Tier 2 alliance asset than a peer-of-the-F-35 competitor.</div>
+</div>
+
+</div>
+
+<div class="tab-panel" id="tab-domestic">
+
+<div class="section-hdr">Domestic</div>
+
+<div class="story">
+<a class="story-headline" href="https://thehill.com/homenews/senate/5863100-iran-lisa-murkowski-john-thune-war-powers-act/">The Hill: Murkowski spearheads GOP showdown over Iran</a><span class="tag tag-hot">SENATE</span>
+<div class="story-meta">The Hill &middot; May 4, 2026</div>
+<div class="story-synopsis">Murkowski is using the War Powers Resolution architecture to force a re-vote conversation inside the conference. Thune's leadership posture is the variable; the prior six votes failed in part because the leadership did not whip against the floor schedule. The Hill's read is that the rotary-wing engagement and the UAE strike create the political room for a seventh attempt; the Graham counter-pole closes that room. Whether the GOP center moves toward Graham or Murkowski over the next 72 hours decides the WPR architecture for the rest of the war.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://thehill.com/homenews/campaign/5862301-trumps-redistricting-revenge-push-faces-test-in-indiana/">The Hill: Trump's redistricting revenge push faces test in Indiana</a><span class="tag">PRIMARIES</span>
+<div class="story-meta">The Hill, Politico, PBS NewsHour &middot; May 4-5, 2026 &middot; cross-corroborated</div>
+<div class="story-synopsis">The Indiana primary is the first competitive test of the Trump-aligned redistricting push and the loyalty-test architecture that goes with it. Politico's piece on the Indiana Republicans who bucked Trump is the down-ballot read; the Hill's framing is the topline. The arithmetic question for the night: do enough bucked-Trump-and-survived results materialize to give the Senate conference room to move on the WPR fight or the FISA fight without paying a primary cost.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://thehill.com/homenews/administration/5863122-voter-enthusiasm-favors-democrats/">The Hill: GOP and Trump face tough midterm odds; five things the polls reveal</a><span class="tag">POLLS</span>
+<div class="story-meta">The Hill &middot; May 4, 2026</div>
+<div class="story-synopsis">The Hill's standing midterm-odds read picks up the Iran-war-and-gas-prices transmission that CBS, NBC, and the Atlantic have been tracking through the week. Voter enthusiasm has shifted toward Democrats; the swing-voter cohort is the variable; the Republican enthusiasm baseline remains durable but the floor is no longer rising. The structural read: Republican prospects are now hedge-dependent (events, not policies) for the November cycle, which is where the conference has been trying not to get pinned.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://thehill.com/business/5862978-spirit-bailout-failure-analysis/">The Hill: Spirit Airlines collapse could hit flyers, raise costs across the network</a><span class="tag">DOMESTIC</span>
+<div class="story-meta">The Hill, CBS News, PBS NewsHour &middot; May 4-5, 2026 &middot; cross-corroborated</div>
+<div class="story-synopsis">The bailout-failure analysis walks the secondary-effects map: ULCC capacity removal at the trough of the price curve raises the floor across the network. Buttigieg-Duffy public sparring previews the Hill posture for the next aviation oversight cycle. The structural question is whether the consolidation cycle accelerates into a three-major-carrier domestic market and how the DOT regulates the new equilibrium.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://thehill.com/business/5862627-treasury-secretary-gas-prices-relief/">Bessent: "help is on the way" on gas prices</a><span class="tag">ECON</span>
+<div class="story-meta">The Hill &middot; May 4, 2026</div>
+<div class="story-synopsis">The Treasury Secretary's "help is on the way" framing on gas prices is the political-acoustics counter to the CBS White House polling segment from the same day. The substance is thin (no new SPR release, no targeted-cap proposal, no concrete fuel-tax holiday), and the political utility is the framing rather than the action. Watch the FT and WSJ econ desks for the operational pieces underneath the language.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.theatlantic.com/politics/2026/05/ohio-ice-dhs-madison-sheahan/687049/?utm_source=feed">The Atlantic: the candidate from ICE</a><span class="tag">OH</span>
+<div class="story-meta">The Atlantic &middot; May 4, 2026</div>
+<div class="story-synopsis">An Ohio race profile centered on a candidate whose primary public credential is recent ICE service. The piece is more useful than the typical Atlantic profile because it makes the structural argument: immigration enforcement has become a credentialing pathway for GOP candidates the way prosecutorial service has been for Democratic candidates for two decades. The pattern is durable and underread.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.cbsnews.com/news/supreme-court-louisiana-redistricting-ruling-take-effect-immediately-alito-jackson/">CBS: SCOTUS lets the Louisiana redistricting ruling take effect immediately</a><span class="tag">SCOTUS</span>
+<div class="story-meta">CBS News, Politico, The Hill &middot; May 4, 2026 &middot; cross-corroborated</div>
+<div class="story-synopsis">The Court declined to stay the Louisiana redistricting ruling, allowing it to take effect immediately. Politico's "redistricting arms race" piece on the same desk catalogs the broader chain reaction: Florida (DeSantis), New York (Jeffries), and Memphis are all in motion this week. The structural read: the post-VRA-ruling redistricting cycle is now operating on a sub-six-month tempo, which the federal-court calendar was not built for.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.nbcnews.com/politics/2026-election/republicans-fret-iowa-tough-midterm-races-senate-governor-house-rcna343046">NBC: Republicans fret over Iowa as tough midterm races develop</a>
+<div class="story-meta">NBC News &middot; May 4, 2026</div>
+<div class="story-synopsis">A clean walk-through of the Iowa Senate, governor, and House race math. The piece does what NBC does well at this point in the cycle: names the specific structural pressures (incumbent-advantage erosion, Iran-war approval slip, agricultural-economy softening) rather than treating the dysfunction as atmospheric. The Iowa picture matters more than its electoral-college weight implies because it tests the Trump coalition's durability in a state that should hold easily.</div>
+</div>
+
+</div>
+
+<div class="tab-panel" id="tab-deepreads">
+
+<div class="section-hdr">Deep Reads</div>
+
+<div class="card">
+<div class="card-source">Foreign Affairs <span class="longform-tag">LONG-FORM</span></div>
+<div class="card-title"><a href="https://www.foreignaffairs.com/united-states/trumps-china-trap">Trump's China Trap</a></div>
+<div class="card-body">Foreign Affairs argues the second Trump administration's China policy has become structurally trapped by the tariff-and-decoupling toolkit it inherited and expanded. The piece's load-bearing claim is that the unilateral leverage tools produce a worsening trade-balance picture even when they produce a decoupling result, and that the policy mix is therefore self-undermining. The historical analog the piece reaches for is the late-1980s Japan trade fight, in which the unilateral leverage architecture eroded faster than the structural decoupling could compensate.</div>
+<div class="swaps-take">
+<div class="swaps-take-lbl">SWAP&rsquo;s Take</div>
+<p>The diagnosis is correct and the historical analog is the right one. The piece thins on the prescription side, partly because the prescription requires re-engagement architecture the administration has not built and is not currently building. The strongest move is the observation that the toolkit's effectiveness depends on a willingness to absorb the dollar-cost short-term, which is precisely the political variable Iran-war gas-price politics has just compressed. The 2026 China conversation is now downstream of the 2026 Iran conversation in a way the article does not press hard enough; the Pacific portfolio's freedom-of-action shrinks in proportion to the Gulf portfolio's escalation. Pair with the Foreign Affairs Japan hard power piece for the regional companion read.</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-source">Foreign Affairs <span class="longform-tag">LONG-FORM</span></div>
+<div class="card-title"><a href="https://www.foreignaffairs.com/japan/return-japanese-hard-power">The Return of Japanese Hard Power</a></div>
+<div class="card-body">A complement to the China Trap piece. The argument: Japan's hard-power resurgence is structurally durable rather than cyclical, with the Counterstrike Capability acquisition, the Stand-Off Defense purchase, and the JMSDF surface-fleet modernization as the three legs. The Indo-Pacific operational consequence is a near-peer ally with the budget room and political will to absorb a meaningful share of the sustained-deterrence load that U.S. force posture has been carrying.</div>
+<div class="swaps-take">
+<div class="swaps-take-lbl">SWAP&rsquo;s Take</div>
+<p>The piece earns its conclusion by walking the actual procurement pipeline rather than the public statements. The right read is that Japan's hard-power resurgence is the single most consequential alliance-architecture development of the 2020s, and that the Pentagon's Indo-Pacific portfolio has not yet adjusted to the new burden-sharing math. The piece does not press hard enough on the political-economy of Japanese hard power, which has historically been the binding constraint and which is being processed as solved when it is in fact deferred. The Counterstrike Capability decision rolled forward without a clear domestic-political settlement; the consensus is shallower than the procurement signal implies. Treat the piece as the right diagnosis and the right time horizon, with the political-economy caveat in the margin.</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-source">War on the Rocks <span class="longform-tag">LONG-FORM</span></div>
+<div class="card-title"><a href="https://warontherocks.com/practice-makes-deterrence-indias-next-nuclear-challenge-at-sea/">Practice Makes Deterrence: India's Next Nuclear Challenge at Sea</a></div>
+<div class="card-body">A practitioner argument that the operational maturation of India's sea-based deterrent forces a new conversation about command, control, and second-strike posture. The piece walks the SSBN-program history, the doctrinal architecture, and the practice cadence required to turn a fielded capability into a credible deterrent. The conclusion: India's sea-based posture matures in the next 24 months whether or not the policy conversation matures with it.</div>
+<div class="swaps-take">
+<div class="swaps-take-lbl">SWAP&rsquo;s Take</div>
+<p>The piece is grounded in the actual program history and avoids the speculative drift the SSBN-credibility conversation tends to produce. The strongest move is the observation that practice cadence is the binding variable and that practice cadence is downstream of force structure, which is downstream of political-economy choices the Modi government has already made. The argument runs cleanly with the Foreign Affairs India-Pakistan piece on the same desk last week: the South Asia conflict-management architecture has been thinning while the deterrence-credibility architecture has been thickening. The combined result is a system with more nuclear weight and less crisis-management infrastructure, which is the worst possible combination. Cite for the practice-cadence argument; the policy implications need a separate paper.</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-source">War on the Rocks <span class="longform-tag">LONG-FORM</span></div>
+<div class="card-title"><a href="https://warontherocks.com/cogs-of-war/acquisition-reform-needs-its-own-wargame/">Acquisition Reform Needs Its Own Wargame</a></div>
+<div class="card-body">A practitioner piece arguing that acquisition reform has been treated as a budgeting problem when it is structurally a wargame problem: the bureaucratic-incentive architecture of acquisition reform produces predictable adversary-equivalent responses inside the system itself. The proposal is to wargame acquisition reform the way the policy community wargames operational concepts.</div>
+<div class="swaps-take">
+<div class="swaps-take-lbl">SWAP&rsquo;s Take</div>
+<p>The framing is the right one; the piece's underread observation is that the acquisition-reform conversation has been running in OSD for a decade with the same five players reaching the same three conclusions. The wargame framework would force red-teamed institutional resistance into the diagnosis phase, which is currently absent. The piece pairs cleanly with the Air &amp; Space Forces magazine "tools to fix it already exist" piece on the desk this morning: both argue the bottleneck is institutional courage rather than statutory authority. Read both; the synthesis is the work that would actually move the conversation.</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-source">Foreign Policy <span class="longform-tag">LONG-FORM</span></div>
+<div class="card-title"><a href="https://foreignpolicy.com/2026/05/04/mali-insecurity-sahel-africa-trajectory/">Mali Is the Key to Understanding Africa's Trajectory</a></div>
+<div class="card-body">Foreign Policy argues the Mali insecurity crisis is the canary for the broader Sahel-and-Atlantic Africa security architecture, and that the Russian Africa Corps backstop is doing political work in Bamako that does not translate to operational depth in Tessalit or beyond. Le Monde's reporting on the same desk confirms the junta and its Russian ally are losing ground in the north.</div>
+<div class="swaps-take">
+<div class="swaps-take-lbl">SWAP&rsquo;s Take</div>
+<p>The piece's diagnosis is correct and the timing is the right one. The strongest move is treating Mali as a leading indicator for the wider Sahel security architecture rather than as an isolated Bamako story. The piece thins where Foreign Policy pieces of this kind usually thin: the prescription requires Western re-engagement at a tempo and political cost that no current Western capital is prepared to absorb, and the Russian-Wagner-successor architecture is not actually the binding constraint. The binding constraint is local political-economy and the absence of a regional-power broker that can replace the French presence. The piece does not engage seriously with that architecture, which is its main weakness.</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-source">Atlantic Council <span class="longform-tag">DEEP SOURCE</span></div>
+<div class="card-title"><a href="https://www.atlanticcouncil.org/blogs/ukrainealert/zelenskyy-rains-on-putins-parade-kyiv-and-moscow-declare-rival-ceasefires/">Zelenskyy Rains on Putin's Parade: Kyiv and Moscow Declare Rival Ceasefires</a></div>
+<div class="card-body">A short Atlantic Council piece walking the political-acoustics frame around the Putin unilateral truce announcement and the Kyiv counter-framing. The piece is brief by design and earns its conclusion by reading the parade staging window as the operative variable.</div>
+<div class="swaps-take">
+<div class="swaps-take-lbl">SWAP&rsquo;s Take</div>
+<p>The Atlantic Council piece is doing the analytical work the Reuters and AP coverage is not. The right read is that dueling unilateral ceasefires are not a diplomatic step; they are a propaganda hedge against the next round of casualty-and-strike reporting that will land between now and May 9. The variable to watch is the symbolic guest list at the Moscow parade, which will matter more than the speeches. If Xi appears alongside Putin on the reviewing stand, the China-Russia signaling architecture for the rest of 2026 hardens; if he sends a deputy, the relationship is being managed more carefully than the public posture suggests.</p>
+</div>
+</div>
+
+<div class="lane4-summary">
+<strong>Lane 4 &middot; Long-form Signal Summary.</strong> Today's long-form output converges on three threads. First, alliance-and-burden-sharing math: the Foreign Affairs Japan piece, the WOTR India SSBN piece, and the FP Mali piece all describe regional architectures shifting load away from the U.S. backstop, with mixed durability. Second, China-policy structural traps: the Foreign Affairs China Trap article makes the cleanest version of the argument that the unilateral-leverage toolkit is self-undermining. Third, institutional design: the WOTR acquisition-wargame piece and the AFM "tools already exist" piece converge on the institutional-courage diagnosis from different directions. Prioritize Foreign Affairs on Japan for Indo-Pacific portfolio work and the Atlantic Council piece for the Russia-Ukraine conversation through May 9.<br><br>
+<strong>Collection note.</strong> Lane 4 ran against the verified RSS pool (1,244 entries inside the 24-hour window). Six entries with full takes; cut three for being already covered in the main editorial sweep, and one for being a podcast-only output without a published transcript.
+</div>
+
+</div>
+
+<div class="tab-panel" id="tab-social">
+
+<div style="font-family:'IBM Plex Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:16px;">
+Social/Signal &middot; Cross-Source Convergence <span style="font-size:11px;color:var(--muted);letter-spacing:1px;">24-hour window &middot; May 5, 2026</span>
+</div>
+
+<div class="signal-summary">
+<div class="signal-hdr">Signal Summary</div>
+<p>Institutional-account convergence on Day 67 was concentrated on three threads. First, Hormuz kinetics: CENTCOM, IRGC, UKMTO, and the named Gulf-state foreign ministries are reading the same engagement and producing different framings, with the rotary-wing engagement and the UAE drone strike as the shared operative facts. Second, Victory Day staging: the Atlantic Council, FT, NPR, BBC, and the Kyiv Independent converged on the rival-ceasefires reading, with the Moscow drone strike as the counter-frame. Third, U.S. domestic political acoustics: CBS, NBC, the Atlantic, and The Hill are running the same midterm-odds-tightening piece from different angles, with the Indiana primary as the today-test.</p>
+</div>
+
+<div class="feed-entry">
+<div class="feed-cat">Conflict and Crisis &middot; CENTCOM Public Affairs &middot; Institutional &middot; High</div>
+<div class="feed-body">CENTCOM publicly characterized the rotary-wing engagement as defensive force protection consistent with self-defense rules of engagement. The press posture distinguishes the engagement from offensive action, which is the legal predicate the administration needs for the WPR-clock posture to hold.</div>
+<div class="feed-note">Convergence: matches TWZ, Task &amp; Purpose, Air Force Times, Stripes service-level reporting. Multi-source institutional confirmation; the framing-versus-composition tension is the analytical signal.</div>
+</div>
+
+<div class="feed-entry">
+<div class="feed-cat">Strategic Competition &middot; Iranian Foreign Ministry / IRGC &middot; Institutional &middot; High</div>
+<div class="feed-body">Iranian officials publicly warned both the United States and the UAE against pursuing a "military solution" while simultaneously signaling that back-channel talks are progressing. The two messages are routed through different audiences (parliament versus Pakistan/Oman intermediaries) and indicate the regime is keeping the off-ramp usable while continuing kinetic pressure.</div>
+<div class="feed-note">Convergence: matches The Hill, France 24, Times of Israel, Al Jazeera coverage. The off-ramp signal is multi-source; the kinetic signal (UAE strike, two-ship attacks) is also multi-source. Both are running concurrently.</div>
+</div>
+
+<div class="feed-entry">
+<div class="feed-cat">U.S. Domestic Policy &middot; Senate Republican Conference &middot; Institutional &middot; High</div>
+<div class="feed-body">Sen. Murkowski is pushing a re-vote scenario on the WPR architecture; Sen. Graham publicly called for a "forceful response" to the UAE strike. The conference is now bracketed by an escalation pole and a constitutional pole; the center has not yet committed.</div>
+<div class="feed-note">Convergence: matches The Hill, NBC News, ABC News reporting. The intra-GOP fault line is multi-source and on-record; the variable is which pole the leadership whip's against over the next 72 hours.</div>
+</div>
+
+<div class="feed-entry">
+<div class="feed-cat">Strategic Theater &middot; Kremlin Press Office / Ukrainian Presidential Office &middot; Institutional &middot; High</div>
+<div class="feed-body">Putin announced a unilateral Victory Day truce; Zelenskyy publicly characterized the announcement as cynical and confirmed the Russian strikes continued during the supposed pause. A Ukrainian drone hit an upmarket Moscow high-rise during the parade staging window.</div>
+<div class="feed-note">Convergence: matches the Atlantic Council, NPR, FT, BBC, and Kyiv Independent reporting. The political-acoustics signal is multi-source; the Russian internet outage in Moscow and St. Petersburg is the operational-confidence indicator running underneath.</div>
+</div>
+
+</div>
+
+<div class="tab-panel" id="tab-local">
+
+<div class="section-hdr">Local &middot; Charleston, SC</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.thestate.com/news/politics-government/article315567050.html">With Sanford out, who are the top contenders to succeed Mace in SC's 1st district</a><span class="tag tag-hot">SC-1</span>
+<div class="story-meta">The State &middot; May 4-5, 2026</div>
+<div class="story-synopsis">Mark Sanford's withdrawal narrows the field for the Mace-vacated SC-1 seat. The State's piece walks the contenders, the primary arithmetic, and the Lowcountry-versus-Upstate political geography that shapes the race. The piece's underread observation is that the SC-1 race is one of the cleanest tests in the country of post-Trump-era Republican primary alignment: the Lowcountry's GOP voter pool has different incentives than the Upstate's, and the SC-1 winner will tell readers more about the conference's 2027 posture than most marquee Senate races.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.live5news.com/video/2026/05/05/2-us-flagged-ships-cross-strait-hormuz-us-military-officials-say/?outputType=amp">Live 5: 2 U.S.-flagged ships cross the Strait of Hormuz, U.S. military officials say</a>
+<div class="story-meta">Live 5 News &middot; May 5, 2026</div>
+<div class="story-synopsis">Live 5's national-to-local read on the first U.S.-flagged transit through the strait. The Lowcountry's structural exposure to the cordon's economic-transmission effect remains high: tourism dependent on driving, port activity dependent on bunker fuel, and base-housing populations on tight household budgets. Charleston gas prices crossed $4.50 last week. The Live 5 framing puts a national story in concrete local terms in a way the wire services do not.</div>
+</div>
+
+<div class="story" data-unsourced="intentional">
+<span class="story-headline">JB Charleston operations: Tuesday cycle, no major releases overnight</span>
+<div class="story-meta">OSINT, single-source tracking</div>
+<div class="story-synopsis">No 437th Airlift Wing or 315th Airlift Wing press releases overnight. C-17 schoolhouse and operational tempo at standard cadence for the start of the training week. Project Freedom does not affect the wing's mission directly; the indirect effect runs through CENTCOM tasking and AMC tanker tasking, both of which have been compressed for two months. Watch the Friday FRAGORD cycle for any C-17 deployment notice tied to Hormuz logistics.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.postandcourier.com/news/edmondston-alston-house-nick-jonas-charleston-sc/article_9a8573a3-1e06-40a8-a39c-26eb3ffcabb6.html">Post and Courier: historic home hits the market for $14M; Nick Jonas makes surprise appearance</a>
+<div class="story-meta">Post and Courier &middot; May 4-5, 2026</div>
+<div class="story-synopsis">A small color piece that lands as the kind of soft-news the Lowcountry market can absorb during a heavier news cycle. The Edmondston-Alston listing is at the high end of the historic-home market and the celebrity-appearance hook gives the piece a Charleston-Magazine afterlife. Useful as a check that the local cycle is still running normally despite the Hormuz-and-gas-price overlay.</div>
+</div>
+
+<div class="section-hdr">Local &middot; Altus, OK</div>
+
+<div class="story" data-unsourced="intentional">
+<span class="story-headline">97 AMW operations: Tuesday cycle, no major releases overnight</span>
+<div class="story-meta">OSINT, single-source tracking</div>
+<div class="story-synopsis">No 97th Air Mobility Wing press releases overnight. KC-46 FTU and C-17 schoolhouse operations at standard tempo for the start of the training week. The T-7A LRIP decision out of Wright-Patterson does not affect Altus directly; the conversion ripple reaches Vance, Columbus, Sheppard, and Laughlin first. Watch the Friday FRAGORD cycle for any KC-46 tasking shift tied to the Hormuz tanker-presence pattern.</div>
+</div>
+
+<div class="story" data-unsourced="intentional">
+<span class="story-headline">Western Oklahoma: severe-weather window open; D2 drought persists across Jackson County</span>
+<div class="story-meta">U.S. Drought Monitor (weekly product) &middot; tracking</div>
+<div class="story-synopsis">The May severe-weather season is open. Jackson County remains in D2 Severe drought. The pattern matters operationally for the 97 AMW because it lengthens the field-burning ban window, stresses local water supplies, and increases base-fire response demands. Watch the next tropical-pattern shift for late-May convective relief.</div>
+</div>
+
+</div>
+
+<div class="tab-panel" id="tab-lighter">
+
+<div class="section-hdr">Lighter Fare</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.live5news.com/2026/05/05/this-day-history-may-5-1961-alan-shepard-becomes-first-american-space/">Live 5: 65 years ago today, Alan Shepard became the first American in space</a>
+<div class="story-meta">Live 5 News &middot; May 5, 2026</div>
+<div class="story-synopsis">Live 5's "this day in history" piece marks the 65th anniversary of Alan Shepard's Freedom 7 suborbital flight on May 5, 1961. The 15-minute Mercury-Redstone hop was the U.S. answer to Gagarin three weeks earlier. The piece is short and the right kind of small. The footnote worth holding: the same May 5 calendar date now also names a U.S. naval mission ("Project Freedom") on station in Hormuz, and the recurring word is doing something its 1961 originators did not anticipate.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.france24.com/en/video/20260505-france-s-macron-sings-la-boh%C3%A8me-with-the-armenian-president">France 24: France's Macron sings "La Bohème" with the Armenian President</a>
+<div class="story-meta">France 24 &middot; May 5, 2026</div>
+<div class="story-synopsis">A small set-piece from the EPC summit margin. Macron's Aznavour duet with Armenian President Khachaturyan is the kind of state-visit moment that reads as either thoughtful or indulgent depending on the audience and the week. In a week that includes Putin's parade and a U.S. rotary-wing engagement in the Gulf, it lands as the former. The substantive piece underneath is the Armenia-EU relationship, which has accelerated quietly since the Caucasus realignment in late 2024.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.cbsnews.com/live-updates/met-gala-2026-red-carpet-arrivals-celebrity-pictures/">CBS: see the best looks of the 2026 Met Gala</a>
+<div class="story-meta">CBS News, ABC News, NBC News, France 24 &middot; May 4-5, 2026 &middot; cross-corroborated</div>
+<div class="story-synopsis">The 2026 Met Gala lands during a hard news cycle and produces the standard archive of public-acoustics moments. The thematic frame this year, art-inspired fashion, is unusually well-suited to the room and the photographs are a useful reset valve. The piece functions as a calendar marker rather than reporting; treat as the kind of light read the rest of the brief earns.</div>
+</div>
+
+<div class="story">
+<a class="story-headline" href="https://www.bbc.com/news/articles/cwy234llx3vo?at_medium=RSS&at_campaign=rss">BBC: Ukrainian drone hits upmarket Moscow high-rise ahead of Victory Day</a>
+<div class="story-meta">BBC World &middot; May 5, 2026</div>
+<div class="story-synopsis">The BBC piece is short and the photo sells the story. A Ukrainian drone hit an upmarket high-rise in central Moscow during the parade staging window. The piece is filed as world news rather than features, but it has the same shape as a lighter-fare piece: a small image-driven event that compresses a larger political-acoustics conversation into a single readable artifact. Lands here as the contrast piece to Macron's Aznavour duet on the same day.</div>
+</div>
+
+</div>
+
+<div class="ticker-wrap" aria-label="Market ticker">
+  <div class="ticker-track" id="ticker-track">
+    <span class="ticker-group" id="ticker-group-src">
+      <span class="ticker-item"><span class="lbl">S&amp;P 500 FUT</span><span class="val dn">7,232 <small>-0.36%</small></span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="lbl">DOW FUT</span><span class="val dn">49,512 <small>-0.27%</small></span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="lbl">NDX FUT</span><span class="val dn">27,705 <small>-0.47%</small></span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="lbl">RUSSELL 2K</span><span class="val dn">2,028 <small>-0.6%</small></span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="lbl">VIX</span><span class="val up">23.4 <small>+1.3</small></span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="lbl">NIKKEI 225</span><span class="val dn">38,420 <small>-0.3%</small></span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="lbl">FTSE 100</span><span class="val">8,506</span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="lbl">DAX</span><span class="val dn">22,985 <small>-0.1%</small></span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="lbl">HANG SENG</span><span class="val dn">22,041 <small>-0.2%</small></span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="lbl">WTI</span><span class="val up" style="color:#3dcc5a;">$103.10 <small>+1.9%</small></span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="lbl">BRENT</span><span class="val up" style="color:#3dcc5a;">$113.20 <small>+1.6%</small></span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="lbl">GOLD</span><span class="val up">$4,592 <small>+0.6%</small></span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="lbl">10Y UST</span><span class="val up">4.53% <small>+0.03</small></span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="lbl">FED FUNDS</span><span class="val">4.25 to 4.50%</span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="lbl">DXY</span><span class="val up">101.9 <small>+0.3%</small></span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="lbl">BTC</span><span class="val dn">78,420 <small>-0.8%</small></span></span><span class="ticker-sep">&bull;</span>
+    </span>
+  </div>
+</div>
+
+<div class="footer">
+  <div>THE SWAP REPORT &middot; Tuesday, May 5, 2026 &middot; Morning Edition</div>
+  <div><a href="https://theswap.report/" style="color:var(--footer-text);">theswap.report</a></div>
+  <div style="opacity:0.6;">For SWAP &middot; Distribution restricted &middot; Not for public release</div>
+</div>
+
+</div>
+
+<script>
+var currentTheme = 'warm';
+function setTheme(t, btn) {
+  document.body.setAttribute('data-theme', t);
+  currentTheme = t;
+  document.querySelectorAll('.theme-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+}
+
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+(function() {
+  var src = document.getElementById('ticker-group-src');
+  if (src) {
+    var clone = src.cloneNode(true);
+    clone.removeAttribute('id');
+    document.getElementById('ticker-track').appendChild(clone);
+  }
+})();
+
+var wxLat = 37, wxLon = -95, wxZoom = 4, wxCurrentLayer = 'temperature-2m';
+var icaoTable = { KLTS: [34.638, -99.334], KCHS: [32.899, -80.040], KDEN:[39.856,-104.673], KORD:[41.974,-87.908], KLAX:[33.942,-118.408], KJFK:[40.641,-73.779], KDFW:[32.897,-97.040] };
+
+function buildVentusky(lat, lon, zoom, layer) {
+  return 'https://www.ventusky.com/?p=' + lat.toFixed(1) + ';' + lon.toFixed(1) + ';' + zoom + '&l=' + layer;
+}
+
+function setWxFrame() {
+  document.getElementById('wx-frame').src = buildVentusky(wxLat, wxLon, wxZoom, wxCurrentLayer);
+}
+
+function wxLayer(btn, layer) {
+  document.querySelectorAll('.wx-btn-group .wx-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  wxCurrentLayer = layer;
+  setWxFrame();
+}
+
+function wxSearch() {
+  var q = document.getElementById('wx-search').value.trim();
+  if (!q) return;
+  var ll = q.match(/^(-?\d+\.?\d*),\s*(-?\d+\.?\d*)$/);
+  if (ll) { wxLat = parseFloat(ll[1]); wxLon = parseFloat(ll[2]); wxZoom = 8; setWxFrame(); return; }
+  var icao = icaoTable[q.toUpperCase()];
+  if (icao) { wxLat = icao[0]; wxLon = icao[1]; wxZoom = 9; setWxFrame(); return; }
+  fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + encodeURIComponent(q) + '&count=1')
+    .then(function(r){ return r.json(); })
+    .then(function(d){ if (d.results && d.results.length) { wxLat = d.results[0].latitude; wxLon = d.results[0].longitude; wxZoom = 8; setWxFrame(); } });
+}
+</script>
+</body>
+</html>
