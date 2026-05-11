@@ -66,7 +66,9 @@ MANDATORY LAST STEPS — both gates must pass before push:
 
 8. Snapshot to archive: python3 "/Users/nolanfamilycomputer/Library/CloudStorage/GoogleDrive-steven.nolan.jr@gmail.com/My Drive/zz - Claude Working Stuff/SWAP-Report/rss/archive_snapshot.py" "/Users/nolanfamilycomputer/Library/CloudStorage/GoogleDrive-steven.nolan.jr@gmail.com/My Drive/zz - Claude Working Stuff/SWAP-Report"
 
-9. Push to GitHub via push-to-github.sh (which re-runs both gates AND snapshots) or the GitHub Contents API. Push must include /archive/ folder so readers can reach the snapshot. Server-side FORMAT_LOCK gate (.github/workflows/format-gate.yml) will run on the push and block deploy if anything slips through.
+9. Push to GitHub. This step is MANDATORY and must complete BEFORE drafting the email. Use the GitHub Contents API (preferred, no local-git dependency) — read .github-push-config for the token and target repo. Push index.html, archive/<today>.html, archive/index.html, and status.json (after running build_metrics.py). Server-side FORMAT_LOCK gate will run on the push and block deploy if anything slips through.
+
+9a. VERIFY the live deploy before continuing. Wait ~90 seconds for GitHub Pages cache. Then fetch https://theswap.report/status.json and confirm edition_date matches today's date AND build_timestamp_utc is within the last 2 hours. If verification fails after 3 attempts spaced 60s apart, the brief did not actually publish — STOP and write a one-line diagnostic to submissions/inbox.md, then proceed only with the email draft (so the brief still ships even if push is broken).
 
 10. Draft the morning email — the ONLY blessed path is compose_and_draft.py. Do NOT hand-build draft args.
    a. python3 "/Users/nolanfamilycomputer/Library/CloudStorage/GoogleDrive-steven.nolan.jr@gmail.com/My Drive/zz - Claude Working Stuff/SWAP-Report/rss/compose_and_draft.py" --html /path/to/email.html --plain /path/to/email.txt --subject "[SWAP] Daily Brief — ..."
