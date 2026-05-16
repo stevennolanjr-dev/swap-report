@@ -95,6 +95,8 @@ HUMAN_ONLY_HOSTS = {
     "www.atlanticcouncil.org", "atlanticcouncil.org",
     "www.hudson.org", "hudson.org",
     "www.heritage.org", "heritage.org",
+    "news.usni.org", "usni.org",
+    "www.aei.org", "aei.org",
 }
 
 # Hosts that are slow on HEAD/GET but reliable. Bigger timeout, more retries.
