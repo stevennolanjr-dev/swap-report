@@ -87,6 +87,7 @@ HUMAN_ONLY_HOSTS = {
     "www.marines.mil", "marines.mil",
     "www.spaceforce.mil", "spaceforce.mil",
     "www.defense.gov", "defense.gov",
+    "www.war.gov", "war.gov",
     "www.armyupress.army.mil", "armyupress.army.mil",
     "www.dvidshub.net", "dvidshub.net",
     "www.cna.org", "cna.org",
