@@ -70,11 +70,7 @@ MANDATORY LAST STEPS — both gates must pass before push:
 
 9a. VERIFY the live deploy before continuing. Wait ~90 seconds for GitHub Pages cache. Then fetch https://theswap.report/status.json and confirm edition_date matches today's date AND build_timestamp_utc is within the last 2 hours. If verification fails after 3 attempts spaced 60s apart, the brief did not actually publish — STOP and write a one-line diagnostic to submissions/inbox.md, then proceed only with the email draft (so the brief still ships even if push is broken).
 
-10. Draft the morning email — the ONLY blessed path is compose_and_draft.py. Do NOT hand-build draft args.
-   a. python3 "/Users/nolanfamilycomputer/Library/CloudStorage/GoogleDrive-steven.nolan.jr@gmail.com/My Drive/zz - Claude Working Stuff/SWAP-Report/rss/compose_and_draft.py" --html /path/to/email.html --plain /path/to/email.txt --subject "[SWAP] Daily Brief — ..."
-   b. Use returned draft_args VERBATIM in create_draft.
-   c. Verify: python3 compose_and_draft.py --verify-draft --bcc "<comma-joined>" --subject "..." --body-len <N> --expected-fingerprint <fingerprint>
-   d. Do NOT send. SWAP reviews and sends.
+10. Email step DEPRECATED 2026-05-15. Do NOT create an email draft. Do NOT invoke create_draft or compose_and_draft.py. SWAP decision during 2026-05-15 reflection: he was not reading the daily emails. Web page (theswap.report) and RSS continue to update; email distribution is retired. compose_and_draft.py and email-distribution.json remain on disk for possible reactivation. After step 9a passes, the build is complete.
 
 CRITICAL FOLDER NOTE FOR THIS TASK:
 This task is configured with exactly two folder selections:
