@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="THE SWAP REPORT: Saturday, May 30, 2026">
+<meta property="og:description" content="Daily analytical brief: defense, strategic, domestic, and local.">
+<meta property="og:url" content="https://theswap.report/">
+<title>THE SWAP REPORT: Saturday, May 30, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f0e8;
+  --surface: #fffdf8;
+  --border: #d4c9b8;
+  --text: #1a1a1a;
+  --muted: #666666;
+  --accent: #8b0000;
+  --tab-inactive: #e8e2d8;
+  --tab-active: #fffdf8;
+  --header-bg: #ede8df;
+  --tab-bg: #e8e2d8;
+  --tag-bg: #8b0000;
+  --tag-text: #ffffff;
+  --watch-bg: #fff8f0;
+  --watch-border: #c8a06a;
+  --card-bg: #fffdf8;
+  --hover-bg: rgba(139,0,0,0.06);
+  --footer-bg: #ede8df;
+  --footer-text: #666666;
+}
+[data-theme="light"] {
+  --bg: #ffffff;
+  --surface: #f9f9f9;
+  --border: #e0e0e0;
+  --text: #1a1a1a;
+  --muted: #777;
+  --accent: #8b0000;
+  --tab-inactive: #f0f0f0;
+  --tab-active: #ffffff;
+  --header-bg: #f5f5f5;
+  --tab-bg: #f0f0f0;
+  --watch-bg: #fff8f0;
+  --watch-border: #d4a96a;
+  --card-bg: #ffffff;
+  --footer-bg: #f0f0f0;
+  --footer-text: #666;
+}
+[data-theme="dark"] {
+  --bg: #1a1a2e;
+  --surface: #16213e;
+  --border: #2d3561;
+  --text: #e8e8e8;
+  --muted: #9a9ab0;
+  --accent: #cc3333;
+  --tab-inactive: #16213e;
+  --tab-active: #1a1a2e;
+  --header-bg: #0f3460;
+  --tab-bg: #16213e;
+  --tag-bg: #cc3333;
+  --watch-bg: #1e1e3a;
+  --watch-border: #8b6a3a;
+  --card-bg: #16213e;
+  --footer-bg: #0f3460;
+  --footer-text: #9a9ab0;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: Georgia, serif; font-size: 14px; line-height: 1.6; }
+.page { max-width: 960px; margin: 0 auto; background: var(--bg); }
+.content-wrap { max-width: none; }
+.masthead { background: var(--bg); padding: 24px 20px 16px; border-bottom: 2px solid var(--accent); display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.masthead-left { flex: 1; }
+.masthead-title { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 22px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); }
+.masthead-meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); margin-top: 4px; }
+.masthead-epigraph { font-style: italic; font-size: 13px; color: var(--muted); margin-top: 6px; font-family: Georgia, serif; }
+.theme-btns { display: flex; gap: 6px; margin-top: 4px; }
+.theme-btn { font-family: 'IBM Plex Mono', monospace; font-size: 14px; padding: 4px 8px; border-radius: 4px; cursor: pointer; background: var(--tab-bg); border: 1px solid var(--border); color: var(--text); transition: background 0.2s; }
+.theme-btn.active { background: var(--accent); color: #fff; }
+.edition-bar { background: var(--header-bg); color: var(--muted); border-bottom: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 5px 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.edition-bar a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.weather-section { padding: 12px 20px; background: var(--surface); border-bottom: 1px solid var(--border); }
+.wx-controls { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; align-items: center; }
+.wx-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 3px 8px; border-radius: 3px; cursor: pointer; background: var(--tab-bg); border: 1px solid var(--border); color: var(--text); }
+.wx-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.wx-search { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 3px 8px; border-radius: 3px; border: 1px solid var(--border); background: var(--surface); color: var(--text); width: 180px; }
+.wx-iframe { width: 100%; height: 380px; border: 1px solid var(--border); border-radius: 4px; }
+.wx-credit { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 6px; }
+.wx-credit a { color: var(--accent); }
+.tab-nav { display: flex; background: var(--tab-bg); border-bottom: 1px solid var(--border); overflow-x: auto; padding: 0 20px; gap: 2px; }
+.tab-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; padding: 10px 14px; cursor: pointer; background: var(--tab-inactive); border: none; color: var(--muted); border-radius: 4px 4px 0 0; white-space: nowrap; transition: background 0.15s, color 0.15s; }
+.tab-btn.active { background: var(--tab-active); color: var(--accent); font-weight: 600; border-bottom: 2px solid var(--accent); }
+.tab-panel { display: none; padding: 20px; }
+.tab-panel.active { display: block; }
+.section-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 4px; margin: 20px 0 12px; }
+.section-hdr:first-child { margin-top: 0; }
+.bluf-block { background: rgba(139,0,0,0.05); border-left: 4px solid var(--accent); padding: 14px 16px; margin-bottom: 20px; border-radius: 0 4px 4px 0; }
+.bluf-header { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+.bluf-block ul { padding-left: 16px; }
+.bluf-block li { margin-bottom: 6px; font-size: 13px; }
+.bluf-block li b { color: var(--text); }
+.story { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+.story:last-child { border-bottom: none; }
+.story-headline { font-size: 14px; font-weight: bold; color: var(--text); margin-bottom: 4px; }
+.story-headline a { color: var(--accent); text-decoration: none; }
+.story-headline a:hover { text-decoration: underline; }
+.story-meta { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-bottom: 6px; }
+.story-body { font-size: 13px; line-height: 1.65; }
+.story-take { font-size: 13px; font-style: italic; color: var(--muted); margin-top: 6px; border-left: 2px solid var(--border); padding-left: 8px; }
+.watch-item { background: var(--watch-bg); border: 1px solid var(--watch-border); border-radius: 4px; padding: 10px 14px; margin-bottom: 10px; font-size: 13px; }
+.watch-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+.hover-synopsis { display: none; font-size: 12px; color: var(--muted); margin-top: 6px; border-top: 1px solid var(--border); padding-top: 6px; }
+.story:hover .hover-synopsis { display: block; }
+.macro-line { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 8px 12px; margin-bottom: 16px; }
+.ticker-wrap { background: #111; color: #e8e8e8; overflow: hidden; padding: 8px 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; white-space: nowrap; }
+.ticker-track { display: inline-block; animation: ticker-slide 90s linear infinite; will-change: transform; }
+.ticker-wrap:hover .ticker-track { animation-play-state: paused; }
+@keyframes ticker-slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; white-space: normal; display: block; } }
+.ticker-item { display: inline-block; padding: 0 18px; }
+.ticker-label { color: #999; font-size: 10px; margin-right: 4px; }
+.ticker-sep { color: #444; padding: 0 4px; }
+.footer { background: var(--footer-bg); color: var(--footer-text); font-family: 'IBM Plex Mono', monospace; font-size: 10px; padding: 16px 20px; margin-top: 32px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+</style>
+</head>
+<body data-theme="warm">
+<div style="background:#8b0000;color:#fff;padding:8px 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-align:center;">Archived edition &middot; 2026-05-30 &middot; <a href="../index.html" style="color:#fff;text-decoration:underline;">Back to today's brief</a> &middot; <a href="index.html" style="color:#fff;text-decoration:underline;">Archive index</a></div>
+
+<div class="page">
+
+<div class="masthead">
+  <div class="masthead-left">
+    <div class="masthead-title">THE SWAP REPORT</div>
+    <div class="masthead-meta">DAILY BRIEF &nbsp;&middot;&nbsp; SATURDAY, MAY 30, 2026 &nbsp;&middot;&nbsp; MORNING EDITION</div>
+    <div class="masthead-epigraph">Lifting a blockade before the deal is signed is not a concession; it is a test of whether Tehran will treat goodwill as a precedent or as a ceiling.</div>
+  </div>
+  <div class="theme-btns">
+    <button class="theme-btn active" onclick="setTheme('warm',this)" title="Warm">&#9728;</button>
+    <button class="theme-btn" onclick="setTheme('light',this)" title="Light">&#128305;</button>
+    <button class="theme-btn" onclick="setTheme('dark',this)" title="Dark">&#9790;</button>
+  </div>
+</div>
+
+<div class="edition-bar">
+  <span>Iran War: Day 30 of active operations</span>
+  <span>&middot;</span>
+  <span>Blockade lifted; final deal text still unsigned</span>
+  <span>&middot;</span>
+  <span>Shangri-La Dialogue: Day 2, Hegseth addresses Indo-Pacific posture</span>
+  <span>&middot;</span>
+  <span>Russia drone hits Romania; NATO airspace credibility tested</span>
+  <span>&middot;</span>
+  <span><a href="https://theswap.report/">theswap.report</a></span>
+</div>
+
+<div class="weather-section">
+  <div class="wx-controls">
+    <button class="wx-btn active" onclick="wxLayer(this,'temperature-2m')">Temp</button>
+    <button class="wx-btn" onclick="wxLayer(this,'wind-10m')">Wind</button>
+    <button class="wx-btn" onclick="wxLayer(this,'rain-3h')">Rain</button>
+    <button class="wx-btn" onclick="wxLayer(this,'clouds')">Clouds</button>
+    <button class="wx-btn" onclick="wxLayer(this,'radar')">Radar</button>
+    <button class="wx-btn" onclick="wxLayer(this,'gust')">Gust</button>
+    <input class="wx-search" id="wx-search" type="text" placeholder="Search location or ICAO..." onkeydown="if(event.key==='Enter')wxSearch(this.value)">
+  </div>
+  <iframe class="wx-iframe" id="wx-iframe" src="https://www.ventusky.com/?p=37;-95;4&l=temperature-2m" allowfullscreen></iframe>
+  <div class="wx-credit">Interactive weather: <a href="https://www.ventusky.com" target="_blank" rel="noopener">Ventusky</a> &nbsp;&middot;&nbsp; Aviation: <a href="https://aviationweather.gov/data/metar/?id=KCHS&taf=true" target="_blank" rel="noopener">KCHS METAR/TAF</a> (Joint Base Charleston, 437 AW)</div>
+</div>
+
+<div class="tab-nav">
+  <button class="tab-btn active" onclick="showTab('overview',this)">Overview</button>
+  <button class="tab-btn" onclick="showTab('defense',this)">Defense</button>
+  <button class="tab-btn" onclick="showTab('strategic',this)">Strategic</button>
+  <button class="tab-btn" onclick="showTab('domestic',this)">Domestic</button>
+  <button class="tab-btn" onclick="showTab('deepreads',this)">Deep Reads</button>
+  <button class="tab-btn" onclick="showTab('local',this)">Local</button>
+  <button class="tab-btn" onclick="showTab('lighter',this)">Lighter Fare</button>
+</div>
+
+<!-- OVERVIEW -->
+<div class="tab-panel active" id="tab-overview">
+  <div class="bluf-block">
+    <div class="bluf-header">Bottom Line Up Front</div>
+    <ul>
+      <li><b>Iran blockade lifted, deal still unsigned:</b> Trump announced Friday he is lifting the naval blockade on Iran, but no final deal text has been signed. Iranian media pushed back on his framing. A two-hour Situation Room meeting ended without agreement; Trump now says Iran must commit to no nuclear weapon and reopen the Strait of Hormuz before a deal closes. The sequence suggests Washington is trading leverage for good faith rather than locking in terms first.</li>
+      <li><b>Americans wounded in attack in Kuwait:</b> Reports indicate several U.S. personnel were injured in an Iranian-linked strike on a U.S. base in Kuwait even as blockade talks proceed. If confirmed and attributed, the attack undercuts the narrative of a clean de-escalation track and adds friction to the negotiating environment.</li>
+      <li><b>Shangri-La Dialogue, Day 2:</b> Hegseth delivered the U.S. strategic vision for the Indo-Pacific at IISS in Singapore, praising allied defense investment and stressing burden sharing. A U.S. senator warned simultaneously that the new National Defense Strategy downgrades Indo-Pacific priorities even as Hegseth offered reassurances; both things are true at once.</li>
+      <li><b>Pentagon civilian cuts lacked impact assessment:</b> A DoD watchdog found the Pentagon failed to assess consequences before eliminating roughly 78,000 civilian positions, about 10% of the workforce. The finding does not reverse the cuts but creates a paper trail for the next oversight cycle.</li>
+      <li><b>Troops and families receiving foreign threats:</b> Following U.S. strikes on Iran, military personnel and their families have received targeted threats including personal identifying information about spouses and children. Cross-referenced across multiple outlets; this is a multi-source signal requiring command-level attention.</li>
+    </ul>
+  </div>
+
+  <div class="section-hdr">Through-Line</div>
+  <div class="story">
+    <div class="story-body">The Iran situation is entering the most dangerous phase of the de-escalation sequence: the period between a visible gesture (lifting the blockade) and a binding agreement. History suggests adversaries read unilateral concessions as information about the conceding party's risk tolerance rather than as invitations to reciprocate. Tehran's public pushback on Trump's framing, combined with the Kuwait attack, signals Iran is not yet prepared to let Washington define the narrative. Meanwhile Hegseth's Shangri-La appearance is doing real work, but simultaneous demands across three theaters, Iran file, NATO Article 5 credibility after Romania, and Indo-Pacific assurance, present a senior attention problem. Reassurance messaging to one audience can cut against deterrence messaging to another.</div>
+  </div>
+
+  <div class="section-hdr">Watch Items</div>
+  <div class="watch-item">
+    <div class="watch-lbl">Watch: Iran Final Deal Text</div>
+    The blockade is lifted. The deal is not signed. Watch for: whether Tehran reciprocates with Hormuz reopening or uses the concession as a floor for further negotiation. Trump's stated conditions (no nuclear weapon, Hormuz open immediately, no tolls) are a more specific public bar than existed 48 hours ago.
+  </div>
+  <div class="watch-item">
+    <div class="watch-lbl">Watch: Kuwait Attack Confirmation</div>
+    Multiple reports of U.S. personnel wounded in an Iranian-linked strike on a base in Kuwait. If confirmed and attributed directly to IRGC proxies, it reframes the ceasefire as partial rather than operative. Command confirmation and official attribution will determine the response calculus.
+  </div>
+  <div class="watch-item">
+    <div class="watch-lbl">Watch: NATO Romania Drone Incident</div>
+    A Russian drone struck a residential building in Galati on Friday. NATO condemned the incursion without invoking Article 5. The pattern of Romanian drone strikes is now three incidents in a compressed period. Alliance credibility absorbs each incident at a cost; the cumulative account is becoming harder to ignore.
+  </div>
+  <div class="watch-item">
+    <div class="watch-lbl">Watch: House FY27 NDAA Markup</div>
+    The House Armed Services Committee released the FY27 NDAA text this week. Notable: lawmakers signaled Trump-class battleship construction should not proceed until weapons technology is ready. Autonomous warfare funding (24,000% year-over-year increase) and the SpaceX $4B Space Force contract are the same doctrinal bet in different domains. Watch for floor amendments on both.
+  </div>
+</div>
+
+<!-- DEFENSE -->
+<div class="tab-panel" id="tab-defense">
+  <div class="section-hdr">Iran: Blockade, Deal, and Friction</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.twz.com/news-features/trump-declares-he-is-lifting-the-naval-blockade-on-iran">Trump Declares He Is Lifting the Naval Blockade on Iran</a></div>
+    <div class="story-meta">The War Zone &middot; May 29, 2026</div>
+    <div class="story-body">Trump announced the end of the naval blockade, but no signed deal exists. Iranian media is actively disputing his characterization of the state of talks. The War Zone flags the core ambiguity: why lift the blockade without a text? The answer appears to be that Washington is using the gesture to accelerate Iranian movement toward final terms, betting Iran cannot afford to let the goodwill go unused. Whether that bet pays depends on what Tehran does with Hormuz.</div>
+    <div class="story-take">Cross-corroborated: ABC News, France24, CBS. Iran concession without signed agreement is a strategic gamble, not a settled outcome.</div>
+    <div class="hover-synopsis">The War Zone analysis: blockade lifted without a deal being signed; Iranian media pushing back against Trump's claims; the sequence raises questions about sequencing of leverage release.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline">Americans Injured in Iranian-Linked Attack on U.S. Base in Kuwait</div>
+    <div class="story-meta">Defense feed &middot; May 30, 2026 &middot; Single source, tracking</div>
+    <div class="story-body">Reports indicate several U.S. personnel were injured when an Iranian-linked attack struck a U.S. installation in Kuwait. Details remain thin; official attribution and casualty confirmation are pending. The timing, concurrent with blockade negotiations, is the signal: Iran may be keeping pressure tools active even while diplomacy runs in parallel. That is a well-established Iranian negotiating pattern.</div>
+    <div class="story-take">Single source, tracking. If confirmed: materially changes the negotiating atmosphere and tests whether Trump's stated conditions hold.</div>
+  </div>
+
+  <div class="section-hdr">Indo-Pacific: Hegseth at Shangri-La</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://breakingdefense.com/2026/05/hegseth-praises-indo-pacific-nations-for-improving-defense-capabilities-pragmatism/">Hegseth Praises Indo-Pacific Nations for Improving Defense Capabilities</a></div>
+    <div class="story-meta">Breaking Defense &middot; May 30, 2026</div>
+    <div class="story-body">Hegseth used the Shangri-La Dialogue platform to endorse Indo-Pacific allied defense investment as a model of burden sharing. The speech aligns with the administration's messaging on "quiet tactics": less overt forward-presence rhetoric, more investment-in-partners framing. The concurrent critique from a U.S. senator that the new National Defense Strategy actually downgrades Indo-Pacific priorities is the friction point this messaging has to navigate.</div>
+    <div class="story-take">Cross-corroborated: war.gov, SCMP, Breaking Defense.</div>
+    <div class="hover-synopsis">SecDef discussed U.S. strategic vision for the Indo-Pacific under the new National Defense Strategy at IISS Shangri-La Dialogue in Singapore.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.war.gov/News/News-Stories/Article/Article/4504672/hegseth-outlines-us-vision-for-indo-pacific-at-annual-asia-defense-summit/">Hegseth Outlines U.S. Vision for Indo-Pacific at Annual Asia Defense Summit</a></div>
+    <div class="story-meta">DoD (war.gov) &middot; May 30, 2026</div>
+    <div class="story-body">Official DoD readout of Hegseth's address at the IISS Shangri-La Dialogue. The summit is running concurrent sessions on maritime security disorder, cross-regional threat coordination, and the Americas. The breadth of the agenda reflects how compressed the strategic environment has become: Indo-Pacific security, European drone incidents, and Americas drug operations all competed for senior attention this week.</div>
+  </div>
+
+  <div class="section-hdr">Autonomous Warfare and Space</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.twz.com/space/pentagons-plans-to-track-aircraft-from-orbit-accelerated-with-new-4b-spacex-deal">Pentagon's $4B SpaceX Deal: Track Aircraft from Orbit</a></div>
+    <div class="story-meta">The War Zone &middot; May 29, 2026</div>
+    <div class="story-body">SpaceX was awarded a $4 billion Space Force contract for the Space-Based Airborne Moving Target Indicator (SB-AMTI) program, accelerating delivery of a satellite network designed to track and target airborne threats globally. The War Zone analysis flags a strategic implication: a mature SB-AMTI could make airborne early warning and control aircraft redundant. The doctrinal bet embedded in the FY27 NDAA's autonomous warfare funding surge and this contract are the same bet in different domains.</div>
+    <div class="story-take">Cross-corroborated: Military Times, Air Force Times, The War Zone. Most consequential acquisition news of the week.</div>
+    <div class="hover-synopsis">The satellite network would offer unprecedented global airborne surveillance and targeting capability, with implications for manned AEW&amp;C aircraft survivability and doctrine.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.defenseone.com/technology/2026/05/q-gen-frank-donovan/413870/">Q&amp;A: Gen. Frank Donovan on Autonomous Warfare</a></div>
+    <div class="story-meta">Defense One &middot; May 30, 2026</div>
+    <div class="story-body">SOUTHCOM commander Gen. Donovan: "I don't really care about platforms. I care about autonomous warfare, and are we really willing to take a step forward and embrace autonomous warfare." The framing is consistent with the FY27 budget's 24,000% year-over-year increase in autonomous warfare spending. The SOUTHCOM context matters: Caribbean drug interdiction operations are where autonomous maritime systems are currently getting real-world trial.</div>
+    <div class="story-take">The Donovan/Petraeus tension (autonomy as mission vs. autonomy without doctrine) is the defining defense doctrinal debate of 2026. See the Petraeus entry in Strategic.</div>
+  </div>
+
+  <div class="section-hdr">Personnel and Force Health</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.militarytimes.com/pay-benefits/2026/05/29/air-force-slashes-number-of-fields-eligible-for-fiscal-year-2026-reenlistment-bonuses/">Air Force Slashes FY26 Reenlistment Bonus Eligibility by 73%</a></div>
+    <div class="story-meta">Military Times &middot; May 29, 2026</div>
+    <div class="story-body">The number of career fields eligible for the Selective Retention Bonus dropped by 73% in fiscal year 2026. The timing, concurrent with elevated operational tempo in the Iran theater and Indo-Pacific assurance operations, creates a retention risk in exactly the period where experience depth matters most. No official statement has explained which fields were cut and which retained.</div>
+    <div class="story-take">Cross-corroborated: Air Force Times. Worth tracking against retention data in future force health reports.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.militarytimes.com/news/pentagon-congress/2026/05/29/scary-and-silencing-troops-families-receive-threats-from-foreign-bad-actors/">'Scary and Silencing': Troops and Families Receiving Threats from Foreign Actors</a></div>
+    <div class="story-meta">Military Times &middot; May 29, 2026</div>
+    <div class="story-body">Following U.S. strikes on Iran, military personnel and family members have received targeted threats that include identifying details about spouses and children. The source has not been officially attributed but the pattern is consistent with state-sponsored doxing campaigns. Commands have not publicly addressed protective measures; the silence itself is a data point about how difficult mitigation is when the attack surface is the open internet.</div>
+    <div class="story-take">Cross-corroborated: Air Force Times. A force protection and morale issue that has not received proportionate command communication.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.militarytimes.com/news/pentagon-congress/2026/05/29/pentagon-failed-to-assess-impact-of-cuts-to-civilian-workforce-watchdog-finds/">Pentagon Failed to Assess Impact of Civilian Workforce Cuts Before Executing Them</a></div>
+    <div class="story-meta">Military Times &middot; May 29, 2026</div>
+    <div class="story-body">The DoD Inspector General found that roughly 78,000 civilian positions were eliminated in 2025 (about 10% of the workforce) without a completed assessment of operational impact. The watchdog finding does not reverse the cuts but establishes a paper trail for the next audit cycle and gives congressional oversight a clear hook if capability gaps emerge.</div>
+    <div class="story-take">Cross-corroborated: Air Force Times. Structural accountability finding with long-tail implications.</div>
+  </div>
+
+  <div class="section-hdr">Ukraine Theater</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.c4isrnet.com/global/europe/2026/05/29/how-russia-is-turning-ukraines-drones-against-nato/">How Russia Is Turning Ukraine's Drones Against NATO</a></div>
+    <div class="story-meta">C4ISRNET &middot; May 29, 2026</div>
+    <div class="story-body">A Russian drone struck a residential building in Galati, Romania, injuring two. Lithuania separately detailed how Moscow is steering intercepted or redirected Ukrainian drones onto allied soil. The operational pattern: Russia is using Ukraine's drone war as a plausible deniability mechanism to probe NATO's airspace tolerance. A Russian drone wounding Romanian civilians in a residential building is not an accident; it is a data collection exercise about alliance response thresholds.</div>
+    <div class="story-take">Cross-corroborated: Small Wars Journal, France24. Third drone incident in Romanian airspace in a compressed period.</div>
+    <div class="hover-synopsis">Russian drone wounded two civilians in Romania; Lithuania reported similar patterns of Russian-steered Ukrainian drones crossing into allied territory. NATO condemned without invoking Article 5.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.militarytimes.com/global/europe/2026/05/29/nearly-500000-russian-soldiers-killed-in-ukraine-top-uk-intel-chief-says/">Nearly 500,000 Russian Soldiers Killed in Ukraine: UK Intel Chief</a></div>
+    <div class="story-meta">Military Times &middot; May 29, 2026</div>
+    <div class="story-body">The top UK intelligence chief assessed Russian military killed in action has reached nearly 500,000. The figure hardens a growing Western intelligence consensus: Russia's force is depleted in ways that constrain future large-scale offensive operations. The caveat is that personnel attrition has not stopped Russian territorial pressure; Moscow continues to trade mass for tempo. The strategic question is how long that arithmetic holds.</div>
+  </div>
+
+  <div class="section-hdr">Naval and Maritime</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://news.usni.org/2026/05/29/hii-saronic-included-in-first-musv-navy-prototype-tests">HII, Saronic Among Companies in First MUSV Navy Prototype Tests</a></div>
+    <div class="story-meta">USNI News &middot; May 29, 2026</div>
+    <div class="story-body">Seven companies, including HII and Saronic, are supporting the first round of medium unmanned surface vessel prototyping. The MUSV program is one of several autonomous maritime programs competing for doctrinal validation as the Navy's surface force grapples with the cost and survivability math of traditional manned warships.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://taskandpurpose.com/news/24th-marine-expeditionary-unit-caribbean/">24th Marine Expeditionary Unit Deploys to Caribbean</a></div>
+    <div class="story-meta">Task and Purpose &middot; May 29, 2026</div>
+    <div class="story-body">Approximately 1,300 Camp Lejeune Marines of the 24th MEU have replaced the 22nd MEU in SOUTHCOM's Caribbean area of operations, supporting Operation Southern Spear, the anti-maritime drug trafficking campaign. The 22nd MEU wrapped a 10-month deployment. The rotation confirms SOUTHCOM Caribbean presence as a sustained commitment.</div>
+  </div>
+</div>
+
+<!-- STRATEGIC -->
+<div class="tab-panel" id="tab-strategic">
+  <div class="section-hdr">Iran: Strategic Architecture of the Deal</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://foreignpolicy.com/2026/05/29/iran-economy-war-oil-assets-trump-united-states-israel/">What Iran Stands to Gain from a Truce Deal with the United States</a></div>
+    <div class="story-meta">Foreign Policy &middot; May 29, 2026</div>
+    <div class="story-body">Foreign Policy analysis of Iranian economic incentives: a deal could include unfreezing of Iranian assets and removal of oil sanctions. Iran's economy is under severe strain from the military campaign and the continuation of pre-war sanctions. The economic pressure is real leverage, but it is also a countdown clock. A state under sufficient economic duress may accept terms it cannot sustain, or it may decide continued conflict is preferable to a deal it views as capitulation. Which path Tehran chooses depends largely on how the Revolutionary Guard's political position holds under pressure.</div>
+    <div class="story-take">Cross-corroborated with Atlantic Council dispatch on implementation perils. Read both.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.atlanticcouncil.org/dispatches/signing-is-the-easy-part-two-former-us-negotiators-on-the-perils-of-implementing-a-deal-with-iran/">Signing Is the Easy Part: Former U.S. Negotiators on Iran Deal Implementation Risk</a></div>
+    <div class="story-meta">Atlantic Council &middot; May 29, 2026</div>
+    <div class="story-body">Abram Paley and Nate Swanson, who helped negotiate the 2023 U.S.-Iran prisoner exchange, argue that implementation is where Iran deals historically break down. The specific failure modes: ambiguous verification language, parallel Iranian domestic political pressures that can invalidate commitments made by negotiators, and U.S. domestic politics that can pull the executive in conflicting directions between signing and ratification. The memorandum of understanding format amplifies each of these risks.</div>
+    <div class="story-take">Most useful analytical framing currently available on why the deal-signing-to-implementation gap is the dangerous zone.</div>
+  </div>
+
+  <div class="section-hdr">Indo-Pacific and Great Power Competition</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.scmp.com/week-asia/politics/article/3355411/17-nations-launch-pact-protect-vital-undersea-cables-amid-us-china-absence?utm_source=rss_feed">17 Nations Launch Pact to Protect Undersea Cables; U.S. and China Absent</a></div>
+    <div class="story-meta">South China Morning Post &middot; May 30, 2026</div>
+    <div class="story-body">Seventeen countries agreed to collaborate on defense strategies for critical undersea cable infrastructure. Analysts warn the initiative may be undermined by the absence of the two superpowers with the most capability to both threaten and protect the cables. The pact reflects the maritime security disorder theme running through the Shangri-La Dialogue sessions this weekend. The absence of both U.S. and China is either a coordination failure or a deliberate signaling choice; the distinction matters.</div>
+  </div>
+
+  <div class="section-hdr">Russia and Eastern Europe</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.themoscowtimes.com/2026/05/30/russia-pulls-ambassador-from-armenia-after-putin-warns-against-eu-alignment-a92883">Russia Pulls Ambassador from Armenia After Putin Warns Against EU Alignment</a></div>
+    <div class="story-meta">The Moscow Times &middot; May 30, 2026</div>
+    <div class="story-body">At a Kazakhstan summit, Putin invoked the "Ukrainian scenario" to warn Armenia against pursuing EU ties and subsequently recalled the Russian ambassador. Armenia's Prime Minister Pashinyan has pursued an explicit "diversification" strategy, building ties with both Russia and the West. Moscow's response escalates to formal diplomatic rupture. The Ukrainian scenario reference is a threat of what happens to states that choose the West decisively. Armenia is a test case for whether that threat retains deterrent power post-Ukraine.</div>
+    <div class="story-take">Cross-corroborated: DW, France24. Russia's CIS leverage is eroding; the coercion has become cruder as the subtler tools have failed.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.aljazeera.com/news/2026/5/30/ukraine-drones-strike-russian-oil-facility-as-kyiv-and-moscow-trade-blows?traffic_source=rss">Ukraine Drones Strike Russian Oil Facility as Both Sides Trade Blows</a></div>
+    <div class="story-meta">Al Jazeera &middot; May 30, 2026</div>
+    <div class="story-body">Ukrainian drones struck a Russian oil facility while Russian strikes left 13,000 residents without power in Zaporizhzhia. The exchange is the current steady-state rhythm of the war: Ukraine targeting economic infrastructure, Russia targeting population infrastructure. Ukrainian destruction of two Russian Tu-142 naval aircraft and an Iskander missile system on the Black Sea coast adds a third dimension, signaling Kyiv is actively degrading Russian maritime and precision-strike capacity.</div>
+  </div>
+
+  <div class="section-hdr">Strategic Theory and Doctrine</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://smallwarsjournal.com/2026/05/29/petraeus-55-billion-drone-investment-wont-buy-a-fighting-force-without-doctrine/">Petraeus: $55 Billion Drone Investment Won't Buy a Fighting Force Without Doctrine</a></div>
+    <div class="story-meta">Small Wars Journal &middot; May 29, 2026</div>
+    <div class="story-body">Gen. David Petraeus and Isaac Flanagan respond to the FY27 budget's massive autonomous warfare spending increase with a force integration argument: money without doctrine produces capability without employment. The comparison to past capability surges where spending outran operational adaptation is the historical frame. Worth reading alongside the Gen. Donovan Q&amp;A in the Defense tab.</div>
+    <div class="story-take">The Petraeus/Donovan pairing this week represents the core strategic debate: spend first and develop doctrine later, or develop doctrine and then buy to it. The FY27 NDAA chose the former.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://smallwarsjournal.com/2026/05/29/a-russian-drone-hit-a-romanian-apartment-building-now-what/">A Russian Drone Hit a Romanian Apartment Building. Now What?</a></div>
+    <div class="story-meta">Small Wars Journal &middot; May 29, 2026</div>
+    <div class="story-body">Small Wars Journal situates the Galati drone impact in the pattern NATO has spent three years carefully managing. The framing: the incident is an escalation in a deliberate probing strategy. NATO's response calculus is constrained by the political costs of Article 5 invocation versus the deterrence costs of repeated non-invocation. The longer the pattern continues without consequence, the more it becomes a precedent.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://mwi.westpoint.edu/mwi-podcast-putins-intelligence-services/">MWI Podcast: Putin's Intelligence Services</a></div>
+    <div class="story-meta">Modern War Institute / West Point &middot; May 29, 2026</div>
+    <div class="story-body">MWI examines how Putin consolidated authority over Russian intelligence from his earliest days in power. Relevant today: the intelligence services are the institutional spine of the Romanian drone escalation, the Armenia coercion, and the military family doxing campaign. Understanding Putin's intelligence architecture is prerequisite to understanding the tools he reaches for when conventional leverage fails.</div>
+  </div>
+</div>
+
+<!-- DOMESTIC -->
+<div class="tab-panel" id="tab-domestic">
+  <div class="macro-line">MACRO &middot; Unemployment: 4.3% &middot; Fed Funds: 3.62% &middot; 10Y UST: 4.45% &middot; 2Y UST: 3.99% &middot; Initial Claims: 215,000 &middot; USD/EUR: 1.1603 &middot; Source: FRED</div>
+
+  <div class="section-hdr">Iran Policy: Domestic Dimensions</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://abcnews.com/International/live-updates/iran-live-updates-peace-deal-work-progress-rubio/?id=133278077">Iran Live Updates: No Decision After Situation Room Meeting</a></div>
+    <div class="story-meta">ABC News &middot; May 30, 2026</div>
+    <div class="story-body">President Trump has not yet announced a final decision following a two-hour Situation Room meeting Friday. Trump's public conditions for a deal: Iran commits to no nuclear weapon and reopens the Strait of Hormuz immediately, without tolls. Major combat operations were declared February 28; the country is now 30 days into active operations. Trump's personal approval remains the gateway to any deal, which concentrates both credit and risk in one decision-maker.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.cbsnews.com/live-updates/iran-war-us-trump-vance-ceasefire-strait-of-hormuz-deal-close/">Trump Holds Key White House Meeting to Determine Next Steps on Iran</a></div>
+    <div class="story-meta">CBS News &middot; May 29, 2026</div>
+    <div class="story-body">Trump stated Iran must agree to never have a nuclear weapon and to reopen the Strait of Hormuz immediately without tolls. The Vance framing from earlier in the week ("very close") and the Iranian pushback on Trump's blockade announcement suggest both sides are managing domestic audiences simultaneously with the bilateral negotiation, fertile ground for miscommunication cascades.</div>
+  </div>
+
+  <div class="section-hdr">Defense Budget and Congressional Action</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.militarytimes.com/news/pentagon-congress/2026/05/29/trump-class-battleships-should-not-be-built-until-weapons-technology-is-ready-lawmakers-say/">Trump-Class Battleships: Lawmakers Say Hold Until Weapons Technology Is Ready</a></div>
+    <div class="story-meta">Military Times &middot; May 29, 2026</div>
+    <div class="story-body">House Armed Services Committee members signaled in the FY27 NDAA text that Trump-class battleship construction should not proceed until associated weapons systems are mature. The position reflects recurring tension between political timeline pressure and program risk management. Simultaneous MUSV prototyping funding and the SpaceX SB-AMTI contract suggest HASC is betting on autonomous and space-based systems as the near-term priority over capital ship hulls.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.defenseone.com/policy/2026/05/cyber-force-service-branch-proposal/413863/">Cyber Force: Senator Pushes to Create New Service Branch Under the Army</a></div>
+    <div class="story-meta">Defense One &middot; May 29, 2026</div>
+    <div class="story-body">A senator is pushing a proposal to create a cyber service branch under the Army. The idea has been floated before; the current threat environment (Iranian cyber operations, Russian information warfare, Chinese infrastructure mapping) makes the timing argument more urgent. The organizational question is whether a separate branch creates integration problems that outweigh the focus benefits.</div>
+  </div>
+
+  <div class="section-hdr">Federal Register: May 29-30, 2026</div>
+
+  <div class="story">
+    <div class="story-headline">Notable Federal Register Entries</div>
+    <div class="story-meta">Federal Register &middot; May 29-30, 2026</div>
+    <div class="story-body">No executive orders or proclamations in the current 24-hour window. Notable entries: DHS extended Lebanon's Temporary Protected Status designation amid ongoing conflict instability. Coast Guard issued shipping safety fairway updates along the Atlantic Coast. OMB published a revision to federal financial assistance regulations. DoD submitted six DFARS information collection notices. The Federal Register is in administrative mode this weekend.</div>
+  </div>
+
+  <div class="section-hdr">Domestic Policy</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.nbcnews.com/world/europe/trump-defrosts-relations-europes-last-dictator-alexander-lukashenko-rcna347500">Trump Defrosts Relations with Alexander Lukashenko</a></div>
+    <div class="story-meta">NBC News &middot; May 30, 2026</div>
+    <div class="story-body">The Trump administration is moving toward normalized relations with Belarusian President Lukashenko, isolated since the 2020 election crackdown. The shift fits the administration's transactional approach to European autocrats. The timing, concurrent with Russia pulling its ambassador from Armenia for EU alignment, creates a mixed signal about U.S. support for democratic governance as a foreign policy criterion in Eastern Europe.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://thehill.com/policy/healthcare/5902039-trump-administration-ebola-outbreak/">Trump Focuses on Keeping Ebola Out of U.S. Rather Than Fighting Outbreak Abroad</a></div>
+    <div class="story-meta">The Hill &middot; May 30, 2026</div>
+    <div class="story-body">The Trump administration's response to the ongoing Ebola outbreak in Congo and Uganda has turned inward: border screening and domestic containment rather than source-country intervention. Infectious disease experts describe the posture as inadequate to the epidemiological reality that uncontrolled outbreaks generate the variant pressure that crosses borders regardless of screening posture.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://thehill.com/homenews/administration/5901879-donald-trump-america-250-branding/">Red, White, and Trump: How America's 250th Is Drawing Controversy</a></div>
+    <div class="story-meta">The Hill &middot; May 30, 2026</div>
+    <div class="story-body">President Trump is incorporating his brand and likeness into America's 250th anniversary celebrations in ways drawing bipartisan criticism. The branding choices are consistent with Trump's approach to public events but create friction with organizers seeking nonpartisan framing for the Semiquincentennial.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.cbsnews.com/news/death-toll-us-strikes-alleged-drug-boats-climbs-above-200-eastern-pacific-caribbean/">Death Toll from U.S. Strikes on Alleged Drug Boats Climbs Above 200</a></div>
+    <div class="story-meta">CBS News &middot; May 30, 2026</div>
+    <div class="story-body">The death toll from U.S. military strikes on alleged drug trafficking vessels in the Caribbean and eastern Pacific has climbed above 200. The strikes are part of a monthslong campaign that has drawn scrutiny over targeting criteria and rules of engagement. The 24th MEU's Caribbean deployment and Gen. Donovan's SOUTHCOM autonomous warfare comments are the operational context for this campaign.</div>
+  </div>
+</div>
+
+<!-- DEEP READS -->
+<div class="tab-panel" id="tab-deepreads">
+  <div class="section-hdr">Strategic and Analytical</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://foreignpolicy.com/2026/05/29/us-dollar-history-money-currency-monetary-policy/">The Dollar Was, and Remains, an Accident</a></div>
+    <div class="story-meta">Foreign Policy &middot; May 29, 2026</div>
+    <div class="story-body">Foreign Policy reviews a new book arguing the dollar's reserve currency status is not the product of deliberate U.S. policy but of a 500-year-old monetary inheritance. Relevant now because the Iran war, the bond market's rising yield signals, and the broader sanctions architecture all depend on dollar primacy. If the dollar's reserve status is more contingent than the U.S. assumes, the financial coercion tools that anchor Iran policy have a shelf life.</div>
+    <div class="story-take">Reading list tier. The macro line showing USD/EUR at 1.16 and the SCMP bond market piece are the immediate-term data points; this is the longer frame.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://foreignpolicy.com/2026/05/29/usmca-review-trade-talks-mexico-us-trump-sheinbaum-cartels/">As Trade Talks Begin, U.S.-Mexico Ties Falter</a></div>
+    <div class="story-meta">Foreign Policy &middot; May 29, 2026</div>
+    <div class="story-body">Bilateral U.S.-Mexico relations have reached a breaking point at the USMCA review moment. The 24th MEU Caribbean deployment and Operation Southern Spear are the military instruments operating in the same space where the diplomatic relationship is most strained. Force operations and diplomatic relationships in SOUTHCOM are not independent variables.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.ft.com/content/1feaac23-ba6b-41dd-a8aa-63a5fac7a1e5">It Is Time for a European Security Council</a></div>
+    <div class="story-meta">Financial Times &middot; May 30, 2026</div>
+    <div class="story-body">FT editorial: increasing U.S. disengagement and continued Russian aggression have revived serious discussion of a formal European Security Council as an institutional counterpart to NATO's political consultative role. The argument is that European strategic autonomy requires an institution capable of decisions that don't depend on U.S. participation. The Romanian drone incident is exhibit A for what European collective defense looks like when Article 5 invocation is politically foreclosed.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://foreignpolicy.com/2026/05/29/israel-russia-sexual-violence-un-report-guterres/">U.N. Blacklists Israel and Russia for Sexual Violence in Conflict</a></div>
+    <div class="story-meta">Foreign Policy &middot; May 29, 2026</div>
+    <div class="story-body">The U.N. Secretary-General's annual report blacklisted both Israel and Russia for sexual violence in conflict. Both governments denied the allegations. The listing creates a formal international accountability record even where enforcement mechanisms are absent. In the Iran ceasefire context, international accountability frameworks are one of the structural factors that constrain what any deal can say about the preceding military campaign.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.lawfaremedia.org/article/the-justice-department-erases-history--lawfare-restores-it">The Justice Department Erases History; Lawfare Restores It</a></div>
+    <div class="story-meta">Lawfare &middot; May 29, 2026</div>
+    <div class="story-body">DOJ deleted thousands of press releases related to January 6 prosecutions and other matters. Lawfare has re-hosted the deleted records. The action and the counter-action together document both an executive branch records management posture and the non-governmental archival ecosystem's role in historical preservation. The deletion of government records is legally fraught; Lawfare's restoration is an act of institutional journalism.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://foreignpolicy.com/2026/05/29/maga-trump-vance-europe-populists-far-right-alliance-orban-magyar-hungary/">What Magyar Means for MAGA</a></div>
+    <div class="story-meta">Foreign Policy &middot; May 29, 2026</div>
+    <div class="story-body">Foreign Policy examines why the rise of mellower European populists like Peter Magyar in Hungary is complicating the MAGA movement's hoped-for far-right transatlantic alliance. European populist parties are domestically competitive only when they occupy the center-right, not the radical fringe. American-style MAGA politics translates across the Atlantic as a disruptive force, not a governing coalition model.</div>
+  </div>
+</div>
+
+<!-- LOCAL -->
+<div class="tab-panel" id="tab-local">
+  <div class="section-hdr">Joint Base Charleston / 437 AW</div>
+  <div class="watch-item">
+    <div class="watch-lbl">Watch: JB Charleston / 437 AW</div>
+    Joint Base Charleston (host: 437th Airlift Wing; reserve associate: 315th AW) continues sustained C-17 airlift operations in support of TRANSCOM global mobility requirements. No verified PAO or local press reporting of specific operational changes this weekend. The broader Air Force reenlistment bonus reduction (73% drop in eligible career fields for FY26, per Military Times) is relevant to retention across all MAF units including the 437th.
+  </div>
+
+  <div class="section-hdr">Lowcountry News Beat</div>
+
+  <div class="story">
+    <div class="story-headline">SC Economy Ranked Above All But Two States in New Federal Report</div>
+    <div class="story-meta">Post and Courier / Charleston area &middot; May 30, 2026 &middot; Single source, tracking</div>
+    <div class="story-body">A new federal economic report placed South Carolina's economy above 47 other states, citing manufacturing growth, port activity, and workforce trends. The Charleston metro's Boeing, Volvo, and Bosch manufacturing footprint, along with continued port expansion, are the structural drivers.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline">Charleston Waterkeeper Files Intent to Sue Over Microplastic Pollution</div>
+    <div class="story-meta">Charleston area &middot; May 30, 2026 &middot; Single source, tracking</div>
+    <div class="story-body">Charleston Waterkeeper served notice of intent to sue four entities over microplastic pollution affecting Lowcountry waterways. The notice opens a 60-day negotiation window before litigation can proceed. Lowcountry water quality is a recurring issue at the intersection of JB Charleston's environmental stewardship obligations and the broader Lowcountry conservation community.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline">A Rare Charleston-Printed Declaration of Independence Broadside Returns Home</div>
+    <div class="story-meta">Charleston area &middot; May 30, 2026 &middot; Single source, tracking</div>
+    <div class="story-body">A rare printing of the Declaration of Independence produced in Charleston in 1776 has returned to the city for display. One of a small number of surviving contemporary state-level printings of the document. In the America 250 commemorative context, it is a concrete local artifact of the national founding moment.</div>
+  </div>
+
+  <div class="section-hdr">Activities</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://charlestoncitypaper.com/2026/05/30/piccolo-spoleto-today-5-30-26/">Piccolo Spoleto Today: Saturday, May 30</a></div>
+    <div class="story-meta">Charleston City Paper &middot; May 30, 2026</div>
+    <div class="story-body">Today's Piccolo Spoleto programming includes the Isle of Palms sand-sculpting competition, multiple musical performances across downtown venues, and the continuing run of "On the Other Side," a Piccolo theater production drawing on the story of a local figure during the Holocaust. The 2026 festival is hosting a record number of performances through June 8.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://charlestoncitypaper.com/2026/05/29/old-favorites-and-new-sounds-shine-in-piccolo-spoletos-40-plus-musical-performances/">Old Favorites and New Sounds at Piccolo Spoleto's 40-Plus Musical Performances</a></div>
+    <div class="story-meta">Charleston City Paper &middot; May 29, 2026</div>
+    <div class="story-body">Piccolo Spoleto 2026 is featuring a record number of performances from local and community-based acts. The mix of legacy programming and new commissions reflects the festival's dual mandate as both a community showcase and a proving ground for new work.</div>
+  </div>
+</div>
+
+<!-- LIGHTER FARE -->
+<div class="tab-panel" id="tab-lighter">
+  <div class="section-hdr">Worth a Look</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.npr.org/2026/05/30/nx-s1-5835242/ntsb-cockpit-audio-cvr-reconstruction">NTSB Tries to Keep Cockpit Audio Private. AI Is Making That Harder.</a></div>
+    <div class="story-meta">NPR &middot; May 30, 2026</div>
+    <div class="story-body">The NTSB temporarily pulled its docket system offline after digital images were used to reconstruct cockpit voice recordings from a recent crash. The tension: accident investigation depends on candid crew communication, which requires confidentiality; AI reconstruction tools are eroding that confidentiality guarantee. The aviation safety community has not yet developed an institutional response to this capability gap.</div>
+    <div class="story-take">Interesting at the intersection of AI capability and regulatory assumption. The assumption that cockpit voice recordings are effectively private because they require physical media may no longer hold.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.airandspaceforces.com/t-38-trainer-jets-grounding-inspections-begin/">Air Force Lifts Pause on T-38 Flights After Inspections Begin</a></div>
+    <div class="story-meta">Air and Space Forces Magazine &middot; May 29, 2026</div>
+    <div class="story-body">The Air Force has begun inspections on T-38 Talons and expects the first aircraft to fly again within days. The T-38 fleet's age and the inspection requirement are a continuing logistics challenge for pilot training pipelines already under pressure from the broader workforce and retention picture.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.airandspaceforces.com/cape-canaveral-mission-capable-blue-origin-rocket-explosion/">Cape Canaveral 'Mission Capable' After Blue Origin New Glenn Explosion</a></div>
+    <div class="story-meta">Air and Space Forces Magazine &middot; May 29, 2026</div>
+    <div class="story-body">Officials at Cape Canaveral Space Force Station confirmed the range is fully mission capable following the May 28 New Glenn rocket explosion. The range is a shared national asset supporting both commercial and government launches; its quick return to mission capability reflects robust range safety procedures. The Blue Origin mishap investigation is ongoing.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.defenseone.com/defense-systems/2026/05/army-hackathon-software-patches/413857/">Army Hackathon Software Patches Going Straight to Troops in CENTCOM</a></div>
+    <div class="story-meta">Defense One &middot; May 29, 2026</div>
+    <div class="story-body">Project Jailbreak, an Army hackathon initiative, is routing contractor-developed software patches directly to deployed troops in CENTCOM by requiring contractors to open their systems to interoperability. The result is fielding speed measured in days rather than years. It is a useful proof of concept for how software-centric acquisition can work at operational tempo.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.npr.org/2026/05/30/nx-s1-5838637/myanmar-hlaing-india-tour">Myanmar's Min Aung Hlaing Takes First Foreign Tour, Visiting India</a></div>
+    <div class="story-meta">NPR &middot; May 30, 2026</div>
+    <div class="story-body">Myanmar's military leader Min Aung Hlaing is visiting India on his first foreign tour as junta head. India's engagement reflects New Delhi's pragmatic calculation that it needs stable relations with its border neighbor regardless of governance credentials. The visit will draw criticism from Western governments but is unlikely to change India's calculus.</div>
+  </div>
+</div>
+
+</div><!-- end .page content, ticker and footer outside tab panels but inside page wrapper -->
+
+<div class="page" style="max-width:960px;margin:0 auto;">
+<div class="ticker-wrap" aria-label="Market ticker">
+  <div class="ticker-track" id="ticker-track">
+    <span class="ticker-group">
+      <span class="ticker-item"><span class="ticker-label">S&amp;P 500</span>7,580 <span style="color:#3dcc5a">+0.22%</span> <span style="color:#888;font-size:10px">(Fri close)</span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="ticker-label">DOW</span>51,032 <span style="color:#3dcc5a">+0.72%</span> <span style="color:#888;font-size:10px">(Fri close)</span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="ticker-label">NASDAQ</span>26,973 <span style="color:#3dcc5a">+0.20%</span> <span style="color:#888;font-size:10px">(Fri close)</span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="ticker-label">VIX</span>15.3 <span style="color:#ff5a5a">-2.79%</span> <span style="color:#888;font-size:10px">(Fri close)</span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="ticker-label">WTI</span>$87.36 <span style="color:#ff5a5a">-0.92%</span> <span style="color:#888;font-size:10px">(Fri close)</span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="ticker-label">BRENT</span>$92.05 <span style="color:#ff5a5a">-0.25%</span> <span style="color:#888;font-size:10px">(Fri close)</span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="ticker-label">GOLD</span>$4,560 <span style="color:#3dcc5a">+0.65%</span> <span style="color:#888;font-size:10px">(Fri close)</span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="ticker-label">10Y UST</span>4.45% <span style="color:#999">-0.04%</span> <span style="color:#888;font-size:10px">(Fri close)</span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="ticker-label">FED FUNDS</span>3.62%</span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="ticker-label">DXY</span>98.9 <span style="color:#ff5a5a">-0.19%</span> <span style="color:#888;font-size:10px">(Fri close)</span></span><span class="ticker-sep">&bull;</span>
+      <span class="ticker-item"><span class="ticker-label">BTC</span>$73,520 <span style="color:#3dcc5a">+0.21%</span> <span style="color:#888;font-size:10px">(Fri close)</span></span>
+    </span>
+  </div>
+</div>
+
+<div class="footer">
+  <div>THE SWAP REPORT &middot; MAY 30, 2026 &middot; MORNING EDITION</div>
+  <div style="opacity:0.6;">For SWAP &middot; Distribution restricted &middot; Not for public release</div>
+</div>
+</div><!-- end second .page wrapper for ticker/footer -->
+
+<script>
+var currentTheme = 'warm';
+function setTheme(t, btn) {
+  currentTheme = t;
+  document.body.setAttribute('data-theme', t);
+  document.querySelectorAll('.theme-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+}
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+var ICAO_TABLE = {
+  'KCHS': [32.9,-80.0,10], 'KDEN': [39.9,-104.7,8], 'KJFK': [40.6,-73.8,10],
+  'KLAX': [33.9,-118.4,10], 'EGLL': [51.5,-0.5,10], 'RJTT': [35.5,139.8,10]
+};
+function wxLayer(btn, layer) {
+  document.querySelectorAll('.wx-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  var iframe = document.getElementById('wx-iframe');
+  var src = iframe.src;
+  iframe.src = src.replace(/l=[^&]+/, 'l='+layer);
+}
+function wxSearch(q) {
+  q = q.trim();
+  if (!q) return;
+  if (/^-?\d+\.?\d*,\s*-?\d+\.?\d*$/.test(q)) {
+    var parts = q.split(',');
+    setMap(parseFloat(parts[0]), parseFloat(parts[1]), 9);
+    return;
+  }
+  if (/^[A-Z]{4}$/.test(q.toUpperCase()) && ICAO_TABLE[q.toUpperCase()]) {
+    var c = ICAO_TABLE[q.toUpperCase()];
+    setMap(c[0], c[1], c[2]);
+    return;
+  }
+  fetch('https://geocoding-api.open-meteo.com/v1/search?name='+encodeURIComponent(q)+'&count=1')
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      if (data.results && data.results.length) {
+        setMap(data.results[0].latitude, data.results[0].longitude, 9);
+      }
+    });
+}
+function setMap(lat, lon, zoom) {
+  var iframe = document.getElementById('wx-iframe');
+  var layer = iframe.src.match(/l=([^&]+)/);
+  layer = layer ? layer[1] : 'temperature-2m';
+  iframe.src = 'https://www.ventusky.com/?p='+lat+';'+lon+';'+zoom+'&l='+layer;
+}
+(function() {
+  var track = document.getElementById('ticker-track');
+  if (!track) return;
+  var group = track.querySelector('.ticker-group');
+  if (group) {
+    var clone = group.cloneNode(true);
+    track.appendChild(clone);
+  }
+})();
+</script>
+</body>
+</html>
