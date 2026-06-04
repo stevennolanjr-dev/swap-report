@@ -1,9 +1,17 @@
 {
-  "edition_date": "May 30, 2026",
-  "edition_date_iso": "2026-05-30",
-  "build_timestamp_utc": "2026-05-30 10:54 UTC",
-  "verify_format": "PASS 20/20",
-  "verify_links": "PASS 47/47",
-  "stories": 47,
-  "outbound_links": 44
+  "build_timestamp_utc": "2026-06-04 09:48 UTC",
+  "edition_date": "June 4, 2026",
+  "html_size_kb": 66.7,
+  "story_count": 50,
+  "deep_reads_count": 0,
+  "aged_card_count": 0,
+  "signal_card_count": 0,
+  "outbound_link_count": 47,
+  "image_count": 0,
+  "archive_snapshot_count": 21,
+  "bcc_count": 9,
+  "gate_results": {
+    "format_lock": "PASS",
+    "url_reachability": "PASS"
+  }
 }
