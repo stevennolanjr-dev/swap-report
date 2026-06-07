@@ -1,17 +1,9 @@
 {
-  "build_timestamp_utc": "2026-06-06 09:55 UTC",
-  "edition_date": "June 6, 2026",
-  "html_size_kb": 56.3,
-  "story_count": 38,
-  "deep_reads_count": 0,
-  "aged_card_count": 1,
-  "signal_card_count": 0,
-  "outbound_link_count": 31,
-  "image_count": 0,
-  "archive_snapshot_count": 23,
-  "bcc_count": 9,
-  "gate_results": {
-    "format_lock": "PASS",
-    "url_reachability": "PASS"
-  }
+  "edition_date": "June 7, 2026",
+  "edition_date_iso": "2026-06-07",
+  "build_timestamp_utc": "2026-06-07 10:03 UTC",
+  "verify_format": "20/20 OK",
+  "verify_links": "41/41 OK",
+  "pipeline": "OK",
+  "notes": "Iran War Day 100. feed pool 841 entries June 7. verify_format 20/20 OK. verify_links 41/41 OK. Email deprecated per FORMAT_LOCK \u00a710."
 }
