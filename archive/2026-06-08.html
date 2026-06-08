@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE SWAP REPORT: Day 101 of the Iran War</title>
+<meta property="og:title" content="THE SWAP REPORT: Day 101 of the Iran War">
+<meta property="og:url" content="https://theswap.report/">
+<meta property="og:description" content="Monday, June 8, 2026. Israel and Iran trade strikes overnight, imperiling the ceasefire on Day 101. Armenia's Pashinyan wins with highest turnout in a decade. Xi lands in Pyongyang. SC Republican primary today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f0e8;
+  --surface: #fffdf8;
+  --border: #d4c9b8;
+  --text: #1a1a1a;
+  --muted: #666666;
+  --accent: #8b0000;
+  --tab-inactive: #e8e2d8;
+  --tab-active: #fffdf8;
+  --header-bg: #ede8df;
+  --tab-bg: #e8e2d8;
+  --tag-bg: #8b0000;
+  --tag-text: #ffffff;
+  --watch-bg: #fff8f0;
+  --watch-border: #c8a06a;
+  --card-bg: #fffdf8;
+  --hover-bg: rgba(139,0,0,0.06);
+  --footer-bg: #ede8df;
+  --footer-text: #666666;
+}
+[data-theme="light"] {
+  --bg: #ffffff; --surface: #ffffff; --border: #e0e0e0; --text: #111111;
+  --muted: #555555; --accent: #8b0000; --tab-inactive: #f0f0f0;
+  --tab-active: #ffffff; --header-bg: #f5f5f5; --tab-bg: #eeeeee;
+  --watch-bg: #fff8f0; --watch-border: #c8a06a; --card-bg: #ffffff;
+  --hover-bg: rgba(139,0,0,0.05); --footer-bg: #f0f0f0; --footer-text: #555555;
+}
+[data-theme="dark"] {
+  --bg: #1a1a2e; --surface: #16213e; --border: #2a2a4a; --text: #e0e0e0;
+  --muted: #a0a0b0; --accent: #cc3333; --tab-inactive: #1e1e3a;
+  --tab-active: #16213e; --header-bg: #1e1e3a; --tab-bg: #1e1e3a;
+  --watch-bg: #1e1e2e; --watch-border: #8b6a3a; --card-bg: #16213e;
+  --hover-bg: rgba(204,51,51,0.08); --footer-bg: #1e1e3a; --footer-text: #a0a0b0;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: Georgia, 'Times New Roman', serif; font-size: 15px; line-height: 1.6; }
+.page { max-width: 960px; margin: 0 auto; background: var(--bg); }
+.masthead { background: var(--bg); padding: 24px 24px 16px; border-bottom: 2px solid var(--accent); display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; }
+.masthead-left { flex: 1; }
+.masthead-title { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 22px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); }
+.masthead-meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); margin-top: 4px; }
+.masthead-epigraph { font-style: italic; font-size: 13px; color: var(--muted); margin-top: 4px; font-family: Georgia, serif; }
+.theme-btns { display: flex; gap: 6px; align-items: center; padding-top: 4px; }
+.theme-btn { background: var(--tab-bg); border: 1px solid var(--border); color: var(--text); cursor: pointer; font-size: 14px; padding: 4px 8px; border-radius: 3px; }
+.theme-btn.active { background: var(--accent); color: #fff; }
+.edition-bar { background: var(--header-bg); color: var(--muted); border-bottom: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 5px 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.edition-bar a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.wx-section { padding: 12px 20px; background: var(--surface); border-bottom: 1px solid var(--border); }
+.wx-iframe { width: 100%; height: 320px; border: 1px solid var(--border); border-radius: 4px; display: block; }
+.wx-controls { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; align-items: center; }
+.wx-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 8px; border: 1px solid var(--border); background: var(--tab-bg); color: var(--text); cursor: pointer; border-radius: 3px; }
+.wx-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.wx-search { display: flex; gap: 6px; margin-bottom: 8px; }
+.wx-search input { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 3px; flex: 1; }
+.wx-search button { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 10px; background: var(--accent); color: #fff; border: none; border-radius: 3px; cursor: pointer; }
+.wx-credit { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 6px; }
+.wx-credit a { color: var(--accent); text-underline-offset: 2px; }
+.tab-bar { display: flex; background: var(--tab-bg); border-bottom: 2px solid var(--border); overflow-x: auto; padding: 0 20px; gap: 2px; }
+.tab-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 8px 14px; border: none; background: transparent; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap; transition: color 0.15s; letter-spacing: 1px; text-transform: uppercase; }
+.tab-btn:hover { color: var(--accent); }
+.tab-btn.active { color: var(--accent); background: var(--tab-active); border-bottom-color: var(--accent); }
+.tab-panel { display: none; padding: 20px; }
+.tab-panel.active { display: block; }
+.section-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 4px; margin: 20px 0 12px; }
+.section-hdr:first-child { margin-top: 0; }
+.bluf-box { background: rgba(139,0,0,0.05); border-left: 4px solid var(--accent); padding: 14px 16px; margin-bottom: 20px; border-radius: 0 4px 4px 0; }
+.bluf-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.bluf-box ul { padding-left: 18px; }
+.bluf-box li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; }
+.story { background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; padding: 12px 14px; margin-bottom: 10px; transition: background 0.15s; }
+.story:hover { background: var(--hover-bg); }
+.story-headline { font-size: 15px; font-weight: bold; line-height: 1.4; margin-bottom: 4px; }
+.story-headline a { color: var(--text); text-decoration: none; }
+.story-headline a:hover { color: var(--accent); text-decoration: underline; }
+.story-meta { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-bottom: 6px; }
+.story-synopsis { font-size: 13px; color: var(--text); line-height: 1.5; }
+.tag { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; background: var(--tag-bg); color: var(--tag-text); padding: 2px 6px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+.watch-item { background: var(--watch-bg); border-left: 3px solid var(--watch-border); padding: 10px 12px; margin-bottom: 10px; border-radius: 0 4px 4px 0; }
+.watch-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--watch-border); margin-bottom: 4px; }
+.through-line { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 14px 16px; margin-bottom: 20px; border-radius: 0 4px 4px 0; font-size: 14px; line-height: 1.6; }
+.through-line-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.how-it-aged { background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; padding: 12px 14px; margin-bottom: 20px; }
+.aged-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.verdict-badge { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 3px; color: #fff; vertical-align: middle; margin-right: 6px; }
+.verdict-holds { background: #2d7a3d; }
+.verdict-partial { background: #8b6a00; }
+.verdict-miss { background: #8b0000; }
+.ticker-wrap { background: #111; color: #e8e8e8; overflow: hidden; padding: 8px 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; white-space: nowrap; }
+.ticker-track { display: inline-block; animation: ticker-slide 90s linear infinite; will-change: transform; }
+.ticker-wrap:hover .ticker-track { animation-play-state: paused; }
+@keyframes ticker-slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; white-space: normal; display: block; } }
+.ticker-item { display: inline-block; margin: 0 18px; }
+.ticker-lbl { color: #999; font-size: 11px; }
+.ticker-val { color: #e8e8e8; font-weight: 600; }
+.ticker-sep { color: #444; margin: 0 4px; }
+.up { color: #3dcc5a; }
+.dn { color: #ff5a5a; }
+footer { background: var(--footer-bg); color: var(--footer-text); font-family: 'IBM Plex Mono', monospace; font-size: 10px; padding: 16px 24px; margin-top: 32px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+@media (max-width: 600px) { .masthead { padding: 16px; } .tab-panel { padding: 14px; } footer { flex-direction: column; } }
+</style>
+</head>
+<body data-theme="warm">
+<div class="page">
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-left">
+    <div class="masthead-title">THE SWAP REPORT</div>
+    <div class="masthead-meta">MONDAY, JUNE 8, 2026 &nbsp;|&nbsp; MORNING EDITION &nbsp;|&nbsp; IRAN WAR DAY 101</div>
+    <div class="masthead-epigraph">The ceasefire survived 100 days; it did not survive the 101st night intact.</div>
+  </div>
+  <div class="theme-btns">
+    <button class="theme-btn active" onclick="setTheme('warm',this)" title="Warm">&#9728;</button>
+    <button class="theme-btn" onclick="setTheme('light',this)" title="Light">&#128305;</button>
+    <button class="theme-btn" onclick="setTheme('dark',this)" title="Dark">&#9790;</button>
+  </div>
+</div>
+
+<!-- EDITION BAR -->
+<div class="edition-bar">
+  <span>Iran War Day 101</span>
+  <span>|</span>
+  <span>Israel-Iran exchange overnight</span>
+  <span>|</span>
+  <span>Armenia: Pashinyan wins</span>
+  <span>|</span>
+  <span>Xi in Pyongyang</span>
+  <span>|</span>
+  <span>SC Primary: Today</span>
+  <span>|</span>
+  <a href="https://theswap.report/">theswap.report</a>
+</div>
+
+<!-- WEATHER -->
+<div class="wx-section">
+  <div class="wx-search">
+    <input type="text" id="wx-input" placeholder="Search: lat,lon or ICAO or city name" onkeydown="if(event.key==='Enter')wxSearch()">
+    <button onclick="wxSearch()">Go</button>
+  </div>
+  <div class="wx-controls">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);margin-right:4px;">LAYER:</span>
+    <button class="wx-btn active" onclick="wxLayer(this,'temperature-2m')">Temp</button>
+    <button class="wx-btn" onclick="wxLayer(this,'wind-10m')">Wind</button>
+    <button class="wx-btn" onclick="wxLayer(this,'rain-3h')">Rain</button>
+    <button class="wx-btn" onclick="wxLayer(this,'clouds')">Clouds</button>
+    <button class="wx-btn" onclick="wxLayer(this,'radar')">Radar</button>
+    <button class="wx-btn" onclick="wxLayer(this,'gust')">Gust</button>
+  </div>
+  <iframe id="wx-iframe" class="wx-iframe" src="https://www.ventusky.com/?p=37;-95;4&amp;l=temperature-2m" allowfullscreen></iframe>
+  <div class="wx-credit">Interactive weather: <a href="https://www.ventusky.com" target="_blank" rel="noopener">Ventusky</a> &nbsp;|&nbsp; Aviation: <a href="https://aviationweather.gov/data/metar/?id=KCHS&amp;taf=true" target="_blank" rel="noopener">KCHS METAR/TAF</a> (437 AW / Joint Base Charleston)</div>
+</div>
+
+<!-- TAB BAR -->
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('overview',this)">Overview</button>
+  <button class="tab-btn" onclick="showTab('defense',this)">Defense</button>
+  <button class="tab-btn" onclick="showTab('strategic',this)">Strategic</button>
+  <button class="tab-btn" onclick="showTab('domestic',this)">Domestic</button>
+  <button class="tab-btn" onclick="showTab('deepreads',this)">Deep Reads</button>
+  <button class="tab-btn" onclick="showTab('local',this)">Local</button>
+  <button class="tab-btn" onclick="showTab('lighter',this)">Lighter Fare</button>
+</div>
+
+<!-- OVERVIEW TAB -->
+<div id="tab-overview" class="tab-panel active">
+
+  <div class="bluf-box">
+    <div class="bluf-hdr">Bottom Line Up Front</div>
+    <ul>
+      <li><strong>Iran War, Day 101:</strong> Iran launched ballistic missiles at Israel overnight; Israel struck Iranian military targets in response hours later, defying Trump's private admonitions to Netanyahu to stand down. France 24, ABC, CBS, NBC, the Japan Times, and The War Zone all confirm the exchange. The 100-day ceasefire framework is under its most direct stress since it was announced. No signed deal exists to constrain either side.</li>
+      <li><strong>Armenia: Pashinyan wins big.</strong> The pro-West prime minister secured re-election with the highest voter turnout in a decade, a direct rebuke to Russian pressure. BBC, France 24, Deutsche Welle, and the Financial Times confirm the result. Armenia's pivot away from Moscow is now backed by a clear popular mandate; this is the first former Soviet republic to achieve that threshold while still formally inside Russia's near-abroad orbit.</li>
+      <li><strong>Xi Jinping lands in Pyongyang.</strong> SCMP reports Xi arrived in North Korea with denuclearization effectively off the table. The visit signals China is prioritizing peninsula stability over non-proliferation optics, and comes as US attention is consumed by the Iran conflict.</li>
+      <li><strong>Trump vs. Netanyahu, publicly.</strong> Multiple sources report Trump is attempting to restrain Israeli strikes on Iran and losing the argument. The Times of Israel calls the partnership that went to war 100 days ago "collapsing." The framing has shifted from alliance to friction.</li>
+      <li><strong>Markets under pressure.</strong> Asia-Pacific markets fell sharply overnight on renewed Iran-Israel hostilities and Friday's Wall Street selloff (Nasdaq -4.18%, S&amp;P -2.64%). WTI above $94 for the first time since the conflict began. The VIX remains elevated heading into Monday's open.</li>
+    </ul>
+  </div>
+
+  <div class="through-line">
+    <div class="through-line-hdr">Through Line</div>
+    Day 101 makes the pattern explicit: the ceasefire framework was always a political construct without an enforcement mechanism. Neither the US nor Israel stopped military operations fully, Iran never stood down its proxy and missile networks, and the deal sequencing collapsed on the same sanctions-first vs. stand-down-first impasse that has blocked every prior negotiation. What has changed overnight is that Israel struck Iran directly despite explicit US pressure to stop, and Iran fired ballistic missiles at Israel. That is not a ceasefire fraying; it is a ceasefire failing. Simultaneously, Armenia confirmed its westward pivot, Xi visited Kim, and markets sold off across Asia before US trading began. The question for Monday is whether the overnight exchange was a contained escalation cycle or the beginning of a new phase. The absence of a signed agreement means there is no formal tripwire either side has crossed; there is only the tolerance of the other side's decision-makers, and both sets of decision-makers are demonstrably not deferring to Washington right now.
+  </div>
+
+  <div class="how-it-aged">
+    <div class="aged-hdr">How It Aged</div>
+    <p style="font-size:13px;line-height:1.5;">
+      <span class="verdict-badge verdict-holds">HOLDS</span>
+      <strong>June 7 call:</strong> "Ceasefire fraying at the 100-day mark: what holds on paper rarely holds in the strait." The overnight Israel-Iran exchange confirms the fraying has become a rupture. Sunday's brief flagged that neither side had fully stood down and that the deal remained unsigned; the Day 101 exchange is the predicted outcome of that condition persisting.
+    </p>
+  </div>
+
+  <div class="section-hdr">Top Stories</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.france24.com/en/hostilities-escalate-between-iran-and-israel-in-blow-to-truce" target="_blank" rel="noopener">Hostilities Escalate Between Iran and Israel in Blow to Truce</a></div>
+    <div class="story-meta">France 24 &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">Iran</span> <span class="tag">Lead</span></div>
+    <div class="story-synopsis">Iran launched ballistic missiles toward Israel on the night of June 7; Israel responded with strikes on Iranian military targets on June 8, defying Trump's reported private warnings to Netanyahu. France 24 frames the exchange as the most direct blow to the ceasefire framework since it was announced. The strikes mark the first direct exchange between the two countries since the nominal ceasefire began after Day 78. Multiple allied governments called for restraint; none have publicly rebuked either party.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.bbc.com/news/articles/cvgel990n51o?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">Armenia's Pro-West Government Wins Election Despite Russian Pressure</a></div>
+    <div class="story-meta">BBC World &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">Armenia</span> <span class="tag">Russia</span></div>
+    <div class="story-synopsis">Prime Minister Pashinyan secured re-election with the highest turnout in a decade, lending democratic legitimacy to the westward pivot that Russian pressure had attempted to frame as elite-driven and unpopular. The BBC and Financial Times both call it a mandate. Moscow has already recalled its ambassador; further economic pressure is expected. The result shifts the Caucasus strategic picture and gives the EU a concrete anchor for its Eastern Partnership offer.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.scmp.com/news/china/diplomacy/article/3356361/pyongyang-rolls-out-red-carpet-xi-jinping-welcomed-pomp-and-ceremony?utm_source=rss_feed" target="_blank" rel="noopener">Pyongyang Rolls Out the Red Carpet as Xi Jinping Arrives in North Korea</a></div>
+    <div class="story-meta">South China Morning Post &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">China</span> <span class="tag">DPRK</span></div>
+    <div class="story-synopsis">Xi arrived in Pyongyang for a state visit. SCMP reports denuclearization is unlikely to feature on the agenda, with Beijing prioritizing stability over non-proliferation pressure. The visit consolidates the China-DPRK relationship at a moment when US attention is concentrated on the Middle East, and gives Beijing a visible counterpoint to the Armenia outcome: Moscow is losing one near-abroad partner while China reinforces another.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.themoscowtimes.com/2026/06/08/zelensky-confirms-he-met-with-russian-billionaire-abramovich-in-kyiv-a92951" target="_blank" rel="noopener">Zelensky Confirms He Met Russian Billionaire Abramovich in Kyiv</a></div>
+    <div class="story-meta">The Moscow Times &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">Ukraine</span> <span class="tag">Diplomacy</span></div>
+    <div class="story-synopsis">Zelensky confirmed he met with Roman Abramovich in Kyiv. The Abramovich channel has previously been used for backchannel communication with Moscow. The confirmation is unusual in its openness; Zelensky's allies simultaneously backed direct Zelensky-Putin talks according to Al Jazeera. The Abramovich meeting, the Armenia result, and the Crimea drone strike all in the same 24-hour window suggest multiple diplomatic and military tracks running in parallel.</div>
+  </div>
+
+</div>
+
+<!-- DEFENSE TAB -->
+<div id="tab-defense" class="tab-panel">
+
+  <div class="section-hdr">Iran War: Day 101 Exchange</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.twz.com/news-features/iran-launches-ballistic-missile-attacks-on-israel" target="_blank" rel="noopener">Iran Launches Ballistic Missile Attacks on Israel (Updated)</a></div>
+    <div class="story-meta">The War Zone &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">Iran</span> <span class="tag">Israel</span></div>
+    <div class="story-synopsis">The War Zone's running update covers the Iranian ballistic missile salvos directed at Israel overnight and Israel's retaliatory strikes on Iranian military targets. The exchange represents the first direct missile-strike cycle between the two countries since Day 78's ceasefire announcement. No US platform or personnel casualties are reported as of the morning feed. Iranian state media acknowledged the launch; IDF confirmed the Israeli response strikes.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.japantimes.co.jp/news/2026/06/08/world/politics/trump-israel-iran-beirut-attack/" target="_blank" rel="noopener">Israel Hits Iran with New Strikes Despite Trump Admonition</a></div>
+    <div class="story-meta">The Japan Times &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">Israel</span> <span class="tag">Iran</span></div>
+    <div class="story-synopsis">The Japan Times reports Trump privately urged Netanyahu to hold fire after the Iranian missile launch but Netanyahu proceeded with retaliatory strikes regardless. The pattern is consistent with prior reporting on alliance friction: Trump is attempting to manage escalation for domestic political reasons while Netanyahu operates on his own military and political calculus. The Times of Israel separately notes the Trump-Netanyahu partnership is under its most significant strain since the war began.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.militarytimes.com/news/your-military/2026/06/07/us-troops-families-adjust-to-new-normal-of-iran-war/" target="_blank" rel="noopener">US Troops and Families Adjust to New Normal of Iran War</a></div>
+    <div class="story-meta">Military Times &nbsp;|&nbsp; June 7, 2026 &nbsp;|&nbsp; <span class="tag">Personnel</span> <span class="tag">Iran</span></div>
+    <div class="story-synopsis">Military Times documents the quality-of-life and readiness picture for US service members and families after 100 days of sustained conflict operations. Extended deployments, elevated OPTEMPO, and uncertainty about the conflict's duration are the recurring themes. A useful baseline as the conflict enters a potentially more active phase.</div>
+  </div>
+
+  <div class="section-hdr">Indo-Pacific</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.scmp.com/plus/news/china/diplomacy/article/3356358/xi-lands-north-korea-denuclearisation-likely-table?utm_source=rss_feed" target="_blank" rel="noopener">Xi Lands in North Korea with Denuclearisation Likely Off the Table</a></div>
+    <div class="story-meta">South China Morning Post &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">China</span> <span class="tag">DPRK</span></div>
+    <div class="story-synopsis">SCMP's analysis of the Xi visit leads with the structural shift in China's DPRK policy: Beijing is prioritizing stability and strategic buffer value over non-proliferation pressure. The visit follows North Korea's nuclear doctrine revision, which moved toward an active deterrence posture. The combined signal is a DPRK with an updated nuclear doctrine, Chinese diplomatic cover, and no active US diplomatic track.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://breakingdefense.com/2026/06/macrons-nuclear-pact-expands-across-scandinavia-as-global-forces-surges/" target="_blank" rel="noopener">Macron's Nuclear Pact Expands Across Scandinavia as Global Forces Surge</a></div>
+    <div class="story-meta">Breaking Defense &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">NATO</span> <span class="tag">France</span></div>
+    <div class="story-synopsis">Breaking Defense reports France's bilateral nuclear security assurance architecture is expanding to Nordic-Baltic partners under a "Global Forces" framework. Macron has been building this structure since 2024 as a hedge against US security commitment uncertainty. The expansion to Scandinavia is the furthest geographic reach of the French nuclear umbrella outside historical relationships. The UK is not part of the framework.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxQQ1JrRzBJZ0lTSUhHQ0M4czhDNVJQWXY4TVNZRlB0YzdaekJRN1hPMERxV1BmOEFmaWU0QkJ1SklienlWZl9fTW1qYjFCWFhnNlpZTUk4ZnlDZzVPQk0zOWt1X0ppUG1DYkxxWGFieDBQSzBvSVpYc0dacGxVbU11SXpwMDFTNVR3UmEwZ3lPdkhwWnFvRE9oOFRlbmMtX2NDWTlJTjRONkozbmU2SzdKbHk1U213amNK?oc=5" target="_blank" rel="noopener">Major Philippines Quake Prompts Pacific Tsunami Warnings, Base Precautions</a></div>
+    <div class="story-meta">Stars and Stripes &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">Pacific</span> <span class="tag">Philippines</span></div>
+    <div class="story-synopsis">A 7.8-magnitude earthquake struck southern Philippines, prompting Pacific-wide tsunami warnings and precautionary measures at US bases in the region. Stars and Stripes reports base commanders activated warning protocols. A natural event, not a security incident, but the base response posture is worth noting for units with Pacific AOR equities.</div>
+  </div>
+
+  <div class="section-hdr">Technology and Systems</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.defenseone.com/policy/2026/06/house-lawmakers-want-navy-deploy-drone-boats-faster/414018/" target="_blank" rel="noopener">House Lawmakers Want the Navy to Deploy Drone Boats Faster</a></div>
+    <div class="story-meta">Defense One &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">USV</span> <span class="tag">Navy</span></div>
+    <div class="story-synopsis">House Armed Services members are pressing the Navy to accelerate unmanned surface vessel deployment timelines, citing Hormuz operations as evidence that USVs are needed now rather than at programmatic acquisition pace. Across-service pressure to field counter-unmanned and unmanned systems faster is the dominant procurement theme of the conflict period. The Iran conflict is generating real-time requirements for systems that were previously test-and-evaluation programs.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.twz.com/air/f-47s-exotic-shape-was-hiding-in-plain-sight-on-a-unit-patch" target="_blank" rel="noopener">F-47's Exotic Shape Was Hiding in Plain Sight on a Unit Patch</a></div>
+    <div class="story-meta">The War Zone &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">F-47</span> <span class="tag">Air Force</span></div>
+    <div class="story-synopsis">The War Zone identifies that the F-47's distinctive planform has been visible on a unit patch without public recognition. A low-stakes intelligence disclosure in one sense; significant in another because it suggests the program's existence was an open secret within the community long before official acknowledgment. Worth tracking as further F-47 operational details emerge.</div>
+  </div>
+
+  <div class="section-hdr">Korea</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxQYUM5S1VPdTBGa0puLUVUUzNmdDN1ZGlMT1hEQkR4bC1uN0s5d2hVSEFydWttTzNYUVBYcU9BNEh6R2RaTDRTUkZIYkpjbkp1M0Z6cURjN29DMDRreEN6dmZUbVFCUnM5NFhlV3lmcmNNY2tFNXFJcFBaNUV6WWxxUC0zSndqM0V3SHpxNW1Hb2hLc1dSRExwdkZrcV8tMk5qc0RNTzFwRFBvV3dpTnc?oc=5" target="_blank" rel="noopener">After Years of Disputes, South Korea and Japan Restart Joint Naval Exercise</a></div>
+    <div class="story-meta">Stars and Stripes &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">Japan</span> <span class="tag">Korea</span></div>
+    <div class="story-synopsis">Japan and South Korea restarted joint naval exercises after a period of suspended military-to-military cooperation tied to historical disputes. Stars and Stripes covers the restart as a significant normalizing step for the trilateral US-Japan-ROK architecture. The timing, coinciding with Xi's Pyongyang visit, is unlikely to be accidental on either side.</div>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Watch: Israel Espionage Assessment</div>
+    The Pentagon's reported "critical" threat tier designation for Israeli intelligence activity against US systems, reported by Japan Times and Al Jazeera on June 7, remains unconfirmed by official statement. The overnight Iran-Israel exchange adds urgency: if Israeli intelligence is running parallel operations against US systems while the two militaries are coordinating on Iran, the friction is operational, not theoretical. Tracking for official confirmation or denial.
+  </div>
+
+</div>
+
+<!-- STRATEGIC TAB -->
+<div id="tab-strategic" class="tab-panel">
+
+  <div class="section-hdr">Iran War: The Ceasefire Question</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.france24.com/en/israel-iran-trade-strikes-for-first-time-since-truce-in-self-created-nightmare-for-trump" target="_blank" rel="noopener">Israel, Iran Trade Strikes for First Time Since Truce in 'Self-Created Nightmare for Trump'</a></div>
+    <div class="story-meta">France 24 &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">Iran</span> <span class="tag">Analysis</span></div>
+    <div class="story-synopsis">France 24's framing is pointed: the overnight exchange is a product of the administration's failure to convert a battlefield pause into a binding agreement. The piece argues Trump's leverage over Netanyahu was always weaker than projected because Israel calculated that US support would not be withdrawn regardless of Israeli behavior. If that assessment is correct, the leverage problem is structural, not tactical.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.aljazeera.com/video/newsfeed/2026/6/8/israels-strikes-on-iran-expose-trumps-failure-to-restrain-netanyahu?traffic_source=rss" target="_blank" rel="noopener">Israel's Strikes on Iran Expose Trump's Failure to Restrain Netanyahu</a></div>
+    <div class="story-meta">Al Jazeera English &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">Israel</span> <span class="tag">Iran</span></div>
+    <div class="story-synopsis">Al Jazeera's analysis argues that Israel's willingness to strike Iran over explicit US objection reveals the limits of Washington's coercive leverage on its closest Middle East partner. The structural argument holds independently of source bias: the US has used most of its available pressure without constraining Israeli behavior. Consider the source orientation when weighting the framing, but the underlying observation is cross-corroborated by France 24 and the Japan Times.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline">In Negotiations With Iran, Trump Risks Repeating the Mistakes of Afghanistan</div>
+    <div class="story-meta">The Dispatch &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">Iran</span> <span class="tag">Strategy</span></div>
+    <div class="story-synopsis">The Dispatch draws the Doha Agreement parallel: the US negotiated an exit with a party that had no incentive to honor terms once US leverage was spent. The Dispatch argues the Iran ceasefire talks are structured similarly, with Iran agreeing to tactical pauses while preserving strategic capacity. The overnight exchange is consistent with this thesis: Iran tested the ceasefire's enforcement mechanism and found it absent. Sourcing confidence: single source, no pool URL; attribution in plain text.</div>
+  </div>
+
+  <div class="section-hdr">Armenia and the Near Abroad</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.ft.com/content/ca11d1cc-086d-4d2e-b837-1118692a19a4" target="_blank" rel="noopener">Armenians Back Pivot from Moscow in Pashinyan Election Win</a></div>
+    <div class="story-meta">Financial Times &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">Armenia</span> <span class="tag">Russia</span></div>
+    <div class="story-synopsis">The FT calls the Pashinyan result a structural turning point. Armenia has delivered a popular mandate for European integration at a moment when Russia's military credibility is depleted by Ukraine attrition. The Russia-Armenia CSTO relationship is functionally dead; the question is whether Yerevan can move fast enough on EU accession terms to lock in the shift before Moscow responds with more severe economic coercion.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.dw.com/en/armenia-election-prime-minister-pashinyan-declares-victory/a-77447079?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Armenia Election: Prime Minister Pashinyan Declares Victory</a></div>
+    <div class="story-meta">Deutsche Welle &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">Armenia</span></div>
+    <div class="story-synopsis">DW's election night coverage confirms the win with highest turnout in a decade. Turnout data removes Russia's argument that Pashinyan's westward pivot lacked popular legitimacy. The Kyiv Independent separately reports Zelensky called the result an opportunity to "expand cooperation" with Armenia, a signal about where the wartime diplomatic network is pointing.</div>
+  </div>
+
+  <div class="section-hdr">Russia / Ukraine</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.aljazeera.com/news/2026/6/8/ukraine-russia-trade-fire-as-zelenskyy-allies-back-call-for-direct-talks?traffic_source=rss" target="_blank" rel="noopener">Ukraine, Russia Trade Fire as Zelenskyy Allies Back Call for Direct Talks</a></div>
+    <div class="story-meta">Al Jazeera English &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">Ukraine</span> <span class="tag">Diplomacy</span></div>
+    <div class="story-synopsis">Zelensky's allies are publicly endorsing the possibility of direct talks with Putin even as combat continues. The Abramovich meeting in Kyiv, confirmed by Zelensky on the same day, is the visible surface of a backchannel architecture that has been operating throughout the conflict. The question is whether Russia is genuinely exploring terms or using the diplomacy track to slow Western support commitments while maintaining battlefield pressure.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.themoscowtimes.com/2026/06/08/rail-service-suspended-in-parts-of-crimea-after-drone-attack-kills-assistant-train-driver-a92950" target="_blank" rel="noopener">Rail Service Suspended in Crimea After Drone Attack Kills Train Driver</a></div>
+    <div class="story-meta">The Moscow Times &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">Ukraine</span> <span class="tag">Crimea</span></div>
+    <div class="story-synopsis">A Ukrainian drone strike on Crimean rail infrastructure killed an assistant train driver and suspended service in parts of the peninsula. Ukraine's deep-strike campaign continues to degrade Crimean logistics while diplomatic signals about direct talks are being sent simultaneously. The dual-track is deliberate: improve the battlefield position before negotiations.</div>
+  </div>
+
+  <div class="section-hdr">Middle East Alignment</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.aljazeera.com/video/newsfeed/2026/6/8/yemens-houthis-declare-ban-on-israeli-ships-sailing-the-red-sea?traffic_source=rss" target="_blank" rel="noopener">Yemen's Houthis Declare Ban on Israeli Ships in Red Sea</a></div>
+    <div class="story-meta">Al Jazeera English &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">Houthis</span> <span class="tag">Red Sea</span></div>
+    <div class="story-synopsis">The Houthis formally declared a ban on Israeli-flagged vessels transiting the Red Sea. The declaration formalizes what had been an operational practice throughout the conflict. The shipping insurance and routing implications are significant for Red Sea commercial traffic that has already been disrupted since late 2023. The timing, coinciding with the Israel-Iran overnight exchange, is coordinated signaling.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://warontherocks.com/what-beiruts-port-scanners-miss-about-militant-supply-chains/" target="_blank" rel="noopener">What Beirut's Port Scanners Miss About Militant Supply Chains</a></div>
+    <div class="story-meta">War on the Rocks &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">Lebanon</span> <span class="tag">Logistics</span></div>
+    <div class="story-synopsis">War on the Rocks examines the structural gaps in Lebanon's port scanning infrastructure that allow weapons and dual-use materials to move through Beirut despite official enforcement mechanisms. Relevant because Lebanese port logistics remain a key node in Iranian resupply chains to Hezbollah, which has maintained low-level pressure on Israel throughout the conflict period. The Day 101 exchange may change that calculus.</div>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Watch: Asian Markets</div>
+    Al Jazeera reports Asia-Pacific stock markets fell sharply overnight on renewed Iran-Israel hostilities and contagion from Friday's Wall Street selloff. The Japan Times reports the yen lingering above 160 to the dollar ahead of a BOJ meeting. The combined picture: risk-off positioning, elevated Hormuz risk premium in oil, and a BOJ decision on rates approaching. Monitor for US market open.
+  </div>
+
+</div>
+
+<!-- DOMESTIC TAB -->
+<div id="tab-domestic" class="tab-panel">
+
+  <div class="section-hdr">Federal Register: Presidential Documents (June 3-4)</div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Presidential Document: Tariff Adjustment, Aluminum / Steel / Copper</div>
+    Published June 4: further adjustment to tariff regimes on imports of aluminum, steel, and copper. The Financial Times reports Trump relaunched tariff measures following a court ruling striking down prior levies; this Federal Register entry is part of that sequence. Legal durability of the reimposed orders remains contested.
+    <br><a href="https://www.federalregister.gov/documents/2026/06/04/2026-11314/further-adjusting-the-tariff-regimes-for-imports-of-aluminum-steel-and-copper-into-the-united-states" style="font-size:12px;color:var(--accent);" target="_blank" rel="noopener">Federal Register</a>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Presidential Document: Childhood Vaccine Recommendations</div>
+    Published June 3: executive action directing realignment of US core childhood vaccine recommendations with peer developed-country practices. HHS implementation guidance pending; practical effect on CDC ACIP schedule not yet confirmed.
+    <br><a href="https://www.federalregister.gov/documents/2026/06/03/2026-11180/realigning-united-states-core-childhood-vaccine-recommendations-with-best-practices-from-peer-developed-countries" style="font-size:12px;color:var(--accent);" target="_blank" rel="noopener">Federal Register</a>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Presidential Document: Federal Lands Access</div>
+    Published June 3: removing restrictions on commercial, recreational, and energy extraction access to federal lands, consistent with the administration's broader public lands agenda.
+    <br><a href="https://www.federalregister.gov/documents/2026/06/03/2026-11181/removing-unnecessary-and-counterproductive-restrictions-on-access-to-federal-lands" style="font-size:12px;color:var(--accent);" target="_blank" rel="noopener">Federal Register</a>
+  </div>
+
+  <div class="section-hdr">Politics and the Week Ahead</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxPSVp4R1N5ZzNlOWRxMGhHM0N3cm55ZDdPdkFVQzd0dEJSNW1wZVNQd1dQc1hTOWF1cHI5Yy1Jd1FfVXBBZHhldnVkaHQ1dG1FYm42OGphQ3daOWVrS0l1eTBzaFBNUlhSSmpHZkh1b3FLLS1TM1pHeG5zTU4yQTZXQlRtQ1otVGl5SUVPdDFGLWp4bGdiaGViZmxkbUROVU80S1NGWTNWbDhYSVNDQnZvbTZEbTdET0xXVW9GOEJZM20?oc=5" target="_blank" rel="noopener">South Carolina 2026 Republican and Democratic Primaries: Key Races to Watch</a></div>
+    <div class="story-meta">Post and Courier &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">SC Politics</span></div>
+    <div class="story-synopsis">Today is the South Carolina Republican and Democratic primary. Lt. Gov. Pam Evette is the frontrunner in the Republican governor's race following Trump's endorsement. The Post and Courier's analysis noted uncertainty about the size of any Trump endorsement effect heading into election day. Two advisory questions appear on the Republican ballot. Results expected tonight.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.axios.com/2026/06/08/trump-bernie-sanders-ai" target="_blank" rel="noopener">What's Driving Trump to Pursue a Slice of the AI Windfall</a></div>
+    <div class="story-meta">Axios &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">AI</span> <span class="tag">Economy</span></div>
+    <div class="story-synopsis">Axios reports Trump is pursuing a share of AI revenue as a domestic political economic play, framing AI gains as public wealth that should be redirected to the American public. The framing echoes arguments from both ends of the political spectrum; the mechanism is unspecified. The political logic is obvious heading into midterms; the economic coherence is less clear.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxNaTA1YW9yVXp4VzFQRmpoRTR1MWZBWWhiZHhmZkFScWhtWTZzcFZCWFZqSWFWWGhoMnB3b3d5X2dPZElub05NUkVJeE5GeDNyLThpZHREbDc5ZlpWM19obVhwbS1pQXZ3Nzl1SUpCQkRiMmlsOFVfX3I5SVhTOUVFYU1VbjdSSWlLVUdSeGxIRkNabEdWbjlnX1duUQ?oc=5" target="_blank" rel="noopener">Five Days to Save FISA</a></div>
+    <div class="story-meta">Politico &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">Surveillance</span> <span class="tag">Congress</span></div>
+    <div class="story-synopsis">Politico reports congressional negotiators have five days before key FISA provisions expire without reauthorization. Section 702 collection against foreign targets is central to the intelligence picture on Iranian military activities. A lapse in FISA authority at this moment would be a significant operational disruption. Trump's intervention has complicated what had been a bipartisan framework.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.bbc.com/news/articles/c78yd5g9qx0o?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">Stock Markets Fall on Tech Plunge and Renewed Middle East Attacks</a></div>
+    <div class="story-meta">BBC World &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">Markets</span></div>
+    <div class="story-synopsis">BBC covers the overnight market selloff driven by Friday's tech sector drop and Monday's Iran-Israel escalation. The combined effect has Asia-Pacific markets down sharply. WTI is above $94 for the first time in the conflict period. The BBC leads the market story with both the tech and geopolitical drivers, which is the correct framing: this is not just a Friday hangover; it is a fresh catalyst.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.npr.org/2026/06/08/nx-s1-5849206/trump-walks-out-of-interview-after-being-pressed-on-election-fraud-claims" target="_blank" rel="noopener">Trump Walks Out of Interview After Being Pressed on Election Fraud Claims</a></div>
+    <div class="story-meta">NPR &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">Trump</span></div>
+    <div class="story-synopsis">Trump ended an NBC interview when pressed on 2020 election fraud claims. A behavioral data point: the pattern of terminating adversarial interviews has intensified during the conflict period, consistent with a president managing multiple simultaneous pressure points. The Bulwark covers the same interview as a broader composure failure on a day the news environment was not favorable.</div>
+  </div>
+
+  <div class="section-hdr">FRED Macro Snapshot (as of June 4-8, 2026)</div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Macro Indicators</div>
+    Fed Funds Rate: 3.62% (unchanged through June 4). 10Y UST: 4.54% (market, prev close). 2Y UST: 4.05% (FRED, June 4). Unemployment: 4.3% (May, unchanged). Initial Jobless Claims: 225,000 (week of May 30; up 13,000 from prior). S&amp;P 500: 7,384 (prev close, -2.64% Friday). NASDAQ: 25,709 (-4.18% Friday). VIX: 19.9 (partial recovery from 21.5 spike). WTI: $94.78 (prev close, +1.31%; Hormuz risk premium driving energy outperformance vs. equity selloff). BRENT: $97.29 (+0.92%). GOLD: $4,302. BTC: $63,237 (-0.11%). The Friday selloff was the sharpest single-day decline of the conflict period for tech; the Iran-Israel overnight exchange is likely to extend risk-off sentiment into Monday's open.
+  </div>
+
+</div>
+
+<!-- DEEP READS TAB -->
+<div id="tab-deepreads" class="tab-panel">
+
+  <div class="section-hdr">Strategic Analysis</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://warontherocks.com/cogs-of-war/the-lawmakers-fighting-to-modernize-the-pentagon/" target="_blank" rel="noopener">The Lawmakers Fighting to Modernize the Pentagon (War on the Rocks)</a></div>
+    <div class="story-meta">War on the Rocks &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">DoD Reform</span></div>
+    <div class="story-synopsis">War on the Rocks profiles the congressional coalition pushing for acquisition and management reform at DoD. The Iran conflict is the argument: the gap between commercial technology development pace and defense acquisition pace is producing operational shortfalls in real-time. The reformers have a better factual case now than they did before the conflict; whether that translates to legislative action is a separate question.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://smallwarsjournal.com/2026/06/08/airpower-under-the-nuclear-shadow/" target="_blank" rel="noopener">Airpower Under the Nuclear Shadow: Lessons from Operation Sindoor for Limited War Doctrine</a></div>
+    <div class="story-meta">Small Wars Journal &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">Airpower</span> <span class="tag">Doctrine</span></div>
+    <div class="story-synopsis">Small Wars Journal examines the India-Pakistan Operation Sindoor episode as a case study for limited conventional war under a nuclear overhang. The lessons are directly applicable to the Iran conflict: how do airpower operations remain below nuclear escalation thresholds, and what happens when one side misjudges the other's redlines? The Day 101 exchange is a live test of the same theoretical problem. Worth the full read today.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.thebulwark.com/p/soldiers-need-clarity-from-the-president-trump-welker-iran-war-hegseth-normandy-d-day" target="_blank" rel="noopener">Soldiers Need Clarity from the President (The Bulwark)</a></div>
+    <div class="story-meta">The Bulwark &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">Civil-Military</span></div>
+    <div class="story-synopsis">The Bulwark argues that Trump's public ambiguity about war aims in Iran, combined with the Hegseth Normandy speech's political messaging and the Trump-Netanyahu tension now visible over Israeli strikes, creates a genuine civil-military clarity problem for deployed forces. The question is not whether the military will follow orders but whether the orders themselves are coherent when the commander-in-chief is simultaneously managing the conflict, the alliance, and the domestic political narrative. A sharp read even accounting for the source's orientation.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.thebulwark.com/p/north-koreas-new-nuclear-doctrine" target="_blank" rel="noopener">North Korea's New Nuclear Doctrine (The Bulwark)</a></div>
+    <div class="story-meta">The Bulwark &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">DPRK</span> <span class="tag">Nuclear</span></div>
+    <div class="story-synopsis">Covers North Korea's revised nuclear doctrine, which shifted from pure deterrence to a more active posture lowering the threshold for nuclear use in conventional conflict scenarios. Xi's Pyongyang visit, covered today, lands in this context: Beijing is consolidating its relationship with a state whose nuclear doctrine is moving in a more dangerous direction. The US has no active diplomatic track with Pyongyang.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://foreignpolicy.com/2026/06/08/trump-republican-party-purge-fdr/" target="_blank" rel="noopener">Trump Is Doing What FDR Could Not (Foreign Policy)</a></div>
+    <div class="story-meta">Foreign Policy &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">GOP</span> <span class="tag">Political History</span></div>
+    <div class="story-synopsis">Foreign Policy argues Trump has achieved a party transformation that FDR attempted but failed to complete: the wholesale restructuring of a major party around personal loyalty rather than ideological coalition. Worth reading alongside the Dispatch's piece on the limits of that transformation when midterm math creates dissenting incentives.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.lawfaremedia.org/article/the-counterterrorism-challenge-in-afghanistan-s-borderlands" target="_blank" rel="noopener">The Counterterrorism Challenge in Afghanistan's Borderlands (Lawfare)</a></div>
+    <div class="story-meta">Lawfare &nbsp;|&nbsp; June 8, 2026 &nbsp;|&nbsp; <span class="tag">Afghanistan</span> <span class="tag">CT</span></div>
+    <div class="story-synopsis">Lawfare examines how the CT picture in Afghanistan's borderlands has evolved since the US withdrawal. Relevant today because the Iran conflict is consuming CENTCOM bandwidth and ISR resources previously available for the Afghan CT mission. The resource competition is not discussed publicly but is present in the operational picture.</div>
+  </div>
+
+</div>
+
+<!-- LOCAL TAB -->
+<div id="tab-local" class="tab-panel">
+
+  <div class="section-hdr">Joint Base Charleston / 437 AW</div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">JBC Watch: Monday</div>
+    No operational newsline from Joint Base Charleston PAO or DoD channels in the 36-hour feed window. 437th Airlift Wing (host) and 315th AW (reserve associate) status: steady-state. Hurricane season opened June 1; the Post and Courier reports El Nino conditions lower the statistical risk of a direct SC hurricane strike this year, though proximity storms affecting coastal operations remain possible. JBC emergency management coordinates with Dorchester, Berkeley, and Charleston county offices on seasonal preparation.
+  </div>
+
+  <div class="section-hdr">Lowcountry News Beat</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxPSVp4R1N5ZzNlOWRxMGhHM0N3cm55ZDdPdkFVQzd0dEJSNW1wZVNQd1dQc1hTOWF1cHI5Yy1Jd1FfVXBBZHhldnVkaHQ1dG1FYm42OGphQ3daOWVrS0l1eTBzaFBNUlhSSmpHZkh1b3FLLS1TM1pHeG5zTU4yQTZXQlRtQ1otVGl5SUVPdDFGLWp4bGdiaGViZmxkbUROVU80S1NGWTNWbDhYSVNDQnZvbTZEbTdET0xXVW9GOEJZM20?oc=5" target="_blank" rel="noopener">SC Republican Primary Today: Key Races to Watch</a></div>
+    <div class="story-meta">Post and Courier &nbsp;|&nbsp; June 8, 2026</div>
+    <div class="story-synopsis">Polls open today for the South Carolina Republican primary. The governor's race features Lt. Gov. Pam Evette as the frontrunner following Trump's endorsement. Post and Courier covers the Charleston-area legislative races as well. Results expected tonight; the governor's race sets the 2027 general election field for a state trending toward competitive at the statewide level.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://news.google.com/rss/articles/CBMizgFBVV95cUxPbll3bW1jOFRHeW9GdURYaFpwVWNLQml4N1ZMaktOTmtTRlNlNGtBTzhYQnM5Y3I1MG9GQVk1U1hqMVVCSzdBVzQ5MUhYc3EyUFlTekx5SFUyOXhldWpJdXRXLW5rd19udHhlMkNtcFdhaU9QX1BfcTV4YUFHeFZXeVlsY0ozRmxkWkpjc1dKazNodUh4OTQwazJXNFBNX09JU0NibUg1MXBaV0dfWTVUdXpOYUpjN1dUV2hYQW5aeURvRGk0OXJxeVV1TTZadw?oc=5" target="_blank" rel="noopener">El Nino Lowers Risk of SC Hurricane, but Storms Could Still Brew Near the East Coast</a></div>
+    <div class="story-meta">Post and Courier &nbsp;|&nbsp; June 8, 2026</div>
+    <div class="story-synopsis">Post and Courier covers the 2026 hurricane season outlook. El Nino conditions statistically suppress Atlantic hurricane development, but the article cautions that proximity storms and sub-tropical systems forming close to the coast can still affect the Lowcountry regardless of the overall season count. Relevant for coastal homeowners and JBC operational exposure planning.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxNYTVhemNjYWc1SUFUSVJXZV9peVVtSTE2aVlHbGdpUlNMNE5aWlhvYTlUdzZKSUVxTFh2UVdackxqNFZhZHNBUkE5NGtJXzZJeFdodm5vOUZ1OEs5RTdSdmk3NWttMk5Ta1hRS2lfSTBSelBqNUl2aFdlMmptQVZGUFBBQ2ZGZFlOMVcxdUlkcnp5V0p5bmM2UjcxUUNiY0JfMEVEd21PWUFqT1JxS3JTZ1JzYmpsTTBlUV85amNVTEI0NW9CcDNTU0p1Z0JSaU5iODlUbHBoZw?oc=5" target="_blank" rel="noopener">South Carolina Surges in Child Welfare Rankings but Progress Depends on County</a></div>
+    <div class="story-meta">Post and Courier &nbsp;|&nbsp; June 8, 2026</div>
+    <div class="story-synopsis">South Carolina moved up in national child welfare rankings but the gains are concentrated in certain counties while rural areas lag. The county-level disparity is the story; the headline improvement obscures significant variation in child health and welfare outcomes within the state.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxOclhZb3MwaGI3RmZEQVRZaS1CTmtVbmVyTjVJZ3paLUVIWXF1ZWI2bndRb3pCdlJDd2xfeVliRmlsRmZrNDZ5Ykl0ZUkyVlRXWF9RS2dNems3V3FFM2t5Z3ZTR1ZlREVVZ3ZTSDZGcEE1NW5fZU1nWmM0aEdpM2R3SkYtR3Nxdm43dVFtQkVqQ21ERGhNMkxUZ2o5LVRGV0xQVXAzd3dmNTRENkNWU3k4VVZ4bl9HUVE3Zm12NXFnTzhQemZtMUVYWEU5bDV1Z3JDeFlSMk9qdXFBQUJq?oc=5" target="_blank" rel="noopener">'For the Sake of History': Charleston's Oldest Synagogue to Open Historic Cemetery for One Day</a></div>
+    <div class="story-meta">Post and Courier &nbsp;|&nbsp; June 8, 2026</div>
+    <div class="story-synopsis">Kahal Kadosh Beth Elohim, the oldest continuously operating Jewish synagogue in the US, will open its historic cemetery to the public for a one-day event. The cemetery contains graves dating to the colonial period and is normally closed. Post and Courier has event details and access information.</div>
+  </div>
+
+  <div class="section-hdr">Food</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxOMUt0VnpkaWE4enpMakRFTWs5ZVplbUhfbWRzazJkcmptVFFydlpTLUJhaFhMTUVKbDloS05rWkpQZ2o1Q1k4UFFrdUNMcjhkTmZCYTRwVlFNbGpMLTl5Ym1TTmRSaXREc181cXhtUjg5ZGduVURJMVAzWXdadE5paHlVdi0zT2tYQ1d6bW1lcDl1TmpsYVc5Rll2NGJRaWxlZ3VHUnB4SVJqSGFndTlSRTRtTFNPYmpZS2NDMlRZR0JuRW43?oc=5" target="_blank" rel="noopener">New Destination for Wine and Small Plates Opens in Charleston</a></div>
+    <div class="story-meta">Post and Courier &nbsp;|&nbsp; June 8, 2026</div>
+    <div class="story-synopsis">Post and Courier covers the opening of a new wine and small plates concept in Charleston, covering the menu approach, concept background, and location. A genuine new opening with full coverage in the pool.</div>
+  </div>
+
+</div>
+
+<!-- LIGHTER FARE TAB -->
+<div id="tab-lighter" class="tab-panel">
+
+  <div class="section-hdr">Worth Your Time</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.cbsnews.com/live-updates/tony-awards-winners-2026-list/" target="_blank" rel="noopener">Tony Awards 2026: Full Winners List</a></div>
+    <div class="story-meta">CBS News &nbsp;|&nbsp; June 8, 2026</div>
+    <div class="story-synopsis">The 2026 Tony Awards were announced Sunday night. CBS News has the complete winners list. A useful cultural data point in a week that opened heavy on hard news.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.npr.org/2026/06/08/nx-s1-5848125/remote-work-mental-health-isolation" target="_blank" rel="noopener">People Love Working from Home. But Does It Love Them Back? A New Study Says No.</a></div>
+    <div class="story-meta">NPR &nbsp;|&nbsp; June 8, 2026</div>
+    <div class="story-synopsis">New research finds remote work is associated with increased social isolation and declining mental health metrics even among workers who prefer it over commuting. The finding is counterintuitive to the preference-survey literature: preference is not the same as outcome.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.npr.org/2026/06/08/nx-s1-5843308/bone-density-loss-vibrating-plates-belt" target="_blank" rel="noopener">Can a Vibrating Belt Fend Off Bone Density Loss?</a></div>
+    <div class="story-meta">NPR &nbsp;|&nbsp; June 8, 2026</div>
+    <div class="story-synopsis">Researchers are testing low-frequency vibration devices worn around the waist as a non-pharmaceutical intervention for age-related bone density loss. Early results are promising. Of particular interest given military occupational loading requirements and the service's ongoing musculoskeletal injury burden.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.aljazeera.com/sports/2026/6/8/perez-re-elected-at-real-madrid-paving-way-for-mourinhos-return-as-manager?traffic_source=rss" target="_blank" rel="noopener">Perez Re-Elected at Real Madrid, Paving Way for Mourinho's Return</a></div>
+    <div class="story-meta">Al Jazeera English &nbsp;|&nbsp; June 8, 2026</div>
+    <div class="story-synopsis">Florentino Perez was re-elected as Real Madrid president, clearing the path for Jose Mourinho's return as manager. For European football followers, this is either the best or worst possible news depending on your relationship with Mourinho's management approach.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.france24.com/en/peruvians-await-results-of-elections-for-ninth-president-in-a-decade" target="_blank" rel="noopener">Peruvians Await Results of Elections for Ninth President in a Decade</a></div>
+    <div class="story-meta">France 24 &nbsp;|&nbsp; June 8, 2026</div>
+    <div class="story-synopsis">Peru counts votes from Sunday's election, which if it produces a new president will be the ninth in ten years. The instability is structural: constitutional provisions making presidents relatively easy to remove by congress have produced a governance cycle that none of the candidates are proposing to fix at the constitutional level. A useful comparative democracy story with implications beyond Peru.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.bbc.com/news/articles/cnv9dz3reego?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">Malawians Repatriated from South Africa Amid Xenophobia Concerns</a></div>
+    <div class="story-meta">BBC World &nbsp;|&nbsp; June 8, 2026</div>
+    <div class="story-synopsis">South Africa's xenophobia wave is prompting formal repatriation programs for Malawian nationals. BBC covers the ground-level picture of regional labor migration and its discontents in southern Africa, a story that typically gets attention only when violence peaks.</div>
+  </div>
+
+</div>
+
+</div><!-- /page -->
+
+<!-- TICKER TAPE -->
+<div class="ticker-wrap" aria-label="Market ticker">
+  <div class="ticker-track" id="ticker-track">
+    <span class="ticker-group" id="ticker-group">
+      <span class="ticker-item"><span class="ticker-lbl">S&amp;P 500</span> <span class="ticker-val">7,384</span> <span class="dn">-2.64%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">DOW</span> <span class="ticker-val">50,867</span> <span class="dn">-1.35%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">NASDAQ</span> <span class="ticker-val">25,709</span> <span class="dn">-4.18%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">VIX</span> <span class="ticker-val">19.9</span> <span class="dn">-7.93%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">WTI</span> <span class="ticker-val">$94.78</span> <span class="up">+1.31%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">BRENT</span> <span class="ticker-val">$97.29</span> <span class="up">+0.92%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">GOLD</span> <span class="ticker-val">$4,302</span> <span class="dn">-0.88%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">10Y UST</span> <span class="ticker-val">4.54%</span> <span class="up">+1.32%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">FED FUNDS</span> <span class="ticker-val">3.62%</span> <span class="ticker-lbl">unchanged</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">DXY</span> <span class="ticker-val">100.2</span> <span class="up">+0.17%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">BTC</span> <span class="ticker-val">$63,237</span> <span class="dn">-0.11%</span> <span class="ticker-lbl">(prev close)</span></span>
+    </span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>THE SWAP REPORT &middot; Monday, June 8, 2026 &middot; Morning Edition</div>
+  <div style="opacity:0.6;">For SWAP &middot; Distribution restricted &middot; Not for public release</div>
+</footer>
+
+<script>
+var currentTheme = 'warm';
+function setTheme(t, btn) {
+  currentTheme = t;
+  document.body.setAttribute('data-theme', t);
+  document.querySelectorAll('.theme-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+}
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+var wxLat = 37, wxLon = -95, wxZoom = 4, wxLayerName = 'temperature-2m';
+var ICAO_TABLE = {
+  'KCHS': [32.8986, -80.0405], 'KLTS': [34.6671, -99.2667],
+  'KDEN': [39.8561, -104.6737], 'KATL': [33.6407, -84.4277],
+  'KDFW': [32.8998, -97.0403], 'KLAX': [33.9425, -118.4081],
+  'KJFK': [40.6413, -73.7781], 'KORD': [41.9742, -87.9073],
+  'EGLL': [51.4775, -0.4614], 'RJTT': [35.5533, 139.7811]
+};
+function buildWxSrc() {
+  return 'https://www.ventusky.com/?p=' + wxLat + ';' + wxLon + ';' + wxZoom + '&l=' + wxLayerName;
+}
+function wxLayer(btn, layer) {
+  wxLayerName = layer;
+  document.querySelectorAll('.wx-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById('wx-iframe').src = buildWxSrc();
+}
+function wxSearch() {
+  var q = document.getElementById('wx-input').value.trim();
+  if (!q) return;
+  var latLonRe = /^(-?\d+\.?\d*),\s*(-?\d+\.?\d*)$/;
+  var m = q.match(latLonRe);
+  if (m) { wxLat = parseFloat(m[1]); wxLon = parseFloat(m[2]); wxZoom = 8; document.getElementById('wx-iframe').src = buildWxSrc(); return; }
+  var icao = q.toUpperCase();
+  if (ICAO_TABLE[icao]) { wxLat = ICAO_TABLE[icao][0]; wxLon = ICAO_TABLE[icao][1]; wxZoom = 9; document.getElementById('wx-iframe').src = buildWxSrc(); return; }
+  fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + encodeURIComponent(q) + '&count=1')
+    .then(function(r){ return r.json(); })
+    .then(function(d){ if (d.results && d.results.length > 0) { wxLat = d.results[0].latitude; wxLon = d.results[0].longitude; wxZoom = 8; document.getElementById('wx-iframe').src = buildWxSrc(); } })
+    .catch(function(){});
+}
+(function(){
+  var grp = document.getElementById('ticker-group');
+  if (grp) {
+    var clone = grp.cloneNode(true);
+    clone.id = '';
+    document.getElementById('ticker-track').appendChild(clone);
+  }
+})();
+</script>
+</body>
+</html>
