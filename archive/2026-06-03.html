@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE SWAP REPORT: June 3, 2026</title>
+<meta property="og:title" content="THE SWAP REPORT: June 3, 2026">
+<meta property="og:description" content="Defense, strategy, and Lowcountry intelligence. Daily at theswap.report.">
+<meta property="og:url" content="https://theswap.report">
+<meta property="og:image" content="https://theswap.report/og-image.png">
+<link rel="canonical" href="https://theswap.report">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+/* ===== THEME VARIABLES ===== */
+:root {
+  --bg: #fdfbf7;
+  --surface: #f5f1e8;
+  --border: #d8cfc0;
+  --text: #1a1a18;
+  --text-muted: #6b6558;
+  --accent: #8b0000;
+  --accent-soft: #c0392b;
+  --link: #8b0000;
+  --ticker-bg: #1a1a18;
+  --ticker-text: #e8e0d0;
+  --tab-active-bg: #8b0000;
+  --tab-active-text: #fff;
+  --tab-hover-bg: #f0e8dc;
+  --hover-bg: rgba(139,0,0,0.07);
+}
+[data-theme="dark"] {
+  --bg: #12110e;
+  --surface: #1e1c18;
+  --border: #3a3630;
+  --text: #e8e0d0;
+  --text-muted: #9a9080;
+  --accent: #c0392b;
+  --accent-soft: #e74c3c;
+  --link: #e07060;
+  --ticker-bg: #0a0908;
+  --ticker-text: #e8e0d0;
+  --tab-active-bg: #c0392b;
+  --tab-active-text: #fff;
+  --tab-hover-bg: #2a2820;
+  --hover-bg: rgba(192,57,43,0.12);
+}
+[data-theme="print"] {
+  --bg: #fff;
+  --surface: #f8f8f8;
+  --border: #ccc;
+  --text: #000;
+  --text-muted: #555;
+  --accent: #000;
+  --accent-soft: #333;
+  --link: #000;
+  --ticker-bg: #222;
+  --ticker-text: #fff;
+  --tab-active-bg: #333;
+  --tab-active-text: #fff;
+  --tab-hover-bg: #eee;
+  --hover-bg: rgba(0,0,0,0.05);
+}
+
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.2s, color 0.2s;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ===== TICKER ===== */
+.ticker-wrap {
+  background: var(--ticker-bg);
+  color: var(--ticker-text);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 6px 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  border-bottom: 2px solid var(--accent);
+}
+.ticker-track {
+  display: inline-block;
+  animation: ticker-scroll 60s linear infinite;
+}
+.ticker-track:hover { animation-play-state: paused; }
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.tick-item {
+  display: inline-block;
+  margin: 0 18px;
+  letter-spacing: 0.03em;
+}
+.tick-item.up .tick-chg { color: #5dde7a; }
+.tick-item.dn .tick-chg { color: #ff6b6b; }
+.tick-item.flat .tick-chg { color: #aaa; }
+.tick-label { color: #aaa; font-size: 0.68rem; }
+.tick-val { color: var(--ticker-text); font-weight: 600; }
+
+/* ===== PAGE CONTAINER ===== */
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+}
+
+/* ===== MASTHEAD ===== */
+.masthead {
+  padding: 22px 0 12px;
+  border-bottom: 2px solid var(--accent);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.masthead-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 22px;
+  letter-spacing: 4px;
+  color: #8b0000;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.masthead-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: right;
+  line-height: 1.5;
+}
+.theme-controls {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-top: 6px;
+}
+.theme-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  padding: 2px 8px;
+  cursor: pointer;
+  font-family: 'IBM Plex Mono', monospace;
+  letter-spacing: 0.05em;
+  border-radius: 2px;
+  transition: background 0.15s;
+}
+.theme-btn:hover, .theme-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* ===== EDITION BAR ===== */
+.edition-bar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 5px 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+/* ===== TABS ===== */
+.tab-bar {
+  display: flex;
+  gap: 2px;
+  padding: 12px 0 0;
+  border-bottom: 2px solid var(--border);
+  flex-wrap: wrap;
+}
+.tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 6px 16px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-transform: uppercase;
+  margin-bottom: -2px;
+}
+.tab-btn:hover { background: var(--tab-hover-bg); color: var(--text); }
+.tab-btn.active {
+  background: var(--tab-active-bg);
+  color: var(--tab-active-text);
+  border-bottom-color: var(--tab-active-bg);
+}
+
+/* ===== TAB PANELS ===== */
+.tab-panel { display: none; padding: 20px 0; }
+.tab-panel.active { display: block; }
+
+/* ===== STORY ITEMS ===== */
+.story {
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+  position: relative;
+}
+.story:last-child { border-bottom: none; }
+.story-headline {
+  font-size: 1.0rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 5px;
+}
+.story-headline a { color: var(--text); }
+.story-headline a:hover { color: var(--accent); text-decoration: none; }
+.story-source {
+  font-size: 0.7rem;
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  letter-spacing: 0.04em;
+}
+.story-lede {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+.story-tag {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.62rem;
+  font-family: 'IBM Plex Mono', monospace;
+  padding: 1px 6px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.story-tag.alert { background: #c0392b; }
+.story-tag.eo { background: #7b4000; }
+.story-tag.election { background: #1a4a7a; }
+.story-tag.scotus { background: #2d4a2d; }
+
+/* ===== SECTION HEADERS ===== */
+.section-hdr {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 3px;
+  margin: 20px 0 12px;
+}
+.section-hdr:first-child { margin-top: 0; }
+
+/* ===== HOVER SYNOPSIS ===== */
+.synopsis {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 280px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  padding: 10px 12px;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--text);
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.story:hover .synopsis { display: block; }
+
+/* ===== MACRO STRIP ===== */
+.macro-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 4px;
+  font-size: 0.78rem;
+  font-family: 'IBM Plex Mono', monospace;
+}
+.macro-item { white-space: nowrap; }
+.macro-label { color: var(--text-muted); font-size: 0.68rem; }
+
+/* ===== WEATHER SECTION ===== */
+.wx-section { padding: 12px 0; }
+.wx-iframe-wrap {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  border: 1px solid var(--border);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.wx-iframe-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.wx-credit {
+  font-size: 0.7rem;
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  border-top: 2px solid var(--border);
+  padding: 16px 0;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-family: 'IBM Plex Mono', monospace;
+  letter-spacing: 0.04em;
+  line-height: 1.8;
+}
+.footer a { color: var(--text-muted); }
+.footer a:hover { color: var(--accent); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .masthead { flex-direction: column; align-items: flex-start; }
+  .masthead-meta { text-align: left; }
+  .synopsis { display: none !important; }
+  .wx-iframe-wrap { height: 260px; }
+}
+</style>
+</head>
+<body data-theme="warm">
+<div style="background:#8b0000;color:#fff;padding:8px 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-align:center;">Archived edition &middot; 2026-06-03 &middot; <a href='../index.html' style='color:#fff;text-decoration:underline;'>Back to today's brief</a> &middot; <a href='index.html' style='color:#fff;text-decoration:underline;'>Archive index</a></div>
+
+
+<!-- SCROLLING TICKER -->
+<div class="ticker-wrap" aria-label="Market data">
+  <div class="ticker-track">
+    <span class="tick-item dn"><span class="tick-label">S&amp;P 500</span> <span class="tick-val">7,575</span> <span class="tick-chg">&#9660; -0.46%</span></span>
+    <span class="tick-item dn"><span class="tick-label">DOW</span> <span class="tick-val">50,908</span> <span class="tick-chg">&#9660; -0.80%</span></span>
+    <span class="tick-item dn"><span class="tick-label">NASDAQ</span> <span class="tick-val">26,910</span> <span class="tick-chg">&#9660; -0.68%</span></span>
+    <span class="tick-item up"><span class="tick-label">VIX</span> <span class="tick-val">16.1</span> <span class="tick-chg">&#9650; +1.96%</span></span>
+    <span class="tick-item up"><span class="tick-label">WTI</span> <span class="tick-val">$96.10</span> <span class="tick-chg">&#9650; +1.46%</span></span>
+    <span class="tick-item up"><span class="tick-label">BRENT</span> <span class="tick-val">$97.94</span> <span class="tick-chg">&#9650; +1.02%</span></span>
+    <span class="tick-item dn"><span class="tick-label">GOLD</span> <span class="tick-val">$4,464</span> <span class="tick-chg">&#9660; -1.07%</span></span>
+    <span class="tick-item up"><span class="tick-label">10Y UST</span> <span class="tick-val">4.49%</span> <span class="tick-chg">&#9650; +0.81%</span></span>
+    <span class="tick-item up"><span class="tick-label">DXY</span> <span class="tick-val">99.5</span> <span class="tick-chg">&#9650; +0.30%</span></span>
+    <span class="tick-item dn"><span class="tick-label">BTC</span> <span class="tick-val">$65,784</span> <span class="tick-chg">&#9660; -1.31%</span></span>
+    <span class="tick-item dn"><span class="tick-label">S&amp;P 500</span> <span class="tick-val">7,575</span> <span class="tick-chg">&#9660; -0.46%</span></span>
+    <span class="tick-item dn"><span class="tick-label">DOW</span> <span class="tick-val">50,908</span> <span class="tick-chg">&#9660; -0.80%</span></span>
+    <span class="tick-item dn"><span class="tick-label">NASDAQ</span> <span class="tick-val">26,910</span> <span class="tick-chg">&#9660; -0.68%</span></span>
+    <span class="tick-item up"><span class="tick-label">VIX</span> <span class="tick-val">16.1</span> <span class="tick-chg">&#9650; +1.96%</span></span>
+    <span class="tick-item up"><span class="tick-label">WTI</span> <span class="tick-val">$96.10</span> <span class="tick-chg">&#9650; +1.46%</span></span>
+    <span class="tick-item up"><span class="tick-label">BRENT</span> <span class="tick-val">$97.94</span> <span class="tick-chg">&#9650; +1.02%</span></span>
+    <span class="tick-item dn"><span class="tick-label">GOLD</span> <span class="tick-val">$4,464</span> <span class="tick-chg">&#9660; -1.07%</span></span>
+    <span class="tick-item up"><span class="tick-label">10Y UST</span> <span class="tick-val">4.49%</span> <span class="tick-chg">&#9650; +0.81%</span></span>
+    <span class="tick-item up"><span class="tick-label">DXY</span> <span class="tick-val">99.5</span> <span class="tick-chg">&#9650; +0.30%</span></span>
+    <span class="tick-item dn"><span class="tick-label">BTC</span> <span class="tick-val">$65,784</span> <span class="tick-chg">&#9660; -1.31%</span></span>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div class="masthead-title">The SWAP Report</div>
+    <div class="masthead-meta">
+      Wednesday, June 3, 2026
+      <div class="theme-controls">
+        <button class="theme-btn active" onclick="setTheme('warm')">WARM</button>
+        <button class="theme-btn" onclick="setTheme('dark')">DARK</button>
+        <button class="theme-btn" onclick="setTheme('print')">PRINT</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDITION BAR -->
+  <div class="edition-bar">
+    Vol. 2, No. 153 &nbsp;|&nbsp; Defense &middot; Strategy &middot; Lowcountry &nbsp;|&nbsp; theswap.report
+  </div>
+
+  <!-- TABS -->
+  <div class="tab-bar" role="tablist">
+    <button class="tab-btn active" role="tab" aria-selected="true"  onclick="showTab('defense')">Defense</button>
+    <button class="tab-btn"        role="tab" aria-selected="false" onclick="showTab('strategic')">Strategic</button>
+    <button class="tab-btn"        role="tab" aria-selected="false" onclick="showTab('domestic')">Domestic</button>
+    <button class="tab-btn"        role="tab" aria-selected="false" onclick="showTab('local')">Local</button>
+    <button class="tab-btn"        role="tab" aria-selected="false" onclick="showTab('weather')">Weather</button>
+  </div>
+
+  <!-- ==================== DEFENSE TAB ==================== -->
+  <div id="tab-defense" class="tab-panel active" role="tabpanel">
+
+    <div class="section-hdr">Gulf / Iran</div>
+
+    <div class="story">
+      <div class="story-source">CENTCOM &nbsp;|&nbsp; NPR &nbsp;|&nbsp; CNN &nbsp;|&nbsp; Al Jazeera</div>
+      <div class="story-headline">
+        <span class="story-tag alert">BREAKING</span>
+        <a href="https://www.npr.org/2026/06/03/g-s1-125566/iran-war-updates" target="_blank" rel="noopener">US strikes Qeshm Island after Iran kills one at Kuwait airport; ceasefire talks collapse</a>
+      </div>
+      <div class="story-lede">Iran launched drones and missiles at Kuwait International Airport overnight, killing one person and forcing a temporary closure. US Central Command responded with strikes on an Iranian military ground-control station on Qeshm Island in the Strait of Hormuz. Three Iranian missiles aimed at Bahrain were intercepted by US and Bahraini air defenses; two aimed at Kuwait broke apart or fell short. Tehran has stopped communicating with ceasefire mediators, with Iran demanding enforcement of the Lebanon truce before returning to talks. Oil is responding: WTI up 1.5% to $96.</div>
+      <div class="synopsis">Iran struck Kuwait's main airport, killing one and forcing closure. US retaliated with strikes on a ground-control site on Qeshm Island. Three missiles targeting Bahrain were intercepted. Iran has cut off contact with ceasefire mediators, pointing to Lebanon as the blocking issue. The fragile April ceasefire is under severe strain.</div>
+    </div>
+
+    <div class="story">
+      <div class="story-source">CNN &nbsp;|&nbsp; Euronews &nbsp;|&nbsp; ABC News</div>
+      <div class="story-headline">
+        <a href="https://www.euronews.com/2026/06/03/us-and-iran-exchange-new-strikes-as-ceasefire-talks-falter-over-israels-military-actions-i" target="_blank" rel="noopener">Lebanon remains the sticking point: Iran wants Hezbollah truce before any broader deal</a>
+      </div>
+      <div class="story-lede">The ceasefire brokered by Pakistan in April held for roughly six weeks. It is now unraveling over Lebanon. Tehran insists that any extended truce must cover Hezbollah; Washington is pressing Israel to stand down but has not compelled it. The rift between the US and Israel is now publicly visible, with the US urging restraint and Israel pushing to intensify pressure on Hezbollah. Iran's decision to stop speaking with mediators is the clearest signal yet that the two-week truce framework, extended informally since April, has no agreed successor.</div>
+      <div class="synopsis">The ceasefire breakdown traces to Lebanon, not the Gulf directly. Iran is conditioning further talks on a parallel halt to Israeli operations against Hezbollah. The US-Israel friction over Lebanon is now a live variable in Hormuz diplomacy.</div>
+    </div>
+
+    <div class="section-hdr">Indo-Pacific / China</div>
+
+    <div class="story">
+      <div class="story-source">NPR &nbsp;|&nbsp; NBC News &nbsp;|&nbsp; Manila Times</div>
+      <div class="story-headline">
+        <a href="https://www.npr.org/transcripts/nx-s1-5837615" target="_blank" rel="noopener">Hegseth at Shangri-La: allies must hit 3.5% GDP on defense, era of US subsidy is over</a>
+      </div>
+      <div class="story-lede">At the Shangri-La Dialogue in Singapore, Secretary Hegseth called China's military buildup a source of "rightful alarm" and put a specific demand on the table: 3.5% of GDP in defense spending for US partners and allies in Asia. Japan's cabinet approved a record 9 trillion yen defense budget for fiscal 2026. Australia committed to 3% of GDP by 2033, short of the US threshold. Hegseth's tone was notably less combative on Taiwan than a year ago, consistent with the post-Beijing summit dynamic following Trump's May meeting with Xi, which both sides called a success.</div>
+      <div class="synopsis">Hegseth pressed hard on burden-sharing at Shangri-La, demanding 3.5% GDP from allies. Japan is already moving; Australia is behind. The softer tone on Taiwan reflects the post-Beijing summit dynamic, but the structural demand for allied self-reliance is firm.</div>
+    </div>
+
+    <div class="section-hdr">Strategy / Policy</div>
+
+    <div class="story">
+      <div class="story-source">CSIS &nbsp;|&nbsp; USNI News &nbsp;|&nbsp; DefenseScoop</div>
+      <div class="story-headline">
+        <a href="https://www.csis.org/analysis/2026-national-defense-strategy-numbers-radical-changes-moderate-changes-and-some" target="_blank" rel="noopener">CSIS: 2026 NDS deprioritizes Europe, bets on allied burden-sharing for Indo-Pacific</a>
+      </div>
+      <div class="story-lede">A new CSIS analysis of the January 2026 National Defense Strategy finds radical departures in how the strategy frames Europe (largely handed to NATO members), moderate continuity on nuclear posture, and persistent gaps in technology language. The four priorities in order: homeland defense, China deterrence, allied burden-sharing, and defense industrial base expansion. Russia drops to a nuclear-relevant but non-primary-force-driver threat. Hegseth's Shangri-La messaging is a direct field expression of these priorities.</div>
+      <div class="synopsis">CSIS assessment: Europe off-loaded to allies, China is the primary conventional driver, Russia drops to nuclear-only concern. Hegseth at Shangri-La is the doctrinal NDS in action.</div>
+    </div>
+
+    <div class="story">
+      <div class="story-source">WCBD News 2 &nbsp;|&nbsp; Post and Courier</div>
+      <div class="story-headline">
+        <a href="https://www.counton2.com/news/sen-lindsey-graham-secures-over-30-million-for-joint-base-charleston/" target="_blank" rel="noopener">Graham secures $33M for JBC aeromedical facility; nuclear simulator funded for Q4 start</a>
+      </div>
+      <div class="story-lede">Senator Lindsey Graham secured over $30 million for Joint Base Charleston, including $33 million specifically for an aeromedical evacuation facility serving the Air Force Reserve. The investment aligns with elevated operational tempo at JBC driven by Gulf operations and AMC mission requirements. A nuclear simulator facility is also cleared for construction starting Q4 2026, with completion targeted for October 2029.</div>
+      <div class="synopsis">$33M aeromedical evac facility funded at JBC. Nuclear simulator starts Q4 2026. JBC's operational relevance is growing with Gulf-driven AMC demand.</div>
+    </div>
+
+  </div>
+
+  <!-- ==================== STRATEGIC TAB ==================== -->
+  <div id="tab-strategic" class="tab-panel" role="tabpanel">
+
+    <div class="section-hdr">Energy and Economic Warfare</div>
+
+    <div class="story">
+      <div class="story-source">Wikipedia &nbsp;|&nbsp; CNBC &nbsp;|&nbsp; Al Jazeera</div>
+      <div class="story-headline">
+        <a href="https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis" target="_blank" rel="noopener">Hormuz still choked: Brent near $98 as ceasefire collapse reopens price risk</a>
+      </div>
+      <div class="story-lede">The Strait of Hormuz has been functionally closed to normal commercial traffic since March 4, 2026, following Operation Epic Fury. Brent fell roughly 20% from its April peak as ceasefire optimism built; today's Kuwait airport strike and Qeshm Island response push it back toward $98. The IEA has called the disruption the greatest global energy security challenge in history, with global output running 6.9 million barrels per day below year-ago levels. Analysts put the holding range at $90 to $100 until a durable truce framework is in place.</div>
+      <div class="synopsis">Hormuz remains effectively closed, suppressing roughly 20% of global oil trade. Today's strikes reverse the recent price retreat. Brent back toward $98. $90-$100 band likely persists without a durable ceasefire.</div>
+    </div>
+
+    <div class="story">
+      <div class="story-source">Federal Register &nbsp;|&nbsp; Treasury Dept.</div>
+      <div class="story-headline">
+        <a href="https://www.federalregister.gov/documents/2026/06/03/2026-11180/realigning-united-states-core-childhood-vaccine-recommendations-with-best-practices-from-peer" target="_blank" rel="noopener">OFAC publishes dual sanctions notices; economic pressure on Iran sustained through strikes</a>
+      </div>
+      <div class="story-lede">Treasury's Office of Foreign Assets Control published two separate sanctions notices in today's Federal Register, continuing the economic pressure campaign running parallel to military operations since February. The dual publications indicate the economic track of the Iran campaign is being maintained even as the military ceasefire frays. US financial institutions are now into their fourth month of elevated Iran-related compliance operations.</div>
+      <div class="synopsis">OFAC published two sanctions actions today. Economic pressure on Iran continues in parallel with military developments. Now in month four of elevated enforcement posture.</div>
+    </div>
+
+    <div class="section-hdr">Great Power Competition</div>
+
+    <div class="story">
+      <div class="story-source">NBC News &nbsp;|&nbsp; Manila Times</div>
+      <div class="story-headline">
+        <a href="https://www.nbcnews.com/world/asia/pete-hegseth-sounds-alarm-china-buildup-asian-allies-rcna347657" target="_blank" rel="noopener">Vietnam FMS: US approves $100M C-130 sustainment sale, deepening southern Indo-Pacific ties</a>
+      </div>
+      <div class="story-lede">The US approved a possible $100 million foreign military sale to Vietnam covering C-130 Hercules sustainment services and related equipment, one of the most significant US defense procurements by Hanoi in years. The deal deepens a security relationship accelerating under both the 2022 Comprehensive Strategic Partnership and the 2026 NDS burden-sharing framework. No mutual defense obligation attaches, but the signal value is substantial as the US builds distributed Indo-Pacific partnerships.</div>
+      <div class="synopsis">$100M C-130 sustainment FMS to Vietnam approved. Continues the post-2022 arc. No treaty obligation, but a meaningful signal under the new NDS distribution model.</div>
+    </div>
+
+    <div class="story">
+      <div class="story-source">RFE/RL</div>
+      <div class="story-headline">
+        <a href="https://www.rferl.org/a/iran-war-us-hormuz-oil-blockade-gulf-israel/33640284.html" target="_blank" rel="noopener">Lithuania: US troop presence formally "under review" as Gulf absorbs US strategic bandwidth</a>
+      </div>
+      <div class="story-lede">Lithuania's defense minister confirmed that the future presence of US troops in the country is under formal review in Washington, tracking with the 2026 NDS posture of reducing US conventional commitments in Europe and pressing NATO members toward self-sufficiency. The Gulf crisis has concentrated US military attention and resources; Eastern flank NATO allies are now navigating what a reduced American forward presence means for deterrence against Russia. The review has no announced timeline.</div>
+      <div class="synopsis">US troop presence in Lithuania under formal review. NDS-consistent. Eastern flank allies are watching what happens to the US footprint while Washington is consumed by the Gulf.</div>
+    </div>
+
+  </div>
+
+  <!-- ==================== DOMESTIC TAB ==================== -->
+  <div id="tab-domestic" class="tab-panel" role="tabpanel">
+
+    <!-- MACRO STRIP -->
+    <div class="macro-strip">
+      <span class="macro-item"><span class="macro-label">FED FUNDS</span> 3.62%</span>
+      <span class="macro-item"><span class="macro-label">10Y UST</span> 4.47%</span>
+      <span class="macro-item"><span class="macro-label">CORE CPI</span> 335.4</span>
+      <span class="macro-item"><span class="macro-label">PCE</span> 130.9</span>
+      <span class="macro-item"><span class="macro-label">UNEMP</span> 4.3%</span>
+      <span class="macro-item"><span class="macro-label">USD/EUR</span> 1.1679</span>
+    </div>
+
+    <div class="section-hdr">Executive Actions</div>
+
+    <div class="story">
+      <div class="story-source">Federal Register &nbsp;|&nbsp; White House &nbsp;|&nbsp; CNN &nbsp;|&nbsp; The Hill</div>
+      <div class="story-headline">
+        <span class="story-tag eo">EO</span>
+        <a href="https://www.federalregister.gov/documents/2026/06/03/2026-11180/realigning-united-states-core-childhood-vaccine-recommendations-with-best-practices-from-peer" target="_blank" rel="noopener">Trump signs vaccine schedule EO directing CDC to shrink core childhood recommendations</a>
+      </div>
+      <div class="story-lede">President Trump signed an executive order directing CDC and its Advisory Committee on Immunization Practices to review an HHS scientific assessment and update the US childhood vaccine schedule. The assessment found the US recommends more doses than any peer nation, identified 11 diseases as the consensus core, and moved vaccines for flu, hepatitis A and B, rotavirus, some meningitis variants, and RSV to shared decision-making or high-risk-only status. The EO publishes in today's Federal Register. Implementation timelines depend on ACIP review.</div>
+      <div class="synopsis">Trump EO directs CDC to shrink the core childhood vaccine schedule toward a peer-country standard. 11 consensus diseases remain core; flu, hepatitis, RSV shift to shared decision-making. Significant policy shift pending ACIP review.</div>
+    </div>
+
+    <div class="story">
+      <div class="story-source">Federal Register &nbsp;|&nbsp; FL Voice News</div>
+      <div class="story-headline">
+        <span class="story-tag eo">EO</span>
+        <a href="https://www.federalregister.gov/documents/2026/06/03/2026-11181/removing-unnecessary-and-counterproductive-restrictions-on-access-to-federal-lands" target="_blank" rel="noopener">Federal lands EO rescinds Nixon-era off-road vehicle restrictions from 1972 and 1977</a>
+      </div>
+      <div class="story-lede">A second executive order signed Friday and published in today's Federal Register rescinds Executive Orders 11644 (1972) and 11989 (1977), which restricted off-road vehicle use on public lands. The administration called the orders outdated and counterproductive. The action opens federal lands more broadly to OHV use and is consistent with the broader deregulatory direction on land access.</div>
+      <div class="synopsis">Two Nixon-era off-road vehicle EOs rescinded. Opens public lands to broader OHV use. Lower controversy than the vaccine EO; both published the same day.</div>
+    </div>
+
+    <div class="section-hdr">Elections</div>
+
+    <div class="story">
+      <div class="story-source">NPR &nbsp;|&nbsp; NBC News &nbsp;|&nbsp; CalMatters</div>
+      <div class="story-headline">
+        <span class="story-tag election">PRIMARY</span>
+        <a href="https://www.npr.org/2026/06/02/g-s1-124482/primary-day-california-iowa" target="_blank" rel="noopener">Iowa: Trump-backed Feenstra loses GOP governor primary to farmer Zach Lahn</a>
+      </div>
+      <div class="story-lede">Representative Randy Feenstra conceded to businessman and farmer Zach Lahn in Iowa's Republican gubernatorial primary, a notable crack in Trump's primary endorsement record. Lahn, with no prior elected office, will face Democratic state auditor Rob Sand in November. Six states voted Tuesday: California, Iowa, Montana, New Jersey, South Dakota, and New Mexico. California's governor race to succeed Newsom remained uncalled with half the vote in. LA Mayor Karen Bass advanced to a November runoff. New Jersey Democrat Rebecca Bennett won a competitive House primary in District 7.</div>
+      <div class="synopsis">Trump's Iowa endorsement didn't hold. Feenstra lost to Lahn, a farmer with no elected experience. First notable crack in Trump's 2026 primary record. California governor race still uncalled. Six-state Tuesday sets up competitive November matchups.</div>
+    </div>
+
+    <div class="section-hdr">Judiciary</div>
+
+    <div class="story">
+      <div class="story-source">CNBC &nbsp;|&nbsp; NBC News &nbsp;|&nbsp; ABC7</div>
+      <div class="story-headline">
+        <span class="story-tag scotus">SCOTUS</span>
+        <a href="https://www.nbcnews.com/politics/supreme-court/supreme-court-allows-alabama-congress-map-eliminate-black-district-rcna346920" target="_blank" rel="noopener">SCOTUS 6-3: Alabama may use map eliminating one majority-Black congressional district</a>
+      </div>
+      <div class="story-lede">The Supreme Court granted Alabama's emergency request to use a congressional map that a federal district court found discriminatory. The 6-3 conservative majority ruling eliminates one of Alabama's two majority-Black districts, reversing the court-drawn map used in 2024 that sent two Black Democrats to Congress. Republicans are expected to gain one House seat as a result. Justice Sotomayor dissented sharply, writing the ruling enables a "chaotic election held under a never-before-used map that intentionally discriminates against Black Alabamians."</div>
+      <div class="synopsis">SCOTUS 6-3 lets Alabama use a map that eliminates one majority-Black district. Reverses the 2024 court-drawn map; likely flips one House seat to Republicans. Sotomayor dissent is pointed.</div>
+    </div>
+
+    <div class="section-hdr">Trade</div>
+
+    <div class="story">
+      <div class="story-source">Reuters &nbsp;|&nbsp; FDD Overnight Brief</div>
+      <div class="story-headline">
+        <a href="https://www.fdd.org/overnight-brief/june-3-2026/" target="_blank" rel="noopener">Administration proposes 10-12.5% additional tariffs on 60 countries for forced labor failures</a>
+      </div>
+      <div class="story-lede">The Trump administration proposed additional duties of 10% to 12.5% on imports from 60 economies, citing failure to curb trade in goods made with forced labor. India faces a proposed 12.5% additional tariff. The action layers onto the broader tariff architecture in place since early 2025. With six-state midterm primaries now underway, the Lahn upset in Iowa is a reminder that farm-state trade politics remain live heading into November; the agricultural community carries strong opinions on tariff-driven export exposure.</div>
+      <div class="synopsis">Tariff surcharges proposed on 60 countries for forced labor non-compliance. India at 12.5%. Adds to existing tariff layers. Iowa primary result suggests farm-state trade politics still matter in midterm cycle.</div>
+    </div>
+
+  </div>
+
+  <!-- ==================== LOCAL TAB ==================== -->
+  <div id="tab-local" class="tab-panel" role="tabpanel">
+
+    <div class="section-hdr">Joint Base Charleston / 437 AW</div>
+
+    <div class="story">
+      <div class="story-source">WCBD News 2 &nbsp;|&nbsp; Post and Courier</div>
+      <div class="story-headline">
+        <a href="https://www.counton2.com/news/sen-lindsey-graham-secures-over-30-million-for-joint-base-charleston/" target="_blank" rel="noopener">$33M aeromedical facility funded; nuclear simulator construction starts Q4 2026</a>
+      </div>
+      <div class="story-lede">Senator Graham secured over $30 million for JBC, headlined by a $33 million aeromedical evacuation facility for the Air Force Reserve. The investment tracks elevated AMC operational tempo linked to ongoing Gulf operations, where C-17s out of Charleston support CENTCOM logistics. A nuclear simulator facility is also cleared for construction starting Q4 2026, with completion expected October 2029. The base relocated its 2026 airshow to Charleston Harbor as a single-day event, citing increased operational demands.</div>
+      <div class="synopsis">JBC getting $33M for aeromedical evac capability. Nuclear simulator funded, Q4 2026 start. Airshow moved to harbor format. All consistent with elevated operational tempo.</div>
+    </div>
+
+    <div class="story">
+      <div class="story-source">counton2.com &nbsp;|&nbsp; jbcharleston.jb.mil</div>
+      <div class="story-headline">
+        <a href="https://www.counton2.com/news/local-news/joint-base-charleston-kicks-off-palmetto-reach-exercise-with-628th-air-base-wing-and-437th-airlift-wing/amp/" target="_blank" rel="noopener">437 AW maintains full C-17 operational posture; fleet of 40 supporting elevated AMC demand</a>
+      </div>
+      <div class="story-lede">The 437th Airlift Wing continues operating one of the world's largest C-17 fleets, with 40 assigned aircraft. The January 2026 Palmetto Reach combat readiness exercise validated airlift surge capacity by simultaneously launching eight C-17s. With Gulf operations driving heightened AMC demand, JBC's role in global mobility logistics is at a high point. No public reports indicate drawdown or reassignment of the fleet.</div>
+      <div class="synopsis">437 AW 40-aircraft C-17 fleet fully operational. Palmetto Reach in January validated surge capacity. Gulf operations keeping AMC demand high.</div>
+    </div>
+
+    <div class="section-hdr">Lowcountry</div>
+
+    <div class="story">
+      <div class="story-source">Post and Courier &nbsp;|&nbsp; WCBD &nbsp;|&nbsp; NWS Charleston</div>
+      <div class="story-headline">
+        <a href="https://www.postandcourier.com/hurricanewire/south-carolina-hurricane-season-forecast/article_808516f3-cecc-42aa-4b5c-935ef8efea7.html" target="_blank" rel="noopener">Hurricane season opens: NOAA forecasts below-average Atlantic season; prep urged regardless</a>
+      </div>
+      <div class="story-lede">The 2026 Atlantic hurricane season opened June 1. NOAA forecasts eight to 14 named storms, three to six reaching hurricane strength, and one to three becoming major storms, slightly below the annual average. An El Nino system expected to emerge before late July will suppress Atlantic activity through fall. Dorchester County emergency officials are pushing early preparation messaging regardless, noting NOAA's caveat: below-average seasons still produce landfalling major storms. Near-term tropical outlook from NWS Charleston is quiet.</div>
+      <div class="synopsis">Below-average season forecast with El Nino expected. Dorchester County urging prep anyway. Near-term quiet per NWS Charleston. The "it only takes one" caveat applies.</div>
+    </div>
+
+    <div class="story">
+      <div class="story-source">Charleston City Paper &nbsp;|&nbsp; charleston-sc.gov</div>
+      <div class="story-headline">
+        <a href="https://charlestoncitypaper.com/" target="_blank" rel="noopener">West Ashley Farmers Market opens for 2026 season; SC minors social media law nears effect</a>
+      </div>
+      <div class="story-lede">The West Ashley Farmers Market opened today at Ackerman Park, the earliest opening in the market's history. South Carolina's new law limiting addictive design features on social media platforms used by minors is approaching implementation, part of a nationwide wave of state-level children's online safety legislation. The City of Charleston also opened the application window for its 2026 State Accommodations Tax and Community Assistance Funding grant programs.</div>
+      <div class="synopsis">West Ashley Farmers Market opened today, earliest ever. SC minor social media protection law nearing effect. City grant programs open for applications.</div>
+    </div>
+
+  </div>
+
+  <!-- ==================== WEATHER TAB ==================== -->
+  <div id="tab-weather" class="tab-panel" role="tabpanel">
+    <div class="wx-section">
+      <div class="wx-iframe-wrap">
+        <iframe
+          src="https://www.ventusky.com/?p=32.78;-79.94;7&l=temperature-2m"
+          title="Ventusky weather visualization, Charleston, SC area"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="wx-credit">
+        Visualization: <a href="https://www.ventusky.com/?p=32.78;-79.94;7&l=temperature-2m" target="_blank" rel="noopener">Ventusky</a> &nbsp;|&nbsp;
+        Aviation: <a href="https://www.aviationweather.gov/metar/data?ids=KCHS&format=raw&date=&hours=3" target="_blank" rel="noopener">KCHS METAR</a> &nbsp;|&nbsp;
+        NWS: <a href="https://www.weather.gov/chs/" target="_blank" rel="noopener">weather.gov/chs</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>
+      THE SWAP REPORT &nbsp;|&nbsp; <a href="https://theswap.report">theswap.report</a> &nbsp;|&nbsp;
+      Published Wednesday, June 3, 2026 &nbsp;|&nbsp;
+      <a href="https://theswap.report/archive/">Archive</a>
+    </p>
+    <p>Independent analysis. Not affiliated with any government agency. Content is for informational purposes only.</p>
+  </footer>
+
+</div><!-- /.page -->
+
+<script>
+function setTheme(t) {
+  document.body.setAttribute('data-theme', t);
+  document.querySelectorAll('.theme-btn').forEach(function(b) {
+    b.classList.toggle('active', b.textContent.trim().toLowerCase() === t);
+  });
+  try { localStorage.setItem('swap-theme', t); } catch(e) {}
+}
+function showTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b) {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
+  });
+  var panel = document.getElementById('tab-' + name);
+  if (panel) panel.classList.add('active');
+  var btns = document.querySelectorAll('.tab-btn');
+  btns.forEach(function(b) {
+    if (b.textContent.trim().toLowerCase() === name) {
+      b.classList.add('active');
+      b.setAttribute('aria-selected', 'true');
+    }
+  });
+}
+(function() {
+  try {
+    var saved = localStorage.getItem('swap-theme');
+    if (saved) setTheme(saved);
+  } catch(e) {}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="THE SWAP REPORT: On Ceasefires, What They Are, What They Do, and What Iran Teaches Us">
+<meta property="og:description" content="A special analytical edition on ceasefire theory, the ulterior motives that animate them, and what war termination scholarship says about how the Iran war ends.">
+<title>THE SWAP REPORT: On Ceasefires, A Special Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f0e8;
+    --surface: #fffdf8;
+    --border: #d4c9b8;
+    --text: #1a1a1a;
+    --muted: #666666;
+    --accent: #8b0000;
+    --tab-inactive: #e8e2d8;
+    --tab-active: #fffdf8;
+    --header-bg: #ede8df;
+    --tab-bg: #e8e2d8;
+    --tag-bg: #8b0000;
+    --tag-text: #ffffff;
+    --watch-bg: #fff8f0;
+    --watch-border: #c8a06a;
+    --card-bg: #fffdf8;
+    --hover-bg: rgba(139,0,0,0.06);
+    --footer-bg: #ede8df;
+    --footer-text: #666666;
+  }
+
+  [data-theme="light"] {
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --border: #e0e0e0;
+    --text: #1a1a1a;
+    --muted: #666666;
+    --accent: #8b0000;
+    --header-bg: #f5f5f5;
+    --tab-bg: #eeeeee;
+    --tab-inactive: #eeeeee;
+    --tab-active: #ffffff;
+    --card-bg: #ffffff;
+    --footer-bg: #f5f5f5;
+    --footer-text: #666666;
+    --watch-bg: #fff8f0;
+    --watch-border: #c8a06a;
+  }
+
+  [data-theme="dark"] {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --border: #2a2a4a;
+    --text: #e0e0e0;
+    --muted: #888888;
+    --accent: #cc3333;
+    --header-bg: #12122a;
+    --tab-bg: #12122a;
+    --tab-inactive: #12122a;
+    --tab-active: #1a1a2e;
+    --card-bg: #16213e;
+    --footer-bg: #12122a;
+    --footer-text: #888888;
+    --watch-bg: #1e1a12;
+    --watch-border: #7a6040;
+    --tag-text: #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    background: var(--bg);
+  }
+
+  /* MASTHEAD */
+  .masthead {
+    background: var(--bg);
+    padding: 24px 24px 16px;
+    border-bottom: 2px solid var(--accent);
+    position: relative;
+  }
+
+  .masthead-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .masthead-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .masthead-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  .masthead-epigraph {
+    font-style: italic;
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 8px;
+    font-family: Georgia, serif;
+    max-width: 720px;
+  }
+
+  .theme-controls {
+    display: flex;
+    gap: 4px;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+
+  .theme-btn {
+    background: var(--tab-inactive);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 13px;
+    cursor: pointer;
+    color: var(--text);
+    transition: background 0.15s;
+  }
+
+  .theme-btn:hover, .theme-btn.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+
+  /* EDITION BAR */
+  .edition-bar {
+    background: var(--header-bg);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .edition-tag {
+    background: var(--accent);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ARTICLE LAYOUT */
+  .article-container {
+    padding: 40px 20px 60px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .article-lede {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    line-height: 1.55;
+    color: var(--text);
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 400;
+  }
+
+  .article-lede strong {
+    color: var(--accent);
+  }
+
+  h2.section-head {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 48px 0 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h3.subsection-head {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 32px 0 12px;
+  }
+
+  p {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--text);
+    margin-bottom: 18px;
+  }
+
+  p + p {
+    margin-top: 0;
+  }
+
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 28px 0 28px 0;
+    padding: 12px 20px;
+    background: var(--watch-bg);
+    border-radius: 0 4px 4px 0;
+  }
+
+  blockquote p {
+    font-style: italic;
+    font-size: 15px;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  blockquote cite {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    font-style: normal;
+  }
+
+  .pullquote {
+    float: right;
+    width: 280px;
+    margin: 8px 0 20px 28px;
+    padding: 16px 16px 16px 20px;
+    border-left: 3px solid var(--accent);
+    background: var(--watch-bg);
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--text);
+  }
+
+  @media (max-width: 640px) {
+    .pullquote {
+      float: none;
+      width: 100%;
+      margin: 16px 0;
+    }
+  }
+
+  /* CASE CARDS */
+  .case-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 28px 0;
+  }
+
+  .case-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px;
+  }
+
+  .case-card .case-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  .case-card .case-title {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .case-card p {
+    font-size: 13px;
+    line-height: 1.55;
+    margin-bottom: 0;
+  }
+
+  .verdict {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-top: 8px;
+  }
+
+  .verdict.held { background: #d4edda; color: #155724; }
+  .verdict.collapsed { background: #f8d7da; color: #721c24; }
+  .verdict.partial { background: #fff3cd; color: #856404; }
+  .verdict.ongoing { background: #d1ecf1; color: #0c5460; }
+
+  /* MOTIVES TABLE */
+  .motives-grid {
+    margin: 28px 0;
+    display: grid;
+    gap: 12px;
+  }
+
+  .motive-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 16px;
+    padding: 14px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    align-items: start;
+  }
+
+  @media (max-width: 560px) {
+    .motive-row { grid-template-columns: 1fr; }
+  }
+
+  .motive-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1.4;
+  }
+
+  .motive-desc {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--text);
+  }
+
+  /* IRAN APPLICATION BOX */
+  .iran-box {
+    background: var(--watch-bg);
+    border: 1px solid var(--watch-border);
+    border-radius: 6px;
+    padding: 24px;
+    margin: 32px 0;
+  }
+
+  .iran-box .iran-box-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .iran-box h3 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .iran-box p {
+    font-size: 14px;
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+
+  .iran-box p:last-child { margin-bottom: 0; }
+
+  /* THEORY BOX */
+  .theory-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    border-radius: 0 0 6px 6px;
+    padding: 20px;
+    margin: 28px 0;
+  }
+
+  .theory-box .theory-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .theory-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .theory-box p:last-child { margin-bottom: 0; }
+
+  /* CONCLUSION */
+  .conclusion-block {
+    margin: 48px 0 0;
+    padding: 28px 24px;
+    background: var(--header-bg);
+    border-radius: 6px;
+    border: 1px solid var(--border);
+  }
+
+  .conclusion-block .conc-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .conclusion-block p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+
+  .conclusion-block p:last-child { margin-bottom: 0; }
+
+  /* FOOTNOTE / SOURCE LINE */
+  .source-line {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--footer-bg);
+    border-top: 1px solid var(--border);
+    padding: 16px 20px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--footer-text);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer a { color: var(--accent); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  a { color: var(--accent); }
+</style>
+</head>
+<body data-theme="warm">
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div class="masthead-top">
+      <div>
+        <div class="masthead-title">THE SWAP REPORT</div>
+        <div class="masthead-meta">SPECIAL EDITION &nbsp;|&nbsp; May 29, 2026 &nbsp;|&nbsp; theswap.report</div>
+        <div class="masthead-epigraph">"A ceasefire is not peace. It is war by another name, paused at someone's convenience."</div>
+      </div>
+      <div class="theme-controls">
+        <button class="theme-btn active" onclick="setTheme('warm')" title="Warm">&#9728;</button>
+        <button class="theme-btn" onclick="setTheme('light')" title="Light">&#128305;</button>
+        <button class="theme-btn" onclick="setTheme('dark')" title="Dark">&#9790;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDITION BAR -->
+  <div class="edition-bar">
+    <span class="edition-tag">Special Edition</span>
+    <span>On Ceasefires: Theory, Motives, and What Iran Teaches</span>
+    <span style="margin-left:auto;"><a href="https://theswap.report">theswap.report</a></span>
+  </div>
+
+  <!-- ARTICLE -->
+  <div class="article-container">
+
+    <p class="article-lede">
+      Ceasefires are the most misunderstood instrument in the vocabulary of war. They are presented to publics as near-peace, described by negotiators as humanitarian gestures, and treated by military planners as tactical resets. All three framings contain truth, and all three obscure more than they reveal. <strong>What a ceasefire actually does depends almost entirely on who wants it, why, and what they intend to do next.</strong> This edition tries to answer those questions with the seriousness they deserve, using the historical record and the war theory that explains it.
+    </p>
+
+    <!-- SECTION I -->
+    <h2 class="section-head">I. What a Ceasefire Is</h2>
+
+    <p>The formal definition is deceptively simple: a temporary cessation of hostilities, agreed by belligerents, without necessarily constituting a settlement of the underlying conflict. A ceasefire is not a peace treaty. It does not assign territory, determine reparations, or resolve the political question that caused the war. It stops the shooting. What happens after the shooting stops is the entire game.</p>
+
+    <p>Clausewitz never used the word, but he described the phenomenon precisely. In Book I of <em>On War</em>, he identified what he called "the suspension of action", periods in which both sides pause, recalculate, and decide whether to continue. His explanation for why this happens is worth quoting directly:</p>
+
+    <blockquote>
+      <p>"If war is an act of force, the emotions cannot fail to be involved. War feeds on itself... yet there are periods of inaction. These are not contradictions but expressions of the real, friction-laden, politically constrained nature of actual war."</p>
+      <cite>Clausewitz, <em>On War</em>, Book I, Ch. 16 (Howard/Paret, p. 216)</cite>
+    </blockquote>
+
+    <p>The deeper point: a ceasefire is not an anomaly in war. It is a feature. Every war that does not end in total annihilation will include moments where fighting pauses while political and military calculation continues. What we call a "ceasefire" is one of those moments formalized into an agreement, given a date, a line, and sometimes a monitor.</p>
+
+    <div class="theory-box">
+      <div class="theory-label">War Termination Theory</div>
+      <p>The academic field that studies ceasefires and war termination treats wars as ending when both sides conclude that the expected value of continued fighting is lower than the expected value of a negotiated settlement. This is the Wittman/Filson-Werner model: wars end when each side's estimate of what they could win through fighting converges with what they could get at the negotiating table.</p>
+      <p>The problem is getting there. Each side fights partly because it believes it can do better by fighting than by settling. A ceasefire is often a signal that one or both sides is updating that estimate, but not yet committing to a final number. It is the pause before the negotiation, not the negotiation itself.</p>
+    </div>
+
+    <p>There is also a distinction worth making between a ceasefire and a standstill agreement. A standstill holds lines in place with no additional obligation. A ceasefire typically includes humanitarian access commitments, prisoner treatment obligations, and sometimes a monitoring mechanism. The richer the ceasefire's terms, the more it begins to look like a proto-settlement, and the higher the stakes if it collapses.</p>
+
+    <!-- SECTION II -->
+    <h2 class="section-head">II. What Ceasefires Are Actually For</h2>
+
+    <p>The stated purpose of any ceasefire is almost never the only purpose. What a government says publicly when it announces or accepts a ceasefire tells you what it wants the other side, and its own population, to believe. What it is actually doing is usually something else, or several things at once.</p>
+
+    <p>Here is a working taxonomy of ceasefire motives. Most real ceasefires combine several of these simultaneously.</p>
+
+    <div class="motives-grid">
+
+      <div class="motive-row">
+        <div class="motive-label">Military refit &amp; reset</div>
+        <div class="motive-desc">The most reliable ulterior motive. Forces that are exhausted, undersupplied, or tactically overextended need time. A ceasefire provides it under political cover. Both sides know this. Both sides do it. The side that uses the pause better tends to win what comes next. The Korean War armistice negotiations began in 1951 partly because UN forces needed to consolidate. They continued for two years while both sides dug defensive lines they are still standing behind today.</div>
+      </div>
+
+      <div class="motive-row">
+        <div class="motive-label">Coercive signaling</div>
+        <div class="motive-desc">Offering a ceasefire demonstrates a willingness to negotiate, which can pressure the other side into accepting terms it would otherwise reject. The offer itself, not its acceptance, is the strategic act. Iran offered a conditional ceasefire in the early weeks of the current war; whether the conditions were designed to be accepted is a genuinely open question. Clausewitz's observation that "we must be willing to wage minimal wars... with negotiations held in reserve" (H/P, p. 604) captures this precisely, the offer is a form of pressure, not a concession.</div>
+      </div>
+
+      <div class="motive-row">
+        <div class="motive-label">International legitimacy management</div>
+        <div class="motive-desc">States fighting wars need international support, or at least the absence of active opposition. Accepting a ceasefire, or being seen as the side blocking one, shifts the narrative. The side that appears to want peace while the other side refuses gains diplomatic currency. This is not cynical, legitimacy is a real resource in war. It affects whether allies hold, whether sanctions bite, and whether arms keep flowing. The 2006 Lebanon ceasefire (UNSCR 1701) was partly about this: Israel needed to end the campaign on terms that did not look like defeat; Hezbollah needed to end it on terms that did not look like surrender. Neither got everything, but both got a story.</div>
+      </div>
+
+      <div class="motive-row">
+        <div class="motive-label">Domestic political relief</div>
+        <div class="motive-desc">War is expensive and populations tire of it. A ceasefire, even a temporary one, relieves pressure on a government whose population is losing appetite for casualties. This is particularly acute in democracies and in regimes that depend on popular acquiescence. Thucydides identified this dynamic in his account of the Peace of Nicias (421 BC): both Athens and Sparta accepted a settlement driven partly by war-weariness in their populations, not by any resolution of the underlying conflict. The peace lasted six years before collapsing, because the structural issues that caused the war remained entirely unresolved.</div>
+      </div>
+
+      <div class="motive-row">
+        <div class="motive-label">Economic and humanitarian cover</div>
+        <div class="motive-desc">Ceasefires enable imports of food, medicine, and fuel for civilian populations. They create conditions for the release of prisoners and the return of bodies. These are genuine goods. They are also, frequently, used to move weapons and fighters under the cover of "humanitarian" corridors, and to allow industrial reconstruction of military infrastructure. The side with better logistics typically exploits the humanitarian window more effectively. This is not unique to any particular actor; it is a structural feature of how ceasefires function in contested environments.</div>
+      </div>
+
+      <div class="motive-row">
+        <div class="motive-label">Intelligence collection</div>
+        <div class="motive-desc">A ceasefire with monitoring creates legal access for observers who collect information. Military attaches, UN monitors, and NGO personnel all produce information, some of which finds its way to military planners. A ceasefire that includes a monitoring mechanism provides real-time intelligence about the other side's order of battle, logistics, and intentions. States have historically accepted monitoring regimes partly because they provide reciprocal intelligence access.</div>
+      </div>
+
+      <div class="motive-row">
+        <div class="motive-label">Third-party pressure absorption</div>
+        <div class="motive-desc">Major powers, allies, patrons, great-power brokers, pressure belligerents to cease fire for their own reasons. Accepting a ceasefire satisfies that pressure without requiring the underlying settlement the patron wants. The belligerent pockets the diplomatic credit, stabilizes the relationship with the patron, and waits. The patron often knows this and accepts it because the alternative (continued escalation, strategic spillover) is worse. U.S. pressure on Israel in multiple Gaza conflicts followed this pattern. Russian pressure on Armenia in 2020 followed a variant of it.</div>
+      </div>
+
+      <div class="motive-row">
+        <div class="motive-label">War termination exploration</div>
+        <div class="motive-desc">Sometimes, not always, but sometimes, a ceasefire is genuine preliminary exploration of whether an end to the war is possible. The belligerents use the pause to sound out positions, test whether the other side's public statements reflect its private priorities, and develop a rough sense of what a settlement might look like. This is the function ceasefires are publicly described as serving. It does happen. It just co-exists with all the other functions listed above.</div>
+      </div>
+
+    </div>
+
+    <!-- SECTION III -->
+    <h2 class="section-head">III. Why Ceasefires Collapse: The Commitment Problem</h2>
+
+    <p>Most ceasefires fail. The political science literature on this is unambiguous. Barbara Walter's research on civil war ceasefires found that without third-party enforcement, the large majority collapse within months. The dynamics in interstate war are similar, though the enforcement mechanisms differ.</p>
+
+    <div class="pullquote">
+      "States that sign ceasefires cannot credibly commit to honoring them once they become strong enough to do better by fighting."
+    </div>
+
+    <p>The theoretical explanation is what IR scholars call the commitment problem, developed most rigorously by James Fearon. The logic: both sides want an agreement that reflects the actual balance of power. But the balance of power changes. A side that accepts a ceasefire when it is weakened will, if it recovers, face the question of whether to honor an agreement made under duress. The answer is often no. The other side, anticipating this, is reluctant to trust the ceasefire in the first place. The result: ceasefires are hardest to sustain precisely when they are most needed, in wars where one side has been significantly weakened but has the potential to rebuild.</p>
+
+    <p>This is not a recent insight. Thucydides described the Peace of Nicias failing for exactly this reason. Both Athens and Sparta accepted the 421 BC settlement from exhaustion after the Archidamian War. Neither had achieved its objectives. The peace was designed to restore the status quo ante, but Athens's underlying power and ambition had not changed, and neither had Sparta's fear of Athenian growth. Six years later, the Athenians sent 200 ships to Sicily, and the war resumed worse than before.</p>
+
+    <blockquote>
+      <p>"The peace was an affair of words rather than deeds. Each side continued to commit wrongs against the other, and neither trusted the other's intentions."</p>
+      <cite>Thucydides, <em>History of the Peloponnesian War</em>, 5.25.3 (Crawley/Strassler)</cite>
+    </blockquote>
+
+    <p>The structural fix is third-party enforcement: an external power willing and able to punish violations. When the United States provides security guarantees, or the UN deploys peacekeepers with rules of engagement that allow enforcement, the commitment problem is reduced but not eliminated. The enforcer's credibility becomes the ceiling on the ceasefire's durability. When the enforcer loses interest, credibility, or domestic political support for the mission, the ceasefire tends to follow.</p>
+
+    <!-- SECTION IV -->
+    <h2 class="section-head">IV. The Historical Record</h2>
+
+    <p>Theory is useful. Cases are better. Here are five ceasefires, each one chosen because it illuminates a different failure mode or success condition.</p>
+
+    <div class="case-grid">
+
+      <div class="case-card">
+        <div class="case-label">1953</div>
+        <div class="case-title">Korean Armistice</div>
+        <p>Three years of war ended in a military standstill, not a political settlement. Neither side had achieved its war aims. The armistice froze the conflict at approximately the original border, creating a supervised pause that has lasted 73 years. It holds not because the underlying conflict was resolved but because the cost of resuming would be catastrophic for all parties. The commitment problem is managed by the continued presence of U.S. forces and the nuclear deterrent. Remove either, and the calculation changes.</p>
+        <span class="verdict held">Held (with enforcement)</span>
+      </div>
+
+      <div class="case-card">
+        <div class="case-label">2006</div>
+        <div class="case-title">Lebanon / UNSCR 1701</div>
+        <p>The ceasefire after the 34-day Israel-Hezbollah war paused hostilities but changed almost nothing structurally. Hezbollah retained its weapons, replenished its missile stocks, and rebuilt its military capacity. The Lebanese government never implemented the disarmament provisions of 1701. Israel gained temporary quiet along the northern border and avoided an indefinite ground campaign. When full-scale war returned in 2024-2025, Hezbollah was militarily larger than in 2006 and the ceasefire provisions were a distant memory. A pause that allows one side to rebuild without disarmament is not a strategic gain for the other side; it is a deferred loss.</p>
+        <span class="verdict collapsed">Provisions never implemented</span>
+      </div>
+
+      <div class="case-card">
+        <div class="case-label">2008 / 2012 / 2014 / 2021</div>
+        <div class="case-title">Gaza Ceasefires (Series)</div>
+        <p>Four rounds of ceasefire following four rounds of escalation. Each followed a similar pattern: Israeli military operations degraded Hamas's military capacity; Hamas accepted a ceasefire when costs became unacceptable; the ceasefire allowed reconstruction of military infrastructure under the cover of rebuilding civilian infrastructure; Hamas re-emerged in the next round militarily stronger than before the previous ceasefire. The 2021 ceasefire, negotiated after 11 days of fighting, lasted until October 2023. The pattern illustrates the fundamental problem with ceasefires that do not change underlying political conditions: they are a queue, not a resolution.</p>
+        <span class="verdict collapsed">Cyclical failure</span>
+      </div>
+
+      <div class="case-card">
+        <div class="case-label">2003-2006</div>
+        <div class="case-title">Libya vs. Iran: Divergent Paths</div>
+        <p>Worth comparing because both faced similar external pressure around the same period. Libya chose to negotiate away its WMD program and open to international inspectors, producing a durable arrangement (until regime change in 2011 introduced new instability unrelated to the nuclear deal). Iran chose a different path: partial engagement with the IAEA, a concealment strategy, and preservation of the program's core capabilities. The strategic lesson Iran drew was that Libya's compliance was followed by regime change, while North Korea's defiance was rewarded with deterrence. That lesson shapes everything about Iranian negotiating behavior today.</p>
+        <span class="verdict partial">Libya: deal held; Iran: deal deferred</span>
+      </div>
+
+      <div class="case-card">
+        <div class="case-label">1995</div>
+        <div class="case-title">Dayton / Bosnia</div>
+        <p>The most successful ceasefire-to-settlement in recent memory, and the most heavily engineered. Dayton worked because all three parties had reached genuine exhaustion, the U.S. was willing to commit forces to enforcement (IFOR/SFOR), and Richard Holbrooke drove a process that locked in commitments before any side could recalculate. The settlement was coercive: the Serbs were brought to the table by the Croatian offensive (Operation Storm) and NATO airstrikes. Military reality preceded diplomatic settlement, which is usually how durable ceasefires work. Peace rarely precedes military clarity.</p>
+        <span class="verdict held">Held (coercive settlement)</span>
+      </div>
+
+    </div>
+
+    <!-- SECTION V -->
+    <h2 class="section-head">V. What This Means for Iran</h2>
+
+    <p>The Iran war, now in its 29th day, has produced the first serious ceasefire discussions since the initial days of the conflict. The basic shape of the reported proposals: a pause in offensive operations, a freeze on enrichment activities above 60% purity, and preliminary talks on a longer-term framework. The Trump administration is reportedly conditioning its participation on Iranian acceptance of a monitoring regime similar to the Additional Protocol. Tehran has offered a conditional ceasefire; the conditions have not been publicly specified in full.</p>
+
+    <p>Applying the frameworks above generates five observations that have nothing to do with who is right or wrong politically and everything to do with what is likely to happen.</p>
+
+    <div class="iran-box">
+      <div class="iran-box-label">Applied Analysis: Iran Ceasefire Dynamics</div>
+
+      <h3>1. The commitment problem is acute</h3>
+      <p>Iran's enrichment infrastructure, even if damaged, retains the knowledge base and the organizational capacity that makes the program valuable to the regime. A ceasefire that pauses enrichment does not eliminate this. Both sides know it. The U.S. and Israel are being asked to trust an agreement with a counterparty that has a documented history of concealment and that watched Libya disarm and then saw its government destroyed. Verification mechanisms help at the margin, but they cannot solve the fundamental problem: if Iran recovers from the current military pressure, what binds it to the ceasefire terms? The answer is either a durable enforcement mechanism or a change in Iranian political leadership's calculation of what the program is worth. Neither is obviously present.</p>
+
+      <h3>2. The motives taxonomy suggests multiple simultaneous games</h3>
+      <p>Iran almost certainly has overlapping purposes in any ceasefire it accepts: military refit (its air defense network has been significantly degraded), domestic political relief (the economic impact of the conflict is severe), international legitimacy management (non-aligned states are watching), and genuine war termination exploration (the regime may assess that the program's current status is already a deterrent, and that formal acknowledgment of this through a deal is preferable to continued war). These purposes are not mutually exclusive. The question for U.S. negotiators is not "which one is real" but "what terms would be acceptable even if Iran intends to exploit multiple of these simultaneously?"</p>
+
+      <h3>3. Thucydides on peace from exhaustion</h3>
+      <p>The Peace of Nicias analog is sobering. That agreement was reached when both sides were genuinely exhausted but neither had achieved its objectives. It lasted six years. The conditions that produced it, unresolved strategic competition, unsatisfied allies (Corinth refused to sign), and an Athenian power that had not fundamentally changed, also produced its collapse. The Iran analog: the regime's core interest in a nuclear hedge has not changed. If the ceasefire does not address that interest structurally, it will not outlast the next opportunity for Iran to pursue it.</p>
+
+      <h3>4. Clausewitz on the policy-military connection</h3>
+      <p>The most important Clausewitzian question about the Iran ceasefire is whether the U.S. government has a clear political object that military action has been designed to serve. Clausewitz: "War is nothing but a continuation of political intercourse with the admixture of other means" (H/P, p. 605). The implication runs in both directions, not just that politics must guide war, but that a ceasefire's terms must also serve a clear political end state. A ceasefire that pauses the shooting without connecting to a durable political settlement is not the end of the war. It is a comma.</p>
+
+      <h3>5. The critical variable: third-party enforcement and spoilers</h3>
+      <p>Dayton worked because of IFOR. Korea held because of the combined forces command. Lebanon's 1701 failed because UNIFIL had no enforcement authority. The Iran ceasefire's durability will depend heavily on what enforcement mechanism, if any, is built into it, and on who among the relevant parties has interests in seeing it fail. Israel's interests are not identical to Washington's, and a ceasefire that the U.S. presents as a success may be viewed in Jerusalem as an insufficient guarantee. That gap is not an abstraction, it is a spoiler dynamic that has undermined ceasefires in this same region before.</p>
+    </div>
+
+    <!-- SECTION VI -->
+    <h2 class="section-head">VI. The Theory, Plainly Stated</h2>
+
+    <p>Pull back from the specifics. What does the scholarly literature actually say about how wars like this end?</p>
+
+    <p>The war termination literature converges on a few consistent findings. Wars end when both sides' private estimates of what they could achieve by continuing to fight converge with what they could get by settling. This happens when the military situation clarifies, when both sides can see, more or less, what continued fighting will produce. Wars do not end when one side runs out of soldiers or weapons, usually; they end when one side concludes that the cost of continuing exceeds the expected gain.</p>
+
+    <p>The "bargaining model of war" (Fearon, 1995) holds that wars are, in principle, inefficient: both sides would be better off settling at the expected outcome of fighting without the costs of fighting. The reason they fight instead is private information (each side is uncertain about the other's capabilities and resolve) and commitment problems (neither side can credibly promise to hold to a settlement after conditions change). Ceasefires reduce both problems temporarily: they allow information revelation and create a political moment in which commitment can be externally enforced. That is their real function.</p>
+
+    <p>The Goemans extension of this framework adds a third variable: the domestic political constraints on leaders. Leaders whose survival depends on winning a war cannot accept a settlement that looks like a loss, even if it is strategically rational. In Iran's case, the regime's legitimacy is partly bound up in its resistance narrative and in the nuclear program's symbolic significance as a proof of the Islamic Republic's technological and strategic capacity. A ceasefire that requires visibly surrendering that narrative is politically costly for the leadership in ways that are not fully captured by the military calculus alone.</p>
+
+    <div class="conclusion-block">
+      <div class="conc-label">Closing Assessment</div>
+      <p>A ceasefire in Iran is possible and may be imminent. Whether it is durable depends on factors that most public reporting does not address: what enforcement mechanism, if any, is attached to it; whether the underlying political question (Iran's nuclear status and regional power) has been addressed in even provisional terms; and whether the domestic political coalitions in Tehran, Washington, and Jerusalem can sustain whatever terms are agreed.</p>
+      <p>History does not offer much comfort here. Most ceasefires in complex, multi-party conflicts with structural power competition either collapse or produce frozen conflicts that outlast the governments that signed them. The exceptions, Dayton, the Korean Armistice, share two features: genuine military exhaustion on both sides, and a credible enforcement mechanism with the will and capability to back it up.</p>
+      <p>Whether either condition is present in the Iran conflict today is, at minimum, not obvious. That ambiguity is itself a data point. A ceasefire that requires the president's personal approval before it takes effect is not yet a ceasefire. It is a negotiating position wearing a ceasefire's clothes.</p>
+    </div>
+
+    <div class="source-line">
+      Sources and theoretical frameworks: Clausewitz, <em>On War</em> (Howard/Paret trans., Princeton, 1976); Thucydides, <em>History of the Peloponnesian War</em> (Crawley/Strassler, Landmark ed.); James Fearon, "Rationalist Explanations for War," <em>International Organization</em> 49:3 (1995); Donald Wittman, "How a War Ends," <em>Journal of Conflict Resolution</em> 23:4 (1979); Mark Fey and Kristopher Ramsay, "Mutual Optimism and War," <em>American Journal of Political Science</em> 51:4 (2007); Hein Goemans, <em>War and Punishment</em> (Princeton, 2000); Barbara Walter, "The Critical Barrier to Civil War Settlement," <em>International Organization</em> 51:3 (1997).
+    </div>
+
+  </div><!-- /article-container -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>THE SWAP REPORT &mdash; Special Edition &mdash; May 29, 2026</span>
+    <span><a href="https://theswap.report">theswap.report</a></span>
+  </div>
+
+</div><!-- /page -->
+
+<script>
+  var currentTheme = 'warm';
+
+  function setTheme(theme) {
+    document.body.setAttribute('data-theme', theme);
+    currentTheme = theme;
+    document.querySelectorAll('.theme-btn').forEach(function(btn) {
+      btn.classList.remove('active');
+    });
+    var idx = ['warm','light','dark'].indexOf(theme);
+    if (idx >= 0) {
+      document.querySelectorAll('.theme-btn')[idx].classList.add('active');
+    }
+  }
+</script>
+
+</body>
+</html>

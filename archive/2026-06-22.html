@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE SWAP REPORT: Morning Edition, June 22, 2026</title>
+<meta property="og:title" content="THE SWAP REPORT: Morning Edition, June 22, 2026">
+<meta property="og:url" content="https://theswap.report/">
+<meta property="og:description" content="Monday, June 22, 2026. US-Iran talks in Switzerland run through the night on a 60-day roadmap, with Hormuz, Lebanon, and frozen assets on the table as Trump renews strike threats. Colombia elects a Trump-backed hard-right president. The Philippines warns Beijing may seize a disputed atoll.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f0e8;
+  --surface: #fffdf8;
+  --border: #d4c9b8;
+  --text: #1a1a1a;
+  --muted: #666666;
+  --accent: #8b0000;
+  --tab-inactive: #e8e2d8;
+  --tab-active: #fffdf8;
+  --header-bg: #ede8df;
+  --tab-bg: #e8e2d8;
+  --tag-bg: #8b0000;
+  --tag-text: #ffffff;
+  --watch-bg: #fff8f0;
+  --watch-border: #c8a06a;
+  --card-bg: #fffdf8;
+  --hover-bg: rgba(139,0,0,0.06);
+  --footer-bg: #ede8df;
+  --footer-text: #666666;
+}
+[data-theme="light"] {
+  --bg: #ffffff; --surface: #ffffff; --border: #e0e0e0; --text: #111111;
+  --muted: #555555; --accent: #8b0000; --tab-inactive: #f0f0f0;
+  --tab-active: #ffffff; --header-bg: #f5f5f5; --tab-bg: #eeeeee;
+  --watch-bg: #fff8f0; --watch-border: #c8a06a; --card-bg: #ffffff;
+  --hover-bg: rgba(139,0,0,0.05); --footer-bg: #f0f0f0; --footer-text: #555555;
+}
+[data-theme="dark"] {
+  --bg: #1a1a2e; --surface: #16213e; --border: #2a2a4a; --text: #e0e0e0;
+  --muted: #a0a0b0; --accent: #cc3333; --tab-inactive: #1e1e3a;
+  --tab-active: #16213e; --header-bg: #1e1e3a; --tab-bg: #1e1e3a;
+  --watch-bg: #1e1e2e; --watch-border: #8b6a3a; --card-bg: #16213e;
+  --hover-bg: rgba(204,51,51,0.08); --footer-bg: #1e1e3a; --footer-text: #a0a0b0;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: Georgia, 'Times New Roman', serif; font-size: 15px; line-height: 1.6; }
+.page { max-width: 960px; margin: 0 auto; background: var(--bg); }
+.masthead { background: var(--bg); padding: 24px 24px 16px; border-bottom: 2px solid var(--accent); display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; }
+.masthead-left { flex: 1; }
+.masthead-title { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 22px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); }
+.masthead-meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); margin-top: 4px; }
+.masthead-epigraph { font-style: italic; font-size: 13px; color: var(--muted); margin-top: 4px; font-family: Georgia, serif; }
+.theme-btns { display: flex; gap: 6px; align-items: center; padding-top: 4px; }
+.theme-btn { background: var(--tab-bg); border: 1px solid var(--border); color: var(--text); cursor: pointer; font-size: 14px; padding: 4px 8px; border-radius: 3px; }
+.theme-btn.active { background: var(--accent); color: #fff; }
+.edition-bar { background: var(--header-bg); color: var(--muted); border-bottom: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 5px 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.edition-bar a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.wx-section { padding: 12px 20px; background: var(--surface); border-bottom: 1px solid var(--border); }
+.wx-iframe { width: 100%; height: 320px; border: 1px solid var(--border); border-radius: 4px; display: block; }
+.wx-controls { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; align-items: center; }
+.wx-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 8px; border: 1px solid var(--border); background: var(--tab-bg); color: var(--text); cursor: pointer; border-radius: 3px; }
+.wx-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.wx-search { display: flex; gap: 6px; margin-bottom: 8px; }
+.wx-search input { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 3px; flex: 1; }
+.wx-search button { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 10px; background: var(--accent); color: #fff; border: none; border-radius: 3px; cursor: pointer; }
+.wx-credit { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 6px; }
+.wx-credit a { color: var(--accent); text-underline-offset: 2px; }
+.tab-bar { display: flex; background: var(--tab-bg); border-bottom: 2px solid var(--border); overflow-x: auto; padding: 0 20px; gap: 2px; }
+.tab-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 8px 14px; border: none; background: transparent; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap; transition: color 0.15s; letter-spacing: 1px; text-transform: uppercase; }
+.tab-btn:hover { color: var(--accent); }
+.tab-btn.active { color: var(--accent); background: var(--tab-active); border-bottom-color: var(--accent); }
+.tab-panel { display: none; padding: 20px; }
+.tab-panel.active { display: block; }
+.section-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 4px; margin: 20px 0 12px; }
+.section-hdr:first-child { margin-top: 0; }
+.bluf-box { background: rgba(139,0,0,0.05); border-left: 4px solid var(--accent); padding: 14px 16px; margin-bottom: 20px; border-radius: 0 4px 4px 0; }
+.bluf-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.bluf-box ul { padding-left: 18px; }
+.bluf-box li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; }
+.story { background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; padding: 12px 14px; margin-bottom: 10px; transition: background 0.15s; }
+.story:hover { background: var(--hover-bg); }
+.story-headline { font-size: 15px; font-weight: bold; line-height: 1.4; margin-bottom: 4px; }
+.story-headline a { color: var(--text); text-decoration: none; }
+.story-headline a:hover { color: var(--accent); text-decoration: underline; }
+.story-meta { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-bottom: 6px; }
+.story-synopsis { font-size: 13px; color: var(--text); line-height: 1.5; }
+.tag { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; background: var(--tag-bg); color: var(--tag-text); padding: 2px 6px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+.watch-item { background: var(--watch-bg); border-left: 3px solid var(--watch-border); padding: 10px 12px; margin-bottom: 10px; border-radius: 0 4px 4px 0; }
+.watch-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--watch-border); margin-bottom: 4px; }
+.through-line { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 14px 16px; margin-bottom: 20px; border-radius: 0 4px 4px 0; font-size: 14px; line-height: 1.6; }
+.through-line-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.how-it-aged { background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; padding: 12px 14px; margin-bottom: 20px; }
+.aged-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.verdict-badge { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 3px; color: #fff; vertical-align: middle; margin-right: 6px; }
+.verdict-holds { background: #2d7a3d; }
+.verdict-partial { background: #8b6a00; }
+.verdict-miss { background: #8b0000; }
+.swap-take { margin-top: 12px; padding: 10px 14px; background: rgba(139,0,0,0.06); border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0; }
+.swap-take-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 6px; }
+.swap-take p { font-size: 13px; line-height: 1.6; }
+.ticker-wrap { background: #111; color: #e8e8e8; overflow: hidden; padding: 8px 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; white-space: nowrap; }
+.ticker-track { display: inline-block; animation: ticker-slide 90s linear infinite; will-change: transform; }
+.ticker-wrap:hover .ticker-track { animation-play-state: paused; }
+@keyframes ticker-slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; white-space: normal; display: block; } }
+.ticker-item { display: inline-block; margin: 0 18px; }
+.ticker-lbl { color: #999; font-size: 11px; }
+.ticker-val { color: #e8e8e8; font-weight: 600; }
+.ticker-sep { color: #444; margin: 0 4px; }
+.up { color: #3dcc5a; }
+.dn { color: #ff5a5a; }
+footer { background: var(--footer-bg); color: var(--footer-text); font-family: 'IBM Plex Mono', monospace; font-size: 10px; padding: 16px 24px; margin-top: 32px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+@media (max-width: 600px) { .masthead { padding: 16px; } .tab-panel { padding: 14px; } footer { flex-direction: column; } }
+</style>
+</head>
+<body data-theme="warm">
+<div class="page">
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-left">
+    <div class="masthead-title">THE SWAP REPORT</div>
+    <div class="masthead-meta">MONDAY, JUNE 22, 2026 &nbsp;|&nbsp; MORNING EDITION</div>
+    <div class="masthead-epigraph">The talks ran through the night. The strait stayed contested. Lebanon kept burning. Day one of a 60-day sprint, and the load-bearing wall is already cracking.</div>
+  </div>
+  <div class="theme-btns">
+    <button class="theme-btn active" onclick="setTheme('warm',this)" title="Warm">&#9728;</button>
+    <button class="theme-btn" onclick="setTheme('light',this)" title="Light">&#128305;</button>
+    <button class="theme-btn" onclick="setTheme('dark',this)" title="Dark">&#9790;</button>
+  </div>
+</div>
+
+<!-- EDITION BAR -->
+<div class="edition-bar">
+  <span>US-Iran talks: night one done, 60-day clock running</span>
+  <span>|</span>
+  <span>Hormuz: progress reported, status still contested</span>
+  <span>|</span>
+  <span>Israel resumes Lebanon strikes</span>
+  <span>|</span>
+  <span>Colombia elects Trump-backed De la Espriella</span>
+  <span>|</span>
+  <a href="https://theswap.report/">theswap.report</a>
+</div>
+
+<!-- WEATHER -->
+<div class="wx-section">
+  <div class="wx-search">
+    <input type="text" id="wx-input" placeholder="Search: lat,lon or ICAO or city name" onkeydown="if(event.key==='Enter')wxSearch()">
+    <button onclick="wxSearch()">Go</button>
+  </div>
+  <div class="wx-controls">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);margin-right:4px;">LAYER:</span>
+    <button class="wx-btn active" onclick="wxLayer(this,'temperature-2m')">Temp</button>
+    <button class="wx-btn" onclick="wxLayer(this,'wind-10m')">Wind</button>
+    <button class="wx-btn" onclick="wxLayer(this,'rain-3h')">Rain</button>
+    <button class="wx-btn" onclick="wxLayer(this,'clouds')">Clouds</button>
+    <button class="wx-btn" onclick="wxLayer(this,'radar')">Radar</button>
+    <button class="wx-btn" onclick="wxLayer(this,'gust')">Gust</button>
+  </div>
+  <iframe id="wx-iframe" class="wx-iframe" src="https://www.ventusky.com/?p=37;-95;4&amp;l=temperature-2m" allowfullscreen></iframe>
+  <div class="wx-credit">Interactive weather: <a href="https://www.ventusky.com" target="_blank" rel="noopener">Ventusky</a> &nbsp;|&nbsp; Aviation: <a href="https://aviationweather.gov/data/metar/?id=KCHS&amp;taf=true" target="_blank" rel="noopener">KCHS METAR/TAF</a> (437 AW / Joint Base Charleston)</div>
+</div>
+
+<!-- TAB BAR -->
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('overview',this)">Overview</button>
+  <button class="tab-btn" onclick="showTab('defense',this)">Defense</button>
+  <button class="tab-btn" onclick="showTab('strategic',this)">Strategic</button>
+  <button class="tab-btn" onclick="showTab('domestic',this)">Domestic</button>
+  <button class="tab-btn" onclick="showTab('deepreads',this)">Deep Reads</button>
+  <button class="tab-btn" onclick="showTab('local',this)">Local</button>
+  <button class="tab-btn" onclick="showTab('lighter',this)">Lighter Fare</button>
+</div>
+
+<!-- OVERVIEW TAB -->
+<div id="tab-overview" class="tab-panel active">
+
+  <div class="bluf-box">
+    <div class="bluf-hdr">Bottom Line Up Front</div>
+    <ul>
+      <li><strong>Night one of the US-Iran talks closed without a rupture, which is the most that could be asked.</strong> The opening session at the Swiss resort ran past midnight and reportedly continued through the night, covering the hard files at once: a Lebanon truce, the Hormuz dispute, and unfreezing Iranian assets. Iranian negotiators briefly walked out over Trump's renewed strike threats before returning. A US diplomat told Axios the parties made "good progress" on keeping Hormuz open. The 60-day clock toward a permanent nuclear agreement is now running.</li>
+      <li><strong>Lebanon is still the load-bearing wall, and it moved the wrong way.</strong> Israel resumed strikes on Hezbollah after a several-hour lull, the same day talks opened. Iran has named a Lebanon ceasefire its number-one condition. Israel is not a party to the talks, so Washington is negotiating with a hand it does not fully control. Pull this assumption out and the ceasefire, the Hormuz reopening, and the oil-price relief come down together.</li>
+      <li><strong>Hormuz is a perception war over a physical fact.</strong> Iran said Saturday the strait is closed; the US energy secretary says flow is "back towards normal." Both can claim to be right because nothing in the framework forces either to prove it. The honest read is in tanker-tracking and Gulf war-risk insurance, not the press statements.</li>
+      <li><strong>Colombia elected a Trump-backed hard-right president by a sliver.</strong> Abelardo de la Espriella, the populist lawyer known as "El Tigre," beat leftist Ivan Cepeda 49.65% to 48.70% in Sunday's runoff, becoming the most-voted candidate in Colombian history. Cepeda has not conceded. The result swings a key Latin American partner sharply toward Washington at a moment when the hemisphere is contested.</li>
+      <li><strong>The grind continued where no one was negotiating.</strong> Ukraine's deep-strike campaign forced occupied Crimea to halt civilian fuel sales, the front stayed frozen, the Philippines warned Beijing may move to seize full control of a disputed atoll, and Xi reaffirmed support for North Korea's nukes. The stories that did not move are as telling as the ones that did.</li>
+    </ul>
+  </div>
+
+  <div class="through-line">
+    <div class="through-line-hdr">Through Line</div>
+    The Switzerland talks rest on a structure wired in series, not parallel, and that is the whole risk. For the deal to mean anything, several things have to hold at once and each depends on the last: Israel has to stop hitting Lebanon, so Iran stays at the table, so the Hormuz dispute resolves on paper, so oil-price relief survives, so the domestic politics of a deal the public already distrusts do not collapse. Snap any one link and the rest fall in sequence. Israel resuming strikes on day one is the first link straining, and Washington does not hold that wire; Jerusalem does. The deeper problem is that the United States is buying time on every front simultaneously, and time is not free. A Gulf ceasefire defers the nuclear question while handing Iran a chokepoint to squeeze whenever Lebanon flares. The Clausewitzian point is plain: the political object of the war, ending Iran's enrichment threat, has not been achieved, so the war has not ended; it has changed instruments. The thing to watch over the next 60 days is not whether any single file gets resolved, but whether the assumptions hold together. Lebanon is the first wire, and it is already hot.
+  </div>
+
+  <div class="how-it-aged">
+    <div class="aged-hdr">How It Aged</div>
+    <p style="font-size:13px;line-height:1.5;">
+      <span class="verdict-badge verdict-holds">HOLDS</span>
+      <strong>June 21 call:</strong> "Lebanon is the load-bearing wall; pull that assumption out and the ceasefire, the Hormuz reopening, and the oil-price relief all come down together." <strong>Verdict:</strong> within 24 hours Israel resumed strikes on Hezbollah and Iranian negotiators briefly walked out, exactly the failure mode flagged. The lesson is not that the prediction was clever; it is that the deal's single most predictable weak point was visible to anyone reading the structure, which raises the question of why it was signed without a Lebanon enforcement mechanism in the first place.
+    </p>
+  </div>
+
+  <div class="section-hdr">Top Stories</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.aljazeera.com/news/liveblog/2026/6/22/iran-war-live-first-day-of-us-talks-covers-lebanon-hormuz-frozen-assets?traffic_source=rss" target="_blank" rel="noopener">Day One of US-Iran Talks: Lebanon, Hormuz, Frozen Assets, and a Walkout</a></div>
+    <div class="story-meta">Al Jazeera &nbsp;|&nbsp; June 22, 2026 &nbsp;|&nbsp; <span class="tag">Iran</span> <span class="tag">Lead</span> <span class="tag">&rarr; HORMUZ</span></div>
+    <div class="story-synopsis">The opening session at the Swiss resort ran long and reportedly continued overnight, with Pakistani and Qatari mediators present. The agenda was everything left unresolved: a Lebanon truce, the Hormuz dispute, unfreezing Iranian assets, and the enrichment question behind all of it. What happened: Iranian negotiators briefly walked out over Trump's renewed strike threats, then returned. Why it matters: this is the first sustained channel since the February strikes opened the war, and surviving night one without collapse is itself a result. What to watch: whether the talks outlast the Lebanon front, which Iran has named its top condition.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://thehill.com/policy/energy-environment/5933151-iran-energy-prices-wright-trump/" target="_blank" rel="noopener">Strait of Hormuz Oil Flow 'Back Towards Normal,' Energy Secretary Says</a></div>
+    <div class="story-meta">The Hill &nbsp;|&nbsp; June 21, 2026 &nbsp;|&nbsp; <span class="tag">Hormuz</span> <span class="tag">Energy</span> <span class="tag">&rarr; HORMUZ</span></div>
+    <div class="story-synopsis">Iran said Saturday the strait is closed over Israeli strikes in Lebanon; the US energy secretary counters that flow is "back towards normal," and a US diplomat told reporters the talks made "good progress" on keeping it open. What happened: both sides are managing a perception war over a physical fact. Why it matters: each benefits from the ambiguity, Tehran gets leverage it can assert or drop, Washington gets to claim the deal is working. What to watch: tanker-tracking data and Gulf war-risk insurance premiums, which price the reality the press statements obscure.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.france24.com/en/middle-east/20260621-switzerland-talks-enter-tough-phase-after-trump-renews-threats-against-iran" target="_blank" rel="noopener">Switzerland Talks Enter Tough Phase After Trump Renews Threats</a></div>
+    <div class="story-meta">France 24 &nbsp;|&nbsp; June 21, 2026 &nbsp;|&nbsp; <span class="tag">Iran</span> <span class="tag">Escalation</span></div>
+    <div class="story-synopsis">As Vance worked the room, Trump publicly threatened to "hit Iran very hard again" over Iranian support for Hezbollah, prompting the Iranian delegation's brief walkout. What happened: the principal undercut his own negotiator's leverage in real time, or ran a good-cop/bad-cop play, depending on who you ask. Why it matters: it exposes the Trump-Israel-Iran triangle that has defined the war, Washington wants de-escalation from a partner that will not stop fighting. What to watch: whether Tehran treats the threats as theater or as cause to walk for good.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.scmp.com/news/world/americas/article/3357850/trump-backed-candidate-wins-razor-tight-colombia-presidential-vote?utm_source=rss_feed" target="_blank" rel="noopener">Trump-Backed De la Espriella Wins Razor-Tight Colombia Runoff</a></div>
+    <div class="story-meta">South China Morning Post &nbsp;|&nbsp; June 21, 2026 &nbsp;|&nbsp; <span class="tag">Colombia</span> <span class="tag">Hemisphere</span> <span class="tag">&rarr; WATCH</span></div>
+    <div class="story-synopsis">Hard-right populist Abelardo de la Espriella, the lawyer known as "El Tigre," beat leftist Ivan Cepeda 49.65% to 48.70% in Sunday's runoff, becoming the most-voted presidential candidate in Colombian history. What happened: a sharp swing rightward, with Cepeda not yet conceding and calling the preliminary result non-binding. Why it matters: it hands Washington a reoriented partner in a contested hemisphere where Russia and China are deepening footholds. What to watch: the final certified count and whether a contested margin under one point produces a legitimacy fight.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.ft.com/content/d5191b00-dccb-465e-8afb-e61cc8260f93" target="_blank" rel="noopener">Philippines Fears China May Move to Seize Full Control of Disputed Atoll</a></div>
+    <div class="story-meta">Financial Times &nbsp;|&nbsp; June 21, 2026 &nbsp;|&nbsp; <span class="tag">Indo-Pacific</span> <span class="tag">Gray Zone</span></div>
+    <div class="story-synopsis">Manila warns Beijing may be preparing to take full control of a contested South China Sea atoll, escalating a years-long gray-zone standoff. What happened: a flashpoint sharpened while US bandwidth is consumed by the Gulf. Why it matters: China reads deprioritization in real time, and a US stretched across CENTCOM, a NATO posture review, and the Pacific cannot watch every theater at once. What to watch: whether Chinese coast-guard or maritime-militia presence at the feature hardens from patrol to permanent occupation.</div>
+  </div>
+
+</div>
+
+<!-- DEFENSE TAB -->
+<div id="tab-defense" class="tab-panel">
+
+  <div class="section-hdr">Force Posture: The NATO Pivot</div>
+
+  <div class="story" data-unsourced="intentional">
+    <div class="story-headline">Hegseth Orders Six-Month Review of US Forces in Europe</div>
+    <div class="story-meta">Reported by CBS News, Al Jazeera, Stars and Stripes, Time &nbsp;|&nbsp; June 18, 2026 &nbsp;|&nbsp; <span class="tag">NATO</span> <span class="tag">&rarr; BURDEN</span></div>
+    <div class="story-synopsis">The review covers the roughly 80,000 US troops in Europe and ties annual NATO dues to allied defense spending. The stated aim is to force "Europe-led" defense; the unstated trigger, per Hegseth himself, was allied refusal to support the Iran campaign from European bases. The drawdown precedes any matching Russian concession, which surrenders the leverage a phased withdrawal could have bought. Congress legislates a minimum US force level in Europe, so the constitutional fight over who controls posture is now teed up.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://taskandpurpose.com/news/army-7th-infantry-multi-domain-pacific/" target="_blank" rel="noopener">Army Forms New Command to Create a 'Covering Force' in the Pacific</a></div>
+    <div class="story-meta">Task &amp; Purpose &nbsp;|&nbsp; June 2026 &nbsp;|&nbsp; <span class="tag">Army</span> <span class="tag">Indo-Pacific</span></div>
+    <div class="story-synopsis">The Army stood up a new multi-domain command structure built around the 7th Infantry Division to act as a "covering force" in the Pacific. The move tracks with the broader rebalancing away from Europe and toward China, even as the Iran war consumes near-term bandwidth. The friction is resource math: a force pivoting to the Pacific while drawing down in Europe and surging into CENTCOM is being asked to be three places at once with one budget.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://taskandpurpose.com/news/air-force-rq4-global-hawk-japan/" target="_blank" rel="noopener">Air Force Relocates Recon Drone Squadron to Japan</a></div>
+    <div class="story-meta">Task &amp; Purpose &nbsp;|&nbsp; June 2026 &nbsp;|&nbsp; <span class="tag">Air Force</span> <span class="tag">ISR</span></div>
+    <div class="story-synopsis">The Air Force is moving an RQ-4 Global Hawk squadron to Japan, hardening persistent ISR coverage of the First Island Chain. The signal is concrete: high-altitude reconnaissance forward-based where a Taiwan or South China Sea contingency would unfold. It lands the same week the Philippines flagged new Chinese objects at Scarborough Shoal, a reminder that the gray-zone competition is continuous while the kinetic wars get the headlines.</div>
+  </div>
+
+  <div class="section-hdr">Industrial Base &amp; Readiness</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.cbsnews.com/news/mike-waltz-iran-not-good-guys-trump-administration-nuclear-talks/" target="_blank" rel="noopener">Administration 'Laser Focused' on Iran's Nuclear Program, Waltz Says</a></div>
+    <div class="story-meta">CBS News &nbsp;|&nbsp; June 21, 2026 &nbsp;|&nbsp; <span class="tag">Iran</span> <span class="tag">Munitions</span></div>
+    <div class="story-synopsis">National security messaging holds that enrichment is the red line in Switzerland, even as the munitions math constrains the threat behind it. Months of operations since February drew interceptor and missile stocks down hard, and Hegseth has said replenishment could take years. The administration is negotiating from a posture it cannot indefinitely sustain, which is precisely when an adversary has incentive to stall. The deterrent value of "hit Iran very hard again" depends on a magazine that is not refilling fast.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline">FY2027 NDAA: 'Rebuilding the Arsenal of Democracy'</div>
+    <div class="story-meta">Reported by Shephard Media, Roll Call, Inside Defense &nbsp;|&nbsp; June 2026 &nbsp;|&nbsp; <span class="tag">NDAA</span> <span class="tag">Acquisition</span></div>
+    <div class="story-synopsis">The FY2027 defense bill puts munitions first, roughly $25 billion for the stockpile, multiyear procurement authority for PAC-3, THAAD, and Tomahawk, and a mandate to qualify a second solid-rocket-motor supplier. The theme is the lesson of the Iran war written into law: precision magazines empty faster than a single-supplier base can refill them. Whether appropriations follow authorization at the same scale is the open question, and the gap between the two is where readiness actually lives.</div>
+  </div>
+
+  <div class="section-hdr">Personnel &amp; Policy</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://taskandpurpose.com/field-guide/veterans-affairs-gender-lgbtq-care/" target="_blank" rel="noopener">VA Ends Gender Identity-Based Programs and Messaging</a></div>
+    <div class="story-meta">Task &amp; Purpose &nbsp;|&nbsp; June 2026 &nbsp;|&nbsp; <span class="tag">VA</span> <span class="tag">Policy</span></div>
+    <div class="story-synopsis">The Department of Veterans Affairs is ending gender identity-based programs, messaging, and activities, part of a broader rollback of identity-focused care frameworks. The practical question for the force is access: whether affected veterans retain clinical care pathways as the programmatic wrapper is removed. The political signal is clear; the service-delivery effect on the ground is what to track over the coming months.</div>
+  </div>
+
+</div>
+
+<!-- STRATEGIC TAB -->
+<div id="tab-strategic" class="tab-panel">
+
+  <div class="section-hdr">The Gulf: Deal, Strait, and Leverage</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.scmp.com/news/world/middle-east/article/3357843/iran-vows-forces-are-ready-respond-after-trumps-threat-hit-iran-very-hard-again?utm_source=rss_feed" target="_blank" rel="noopener">Iran Vows Forces 'Ready to Respond' as Talks Continue Through the Night</a></div>
+    <div class="story-meta">South China Morning Post &nbsp;|&nbsp; June 22, 2026 &nbsp;|&nbsp; <span class="tag">Iran</span> <span class="tag">Diplomacy</span> <span class="tag">&rarr; HORMUZ</span></div>
+    <div class="story-synopsis">Iranian negotiators walked out over Trump's threat, then returned, and the session pushed past midnight covering a Lebanon truce, the Hormuz dispute, and unfreezing Iranian assets. From Tehran's seat, the talks are a face-saving off-ramp that locks in sanctions relief while conceding little on enrichment. From Washington's, they bank de-escalation before the munitions and political clocks run out. The mediators, Pakistan and Qatar, validate a non-Western brokerage model Beijing is watching closely. It could work because everyone at the table wants a deal; it could fail because they want different deals.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.japantimes.co.jp/business/2026/06/21/economy/trump-fears-economy-us-iran-talks/" target="_blank" rel="noopener">Trump's Fears About the Economy Undercut US Leverage in Iran Talks</a></div>
+    <div class="story-meta">The Japan Times &nbsp;|&nbsp; June 21, 2026 &nbsp;|&nbsp; <span class="tag">Iran</span> <span class="tag">Energy</span></div>
+    <div class="story-synopsis">The Japan Times argues Trump needs oil prices down and the war off the front page more than Iran needs a deal, and Tehran knows it. What happened: the analysis names the asymmetry behind the bluster. Why it matters: a negotiator who cannot tolerate a Hormuz spike has handed the other side a thumb on the scale. What to watch: whether Iran paces its Hormuz signaling to US domestic gas prices, which would confirm it is reading the same pressure gauge Washington is.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.france24.com/en/israeli-strikes-start-again-in-lebanon-after-several-hour-lull-amid-us-iran-talks" target="_blank" rel="noopener">Israeli Strikes Resume in Lebanon After a Lull, Amid US-Iran Talks</a></div>
+    <div class="story-meta">France 24 &nbsp;|&nbsp; June 21, 2026 &nbsp;|&nbsp; <span class="tag">Lebanon</span> <span class="tag">Hezbollah</span></div>
+    <div class="story-synopsis">A brief pause in Israeli operations against Hezbollah collapsed the same day talks opened. What happened: the one variable the whole framework depends on moved the wrong way. Why it matters: Iran has tied its continued participation to a Lebanon ceasefire, and Israel is not a party to the US-Iran talks, so Washington is negotiating with a hand it does not fully control. What to watch: whether the US can deliver Israeli restraint, the truest test of whether this deal has a spine.</div>
+  </div>
+
+  <div class="section-hdr">Russia-Ukraine: The Energy War</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.themoscowtimes.com/2026/06/21/ukrainian-strikes-on-russian-annexed-crimea-kill-4-pause-fuel-sales-a93065" target="_blank" rel="noopener">Ukrainian Strikes on Crimea Kill Four, Pause Fuel Sales</a></div>
+    <div class="story-meta">The Moscow Times &nbsp;|&nbsp; June 21, 2026 &nbsp;|&nbsp; <span class="tag">Ukraine</span> <span class="tag">Russia</span></div>
+    <div class="story-synopsis">Drone strikes on occupied Crimea killed four and forced a halt to civilian petrol sales, with fuel rationed to emergency services. What happened: the deep-strike campaign is producing visible economic pain inside Russian-held territory. Why it matters: with the front frozen, Ukraine is contesting the war's logistics and morale rather than its terrain. What to watch: whether Russian authorities keep acknowledging shortages, which they first did in June, a tell that the strikes are biting.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxONTBaLVdKYVBOYUJaQzY1SXFDNG1sUm9fYVAtRTNpcGRxZGRpWWs2WEIySGxnREx5VFhHOE9SSk9JRG04TWUtSHB2UEdwRFVLa296TkRlbGlnMk9BZ2luUGxrWmNEVWpNZUl2eHNWSXZVS2hBbUo0eVlWNkRCbjlqb3d4QUtDVGpCZ2JaLVBsSGdJMkVZb0ppYjc0cXBXbzNIZ2p2NUlEaw?oc=5" target="_blank" rel="noopener">Russian Offensive Campaign Assessment, June 20</a></div>
+    <div class="story-meta">Institute for the Study of War &nbsp;|&nbsp; June 20, 2026 &nbsp;|&nbsp; <span class="tag">Ukraine</span> <span class="tag">Attrition</span></div>
+    <div class="story-synopsis">ISW's assessment holds the line it has held for months: small Russian gains around Pokrovsk, no operational breakthrough, attrition the defining dynamic. Russia rejected the European-backed ceasefire-and-freeze proposal on June 19. What happened: nothing moved, which is itself the story. Why it matters: a frozen front favors whichever side can outlast the other industrially, and that is now a contest of European production versus Russian endurance. What to watch: whether Europe's defense-industrial ramp, the point of Hegseth's burden-shifting, actually materializes.</div>
+  </div>
+
+  <div class="section-hdr">Indo-Pacific: Gray-Zone Pressure</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.ft.com/content/d5191b00-dccb-465e-8afb-e61cc8260f93" target="_blank" rel="noopener">Philippines Fears China May Seize Full Control of Disputed Atoll</a></div>
+    <div class="story-meta">Financial Times &nbsp;|&nbsp; June 21, 2026 &nbsp;|&nbsp; <span class="tag">Philippines</span> <span class="tag">China</span> <span class="tag">&rarr; WATCH</span></div>
+    <div class="story-synopsis">Manila warns Beijing may be preparing to take full control of a contested South China Sea feature, a step up from the patrol-and-harass pattern of recent years. What happened: a gray-zone standoff sharpened while US attention is fixed on the Gulf. Why it matters: this is the salami-slicing playbook in real time, each slice too small to justify a US response, the sum amounting to control. What to watch: whether the move firms from maritime-militia presence into a permanent installation, the threshold that would test the US-Philippines mutual defense treaty.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.scmp.com/news/china/military/article/3357822/red-hawk-rising-how-z-20-family-plugging-chinas-chronic-defence-gaps?utm_source=rss_feed" target="_blank" rel="noopener">Red Hawk Rising: How the Z-20 Family Is Plugging China's Defense Gaps</a></div>
+    <div class="story-meta">South China Morning Post &nbsp;|&nbsp; June 22, 2026 &nbsp;|&nbsp; <span class="tag">China</span> <span class="tag">Modernization</span></div>
+    <div class="story-synopsis">SCMP details how the PLA's Z-20 helicopter family, the rough analogue to the US Black Hawk, is closing long-standing gaps in Chinese rotary-wing lift, naval, and special-operations aviation. What happened: a maturing platform fills a capability that lagged China's fixed-wing and missile progress. Why it matters: helicopters are the unglamorous connective tissue of amphibious and island operations, exactly the mission set a Taiwan contingency would demand. What to watch: shipboard Z-20 variants, the tell that China is building the lift to sustain a contested landing.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxPOThyUWtLeVRMVWwtcVRNUzhYNktlNFY0MTVPQ1VfTC1pWUZZSWhMZWRUeTU3dFgyTmVwZlNMTEVPYTV3d0Q1VVFBRjFmS3lWNXd3Q0p2Umk3MGgzb0FQdmxWVURPbG9hOEVFNTBSMU1MSEk0ZHFtVVFCT2Q0Tno3TTFxRnVsOElQVDlrTjZVcXRrY2Fl?oc=5" target="_blank" rel="noopener">Iran Update Special Report, June 20</a></div>
+    <div class="story-meta">Institute for the Study of War &nbsp;|&nbsp; June 20, 2026 &nbsp;|&nbsp; <span class="tag">Iran</span> <span class="tag">China</span></div>
+    <div class="story-synopsis">ISW tracks the through-line connecting the theaters: the US Treasury sanctioned nine Chinese entities for facilitating weapons payments to Iran, even as US-Iran talks proceed. What happened: Beijing's material support for Tehran continued under the diplomatic cover. Why it matters: it shows the Gulf war and great-power competition are the same board, China backs Iran while Taiwan's budget stalls and the PLA normalizes its presence east of the island. What to watch: whether sanctions enforcement and nuclear diplomacy can run in parallel without one undermining the other.</div>
+  </div>
+
+</div>
+
+<!-- DOMESTIC TAB -->
+<div id="tab-domestic" class="tab-panel">
+
+  <div class="section-hdr">The Economy: Sticky Inflation, Hawkish Fed</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.ft.com/content/6a9330ad-a2db-494b-bf61-7dd417ab9c9a" target="_blank" rel="noopener">Warsh's Push to Axe Fed Guidance May Lift US Borrowing Costs, Investors Warn</a></div>
+    <div class="story-meta">Financial Times &nbsp;|&nbsp; June 2026 &nbsp;|&nbsp; <span class="tag">Fed</span> <span class="tag">Inflation</span></div>
+    <div class="story-synopsis">New chair Kevin Warsh held the funds rate at 3.50-3.75% for a fourth straight meeting, but the bigger shift is institutional: the FT reports his move to scrap formal forward guidance, which investors warn could raise borrowing costs by removing the Fed's signaling cushion. Behind it sits a hawkish turn, May CPI ran 4.2% year-over-year and nine officials now pencil in a hike before year-end. What happened: the rate cuts markets priced in January are gone, and the war's energy shock is in the data. What to watch: the next CPI print, the first clean read since the ceasefire framework, for whether energy relief pulls the headline down, and how markets price a Fed that talks less.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://thehill.com/homenews/administration/5933527-us-iran-mou-survey-americans/" target="_blank" rel="noopener">More Than a Third of Americans Say the MOU Is Better for Iran</a></div>
+    <div class="story-meta">The Hill &nbsp;|&nbsp; June 21, 2026 &nbsp;|&nbsp; <span class="tag">Iran Deal</span> <span class="tag">Polling</span></div>
+    <div class="story-synopsis">Polling finds a plurality view that the memorandum favors Tehran over Washington, a politically awkward read for an administration that ran on hard deterrence. What happened: the public is skeptical of the deal's terms. Why it matters: the domestic politics of the Iran framework will shape how much room Trump has to make concessions in the 60-day talks. What to watch: whether the skepticism hardens into congressional resistance, which would constrain the deal regardless of what happens in Switzerland.</div>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">In the Federal Register</div>
+    No executive orders or proclamations in the June 20 to 22 window (a weekend, as expected). The notable rulemaking: Treasury proposed customer-identification requirements for permitted payment-stablecoin issuers, an early build-out of the post-legislation crypto framework, and DHS moved to rescind portions of its Title VI regulations to conform to current policy. Routine notices otherwise.
+  </div>
+
+  <div class="section-hdr">The Courts</div>
+
+  <div class="story">
+    <div class="story-headline">Supreme Court Sides 9-0 with Marijuana User Stripped of Gun Rights</div>
+    <div class="story-meta">Reported by NPR, NBC News, CNBC; opinion at supremecourt.gov &nbsp;|&nbsp; June 18, 2026 &nbsp;|&nbsp; <span class="tag">SCOTUS</span> <span class="tag">2A</span></div>
+    <div class="story-synopsis">In United States v. Hemani, a unanimous Court held that prosecuting a casual marijuana user for firearm possession violated the Second Amendment, rejecting the government's "habitual drunkard" historical analogy. What happened: the same statute that snared Hunter Biden was narrowed for everyone. Why it matters: prosecutors now must show actual dangerousness, not mere drug use, extending the Bruen history-and-tradition test into new ground. What to watch: how lower courts apply the dangerousness standard, where the real fight moves next.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.justsecurity.org/143674/humphreys-executor-history/?utm_source=rss&utm_medium=rss&utm_campaign=humphreys-executor-history" target="_blank" rel="noopener">Looking Back at Humphrey's Executor</a></div>
+    <div class="story-meta">Just Security &nbsp;|&nbsp; June 2026 &nbsp;|&nbsp; <span class="tag">Executive Power</span> <span class="tag">Admin Law</span></div>
+    <div class="story-synopsis">Just Security revisits the 1935 precedent that shields independent-agency heads from at-will removal, as the doctrine faces its most serious challenge in a generation. What happened: a legal-history piece arrives precisely as the removal-power question reaches the Court. Why it matters: if Humphrey's Executor falls, the president gains direct control over agencies built to be insulated, the Fed's independence among them, which connects this fight to the economic one above. What to watch: the pending removal cases that will decide whether the 90-year-old firewall holds.</div>
+  </div>
+
+  <div class="section-hdr">Politics</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://thehill.com/homenews/administration/5933451-pence-criticizes-trump-iran-deal/" target="_blank" rel="noopener">Pence Rips Trump's Iran Deal: 'A Plan to Make a Plan'</a></div>
+    <div class="story-meta">The Hill &nbsp;|&nbsp; June 21, 2026 &nbsp;|&nbsp; <span class="tag">GOP</span> <span class="tag">Iran Deal</span></div>
+    <div class="story-synopsis">Former VP Pence dismissed the memorandum as procedural theater, and Senator Booker said "Iran gets all of the benefits," a rare left-right convergence against the framework. What happened: criticism is coming from both flanks. Why it matters: a deal opposed by hawks for conceding too much and by doves for the "stupid war" that preceded it has a narrow political base. What to watch: whether House Republicans who called the concessions "a work in progress" move from grumbling to leverage.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://thehill.com/homenews/senate/5933172-lindsey-graham-iran-deal-failure/" target="_blank" rel="noopener">Graham on the Iran Deal: 'I Think It's Going to Fail'</a></div>
+    <div class="story-meta">The Hill &nbsp;|&nbsp; June 21, 2026 &nbsp;|&nbsp; <span class="tag">GOP</span> <span class="tag">Iran Deal</span></div>
+    <div class="story-synopsis">Senator Lindsey Graham, usually a reliable administration hawk, predicted the framework will collapse, sharpening the right-flank revolt against the memorandum. What happened: a senior Republican forecast failure rather than withholding judgment. Why it matters: when the hawks who wanted the war stop defending the deal that ended it, the administration loses its most natural backers in the 60-day window. What to watch: whether Graham's pessimism becomes a Senate vehicle to condition any final agreement.</div>
+  </div>
+
+  <div class="section-hdr">The Hemisphere</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.japantimes.co.jp/news/2026/06/22/world/politics/trump-colombia-presidential-runoff/" target="_blank" rel="noopener">Colombia Elects Trump-Backed De la Espriella in Razor-Tight Runoff</a></div>
+    <div class="story-meta">The Japan Times &nbsp;|&nbsp; June 22, 2026 &nbsp;|&nbsp; <span class="tag">Colombia</span> <span class="tag">Hemisphere</span></div>
+    <div class="story-synopsis">Hard-right populist Abelardo de la Espriella won 49.65% to leftist Ivan Cepeda's 48.70%, the most votes any Colombian presidential candidate has ever received. What happened: a sharp rightward swing in a country that elected its first leftist president only four years ago. Why it matters: it reorients a major Latin American partner toward Washington as Russia and China court the hemisphere, and it caps a regional pattern of polarized, narrow-margin elections. What to watch: the final certified count, Cepeda's response to a sub-one-point loss, and whether De la Espriella governs as combatively as he campaigned.</div>
+  </div>
+
+</div>
+
+<!-- DEEP READS TAB -->
+<div id="tab-deepreads" class="tab-panel">
+
+  <div class="section-hdr">The Iran Deal, From Several Angles</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.thebulwark.com/p/trump-bombed-iranthen-gave-it-everything" target="_blank" rel="noopener">Trump Bombed Iran, Then Gave It Everything It Wanted (The Bulwark)</a></div>
+    <div class="story-meta">The Bulwark &nbsp;|&nbsp; June 2026 &nbsp;|&nbsp; <span class="tag">Iran</span> <span class="tag">Strategy</span></div>
+    <div class="story-synopsis">The Bulwark's thesis: the US fought a months-long air campaign and then signed a memorandum that gives Tehran sanctions relief and a path to legitimacy while leaving enrichment effectively intact. The piece reads the deal as capitulation dressed as victory.</div>
+    <div class="swap-take">
+      <div class="swap-take-hdr">SWAP&rsquo;s Take</div>
+      <p>The piece earns its provocation but skips a step. If you grade the deal against the maximalist goal, no enrichment, regime change, it is a clear retreat. But that was never the achievable aim once the munitions math came due and allies refused basing. The sharper question is the one the Bulwark glides past: what was the theory of victory the bombing was supposed to serve? Strategic bombing campaigns from the Blitz to Rolling Thunder share a record of producing target counts, not political capitulation, when the political object is fuzzy. The US hit Iran hard, discovered air power alone would not bend the regime, and took the off-ramp. That is not capitulation so much as a culminating point reached and acknowledged. The real indictment is not the deal; it is starting a war whose aim outran its means. Watch whether the 60-day talks produce verifiable enrichment limits or just another memorandum. If the latter, the Bulwark's headline ages well.</p>
+    </div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.theatlantic.com/international/2026/06/iran-got-great-deal-it-could-still-squander/687647/?utm_source=feed" target="_blank" rel="noopener">Iran Got a Great Deal That It Could Still Squander (The Atlantic)</a></div>
+    <div class="story-meta">The Atlantic &nbsp;|&nbsp; June 2026 &nbsp;|&nbsp; <span class="tag">Iran</span> <span class="tag">Regime</span></div>
+    <div class="story-synopsis">The Atlantic argues Tehran secured favorable terms but its internal politics and proxy commitments could blow up the agreement before it matures, with hardliners and the Hezbollah front as the likeliest detonators.</div>
+    <div class="swap-take">
+      <div class="swap-take-hdr">SWAP&rsquo;s Take</div>
+      <p>Read this one against the Bulwark piece and they form a stereo image: the same deal looks like a US giveaway from Washington and a fragile prize from Tehran. Both can be true, because the deal's value to Iran is contingent on Iran's own restraint, which is the one thing the regime has historically been worst at. The Hormuz closure two days into talks is the tell, a leverage play that doubles as a self-sabotage risk. This is the security-dilemma logic Thucydides would recognize: Iran's effort to hold leverage over Lebanon and the strait is exactly what could trigger the renewed US strikes that void its gains. The assumption doing the heavy lifting here is that Tehran's leadership is a unitary rational actor pacing its provocations. If the IRGC and the negotiators are not actually aligned, the deal dies not from US bad faith but from Iranian incoherence. Watch the gap between what Iran's diplomats sign in Switzerland and what its military does in the strait.</p>
+    </div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.nationalreview.com/2026/06/reckoning-with-the-binary-choice-after-trumps-iran-capitulation/" target="_blank" rel="noopener">Reckoning with the 'Binary Choice' After Trump's Iran Capitulation (National Review)</a></div>
+    <div class="story-meta">National Review &nbsp;|&nbsp; June 2026 &nbsp;|&nbsp; <span class="tag">Iran</span> <span class="tag">Conservative Critique</span></div>
+    <div class="story-synopsis">National Review revisits the hawkish framing that the only choices were a strong deal or war, and argues the administration delivered neither, landing instead on a weak deal after a war.</div>
+    <div class="swap-take">
+      <div class="swap-take-hdr">SWAP&rsquo;s Take</div>
+      <p>The value here is watching a hawkish outlet metabolize a hawkish administration's retreat. The "binary choice" framing was always a rhetorical trap, the false-dilemma move that sells escalation by hiding the middle options. What the piece does not fully reckon with is that the administration tried the strong-deal-or-war binary, chose war, and then discovered the third option, a mediocre deal, was the only exit that did not require capabilities the force did not have. That is not a failure of will, which is how National Review reads it; it is a collision with friction, the gap between the war you plan and the war you can sustain. The honest conservative critique is not "Trump went soft." It is "the maximalist aim was never resourced." Read alongside the Bulwark piece, the right and the anti-Trump center are converging on the same verdict from opposite premises, which usually means the verdict is roughly correct.</p>
+    </div>
+  </div>
+
+  <div class="section-hdr">Force Structure &amp; the Long Game</div>
+
+  <div class="story">
+    <div class="story-headline">Rowing in the Same Direction: Allied Shipbuilding and the China Gap (FDD)</div>
+    <div class="story-meta">Foundation for Defense of Democracies (fdd.org) &nbsp;|&nbsp; June 18, 2026 &nbsp;|&nbsp; <span class="tag">Navy</span> <span class="tag">Industrial Base</span></div>
+    <div class="story-synopsis">The FDD brief argues the US Navy must lean on allied shipyards in Italy, Japan, and South Korea to close the capacity gap with China, citing data that smaller fleets lose to larger ones in roughly 90 percent of analyzed naval conflicts. It flags a counterargument: some allied yards carry labor-union ties to Chinese entities, a supply-chain vulnerability.</div>
+    <div class="swap-take">
+      <div class="swap-take-hdr">SWAP&rsquo;s Take</div>
+      <p>The 90-percent figure is the kind of stat that sounds load-bearing and needs pressure-testing, mass has usually beaten quality at sea, but the exceptions (Salamis, Tsushima, Midway) are the ones navies build their identities around, so the number proves less than it implies. The brief's real contribution is conceding the hard part: allied shipbuilding is the only realistic path to closing the China gap this decade, and it is not friction-free. That honesty is rare in capacity-gap advocacy. The deeper issue the piece raises but does not resolve is sovereignty of supply, outsourcing hull production to allies trades a domestic bottleneck for a dependency you do not control in wartime. Sun Tzu's warning about protracted war applies to industrial bases, not just armies: the side that cannot replace its losses loses, and a fleet built in someone else's yards is a fleet you cannot surge without their permission. Worth the full read for anyone tracking why the FY2027 NDAA put munitions and shipbuilding first.</p>
+    </div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.lawfaremedia.org/article/trump-s-cuba-problem" target="_blank" rel="noopener">Trump's Cuba Problem (Lawfare)</a></div>
+    <div class="story-meta">Lawfare &nbsp;|&nbsp; June 2026 &nbsp;|&nbsp; <span class="tag">Cuba</span> <span class="tag">Hemisphere</span></div>
+    <div class="story-synopsis">Lawfare examines the legal and strategic bind in current Cuba policy, where sanctions pressure, migration dynamics, and great-power competition in the hemisphere collide as Russia and China deepen footholds 90 miles offshore.</div>
+    <div class="swap-take">
+      <div class="swap-take-hdr">SWAP&rsquo;s Take</div>
+      <p>The useful move here is the reminder that great-power competition is not only an Indo-Pacific story. While CENTCOM bandwidth goes to Iran and EUCOM posture is under review, the near abroad gets less attention than its proximity warrants. The Monroe Doctrine instinct still shapes US hemispheric policy, but the tools, sanctions and migration leverage, are blunt against an adversary that can simply outwait an administration. The piece's quieter point is about opportunity cost: every theater the US prioritizes is a theater it deprioritizes, and rivals read the deprioritization in real time. Cuba is a small problem that illustrates a large one, you cannot pivot to the Pacific, hold the Gulf, shift burden in Europe, and watch the Caribbean all at once. Something gets less. Watch where the administration lets things slide, because that is where the next surprise comes from.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- LOCAL TAB -->
+<div id="tab-local" class="tab-panel">
+
+  <div class="section-hdr">Joint Base Charleston / 437 AW</div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">JBC Watch</div>
+    Joint Base Charleston moved its 2026 airshow off-base "amid global tensions," dropping static aircraft displays and on-base access. Performances, including the Blue Angels, will be flown over the water south of the Arthur Ravenel Jr. Bridge and watched from downtown Charleston and Mount Pleasant; premium on-base seating buyers get refunds. It is the second South Carolina military airshow disruption this year after Shaw AFB postponed its spring expo. The 437th Airlift Wing (host) and 315th AW (reserve associate) remain a primary global-deployment hub, and the operational tempo behind the war is the same tempo behind the scaled-back event.
+  </div>
+
+  <div class="section-hdr">Lowcountry News Beat</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://news.google.com/rss/articles/CBMi4AFBVV95cUxPYzNIellQSDdPblRWcjMxOS1YQ1hzZ0pMcXd6ejFfdEtnS1dWbjFlTkFyTXBxVDFHXzJVV2xNYjBHWURBVHY2OTNCSDYwSUtRUjRoMUZOOXhaTVg5cXRWTkRFTlZyNkpGUkRIN3B3eHNFUDNTY3hBMk5rYmhpQ3BINnhOc0I3ZUxoZ2U1bHJvdWlGUFpvR2o0ZHVvcEs4MFdSM0RqUEFoN1FRaUZSdWR0dzhGMGw0MFY5VGN0aUEyNnRNdld1b3ZobG5CZ0lFZkYwQW1VcG9seFR4TTN4WkZLcg?oc=5" target="_blank" rel="noopener">SC's AME Church Bails Out Charleston's Historic Mt. Zion Amid Foreclosure</a></div>
+    <div class="story-meta">Post and Courier &nbsp;|&nbsp; June 2026 &nbsp;|&nbsp; <span class="tag">Charleston</span></div>
+    <div class="story-synopsis">South Carolina's AME church stepped in to bail out the historic Mt. Zion AME congregation in Charleston, which faced foreclosure. Post and Courier covers the rescue of a landmark Black church with deep roots in the city's history. The story is a window into the financial pressure on legacy congregations and the denominational mutual-aid that keeps historic institutions standing.</div>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Lowcountry Brief</div>
+    Also in the local feed: Lindsay Jones of Charleston was crowned Miss South Carolina 2026 (Live 5 News, WPDE), and federal civil rights complaints were filed against Dorchester County School District (Live 5 News). Both carried via the Charleston news pool; links resolve to publisher pages where available.
+  </div>
+
+</div>
+
+<!-- LIGHTER FARE TAB -->
+<div id="tab-lighter" class="tab-panel">
+
+  <div class="section-hdr">Worth Your Time</div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.france24.com/en/sailors-trapped-in-hormuz-strait-dodging-drones-and-rationing-food" target="_blank" rel="noopener">Sailors Trapped in the Hormuz Strait, Dodging Drones and Rationing Food</a></div>
+    <div class="story-meta">France 24 &nbsp;|&nbsp; June 21, 2026 &nbsp;|&nbsp; <span class="tag">Human Angle</span></div>
+    <div class="story-synopsis">Behind the dueling US-Iran statements about whether the strait is open, France 24 finds the crews actually stuck in it, dodging drones, rationing food, and waiting out a geopolitical standoff measured in press conferences. A useful corrective: the chokepoint debate is abstract from Washington and very concrete from a tanker bridge. The grunts of global trade are merchant mariners, and they are having a worse week than anyone at the Burgenstock resort.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://www.nbcnews.com/sports/soccer/iran-dreaming-world-cup-knockout-stage-rcna351072" target="_blank" rel="noopener">Iran Defies Hardship, Dreams of First World Cup Knockout Round</a></div>
+    <div class="story-meta">NBC News &nbsp;|&nbsp; June 2026 &nbsp;|&nbsp; <span class="tag">World Cup</span></div>
+    <div class="story-synopsis">While its government negotiates in Switzerland and rattles the strait, Iran's national team is chasing a first-ever World Cup knockout-round berth, and the country is, for a moment, watching football instead of war. NBC profiles a side playing under sanctions and conflict. It is a reminder that nations are not their regimes, and that the same population governed by the men at the negotiating table mostly just wants to make the round of 16.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline"><a href="https://taskandpurpose.com/history/revolutionary-soldier-identified-john-pumphrey/" target="_blank" rel="noopener">Revolutionary War Soldier Identified After 246 Years</a></div>
+    <div class="story-meta">Task &amp; Purpose &nbsp;|&nbsp; June 2026 &nbsp;|&nbsp; <span class="tag">History</span></div>
+    <div class="story-synopsis">Researchers identified the remains of a Revolutionary War soldier, John Pumphrey, nearly two and a half centuries after he fell. Task &amp; Purpose covers the forensic and archival detective work. A grounding note in a heavy fortnight: the republic has been sending its people to fight for 250 years, and it still goes back for them. Worth a beat of reflection heading into the nation's semiquincentennial.</div>
+  </div>
+
+  <div class="story">
+    <div class="story-headline">The Statute That Snared Hunter Biden Just Got Narrowed for Everyone</div>
+    <div class="story-meta">Reported by NPR, NBC News, CNBC (US v. Hemani) &nbsp;|&nbsp; June 18, 2026 &nbsp;|&nbsp; <span class="tag">Irony</span></div>
+    <div class="story-synopsis">A footnote with a long memory: the same drug-user-in-possession statute that produced Hunter Biden's 2024 conviction, later pardoned, is the one a unanimous Supreme Court just narrowed in Hemani. Constitutional law has a way of closing loops the politics never intended. The Court did not mention the Biden case; it did not have to. Everyone reading the opinion knew exactly which prosecution made the statute famous.</div>
+  </div>
+
+</div>
+
+</div><!-- /page -->
+
+<!-- TICKER TAPE -->
+<div class="ticker-wrap" aria-label="Market ticker">
+  <div class="ticker-track" id="ticker-track">
+    <span class="ticker-group" id="ticker-group">
+      <span class="ticker-item"><span class="ticker-lbl">S&amp;P 500</span> <span class="ticker-val">7,501</span> <span class="up">+1.08%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">DOW</span> <span class="ticker-val">51,565</span> <span class="up">+0.14%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">NASDAQ</span> <span class="ticker-val">26,518</span> <span class="up">+1.91%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">VIX</span> <span class="ticker-val">17.5</span> <span class="up">+4.11%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">WTI</span> <span class="ticker-val">$75.34</span> <span class="dn">-0.46%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">BRENT</span> <span class="ticker-val">$79.29</span> <span class="dn">-0.14%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">GOLD</span> <span class="ticker-val">$4,221</span> <span class="up">+0.75%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">10Y UST</span> <span class="ticker-val">4.45%</span> <span class="dn">-0.27%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">DXY</span> <span class="ticker-val">100.9</span> <span class="ticker-val">-0.02%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">BTC</span> <span class="ticker-val">$64,005</span> <span class="up">+1.23%</span> <span class="ticker-lbl">(prev close)</span></span>
+    </span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>THE SWAP REPORT &middot; Monday, June 22, 2026 &middot; Morning Edition</div>
+  <div style="opacity:0.6;">For SWAP &middot; Distribution restricted &middot; Not for public release</div>
+</footer>
+
+<script>
+var currentTheme = 'warm';
+function setTheme(t, btn) {
+  currentTheme = t;
+  document.body.setAttribute('data-theme', t);
+  document.querySelectorAll('.theme-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+}
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+var wxLat = 37, wxLon = -95, wxZoom = 4, wxLayerName = 'temperature-2m';
+var ICAO_TABLE = {
+  'KCHS': [32.8986, -80.0405], 'KLTS': [34.6671, -99.2667],
+  'KDEN': [39.8561, -104.6737], 'KATL': [33.6407, -84.4277],
+  'KDFW': [32.8998, -97.0403], 'KLAX': [33.9425, -118.4081],
+  'KJFK': [40.6413, -73.7781], 'KORD': [41.9742, -87.9073],
+  'EGLL': [51.4775, -0.4614], 'RJTT': [35.5533, 139.7811]
+};
+function buildWxSrc() {
+  return 'https://www.ventusky.com/?p=' + wxLat + ';' + wxLon + ';' + wxZoom + '&l=' + wxLayerName;
+}
+function wxLayer(btn, layer) {
+  wxLayerName = layer;
+  document.querySelectorAll('.wx-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById('wx-iframe').src = buildWxSrc();
+}
+function wxSearch() {
+  var q = document.getElementById('wx-input').value.trim();
+  if (!q) return;
+  var latLonRe = /^(-?\d+\.?\d*),\s*(-?\d+\.?\d*)$/;
+  var m = q.match(latLonRe);
+  if (m) { wxLat = parseFloat(m[1]); wxLon = parseFloat(m[2]); wxZoom = 8; document.getElementById('wx-iframe').src = buildWxSrc(); return; }
+  var icao = q.toUpperCase();
+  if (ICAO_TABLE[icao]) { wxLat = ICAO_TABLE[icao][0]; wxLon = ICAO_TABLE[icao][1]; wxZoom = 9; document.getElementById('wx-iframe').src = buildWxSrc(); return; }
+  fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + encodeURIComponent(q) + '&count=1')
+    .then(function(r){ return r.json(); })
+    .then(function(d){ if (d.results && d.results.length > 0) { wxLat = d.results[0].latitude; wxLon = d.results[0].longitude; wxZoom = 8; document.getElementById('wx-iframe').src = buildWxSrc(); } })
+    .catch(function(){});
+}
+(function(){
+  var grp = document.getElementById('ticker-group');
+  if (grp) {
+    var clone = grp.cloneNode(true);
+    clone.id = '';
+    document.getElementById('ticker-track').appendChild(clone);
+  }
+})();
+</script>
+</body>
+</html>
