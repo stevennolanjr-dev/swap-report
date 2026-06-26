@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE SWAP REPORT: Morning Edition, June 25, 2026</title>
+<meta property="og:title" content="THE SWAP REPORT: Morning Edition, June 25, 2026">
+<meta property="og:url" content="https://theswap.report/">
+<meta property="og:description" content="Thursday, June 25, 2026. The bill for the Iran war comes due: the White House asks Congress for $87.6 billion, two thirds of it defense, as Trump meets munitions makers to refill emptied magazines. Two quantum executive orders reframe the next arms race. RIMPAC opens in Hawaii. Rubio reassures the Gulf; Congress's rebuke shadows the NATO summit.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f0e8;
+  --surface: #fffdf8;
+  --border: #d4c9b8;
+  --text: #1a1a1a;
+  --muted: #666666;
+  --accent: #8b0000;
+  --tab-inactive: #e8e2d8;
+  --tab-active: #fffdf8;
+  --header-bg: #ede8df;
+  --tab-bg: #e8e2d8;
+  --tag-bg: #8b0000;
+  --tag-text: #ffffff;
+  --watch-bg: #fff8f0;
+  --watch-border: #c8a06a;
+  --card-bg: #fffdf8;
+  --hover-bg: rgba(139,0,0,0.06);
+  --footer-bg: #ede8df;
+  --footer-text: #666666;
+}
+[data-theme="light"] {
+  --bg: #ffffff; --surface: #ffffff; --border: #e0e0e0; --text: #111111;
+  --muted: #555555; --accent: #8b0000; --tab-inactive: #f0f0f0;
+  --tab-active: #ffffff; --header-bg: #f5f5f5; --tab-bg: #eeeeee;
+  --watch-bg: #fff8f0; --watch-border: #c8a06a; --card-bg: #ffffff;
+  --hover-bg: rgba(139,0,0,0.05); --footer-bg: #f0f0f0; --footer-text: #555555;
+}
+[data-theme="dark"] {
+  --bg: #1a1a2e; --surface: #16213e; --border: #2a2a4a; --text: #e0e0e0;
+  --muted: #a0a0b0; --accent: #cc3333; --tab-inactive: #1e1e3a;
+  --tab-active: #16213e; --header-bg: #1e1e3a; --tab-bg: #1e1e3a;
+  --watch-bg: #1e1e2e; --watch-border: #8b6a3a; --card-bg: #16213e;
+  --hover-bg: rgba(204,51,51,0.08); --footer-bg: #1e1e3a; --footer-text: #a0a0b0;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: Georgia, 'Times New Roman', serif; font-size: 15px; line-height: 1.6; }
+.page { max-width: 960px; margin: 0 auto; background: var(--bg); }
+.masthead { background: var(--bg); padding: 24px 24px 16px; border-bottom: 2px solid var(--accent); display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; }
+.masthead-left { flex: 1; }
+.masthead-title { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 22px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); }
+.masthead-meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); margin-top: 4px; }
+.masthead-epigraph { font-style: italic; font-size: 13px; color: var(--muted); margin-top: 4px; font-family: Georgia, serif; }
+.theme-btns { display: flex; gap: 6px; align-items: center; padding-top: 4px; }
+.theme-btn { background: var(--tab-bg); border: 1px solid var(--border); color: var(--text); cursor: pointer; font-size: 14px; padding: 4px 8px; border-radius: 3px; }
+.theme-btn.active { background: var(--accent); color: #fff; }
+.edition-bar { background: var(--header-bg); color: var(--muted); border-bottom: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 5px 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.edition-bar a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.wx-section { padding: 12px 20px; background: var(--surface); border-bottom: 1px solid var(--border); }
+.wx-iframe { width: 100%; height: 320px; border: 1px solid var(--border); border-radius: 4px; display: block; }
+.wx-controls { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; align-items: center; }
+.wx-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 8px; border: 1px solid var(--border); background: var(--tab-bg); color: var(--text); cursor: pointer; border-radius: 3px; }
+.wx-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.wx-search { display: flex; gap: 6px; margin-bottom: 8px; }
+.wx-search input { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 3px; flex: 1; }
+.wx-search button { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 10px; background: var(--accent); color: #fff; border: none; border-radius: 3px; cursor: pointer; }
+.wx-credit { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 6px; }
+.wx-credit a { color: var(--accent); text-underline-offset: 2px; }
+.tab-bar { display: flex; background: var(--tab-bg); border-bottom: 2px solid var(--border); overflow-x: auto; padding: 0 20px; gap: 2px; }
+.tab-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 8px 14px; border: none; background: transparent; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap; transition: color 0.15s; letter-spacing: 1px; text-transform: uppercase; }
+.tab-btn:hover { color: var(--accent); }
+.tab-btn.active { color: var(--accent); background: var(--tab-active); border-bottom-color: var(--accent); }
+.tab-panel { display: none; padding: 20px; }
+.tab-panel.active { display: block; }
+.section-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 4px; margin: 20px 0 12px; }
+.section-hdr:first-child { margin-top: 0; }
+.bluf-box { background: rgba(139,0,0,0.05); border-left: 4px solid var(--accent); padding: 14px 16px; margin-bottom: 20px; border-radius: 0 4px 4px 0; }
+.bluf-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.bluf-box ul { padding-left: 18px; }
+.bluf-box li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; }
+.story { background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; padding: 12px 14px; margin-bottom: 10px; transition: background 0.15s; }
+.story:hover { background: var(--hover-bg); }
+.story-headline { font-size: 15px; font-weight: bold; line-height: 1.4; margin-bottom: 4px; }
+.story-headline a { color: var(--text); text-decoration: none; }
+.story-headline a:hover { color: var(--accent); text-decoration: underline; }
+.story-meta { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-bottom: 6px; }
+.story-synopsis { font-size: 13px; color: var(--text); line-height: 1.5; }
+.tag { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; background: var(--tag-bg); color: var(--tag-text); padding: 2px 6px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+.watch-item { background: var(--watch-bg); border-left: 3px solid var(--watch-border); padding: 10px 12px; margin-bottom: 10px; border-radius: 0 4px 4px 0; }
+.watch-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+.throughline { font-size: 13px; color: var(--text); line-height: 1.6; margin-bottom: 16px; }
+.aged-badge { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 10px; color: #fff; vertical-align: middle; margin-right: 6px; }
+.aged-green { background: #2d7a3d; }
+.aged-yellow { background: #b8860b; }
+.aged-red { background: #8b0000; }
+.ticker-wrap { background: #111; color: #e8e8e8; overflow: hidden; padding: 8px 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; white-space: nowrap; }
+.ticker-track { display: inline-block; animation: ticker-slide 90s linear infinite; will-change: transform; }
+.ticker-wrap:hover .ticker-track { animation-play-state: paused; }
+@keyframes ticker-slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; white-space: normal; display: block; } }
+.ticker-item { display: inline-block; margin: 0 18px; }
+.ticker-lbl { color: #999; font-size: 11px; }
+.ticker-val { color: #e8e8e8; font-weight: 600; }
+.ticker-sep { color: #444; margin: 0 4px; }
+.up { color: #3dcc5a; }
+.dn { color: #ff5a5a; }
+footer { background: var(--footer-bg); color: var(--footer-text); font-family: 'IBM Plex Mono', monospace; font-size: 10px; padding: 16px 24px; margin-top: 32px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+@media (max-width: 600px) { .masthead { padding: 16px; } .tab-panel { padding: 14px; } footer { flex-direction: column; } }
+</style>
+</head>
+<body data-theme="warm">
+<div style="background:#8b0000;color:#fff;padding:8px 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-align:center;">Archived edition &middot; 2026-06-25 &middot; <a href="../index.html" style="color:#fff;text-decoration:underline;">Back to today's brief</a> &middot; <a href="index.html" style="color:#fff;text-decoration:underline;">Archive index</a></div>
+
+<div class="page">
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-left">
+    <div class="masthead-title">THE SWAP REPORT</div>
+    <div class="masthead-meta">THURSDAY, JUNE 25, 2026 &nbsp;|&nbsp; MORNING EDITION</div>
+    <div class="masthead-epigraph">The shooting slows; the invoice arrives. An $87.6 billion supplemental and a meeting with the people who build the bombs say more about the next war than this one. The magazines came back empty.</div>
+  </div>
+  <div class="theme-btns">
+    <button class="theme-btn active" onclick="setTheme('warm',this)" title="Warm">&#9728;</button>
+    <button class="theme-btn" onclick="setTheme('light',this)" title="Light">&#128305;</button>
+    <button class="theme-btn" onclick="setTheme('dark',this)" title="Dark">&#9790;</button>
+  </div>
+</div>
+
+<!-- EDITION BAR -->
+<div class="edition-bar">
+  <span>White House asks Congress for $87.6B, $67B of it defense, mostly for the Iran war</span>
+  <span>|</span>
+  <span>Trump meets munitions makers to refill emptied magazines</span>
+  <span>|</span>
+  <span>Two quantum executive orders reframe the next race</span>
+  <span>|</span>
+  <span>RIMPAC opens in Hawaii; Rubio reassures the Gulf</span>
+  <span>|</span>
+  <a href="https://theswap.report/">theswap.report</a>
+</div>
+
+<!-- WEATHER -->
+<div class="wx-section">
+  <div class="wx-search">
+    <input type="text" id="wx-input" placeholder="Search: lat,lon or ICAO or city name" onkeydown="if(event.key==='Enter')wxSearch()">
+    <button onclick="wxSearch()">Go</button>
+  </div>
+  <div class="wx-controls">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);margin-right:4px;">LAYER:</span>
+    <button class="wx-btn active" onclick="wxLayer(this,'temperature-2m')">Temp</button>
+    <button class="wx-btn" onclick="wxLayer(this,'wind-10m')">Wind</button>
+    <button class="wx-btn" onclick="wxLayer(this,'rain-3h')">Rain</button>
+    <button class="wx-btn" onclick="wxLayer(this,'clouds')">Clouds</button>
+    <button class="wx-btn" onclick="wxLayer(this,'radar')">Radar</button>
+    <button class="wx-btn" onclick="wxLayer(this,'gust')">Gust</button>
+  </div>
+  <iframe id="wx-iframe" class="wx-iframe" src="https://www.ventusky.com/?p=37;-95;4&amp;l=temperature-2m" allowfullscreen></iframe>
+  <div class="wx-credit">Interactive weather: <a href="https://www.ventusky.com" target="_blank" rel="noopener">Ventusky</a> &nbsp;|&nbsp; Aviation: <a href="https://aviationweather.gov/data/metar/?id=KCHS&amp;taf=true" target="_blank" rel="noopener">KCHS METAR/TAF</a> (437 AW / Joint Base Charleston)</div>
+</div>
+
+<!-- TAB BAR -->
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('overview',this)">Overview</button>
+  <button class="tab-btn" onclick="showTab('defense',this)">Defense</button>
+  <button class="tab-btn" onclick="showTab('strategic',this)">Strategic</button>
+  <button class="tab-btn" onclick="showTab('domestic',this)">Domestic</button>
+  <button class="tab-btn" onclick="showTab('deepreads',this)">Deep Reads</button>
+  <button class="tab-btn" onclick="showTab('local',this)">Local</button>
+  <button class="tab-btn" onclick="showTab('lighter',this)">Lighter Fare</button>
+</div>
+
+<!-- OVERVIEW TAB -->
+<div id="tab-overview" class="tab-panel active">
+
+  <div class="bluf-box">
+    <div class="bluf-hdr">Bottom Line Up Front</div>
+    <ul>
+      <li><strong>The White House asked Congress for an $87.6 billion supplemental, roughly $67 billion of it for defense, most of it to pay for the Iran war and refill what the war emptied.</strong> The request lands days after the Senate voted to halt that war, so Congress is being asked to fund a campaign it just formally objected to. The number is the war's true cost made legible: not the strikes, the restock. Around $26 billion of the munitions bill alone, by one think-tank accounting, went to the precision weapons fired in a matter of days.</li>
+      <li><strong>Trump met the munitions makers, and that meeting is the real strategy document.</strong> The president sat with weapons manufacturers to push a replenishment surge for stockpiles the Gulf campaign ran down. The signal is a defense-industrial base that cannot reload at the pace a short, intense war demands, the exact vulnerability a longer Indo-Pacific fight would expose faster. The supplemental funds the symptom; the production-capacity problem is the disease.</li>
+      <li><strong>Two executive orders reframed the next arms race as a quantum one.</strong> The Executive Office published "Ushering in the Next Frontier of Quantum Innovation" and "Securing the Nation Against Advanced Cryptographic Attacks," the second a post-quantum cryptography push to harden federal systems before a future quantum computer can break today's encryption. The Pentagon's own quantum strategy, separately, is being called "a first step." The race is being declared before the machine that justifies it exists, which is the point: you cannot harden after the fact.</li>
+      <li><strong>RIMPAC opened in Hawaii with an emphasis on experimentation, while four NATO navies sounded the alarm over Chinese patrols off eastern Taiwan.</strong> The world's largest naval exercise convenes as the US, UK, France, and Germany jointly flag PLA activity east of the island, a sharper, more multilateral protest than usual. The Indo-Pacific did not pause for the Gulf. It used the window.</li>
+      <li><strong>The settlement's diplomacy hardened into routine: Rubio reassures the Gulf, Bessent defends the deal, Hormuz crews still wait for evacuation.</strong> The Secretary of State works the Gulf capitals, the Treasury secretary defends the sanctions terms at home, and the maritime cleanup grinds on. The shooting phase is over; the argument over who got what is now the entire war, conducted in supplemental requests, reassurance tours, and the slow business of getting stranded ships out of the strait.</li>
+    </ul>
+  </div>
+
+  <div class="section-hdr">The Through-Line</div>
+  <p class="throughline">Today the war stops being an event and becomes an accounting. The $87.6 billion request, the munitions-makers meeting, the Foreign Affairs verdict that "Iran didn't win the war," the quantum orders bracing for the next one: every lead item is about cost, capacity, and what comes after, not about combat. That is what war termination actually looks like from the inside. The fighting ends and the institutions start counting, and the counting reveals the real condition of the force. What it reveals here is a defense-industrial base that emptied its magazines against a single regional adversary and now needs an emergency appropriation to refill them, at the same moment RIMPAC and four allied navies are pointing at the Pacific. The Senate's rebuke and the supplemental are the same story told twice: a system trying to take the measure of a war its executive started, and not liking the math.</p>
+
+  <div class="section-hdr">How It Aged</div>
+  <p class="throughline"><span class="aged-badge aged-green">Aged Well</span> June 24 call: "A $26 billion munitions burn against a regional adversary is a flashing readiness warning for any Indo-Pacific contingency." Verdict: confirmed within 24 hours. On June 25 the White House sent Congress an $87.6 billion supplemental built largely around munitions and Iran-war costs, and the president met weapons manufacturers to push replenishment, exactly the reload scramble yesterday's brief said the campaign's cost foreshadowed. Lesson: when the strike phase ends, watch the appropriations, not the headlines. The bill for the bombs always arrives after the bombs, and it tells you what the war actually cost the force, not just the target.</p>
+
+</div>
+
+<!-- DEFENSE TAB -->
+<div id="tab-defense" class="tab-panel">
+
+  <div class="section-hdr">The Bill Comes Due</div>
+
+  <div class="story">
+    <span class="tag">Supplemental</span><span class="tag">Iran War</span>
+    <div class="story-headline"><a href="https://breakingdefense.com/2026/06/white-house-sends-87-6b-supplemental-to-congress-with-67b-for-defense/" target="_blank" rel="noopener">White House sends Congress an $87.6B supplemental, $67B of it for defense</a></div>
+    <div class="story-meta">Breaking Defense / Military Times &middot; cross-corroborated</div>
+    <div class="story-synopsis">The administration formally requested $87.6 billion in supplemental spending, with roughly $67 billion directed to defense and the bulk tied to the Iran war and the replenishment it forced. The request reaches a Congress that days earlier passed a war-powers resolution against the same conflict. <strong>The take:</strong> the supplemental is the war's invoice, and its size is the argument. You cannot vote to halt a war and then quietly refuse to pay for the magazines it emptied; the appropriation forces the legislature to own the cost of the campaign it just rebuked. Watch whether the four Republican crossover votes hold when the bill is money rather than message.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Industrial Base</span><span class="tag">Munitions</span>
+    <div class="story-headline"><a href="https://www.militarytimes.com/news/pentagon-congress/2026/06/25/trump-meets-munitions-makers-amid-push-to-replenish-weapons-stockpiles/" target="_blank" rel="noopener">Trump meets munitions makers amid a push to replenish weapons stockpiles</a></div>
+    <div class="story-meta">Military Times / Air Force Times &middot; cross-corroborated</div>
+    <div class="story-synopsis">The president met with munitions manufacturers to press a surge in production aimed at refilling stockpiles drawn down by the Gulf campaign. The meeting pairs with the supplemental as the demand and supply sides of the same problem. <strong>The take:</strong> the meeting is more revealing than the appropriation. Money can be voted in a day; a precision-munitions production line takes years to scale and cannot be surged on command. A force that emptied its magazines against one regional adversary and needs an emergency reload is telling you, in public, that its industrial base is not sized for the war it keeps planning to deter in the Pacific.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Budget</span><span class="tag">Epic Fury</span>
+    <div class="story-headline"><a href="https://www.airandspaceforces.com/budget-supplemental-pentagon-epic-fury-munitions-space-force-programs/" target="_blank" rel="noopener">Supplemental would give the Pentagon billions for Epic Fury, munitions, and Space Force programs</a></div>
+    <div class="story-meta">Air &amp; Space Forces Magazine &middot; single source</div>
+    <div class="story-synopsis">The defense share of the supplemental breaks out across Operation Epic Fury costs, munitions replenishment, and Space Force programs, a line-item picture of where a short, intense air campaign actually spends. <strong>The take:</strong> the breakout is the lesson plan. Epic Fury's accounting shows the modern shape of cost, exquisite munitions consumed fast, space and targeting infrastructure underneath, and a resupply tail that runs longer than the war. Read the appropriation as a readiness document: it maps precisely the capabilities the next contingency would burn through first.</div>
+  </div>
+
+  <div class="section-hdr">Indo-Pacific Tempo</div>
+
+  <div class="story">
+    <span class="tag">RIMPAC</span><span class="tag">Pacific</span>
+    <div class="story-headline"><a href="https://www.defenseone.com/technology/2026/06/rimpac-kicks-hawaii-focus-experimentation/414415/" target="_blank" rel="noopener">RIMPAC opens in Hawaii with a focus on experimentation</a></div>
+    <div class="story-meta">Defense One / Stars and Stripes &middot; cross-corroborated</div>
+    <div class="story-synopsis">The Rim of the Pacific exercise, the world's largest maritime drill, began in Hawaii with warships from many nations and an explicit emphasis on experimenting with new concepts and unmanned systems rather than rehearsing fixed plays. <strong>The take:</strong> RIMPAC convening while the Gulf cleanup is still underway is the Pacific's quiet answer to the bandwidth question. The experimentation focus matters more than the hull count: this is where the joint force tries to learn the distributed, unmanned, attrition-tolerant way of fighting that the Iran munitions burn just argued it needs, and to do it with allies in the room.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">PRC</span><span class="tag">Taiwan Strait</span>
+    <div class="story-headline"><a href="https://www.militarytimes.com/global/asia-pacific/2026/06/24/us-uk-france-germany-raise-alarm-about-chinese-patrols-off-eastern-taiwan/" target="_blank" rel="noopener">US, UK, France, and Germany raise alarm about Chinese patrols off eastern Taiwan</a></div>
+    <div class="story-meta">Military Times &middot; single source, multilateral</div>
+    <div class="story-synopsis">Four major NATO members jointly flagged Chinese military patrols operating east of Taiwan, the side of the island that faces the open Pacific and the US approaches, rather than the strait. The coordinated protest is sharper than the routine single-nation statement. <strong>The take:</strong> the location is the signal. Activity east of Taiwan is about cutting the island off from relief and complicating any US response from Guam and Hawaii, not about the strait crossing everyone watches. That three European navies signed the same protest is the more durable development; it means the Indo-Pacific is no longer a problem Washington flags alone.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">DPRK</span><span class="tag">Naval</span>
+    <div class="story-headline"><a href="https://news.usni.org/2026/06/24/north-korea-commissions-first-in-class-destroyer-choe-hyon" target="_blank" rel="noopener">North Korea commissions its first-in-class destroyer Choe Hyon</a></div>
+    <div class="story-meta">USNI News &middot; single source, tracking</div>
+    <div class="story-synopsis">North Korea formally commissioned Choe Hyon, the lead ship of a new destroyer class and the largest surface combatant Pyongyang has fielded, the hardware behind Kim's recently announced nuclear-navy ambition. <strong>The take:</strong> the hull is real even if the nuclear-arming claim around it is years off. A first-in-class destroyer means a building program, not a one-off prestige ship, and it converts the nuclear-navy announcement from rhetoric into a production line worth watching. Pyongyang is methodically adding a maritime dimension to a deterrent that used to be land-only.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Taiwan</span><span class="tag">Asymmetric</span>
+    <div class="story-headline"><a href="https://news.usni.org/2026/06/24/taiwan-budget-calls-for-6-6b-for-attack-drones-unmanned-surface-vessels" target="_blank" rel="noopener">Taiwan budget calls for $6.6B for attack drones and unmanned surface vessels</a></div>
+    <div class="story-meta">USNI News &middot; single source</div>
+    <div class="story-synopsis">Taipei's defense budget earmarks $6.6 billion for attack drones and unmanned surface vessels, a deliberate tilt toward the cheap, numerous, attrition-tolerant systems that the Ukraine and Gulf campaigns have validated. <strong>The take:</strong> this is Taiwan reading the same lesson the US munitions scramble teaches and acting on it faster. An island that cannot win a hull-for-hull race is buying the porcupine instead: mass over exquisiteness, denial over parity. It is the most strategically coherent line in any regional defense budget this week, and it points at the same future RIMPAC is experimenting toward.</div>
+  </div>
+
+  <div class="section-hdr">Force, Systems, and the Building</div>
+
+  <div class="story">
+    <span class="tag">Quantum</span><span class="tag">DoD</span>
+    <div class="story-headline"><a href="https://www.defenseone.com/policy/2026/06/quantum-strategy-cio/414409/" target="_blank" rel="noopener">Pentagon's quantum strategy is "a first step," CIO says</a></div>
+    <div class="story-meta">Defense One &middot; single source</div>
+    <div class="story-synopsis">The Defense Department's chief information officer framed the Pentagon's new quantum strategy as an opening move, sketching how the department intends to prepare for both the threat of quantum-enabled codebreaking and the promise of quantum sensing and computing. The framing lands the same day as two White House quantum executive orders (see Domestic). <strong>The take:</strong> "first step" is honest and slightly alarming. The defining feature of the quantum threat is that it is retroactive; adversaries can harvest encrypted data now and decrypt it later once the machine exists. A first step taken late is still a race run from behind. The orders and the strategy together are an attempt to start hardening before the clock everyone can see actually strikes.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">PRC</span><span class="tag">Stealth</span>
+    <div class="story-headline"><a href="https://www.militarytimes.com/global/asia-pacific/2026/06/24/china-studied-us-stealth-aircraft-and-learned-the-wrong-lessons/" target="_blank" rel="noopener">China studied US stealth aircraft and learned the wrong lessons, analysis argues</a></div>
+    <div class="story-meta">Military Times &middot; analysis</div>
+    <div class="story-synopsis">An assessment argues Beijing drew the wrong conclusions from a close study of US stealth programs, optimizing for the visible signatures of fifth-generation airpower while missing the systems-of-systems integration that makes American stealth actually work. <strong>The take:</strong> imitation that copies the airframe and misses the architecture is a recurring great-power error, and a fragile basis for confidence. If the analysis holds, China has built impressive-looking aircraft inside a kill chain that does not yet knit them together the way US doctrine assumes. Useful to flag, dangerous to over-believe; underestimating a competitor's ability to learn is its own wrong lesson.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">USAF</span><span class="tag">Forward Basing</span>
+    <div class="story-headline">US Navy presence in Europe to get a boost after months of Iran operations</div>
+    <div class="story-meta">Stars and Stripes &middot; single source, tracking</div>
+    <div class="story-synopsis">With the Gulf campaign winding down, reporting indicates the US Navy will rebuild its European presence after months of having assets pulled toward Iran operations, a reset of the posture the war drew down. <strong>The take:</strong> this is the bandwidth problem resolving in slow motion. Every carrier and escort that surged to the Gulf came from somewhere, and Europe felt the thinning while Russia pressed. The rebalancing back is welcome and revealing: it confirms the force cannot be strong everywhere at once and has to physically shuttle presence between theaters as crises rotate. The shuttle itself is the strategic constraint.</div>
+  </div>
+
+</div>
+
+<!-- STRATEGIC TAB -->
+<div id="tab-strategic" class="tab-panel">
+
+  <div class="section-hdr">The Gulf Settlement</div>
+
+  <div class="story">
+    <span class="tag">US-Iran</span><span class="tag">Verdict</span>
+    <div class="story-headline"><a href="https://www.foreignaffairs.com/iran/iran-didnt-win-war" target="_blank" rel="noopener">Iran Didn't Win the War</a></div>
+    <div class="story-meta">Foreign Affairs &middot; analysis</div>
+    <div class="story-synopsis">The argument: despite the narrative of survival, Iran emerged from the war strategically weaker, its nuclear program degraded, its deterrence punctured, and its leverage over the settlement narrower than its rhetoric suggests. The piece pushes against the "Tehran outlasted the bombs" reading taking hold. <strong>The take:</strong> the question of who won is the question that sets the next decade's posture, and it is genuinely contested. If Iran is weaker than it sounds, the settlement is a US position of strength to be consolidated; if it merely absorbed the blow and kept the program's bones, the deal is a pause. The inspections fight is where that ambiguity gets resolved, which is why both capitals are guarding it so hard.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Hormuz</span><span class="tag">Diplomacy</span>
+    <div class="story-headline"><a href="https://www.hudson.org/foreign-policy/rubios-reassurance-mission-gulf-allies-mary-kissel" target="_blank" rel="noopener">Rubio's reassurance mission to Gulf allies</a></div>
+    <div class="story-meta">Hudson Institute / France 24 &middot; cross-corroborated</div>
+    <div class="story-synopsis">Secretary of State Rubio continues touring Gulf capitals to steady partners unsettled by the settlement's terms, insisting the Strait of Hormuz stays toll-free and the regional security framework holds. <strong>The take:</strong> the Gulf monarchies' anxiety is not that the deal collapses but that it succeeds on terms legitimizing Iranian leverage over the chokepoint they all depend on. Reassurance tours are a tell; you do not send the secretary of state to soothe allies who feel secure. The substance Rubio is selling is a promise about the strait that geography, not Washington, ultimately enforces.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Hormuz</span><span class="tag">Sea Lines</span>
+    <div class="story-headline"><a href="https://www.twz.com/news-features/plan-to-evacuate-hundreds-of-ships-still-stranded-from-strait-of-hormuz-closure-is-coalescing" target="_blank" rel="noopener">A plan to evacuate hundreds of ships still stranded from the Hormuz closure is coalescing</a></div>
+    <div class="story-meta">The War Zone &middot; single source, tracking</div>
+    <div class="story-synopsis">A coordinated plan is taking shape to move the hundreds of vessels and thousands of crew still stranded in and around Hormuz after the wartime closure, the slow logistical aftermath of the strait's shutdown. <strong>The take:</strong> the cleanup is the war's longest tail and its least visible cost. Long after the strikes stop, merchant crews sit in a strait that no one is shooting in but no one has fully reopened either. The evacuation's pace is a real-time gauge of how genuinely the settlement is holding; ships move when the parties trust the truce enough to stop using the chokepoint as leverage.</div>
+  </div>
+
+  <div class="section-hdr">Europe and the East</div>
+
+  <div class="story">
+    <span class="tag">Ukraine</span><span class="tag">Deep Strike</span>
+    <div class="story-headline"><a href="https://www.hudson.org/missile-defense/ukraine-military-situation-report-june-24-can-kasapoglu" target="_blank" rel="noopener">Ukraine military situation report: deep strikes squeeze Russian refining</a></div>
+    <div class="story-meta">Hudson Institute / Le Monde &middot; cross-corroborated</div>
+    <div class="story-synopsis">Ukrainian long-range strikes on Russian refineries are triggering fuel shortages and visible domestic discontent inside Russia, per situation-report tracking and Le Monde reporting, an extension of the drone-and-deep-strike campaign that has been cratering airfields and cutting Crimea's logistics. <strong>The take:</strong> Ukraine is fighting the war on Russia's balance sheet. Each refinery hit converts a battlefield Kyiv cannot win on tonnage into an economic and political problem the Kremlin has to manage at home. The strategically interesting metric is no longer territory; it is Russian fuel queues and the patience of a population that was promised the war would not touch them.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Russia</span><span class="tag">Information</span>
+    <div class="story-headline">Russia jails a Yabloko deputy leader seven years for "war fakes"</div>
+    <div class="story-meta">The Moscow Times &middot; single source</div>
+    <div class="story-synopsis">A court sentenced a deputy leader of the liberal Yabloko party to seven years under Russia's "war fakes" law, the statute used to criminalize dissent from the official line on Ukraine. The Moscow Times reports the sentence as part of a continuing crackdown on remaining opposition figures. <strong>The take:</strong> the domestic repression and the refinery shortages are the same story from two angles. A state that has to jail opposition politicians for seven years over what they say about a war is a state worried about what its own people are starting to feel about it. The harder the home front squeezes, the more the deep-strike campaign is working on the target that actually matters.</div>
+  </div>
+
+  <div class="section-hdr">The Alliance</div>
+
+  <div class="story">
+    <span class="tag">NATO</span><span class="tag">Summit</span>
+    <div class="story-headline"><a href="https://foreignpolicy.com/2026/06/24/rutte-nato-trump-whisperer-iran-war-europe-us-military/" target="_blank" rel="noopener">Can Rutte sweet-talk Trump enough to soothe NATO tensions?</a></div>
+    <div class="story-meta">Foreign Policy / Brookings &middot; cross-corroborated</div>
+    <div class="story-synopsis">As a rebalancing NATO gathers in Ankara ahead of the summit, Secretary General Rutte is cast as the alliance's "Trump whisperer," tasked with managing a president fresh off a Senate rebuke over the Iran war he wants allies to help fund. <strong>The take:</strong> an alliance organized around the management of one leader's moods is running on a fragile equilibrium, and the Ankara venue underlines how far the center of gravity has drifted from the old Atlantic core. The Iran rebuke from the president's own Senate hands him a grievance to carry into the room, and hands Rutte one more thing to pre-soothe. The summit's real test is whether burden-sharing progress survives contact with the personality managing it.</div>
+  </div>
+
+  <div class="story" data-unsourced="intentional">
+    <span class="tag">Iran</span><span class="tag">Russia</span>
+    <div class="story-headline">A simmering US-Iran conflict is Moscow's ideal outcome</div>
+    <div class="story-meta">Carnegie Endowment &middot; analysis</div>
+    <div class="story-synopsis">Carnegie argues a frozen-but-unresolved US-Iran standoff suits Russia best: hot enough to keep Washington's attention and resources tied to the Gulf, cold enough to avoid a regional war that would disrupt Moscow's own energy and arms interests. <strong>The take:</strong> this is the hidden beneficiary of the settlement's ambiguity. Every month the inspections fight and the Hormuz toll dispute keep the US half-engaged in the Middle East is a month its attention is not on Ukraine or the Pacific. Moscow does not need Iran to win; it needs the dispute to persist. The unresolved middle is not a failure of the deal for everyone, it is the optimal state for the party not at the table.</div>
+  </div>
+
+</div>
+
+<!-- DOMESTIC TAB -->
+<div id="tab-domestic" class="tab-panel">
+
+  <div class="section-hdr">Executive Actions</div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Executive Order: Quantum Innovation</div>
+    <div class="story-synopsis">The Executive Office published "Ushering in the Next Frontier of Quantum Innovation," an executive order directing a federal push on quantum computing, sensing, and networking research and the workforce and supply chains behind them. It positions quantum as the next strategic-technology contest alongside artificial intelligence. Source: <a href="https://www.federalregister.gov/documents/" target="_blank" rel="noopener">Federal Register</a>, Presidential Documents, June 25.</div>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Executive Order: Post-Quantum Cryptography</div>
+    <div class="story-synopsis">A companion order, "Securing the Nation Against Advanced Cryptographic Attacks," directs the migration of federal systems toward post-quantum cryptography to protect against a future quantum computer capable of breaking current encryption. The defensive order is the more consequential of the pair: it concedes that adversaries may already be harvesting encrypted data to decrypt later, and races to re-armor federal communications before that day arrives. It reads directly against the Pentagon's "first step" quantum strategy covered in the Defense tab. Source: <a href="https://www.federalregister.gov/documents/" target="_blank" rel="noopener">Federal Register</a>, Presidential Documents, June 25.</div>
+  </div>
+
+  <div class="section-hdr">Politics</div>
+
+  <div class="story">
+    <span class="tag">Treasury</span><span class="tag">Iran Deal</span>
+    <div class="story-headline"><a href="https://foreignpolicy.com/2026/06/24/treasury-secretary-bessent-defends-trump-iran-deal-sanctions-relief/" target="_blank" rel="noopener">Treasury Secretary Bessent defends the Iran deal's sanctions relief</a></div>
+    <div class="story-meta">Foreign Policy &middot; single source</div>
+    <div class="story-synopsis">Treasury Secretary Bessent publicly defended the sanctions-relief terms of the Iran settlement, the financial half of a deal the Senate just voted to constrain on the military side. <strong>The take:</strong> the administration is now defending the settlement on two fronts at once, Rubio on security in the Gulf and Bessent on sanctions at home, which tells you where the political pressure is landing. Sanctions relief is the concession critics will hammer hardest, because it is the most concrete thing Tehran got and the easiest to portray as reward for aggression. Bessent's defense is the opening move in a fight that runs straight into the supplemental debate.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Economy</span><span class="tag">Sentiment</span>
+    <div class="story-headline">Why Americans hate the "good" economy</div>
+    <div class="story-meta">Axios &middot; analysis</div>
+    <div class="story-synopsis">Axios examines the persistent gap between solid macro indicators, steady employment, cooling inflation, and a public that rates the economy poorly, a disconnect sharpened by an inflation report that could revive rate-hike worries even as oil prices fall. <strong>The take:</strong> the sentiment gap is a governing problem, not just a polling curiosity. A president asking Congress for $87.6 billion in wartime supplemental spending is doing it against an electorate that already feels squeezed by a "good" economy it does not trust. The macro dashboard below says steady; the mood says otherwise, and the mood is what shows up at the midterms.</div>
+  </div>
+
+  <div class="section-hdr">The Federal Register</div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Executive Actions: 24-hour window</div>
+    <div class="story-synopsis">Two executive orders in the June 24 to 25 window, both on quantum technology (detailed above). Below the presidential documents, the day's notices skewed routine: a run of Coast Guard safety zones and special local regulations for summer marine events across the Great Lakes, and two Defense Department Defense Federal Acquisition Regulation Supplement actions, one a certification requirement for military items and one a small-purchase exception. No new proclamations. Source: <a href="https://www.federalregister.gov/documents/" target="_blank" rel="noopener">Federal Register</a>, 48 entries.</div>
+  </div>
+
+  <div class="section-hdr">Macro Dashboard</div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">FRED snapshot</div>
+    <div class="story-synopsis">Fed funds effective rate <a href="https://fred.stlouisfed.org/series/DFF" target="_blank" rel="noopener">3.63%</a> (unchanged). 10-year Treasury <a href="https://fred.stlouisfed.org/series/DGS10" target="_blank" rel="noopener">4.50%</a>, 2-year <a href="https://fred.stlouisfed.org/series/DGS2" target="_blank" rel="noopener">4.16%</a>. Headline CPI index <a href="https://fred.stlouisfed.org/series/CPIAUCSL" target="_blank" rel="noopener">334.0</a> (May), core CPI <a href="https://fred.stlouisfed.org/series/CPILFESL" target="_blank" rel="noopener">336.1</a>. Unemployment <a href="https://fred.stlouisfed.org/series/UNRATE" target="_blank" rel="noopener">4.3%</a> (May), initial jobless claims <a href="https://fred.stlouisfed.org/series/ICSA" target="_blank" rel="noopener">226,000</a>. The labor and rate picture is steady. Equities are calmer than yesterday's tech-led wobble (see the ticker), and oil has eased back below $70 WTI as the Hormuz risk premium drains out of the price, the clearest market verdict that the shooting phase of the war is genuinely over.</div>
+  </div>
+
+</div>
+
+<!-- DEEP READS TAB -->
+<div id="tab-deepreads" class="tab-panel">
+
+  <div class="section-hdr">Long Reads on the War</div>
+
+  <div class="story">
+    <span class="tag">Iran</span><span class="tag">Strategy</span>
+    <div class="story-headline"><a href="https://www.foreignaffairs.com/iran/iran-didnt-win-war" target="_blank" rel="noopener">Iran Didn't Win the War</a></div>
+    <div class="story-meta">Foreign Affairs &middot; long read</div>
+    <div class="story-synopsis">The argument: the prevailing "Iran survived, therefore Iran won" reading misreads the war's actual balance sheet. The nuclear program was set back, the deterrent was shown to be penetrable, and the regional proxy network is weaker than before, leaving Tehran negotiating from a thinner hand than its defiance implies. <strong>Why it matters:</strong> the who-won question is not academic; it sets whether the US treats the settlement as leverage to press or a pause to manage. Read it against the Hudson pieces taking the opposite tack, because the gap between them is the strategic debate that will shape the next administration's Iran policy. The inspections fight is where the abstract argument becomes a concrete test.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Pakistan</span><span class="tag">Mediation</span>
+    <div class="story-headline"><a href="https://foreignpolicy.com/2026/06/24/pakistan-iran-deal-war-mediation-middle-east/" target="_blank" rel="noopener">Will Pakistan's Iran gamble pay off?</a></div>
+    <div class="story-meta">Foreign Policy &middot; long read</div>
+    <div class="story-synopsis">The argument: Pakistan's bid to position itself as a mediator and partner in the Iran settlement is a calculated gamble to convert proximity into influence, with real upside in regional standing and real risk if the deal sours or its rivals object. <strong>Why it matters:</strong> the settlement is rearranging the region's brokers, not just its combatants. Pakistan stepping toward Tehran, with the Iranian president recently visiting Islamabad, is a second-order effect worth tracking, because the states that gain standing from a US-Iran deal are the ones whose alignment will shift if it holds. Watch the mediators; they tell you who thinks the deal is durable enough to bet on.</div>
+  </div>
+
+  <div class="section-hdr">From the Institutions</div>
+
+  <div class="story">
+    <span class="tag">Leadership</span><span class="tag">AI</span>
+    <div class="story-headline"><a href="https://smallwarsjournal.com/2026/06/25/homo-post-machina-how-ai-and-decision-analytics-can-revolutionize-leader-performance-for-the-future-force/" target="_blank" rel="noopener">Homo Post Machina: How AI and Decision Analytics Can Revolutionize Leader Performance</a></div>
+    <div class="story-meta">Small Wars Journal &middot; long read</div>
+    <div class="story-synopsis">The argument: AI and decision-analytics tools can augment military leaders' judgment under uncertainty, but only if the force treats them as decision aids that sharpen human cognition rather than as oracles that replace it. The piece sketches where machine assistance helps and where it quietly erodes the judgment it claims to support. <strong>Why it matters:</strong> this is the human-in-the-loop debate moved from the targeting cell to the command tent. As the Marines push AI into operational reporting and the Pentagon stands up a quantum strategy, the harder question is not whether the tools work but whether leaders who lean on them keep the judgment to know when they are wrong. Read it as the counterweight to every "AI will speed the kill chain" headline.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Ukraine</span><span class="tag">Front Lines</span>
+    <div class="story-headline"><a href="https://www.thebulwark.com/p/hope-and-determination-on-ukraine-front-lines-russia-war-drones" target="_blank" rel="noopener">Hope and Determination on Ukraine's Front Lines</a></div>
+    <div class="story-meta">The Bulwark &middot; dispatch</div>
+    <div class="story-synopsis">The argument: a ground-level dispatch from the Ukrainian front finds a force exhausted but adapting, fighting a drone-saturated war of attrition with a resolve that the macro-level "stalemate" framing flattens out of view. <strong>Why it matters:</strong> the deep-strike and refinery-shortage stories in the Strategic tab describe the war from satellite altitude; this is the same war at eye level. Both are true, and planners need both. The technical campaign against Russian logistics works only because the people in the trenches hold the line that makes the strikes matter. Read it to keep the human variable in a war the data tends to render as a spreadsheet.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Iran</span><span class="tag">Capitulation</span>
+    <div class="story-headline"><a href="https://www.theatlantic.com/ideas/2026/06/trump-iran-foreign-policy/687683/?utm_source=feed" target="_blank" rel="noopener">The Whiplash of Trump's Iran Capitulation</a></div>
+    <div class="story-meta">The Atlantic &middot; analysis</div>
+    <div class="story-synopsis">The argument: the rapid swing from maximal threats to a negotiated settlement reads, to this critic, less as strategy than as improvisation, a capitulation dressed as a deal, with allies and adversaries alike struggling to track which version of US policy is operative week to week. <strong>Why it matters:</strong> this is the sharpest version of the case against the settlement, and it deserves a hearing alongside the Foreign Affairs "Iran didn't win" read and the Hudson defenses. The disagreement is not about facts but about whether unpredictability is a tool or a tell. For a planner, the operative risk is the same either way: allies who cannot predict US policy hedge, and hedging allies are the durable cost of a deal reached by whiplash.</div>
+  </div>
+
+</div>
+
+<!-- LOCAL TAB -->
+<div id="tab-local" class="tab-panel">
+
+  <div class="section-hdr">Joint Base Charleston / 437 AW</div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Watch: 437 AW / 315 AW</div>
+    <div class="story-synopsis">A rare concrete note from the base: Joint Base Charleston unveiled its first new locomotive in 60 years, a rail asset supporting the installation's role moving outsized cargo and munitions through the Charleston rail-and-port complex (WCBD News 2, plain-text attribution). The detail is small but on-theme this week: with the Defense tab leading on munitions replenishment and a Navy presence rebuilding in Europe, the unglamorous logistics backbone, rail, port, ramp space, is exactly the capacity that a reload surge runs on. The 437th Airlift Wing (host) and 315th Airlift Wing (reserve associate) continue routine C-17 mobility operations otherwise; steady state.</div>
+  </div>
+
+  <div class="section-hdr">Lowcountry News Beat</div>
+
+  <div class="story">
+    <span class="tag">SC Politics</span>
+    <div class="story-headline">South Carolina governor's race is set as Wilson and Johnson turn to the general election</div>
+    <div class="story-meta">The State / Post and Courier / Live 5 News &middot; plain-text attribution (Google News-wrapped)</div>
+    <div class="story-synopsis">With Attorney General Alan Wilson having won the Republican runoff for governor, the November field is set as Wilson and the Democratic nominee Johnson pivot to the general election, per The State and Post and Courier coverage of the largest runoff turnout in recent memory. The Lowcountry's statewide ballot is now fixed; the campaign that decides who runs Columbia for the next four years begins in earnest.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Mount Pleasant</span>
+    <div class="story-headline">Boaters call the Shem Creek boat landing "chaos" as Mount Pleasant weighs an expansion</div>
+    <div class="story-meta">Live 5 News &middot; plain-text attribution (Google News-wrapped)</div>
+    <div class="story-synopsis">Boaters are describing the Shem Creek public landing as overwhelmed at peak times, and the Town of Mount Pleasant is weighing an expansion, per Live 5 News. It is the quintessential Lowcountry growth story in miniature: a beloved, finite piece of public waterfront straining under the same population pressure reshaping the county's land use up and down the coast.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Charleston</span>
+    <div class="story-headline">Breeze Airways adds nonstop Charleston-to-Trenton service in a network expansion</div>
+    <div class="story-meta">Live 5 News / GlobeNewswire &middot; plain-text attribution (Google News-wrapped)</div>
+    <div class="story-synopsis">Breeze Airways announced new cities and routes nationwide, including nonstop service connecting Charleston to Trenton, per Live 5 News and the company's own release. The route addition is another data point in Charleston International's steady climb as a leisure-and-business destination, and a small convenience win for the Lowcountry's growing population of transplants with Northeast ties.</div>
+  </div>
+
+  <div class="section-hdr">Activities</div>
+
+  <div class="story" data-unsourced="intentional">
+    <span class="tag">Heritage</span><span class="tag">250th</span>
+    <div class="story-headline">250 years on, Revolutionary War artifacts still tell South Carolina's story</div>
+    <div class="story-meta">Post and Courier &middot; plain-text attribution (Google News-wrapped)</div>
+    <div class="story-synopsis">As the nation marks its 250th anniversary, the Post and Courier surveys the Revolutionary War artifacts that keep South Carolina's outsized role in that fight legible, from Lowcountry battlefields to objects in the state's museums. With the semiquincentennial in full swing and Charleston among the most consequential Revolutionary cities in the country, expect a steady run of heritage programming through the summer; this piece is a good map of where to start.</div>
+  </div>
+
+</div>
+
+<!-- LIGHTER FARE TAB -->
+<div id="tab-lighter" class="tab-panel">
+
+  <div class="section-hdr">Lighter Fare</div>
+
+  <div class="story">
+    <span class="tag">Sky Watch</span>
+    <div class="story-headline">SC skies host a Strawberry Moon, slow-motion meteors, and an exploding star 3,000 light-years off</div>
+    <div class="story-meta">Post and Courier &middot; single source</div>
+    <div class="story-synopsis">The Lowcountry's June night sky is putting on a show: a Strawberry Moon, a leisurely meteor display, and the long-anticipated outburst of the recurrent nova T Coronae Borealis, the "Blaze Star," a stellar explosion 3,000 light-years away that briefly flares bright enough to see with the naked eye. A reminder that some of the week's biggest events are the ones that have been on their way for 3,000 years.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Denmark</span>
+    <div class="story-headline">June might be Scandinavia's quiet sweet spot for the forward-stationed</div>
+    <div class="story-meta">Stars and Stripes &middot; single source</div>
+    <div class="story-synopsis">For service members and families stationed in or traveling through northern Europe, the long northern daylight of late June is the season's underrated window, after the spring crowds and before the August rush. A small note of shoulder-season advice amid a brief otherwise full of supplemental requests and primary results.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Lowcountry</span>
+    <div class="story-headline">A Mount Pleasant local is in "total disbelief" after winning $250,000 on a game show</div>
+    <div class="story-meta">Post and Courier &middot; single source</div>
+    <div class="story-synopsis">A Mount Pleasant resident walked off a national game show $250,000 richer and, by her own account, still not quite believing it, per the Post and Courier. The kind of small, undeserved-by-no-one good fortune worth pausing on amid a news cycle measured in war days, supplemental billions, and primary upsets.</div>
+  </div>
+
+</div>
+
+<!-- MARKET TICKER -->
+<div class="ticker-wrap" aria-label="Market ticker">
+  <div class="ticker-track" id="ticker-track">
+    <span class="ticker-group" id="ticker-group">
+      <span class="ticker-item"><span class="ticker-lbl">S&amp;P 500</span> <span class="ticker-val">7,358</span> <span class="dn">-0.10%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">DOW</span> <span class="ticker-val">51,849</span> <span class="up">+0.35%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">NASDAQ</span> <span class="ticker-val">25,477</span> <span class="dn">-0.43%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">VIX</span> <span class="ticker-val">18.1</span> <span class="dn">-3.00%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">WTI</span> <span class="ticker-val">$69.45</span> <span class="up">+0.17%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">BRENT</span> <span class="ticker-val">$72.90</span> <span class="up">+0.54%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">GOLD</span> <span class="ticker-val">$4,011</span> <span class="ticker-val">-0.03%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">10Y UST</span> <span class="ticker-val">4.40%</span> <span class="dn">-2.03%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">DXY</span> <span class="ticker-val">101.5</span> <span class="ticker-val">-0.03%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">BTC</span> <span class="ticker-val">$61,624</span> <span class="up">+1.05%</span> <span class="ticker-lbl">(prev close)</span></span>
+    </span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>THE SWAP REPORT &middot; Thursday, June 25, 2026 &middot; Morning Edition</div>
+  <div style="opacity:0.6;">For SWAP &middot; Distribution restricted &middot; Not for public release</div>
+</footer>
+
+<script>
+var currentTheme = 'warm';
+function setTheme(t, btn) {
+  currentTheme = t;
+  document.body.setAttribute('data-theme', t);
+  document.querySelectorAll('.theme-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+}
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+var wxLat = 37, wxLon = -95, wxZoom = 4, wxLayerName = 'temperature-2m';
+var ICAO_TABLE = {
+  'KCHS': [32.8986, -80.0405], 'KLTS': [34.6671, -99.2667],
+  'KDEN': [39.8561, -104.6737], 'KATL': [33.6407, -84.4277],
+  'KDFW': [32.8998, -97.0403], 'KLAX': [33.9425, -118.4081],
+  'KJFK': [40.6413, -73.7781], 'KORD': [41.9742, -87.9073],
+  'EGLL': [51.4775, -0.4614], 'RJTT': [35.5533, 139.7811]
+};
+function buildWxSrc() {
+  return 'https://www.ventusky.com/?p=' + wxLat + ';' + wxLon + ';' + wxZoom + '&l=' + wxLayerName;
+}
+function wxLayer(btn, layer) {
+  wxLayerName = layer;
+  document.querySelectorAll('.wx-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById('wx-iframe').src = buildWxSrc();
+}
+function wxSearch() {
+  var q = document.getElementById('wx-input').value.trim();
+  if (!q) return;
+  var latLonRe = /^(-?\d+\.?\d*),\s*(-?\d+\.?\d*)$/;
+  var m = q.match(latLonRe);
+  if (m) { wxLat = parseFloat(m[1]); wxLon = parseFloat(m[2]); wxZoom = 8; document.getElementById('wx-iframe').src = buildWxSrc(); return; }
+  var icao = q.toUpperCase();
+  if (ICAO_TABLE[icao]) { wxLat = ICAO_TABLE[icao][0]; wxLon = ICAO_TABLE[icao][1]; wxZoom = 9; document.getElementById('wx-iframe').src = buildWxSrc(); return; }
+  fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + encodeURIComponent(q) + '&count=1')
+    .then(function(r){ return r.json(); })
+    .then(function(d){ if (d.results && d.results.length > 0) { wxLat = d.results[0].latitude; wxLon = d.results[0].longitude; wxZoom = 8; document.getElementById('wx-iframe').src = buildWxSrc(); } })
+    .catch(function(){});
+}
+(function(){
+  var grp = document.getElementById('ticker-group');
+  if (grp) {
+    var clone = grp.cloneNode(true);
+    clone.id = '';
+    document.getElementById('ticker-track').appendChild(clone);
+  }
+})();
+</script>
+</body>
+</html>
