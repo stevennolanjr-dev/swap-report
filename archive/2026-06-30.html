@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE SWAP REPORT: Morning Edition, June 30, 2026</title>
+<meta property="og:title" content="THE SWAP REPORT: Morning Edition, June 30, 2026">
+<meta property="og:url" content="https://theswap.report/">
+<meta property="og:description" content="Tuesday, June 30, 2026. Day 123 of the Iran war: the strikes stay paused and US and Iran delegations head toward Qatar, but Tehran denies any formal talks are set and insists on control of Hormuz, while markets rally hard on the de-escalation. The Israel-Lebanon framework enters a contested implementation phase as CENTCOM works Beirut. Britain unveils a drone-heavy 'hybrid navy' against a reported budget gap, NATO heads to a tense Ankara summit, and the Supreme Court term winds down with executive power as the through-line.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f0e8;
+  --surface: #fffdf8;
+  --border: #d4c9b8;
+  --text: #1a1a1a;
+  --muted: #666666;
+  --accent: #8b0000;
+  --tab-inactive: #e8e2d8;
+  --tab-active: #fffdf8;
+  --header-bg: #ede8df;
+  --tab-bg: #e8e2d8;
+  --tag-bg: #8b0000;
+  --tag-text: #ffffff;
+  --watch-bg: #fff8f0;
+  --watch-border: #c8a06a;
+  --card-bg: #fffdf8;
+  --hover-bg: rgba(139,0,0,0.06);
+  --footer-bg: #ede8df;
+  --footer-text: #666666;
+}
+[data-theme="light"] {
+  --bg: #ffffff; --surface: #ffffff; --border: #e0e0e0; --text: #111111;
+  --muted: #555555; --accent: #8b0000; --tab-inactive: #f0f0f0;
+  --tab-active: #ffffff; --header-bg: #f5f5f5; --tab-bg: #eeeeee;
+  --watch-bg: #fff8f0; --watch-border: #c8a06a; --card-bg: #ffffff;
+  --hover-bg: rgba(139,0,0,0.05); --footer-bg: #f0f0f0; --footer-text: #555555;
+}
+[data-theme="dark"] {
+  --bg: #1a1a2e; --surface: #16213e; --border: #2a2a4a; --text: #e0e0e0;
+  --muted: #a0a0b0; --accent: #cc3333; --tab-inactive: #1e1e3a;
+  --tab-active: #16213e; --header-bg: #1e1e3a; --tab-bg: #1e1e3a;
+  --watch-bg: #1e1e2e; --watch-border: #8b6a3a; --card-bg: #16213e;
+  --hover-bg: rgba(204,51,51,0.08); --footer-bg: #1e1e3a; --footer-text: #a0a0b0;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: Georgia, 'Times New Roman', serif; font-size: 15px; line-height: 1.6; }
+.page { max-width: 960px; margin: 0 auto; background: var(--bg); }
+.masthead { background: var(--bg); padding: 24px 24px 16px; border-bottom: 2px solid var(--accent); display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; }
+.masthead-left { flex: 1; }
+.masthead-title { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 22px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); }
+.masthead-meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); margin-top: 4px; }
+.masthead-epigraph { font-style: italic; font-size: 13px; color: var(--muted); margin-top: 4px; font-family: Georgia, serif; }
+.theme-btns { display: flex; gap: 6px; align-items: center; padding-top: 4px; }
+.theme-btn { background: var(--tab-bg); border: 1px solid var(--border); color: var(--text); cursor: pointer; font-size: 14px; padding: 4px 8px; border-radius: 3px; }
+.theme-btn.active { background: var(--accent); color: #fff; }
+.edition-bar { background: var(--header-bg); color: var(--muted); border-bottom: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 5px 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.edition-bar a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.wx-section { padding: 12px 20px; background: var(--surface); border-bottom: 1px solid var(--border); }
+.wx-iframe { width: 100%; height: 320px; border: 1px solid var(--border); border-radius: 4px; display: block; }
+.wx-controls { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; align-items: center; }
+.wx-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 8px; border: 1px solid var(--border); background: var(--tab-bg); color: var(--text); cursor: pointer; border-radius: 3px; }
+.wx-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.wx-search { display: flex; gap: 6px; margin-bottom: 8px; }
+.wx-search input { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 3px; flex: 1; }
+.wx-search button { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 10px; background: var(--accent); color: #fff; border: none; border-radius: 3px; cursor: pointer; }
+.wx-credit { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 6px; }
+.wx-credit a { color: var(--accent); text-underline-offset: 2px; }
+.tab-bar { display: flex; background: var(--tab-bg); border-bottom: 2px solid var(--border); overflow-x: auto; padding: 0 20px; gap: 2px; }
+.tab-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 8px 14px; border: none; background: transparent; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap; transition: color 0.15s; letter-spacing: 1px; text-transform: uppercase; }
+.tab-btn:hover { color: var(--accent); }
+.tab-btn.active { color: var(--accent); background: var(--tab-active); border-bottom-color: var(--accent); }
+.tab-panel { display: none; padding: 20px; }
+.tab-panel.active { display: block; }
+.section-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 4px; margin: 20px 0 12px; }
+.section-hdr:first-child { margin-top: 0; }
+.bluf-box { background: rgba(139,0,0,0.05); border-left: 4px solid var(--accent); padding: 14px 16px; margin-bottom: 20px; border-radius: 0 4px 4px 0; }
+.bluf-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.bluf-box ul { padding-left: 18px; }
+.bluf-box li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; }
+.story { background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; padding: 12px 14px; margin-bottom: 10px; transition: background 0.15s; }
+.story:hover { background: var(--hover-bg); }
+.story-headline { font-size: 15px; font-weight: bold; line-height: 1.4; margin-bottom: 4px; }
+.story-headline a { color: var(--text); text-decoration: none; }
+.story-headline a:hover { color: var(--accent); text-decoration: underline; }
+.story-meta { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-bottom: 6px; }
+.story-synopsis { font-size: 13px; color: var(--text); line-height: 1.5; }
+.tag { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; background: var(--tag-bg); color: var(--tag-text); padding: 2px 6px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+.watch-item { background: var(--watch-bg); border-left: 3px solid var(--watch-border); padding: 10px 12px; margin-bottom: 10px; border-radius: 0 4px 4px 0; }
+.watch-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+.throughline { font-size: 13px; color: var(--text); line-height: 1.6; margin-bottom: 16px; }
+.aged-badge { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 10px; color: #fff; vertical-align: middle; margin-right: 6px; }
+.aged-green { background: #2d7a3d; }
+.aged-yellow { background: #b8860b; }
+.aged-red { background: #8b0000; }
+.ticker-wrap { background: #111; color: #e8e8e8; overflow: hidden; padding: 8px 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; white-space: nowrap; }
+.ticker-track { display: inline-block; animation: ticker-slide 90s linear infinite; will-change: transform; }
+.ticker-wrap:hover .ticker-track { animation-play-state: paused; }
+@keyframes ticker-slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; white-space: normal; display: block; } }
+.ticker-item { display: inline-block; margin: 0 18px; }
+.ticker-lbl { color: #999; font-size: 11px; }
+.ticker-val { color: #e8e8e8; font-weight: 600; }
+.ticker-sep { color: #444; margin: 0 4px; }
+.up { color: #3dcc5a; }
+.dn { color: #ff5a5a; }
+footer { background: var(--footer-bg); color: var(--footer-text); font-family: 'IBM Plex Mono', monospace; font-size: 10px; padding: 16px 24px; margin-top: 32px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+@media (max-width: 600px) { .masthead { padding: 16px; } .tab-panel { padding: 14px; } footer { flex-direction: column; } }
+</style>
+</head>
+<body data-theme="warm">
+<div style="background:#8b0000;color:#fff;padding:8px 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-align:center;">Archived edition &middot; 2026-06-30 &middot; <a href="../index.html" style="color:#fff;text-decoration:underline;">Back to today's brief</a> &middot; <a href="index.html" style="color:#fff;text-decoration:underline;">Archive index</a></div>
+
+<div class="page">
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-left">
+    <div class="masthead-title">THE SWAP REPORT</div>
+    <div class="masthead-meta">TUESDAY, JUNE 30, 2026 &nbsp;|&nbsp; MORNING EDITION</div>
+    <div class="masthead-epigraph">A ceasefire both sides describe differently is not a ceasefire yet; it is a draft. Day 123 finds the strikes stopped, the markets relieved, and the two parties still arguing over what, exactly, they agreed to stop.</div>
+  </div>
+  <div class="theme-btns">
+    <button class="theme-btn active" onclick="setTheme('warm',this)" title="Warm">&#9728;</button>
+    <button class="theme-btn" onclick="setTheme('light',this)" title="Light">&#128305;</button>
+    <button class="theme-btn" onclick="setTheme('dark',this)" title="Dark">&#9790;</button>
+  </div>
+</div>
+
+<!-- EDITION BAR -->
+<div class="edition-bar">
+  <span>Iran War Day 123: strikes stay paused and delegations head toward Qatar, but Tehran denies formal talks are set and insists on controlling Hormuz</span>
+  <span>|</span>
+  <span>Markets rally on de-escalation: S&amp;P +1.2%, NASDAQ +2.1%, oil holds near $71 WTI</span>
+  <span>|</span>
+  <span>Israel-Lebanon framework enters a contested implementation phase as CENTCOM works Beirut; UK unveils a drone-heavy "hybrid navy"; NATO heads to a tense Ankara summit</span>
+  <span>|</span>
+  <a href="https://theswap.report/">theswap.report</a>
+  <span>|</span>
+  <a href="https://theswap.report/archive/">Archive</a>
+</div>
+
+<!-- WEATHER -->
+<div class="wx-section">
+  <div class="wx-search">
+    <input type="text" id="wx-input" placeholder="Search: lat,lon or ICAO or city name" onkeydown="if(event.key==='Enter')wxSearch()">
+    <button onclick="wxSearch()">Go</button>
+  </div>
+  <div class="wx-controls">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);margin-right:4px;">LAYER:</span>
+    <button class="wx-btn active" onclick="wxLayer(this,'temperature-2m')">Temp</button>
+    <button class="wx-btn" onclick="wxLayer(this,'wind-10m')">Wind</button>
+    <button class="wx-btn" onclick="wxLayer(this,'rain-3h')">Rain</button>
+    <button class="wx-btn" onclick="wxLayer(this,'clouds')">Clouds</button>
+    <button class="wx-btn" onclick="wxLayer(this,'radar')">Radar</button>
+    <button class="wx-btn" onclick="wxLayer(this,'gust')">Gust</button>
+  </div>
+  <iframe id="wx-iframe" class="wx-iframe" src="https://www.ventusky.com/?p=37;-95;4&amp;l=temperature-2m" allowfullscreen></iframe>
+  <div class="wx-credit">Interactive weather: <a href="https://www.ventusky.com" target="_blank" rel="noopener">Ventusky</a> &nbsp;|&nbsp; Aviation: <a href="https://aviationweather.gov/data/metar/?id=KCHS&amp;taf=true" target="_blank" rel="noopener">KCHS METAR/TAF</a> (437 AW / Joint Base Charleston)</div>
+</div>
+
+<!-- TAB BAR -->
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('overview',this)">Overview</button>
+  <button class="tab-btn" onclick="showTab('defense',this)">Defense</button>
+  <button class="tab-btn" onclick="showTab('strategic',this)">Strategic</button>
+  <button class="tab-btn" onclick="showTab('domestic',this)">Domestic</button>
+  <button class="tab-btn" onclick="showTab('deepreads',this)">Deep Reads</button>
+  <button class="tab-btn" onclick="showTab('local',this)">Local</button>
+  <button class="tab-btn" onclick="showTab('lighter',this)">Lighter Fare</button>
+</div>
+
+<!-- OVERVIEW TAB -->
+<div id="tab-overview" class="tab-panel active">
+
+  <div class="bluf-box">
+    <div class="bluf-hdr">Bottom Line Up Front</div>
+    <ul>
+      <li><strong>The strikes stayed paused and both governments moved delegations toward Qatar, but Tehran denied any formal talks were scheduled and kept insisting on control of the Strait of Hormuz.</strong> Washington frames the moment as a mutual stand-down with technical talks on a memorandum to follow; Tehran frames it as no talks at all and a continued fight over the strait. When the two sides cannot agree on what they agreed to, the pause is a draft, not a deal. Monday's brief called the halt a ceasefire with the safety off; a day later the safety is still off, and the disagreement is now about the wording of the truce itself.</li>
+      <li><strong>Markets read the de-escalation as real and rallied hard: the S&amp;P rose more than one percent, the NASDAQ more than two, and oil held near $71 a barrel rather than spiking.</strong> The tape is the clearest vote that the pause is being believed, at least by capital. Equities priced relief and crude declined to panic, which tells you traders expect oil to keep moving through Hormuz even as the diplomats argue. Watch the WTI and Brent lines below: the market is pricing a strait that is contested but open, the gap between a chokepoint threatened and a chokepoint closed.</li>
+      <li><strong>The Israel-Lebanon framework signed Friday entered a contested implementation phase, with CENTCOM's commander working Beirut while analysts split sharply over whether the deal can hold.</strong> Adm. Brad Cooper met Lebanon's president and armed-forces leadership to push "the start of implementation," while outside specialists flagged the two friction points that could break it: who administers Hormuz passage, and how Hezbollah disarmament gets sequenced. A veteran Middle East hand called the framework a once-in-a-generation opening; others called it incompatible with the parallel Iran memorandum. The same text is being read as peace and as a trap, which is the surest sign the hard part has not started.</li>
+      <li><strong>Britain unveiled a drone-heavy "hybrid navy" against a reported budget gap, and NATO headed toward a tense Ankara summit, as Europe keeps recalibrating around a less certain America.</strong> London's Defence Investment Plan bets on autonomous vessels and uncrewed systems over a handful of exquisite hulls, the cost-curve logic an adversary uses to tax a chokepoint, now turned into allied force design. The Ankara summit and a wave of European rearmament reporting share one premise: allies are planning for the possibility that US commitment cannot be assumed. The contest for who guarantees what is being renegotiated in public.</li>
+      <li><strong>At home, the Supreme Court term wound toward its close with executive power as the through-line, and Speaker Johnson moved to attach the SAVE America Act to the must-pass defense bill.</strong> The Court handed down a mixed set of rulings on presidential authority as the term's marquee questions resolved, and on the Hill the NDAA again became the vehicle for unrelated policy, this time an election-law rider that hardliners and leadership are still negotiating. Two branches, one pattern: the rules that govern who decides what are being rewritten through the year's least glamorous procedural fights.</li>
+    </ul>
+  </div>
+
+  <div class="section-hdr">The Through-Line</div>
+  <p class="throughline">Day 123 is the day the war becomes a dispute over its own punctuation. The strikes are stopped, the delegations are moving, and the markets have decided to believe it, yet the two governments cannot agree on whether talks even exist, and the strait remains the thing the diplomats keep talking around rather than resolving. That gap, between a pause both sides claim and a deal neither will define, is where this conflict now lives: not in the next strike package but in the wording, the sequencing, and the question of who administers the passage that started the fight. The Lebanon framework shows the same shape one theater over, signed in Washington, read three different ways in Beirut and Jerusalem and Tehran, and entering an implementation phase that depends on disarming a militia no signatory can compel. Abroad, allies are not waiting to find out how it ends; Britain is buying a cheaper, more distributed fleet and Europe is rehearsing a future where Washington's guarantee is conditional. At home, the institutions that set the next decade's terms, a Court ruling on how far a president's authority runs, a Congress bending its one must-pass bill to carry an election-law fight, are being reordered in the same quiet, procedural register. The connective fact is calibration: everywhere on the desk, the action has moved from force to terms, and the terms are where the advantage now gets won or lost.</p>
+
+  <div class="section-hdr">How It Aged</div>
+  <p class="throughline"><span class="aged-badge aged-green">Aged Well</span> June 29 call: "The pause is real and worth taking seriously, but the structure of it is fragile by design. The bargain holds only as long as each side prefers the table to the next strike." Verdict: holding, and the fragility showed up exactly where flagged. A day later the strikes are still paused and the markets rallied on it, which is the better-than-feared path. But Tehran's public denial that any formal talks are scheduled, set against Washington's "technical talks to follow," is the fragility made literal: the two sides cannot yet agree they are negotiating. Lesson: "prefers the table to the next strike" remains the right test, and so far both still do; the new uncertainty is not whether they will fire but whether they will sit, and the answer is still being argued in public. The discipline holds: do not read a pause both sides describe differently as a settlement.</p>
+
+</div>
+
+<!-- DEFENSE TAB -->
+<div id="tab-defense" class="tab-panel">
+
+  <div class="section-hdr">The Pause and Its Contested Terms</div>
+
+  <div class="story">
+    <span class="tag">CENTCOM</span><span class="tag">Iran</span>
+    <div class="story-headline"><a href="https://foreignpolicy.com/2026/06/29/us-iran-talks-qatar-strait-hormuz-attacks-oman/" target="_blank" rel="noopener">US and Iran prepare for talks on the Strait of Hormuz</a></div>
+    <div class="story-meta">Foreign Policy &middot; cross-corroborated</div>
+    <div class="story-synopsis">Washington and Tehran moved delegations toward Qatar for talks scoped narrowly to the Strait of Hormuz, after agreeing to stand down on strikes and let vessels move while a technical memorandum is worked. Tehran, for its part, publicly insisted no formal talks were planned and reiterated its claim to control of the strait, per cross-source coverage. <strong>The take:</strong> the agenda is the whole story. Talks scoped to "freedom of navigation" rather than the regime or the nuclear question mean both sides are negotiating the toll on the strait, not the war's end. And the gap between Washington's "technical talks to follow" and Tehran's "nothing is scheduled" is not noise; it is the bargaining. Iran has learned that the credible refusal to confirm a negotiation is itself leverage, a way to keep the pressure of resumption alive while pocketing the pause. The pause is real. The deal it is supposed to lead to does not yet exist in any form both parties will describe the same way.</div>
+  </div>
+
+  <div class="story" data-unsourced="intentional">
+    <span class="tag">CENTCOM</span><span class="tag">Lebanon</span>
+    <div class="story-headline">CENTCOM commander works Beirut to start framework implementation</div>
+    <div class="story-meta">Institutional posture / open-source tracking &middot; single source, tracking</div>
+    <div class="story-synopsis">Open-source institutional reporting indicates the CENTCOM commander, Adm. Brad Cooper, met Lebanon's president and armed-forces leadership and visited Israel to push the start of implementation of the framework signed in Washington on Friday, with more than 50,000 US service members still in the region. <strong>The take:</strong> the official line of "start of implementation" is doing a lot of work against a deal whose two hardest questions are unresolved. The on-the-ground engagement is the right move, a four-star spending his presence on the parties who actually have to enforce the terms, but presence is not sequencing. The framework's viability rides on whether Hezbollah disarmament can be ordered in a way Beirut can deliver and Jerusalem will accept, and no amount of shuttle diplomacy substitutes for an answer to that. Watch whether implementation produces a concrete first step or just a schedule of further meetings; the difference is the difference between a peace and a holding pattern.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Markets</span><span class="tag">Hormuz</span>
+    <div class="story-headline"><a href="https://www.themoscowtimes.com/2026/06/30/2-killed-in-ukrainian-drone-attacks-across-russia-a93125" target="_blank" rel="noopener">Risk premiums ease as the strait stays open even amid the wider drone fight</a></div>
+    <div class="story-meta">Cross-source market read &middot; analysis</div>
+    <div class="story-synopsis">Equities rallied and oil held near $71 WTI as the de-escalation reports landed, with traders pricing a Hormuz that is contested but functional rather than closed, even as the broader theater stayed kinetic and drone exchanges continued elsewhere. <strong>The take:</strong> the tape is the most honest vote in the brief. Capital does not care about communiqués; it prices outcomes, and a more-than-one-percent equity rally with crude declining to spike says the market expects oil to keep flowing through the strait. That is a meaningful signal against the most alarmist reads, but it is not a clean all-clear: war-risk insurance and the mine question move on a slower clock than the futures market, and the premium can re-widen on a single incident. For now the market read is de-escalation believed, chokepoint open, and that read is doing more to stabilize the picture than anything said at a podium.</div>
+  </div>
+
+  <div class="section-hdr">Force, Systems, and the Building</div>
+
+  <div class="story">
+    <span class="tag">USMC</span><span class="tag">Autonomy</span>
+    <div class="story-headline"><a href="https://www.defenseone.com/business/2026/06/marine-corps-inks-first-contract-autonomous-ground-vehicle-production/414517/" target="_blank" rel="noopener">Marine Corps inks first contract for autonomous ground vehicle production</a></div>
+    <div class="story-meta">Defense One / Military Times &middot; cross-corroborated</div>
+    <div class="story-synopsis">The Marine Corps awarded its first production contract for autonomous ground vehicles, a roughly $20 million deal that moves uncrewed logistics and reconnaissance platforms from experiment toward fielded capability, per Defense One and Military Times. <strong>The take:</strong> this is the cheap-and-many bet arriving in the ground force, and it rhymes with everything else on the desk. The Corps has spent years redesigning itself around distributed operations inside a contested littoral, and autonomous vehicles are how you sustain dispersed units without exposing crewed convoys to fires. The contract is small, deliberately: it is a production toe in the water, not a fleet. The question that matters is whether the program scales and integrates, because an autonomous vehicle that cannot talk to the units it supports is a science project. Read it as a concrete down payment on the doctrine the whole service has been writing.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">USAF</span><span class="tag">Anti-Ship</span>
+    <div class="story-headline"><a href="https://www.twz.com/air/air-force-discloses-b-2-can-launch-stealth-anti-ship-missiles-in-surprise-announcement" target="_blank" rel="noopener">Air Force discloses the B-2 can launch stealth anti-ship missiles</a></div>
+    <div class="story-meta">The War Zone &middot; single source</div>
+    <div class="story-synopsis">The Air Force disclosed, in what The War Zone called a surprise announcement, that the B-2 stealth bomber can carry and launch stealth anti-ship missiles, extending the platform's reach into the maritime-strike mission. <strong>The take:</strong> the disclosure is the signal, and the audience is in Beijing. The B-2 already gives the US a long-range, survivable way to reach defended targets; adding a confirmed anti-ship role turns a strategic bomber into a maritime-denial asset that can hold an adversary's surface fleet at risk from standoff range. The timing of a "surprise announcement" is rarely accidental, deterrence works only if the other side knows the capability exists, so choosing to reveal it is a message about the Pacific contingency, not the Gulf. The B-21 is coming; in the meantime the existing stealth fleet is being advertised as more lethal against ships than the adversary may have assumed.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">USAF</span><span class="tag">AI</span>
+    <div class="story-headline"><a href="https://www.airandspaceforces.com/new-ai-agent-network-intel-strike-packages/" target="_blank" rel="noopener">New AI "agent network" could gather intel faster for strike packages</a></div>
+    <div class="story-meta">Air and Space Forces Magazine &middot; single source</div>
+    <div class="story-synopsis">Air and Space Forces Magazine reported on an AI "agent network" intended to pull intelligence together faster for building strike packages, compressing a process that traditionally consumes hours of analyst time. <strong>The take:</strong> speed is the promise and the whole risk, the same tension that ran through this week's targeting-AI reporting. An agent network that assembles the intelligence picture faster shortens the kill chain against an adversary that hides and moves, which is exactly the edge the force wants. The hard question is what judgment survives the compression: a tool that builds a strike package "faster" only helps if the humans still have the time and information to interrogate it rather than ratify it. The Gulf this week is a live argument for faster decision loops and a live argument for keeping a person genuinely in the loop. The technology keeps arriving ahead of the doctrine for governing it.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Romania</span><span class="tag">Air Defense</span>
+    <div class="story-headline"><a href="https://breakingdefense.com/2026/06/romania-buys-spyder-air-defense-system-as-part-of-largest-deal-in-rafael-history-ceo-says/" target="_blank" rel="noopener">Romania buys Spyder air defense in the largest deal in Rafael's history, CEO says</a></div>
+    <div class="story-meta">Breaking Defense &middot; single source</div>
+    <div class="story-synopsis">Romania agreed to buy the Spyder air-defense system in what the Israeli manufacturer Rafael's chief executive described as the largest deal in the company's history, per Breaking Defense. <strong>The take:</strong> the eastern-flank rearmament is real and it is moving money, and the buyer list tells the strategic story. A NATO frontline state spending big on layered air defense is exactly what the alliance has been demanding since 2022, and the size of the contract signals that the Russian-threat reading has translated from rhetoric into procurement. The Israeli-supplier angle is the quiet wrinkle: as Europe rearms faster than its own industry can supply, non-US, non-European vendors capture share, and air defense, where demand has outrun production across every theater, is where that pull is strongest. The deal is one more data point that the missile-and-interceptor base is the binding constraint of the moment, and the buyers know it.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">USN</span><span class="tag">Fleet Tracker</span>
+    <div class="story-headline"><a href="https://news.usni.org/2026/06/29/usni-news-fleet-and-marine-tracker-june-29-2026" target="_blank" rel="noopener">USNI News Fleet and Marine Tracker: June 29, 2026</a></div>
+    <div class="story-meta">USNI News &middot; reference</div>
+    <div class="story-synopsis">USNI News published its weekly accounting of where US carrier strike groups, amphibious ready groups, and major formations are operating, the standing baseline for reading naval posture, per USNI. <strong>The take:</strong> the fleet tracker is the brief's reality check against the headlines. The Gulf dominates the narrative, but the tracker shows the global distribution that the narrative flattens, the carriers and amphibs spread across theaters, the deployments that continue regardless of which crisis owns the news cycle. It is the document that reveals how thin the force is spread when several regions demand presence at once, and it is the honest counterweight to any story that treats one theater as the whole Navy. Read it as the map underneath the week: the surge to one crisis is always a subtraction from somewhere else, and the tracker is where that arithmetic shows.</div>
+  </div>
+
+</div>
+
+<!-- STRATEGIC TAB -->
+<div id="tab-strategic" class="tab-panel">
+
+  <div class="section-hdr">The Framework and Its Friction</div>
+
+  <div class="story">
+    <span class="tag">Israel</span><span class="tag">Gaza</span>
+    <div class="story-headline"><a href="https://www.aljazeera.com/video/newsfeed/2026/6/30/video-at-least-two-killed-and-hundreds-displaced-in-israeli-attack-on-gaza?traffic_source=rss" target="_blank" rel="noopener">At least two killed and hundreds displaced in an Israeli attack on Gaza</a></div>
+    <div class="story-meta">Al Jazeera &middot; single source</div>
+    <div class="story-synopsis">Al Jazeera reported an Israeli strike on Gaza that killed at least two people and displaced hundreds, a reminder that the broader conflict continues even as the Lebanon framework and the Iran pause draw the diplomatic attention. <strong>The take:</strong> the Gaza front is the part of the picture the framework diplomacy does not touch, and its persistence is the strategic caveat to every de-escalation headline this week. A memorandum on Hormuz and a framework on Lebanon can quiet two theaters while a third keeps generating casualties and displacement, which is the structural feature of a regional war fought through several proxies and fronts at once: settling one does not settle the system. For Washington, the contradiction is hard to manage, brokering frameworks in Beirut while the Gaza operations continue undercuts the claim to be lowering the regional temperature. The fronts are connected in the politics even when they are separate in the diplomacy.</div>
+  </div>
+
+  <div class="story" data-unsourced="intentional">
+    <span class="tag">Lebanon</span><span class="tag">Hezbollah</span>
+    <div class="story-headline">Analysts split on the Lebanon framework: once-in-a-generation opening, or incompatible with the Iran deal</div>
+    <div class="story-meta">Individual analysts / institutional commentary &middot; cross-corroborated, OSINT</div>
+    <div class="story-synopsis">Specialists tracking the Friday framework divided sharply. One veteran Middle East hand published a detailed assessment calling it a once-in-a-generation opportunity to build real Israel-Lebanon security; others argued the deal's demands on Hezbollah disarmament clash with the sovereignty and de-escalation logic of the parallel US-Iran memorandum, with both sides imposing incompatible readings through calibrated force. <strong>The take:</strong> when seasoned analysts read the same text as a breakthrough and as a trap, the honest conclusion is that the text is genuinely ambiguous and the outcome will be decided by behavior, not language. The optimistic case rests on a Lebanese state willing and able to deliver disarmament; the skeptical case rests on the observation that no such state has existed for a generation. The two friction points, who administers Hormuz passage and how Hezbollah disarmament is sequenced, are the whole game. A framework that cannot answer them is a pause with a signing ceremony, and the coming weeks will show which reading the parties make true.</div>
+  </div>
+
+  <div class="section-hdr">Europe Rearms, the Alliance Recalibrates</div>
+
+  <div class="story">
+    <span class="tag">UK</span><span class="tag">Hybrid Navy</span>
+    <div class="story-headline"><a href="https://breakingdefense.com/2026/06/in-defence-investment-plan-preview-britain-bets-big-on-drones-hybrid-navy/" target="_blank" rel="noopener">In Defence Investment Plan preview, Britain bets big on drones and a "hybrid" navy</a></div>
+    <div class="story-meta">Breaking Defense &middot; single source</div>
+    <div class="story-synopsis">Britain previewed a Defence Investment Plan built around drones, autonomous vessels, and a "hybrid navy" mixing crewed control hubs with new classes of uncrewed warships, against reporting of a multibillion-pound budget gap and a nine-month delay that strained the supply base. <strong>The take:</strong> this is the cost-curve argument arriving in an allied shipbuilding plan. The bet is that resilience through numbers and cheap attritable hulls beats a handful of exquisite platforms, the same logic an adversary uses to tax a chokepoint, now turned into Western force design. The promise is affordability and mass; the peril is that "hybrid navy" is also the phrase a treasury reaches for when it cannot afford the old fleet and needs a doctrine to justify buying less. Interoperability with the US and NATO in the North Atlantic is the variable to watch, because a distributed, drone-centric Royal Navy changes what the alliance can mass. Whether this is genuine innovation or budget-driven necessity dressed as strategy is the question the preview does not answer.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">NATO</span><span class="tag">Ankara</span>
+    <div class="story-headline"><a href="https://foreignpolicy.com/2026/06/29/nato-trump-erdogan-ankara-summit-europe-defense-russia/" target="_blank" rel="noopener">Can NATO pull off a dull summit?</a></div>
+    <div class="story-meta">Foreign Policy &middot; analysis</div>
+    <div class="story-synopsis">Foreign Policy previewed the NATO summit in Ankara, where the alliance hopes a deliberately low-drama agenda can paper over real tensions among Washington, Ankara, and the European members over spending, Russia, and the durability of the US commitment. <strong>The take:</strong> "can they pull off a dull summit" is the right question and a revealing one. An alliance that aspires to boredom is an alliance managing internal strain, and the strain is structural: a US pressing allies on spending and reviewing its European footprint, a host in Ankara with its own agenda, and European members trying to lock in commitments before the political weather shifts. The eastern-flank states want concrete deterrence steps; the leadership wants no headlines. The tell will be whether the summit produces real burden-sharing commitments or just a communiqu&eacute; smooth enough to avoid a fight. A boring summit would, paradoxically, be the successful one.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Europe</span><span class="tag">Autonomy</span>
+    <div class="story-headline"><a href="https://www.atlanticcouncil.org/in-depth-research-reports/issue-brief/europes-no-panic-playbook-for-a-radically-different-us-foreign-policy/" target="_blank" rel="noopener">Europe's no-panic playbook for a radically different US foreign policy</a></div>
+    <div class="story-meta">Atlantic Council &middot; analysis</div>
+    <div class="story-synopsis">An Atlantic Council issue brief lays out how European capitals can adapt methodically, rather than reactively, to a US foreign policy they can no longer assume will look the way it did, recommending steps to build capability and coordination without rupturing the alliance. <strong>The take:</strong> the "no panic" framing is the useful part, because it reframes the year's transatlantic anxiety as a planning problem rather than a crisis. The brief's premise, that European autonomy is now a necessity to hedge rather than a French aspiration to debate, is the consensus that has quietly hardened across the continent. The optimistic read is a stronger, more capable Europe that shares the load; the pessimistic read is a fragmented West hedging in different directions and giving adversaries seams. The document is worth reading as the calm, institutional version of a shift that, if real, outlasts any single administration and redraws the map of who guarantees what.</div>
+  </div>
+
+  <div class="section-hdr">The Wider Board</div>
+
+  <div class="story">
+    <span class="tag">EU</span><span class="tag">China</span>
+    <div class="story-headline"><a href="https://www.aljazeera.com/economy/2026/6/30/eu-gets-tough-on-china-as-trade-imbalance-stokes-deindustrialisation-fears?traffic_source=rss" target="_blank" rel="noopener">EU gets tough on China as the trade imbalance stokes deindustrialisation fears</a></div>
+    <div class="story-meta">Al Jazeera &middot; single source</div>
+    <div class="story-synopsis">The European Union hardened its line on China, seeking tangible results on the trade deficit by October amid fears that the imbalance is accelerating European deindustrialisation, per Al Jazeera. <strong>The take:</strong> Europe's China problem is becoming an industrial-survival problem, and that changes the politics. For years the EU treated the trade deficit as a grievance to manage; framing it now as a deindustrialisation threat moves it into the same security-economics category where Washington already files it. The convergence matters: a transatlantic bloc that increasingly agrees China's industrial overcapacity is a strategic, not merely commercial, challenge is a precondition for any coordinated response. The hard part is that Europe needs the Chinese market even as it fears Chinese exports, the same bind Japan is in, and Beijing knows it. Watch whether the October deadline produces leverage or just a deadline.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">China</span><span class="tag">Arms Exports</span>
+    <div class="story-headline"><a href="https://www.scmp.com/news/china/military/article/3358894/should-china-worry-more-about-keeping-defence-customers-winning-new-deals?utm_source=rss_feed" target="_blank" rel="noopener">Should China worry more about keeping defence customers than winning new deals?</a></div>
+    <div class="story-meta">South China Morning Post &middot; analysis</div>
+    <div class="story-synopsis">The South China Morning Post examined whether China's defense-export push, strong on winning new buyers across the Global South, faces a harder challenge in retaining customers who need sustained parts, training, and support. <strong>The take:</strong> the after-sale problem is the real measure of arms-export power, and it is where China's drive meets its first serious test. Winning a contract is the easy part; the leverage and the lock-in come from the decades of spares, technicians, and upgrades that follow, and that is exactly the muscle Western and Russian suppliers built over generations. If Beijing cannot sustain what it sells, its export surge buys market share without buying the dependency that makes arms sales a strategic instrument. The question SCMP poses is the right one: China is learning that the durable form of defense-export influence is logistics, not the sale, and the customers it is courting will judge it on whether the support shows up.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Russia</span><span class="tag">Ukraine</span>
+    <div class="story-headline"><a href="https://www.japantimes.co.jp/commentary/2026/06/30/world/war-tide-turning-against-russia/" target="_blank" rel="noopener">Is the tide turning against Russia in Ukraine?</a></div>
+    <div class="story-meta">The Japan Times &middot; commentary</div>
+    <div class="story-synopsis">A Japan Times commentary weighs whether the cumulative effect of Ukrainian deep strikes, Russian fuel shortages, and battlefield attrition is shifting the war's momentum, as overnight Ukrainian drone raids continued to reach into Russian territory. <strong>The take:</strong> the "is the tide turning" question is worth treating with discipline, because it is exactly the kind of claim that has been wrong repeatedly in this war. The honest read is that the deep-strike campaign is imposing real, cumulative costs, the fuel shortages are genuine and Moscow has admitted them, but cumulative pressure is not the same as decisive shift, and Russia has absorbed worse without folding. The cheap-precision-against-fixed-infrastructure lever is the same one that runs through the Gulf on this desk: it taxes and degrades without delivering a knockout. The piece is useful for the question; the answer should stay provisional. Tides turn slowly, and the ones that look decisive in commentary often look incremental in retrospect.</div>
+  </div>
+
+</div>
+
+<!-- DOMESTIC TAB -->
+<div id="tab-domestic" class="tab-panel">
+
+  <div class="section-hdr">From the Federal Register</div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Executive Action</div>
+    <div class="story-synopsis">The lead item from the June 29 to 30 window is a new executive order, <a href="https://www.federalregister.gov/documents/2026/06/30/2026-13254/advancing-regenerative-agriculture-and-strengthening-american-farm-resilience" target="_blank" rel="noopener">Advancing Regenerative Agriculture and Strengthening American Farm Resilience</a>, directing federal agencies to prioritize soil health, supply-chain resilience, and farm-sector durability. Treasury also posted a <a href="https://www.federalregister.gov/documents/2026/06/30/2026-13102/notice-of-ofac-sanctions-action" target="_blank" rel="noopener">Notice of OFAC Sanctions Action</a>, the item with the clearest national-security read given the Iran and Gulf backdrop; the Office of Foreign Assets Control docket is worth tracking through the de-escalation. The remainder of the window was routine agency information-collection, funding-opportunity, and rulemaking notices across Treasury, Justice, Homeland Security, and State.</div>
+  </div>
+
+  <div class="section-hdr">The Court and the Congress</div>
+
+  <div class="story">
+    <span class="tag">SCOTUS</span><span class="tag">Executive Power</span>
+    <div class="story-headline"><a href="https://www.cbsnews.com/news/alaska-dan-sullivan-gop-primary-ballot/" target="_blank" rel="noopener">Courts and the ballot: a primary-eligibility ruling as the legal season runs hot</a></div>
+    <div class="story-meta">CBS News &middot; single source</div>
+    <div class="story-synopsis">As the Supreme Court's term wound toward its close with executive power as the connective theme, lower courts kept handing down consequential election rulings, including a decision allowing a second Dan Sullivan to appear on Alaska's Senate primary ballot, per CBS News. <strong>The take:</strong> the marquee constitutional questions are resolving at the top while the workaday machinery of election law churns below, and both matter. The Supreme Court term is becoming a referendum on how far presidential authority runs and how much the judiciary will check it; the pattern worth watching is procedural as much as substantive, whether the Court keeps narrowing who can challenge executive action. Meanwhile the down-ballot litigation, ballot eligibility, primary rules, redistricting, is where the 2026 cycle actually gets shaped. The headline rulings set the constitutional frame; the quieter cases set who is on the ballot. Both are being decided in the same hot legal summer.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Congress</span><span class="tag">NDAA</span>
+    <div class="story-headline"><a href="https://thehill.com/homenews/house/5946645-speaker-johnson-save-america-ndaa/" target="_blank" rel="noopener">Johnson announces a gambit to attach the SAVE America Act to the must-pass defense bill</a></div>
+    <div class="story-meta">The Hill &middot; cross-corroborated</div>
+    <div class="story-synopsis">Speaker Mike Johnson moved to attach the House-passed SAVE America Act, an election-law measure, to the National Defense Authorization Act, with a <a href="https://thehill.com/homenews/house/5946718-save-america-act-ndaa-merger/" target="_blank" rel="noopener">key panel advancing the merger plan</a> even as hardliners pressed their own concerns, per The Hill. <strong>The take:</strong> the NDAA is once again the vehicle for unrelated policy, and the maneuver is a clean illustration of how narrow majorities legislate. Leadership uses the one bill that cannot fail, the annual defense authorization, to carry riders that could not pass on their own, betting that no one will sink the troops' funding over an attached fight. The risk is the same every year: load the must-pass bill heavily enough and it stops being must-pass. For a defense-focused reader, the substance worth tracking is whether the authorization itself, force structure, end strength, procurement, gets shortchanged in the horse-trading over the rider. The election-law fight is the headline; the defense policy is the thing actually being authorized.</div>
+  </div>
+
+  <div class="section-hdr">Campaigns and the States</div>
+
+  <div class="story">
+    <span class="tag">2026</span><span class="tag">Primaries</span>
+    <div class="story-headline"><a href="https://www.nbcnews.com/politics/2026-election/colorados-primaries-present-test-democratic-establishment-rcna351628" target="_blank" rel="noopener">Colorado's primaries present the next test for the Democratic establishment</a></div>
+    <div class="story-meta">NBC News &middot; single source</div>
+    <div class="story-synopsis">Colorado's primaries served as the latest test of the contest between the Democratic establishment and its insurgent left, part of a 2026 cycle in which intra-party fights are shaping the field as much as the general-election matchups, per NBC News. <strong>The take:</strong> the primary season's intra-party battles are the leading indicator of where each coalition is heading, and Colorado is a useful gauge. The establishment-versus-insurgent framing can be overdone, but the underlying question is real: which faction's theory of how to win, and how to govern, sets the party's direction into the general election. These contests decide not just nominees but the ideological center of gravity each party carries into November. For a reader tracking the strategic picture, the domestic politics are not a sideshow to the foreign-policy desk; the coalition that wins these fights writes the next defense budget and sets the next administration's posture. The primaries are where that gets decided first.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">States</span><span class="tag">Guard</span>
+    <div class="story-headline"><a href="https://www.npr.org/2026/06/29/nx-s1-5875427/michigan-governor-national-guard-dc" target="_blank" rel="noopener">Michigan governor threatens to pull troops from D.C. if used for a Trump task force</a></div>
+    <div class="story-meta">NPR &middot; single source</div>
+    <div class="story-synopsis">Michigan's governor threatened to withdraw the state's National Guard troops from a Washington deployment if they were used for a federal task force, the latest friction over control of Guard forces between governors and the administration, per NPR. <strong>The take:</strong> the Guard-control fight is a genuine federalism question wearing the costume of a political spat. The National Guard's dual state-federal status has always been a workable ambiguity; it becomes a constitutional pressure point when a governor and a president disagree about what the troops are for. A governor threatening to pull forces is asserting that the state's claim on its Guard is not merely ceremonial, and the dispute previews a harder one if domestic deployments expand. For a military reader, the institutional stakes are real: the Guard's effectiveness depends on a chain of command that both levels of government respect, and public threats to yank units strain exactly that. Watch whether this stays rhetorical or becomes a test case.</div>
+  </div>
+
+  <div class="section-hdr">Macro Dashboard</div>
+  <p class="throughline">Fed funds rate 3.63%, unchanged. The yield curve held: 10-year UST 4.38% and 2-year 4.07%. Headline CPI index 334.0 and core CPI 336.1; the PCE price index reads 131.5. Unemployment holding at 4.3%. Initial jobless claims at 215,000, near the improved level of recent weeks. Industrial production 102.6. The dollar against the euro at 1.1403. Data via FRED; see the ticker below for live market levels, which rallied on the Iran de-escalation.</p>
+
+</div>
+
+<!-- DEEP READS TAB -->
+<div id="tab-deepreads" class="tab-panel">
+
+  <div class="section-hdr">The Adversary's Constraints</div>
+
+  <div class="story" data-unsourced="intentional">
+    <span class="tag">RAND</span><span class="tag">PLAN</span>
+    <div class="story-headline">The PLA Navy's maintenance bottleneck behind the shipbuilding pace</div>
+    <div class="story-meta">RAND Corporation research report &middot; OSINT, single source</div>
+    <div class="story-synopsis">A RAND research report, "The People's Liberation Army Navy's Approach to Maintenance Management," argues that the rapid growth of the PLAN strains its maintenance infrastructure and fleet readiness: series production of identical hull classes streamlines parts logistics, but organic shipboard maintenance units remain dependent on shore-based echelons for complex repairs, and high operational tempo in the Eastern Theater Command will force a hybrid model that prioritizes front-line hulls while cannibalizing or retiring older variants. <strong>The take:</strong> this is the single most useful corrective to the hull-counting that dominates coverage of the Chinese navy. Fleet expansion does not equal sustained power projection; a navy is only as deployable as its ability to keep ships repaired and at sea, and the maintenance tail is where the PLAN's growth meets physics. The strategic insight worth keeping is that the truer measure of Chinese readiness is shore-based shipyard throughput and maintainer exhaustion, not the number of hulls launched. A fleet that grows faster than it can sustain itself has a ceiling the order-of-battle charts do not show. Read it as the structural counterweight to the threat-inflation the raw numbers invite. Citation: RAND Corporation.</div>
+  </div>
+
+  <div class="story" data-unsourced="intentional">
+    <span class="tag">RAND</span><span class="tag">Biosecurity</span>
+    <div class="story-headline">The Texas screwworm cases as a biosecurity wake-up call</div>
+    <div class="story-meta">RAND Corporation commentary &middot; OSINT, single source</div>
+    <div class="story-synopsis">A RAND commentary examines the biosecurity implications of the June 2026 confirmation of the New World screwworm in Texas livestock, a flesh-eating parasite eradicated from the country six decades ago, and argues that current federal monitoring infrastructure is ill-prepared for sudden agricultural re-infestations or deliberate biological disruption of the livestock sector. <strong>The take:</strong> agricultural defense is the national-security domain almost nobody budgets for until it bites, and the screwworm's return is a low-drama warning that belongs on a strategic desk. The food supply is critical infrastructure, and the same monitoring gaps that let a known, eradicated parasite re-establish are the gaps an adversary could exploit deliberately. The commentary's value is that it treats livestock biosecurity as a homeland-security pillar rather than a USDA niche, which is the right altitude. The connective point to the rest of the brief: the cheap, asymmetric threat, a parasite, a mine, a drone, keeps proving that the expensive, exquisite force is not where the next vulnerability lives. Read it as a reminder that resilience is built in the unglamorous places. Citation: RAND Corporation.</div>
+  </div>
+
+  <div class="section-hdr">Competition and the Industrial Base</div>
+
+  <div class="story">
+    <span class="tag">War on the Rocks</span><span class="tag">China</span>
+    <div class="story-headline"><a href="https://warontherocks.com/lost-in-translation-how-a-premier-chinese-think-tank-views-u-s-chinese-competition/" target="_blank" rel="noopener">Lost in translation: how a premier Chinese think tank views US-China competition</a></div>
+    <div class="story-meta">War on the Rocks &middot; analysis</div>
+    <div class="story-synopsis">War on the Rocks reads a leading Chinese think tank's framing of the competition with the United States, surfacing how Beijing's own analysts describe the contest in terms that often differ markedly from how Washington imagines they do. <strong>The take:</strong> the most common strategic error is assuming the adversary sees the contest the way you do, and this piece is an antidote. Reading how a premier Chinese institution actually frames the competition, its assumptions about US decline, its theory of where the leverage lies, is worth more than another assessment of Chinese capabilities, because intentions and self-perception drive behavior in ways hardware does not. The value is in the gaps: where Beijing's analysts are confident and Washington assumes anxiety, or vice versa, is where miscalculation lives. For a reader trying to think past the order-of-battle, this is the rarer and more useful input, the mirror held up to how the other side reasons. Worth reading slowly.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">War on the Rocks</span><span class="tag">Drones</span>
+    <div class="story-headline"><a href="https://warontherocks.com/cogs-of-war/at-a-glance-american-quadcopter-component-manufacturing/" target="_blank" rel="noopener">At a glance: American quadcopter component manufacturing</a></div>
+    <div class="story-meta">War on the Rocks &middot; analysis</div>
+    <div class="story-synopsis">A War on the Rocks "Cogs of War" piece maps the state of American quadcopter component manufacturing, the unglamorous supply-chain question underneath every headline about drone warfare. <strong>The take:</strong> the drone-war story everyone tells is about effects, cheap aircraft taxing ships and refineries; the story that decides who wins is about components, and this piece tells that one. Ukraine and the Middle East have proven the tactical value of cheap uncrewed systems; the strategic question is whether the US can build the motors, flight controllers, and airframes at scale without depending on the same Chinese supply chain it is trying to compete against. The cheap-and-many doctrine is only as real as the domestic industrial base that feeds it, and right now that base is thin in exactly the components that matter. Read it as the supply-side companion to the Marine autonomous-vehicle contract on the Defense desk: the doctrine is set; the manufacturing is the open question.</div>
+  </div>
+
+</div>
+
+<!-- LOCAL TAB -->
+<div id="tab-local" class="tab-panel">
+
+  <div class="section-hdr">Joint Base Charleston / 437 AW</div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Watch: 437 AW / 315 AW</div>
+    <div class="story-synopsis">The 437th Airlift Wing (host) and 315th Airlift Wing (reserve associate) remain at steady-state operations, with no new Joint Base Charleston-specific announcements in the window and no notable airfield NOTAMs surfacing on tracking accounts. The operative context stays upstream: as the Venezuela earthquake relief mission shifts from rescue toward recovery and Middle East tempo continues, the strategic-airlift demand that runs through the Globemaster enterprise stays elevated. The steady-state label describes the home station, not the mission, which remains busy across the C-17 fleet the Lowcountry's host wing helps carry.</div>
+  </div>
+
+  <div class="section-hdr">Lowcountry News</div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Charleston &middot; Carolina Day Weekend</div>
+    <div class="story-synopsis">Carolina Day programming anchors the Lowcountry calendar this week, marking the Battle of Sullivan's Island with harbor sails, living-history demonstrations, and a Saturday drone show at the U.S. Custom House steps, with events across the area running into the Independence Day stretch. The semiquincentennial gives Charleston an unusually direct claim on the founding story this summer, and Fort Moultrie and the harbor sit at the center of it. Plain-text attribution: Explore Charleston, Post and Courier.</div>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Charleston &middot; Downtown Dining</div>
+    <div class="story-synopsis">On the peninsula, the downtown restaurant Magnolias remained closed through July 1 after a small fire on June 26, with reports indicating it should reopen in time for Fourth of July weekend, a brief disruption to one of the area's better-known dining rooms. The connective thread across the local beat this week is a region pivoting into the holiday-and-anniversary stretch: heavy event programming, steady summer foot traffic, and the usual Lowcountry rhythm of festivals layered over everyday life. Plain-text attribution: Holy City Sinner, Post and Courier.</div>
+  </div>
+
+  <div class="section-hdr">Food</div>
+
+  <div class="story" data-unsourced="intentional">
+    <span class="tag">Charleston</span><span class="tag">Now Open</span>
+    <div class="story-headline">Luther's Market opens downtown with fresh pasta, sauces, and grab-and-go meals</div>
+    <div class="story-meta">Post and Courier food &middot; plain-text attribution, tracking</div>
+    <div class="story-synopsis">A new grab-and-go market, Luther's Market, opened in Charleston selling freshly made pasta, sauces, spices, and prepared meals, an Italian-leaning addition to the downtown food scene aimed at quick weekend dining without a reservation. <strong>The note:</strong> the steady churn of openings is the healthiest signal a food town gives off, and a fresh-pasta market scratches the specific itch between a full sit-down dinner and cooking from scratch. It slots neatly into a holiday week when downtown is busy and a reservation is hard to come by. Charleston's reputation rests on its marquee kitchens, but the everyday infrastructure, the markets, the takeaway counters, the places you actually use on a Tuesday, is what makes a food city livable rather than just visitable. Plain-text attribution: Post and Courier.</div>
+  </div>
+
+  <div class="story" data-unsourced="intentional">
+    <span class="tag">Charleston</span><span class="tag">Markets</span>
+    <div class="story-headline">Hampton Park's Wednesday farmers market continues through the summer</div>
+    <div class="story-meta">Explore Charleston &middot; institutional posts, tracking</div>
+    <div class="story-synopsis">Hampton Park's weekly Wednesday farmers market continues its summer run, showcasing Lowcountry growers, producers, and food artisans in the park setting. <strong>The note:</strong> the midweek market is the reliable backbone of the local food rhythm, the steady-state version of a calendar that occasionally throws in something rarer. Fresh produce, shrimp, and oysters from regional growers anchor an easy weekday outing, and the park setting makes it as much a community fixture as a grocery run. In a week heavy on holiday programming and a downtown closure, the market is the constant: the unglamorous, dependable part of what makes the Lowcountry a place people actually eat well in, not just visit for the festivals.</div>
+  </div>
+
+  <div class="section-hdr">Activities / What's On</div>
+
+  <div class="story" data-unsourced="intentional">
+    <span class="tag">Charleston</span><span class="tag">Harbor</span>
+    <div class="story-headline">Carolina Day drone show and harbor sails headline the weekend</div>
+    <div class="story-meta">Explore Charleston &middot; institutional posts, tracking</div>
+    <div class="story-synopsis">Charleston marks Carolina Day this weekend with a drone show over the harbor, tall-ship and harbor sails, and living-history events honoring the Battle of Sullivan's Island, with the Saturday evening drone display at the U.S. Custom House steps as the visual centerpiece. <strong>The note:</strong> the drone show is the kind of one-off that gives an ordinary summer weekend a genuine reason to plan around, and it lands neatly in a season already heavy with semiquincentennial and Independence Day programming. The Battle of Sullivan's Island gives the city a founding-story claim few places can match this anniversary year, and pairing the history with a modern harbor spectacle is a smart use of the moment. For families and history-minded visitors alike, this is the standout weekend on the local calendar before the Fourth.</div>
+  </div>
+
+  <div class="story" data-unsourced="intentional">
+    <span class="tag">North Charleston</span><span class="tag">Recreation</span>
+    <div class="story-headline">PickleRage opens its first South Carolina indoor pickleball club in North Charleston</div>
+    <div class="story-meta">Local social posts &middot; single source, tracking</div>
+    <div class="story-synopsis">The indoor-pickleball operator PickleRage opened its first South Carolina location in North Charleston, adding a year-round venue for the area's fast-growing pickleball community. <strong>The note:</strong> the pickleball boom keeps producing real bricks-and-mortar additions, and an indoor club matters in a Lowcountry summer where the heat and afternoon storms make outdoor courts a gamble. Beyond the sport, these venues function as social infrastructure, the kind of low-stakes gathering place a growing suburb needs as much as it needs restaurants and parks. North Charleston's continued growth keeps drawing exactly this sort of recreational investment, and a dedicated indoor facility is a sign the area's player base has reached the scale to support it year-round.</div>
+  </div>
+
+</div>
+
+<!-- LIGHTER FARE TAB -->
+<div id="tab-lighter" class="tab-panel">
+
+  <div class="section-hdr">Lighter Fare</div>
+
+  <div class="story" data-unsourced="intentional">
+    <span class="tag">Science</span><span class="tag">Reading</span>
+    <div class="story-headline">A quantum-mechanics primer for the curious: "Beyond Weird"</div>
+    <div class="story-meta">Science reading note &middot; single source</div>
+    <div class="story-synopsis">A widely shared reading recommendation made the rounds for Philip Ball's "Beyond Weird," praised as a clear, trope-free introduction to quantum mechanics suitable for teaching or general reading. <strong>The note:</strong> the lighter tab exists partly to point at the things worth reading that have nothing to do with the week's wars, and a quantum primer that refuses the usual mystification fits the brief's own house style. The pleasure of a book like this is that it treats a famously confusing subject with precision rather than hype, the opposite of the sensational science coverage that turns physics into spectacle. For a reader who spends the rest of the brief in chokepoints and force structure, an evening with a genuinely clarifying book about how the universe actually behaves is a fair trade. A small recommendation, offered as one.</div>
+  </div>
+
+  <div class="story" data-unsourced="intentional">
+    <span class="tag">Science</span><span class="tag">Curiosity</span>
+    <div class="story-headline">The faint glow of living things: human bio-photon emission</div>
+    <div class="story-meta">Science curio &middot; single source</div>
+    <div class="story-synopsis">A circulating science item described experiments suggesting living human tissue emits an extremely faint light, bio-photon radiation, detectable in total darkness, a curiosity about the unseen physical properties of biological systems. <strong>The note:</strong> the appeal of an item like this is the reminder that the ordinary world still holds genuine strangeness, no conspiracy or hype required. Faint bioluminescence in living tissue is the kind of fact that sits comfortably between settled science and open question, and it rewards a moment of plain wonder. The brief offers it as a small exhale: a week dominated by a war's punctuation and an alliance's anxieties is also, at the level of physics, a week in which living things quietly glow. Not every fact has to be actionable. Some are just worth knowing because the world is more interesting than the headlines let on.</div>
+  </div>
+
+  <div class="story" data-unsourced="intentional">
+    <span class="tag">Essay</span><span class="tag">Data Ethics</span>
+    <div class="story-headline">On the ethics of bending the numbers</div>
+    <div class="story-meta">Essay note &middot; single source</div>
+    <div class="story-synopsis">A short essay made the case that twisting or selectively presenting numbers in a scientific or analytical context is a form of lying, a concise argument about data integrity and the ethics of presentation. <strong>The note:</strong> this one earns its place on the lighter tab precisely because it is not light; it is a sharp little argument that belongs in the back of the mind of anyone who reads charts for a living. The discipline it describes, that selective framing of data is dishonesty even when every individual number is true, is the same standard this brief tries to hold its own sourcing to. In a week of contested claims, asset releases neither confirmed nor denied, casualty figures from competing narratives, the reminder that honest presentation is a duty and not a courtesy lands well. A small essay with a large point, worth the few minutes it takes.</div>
+  </div>
+
+</div>
+
+<!-- MARKET TICKER -->
+<div class="ticker-wrap" aria-label="Market ticker">
+  <div class="ticker-track" id="ticker-track">
+    <span class="ticker-group" id="ticker-group">
+      <span class="ticker-item"><span class="ticker-lbl">S&amp;P 500</span> <span class="ticker-val">7,440</span> <span class="up">+1.18%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">DOW</span> <span class="ticker-val">52,183</span> <span class="up">+0.59%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">NASDAQ</span> <span class="ticker-val">25,820</span> <span class="up">+2.07%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">VIX</span> <span class="ticker-val">17.6</span> <span class="dn">-0.17%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">WTI</span> <span class="ticker-val">$70.79</span> <span class="up">+0.63%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">BRENT</span> <span class="ticker-val">$74.00</span> <span class="up">+0.56%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">GOLD</span> <span class="ticker-val">$4,032</span> <span class="up">+1.20%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">10Y UST</span> <span class="ticker-val">4.37%</span> <span class="ticker-lbl">+0.05%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">DXY</span> <span class="ticker-val">101.4</span> <span class="up">+0.05%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">BTC</span> <span class="ticker-val">$59,244</span> <span class="dn">-1.52%</span> <span class="ticker-lbl">(prev close)</span></span>
+    </span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>THE SWAP REPORT &middot; Tuesday, June 30, 2026 &middot; Morning Edition</div>
+  <div style="opacity:0.6;">For SWAP &middot; Distribution restricted &middot; Not for public release</div>
+</footer>
+
+<script>
+var currentTheme = 'warm';
+function setTheme(t, btn) {
+  currentTheme = t;
+  document.body.setAttribute('data-theme', t);
+  document.querySelectorAll('.theme-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+}
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+var wxLat = 37, wxLon = -95, wxZoom = 4, wxLayerName = 'temperature-2m';
+var ICAO_TABLE = {
+  'KCHS': [32.8986, -80.0405], 'KLTS': [34.6671, -99.2667],
+  'KDEN': [39.8561, -104.6737], 'KATL': [33.6407, -84.4277],
+  'KDFW': [32.8998, -97.0403], 'KLAX': [33.9425, -118.4081],
+  'KJFK': [40.6413, -73.7781], 'KORD': [41.9742, -87.9073],
+  'EGLL': [51.4775, -0.4614], 'RJTT': [35.5533, 139.7811]
+};
+function buildWxSrc() {
+  return 'https://www.ventusky.com/?p=' + wxLat + ';' + wxLon + ';' + wxZoom + '&l=' + wxLayerName;
+}
+function wxLayer(btn, layer) {
+  wxLayerName = layer;
+  document.querySelectorAll('.wx-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById('wx-iframe').src = buildWxSrc();
+}
+function wxSearch() {
+  var q = document.getElementById('wx-input').value.trim();
+  if (!q) return;
+  var latLonRe = /^(-?\d+\.?\d*),\s*(-?\d+\.?\d*)$/;
+  var m = q.match(latLonRe);
+  if (m) { wxLat = parseFloat(m[1]); wxLon = parseFloat(m[2]); wxZoom = 8; document.getElementById('wx-iframe').src = buildWxSrc(); return; }
+  var icao = q.toUpperCase();
+  if (ICAO_TABLE[icao]) { wxLat = ICAO_TABLE[icao][0]; wxLon = ICAO_TABLE[icao][1]; wxZoom = 9; document.getElementById('wx-iframe').src = buildWxSrc(); return; }
+  fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + encodeURIComponent(q) + '&count=1')
+    .then(function(r){ return r.json(); })
+    .then(function(d){ if (d.results && d.results.length > 0) { wxLat = d.results[0].latitude; wxLon = d.results[0].longitude; wxZoom = 8; document.getElementById('wx-iframe').src = buildWxSrc(); } })
+    .catch(function(){});
+}
+(function(){
+  var grp = document.getElementById('ticker-group');
+  if (grp) {
+    var clone = grp.cloneNode(true);
+    clone.id = '';
+    document.getElementById('ticker-track').appendChild(clone);
+  }
+})();
+</script>
+</body>
+</html>
