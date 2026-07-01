@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE SWAP REPORT: The Weekly Edition, June 28, 2026</title>
+<meta property="og:title" content="THE SWAP REPORT: The Weekly Edition, June 28, 2026">
+<meta property="og:url" content="https://theswap.report/">
+<meta property="og:description" content="Sunday, June 28, 2026. Day 121 of the Iran war: the US launches a second night of strikes near the Strait of Hormuz and Iran retaliates against US bases in Bahrain and Kuwait, with both sides accusing the other of breaking the ceasefire and the president threatening to militarily complete the job. Israel and Lebanon sign a US-brokered framework that Hezbollah rejects. Venezuela's earthquake toll passes 1,400 as US forces flow south. The Supreme Court opens a blockbuster week and Trump-backed Julia Letlow wins the Louisiana Senate runoff.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f0e8;
+  --surface: #fffdf8;
+  --border: #d4c9b8;
+  --text: #1a1a1a;
+  --muted: #666666;
+  --accent: #8b0000;
+  --tab-inactive: #e8e2d8;
+  --tab-active: #fffdf8;
+  --header-bg: #ede8df;
+  --tab-bg: #e8e2d8;
+  --tag-bg: #8b0000;
+  --tag-text: #ffffff;
+  --watch-bg: #fff8f0;
+  --watch-border: #c8a06a;
+  --card-bg: #fffdf8;
+  --hover-bg: rgba(139,0,0,0.06);
+  --footer-bg: #ede8df;
+  --footer-text: #666666;
+}
+[data-theme="light"] {
+  --bg: #ffffff; --surface: #ffffff; --border: #e0e0e0; --text: #111111;
+  --muted: #555555; --accent: #8b0000; --tab-inactive: #f0f0f0;
+  --tab-active: #ffffff; --header-bg: #f5f5f5; --tab-bg: #eeeeee;
+  --watch-bg: #fff8f0; --watch-border: #c8a06a; --card-bg: #ffffff;
+  --hover-bg: rgba(139,0,0,0.05); --footer-bg: #f0f0f0; --footer-text: #555555;
+}
+[data-theme="dark"] {
+  --bg: #1a1a2e; --surface: #16213e; --border: #2a2a4a; --text: #e0e0e0;
+  --muted: #a0a0b0; --accent: #cc3333; --tab-inactive: #1e1e3a;
+  --tab-active: #16213e; --header-bg: #1e1e3a; --tab-bg: #1e1e3a;
+  --watch-bg: #1e1e2e; --watch-border: #8b6a3a; --card-bg: #16213e;
+  --hover-bg: rgba(204,51,51,0.08); --footer-bg: #1e1e3a; --footer-text: #a0a0b0;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: Georgia, 'Times New Roman', serif; font-size: 15px; line-height: 1.6; }
+.page { max-width: 960px; margin: 0 auto; background: var(--bg); }
+.masthead { background: var(--bg); padding: 24px 24px 16px; border-bottom: 2px solid var(--accent); display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; }
+.masthead-left { flex: 1; }
+.masthead-title { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 22px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); }
+.masthead-meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); margin-top: 4px; }
+.masthead-epigraph { font-style: italic; font-size: 13px; color: var(--muted); margin-top: 4px; font-family: Georgia, serif; }
+.theme-btns { display: flex; gap: 6px; align-items: center; padding-top: 4px; }
+.theme-btn { background: var(--tab-bg); border: 1px solid var(--border); color: var(--text); cursor: pointer; font-size: 14px; padding: 4px 8px; border-radius: 3px; }
+.theme-btn.active { background: var(--accent); color: #fff; }
+.edition-bar { background: var(--header-bg); color: var(--muted); border-bottom: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 5px 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.edition-bar a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.wx-section { padding: 12px 20px; background: var(--surface); border-bottom: 1px solid var(--border); }
+.wx-iframe { width: 100%; height: 320px; border: 1px solid var(--border); border-radius: 4px; display: block; }
+.wx-controls { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; align-items: center; }
+.wx-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 8px; border: 1px solid var(--border); background: var(--tab-bg); color: var(--text); cursor: pointer; border-radius: 3px; }
+.wx-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.wx-search { display: flex; gap: 6px; margin-bottom: 8px; }
+.wx-search input { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 3px; flex: 1; }
+.wx-search button { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 10px; background: var(--accent); color: #fff; border: none; border-radius: 3px; cursor: pointer; }
+.wx-credit { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 6px; }
+.wx-credit a { color: var(--accent); text-underline-offset: 2px; }
+.tab-bar { display: flex; background: var(--tab-bg); border-bottom: 2px solid var(--border); overflow-x: auto; padding: 0 20px; gap: 2px; }
+.tab-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 8px 14px; border: none; background: transparent; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap; transition: color 0.15s; letter-spacing: 1px; text-transform: uppercase; }
+.tab-btn:hover { color: var(--accent); }
+.tab-btn.active { color: var(--accent); background: var(--tab-active); border-bottom-color: var(--accent); }
+.tab-panel { display: none; padding: 20px; }
+.tab-panel.active { display: block; }
+.section-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 4px; margin: 20px 0 12px; }
+.section-hdr:first-child { margin-top: 0; }
+.bluf-box { background: rgba(139,0,0,0.05); border-left: 4px solid var(--accent); padding: 14px 16px; margin-bottom: 20px; border-radius: 0 4px 4px 0; }
+.bluf-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.bluf-box ul { padding-left: 18px; }
+.bluf-box li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; }
+.story { background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; padding: 12px 14px; margin-bottom: 10px; transition: background 0.15s; }
+.story:hover { background: var(--hover-bg); }
+.story-headline { font-size: 15px; font-weight: bold; line-height: 1.4; margin-bottom: 4px; }
+.story-headline a { color: var(--text); text-decoration: none; }
+.story-headline a:hover { color: var(--accent); text-decoration: underline; }
+.story-meta { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-bottom: 6px; }
+.story-synopsis { font-size: 13px; color: var(--text); line-height: 1.5; }
+.tag { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; background: var(--tag-bg); color: var(--tag-text); padding: 2px 6px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+.watch-item { background: var(--watch-bg); border-left: 3px solid var(--watch-border); padding: 10px 12px; margin-bottom: 10px; border-radius: 0 4px 4px 0; }
+.watch-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+.throughline { font-size: 13px; color: var(--text); line-height: 1.6; margin-bottom: 16px; }
+.aged-badge { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 10px; color: #fff; vertical-align: middle; margin-right: 6px; }
+.aged-green { background: #2d7a3d; }
+.aged-yellow { background: #b8860b; }
+.aged-red { background: #8b0000; }
+.ticker-wrap { background: #111; color: #e8e8e8; overflow: hidden; padding: 8px 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; white-space: nowrap; }
+.ticker-track { display: inline-block; animation: ticker-slide 90s linear infinite; will-change: transform; }
+.ticker-wrap:hover .ticker-track { animation-play-state: paused; }
+@keyframes ticker-slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; white-space: normal; display: block; } }
+.ticker-item { display: inline-block; margin: 0 18px; }
+.ticker-lbl { color: #999; font-size: 11px; }
+.ticker-val { color: #e8e8e8; font-weight: 600; }
+.ticker-sep { color: #444; margin: 0 4px; }
+.up { color: #3dcc5a; }
+.dn { color: #ff5a5a; }
+footer { background: var(--footer-bg); color: var(--footer-text); font-family: 'IBM Plex Mono', monospace; font-size: 10px; padding: 16px 24px; margin-top: 32px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+@media (max-width: 600px) { .masthead { padding: 16px; } .tab-panel { padding: 14px; } footer { flex-direction: column; } }
+.weekly-essay { padding: 28px 20px 8px; }
+.weekly-essay p { font-size: 16px; line-height: 1.72; margin-bottom: 18px; }
+.weekly-essay p.byline { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 1px; color: var(--muted); text-transform: uppercase; margin-bottom: 22px; }
+.weekly-essay sup { font-size: 11px; line-height: 0; color: var(--accent); }
+.weekly-essay sup a { color: var(--accent); text-decoration: none; }
+.weekly-kicker { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+.weekly-hed { font-size: 30px; line-height: 1.2; font-weight: bold; margin-bottom: 6px; }
+.weekly-dek { font-size: 16px; color: var(--muted); font-style: italic; margin-bottom: 22px; line-height: 1.45; }
+.endnotes { padding: 0 20px; }
+.endnotes ol { margin: 0; padding-left: 22px; }
+.endnotes li { font-size: 13px; line-height: 1.55; color: var(--text); margin-bottom: 9px; }
+.endnotes a { color: var(--accent); text-underline-offset: 2px; word-break: break-word; }
+</style>
+</head>
+<body data-theme="warm" data-edition="weekly">
+<div class="page">
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-left">
+    <div class="masthead-title">THE SWAP REPORT</div>
+    <div class="masthead-meta">SUNDAY, JUNE 28, 2026 &nbsp;|&nbsp; THE WEEKLY EDITION</div>
+    <div class="masthead-epigraph">A ceasefire that both sides are now enforcing with airstrikes is not a ceasefire; it is a pause with a target list. Day 121 turns the one-sided response into an exchange, and the chokepoint both signatures left unresolved is doing the deciding.</div>
+  </div>
+  <div class="theme-btns">
+    <button class="theme-btn active" onclick="setTheme('warm',this)" title="Warm">&#9728;</button>
+    <button class="theme-btn" onclick="setTheme('light',this)" title="Light">&#128305;</button>
+    <button class="theme-btn" onclick="setTheme('dark',this)" title="Dark">&#9790;</button>
+  </div>
+</div>
+
+<!-- EDITION BAR -->
+<div class="edition-bar">
+  <span>Iran War Day 121: the US launches a second night of strikes near Hormuz; Iran retaliates against US bases in Bahrain and Kuwait</span>
+  <span>|</span>
+  <span>Both sides accuse the other of breaking the ceasefire; the president threatens to "militarily complete the job"</span>
+  <span>|</span>
+  <span>Hezbollah rejects the US-brokered Lebanon-Israel framework as Israel keeps striking the south</span>
+  <span>|</span>
+  <span>Venezuela earthquake toll passes 1,400; SCOTUS opens a blockbuster week; Letlow wins Louisiana</span>
+  <span>|</span>
+  <a href="https://theswap.report/">theswap.report</a>
+  <span>|</span>
+  <a href="https://theswap.report/archive/">Archive</a>
+</div>
+
+<!-- WEATHER -->
+<div class="wx-section">
+  <div class="wx-search">
+    <input type="text" id="wx-input" placeholder="Search: lat,lon or ICAO or city name" onkeydown="if(event.key==='Enter')wxSearch()">
+    <button onclick="wxSearch()">Go</button>
+  </div>
+  <div class="wx-controls">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);margin-right:4px;">LAYER:</span>
+    <button class="wx-btn active" onclick="wxLayer(this,'temperature-2m')">Temp</button>
+    <button class="wx-btn" onclick="wxLayer(this,'wind-10m')">Wind</button>
+    <button class="wx-btn" onclick="wxLayer(this,'rain-3h')">Rain</button>
+    <button class="wx-btn" onclick="wxLayer(this,'clouds')">Clouds</button>
+    <button class="wx-btn" onclick="wxLayer(this,'radar')">Radar</button>
+    <button class="wx-btn" onclick="wxLayer(this,'gust')">Gust</button>
+  </div>
+  <iframe id="wx-iframe" class="wx-iframe" src="https://www.ventusky.com/?p=37;-95;4&amp;l=temperature-2m" allowfullscreen></iframe>
+  <div class="wx-credit">Interactive weather: <a href="https://www.ventusky.com" target="_blank" rel="noopener">Ventusky</a> &nbsp;|&nbsp; Aviation: <a href="https://aviationweather.gov/data/metar/?id=KCHS&amp;taf=true" target="_blank" rel="noopener">KCHS METAR/TAF</a> (437 AW / Joint Base Charleston)</div>
+</div>
+
+<!-- WEEKLY SYNTHESIS ESSAY -->
+<div class="weekly-essay">
+  <div class="weekly-kicker">The Weekly Edition &middot; Week of June 22-28, 2026</div>
+  <div class="weekly-hed">The Price of Passage</div>
+  <div class="weekly-dek">A week spent watching the wrong nouns. The countries mattered, as always. But the contest underneath them was for the space between, the sea, the air, the lanes that reach runs on.</div>
+  <p class="byline">A synthesis of the week's reporting</p>
+
+  <p>Begin small, with a single ship. On Friday a drone found a tanker off Oman, and that one hull, struck in the dark, set the terms for everything that came after.<sup><a href="https://www.aljazeera.com/news/2026/6/27/us-launches-second-night-of-strikes-against-iran-after-ship-struck-by-drone?traffic_source=rss">1</a></sup> Not a capital, not a leader, not a border. A ship. It is worth sitting with that for a moment, because the instinct all week was to look past the ship to the state behind it, and the instinct was wrong.</p>
+
+  <p>Walk the week back to Monday and the daily briefs read like separate weather systems. The Iran war had supposedly ended in a memorandum; by midweek the memorandum was a thing both sides cited while they bombed each other, a ceasefire enforced by strike package.<sup><a href="https://smallwarsjournal.com/2026/06/24/caught-in-its-own-doctrine/">2</a></sup> An Atlantic essay midweek called the whole arc a whiplash, a war declared over and then quietly continued.<sup><a href="https://www.theatlantic.com/ideas/2026/06/trump-iran-foreign-policy/687683/?utm_source=feed">3</a></sup> Different desks filed it as diplomacy, as escalation, as domestic politics. Few filed it as what it plainly was by Friday: a fight about who sets the price of moving oil through a strait barely twenty miles wide at the neck, its shipping lanes narrower still.</p>
+
+  <p>Then the gap answered. The American strikes went after radars and launchers, the machinery that threatens shipping, rather than the regime that owns it.<sup><a href="https://www.scmp.com/news/world/middle-east/article/3358626/iranian-drones-target-bahrain-after-us-offensive-straining-ceasefire?utm_source=rss_feed">4</a></sup> Iran answered not by hitting the Fifth Fleet's ships but by striking the sovereign ground that houses them, American bases in Bahrain and Kuwait.<sup><a href="https://www.france24.com/en/middle-east/20260628-middle-east-live-iran-threatens-a-completely-halt-in-talks-with-us-following-exchange-of-fire">5</a></sup> By the weekend a shipping executive was warning that mines would suppress traffic for months no matter what any ceasefire said,<sup><a href="https://www.ft.com/content/a0739198-318c-4ae8-9953-ba88201edc45">6</a></sup> and navies had raised the threat level to merchant vessels even as Gulf ports reopened and the oil, stubbornly, kept moving.<sup><a href="https://gcaptain.com/tanker-struck-in-hormuz-as-navies-raise-threat-level-to-ships/">7</a></sup> Hold those two facts together. The strait was dangerous enough to spook every underwriter on the water and functional enough that crude still flowed. The contest was never the waterway itself. It was the toll.</p>
+
+  <p>Now the second story, the one that looked like its opposite. In Washington a Lebanon-Israel framework was signed, and within a day Hezbollah declared it void and kept the south a live-fire zone.<sup><a href="https://www.bbc.co.uk/news/articles/cx2kpn0eeweo?at_medium=RSS&at_campaign=rss">8</a></sup> A diplomatic settlement, not a sea lane. And yet the logic is the same logic, run on land. The deal's purpose was to drain Iran's leverage by settling a border its proxy keeps unstable; the proxy's response was to deny the settlement the same way a handful of mines denies a strait, by making the thing too costly to complete. A militia that cannot win a war can still tax the peace. The Friday Deep Read had already named the underlying shift: Hezbollah has become less an asset Tehran wields than an obligation it must subsidize.<sup><a href="https://foreignpolicy.com/2026/06/26/iran-hezbollah-united-states-war-israel-lebanon-proxies/">9</a></sup> An obligation with nothing to lose still controls a road.</p>
+
+  <p>And the third, in a different ocean and a different element entirely. An earthquake pulled an American relief armada toward Venezuela, a country Washington had spent years treating as an adversary's client, C-17s and warships and a Marine command flowing south.<sup><a href="https://thehill.com/policy/international/5944203-u-s-military-deploying-additional-resources-to-venezuela-as-earthquakes-death-toll-mounts/">10</a></sup> Notice the elements there: hulls on the water, Globemasters in the air. The relief is real. The reach is the message. Here the United States is the one demonstrating what reach can do, and the demonstration is the expensive half of the week's arithmetic: the standing capacity to move decisive mass to a problem in days, by sea and by air at once, is precisely what an adversary with mines and cheap drones is working, everywhere else, to make unaffordable. This is capacity on display, not coercion; the contrast is the point. The same reach that saves lives in the Caribbean is the reach being taxed in the Gulf.</p>
+
+  <p>Three theaters, then, and one variable underneath all of them: the ability to move, oil, force, diplomacy, relief, across a commons somebody else can contest. And it is a commons, plural, not just the water. The tanker and the airlift make the point together. Reach is sea lanes and air bridges and, increasingly, the seabed cables and the orbital tracks nobody photographs. This is the point where it helps to stop describing and start naming, because strategists have been here before, and the week is a seminar in their argument. Mahan explains why command of the sea matters: concentrate the fleet, win the decisive engagement, hold the great trade routes. But Corbett explains what this week actually looked like, and he fits it like a key. Command of the sea, he wrote, "means nothing but the control of maritime communications," and "the object of naval warfare is the control of communications, and not, as in land warfare, the conquest of territory."<sup><a href="https://www.hudson.org/can-strait-hormuz-stay-open-rebeccah-heinrichs">11</a></sup> Read "sea" as "commons" and the doctrine ports straight into the air, the cable, the spectrum. More to the point, Corbett insisted that command is rarely absolute: "the normal position is not a commanded sea, but an uncommanded sea," with command "normally in dispute." That is the Gulf this week exactly. Nobody held the strait. Both sides contested it, and the oil moved through the dispute. And Wylie supplies the grammar of how that dispute is waged: the cumulative strategy, "a collection of lesser actions" that are "not sequentially interdependent," each "no more than a single statistic, an isolated plus or a minus, in arriving at the final result."<sup><a href="https://www.themoscowtimes.com/2026/06/28/ukrainian-strike-kills-one-in-southern-russia-refinery-on-fire-a93114">12</a></sup> A mine here, a drone there, a refinery burning in southern Russia. None decisive alone. Together, a toll that compounds. Wylie's own example was not a weak power, it was the American submarine campaign that strangled Japan while the island-hopping went on above it, so this is not the weapon of the weak so much as the method everyone now has in reach. It is simply that the cheap end of it has fallen into far more hands.</p>
+
+  <p>Which raises the actor who has read all three theorists most carefully, and is not in any of this week's headlines. China built its entire near-seas strategy as Wylie weaponized: a dense, layered complex of missiles and sensors whose only purpose is to make American reach into the first island chain too expensive to attempt, to tax the commons at scale before a single shot is fired. The Gulf this week was a rehearsal in miniature, a few mines and drones imposing a months-long toll on a strait, of the thing Beijing has industrialized across the Western Pacific. And the most important Deep Read of the week argued that the edge this buys China is partly a mirage, real enough to deter, brittle enough to overrate, which is precisely the kind of judgment that gets a fleet built wrong in both directions.<sup><a href="https://www.foreignaffairs.com/china/mirage-chinas-military-edge-dennis-blair">13</a></sup> Everything in the Gulf, the Baltic, the Black Sea is the undercard. The Pacific is the fight the whole argument is actually about, and it is the one place where the party taxing the commons is not a cornered proxy but a peer with a shipyard.</p>
+
+  <p>Once the frame snaps into place the rest of the week stops being scattered and becomes evidence, almost embarrassingly so. Sweden bolted guns onto its coast guard because the Baltic has filled with cut cables and loitering tankers, the same contest in colder water.<sup><a href="https://gcaptain.com/sweden-fits-guns-to-coast-guard-vessels-as-baltic-tensions-rise/">14</a></sup> Paul Scharre spent the week's most important Deep Read arguing that we are losing the war of the future precisely because cheap, precise, attritable systems have inverted the cost curve of force.<sup><a href="https://www.foreignaffairs.com/united-states/losing-war-future-paul-scharre">15</a></sup> A West Point essay insisted the drone is not the future of war but the problem war now has to solve.<sup><a href="https://mwi.westpoint.edu/drones-are-not-the-future-of-war-they-are-the-problem-to-be-solved/">16</a></sup> Foreign Policy described an America sliding into the role of guarantor of last resort in the Gulf, the party that must keep the lanes open because no one else can.<sup><a href="https://foreignpolicy.com/2026/06/26/united-states-middle-east-iran-gulf-uae-saudi-last-resort/">17</a></sup> None of these were the week's loud headline. All of them are the week's actual argument, and they were sitting in the Deep Reads the whole time, waiting for someone to read them as one paragraph instead of six.</p>
+
+  <p>So here is what the week was trying to say, if you let the particulars accumulate until they tip. The contest of this era is no longer only over territory. It is increasingly over passage too: who can move, who can deny movement, and who can make movement too expensive to sustain. That second contest runs against the United States exactly where it appears strongest. American advantage is reach, the plain fact of being able to put force, supply, and presence anywhere by sea and air faster than anyone alive. But reach is carried on lanes, salt water, airspace, cable, orbit, and every one of those lanes is now cheap to threaten and dear to guarantee. The same seven days that saw a defense budget cross a trillion dollars saw a single drone turn a global chokepoint into an escort, insurance, and mine-clearance problem the Navy will work for months, with a mine-countermeasures fleet it never adequately bought.<sup><a href="https://www.foreignaffairs.com/united-states/losing-war-future-paul-scharre">15</a></sup> Note the limit, though, because it matters: none of this closed the strait, and the oil kept moving. Chokepoint coercion raises the cost of an adversary's object; it does not, by itself, break the will behind it. That is why Tehran reached past the tanker to strike sovereign ground in Bahrain and Kuwait. The toll was not working fast enough, so it raised the stakes. Thursday's brief called this arc a whiplash and meant it as politics;<sup><a href="https://theswap.report/archive/2026-06-25.html">18</a></sup> a week's distance reframes it as something colder and more structural than any one administration's reversal. The weak have learned to tax the strong at the chokepoint, cumulatively, cheaply, deniably, and the strong have not yet decided what they are willing to pay, or whether they can afford to pay it in four domains and three oceans at once.</p>
+
+  <p>Which leaves the question the week sharpened to a point and declined to answer. Chokepoint coercion is as old as the first toll on the first river; what is new is how cheap and precise and patient it has become. The hard problem of the next decade is whether deterrence can be rebuilt around protecting flow rather than holding ground, whether a force still organized to seize and own can learn to guarantee movement instead. Wylie would reframe the question before answering it: the aim is not destruction but control, the creation of conditions more favorable to us, and control in the end still wants a man on the scene. Guaranteeing movement is a control problem, not a firepower problem, and we keep funding the second. Gough's verdict on the last century of this argument was that neither sea power nor command of the sea is ever absolute or final, which is the uncomfortable part: there is no decisive battle that ends the contest for passage, only the price of keeping the lanes open, paid again every morning. Corbett would recognize all of it. He would also note, drily, that we have known the answer for a century and keep buying the wrong fleet. The water was always the subject. This was just the week it stopped letting us pretend otherwise.</p>
+</div>
+
+
+
+<!-- ENDNOTES -->
+<div class="endnotes">
+  <div class="section-hdr">Notes</div>
+  <ol>
+    <li>"US Launches Second Night of Strikes on Iran After Ship Hit by Drone," Al Jazeera, June 27, 2026, <a href="https://www.aljazeera.com/news/2026/6/27/us-launches-second-night-of-strikes-against-iran-after-ship-struck-by-drone?traffic_source=rss" target="_blank" rel="noopener">aljazeera.com</a>.</li>
+    <li>"Caught in Its Own Doctrine: Why Israel Cannot Win, Stop, or Endure the Iran War," Small Wars Journal, June 24, 2026, <a href="https://smallwarsjournal.com/2026/06/24/caught-in-its-own-doctrine/" target="_blank" rel="noopener">smallwarsjournal.com</a>.</li>
+    <li>"The Whiplash of Trump's Iran Capitulation," The Atlantic, June 25, 2026, <a href="https://www.theatlantic.com/ideas/2026/06/trump-iran-foreign-policy/687683/?utm_source=feed" target="_blank" rel="noopener">theatlantic.com</a>.</li>
+    <li>"Iran Strikes American Bases in Bahrain and Kuwait Amid US Offensive," South China Morning Post, June 28, 2026, <a href="https://www.scmp.com/news/world/middle-east/article/3358626/iranian-drones-target-bahrain-after-us-offensive-straining-ceasefire?utm_source=rss_feed" target="_blank" rel="noopener">scmp.com</a>.</li>
+    <li>"Middle East Live: Iran Targets Bahrain and Kuwait in Response to US Strikes," France 24, June 28, 2026, <a href="https://www.france24.com/en/middle-east/20260628-middle-east-live-iran-threatens-a-completely-halt-in-talks-with-us-following-exchange-of-fire" target="_blank" rel="noopener">france24.com</a>.</li>
+    <li>"Mines Will Hold Back Strait of Hormuz Shipping for Months, CEO Warns," Financial Times, June 28, 2026, <a href="https://www.ft.com/content/a0739198-318c-4ae8-9953-ba88201edc45" target="_blank" rel="noopener">ft.com</a>.</li>
+    <li>"Tanker Struck in Hormuz as Navies Raise Threat Level to Ships," gCaptain, June 28, 2026, <a href="https://gcaptain.com/tanker-struck-in-hormuz-as-navies-raise-threat-level-to-ships/" target="_blank" rel="noopener">gcaptain.com</a>.</li>
+    <li>"Israel Strikes Southern Lebanon as Hezbollah Condemns New Deal," BBC News, June 28, 2026, <a href="https://www.bbc.co.uk/news/articles/cx2kpn0eeweo?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">bbc.co.uk</a>.</li>
+    <li>"Is Hezbollah Now More an Obligation Than an Asset to Tehran?" Foreign Policy, June 26, 2026, <a href="https://foreignpolicy.com/2026/06/26/iran-hezbollah-united-states-war-israel-lebanon-proxies/" target="_blank" rel="noopener">foreignpolicy.com</a>.</li>
+    <li>"US Military Deploying Additional Resources to Venezuela as Earthquake Death Toll Mounts," The Hill, June 28, 2026, <a href="https://thehill.com/policy/international/5944203-u-s-military-deploying-additional-resources-to-venezuela-as-earthquakes-death-toll-mounts/" target="_blank" rel="noopener">thehill.com</a>.</li>
+    <li>Julian S. Corbett, <em>Some Principles of Maritime Strategy</em> (London: Longmans, Green, 1911), Part II, ch. 1 ("control of maritime communications... not... the conquest of territory"); "uncommanded sea" and "normally in dispute" from the same chapter. On the contrast with Mahan's decisive-battle command, and on command as never "absolute or final," see Barry Gough, "The Legacies of Mahan and Corbett." Applied to the week: Rebeccah Heinrichs, "Can the Strait of Hormuz Stay Open?" Hudson Institute, June 27, 2026, <a href="https://www.hudson.org/can-strait-hormuz-stay-open-rebeccah-heinrichs" target="_blank" rel="noopener">hudson.org</a>.</li>
+    <li>J. C. Wylie, <em>Military Strategy: A General Theory of Power Control</em> (1967), on the cumulative pattern ("a collection of lesser actions... not sequentially interdependent... a single statistic, an isolated plus or a minus"), the submarine-campaign example, and the control-not-destruction thesis. The week's instance: "Ukrainian Strike Kills One in Southern Russia, Refinery on Fire," The Moscow Times, June 28, 2026, <a href="https://www.themoscowtimes.com/2026/06/28/ukrainian-strike-kills-one-in-southern-russia-refinery-on-fire-a93114" target="_blank" rel="noopener">themoscowtimes.com</a>.</li>
+    <li>Dennis Blair, "The Mirage of China's Military Edge," Foreign Affairs, June 23, 2026, <a href="https://www.foreignaffairs.com/china/mirage-chinas-military-edge-dennis-blair" target="_blank" rel="noopener">foreignaffairs.com</a>.</li>
+    <li>"Sweden Fits Guns to Coast Guard Vessels as Baltic Tensions Rise," gCaptain, June 28, 2026, <a href="https://gcaptain.com/sweden-fits-guns-to-coast-guard-vessels-as-baltic-tensions-rise/" target="_blank" rel="noopener">gcaptain.com</a>.</li>
+    <li>Paul Scharre, "Losing the War of the Future," Foreign Affairs, June 24, 2026, <a href="https://www.foreignaffairs.com/united-states/losing-war-future-paul-scharre" target="_blank" rel="noopener">foreignaffairs.com</a>.</li>
+    <li>"Drones Are Not the Future of War, They Are the Problem to Be Solved," Modern War Institute, June 23, 2026, <a href="https://mwi.westpoint.edu/drones-are-not-the-future-of-war-they-are-the-problem-to-be-solved/" target="_blank" rel="noopener">mwi.westpoint.edu</a>.</li>
+    <li>"The United States Is Now a Guarantor of Last Resort," Foreign Policy, June 26, 2026, <a href="https://foreignpolicy.com/2026/06/26/united-states-middle-east-iran-gulf-uae-saudi-last-resort/" target="_blank" rel="noopener">foreignpolicy.com</a>.</li>
+    <li>The SWAP Report, Thursday, June 25, 2026 edition, <a href="https://theswap.report/archive/2026-06-25.html" target="_blank" rel="noopener">theswap.report/archive</a>.</li>
+  </ol>
+</div>
+
+<!-- TAB BAR -->
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('overview',this)">Overview</button>
+  <button class="tab-btn" onclick="showTab('defense',this)">Defense</button>
+  <button class="tab-btn" onclick="showTab('strategic',this)">Strategic</button>
+  <button class="tab-btn" onclick="showTab('domestic',this)">Domestic</button>
+  <button class="tab-btn" onclick="showTab('deepreads',this)">Deep Reads</button>
+  <button class="tab-btn" onclick="showTab('local',this)">Local</button>
+  <button class="tab-btn" onclick="showTab('lighter',this)">Lighter Fare</button>
+</div>
+
+<!-- OVERVIEW TAB -->
+<div id="tab-overview" class="tab-panel active">
+
+  <div class="bluf-box">
+    <div class="bluf-hdr">Bottom Line Up Front</div>
+    <ul>
+      <li><strong>The US launched a second night of strikes near the Strait of Hormuz, and Iran answered by attacking American bases in Bahrain and Kuwait, turning a one-sided response into a two-way exchange.</strong> CENTCOM said Iran had a chance to honor the ceasefire and elected not to; the IRGC confirmed it struck US military sites in the two Gulf monarchies. Yesterday's brief argued the memorandum had stopped ending the war and started being enforced by strike package; twenty-four hours later both sides are running target lists. The settlement is not formally dead, but it now exists only as a thing each side cites while bombing the other, which is a distinction without much difference on the ground.</li>
+      <li><strong>The president threatened to "militarily complete the job" in Iran, the sharpest escalation signal since the memorandum was signed.</strong> Trump said the US had hit Iran again and might be forced to finish what the first phase left undone, while the vice president framed the standoff as one America wins "either way." The rhetoric matters because it removes the ambiguity that calibrated strikes were meant to preserve: a response scaled to a tanker attack reads very differently when the principal is openly weighing regime collapse. Either the threat is leverage to force compliance, or it is a preview, and the two readings point at very different wars.</li>
+      <li><strong>Hezbollah rejected the US-brokered Israel-Lebanon framework as "null and void," and Israel kept striking southern Lebanon the day after the signing.</strong> Netanyahu hailed the deal as a strategic blow to the Iranian axis; the proxy it was designed to sideline refused to be bound by an agreement negotiated over its head, and the IDF said it hit Hezbollah operatives and a rocket launcher in the south. The framework's logic, drain Iran's regional leverage by settling the borders its proxies destabilize, runs straight into the proxy's veto. A deal signed in Washington cannot deliver what only Beirut and Hezbollah can, and the first forty-eight hours suggest neither will.</li>
+      <li><strong>Venezuela's earthquake death toll passed 1,400 as the rescue window closed and US forces deepened a relief mission with an unmistakable strategic subtext.</strong> Southern Command sent more warships, aircraft, and personnel as searchers raced a fourth day through rubble and a fresh aftershock rattled survivors. The humanitarian case is real and the toll is staggering; the strategic case is that a large, fast, visible American presence inside an adversary's client state buys influence no diplomatic cable can. Relief is the rare mission that projects power by saving lives, and the speed of the deployment says someone understood the opening.</li>
+      <li><strong>The Supreme Court opened a blockbuster final week with Trump's power as the through-line, and Trump-backed Julia Letlow won the Louisiana Senate runoff for the seat Bill Cassidy is vacating.</strong> The Court is set to rule on birthright citizenship and a slate of cases testing executive authority, days after a TPS decision that foreclosed judicial review for roughly 1.3 million people. In Louisiana, the president's endorsement carried Letlow past John Fleming in a contest read as a measure of his grip on the party. Two arenas, one story: the consolidation of presidential power, tested at the bench in Washington and ratified at the ballot box in the Gulf South.</li>
+    </ul>
+  </div>
+
+  <div class="section-hdr">The Through-Line</div>
+  <p class="throughline">Day 121 is the day the ceasefire's fiction stopped holding. A memorandum that ended the war on paper now functions as a shared alibi: the US strikes Iranian targets near Hormuz and calls it enforcement, Iran hits American bases in Bahrain and Kuwait and calls it a response to violations, and both keep claiming the deal is alive while running it as a war. The escalation is structural, not accidental. The settlement left the chokepoint unresolved, so the chokepoint is resolving it, and each calibrated strike invites a calibrated answer until the calibration slips. Layer onto that a president openly threatening to "complete the job" and a proxy in Beirut nullifying the diplomacy meant to contain its patron, and the picture is of a strategy whose every lever is being tested at once. The same American power flowing relief into Venezuela is dropping ordnance near Iran and brokering a deal Hezbollah just torched. The reach is extraordinary and the control is partial, which is the recurring condition of this moment: a country that can act everywhere and dictate nowhere, discovering in real time that the hard part of a settlement is not signing it but enforcing it against people who never agreed.</p>
+
+  <div class="section-hdr">How It Aged</div>
+  <p class="throughline"><span class="aged-badge aged-green">Aged Well</span> June 27 call: "The settlement is not dead, but it is now being enforced by strike package rather than by signature. The risk is that each side now has a demonstrated willingness to use force inside a framework both still claim to support, which is how a paused war becomes a simmering one." Verdict: confirmed within the day. The US ran a second night of strikes near Hormuz and Iran retaliated against US bases in Bahrain and Kuwait, with both sides invoking the ceasefire while attacking inside it. The "paused war becomes a simmering one" reading is now the reality on the ground, and the president's threat to "complete the job" pushes it toward something hotter still. Lesson: when a deal leaves the means of coercion intact and the contested geography unsettled, "ceasefire" describes the paperwork, not the fighting. The honest metric is not whether anyone signed but whether anyone stopped, and on Day 121 no one has.</p>
+
+</div>
+
+<!-- DEFENSE TAB -->
+<div id="tab-defense" class="tab-panel">
+
+  <div class="section-hdr">Strike and Counterstrike at the Chokepoint</div>
+
+  <div class="story">
+    <span class="tag">CENTCOM</span><span class="tag">Iran</span>
+    <div class="story-headline"><a href="https://www.aljazeera.com/news/2026/6/27/us-launches-second-night-of-strikes-against-iran-after-ship-struck-by-drone?traffic_source=rss" target="_blank" rel="noopener">US launches a second night of strikes on Iran after a ship is hit by a drone</a></div>
+    <div class="story-meta">Al Jazeera / Financial Times / CBS News &middot; cross-corroborated</div>
+    <div class="story-synopsis">US forces struck Iranian coastal targets near the Strait of Hormuz for a second consecutive night, with CENTCOM saying Iran had "a chance to honor the ceasefire but elected not to," after a drone hit a vessel in the strait. <strong>The take:</strong> a second night is not a one-off response anymore; it is a campaign in miniature. The first strike could be read as a calibrated answer to a single tanker attack. A second night, with CENTCOM framing it as Iran's choice to break the deal, signals that Washington has moved from punishing an incident to coercing a behavior, which is a higher and stickier objective. The danger is that sustained calibrated strikes against a regime that keeps testing the line produce not deterrence but a tempo, and tempo is how a war that was supposed to be over reacquires its own momentum.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Iran</span><span class="tag">Retaliation</span>
+    <div class="story-headline"><a href="https://www.scmp.com/news/world/middle-east/article/3358626/iranian-drones-target-bahrain-after-us-offensive-straining-ceasefire?utm_source=rss_feed" target="_blank" rel="noopener">Iran strikes American bases in Bahrain and Kuwait amid the US offensive</a></div>
+    <div class="story-meta">South China Morning Post / Al Jazeera / France 24 &middot; cross-corroborated</div>
+    <div class="story-synopsis">The IRGC confirmed it launched attacks on US military sites in Bahrain and Kuwait in response to the American strikes; Bahrain, which hosts US Naval Forces Central Command and the Fifth Fleet, condemned the attack and asked the UN Security Council to hold Tehran accountable. <strong>The take:</strong> Iran chose the targets carefully and they are a message. Hitting US bases on the soil of Gulf monarchies, rather than US ships at sea, imposes a cost on the American posture while dragging Washington's partners directly into the fight. It forces the question the memorandum was supposed to retire: does the US treat an attack on a host nation's base as an attack on itself, and respond accordingly. Bahrain running to the Security Council is the tell that the smaller Gulf states see where this goes, caught between an American shield they depend on and an Iranian neighbor now willing to strike them to get at it.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Bahrain</span><span class="tag">Allies</span>
+    <div class="story-headline"><a href="https://www.france24.com/en/middle-east/20260628-middle-east-live-iran-threatens-a-completely-halt-in-talks-with-us-following-exchange-of-fire" target="_blank" rel="noopener">Iran targets Bahrain and Kuwait and threatens to halt talks after the exchange of fire</a></div>
+    <div class="story-meta">France 24 / The Times of Israel / BBC &middot; cross-corroborated</div>
+    <div class="story-synopsis">A senior Iranian official vowed a "swift and decisive" response to what Tehran called US violations of the deal and threatened to halt talks entirely, as Kuwait and Bahrain condemned the strikes as a "heinous" aggression. <strong>The take:</strong> the threat to walk away from talks is the most consequential line in the day's noise. The entire architecture of the settlement rests on the premise that both sides prefer the table to the battlefield; an Iranian threat to leave it removes the off-ramp that has kept the strikes calibrated. If Tehran decides the diplomacy is a trap, it has little reason to keep its retaliation proportional, and the Gulf states it just hit have little reason to keep absorbing the cost quietly. The exchange is dangerous; the collapse of the channel that could end it would be worse.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Hormuz</span><span class="tag">Mine Warfare</span>
+    <div class="story-headline"><a href="https://www.ft.com/content/a0739198-318c-4ae8-9953-ba88201edc45" target="_blank" rel="noopener">Mines will hold back Strait of Hormuz shipping for months, CEO warns</a></div>
+    <div class="story-meta">Financial Times &middot; single source</div>
+    <div class="story-synopsis">A shipping-industry chief executive told the Financial Times that mines in and around the Strait of Hormuz will suppress traffic through the chokepoint for months, regardless of the political state of the ceasefire. <strong>The take:</strong> this is the part of the war that does not care who signed what. Even if the strikes stop tomorrow, mine clearance is slow, dangerous, and coalition-dependent, and the market is already pricing the disruption in months. A handful of cheap mines can hold one of the world's most important waterways hostage long after the shooting ends, which is the asymmetry Iran has always understood better than its budget would suggest. The strait is a reminder that in this fight the aftermath is its own campaign, and it runs on a timeline measured in fiscal quarters, not news cycles.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Maritime</span><span class="tag">Hormuz</span>
+    <div class="story-headline"><a href="https://gcaptain.com/tanker-struck-in-hormuz-as-navies-raise-threat-level-to-ships/" target="_blank" rel="noopener">Tanker struck in Hormuz as navies raise the threat level to shipping</a></div>
+    <div class="story-meta">gCaptain / The Maritime Executive &middot; cross-corroborated</div>
+    <div class="story-synopsis">After a drone struck a tanker off Oman, naval forces operating in the Gulf raised their threat-level guidance to commercial shipping, even as Saudi Arabia moved to ramp up oil exports and Gulf ports restarted, and a Vitol-chartered cargo was sailed out of the strait, per gCaptain and the Maritime Executive. <strong>The take:</strong> the maritime trade press is where the second-order effects of the strikes show up first, and they cut both ways. Navies raising the threat level is the insurance-and-routing signal that turns a military exchange into a shipping crisis: higher war-risk premiums, slower transits, rerouting. Yet Saudi exports ramping up and ports restarting say the market is also pricing resilience, not just panic. That tension is the real economic story of Day 121: the strait is dangerous enough to spook underwriters and functional enough that oil still moves. Which signal wins, fear or flow, is what the WTI and Brent lines in the ticker are quietly voting on.</div>
+  </div>
+
+  <div class="section-hdr">Venezuela: Relief as Strategy</div>
+
+  <div class="story">
+    <span class="tag">SOUTHCOM</span><span class="tag">HADR</span>
+    <div class="story-headline"><a href="https://thehill.com/policy/international/5944203-u-s-military-deploying-additional-resources-to-venezuela-as-earthquakes-death-toll-mounts/" target="_blank" rel="noopener">US military deploys additional resources to Venezuela as the earthquake toll mounts</a></div>
+    <div class="story-meta">The Hill / NPR / CBS News &middot; cross-corroborated</div>
+    <div class="story-synopsis">Southern Command sent more aircraft, warships, and personnel to support Venezuela's earthquake response as the death toll climbed past 1,400 and a fourth-day search continued amid a fresh aftershock. <strong>The take:</strong> the second wave of forces tells you Washington reads this as more than a one-flight gesture. Sustaining a relief surge into a country long treated as an adversary's foothold is influence projected through a cargo ramp, and the scale signals an intent to be seen doing it. The 437th's home-station mission is exactly this kind of strategic airlift, so the Lowcountry's wing is plausibly in the flow. The hard discipline is keeping the mission humanitarian as it grows: the larger the footprint, the louder the strategic message, and the easier it becomes for Caracas to recast rescue as intrusion.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">SOUTHCOM</span><span class="tag">Posture</span>
+    <div class="story-headline">US Southern Command sends more support to Venezuela following the earthquakes</div>
+    <div class="story-meta">Stars and Stripes &middot; single source, tracking</div>
+    <div class="story-synopsis">Stars and Stripes reported SOUTHCOM is expanding its contribution to the Venezuela relief effort, adding to the warships, aircraft, and command element already committed to coordinating the military's role. <strong>The take:</strong> forward posture is the quiet capability on display here. The ability to mass credible relief capacity into a Caribbean crisis in days, faster than almost anyone else can, is itself a form of deterrence, because it shows allies and adversaries that the US can be first to a problem. The relief is real and the demonstration effect is the dividend, the same dual character that runs through every humanitarian deployment. Speed buys goodwill abroad and signals reach to rivals, and a command that can do both at once with the same airframes is getting two missions for one.</div>
+  </div>
+
+  <div class="section-hdr">Force, Systems, and the Building</div>
+
+  <div class="story">
+    <span class="tag">USN</span><span class="tag">Deployment</span>
+    <div class="story-headline">USS Lake Erie returns home after eleven months at sea</div>
+    <div class="story-meta">Stars and Stripes &middot; single source</div>
+    <div class="story-synopsis">The cruiser USS Lake Erie returned to port after an eleven-month deployment, an unusually long stretch at sea, per Stars and Stripes. <strong>The take:</strong> an eleven-month cruise is what a stretched fleet looks like in human terms. Deployments run long when there are not enough hulls to cover the demand, and a war in the Gulf plus standing commitments in the Pacific and Atlantic means the ships that exist get worked harder and longer. The cost lands on crews and on maintenance cycles that get compressed or deferred, which is how readiness erodes quietly between headlines. The same week the budget crosses a trillion dollars, a cruiser comes home from nearly a year away, and the gap between topline and tempo is the story the appropriations table does not show.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">USAF</span><span class="tag">Safety</span>
+    <div class="story-headline">Pilot shut off the fuel supply by mistake in the 2025 Skyraider II crash, investigation finds</div>
+    <div class="story-meta">Stars and Stripes &middot; single source</div>
+    <div class="story-synopsis">An Air Force accident investigation board found that a pilot inadvertently cut the fuel supply, leading to the 2025 crash of an OA-1K Skyraider II, per Stars and Stripes. <strong>The take:</strong> mishap findings are where new platforms get their hidden costs audited. The Skyraider II is a recently fielded light-attack aircraft, and an early loss traced to a cockpit-procedure error points at the training and human-factors work that fielding always outruns. The lesson is rarely about one pilot; it is about whether the controls, checklists, and instruction kept pace with the rush to put the airframe in service. New capability arrives with a learning curve paid partly in accidents, and the honest response is to fix the procedures and the interface, not just to assign the cause and move on.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">USCG</span><span class="tag">Counter-Narcotics</span>
+    <div class="story-headline">Coast Guard seizes $63 million in cocaine and marijuana</div>
+    <div class="story-meta">Stars and Stripes &middot; single source</div>
+    <div class="story-synopsis">The Coast Guard offloaded roughly $63 million worth of seized cocaine and marijuana, the product of interdictions in the maritime drug-transit zones, per Stars and Stripes. <strong>The take:</strong> the counter-narcotics fight is the steady-state maritime mission that rarely makes the front page and never really ends. Large seizures are real wins that disrupt trafficking networks and fund the case for more cutters, but they are also a reminder of scale: a $63 million haul is a fraction of the flow, and the transit zones the Coast Guard patrols overlap exactly with the Caribbean approaches now busy with Venezuela relief traffic. The same waters carry rescue cargo and contraband, and the service that polices both is doing it with a fleet older than most of its sailors.</div>
+  </div>
+
+</div>
+
+<!-- STRATEGIC TAB -->
+<div id="tab-strategic" class="tab-panel">
+
+  <div class="section-hdr">The Deal and Its Veto</div>
+
+  <div class="story">
+    <span class="tag">Lebanon</span><span class="tag">Hezbollah</span>
+    <div class="story-headline"><a href="https://www.japantimes.co.jp/news/2026/06/28/world/hezbollah-rejects-israel-deal-lebanon/" target="_blank" rel="noopener">Hezbollah rejects the deal with Israel, which expects an "extended stay" in Lebanon</a></div>
+    <div class="story-meta">The Japan Times / BBC / France 24 &middot; cross-corroborated</div>
+    <div class="story-synopsis">Hezbollah declared the US-brokered Israel-Lebanon framework "null and void," while Israeli officials signaled forces would remain in southern Lebanon for an extended period and the IDF carried out fresh strikes the day after the signing. <strong>The take:</strong> this is the framework colliding with the actor it was built to bypass. The deal's whole design was to move the Hezbollah border problem into a channel Tehran does not control; Hezbollah's response is to refuse the channel. A framework signed in Washington can commit Beirut on paper, but it cannot disarm a militia that never agreed and still answers to Iran. Israel's "extended stay" language confirms the gap: with no partner to enforce the Lebanese side, security gets provided by occupation rather than by agreement, which is the outcome the diplomacy was supposed to avoid. Signing was the easy part.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Israel</span><span class="tag">Lebanon</span>
+    <div class="story-headline"><a href="https://www.bbc.co.uk/news/articles/cx2kpn0eeweo?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">Israel strikes southern Lebanon as Hezbollah condemns the new deal</a></div>
+    <div class="story-meta">BBC / The Times of Israel &middot; cross-corroborated</div>
+    <div class="story-synopsis">Israel struck targets in southern Lebanon, saying it hit Hezbollah operatives and a rocket launcher, even as the ink dried on the framework agreement and Hezbollah rejected it outright, per the BBC and the Times of Israel. <strong>The take:</strong> the strikes the day after the signing are the framework's credibility problem made literal. Netanyahu can call the deal a strategic blow to the Iranian axis, but if Israeli operations continue unabated, the agreement looks less like a ceasefire than a permission slip for a managed occupation. For Beirut, that is the worst of both worlds: a deal that legitimizes an Israeli presence without delivering Lebanese sovereignty or restraining the militia that invites the strikes. The path from framework to functioning peace runs through a disarmament no one at the table can compel, and until then the south stays a free-fire zone with a treaty on top.</div>
+  </div>
+
+  <div class="section-hdr">The Wider Board</div>
+
+  <div class="story">
+    <span class="tag">Turkey</span><span class="tag">Arms</span>
+    <div class="story-headline"><a href="https://thehill.com/policy/international/5942725-turkey-military-sales-boost/" target="_blank" rel="noopener">Erdogan cashes in on the Trump relationship for Turkey</a></div>
+    <div class="story-meta">The Hill &middot; single source</div>
+    <div class="story-synopsis">The Hill reports that Turkey's president is leveraging warm relations with Washington into a boost in military sales and defense cooperation, capitalizing on Ankara's pivotal position as NATO eyes deliverables there. <strong>The take:</strong> Turkey is the alliance member that extracts the most by being the hardest to pin down. Sitting astride the seam between the European and Middle Eastern theaters, Ankara converts its geography into leverage, and a transactional administration is a natural counterpart for a leader who treats alignment as a price to be negotiated. Arms sales deepen interoperability and keep Turkey inside the tent, which is the case for them. The cost is that every concession rewards the hedging, and an ally that monetizes its ambiguity has little incentive to resolve it. NATO gets Turkey's bases and its bargaining in the same package.</div>
+  </div>
+
+  <div class="story" data-unsourced="intentional">
+    <span class="tag">NATO</span><span class="tag">Alliances</span>
+    <div class="story-headline">Biden accuses Trump of "destroying NATO" and "choosing Putin over American allies"</div>
+    <div class="story-meta">The Kyiv Independent &middot; single source, tracking</div>
+    <div class="story-synopsis">Former President Biden publicly charged that the current administration is "destroying NATO" and "choosing Putin over American allies," a rare sharp intervention from a predecessor into live alliance politics, per the Kyiv Independent. <strong>The take:</strong> the substance is contestable, but the intervention itself is the signal. A former president breaking the usual reticence to attack a successor's foreign policy by name reflects how deeply the alliance question now divides American politics, and allies hear the discord clearly. The strategic risk is not any single policy but the perception of unreliability: partners planning thirty-year programs need to believe US commitments survive an election, and a public predecessor-successor fight over whether NATO is being dismantled feeds exactly the doubt adversaries want to cultivate. Whether or not the charge lands, the spectacle of the charge erodes the credibility it disputes.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Baltic</span><span class="tag">NATO</span>
+    <div class="story-headline"><a href="https://gcaptain.com/sweden-fits-guns-to-coast-guard-vessels-as-baltic-tensions-rise/" target="_blank" rel="noopener">Sweden fits guns to its coast guard vessels as Baltic tensions rise</a></div>
+    <div class="story-meta">gCaptain &middot; single source</div>
+    <div class="story-synopsis">Sweden is arming coast guard vessels that previously operated unarmed, a response to rising tensions in the Baltic Sea, where undersea-cable sabotage and shadow-fleet activity have put the region's navies on edge, per gCaptain. <strong>The take:</strong> a country arming its coast guard is a small act with a large meaning. The Baltic has become NATO's busiest gray-zone maritime theater, cut cables, loitering tankers, GPS jamming, and the alliance's newest members are hardening the constabulary forces that patrol it because the line between policing and defense there has blurred. It rhymes with the Gulf on the same day: in both theaters, states are militarizing the protection of commercial sea lanes because someone has shown a willingness to threaten shipping for leverage. Sweden's guns and the Fifth Fleet's posture are the same instinct in different waters.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Russia</span><span class="tag">Ukraine</span>
+    <div class="story-headline"><a href="https://www.themoscowtimes.com/2026/06/28/ukrainian-strike-kills-one-in-southern-russia-refinery-on-fire-a93114" target="_blank" rel="noopener">Ukrainian strike kills one in southern Russia, refinery set on fire</a></div>
+    <div class="story-meta">The Moscow Times &middot; single source</div>
+    <div class="story-synopsis">A Ukrainian strike on southern Russia killed at least one person and set a refinery ablaze, the latest in a sustained campaign against Russian energy and transport infrastructure, per the Moscow Times. <strong>The take:</strong> Ukraine's deep-strike campaign is the part of its war that compounds. Each refinery hit degrades the fuel logistics that move Russian forces and the export revenue that funds them, and the cumulative effect of a months-long campaign is a slow tax on Moscow's capacity to sustain the fight. It is the inverse of the Hormuz logic playing out the same week: in the Gulf, attacking shipping is a tool of coercion; in Russia, attacking refineries is a tool of attrition. Both demonstrate how cheap precision against fixed energy infrastructure has become one of the decisive levers of modern war, available to states and proxies that could never match their adversary tank for tank.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Hungary</span><span class="tag">Europe</span>
+    <div class="story-headline"><a href="https://www.dw.com/en/with-operation-purgatory-magyar-moves-to-demolish-orban-system/a-77726207?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">With "Operation Purgatory," Magyar moves to demolish the Orban system</a></div>
+    <div class="story-meta">Deutsche Welle &middot; single source</div>
+    <div class="story-synopsis">Deutsche Welle reports that Hungarian opposition figure Peter Magyar is pressing a campaign, branded "Operation Purgatory," to dismantle the entrenched political machine built under Viktor Orban. <strong>The take:</strong> Hungary's internal politics carry outsized weight for the West because Orban has been the EU and NATO's most reliable spoiler on Ukraine, energy, and Russia policy. A serious challenge to his system is therefore a strategic variable, not just a domestic one: a government less inclined to veto and obstruct would change the arithmetic in Brussels on sanctions and aid. The caution is that machines built over many years rarely fall to a single campaign, and a wounded incumbent can be more disruptive than a confident one. For now it is a contest to watch rather than a turn to bank, but the stakes reach well past Budapest.</div>
+  </div>
+
+</div>
+
+<!-- DOMESTIC TAB -->
+<div id="tab-domestic" class="tab-panel">
+
+  <div class="section-hdr">The Court and Executive Power</div>
+
+  <div class="story">
+    <span class="tag">SCOTUS</span><span class="tag">Executive Power</span>
+    <div class="story-headline"><a href="https://www.axios.com/2026/06/28/supreme-court-trump-birthright-citizenship" target="_blank" rel="noopener">The Supreme Court's blockbuster week will put Trump's power to the test</a></div>
+    <div class="story-meta">Axios &middot; single source, analysis</div>
+    <div class="story-synopsis">The Supreme Court enters the final week of its term with a slate of decisions testing executive authority, including a closely watched case on birthright citizenship, per Axios. <strong>The take:</strong> the term is becoming a referendum on how far presidential power runs, and the Court's recent direction has been to expand it. Days after a TPS ruling that foreclosed judicial review for roughly 1.3 million people, a birthright-citizenship case asks the Justices to weigh in on one of the Fourteenth Amendment's bedrock guarantees. The pattern to watch is procedural as much as substantive: whether the Court continues to remove the judiciary as a check on executive action, case by case. A term that ends by enlarging what a president can do unreviewably reshapes the constitutional balance more durably than any single policy fight.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Election</span><span class="tag">Louisiana</span>
+    <div class="story-headline"><a href="https://www.cbsnews.com/news/louisiana-gop-senate-primary-runoff-letlow-fleming/" target="_blank" rel="noopener">Trump-backed Julia Letlow wins the Louisiana GOP Senate runoff</a></div>
+    <div class="story-meta">CBS News / ABC News / NBC News &middot; cross-corroborated</div>
+    <div class="story-synopsis">Representative Julia Letlow, endorsed by President Trump, defeated John Fleming in the Louisiana Republican Senate runoff for the seat being vacated by Bill Cassidy, per the AP projection carried across outlets. <strong>The take:</strong> the result is a clean read on the president's grip on his party in a deep-red state. Letlow ran as the establishment-backed, Trump-endorsed favorite against a grassroots challenger, and the endorsement carried, which is the through-line of the cycle: the president's word still moves Republican primaries decisively. It also resolves the awkward subplot of Cassidy, one of the senators who crossed Trump, exiting in favor of a loyalist. The seat is safely Republican, so the runoff was the real election, and the man who decided it was not on the ballot.</div>
+  </div>
+
+  <div class="section-hdr">The Administration</div>
+
+  <div class="story">
+    <span class="tag">DHS</span><span class="tag">ICE</span>
+    <div class="story-headline"><a href="https://www.cbsnews.com/news/trump-lance-schroyer-ice-director-nomination/" target="_blank" rel="noopener">Trump nominates former Oklahoma trooper Lance Schroyer to be ICE director</a></div>
+    <div class="story-meta">CBS News / NPR / ABC News &middot; cross-corroborated</div>
+    <div class="story-synopsis">President Trump said he is nominating Lance Schroyer, a former Oklahoma state trooper, to lead Immigration and Customs Enforcement, filling one of the administration's central enforcement posts, per CBS, NPR, and ABC. <strong>The take:</strong> the pick fits the administration's pattern of installing line-enforcement backgrounds atop the agencies that execute its immigration agenda. A career state trooper rather than a Washington bureaucrat signals a tone-setting choice: ICE leadership oriented toward aggressive field enforcement at a moment the Supreme Court has just widened the executive's immigration latitude. The nomination lands inside a larger machinery, expanded deportation authority, narrowed judicial review, that gives the next ICE director more running room than any predecessor in years. Who holds the post matters more precisely because the checks on it have thinned.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">AI</span><span class="tag">Export Policy</span>
+    <div class="story-headline"><a href="https://www.dw.com/en/us-allows-partial-release-of-anthropic-s-mythos-ai-model/a-77732252?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">US allows partial release of a frontier AI model</a></div>
+    <div class="story-meta">Deutsche Welle / The Economist / Axios &middot; cross-corroborated</div>
+    <div class="story-synopsis">The administration partially lifted an export restriction on a frontier AI model, clearing wider but still controlled access for a set of approved companies after regulators had feared the system could aid cyberattacks, per NPR and others. <strong>The take:</strong> this is industrial policy and security policy colliding in real time. A model capable enough to be export-controlled is also capable enough to be commercially decisive, and the government is trying to thread access for trusted users while denying it to adversaries, the same dual-use dilemma that governs advanced chips. Partial release is the compromise of a regulator that can neither fully bottle the capability nor fully free it. The deeper problem is diffusion: every time the underlying capability spreads, the control lever weakens, and a policy built on gating access to a model that others can approximate is a policy with a shelf life.</div>
+  </div>
+
+  <div class="section-hdr">America 250 and the Home Front</div>
+
+  <div class="story">
+    <span class="tag">Wildfire</span><span class="tag">West</span>
+    <div class="story-headline"><a href="https://abcnews.com/US/3-federal-firefighters-killed-2-injured-responding-snyder/story?id=134285923" target="_blank" rel="noopener">Three federal firefighters killed responding to the Snyder wildfire on the Utah-Colorado border</a></div>
+    <div class="story-meta">ABC News / NPR / NBC News &middot; cross-corroborated</div>
+    <div class="story-synopsis">Three federal firefighters were killed and two injured battling the Snyder wildfire on the Utah-Colorado border, as Utah declared an emergency, limited fireworks, and crews fought the largest active fire in the country under critical fire-weather conditions, per ABC, NPR, and NBC. <strong>The take:</strong> the deaths are the human cost behind the week's fire-weather story, and they reframe the July 4 fireworks restrictions as prudence rather than overcaution. Red-flag conditions across the West are killing the people sent to fight what those conditions ignite, and a fireworks-heavy holiday landing in the middle of it forces a collision between celebration and safety that officials are resolving by canceling the celebration. It is a concrete instance of climate stress reshaping the American calendar, and it shadows a semiquincentennial built around exactly the mass outdoor pyrotechnics the conditions now forbid. The country wants a 250th-birthday party the weather will not fully allow.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Education</span><span class="tag">Policy</span>
+    <div class="story-headline"><a href="https://www.npr.org/2026/06/28/nx-s1-5805988/cost-education-student-loan-tuition-graduate-school" target="_blank" rel="noopener">Will the new student loan limits actually drive down tuition? Economists weigh in</a></div>
+    <div class="story-meta">NPR &middot; single source, analysis</div>
+    <div class="story-synopsis">NPR examines whether newly imposed federal student-loan limits will translate into lower tuition, with economists divided on whether capping borrowing pressures schools to cut prices or simply shifts costs onto students and families. <strong>The take:</strong> the policy rests on a contested theory, that easy federal lending inflated tuition, so capping it should deflate prices. The strongest version of the case is that schools priced to capture available aid and will adjust when the aid shrinks. The strongest counter is that demand for credentials is sticky, so caps may just push students toward private loans or out of graduate programs entirely, hitting access without touching sticker price. Which effect dominates is an empirical question the next few admissions cycles will answer, and the human stakes, who can afford an advanced degree, ride on getting the theory right.</div>
+  </div>
+
+  <div class="section-hdr">Macro Dashboard</div>
+  <p class="throughline">Fed funds rate 3.63% (June 25), unchanged. The yield curve held steady: 10-year UST 4.40% and 2-year 4.09%. Headline CPI index 334.0 and core CPI 336.1 (May); the PCE price index reads 131.5. Unemployment holding at 4.3% (May). Initial jobless claims at 215,000, still near the improved level of recent weeks. Industrial production 102.6. The dollar eased against the euro at 1.1470. Data via FRED; see the ticker below for live market levels.</p>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Federal Register Watch</div>
+    <div class="story-synopsis">No executive orders, proclamations, or agency rules posted in the June 27 to 28 weekend window, as is typical for a Sunday. The Defense, State, Treasury, and Homeland Security desks were quiet over the weekend; the next batch of agency actions and any presidential documents will post when the Office of the Federal Register resumes the weekday publication schedule.</div>
+  </div>
+
+</div>
+
+<!-- DEEP READS TAB -->
+<div id="tab-deepreads" class="tab-panel">
+
+  <div class="section-hdr">The War and the Politics</div>
+
+  <div class="story">
+    <span class="tag">National Review</span><span class="tag">War Powers</span>
+    <div class="story-headline"><a href="https://www.nationalreview.com/2026/06/the-theater-of-congresss-iran-war-votes/" target="_blank" rel="noopener">The theater of Congress's Iran war votes</a></div>
+    <div class="story-meta">National Review &middot; analysis</div>
+    <div class="story-synopsis">National Review argues that the recent congressional votes to curb the Iran war were largely performative, symbolic rebukes with no real prospect of constraining a president determined to keep striking. <strong>The take:</strong> read this against Day 121, when the US ran a second night of strikes and the president threatened to "complete the job." The piece's core claim, that the war-powers votes were theater, looks stronger by the day: Congress registered its objection and the campaign continued regardless. The deeper question the essay raises is whether the legislature retains any practical check on the use of force short of cutting funds it will not cut. The strongest counter is that symbolic votes shape the politics that eventually bind a president; the strongest version of the article's pessimism is that "eventually" is doing a lot of work while the strikes are happening now.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">The Atlantic</span><span class="tag">Iran</span>
+    <div class="story-headline"><a href="https://www.theatlantic.com/national-security/2026/06/lebanon-israel-us-mou-vance-rubio/687715/?utm_source=feed" target="_blank" rel="noopener">Vance vs. Rubio: Iran Edition</a></div>
+    <div class="story-meta">The Atlantic &middot; analysis</div>
+    <div class="story-synopsis">The Atlantic reads the administration's Iran and Lebanon policy through the apparent divergence between the vice president and the secretary of state, mapping a hawk-restrainer split inside the building over how far to push. <strong>The take:</strong> the framing is useful precisely because Day 121 shows the split in action. The vice president's "we win either way" and the president's "complete the job" sit on one end; the secretary of state's framework diplomacy and Gulf reassurance sit on the other. A policy that strikes Iran and brokers a Lebanon deal in the same week is not incoherent so much as contested, with two instincts running in parallel and no settled theory of which leads. The risk the piece surfaces is that an adversary reads the divergence as indecision and tests it, which is one way to explain why Tehran keeps probing a deal Washington insists is alive.</div>
+  </div>
+
+  <div class="story" data-unsourced="intentional">
+    <span class="tag">CSIS</span><span class="tag">Logistics</span>
+    <div class="story-headline">The Jones Act meets the Hormuz crisis: war, energy, and protectionism</div>
+    <div class="story-meta">Center for Strategic and International Studies &middot; analysis</div>
+    <div class="story-synopsis">A CSIS energy-security panel examines how the Hormuz shipping crisis collides with the Jones Act, the law that restricts domestic maritime trade to US-built, US-crewed ships, and with the broader shortage of American merchant-marine capacity that a major theater conflict exposes. <strong>The take:</strong> this is the unglamorous logistics layer beneath the day's strikes, and it deserves the attention. A war that disrupts the world's most important oil chokepoint forces a hard look at whether US shipping rules, written to protect a domestic industry, can flex fast enough to sustain wartime energy flows. The friction is real: statutory protectionism on one side, operational necessity on the other, and a thin merchant fleet caught between them. Watch for national-security-based Jones Act waiver proposals, the kind of fight that only surfaces when a distant strait turns a peacetime rule into a wartime constraint. The strait is testing the Navy's mine-clearance capacity and the country's shipping statutes at the same time.</div>
+  </div>
+
+  <div class="section-hdr">The Court and the Country</div>
+
+  <div class="story">
+    <span class="tag">The Atlantic</span><span class="tag">SCOTUS</span>
+    <div class="story-headline"><a href="https://www.theatlantic.com/ideas/2026/06/scotus-asylum-racial-discrimination/687710/?utm_source=feed" target="_blank" rel="noopener">The court that will believe absolutely anything is "race-neutral"</a></div>
+    <div class="story-meta">The Atlantic &middot; analysis</div>
+    <div class="story-synopsis">The Atlantic criticizes the Supreme Court's willingness to accept government claims of race-neutrality in asylum and immigration enforcement, arguing the deference amounts to looking past disparate impact. <strong>The take:</strong> this is the doctrinal companion to the blockbuster-week story. The essay's argument is that the Court has built a jurisprudence that takes the executive's stated rationale at face value and declines to examine outcomes, which functionally insulates a wide range of enforcement from scrutiny. The strongest version is that "race-neutral on its face" has become a near-irrebuttable presumption. The honest counter is that requiring courts to police every disparate impact would hand the judiciary enormous and contestable power over executive judgment. The piece is openly one-sided, and worth reading as the sharpest articulation of the case that the term's deference to executive power is the real story, not any single ruling.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">The Bulwark</span><span class="tag">Ceasefire</span>
+    <div class="story-headline"><a href="https://www.thebulwark.com/p/breaking-trumps-ceasefire-may-already" target="_blank" rel="noopener">Trump's ceasefire may already be dead</a></div>
+    <div class="story-meta">The Bulwark &middot; analysis</div>
+    <div class="story-synopsis">The Bulwark argues that the Iran ceasefire is collapsing in real time, with renewed strikes and retaliation overtaking the diplomacy that produced the memorandum. <strong>The take:</strong> the piece is more polemic than analysis, and its conclusion runs ahead of the evidence in calling the deal dead rather than failing. But its central observation is hard to dispute on Day 121: a ceasefire both parties are enforcing with airstrikes is functionally indistinguishable from a war with paperwork. The value here is as a pointed statement of the pessimistic case, useful precisely because it forces the question of what would count as the deal surviving. The fairer read, which this site has held, is that the framework is not dead but is being run as a managed conflict, and the distinction matters only as long as both sides still prefer the table. The Bulwark's bet is that they no longer do.</div>
+  </div>
+
+</div>
+
+<!-- LOCAL TAB -->
+<div id="tab-local" class="tab-panel">
+
+  <div class="section-hdr">Joint Base Charleston / 437 AW</div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Watch: 437 AW / 315 AW</div>
+    <div class="story-synopsis">The 437th Airlift Wing (host) and 315th Airlift Wing (reserve associate) remain at steady-state operations, with no new Joint Base Charleston-specific announcements over the weekend. The relevant context is the operational tempo upstream: as C-17s flow into the Caribbean for Venezuela earthquake relief, the strategic-airlift demand that runs through Charleston stays elevated. The Lowcountry's host wing is part of the Globemaster enterprise carrying that load, and the steady-state label describes the home station, not the mission, which is busy. Separately, the Post and Courier examined how the Army Corps of Engineers has shaped Charleston and how the city is now trying to influence the Corps in return, a reminder that the federal footprint in the Lowcountry runs well beyond the air base.</div>
+  </div>
+
+  <div class="section-hdr">Lowcountry News</div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Carolina Day &middot; 250th</div>
+    <div class="story-synopsis">Charleston marked Carolina Day with church services, a parade, and public programs commemorating the 250th anniversary of the Battle of Sullivan's Island, where Patriot defenders at the palmetto-log fort turned back a British naval assault in June 1776. The Post and Courier ran a multi-part retelling of the battle and a Q&amp;A on the fight, and noted the commemoration will carry on through Independence Day and beyond. The semiquincentennial gives the Lowcountry an unusually direct claim on the founding story; the palmetto on the state flag traces straight back to this fight, and "where the Revolution was won" is the framing the region is leaning into all summer.</div>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">State &middot; Growth</div>
+    <div class="story-synopsis">Around the state: a bill to regulate THC-infused drinks failed in the South Carolina House, leaving the fast-growing hemp-beverage market in a legal gray zone, per The State. The University of South Carolina board approved a tuition freeze alongside the president's raise and major capital projects. In the Lowcountry, North Charleston officials likened enforcing rules against illegal short-term rentals to a game of "Whac-A-Mole," and a pipeline company sued landowners for survey access amid resident anxiety over an ACE Basin gas plan. The connective thread is a booming region negotiating the friction between growth, regulation, and the cost of keeping pace, the standard Lowcountry balancing act.</div>
+  </div>
+
+  <div class="section-hdr">Food</div>
+
+  <div class="story">
+    <span class="tag">Charleston</span><span class="tag">Dining</span>
+    <div class="story-headline">Magnolias downtown closes after a small fire, expects to reopen for the Fourth of July</div>
+    <div class="story-meta">Post and Courier &middot; single source</div>
+    <div class="story-synopsis">Magnolias, the long-running upscale Lowcountry restaurant on East Bay Street, closed after a small fire on June 26 and expects to reopen in time for the Fourth of July weekend, per the Post and Courier. <strong>The note:</strong> Magnolias is a fixture of the downtown dining scene and an early anchor of Charleston's restaurant reputation, so a kitchen fire there registers beyond the incident itself. The reopening timeline is the operative detail for holiday-weekend planning: the closure is to one kitchen's calendar, not a lasting loss, and the block is expected back to normal before the crowds arrive. No reporting of serious injuries.</div>
+  </div>
+
+  <div class="section-hdr">Activities / What's On</div>
+
+  <div class="story">
+    <span class="tag">Charleston</span><span class="tag">250th</span>
+    <div class="story-headline">Carolina Day and the 250th roll into a full Independence Day weekend in the Lowcountry</div>
+    <div class="story-meta">Post and Courier / Live 5 News &middot; cross-corroborated</div>
+    <div class="story-synopsis">Charleston's Carolina Day commemoration flows directly into the run-up to Independence Day, with the Post and Courier noting the 250th celebration will continue beyond Carolina Day and July 4th, and area outlets previewing fort programming, living-history demonstrations, harbor sails, and a Carolina Day drone show, per WCBD. <strong>The note:</strong> for a region with a genuine claim on the founding story, the SC250 calendar is unusually rich this summer, and the Sullivan's Island anniversary gives the holiday weekend a local anchor most cities cannot match. Expect Fort Moultrie and Fort Sumter programming alongside the standard Fourth festivities, with the drone show standing in for fireworks at a moment the West is canceling pyrotechnics outright.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Lowcountry</span><span class="tag">Hockey</span>
+    <div class="story-headline">Stingrays introduce Jesse Kallechy as head coach</div>
+    <div class="story-meta">Live 5 News &middot; single source</div>
+    <div class="story-synopsis">The South Carolina Stingrays, the Lowcountry's ECHL hockey franchise, introduced Jesse Kallechy as their new head coach, per Live 5 News, setting the bench leadership ahead of the next season. <strong>The note:</strong> minor-league sports are a steady thread of Charleston-area civic life outside the festival calendar, and a head-coaching change is the kind of off-season news that signals a franchise resetting for its next campaign. The Stingrays remain one of the region's longest-running pro-sports tenants, and the hire is the first concrete move of their offseason.</div>
+  </div>
+
+  <div class="story" data-unsourced="intentional">
+    <span class="tag">Charleston</span><span class="tag">Baseball</span>
+    <div class="story-headline">RiverDogs fall to Augusta 7-5 at home as the summer slate rolls on</div>
+    <div class="story-meta">Charleston RiverDogs &middot; single source, tracking</div>
+    <div class="story-synopsis">The Charleston RiverDogs dropped a 7-5 decision to Augusta on Saturday night at Joseph P. Riley Jr. Park, with infielder JD Gonzalez among the bright spots. <strong>The note:</strong> a night at The Joe is the reliable low-key option on the Lowcountry summer calendar, an easy evening out near the base that does not require a festival ticket or a crowd. The result is one game in a long season, but the home slate running through the Fourth of July stretch is the kind of steady local rhythm that holds up whether or not the headlines cooperate.</div>
+  </div>
+
+</div>
+
+<!-- LIGHTER FARE TAB -->
+<div id="tab-lighter" class="tab-panel">
+
+  <div class="section-hdr">Lighter Fare</div>
+
+  <div class="story">
+    <span class="tag">World Cup</span><span class="tag">Group Stage</span>
+    <div class="story-headline"><a href="https://www.aljazeera.com/sports/2026/6/28/messi-argentina-fifa-world-cup-2026-england-dr-congo-portugal-iran?traffic_source=rss" target="_blank" rel="noopener">Messi sends Argentina top, England to face DR Congo, as the group stage closes</a></div>
+    <div class="story-meta">Al Jazeera / The Guardian &middot; cross-corroborated</div>
+    <div class="story-synopsis">Lionel Messi scored a free-kick golazo to send Argentina top of its group, England finished as a group leader and drew DR Congo in the last 32, and Colombia edged Portugal as the 2026 World Cup group stage wrapped, per Al Jazeera and the Guardian. <strong>The note:</strong> the home-soil tournament keeps producing the kind of theater that briefly outruns the war-day count, and Messi at thirty-eight bending in another free kick is the sport offering one more chapter of a story it has been telling for two decades. The knockout bracket is now set, and the back half is where the home crowd starts dreaming in earnest.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">World Cup</span><span class="tag">Drama</span>
+    <div class="story-headline"><a href="https://www.france24.com/en/sport/20260628-world-cup-2026-algeria-austria-advance-after-draw-as-iran-crash-out-in-group-stage" target="_blank" rel="noopener">Algeria and Austria advance after a dramatic draw, knocking Iran out</a></div>
+    <div class="story-meta">France 24 / Al Jazeera &middot; cross-corroborated</div>
+    <div class="story-synopsis">A late-drama draw sent both Algeria and Austria into the World Cup knockout round and ended Iran's hopes of reaching the last 32 for the first time, per France 24 and Al Jazeera. <strong>The note:</strong> there is a small, strange poignancy in Iran's team crashing out on a tiebreaker the same weekend the country dominates the front page for very different reasons. Sport is the one arena where Iran competes with the world on neutral terms, and a heartbreak exit on goal difference is, for once, an ordinary kind of national disappointment. The brief is happy to note it as exactly that: a football result, nothing heavier, in a week with more than enough of the heavy.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Europe</span><span class="tag">Heat</span>
+    <div class="story-headline"><a href="https://www.dw.com/en/germany-news-extreme-heat-heads-east-greens-want-air-con/live-77733670?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Europe swelters as a record heatwave moves east toward Germany</a></div>
+    <div class="story-meta">Deutsche Welle / South China Morning Post &middot; cross-corroborated</div>
+    <div class="story-synopsis">A punishing heatwave pushed east across Europe, with Germany bracing for extreme temperatures and Germany's Greens pressing for wider air conditioning, even as France reported roughly 1,000 excess deaths during its record-breaking heat, per Deutsche Welle and the South China Morning Post. <strong>The note:</strong> the lighter framing has a serious undertow this week, with a four-figure French death toll turning "heatwave" from a forecast into a public-health event. The human-scale detail, a continent debating air conditioning it long considered unnecessary, is the adaptation story in miniature. It is also the summer the US forces stationed across northern Europe are living, the same heat the headlines are tracking, now part of daily logistics rather than the occasional hot week.</div>
+  </div>
+
+</div>
+
+<!-- MARKET TICKER -->
+<div class="ticker-wrap" aria-label="Market ticker">
+  <div class="ticker-track" id="ticker-track">
+    <span class="ticker-group" id="ticker-group">
+      <span class="ticker-item"><span class="ticker-lbl">S&amp;P 500</span> <span class="ticker-val">7,354</span> <span class="dn">-0.05%</span> <span class="ticker-lbl">(Fri close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">DOW</span> <span class="ticker-val">51,876</span> <span class="dn">-0.09%</span> <span class="ticker-lbl">(Fri close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">NASDAQ</span> <span class="ticker-val">25,298</span> <span class="dn">-0.24%</span> <span class="ticker-lbl">(Fri close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">VIX</span> <span class="ticker-val">18.4</span> <span class="dn">-2.59%</span> <span class="ticker-lbl">(Fri close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">FED FUNDS</span> <span class="ticker-val">3.63%</span> <span class="ticker-lbl">(Jun 25)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">WTI</span> <span class="ticker-val">$69.23</span> <span class="dn">-1.93%</span> <span class="ticker-lbl">(Fri close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">BRENT</span> <span class="ticker-val">$72.60</span> <span class="dn">-2.18%</span> <span class="ticker-lbl">(Fri close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">GOLD</span> <span class="ticker-val">$4,096</span> <span class="up">+1.93%</span> <span class="ticker-lbl">(Fri close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">10Y UST</span> <span class="ticker-val">4.37%</span> <span class="dn">-0.46%</span> <span class="ticker-lbl">(Fri close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">DXY</span> <span class="ticker-val">101.4</span> <span class="dn">-0.06%</span> <span class="ticker-lbl">(Fri close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">BTC</span> <span class="ticker-val">$60,262</span> <span class="up">+0.55%</span> <span class="ticker-lbl">(Fri close)</span></span>
+    </span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>THE SWAP REPORT &middot; Sunday, June 28, 2026 &middot; Morning Edition</div>
+  <div style="opacity:0.6;">For SWAP &middot; Distribution restricted &middot; Not for public release</div>
+</footer>
+
+<script>
+var currentTheme = 'warm';
+function setTheme(t, btn) {
+  currentTheme = t;
+  document.body.setAttribute('data-theme', t);
+  document.querySelectorAll('.theme-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+}
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+var wxLat = 37, wxLon = -95, wxZoom = 4, wxLayerName = 'temperature-2m';
+var ICAO_TABLE = {
+  'KCHS': [32.8986, -80.0405], 'KLTS': [34.6671, -99.2667],
+  'KDEN': [39.8561, -104.6737], 'KATL': [33.6407, -84.4277],
+  'KDFW': [32.8998, -97.0403], 'KLAX': [33.9425, -118.4081],
+  'KJFK': [40.6413, -73.7781], 'KORD': [41.9742, -87.9073],
+  'EGLL': [51.4775, -0.4614], 'RJTT': [35.5533, 139.7811]
+};
+function buildWxSrc() {
+  return 'https://www.ventusky.com/?p=' + wxLat + ';' + wxLon + ';' + wxZoom + '&l=' + wxLayerName;
+}
+function wxLayer(btn, layer) {
+  wxLayerName = layer;
+  document.querySelectorAll('.wx-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById('wx-iframe').src = buildWxSrc();
+}
+function wxSearch() {
+  var q = document.getElementById('wx-input').value.trim();
+  if (!q) return;
+  var latLonRe = /^(-?\d+\.?\d*),\s*(-?\d+\.?\d*)$/;
+  var m = q.match(latLonRe);
+  if (m) { wxLat = parseFloat(m[1]); wxLon = parseFloat(m[2]); wxZoom = 8; document.getElementById('wx-iframe').src = buildWxSrc(); return; }
+  var icao = q.toUpperCase();
+  if (ICAO_TABLE[icao]) { wxLat = ICAO_TABLE[icao][0]; wxLon = ICAO_TABLE[icao][1]; wxZoom = 9; document.getElementById('wx-iframe').src = buildWxSrc(); return; }
+  fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + encodeURIComponent(q) + '&count=1')
+    .then(function(r){ return r.json(); })
+    .then(function(d){ if (d.results && d.results.length > 0) { wxLat = d.results[0].latitude; wxLon = d.results[0].longitude; wxZoom = 8; document.getElementById('wx-iframe').src = buildWxSrc(); } })
+    .catch(function(){});
+}
+(function(){
+  var grp = document.getElementById('ticker-group');
+  if (grp) {
+    var clone = grp.cloneNode(true);
+    clone.id = '';
+    document.getElementById('ticker-track').appendChild(clone);
+  }
+})();
+</script>
+</body>
+</html>
