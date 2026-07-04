@@ -63,6 +63,7 @@ HUMAN_ONLY_HOSTS = {
     "www.semafor.com", "semafor.com",
     # Regional / international
     "www.timesofisrael.com", "timesofisrael.com",
+    "www.counton2.com", "counton2.com",
     "www.haaretz.com", "haaretz.com",
     "www.scmp.com", "scmp.com",
     "asia.nikkei.com", "www.nikkei.com", "nikkei.com",
@@ -95,8 +96,6 @@ HUMAN_ONLY_HOSTS = {
     "www.atlanticcouncil.org", "atlanticcouncil.org",
     "www.hudson.org", "hudson.org",
     "www.heritage.org", "heritage.org",
-    "news.usni.org", "usni.org",
-    "www.aei.org", "aei.org",
 }
 
 # Hosts that are slow on HEAD/GET but reliable. Bigger timeout, more retries.
