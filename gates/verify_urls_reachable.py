@@ -104,6 +104,11 @@ SLOW_HOSTS = {
     "www.csis.org", "csis.org",
     "www.rand.org", "rand.org",
     "www.brookings.edu", "brookings.edu",
+    # Regional papers that bot-wall / time out on automated HEAD/GET but are
+    # reliable for humans. McClatchy (The State) and similar block the gate UA.
+    "www.thestate.com", "thestate.com",
+    "www.postandcourier.com", "postandcourier.com",
+    "www.live5news.com", "live5news.com",
 }
 
 # Skip checking these — they are anchors / non-http / mailto / template placeholders.
