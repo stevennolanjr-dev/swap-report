@@ -44,6 +44,7 @@ RETRIES = int(os.environ.get("SWAP_URL_RETRIES", "1"))
 # Add liberally: false positives here block deploys; false negatives only matter
 # if a major publisher is genuinely down (vanishingly rare).
 HUMAN_ONLY_HOSTS = {
+    "www.chathamhouse.org", "chathamhouse.org",
     # Social
     "x.com", "twitter.com",
     "www.linkedin.com", "linkedin.com",
