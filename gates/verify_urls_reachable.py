@@ -77,6 +77,7 @@ HUMAN_ONLY_HOSTS = {
     "www.harpers.org", "harpers.org",
     "www.thenation.com", "thenation.com",
     # Defense trades that occasionally block
+    "news.usni.org", "usni.org",
     "breakingdefense.com", "www.breakingdefense.com",
     "www.defensenews.com", "defensenews.com",
     "www.airandspaceforces.com", "airandspaceforces.com",
