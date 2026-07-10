@@ -44,7 +44,6 @@ RETRIES = int(os.environ.get("SWAP_URL_RETRIES", "1"))
 # Add liberally: false positives here block deploys; false negatives only matter
 # if a major publisher is genuinely down (vanishingly rare).
 HUMAN_ONLY_HOSTS = {
-    "www.chathamhouse.org", "chathamhouse.org",
     # Social
     "x.com", "twitter.com",
     "www.linkedin.com", "linkedin.com",
@@ -77,7 +76,7 @@ HUMAN_ONLY_HOSTS = {
     "www.harpers.org", "harpers.org",
     "www.thenation.com", "thenation.com",
     # Defense trades that occasionally block
-    "news.usni.org", "usni.org",
+    "news.usni.org", "usni.org",   # added 2026-07-09: 403s every runner HEAD/GET; real 404s still return 404
     "breakingdefense.com", "www.breakingdefense.com",
     "www.defensenews.com", "defensenews.com",
     "www.airandspaceforces.com", "airandspaceforces.com",
@@ -98,6 +97,8 @@ HUMAN_ONLY_HOSTS = {
     "www.atlanticcouncil.org", "atlanticcouncil.org",
     "www.hudson.org", "hudson.org",
     "www.heritage.org", "heritage.org",
+    "www.chathamhouse.org", "chathamhouse.org",
+    "www.rusi.org", "rusi.org",
 }
 
 # Hosts that are slow on HEAD/GET but reliable. Bigger timeout, more retries.

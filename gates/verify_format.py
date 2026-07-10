@@ -34,8 +34,18 @@ from typing import List, Tuple
 Check = Tuple[str, str, bool, str]  # (section, label, passed, detail)
 
 
-def check(html: str) -> List[Check]:
+def check(html: str, src: str = "") -> List[Check]:
     results: List[Check] = []
+
+    # Archive snapshots are immutable history. The §16 tab-presence rule is
+    # enforced from 2026-07-02 forward, the first edition built with the
+    # Social/Signal tab under its current 'social' slug. Older snapshots used
+    # slug 'signal' (May) or shipped without the tab at all (June); failing them
+    # now would permanently block deploy over editions that can no longer change.
+    # Current index.html always gets the full check (src has no archive date).
+    TAB_RULE_EFFECTIVE = "2026-07-02"
+    _m = re.search(r'(\d{4}-\d{2}-\d{2})\.html$', src or "")
+    legacy_archive = bool(_m) and _m.group(1) < TAB_RULE_EFFECTIVE
 
     def add(section: str, label: str, passed: bool, detail: str = ""):
         results.append((section, label, passed, detail))
@@ -119,6 +129,87 @@ def check(html: str) -> List[Check]:
     add("§2", "IBM Plex Mono font loaded", has_plexmono,
         "IBM Plex Mono not loaded" if not has_plexmono else "")
 
+    # §16/§17 — structure checks. Every build is a 7-tab daily brief and must
+    # pass §16. A SUNDAY build additionally carries the weekly synthesis essay
+    # ABOVE the tabs and must ALSO pass §17. The checks are cumulative, not
+    # mutually exclusive (rev 6.6 correction: Sunday = daily + essay on one page).
+    is_weekly = bool(
+        re.search(r'class=["\'][^"\']*weekly-essay', html)
+        or re.search(r'<body[^>]*data-edition=["\']weekly["\']', html)
+    )
+
+    # §16 — ALWAYS runs: all canonical tabs present (nav button AND content panel
+    # for each). Catches the May 8 silent-drop regression where a whole section
+    # (then Social/Signal) vanished without any other check noticing. The daily
+    # brief is present on Sunday too, so §16 binds every day.
+    # Update CANONICAL_TABS only by explicit SWAP directive.
+    CANONICAL_TABS = [
+        ("overview", "Overview"),
+        ("defense", "Defense"),
+        ("strategic", "Strategic"),
+        ("domestic", "Domestic"),
+        ("deepreads", "Deep Reads"),
+        ("social", "Social/Signal"),   # added 2026-07-09 (issue #67): the tab this
+                                       # check was written to protect was never in the list
+        ("local", "Local"),
+        ("lighter", "Lighter Fare"),
+    ]
+    if legacy_archive:
+        # Immutable history: report, do not enforce.
+        add("§16", f"canonical tab presence (skipped: snapshot predates "
+                   f"{TAB_RULE_EFFECTIVE})", True, "")
+    else:
+        missing_bits = []
+        for slug, label in CANONICAL_TABS:
+            has_btn = bool(re.search(r"showTab\(\s*['\"]" + re.escape(slug) + r"['\"]", html))
+            has_panel = bool(re.search(r'id=["\']tab-' + re.escape(slug) + r'["\']', html))
+            if not has_btn and not has_panel:
+                missing_bits.append(f"{label} (button+panel)")
+            elif not has_btn:
+                missing_bits.append(f"{label} (nav button)")
+            elif not has_panel:
+                missing_bits.append(f"{label} (content panel)")
+        add("§16", f"all {len(CANONICAL_TABS)} canonical tabs present", not missing_bits,
+            "missing: " + ", ".join(missing_bits) if missing_bits else "")
+
+    # §16 — button count must equal panel count (no orphan of either kind,
+    # even for a tab not in the canonical list — guards a stray half-tab).
+    btn_count = len(re.findall(r'class=["\']tab-btn', html))
+    panel_count = len(re.findall(r'class=["\']tab-panel', html))
+    add("§16", "tab button count equals panel count",
+        btn_count == panel_count,
+        f"{btn_count} tab buttons but {panel_count} tab panels"
+        if btn_count != panel_count else "")
+
+    if is_weekly:
+        # §17 — Sunday additionally: the weekly synthesis essay banner sitting
+        # above the daily brief. Require the essay wrapper, Chicago endnotes
+        # (a Notes header + at least one <sup> marker), and the "Weekly Edition"
+        # masthead differentiation. These run ON TOP OF the §16 checks above.
+        has_essay = bool(re.search(r'class=["\'][^"\']*weekly-essay', html))
+        add("§17", "weekly-essay wrapper present", has_essay,
+            "missing <div class=\"weekly-essay\">" if not has_essay else "")
+
+        has_notes_hdr = bool(re.search(
+            r'class=["\']section-hdr["\'][^>]*>\s*Notes\b', html, re.IGNORECASE))
+        add("§17", "endnotes (Notes header) present", has_notes_hdr,
+            "missing the \"Notes\" section header for Chicago endnotes"
+            if not has_notes_hdr else "")
+
+        # Endnote markers are <sup>N</sup>, where N may be wrapped in an <a>
+        # (the template links each marker to the cited URL). Match a <sup>...</sup>
+        # that contains at least one digit, tags or not.
+        sup_markers = len(re.findall(r'<sup>(?:(?!</sup>).)*?\d(?:(?!</sup>).)*?</sup>',
+                                     html, re.DOTALL))
+        add("§17", "at least one endnote marker", sup_markers >= 1,
+            "no <sup>N</sup> endnote markers in the essay"
+            if sup_markers < 1 else "")
+
+        has_weekly_masthead = bool(re.search(r'THE WEEKLY EDITION', html, re.IGNORECASE))
+        add("§17", "masthead reads THE WEEKLY EDITION", has_weekly_masthead,
+            "Sunday build missing \"THE WEEKLY EDITION\" masthead differentiation"
+            if not has_weekly_masthead else "")
+
 
     # §13/§14/§15 — reader-visible content checks. Strip <style>, <script>,
     # and HTML comments first so CSS/JS/internal-notes don't false-positive.
@@ -196,7 +287,7 @@ def main() -> int:
         with open(src, "r", encoding="utf-8") as f:
             html = f.read()
 
-    results = check(html)
+    results = check(html, "" if src == "-" else src)
     fails = [r for r in results if not r[2]]
 
     print(f"Checked {len(results)} FORMAT_LOCK rules.\n")
