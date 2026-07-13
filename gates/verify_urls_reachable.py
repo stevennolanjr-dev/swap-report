@@ -147,6 +147,22 @@ class HrefSrcCollector(HTMLParser):
                 self.urls.add(v)
 
 
+def _host_in(host: str, hosts: Set[str]) -> bool:
+    """Membership check that lets amp./m. subdomains inherit their parent
+    host's treatment. amp.thestate.com matches thestate.com in the set, so a
+    publisher listed once also covers its AMP / mobile mirrors. Added
+    2026-07-13 after amp.thestate.com (an AMP mirror of an already-SLOW host)
+    read-timed-out and hard-failed the deploy."""
+    if host in hosts:
+        return True
+    for prefix in ("amp.", "m."):
+        if host.startswith(prefix):
+            base = host[len(prefix):]
+            if base in hosts or ("www." + base) in hosts:
+                return True
+    return False
+
+
 def check_one(url: str) -> Tuple[str, bool, str]:
     """Returns (url, ok, detail). HEAD with GET fallback. Per-host tuning."""
     host = ""
@@ -154,8 +170,8 @@ def check_one(url: str) -> Tuple[str, bool, str]:
         host = urllib.request.urlparse(url).hostname or ""
     except Exception:
         pass
-    timeout = TIMEOUT * 2 if host in SLOW_HOSTS else TIMEOUT
-    retries = RETRIES + 1 if host in SLOW_HOSTS else RETRIES
+    timeout = TIMEOUT * 2 if _host_in(host, SLOW_HOSTS) else TIMEOUT
+    retries = RETRIES + 1 if _host_in(host, SLOW_HOSTS) else RETRIES
 
     last_err = ""
     for method in ("HEAD", "GET"):
@@ -170,7 +186,7 @@ def check_one(url: str) -> Tuple[str, bool, str]:
                         return (url, True, f"HTTP {status} ({method})")
                     last_err = f"HTTP {status} ({method})"
             except urllib.error.HTTPError as e:
-                if e.code == 403 and host in HUMAN_ONLY_HOSTS:
+                if e.code == 403 and _host_in(host, HUMAN_ONLY_HOSTS):
                     return (url, True, f"HTTP 403 (human-only host)")
                 if e.code in (405, 501) and method == "HEAD":
                     last_err = f"HTTP {e.code} on HEAD, will try GET"
@@ -189,7 +205,7 @@ def check_one(url: str) -> Tuple[str, bool, str]:
 
     # Last-chance: if it's a slow host and we timed out, treat as soft-fail
     # (return as warning, not blocker — slow hosts are reachable for humans).
-    if host in SLOW_HOSTS and "timed out" in last_err:
+    if _host_in(host, SLOW_HOSTS) and "timed out" in last_err:
         return (url, True, f"WARN: {last_err} on slow host (treated as reachable)")
     return (url, False, last_err or "unknown")
 
