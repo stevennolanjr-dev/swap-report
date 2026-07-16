@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE SWAP REPORT: Morning Edition, July 14, 2026</title>
+<meta property="og:title" content="THE SWAP REPORT: Morning Edition, July 14, 2026">
+<meta property="og:url" content="https://theswap.report/">
+<meta property="og:description" content="Tuesday, July 14, 2026. Day 137 of the Iran war: Washington stops contesting the Strait of Hormuz and claims it. Trump reinstates the naval blockade, runs a third night of strikes, and proposes a 20 percent toll on Hormuz cargo, calling the United States the strait's guardian. The trigger was an Iranian cruise-missile attack on two Emirati tankers. Markets take the policy shock seriously: oil jumps toward eighty, stocks fall, volatility climbs. The same morning, Governor McMaster appoints the late Senator Lindsey Graham's sister to fill his seat.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f0e8;
+  --surface: #fffdf8;
+  --border: #d4c9b8;
+  --text: #1a1a1a;
+  --muted: #666666;
+  --accent: #8b0000;
+  --tab-inactive: #e8e2d8;
+  --tab-active: #fffdf8;
+  --header-bg: #ede8df;
+  --tab-bg: #e8e2d8;
+  --tag-bg: #8b0000;
+  --tag-text: #ffffff;
+  --watch-bg: #fff8f0;
+  --watch-border: #c8a06a;
+  --card-bg: #fffdf8;
+  --hover-bg: rgba(139,0,0,0.06);
+  --footer-bg: #ede8df;
+  --footer-text: #666666;
+}
+[data-theme="light"] {
+  --bg: #ffffff; --surface: #ffffff; --border: #e0e0e0; --text: #111111;
+  --muted: #555555; --accent: #8b0000; --tab-inactive: #f0f0f0;
+  --tab-active: #ffffff; --header-bg: #f5f5f5; --tab-bg: #eeeeee;
+  --watch-bg: #fff8f0; --watch-border: #c8a06a; --card-bg: #ffffff;
+  --hover-bg: rgba(139,0,0,0.05); --footer-bg: #f0f0f0; --footer-text: #555555;
+}
+[data-theme="dark"] {
+  --bg: #1a1a2e; --surface: #16213e; --border: #2a2a4a; --text: #e0e0e0;
+  --muted: #a0a0b0; --accent: #cc3333; --tab-inactive: #1e1e3a;
+  --tab-active: #16213e; --header-bg: #1e1e3a; --tab-bg: #1e1e3a;
+  --watch-bg: #1e1e2e; --watch-border: #8b6a3a; --card-bg: #16213e;
+  --hover-bg: rgba(204,51,51,0.08); --footer-bg: #1e1e3a; --footer-text: #a0a0b0;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: Georgia, 'Times New Roman', serif; font-size: 15px; line-height: 1.6; }
+.page { max-width: 960px; margin: 0 auto; background: var(--bg); }
+.masthead { background: var(--bg); padding: 24px 24px 16px; border-bottom: 2px solid var(--accent); display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; }
+.masthead-left { flex: 1; }
+.masthead-title { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 22px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); }
+.masthead-meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); margin-top: 4px; }
+.masthead-epigraph { font-style: italic; font-size: 13px; color: var(--muted); margin-top: 4px; font-family: Georgia, serif; }
+.theme-btns { display: flex; gap: 6px; align-items: center; padding-top: 4px; }
+.theme-btn { background: var(--tab-bg); border: 1px solid var(--border); color: var(--text); cursor: pointer; font-size: 14px; padding: 4px 8px; border-radius: 3px; }
+.theme-btn.active { background: var(--accent); color: #fff; }
+.edition-bar { background: var(--header-bg); color: var(--muted); border-bottom: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 5px 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.edition-bar a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.wx-section { padding: 12px 20px; background: var(--surface); border-bottom: 1px solid var(--border); }
+.wx-iframe { width: 100%; height: 320px; border: 1px solid var(--border); border-radius: 4px; display: block; }
+.wx-controls { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; align-items: center; }
+.wx-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 8px; border: 1px solid var(--border); background: var(--tab-bg); color: var(--text); cursor: pointer; border-radius: 3px; }
+.wx-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.wx-search { display: flex; gap: 6px; margin-bottom: 8px; }
+.wx-search input { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 3px; flex: 1; }
+.wx-search button { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 10px; background: var(--accent); color: #fff; border: none; border-radius: 3px; cursor: pointer; }
+.wx-credit { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 6px; }
+.wx-credit a { color: var(--accent); text-underline-offset: 2px; }
+.tab-bar { display: flex; background: var(--tab-bg); border-bottom: 2px solid var(--border); overflow-x: auto; padding: 0 20px; gap: 2px; }
+.tab-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 8px 14px; border: none; background: transparent; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap; transition: color 0.15s; letter-spacing: 1px; text-transform: uppercase; }
+.tab-btn:hover { color: var(--accent); }
+.tab-btn.active { color: var(--accent); background: var(--tab-active); border-bottom-color: var(--accent); }
+.tab-panel { display: none; padding: 20px; }
+.tab-panel.active { display: block; }
+.section-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 4px; margin: 20px 0 12px; }
+.section-hdr:first-child { margin-top: 0; }
+.bluf-box { background: rgba(139,0,0,0.05); border-left: 4px solid var(--accent); padding: 14px 16px; margin-bottom: 20px; border-radius: 0 4px 4px 0; }
+.bluf-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.bluf-box ul { padding-left: 18px; }
+.bluf-box li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; }
+.story { background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; padding: 12px 14px; margin-bottom: 10px; transition: background 0.15s; }
+.story:hover { background: var(--hover-bg); }
+.story-headline { font-size: 15px; font-weight: bold; line-height: 1.4; margin-bottom: 4px; }
+.story-headline a { color: var(--text); text-decoration: none; }
+.story-headline a:hover { color: var(--accent); text-decoration: underline; }
+.story-meta { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-bottom: 6px; }
+.story-synopsis { font-size: 13px; color: var(--text); line-height: 1.5; }
+.tag { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; background: var(--tag-bg); color: var(--tag-text); padding: 2px 6px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+.watch-item { background: var(--watch-bg); border-left: 3px solid var(--watch-border); padding: 10px 12px; margin-bottom: 10px; border-radius: 0 4px 4px 0; }
+.watch-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+.throughline { font-size: 13px; color: var(--text); line-height: 1.6; margin-bottom: 16px; }
+.aged-badge { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 10px; color: #fff; vertical-align: middle; margin-right: 6px; }
+.aged-green { background: #2d7a3d; }
+.aged-yellow { background: #b8860b; }
+.aged-red { background: #8b0000; }
+.ticker-wrap { background: #111; color: #e8e8e8; overflow: hidden; padding: 8px 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; white-space: nowrap; }
+.ticker-track { display: inline-block; animation: ticker-slide 90s linear infinite; will-change: transform; }
+.ticker-wrap:hover .ticker-track { animation-play-state: paused; }
+@keyframes ticker-slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; white-space: normal; display: block; } }
+.ticker-item { display: inline-block; margin: 0 18px; }
+.ticker-lbl { color: #999; font-size: 11px; }
+.ticker-val { color: #e8e8e8; font-weight: 600; }
+.ticker-sep { color: #444; margin: 0 4px; }
+.up { color: #3dcc5a; }
+.dn { color: #ff5a5a; }
+footer { background: var(--footer-bg); color: var(--footer-text); font-family: 'IBM Plex Mono', monospace; font-size: 10px; padding: 16px 24px; margin-top: 32px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.top-story { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 14px; }
+.tnum { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: var(--accent); min-width: 26px; padding-top: 2px; flex-shrink: 0; }
+.tbody { flex: 1; }
+@media (max-width: 600px) { .masthead { padding: 16px; } .tab-panel { padding: 14px; } footer { flex-direction: column; } }
+@media (max-width: 480px) { .top-story { gap: 8px; } .tnum { font-size: 11px; min-width: 20px; } }
+
+.weekly-essay { padding: 30px 20px 12px; border-bottom: 1px solid var(--border); background: var(--bg); }
+.weekly-kicker { font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+.weekly-title { font-family: Georgia,'Times New Roman',serif; font-size:33px; line-height:1.12; font-weight:700; color:var(--text); margin-bottom:10px; letter-spacing:-0.5px; }
+.weekly-standfirst { font-style:italic; font-size:16px; line-height:1.5; color:var(--muted); margin-bottom:22px; font-family:Georgia,serif; max-width:70ch; }
+.weekly-essay > p { font-size:16px; line-height:1.75; margin-bottom:16px; max-width:72ch; }
+.weekly-essay > p:first-of-type::first-letter { font-size:52px; line-height:0.86; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:700; font-family:Georgia,serif; }
+.weekly-essay sup { font-size:10px; color:var(--accent); font-weight:600; padding-left:1px; }
+.weekly-essay .aged-block { max-width:74ch; background: rgba(139,0,0,0.05); border-left:4px solid var(--accent); padding:16px 18px; margin:22px 0; border-radius:0 4px 4px 0; }
+.weekly-essay .aged-hdr { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:12px; }
+.weekly-essay .aged-item { font-size:14px; line-height:1.6; margin-bottom:12px; max-width:none; }
+.weekly-essay .aged-badge { display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:1px; text-transform:uppercase; padding:2px 8px; border-radius:10px; color:#fff; vertical-align:middle; margin-right:6px; }
+.aged-green { background:#2d7a3d; } .aged-yellow { background:#b8860b; } .aged-red { background:#8b0000; }
+.weekly-essay .docket-hdr { font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin:16px 0 8px; }
+.weekly-essay .section-hdr { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--accent); border-bottom:1px solid var(--border); padding-bottom:4px; margin:24px 0 12px; max-width:72ch; }
+.endnotes { margin-top:6px; max-width:74ch; }
+.endnotes ol { padding-left:22px; }
+.endnotes li { font-size:12px; line-height:1.55; color:var(--muted); margin-bottom:8px; font-family:Georgia,serif; }
+.endnotes li a { color:var(--accent); text-underline-offset:2px; word-break:break-word; }
+</style>
+</head>
+<body data-theme="warm">
+<div style="background:#8b0000;color:#fff;padding:8px 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-align:center;">Archived edition &middot; 2026-07-14 &middot; <a href="../index.html" style="color:#fff;text-decoration:underline;">Back to today's brief</a> &middot; <a href="index.html" style="color:#fff;text-decoration:underline;">Archive index</a></div>
+
+
+<div class="page">
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-left">
+    <div class="masthead-title">THE SWAP REPORT</div>
+    <div class="masthead-meta">TUESDAY, JULY 14, 2026 &nbsp;|&nbsp; MORNING EDITION</div>
+    <div class="masthead-epigraph">A contested strait becomes an owned one the moment someone starts charging admission. Washington stopped arguing about whether Hormuz is open and began billing for it.</div>
+  </div>
+  <div class="theme-btns">
+    <button class="theme-btn active" onclick="setTheme('warm',this)" title="Warm">&#9728;</button>
+    <button class="theme-btn" onclick="setTheme('light',this)" title="Light">&#128305;</button>
+    <button class="theme-btn" onclick="setTheme('dark',this)" title="Dark">&#9790;</button>
+  </div>
+</div>
+
+<!-- EDITION BAR -->
+<div class="edition-bar">
+  <span>Iran War Day 137: Washington stops contesting the strait and claims it, reimposing the blockade, running a third night of strikes, and proposing a 20 percent toll on Hormuz cargo</span>
+  <span>|</span>
+  <span>Markets take the policy shock seriously this time: oil jumps toward eighty, stocks fall, volatility climbs</span>
+  <span>|</span>
+  <span>Graham's seat is filled the morning the escalation peaks: McMaster appoints the late senator's sister as caretaker while the hawkish wing eyes the void</span>
+  <span>|</span>
+  <a href="https://theswap.report/">theswap.report</a>
+  <span>|</span>
+  <a href="https://theswap.report/archive/">Archive</a>
+</div>
+
+<!-- WEATHER -->
+<div class="wx-section">
+  <div class="wx-search">
+    <input type="text" id="wx-input" placeholder="Search: lat,lon or ICAO or city name" onkeydown="if(event.key==='Enter')wxSearch()">
+    <button onclick="wxSearch()">Go</button>
+  </div>
+  <div class="wx-controls">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);margin-right:4px;">LAYER:</span>
+    <button class="wx-btn active" onclick="wxLayer(this,'temperature-2m')">Temp</button>
+    <button class="wx-btn" onclick="wxLayer(this,'wind-10m')">Wind</button>
+    <button class="wx-btn" onclick="wxLayer(this,'rain-3h')">Rain</button>
+    <button class="wx-btn" onclick="wxLayer(this,'clouds')">Clouds</button>
+    <button class="wx-btn" onclick="wxLayer(this,'radar')">Radar</button>
+    <button class="wx-btn" onclick="wxLayer(this,'gust')">Gust</button>
+  </div>
+  <iframe id="wx-iframe" class="wx-iframe" src="https://www.ventusky.com/?p=37;-95;4&amp;l=temperature-2m" allowfullscreen></iframe>
+  <div class="wx-credit">Interactive weather: <a href="https://www.ventusky.com" target="_blank" rel="noopener">Ventusky</a> &nbsp;|&nbsp; Aviation: <a href="https://aviationweather.gov/data/metar/?id=KCHS&amp;taf=true" target="_blank" rel="noopener">KCHS METAR/TAF</a> (437 AW / Joint Base Charleston)</div>
+</div>
+
+
+
+<!-- TAB BAR -->
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('overview',this)">Overview</button>
+  <button class="tab-btn" onclick="showTab('defense',this)">Defense</button>
+  <button class="tab-btn" onclick="showTab('strategic',this)">Strategic</button>
+  <button class="tab-btn" onclick="showTab('domestic',this)">Domestic</button>
+  <button class="tab-btn" onclick="showTab('deepreads',this)">Deep Reads</button>
+  <button class="tab-btn" onclick="showTab('social',this)">Social/Signal</button>
+  <button class="tab-btn" onclick="showTab('local',this)">Local</button>
+  <button class="tab-btn" onclick="showTab('lighter',this)">Lighter Fare</button>
+</div>
+
+<!-- OVERVIEW TAB -->
+<div id="tab-overview" class="tab-panel active">
+
+  <div class="bluf-box">
+    <div class="bluf-hdr">Bottom Line Up Front</div>
+    <ul>
+      <li><strong>Washington reimposed the Hormuz blockade and claimed the strait.</strong> The United States will act as the strait's guardian and charge a 20 percent fee on cargo passing through it, per Politico, as CBS News reported a third straight night of strikes and Trump vowed to keep the waterway. Former defense secretary Esper called the blockade the right move, per The Hill, while ABC News framed it as erasing the last concession to Iran in the preliminary deal.</li>
+      <li><strong>The trigger was an attack on Emirati shipping.</strong> Iran hit two Emirati tankers with cruise missiles, killing one crew member, per The Hill, and answered US strikes with fire against Gulf basing. The strikes prompted Trump to notify Congress, opening a 60-day War Powers window and shifting the fight from ceasefire diplomacy to an open campaign.</li>
+      <li><strong>The market took this policy shock seriously.</strong> Oil jumped and stocks fell as the blockade and the toll landed, per Axios, with West Texas crude near eighty dollars, Brent above eighty-six, and volatility climbing. This is a heavier move than the weekend's, because a US-imposed blockade with a fee attached is a supply-side fact in a way a contested transit was not.</li>
+      <li><strong>Graham's seat was filled the same morning.</strong> Governor McMaster appointed Darline Graham Nordone, the late senator's sister, to serve out the term, per NPR, a choice Trump said he suggested, per The Hill. Politico reports the president's America First allies already eyeing the hawkish void Graham leaves, and the party divided over how to honor a legacy that was hawkish abroad and transactional at home.</li>
+      <li><strong>An ICE shooting in Maine killed a man who was not the target.</strong> An officer fatally shot a 26-year-old Colombian man in Biddeford who was not the subject of the arrest warrant, per NPR and CBS News. The Department of Homeland Security says the officer fired fearing for public safety, per The Hill, and Maine's congressional delegation is demanding an accounting.</li>
+    </ul>
+  </div>
+
+  <div class="section-hdr">The Through-Line</div>
+  <p class="throughline">Yesterday's edition described the war as a contest of assertions about the same water, both capitals spending munitions to make their description true while the measurements lagged days behind. This morning Washington stopped contesting and started charging. Reimposing the blockade, proposing a 20 percent toll, and calling the United States the strait's guardian converts a navigation dispute into a revenue proposition and resolves the contest by fiat: the strait is neither open nor closed, it is claimed. That is a different object than the one Friday's calm tape and Monday's modest repricing were valuing, and the market said so, oil up toward eighty, equities down, volatility climbing, because a declared US blockade with a fee attached is a supply-side fact where a contested transit was only a risk. The escalation arrives the same morning the Senate's loudest Iran hawk is replaced, not by a principal but by a caretaker: the governor handed the seat to Graham's sister while the wing that shared his politics circles the vacancy. The through-line holds and turns. The argument about the water now has a price, and everyone from Gulf shippers to Senate whips is being asked to pay it before the instruments that would validate it, transit counts, war-risk premiums, floor votes, have caught up.</p>
+
+  <div class="section-hdr">How It Aged</div>
+  <p class="throughline"><span class="aged-badge aged-yellow">Overtaken</span> Yesterday's edition graded the market call green: repricing not rupture, the risk premium living on the hull rather than the barrel, insurance and not oil. That call is being overtaken this morning, and honesty requires saying so. The barrel moved. West Texas crude ran from the low seventies to near eighty and Brent climbed above eighty-six, because the supply risk changed hands. It is no longer Iran threatening transit while the market prices insurance; it is Washington imposing a blockade and a toll, which is a policy shock that lands on the commodity directly. The structural half of the read held and even sharpened, the contest of assertions was real and Washington just resolved its half by asserting ownership, but the specific prediction that the premium would stay modest and off the barrel did not survive a US-imposed blockade. Grade it yellow: the frame was right, the price forecast was overtaken by an escalation the frame did not rule out. Lesson carried forward: a market call indexed to who holds the risk has to be re-graded the moment the risk changes owners, and this morning it did.</p>
+
+  <div class="section-hdr">Today's Top Stories</div>
+
+  <div class="top-story">
+    <span class="tnum">01</span>
+    <div class="tbody">
+      <div class="story">
+        <span class="tag">Hormuz</span><span class="tag">Blockade</span>
+        <div class="story-headline"><a href="https://www.politico.com/news/2026/07/13/donald-trump-strait-of-hormuz-fee-00994508" target="_blank" rel="noopener">US to take over Strait of Hormuz, charge 20 percent fee for cargo shipped through</a></div>
+        <div class="story-meta">Politico &middot; cross-corroborated</div>
+        <div class="story-synopsis">Trump proposed that the United States act as guardian of the Strait of Hormuz and levy a 20 percent fee on commercial cargo transiting it, per Politico, with The Hill reporting he also wants Gulf states on the hook for the strait's protection. The move is a category change, not an escalation on the old axis. For a week the fight was over whether the strait was open or closed; this reframes it as a waterway the United States owns the security of and can bill for, a transactional theory of maritime order with no modern precedent. The practical questions arrive immediately: who collects the fee, whose flag pays it, and how a toll gets enforced short of stopping and boarding, which is the definition of a blockade. Washington has answered the last one by calling it exactly that.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="top-story">
+    <span class="tnum">02</span>
+    <div class="tbody">
+      <div class="story">
+        <span class="tag">Iran</span><span class="tag">Strikes</span>
+        <div class="story-headline"><a href="https://www.cbsnews.com/live-updates/us-iran-war-trump-ceasefire-attacks-strait-of-hormuz/" target="_blank" rel="noopener">US wraps up third night of Iran strikes as Trump vows to keep the Strait of Hormuz</a></div>
+        <div class="story-meta">CBS News &middot; cross-corroborated</div>
+        <div class="story-synopsis">American forces completed a third straight night of strikes on Iran as the president vowed to keep the strait, per CBS News, with The Hill reporting the military launched the strikes after Trump brought back the naval blockade and NBC News carrying the overnight round. The ceasefire framework that governed last week is gone; what remains is an open campaign with a stated maritime objective. Notifying Congress to open a 60-day War Powers clock is the tell that the administration expects this to run, not resolve. The clock is also a constraint, because it puts a date on when the legal authority for an undeclared campaign has to be renewed or defended, and it hands the Senate a vote it did not ask for in a week it returned two members short.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="top-story">
+    <span class="tnum">03</span>
+    <div class="tbody">
+      <div class="story">
+        <span class="tag">Gulf</span><span class="tag">Shipping</span>
+        <div class="story-headline"><a href="https://thehill.com/policy/international/5966855-uae-tankers-targeted-iranian-forces/" target="_blank" rel="noopener">UAE says Iran hit two of its tankers, killing one crew member</a></div>
+        <div class="story-meta">The Hill &middot; cross-corroborated</div>
+        <div class="story-synopsis">The United Arab Emirates said Iranian forces struck two of its tankers with cruise missiles, killing a crew member, per The Hill, the attack that preceded the third night of US strikes and the blockade decision. The target choice matters. Hitting Emirati-flagged commercial shipping, rather than a warship or an American asset, drags a Gulf partner directly into the war's cost column and tests whether Abu Dhabi answers on its own or leans harder on Washington. It also supplies the administration its casus for owning the strait: an attack on civilian shipping is the cleanest justification available for a freedom-of-navigation campaign, and the toll proposal now rides on top of it. Iran's pressure on the neighbors keeps producing the outcome that pressure was meant to prevent, deeper American entanglement in the waterway.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="top-story">
+    <span class="tnum">04</span>
+    <div class="tbody">
+      <div class="story">
+        <span class="tag">Markets</span><span class="tag">Oil</span>
+        <div class="story-headline"><a href="https://www.axios.com/2026/07/13/oil-trump-us-iran-blockade-strait-hormuz" target="_blank" rel="noopener">Oil jumps as Trump claims new Hormuz blockade on Iran</a></div>
+        <div class="story-meta">Axios &middot; cross-corroborated</div>
+        <div class="story-synopsis">Crude jumped as the blockade was announced, per Axios, with the enforcement set to begin midafternoon Tuesday. West Texas trades near eighty dollars and Brent above eighty-six on the live tape, with the VIX elevated and equity indexes lower. This is the move the weekend did not produce, and the difference is the source of the risk. A contested transit is an insurance problem the market can price in a few dollars; a US blockade with a toll is a supply problem the market prices in the commodity itself. The barrel has now absorbed the policy, which is why the reopen a day earlier looked so contained by comparison. The number to watch is not today's spike but whether it holds once the market learns how the toll is actually enforced and how much traffic keeps moving under it.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="top-story">
+    <span class="tnum">05</span>
+    <div class="tbody">
+      <div class="story">
+        <span class="tag">Senate</span><span class="tag">Graham</span>
+        <div class="story-headline"><a href="https://www.npr.org/2026/07/14/nx-s1-5891798/south-carolinas-governor-appoints-lindsey-grahams-sister-to-serve-out-his-term" target="_blank" rel="noopener">South Carolina's governor appoints Lindsey Graham's sister to serve out his term</a></div>
+        <div class="story-meta">NPR &middot; cross-corroborated</div>
+        <div class="story-synopsis">Governor McMaster appointed Darline Graham Nordone to finish her late brother's term, per NPR, a pick Trump said he suggested, per The Hill, and CBS News and the Guardian both profile the caretaker now holding a Senate vote in the middle of a war. The appointment answers the immediate question and sharpens the larger one. A sister filling the seat is a caretaker choice, not a coronation, which leaves the real fight to the special primary and leaves the Senate's Iran-hawk lane vacant at the exact moment the campaign widens. Politico reports America First voices eyeing that void, which is the substantive stake: the seat is filled, but the specific combination of hawkish conviction and presidential access that Graham carried is not transferable by appointment, and the blockade vote will be the first test of who now speaks for it.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- DEFENSE TAB -->
+<div id="tab-defense" class="tab-panel">
+
+  <div class="section-hdr">Iran: From Contest to Blockade</div>
+
+  <div class="story">
+    <span class="tag">Iran</span><span class="tag">Strikes</span>
+    <div class="story-headline"><a href="https://thehill.com/policy/defense/5966550-us-military-strikes-iran/" target="_blank" rel="noopener">US military launches strikes on Iran after Trump brings back naval blockade</a></div>
+    <div class="story-meta">The Hill &middot; cross-corroborated</div>
+    <div class="story-synopsis">The military struck Iran again after the blockade order, per The Hill, with CBS News reporting the third straight night and NBC News carrying the overnight footage. The operational shape has changed from last week's tit-for-tat into a sustained campaign with a maritime objective and a legal clock now running. Opening a War Powers window is a signal that the administration is planning in weeks, and the target logic follows the blockade: degrade what lets Iran contest the strait, then police the strait directly. That sequence is coherent on paper. Its friction points are physical, interceptor stocks, ship days, aircraft availability, and none of them are visible from a podium. The campaign's real limit is the maintenance and munitions math, and this is one of the rare air wars whose success can be checked against a public scoreboard: the daily transit count through the water it is fighting over.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Blockade</span><span class="tag">Policy</span>
+    <div class="story-headline"><a href="https://thehill.com/policy/defense/5966832-esper-supports-trump-blockade/" target="_blank" rel="noopener">Esper: Trump reimposing naval blockade on Iran is the right move</a></div>
+    <div class="story-meta">The Hill &middot; single source</div>
+    <div class="story-synopsis">Former defense secretary Mark Esper endorsed the blockade as the right move, per The Hill, a notable line given his public breaks with the president on other questions. The endorsement is worth reading past the politics. A blockade is among the more legally and operationally demanding options in the maritime toolkit: it requires the capacity to stop, query, and if necessary board traffic across a chokepoint that carries a fifth of the world's seaborne oil, and it invites reciprocal action against US-flagged and allied shipping. Esper's support signals that the professional defense establishment sees the move as within American means, which is itself information. The harder question he does not resolve is the exit: blockades are easier to start than to lift, and the toll proposal riding on top of this one gives it a revenue logic that could outlast the military rationale.</div>
+  </div>
+
+  <div class="section-hdr">The Force at Work</div>
+
+  <div class="story">
+    <span class="tag">Industrial Base</span><span class="tag">Production</span>
+    <div class="story-headline"><a href="https://www.militarytimes.com/industry/techwatch/2026/07/13/us-industrial-base-is-becoming-stronger-for-wartime-production-study-finds/" target="_blank" rel="noopener">US industrial base is becoming stronger for wartime production, study finds</a></div>
+    <div class="story-meta">Military Times &middot; cross-corroborated</div>
+    <div class="story-synopsis">A new study finds the American defense industrial base is growing stronger for wartime production, per Military Times, carried in parallel across the service trade press. The timing gives the finding weight it would not have in a quiet month. Two active wars are drawing on the same magazines, and the constraint every headquarters is watching is not design or doctrine but throughput: how fast interceptors, precision munitions, and hulls come off the line relative to how fast they are spent. A study arguing the base is improving is welcome, but the honest read is that improving from a low baseline in the middle of sustained demand is a race, not a victory. The number that matters is the ratio of production to consumption, and a blockade campaign plus a European air-defense drawdown are both bidding up the denominator.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Pentagon</span><span class="tag">Leaks</span>
+    <div class="story-headline"><a href="https://www.militarytimes.com/news/pentagon-congress/2026/07/13/us-creates-task-force-to-prosecute-leaks-to-news-media-hegseth-says/" target="_blank" rel="noopener">US creates task force to prosecute leaks to news media, Hegseth says</a></div>
+    <div class="story-meta">Military Times &middot; cross-corroborated</div>
+    <div class="story-synopsis">Defense Secretary Hegseth announced a joint task force to identify and prosecute leakers, per Military Times, with The Hill carrying the same announcement. A leak crackdown during an active campaign is defensible on operational-security grounds and predictable on political ones, and the two motives are hard to separate from the outside. The operational case is real: a war fought partly through daily claims about strike effects and transit counts is a war where premature disclosure carries genuine cost. The countervailing risk is equally real, because the same tools that protect operations can chill the oversight reporting that a War Powers debate depends on. Filed as a civil-military watch item, and it pairs with this week's Deep Reads thread on the long roots of military politicization: the guardrails here are norms as much as statutes, and norms bend fastest in wartime.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Ukraine</span><span class="tag">Maritime</span>
+    <div class="story-headline"><a href="https://www.france24.com/en/europe/20260714-kyiv-claims-drone-attacks-11-russian-tankers-in-sea-of-azov" target="_blank" rel="noopener">Kyiv claims drone attacks on 11 Russian tankers in the Sea of Azov</a></div>
+    <div class="story-meta">France 24 &middot; cross-corroborated</div>
+    <div class="story-synopsis">Ukraine claims drone strikes on eleven Russian tankers in the Sea of Azov, per France 24, while the Moscow Times reports Ukrainian strikes hitting oil refineries in Krasnodar and Bashkortostan. The maritime drone campaign that closed a Russian sea last week is now reaching for the fuel that moves the war, tankers afloat and refineries ashore. The through-line from the Gulf is unmistakable: in both theaters, cheap one-way attack craft are imposing costs on ships and energy infrastructure that traditional forces would need a fleet to match, and both campaigns are being studied as the template for the next decade of sea denial. Russia's answer to the Azov losses will show whether it treats the drone threat as a nuisance to absorb or a strategic problem to solve, and the refinery strikes raise the same question about its domestic energy resilience under sustained deep strike.</div>
+  </div>
+
+</div>
+
+<!-- STRATEGIC TAB -->
+<div id="tab-strategic" class="tab-panel">
+
+  <div class="section-hdr">The Toll and the Law of the Sea</div>
+
+  <div class="story">
+    <span class="tag">Hormuz</span><span class="tag">Maritime Law</span>
+    <div class="story-headline"><a href="https://abcnews.com/Politics/trumps-strait-hormuz-blockade-erases-concession-iran-preliminary/story?id=134717418" target="_blank" rel="noopener">Trump's Strait of Hormuz blockade erases last concession to Iran in preliminary deal</a></div>
+    <div class="story-meta">ABC News &middot; cross-corroborated</div>
+    <div class="story-synopsis">The blockade erases the final concession the United States had extended Iran in the preliminary framework, per ABC News, closing whatever narrow lane remained for a negotiated de-escalation. The strategic content is the reversal of an old American position, not just the tactics. For decades Washington cast itself as the guarantor of free transit through Hormuz, a public good it provided and did not charge for, which was the legitimacy underwriting its Gulf presence. A toll converts that guarantor role into a landlord's, and it invites every other littoral state with a chokepoint to reason by analogy. The near-term effect is leverage on Iran; the long-term cost is to the freedom-of-navigation principle the United States has spent seventy years defending, including in the South China Sea, where Beijing will read the toll as vindication. This is the tension the Deep Reads tab takes up at length.</div>
+  </div>
+
+  <div class="section-hdr">Bastille Day and the Coalition of the Willing</div>
+
+  <div class="story">
+    <span class="tag">Europe</span><span class="tag">Ukraine</span>
+    <div class="story-headline"><a href="https://www.dw.com/en/bastille-day-france-holds-parade-with-ukraine-in-focus/a-77945107?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Bastille Day: France holds parade with Ukraine in focus</a></div>
+    <div class="story-meta">Deutsche Welle &middot; cross-corroborated</div>
+    <div class="story-synopsis">France centered its Bastille Day parade on Ukraine and its allies, per Deutsche Welle, with France 24 carrying the ceremony and Le Monde framing it as Macron's last as president and as a demonstration by the coalition of the willing. The symbolism is doing strategic work. Putting Ukrainian and allied forces at the heart of the French national holiday, in Macron's final year, is Europe staging its own continuity of support at the moment American munitions and attention are pulled toward the Gulf. The parade is the ceremonial half of a structural bet the continent has been placing for months: that it must be able to underwrite Ukraine's war with less certainty of American backfill. The coalition-of-the-willing framing is the same one used at the earlier Paris summit, and the repetition is deliberate, because a coalition that meets and marches is trying to convince Moscow and Washington alike that it will still be standing when both are looking elsewhere.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">UK</span><span class="tag">Iran</span>
+    <div class="story-headline"><a href="https://www.theguardian.com/politics/2026/jul/13/uk-list-iran-islamic-revolutionary-guard-corps-irgc-terrorist-organisation" target="_blank" rel="noopener">UK bans support for Iran's Islamic Revolutionary Guard Corps</a></div>
+    <div class="story-meta">The Guardian &middot; cross-corroborated</div>
+    <div class="story-synopsis">Britain outlawed support for the IRGC and a linked group under new powers, per the Guardian, with the BBC and the South China Morning Post carrying the proscription and the Times of Israel reporting London's finding that an Iran-backed group was behind attacks on Jewish targets. Proscription is a domestic legal instrument with a foreign-policy signal attached, and the timing braids it into the wider campaign: as Washington blockades the strait, London formally criminalizes the Guard's support network on British soil. The practical effect is on financing, recruitment, and the legal exposure of anyone operating on the group's behalf inside the UK; the diplomatic effect is to narrow the space between American military action and European legal-financial pressure. Iran now faces a coordinated squeeze across instruments, kinetic in the Gulf, legal in Europe, that is harder to answer than any single one of them.</div>
+  </div>
+
+  <div class="section-hdr">Indo-Pacific: The Anniversary Beijing Rejected</div>
+
+  <div class="story">
+    <span class="tag">China</span><span class="tag">Maritime Law</span>
+    <div class="story-headline"><a href="https://www.scmp.com/news/china/diplomacy/series/3360448/navigating-south-china-sea-dispute-10-years-after-hague-ruling?utm_source=rss_feed" target="_blank" rel="noopener">Navigating the South China Sea dispute, 10 years after the Hague ruling</a></div>
+    <div class="story-meta">South China Morning Post &middot; cross-corroborated</div>
+    <div class="story-synopsis">The tenth anniversary of the Hague tribunal ruling against Beijing's South China Sea claims arrives with the ruling as unenforced as ever, per the South China Morning Post, which also reports a Manila-Hanoi maritime deal that could challenge Beijing more directly. The anniversary is the quiet counterpoint to the Hormuz story, and the two belong on the same page. In the strait, the United States is asserting control over water and proposing to charge for passage; in the South China Sea, China has spent a decade asserting control over water a tribunal said it does not own, and pouring concrete to make the claim physical. Washington's toll hands Beijing a rhetorical gift, the argument that great powers price and police the seas they can reach and dress it in legal language afterward. The Manila-Hanoi alignment is the hedge the smaller claimants are building while the two giants demonstrate that rulings bind whoever lacks a navy.</div>
+  </div>
+
+  <div class="section-hdr">Washington's Ledger</div>
+
+  <div class="story">
+    <span class="tag">Budget</span><span class="tag">Congress</span>
+    <div class="story-headline"><a href="https://thehill.com/homenews/senate/5965288-schumer-calls-bipartisan-spending/" target="_blank" rel="noopener">Schumer calls Trump administration budget proposal lopsided in call for bipartisan deal</a></div>
+    <div class="story-meta">The Hill &middot; single source</div>
+    <div class="story-synopsis">The Senate minority leader called the administration's budget proposal lopsided and pressed for a bipartisan spending deal, per The Hill, as a new Council on Foreign Relations analysis argues outdated budget rules are holding back American industrial policy. The two threads meet at the war's cost. A blockade campaign, two theaters drawing on the same munitions base, and a record defense request all land on a Congress returning short its most experienced appropriator, and the procedural machinery is not built for the tempo. The CFR piece is the structural companion to the political fight: even where the will to fund production exists, the scoring rules and appropriations cadence lag the speed at which the industrial base needs signal to invest. The near-term risk is a continuing resolution that funds the war without funding the buildup that sustains it, which is the worst of both worlds, spending at wartime rates on peacetime throughput.</div>
+  </div>
+
+</div>
+
+<!-- DOMESTIC TAB -->
+<div id="tab-domestic" class="tab-panel">
+
+  <div class="section-hdr">The Seat, and the Void</div>
+
+  <div class="story">
+    <span class="tag">Graham</span><span class="tag">Succession</span>
+    <div class="story-headline"><a href="https://www.cbsnews.com/news/lindsey-graham-replacement-senate-south-carolina-governor/" target="_blank" rel="noopener">Darline Graham Nordone, Lindsey Graham's sister, appointed to fill Senate seat</a></div>
+    <div class="story-meta">CBS News &middot; cross-corroborated</div>
+    <div class="story-synopsis">Governor McMaster appointed Graham's sister Darline Graham Nordone to the seat, per CBS News, with NPR confirming the appointment, the Guardian profiling her, and The Hill reporting Trump said he suggested her. The choice is a caretaker's, and it is the safe one: a family member carries the name and the mourning without pre-committing the state to any of the ambitious House members eyeing a run. It also defers the real contest to the special primary, where the field, Nancy Mace, Ralph Norman, and others, will actually fight it out. The strategic reading for the Senate is that the appointment fills a chair but not a role. Graham's function was not a vote, which any Republican provides, but a combination of hawkish conviction and direct presidential access that shaped Iran and Russia policy from the cloakroom. That is what the chamber has lost, and no appointment restores it.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">GOP</span><span class="tag">Foreign Policy</span>
+    <div class="story-headline"><a href="https://www.politico.com/news/2026/07/14/trumps-america-first-allies-are-eyeing-the-hawkish-void-graham-leaves-behind-00995733" target="_blank" rel="noopener">Trump's America First allies are eyeing the hawkish void Graham leaves behind</a></div>
+    <div class="story-meta">Politico &middot; cross-corroborated</div>
+    <div class="story-synopsis">The president's America First allies are moving to fill the ideological space Graham occupied, per Politico, and the party is divided over how to honor a legacy that fused interventionism abroad with loyalty at home, per Politico's companion piece. The fight is over more than a seat; it is over which foreign-policy instinct inherits the Republican center of gravity as a war widens. Graham was the last high-profile bridge between the party's hawkish old guard and its restraint-minded new majority, and his absence removes the translator between the two camps at the moment a blockade campaign forces the question of how far American power should reach. Watch the Russia sanctions bill as the proxy: whether the shorthanded chamber passes it as a Graham legacy vote, per reporting in the sanctions thread below, will show which wing controls the microphone now.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Russia</span><span class="tag">Sanctions</span>
+    <div class="story-headline"><a href="https://www.axios.com/2026/07/13/lindsey-graham-russia-sanctions-senate-trump" target="_blank" rel="noopener">Senate looks to honor Graham with Russia sanctions</a></div>
+    <div class="story-meta">Axios &middot; cross-corroborated</div>
+    <div class="story-synopsis">Senators are looking to pass Graham's Russia sanctions bill as a tribute, per Axios, and the White House says the president supports the measure, per The Hill. A legacy vote is the rare thing a distracted, shorthanded chamber can actually move, because it costs little and buys goodwill across the aisle, and presidential support removes the usual veto worry. The substance still matters. The bill targets Russian revenue at a moment when Europe is stepping up its own pressure and Ukraine is striking refineries and tankers directly, so a US sanctions package would layer legislative weight onto a campaign already running through several instruments. The question is whether it passes clean or gets loaded with amendments that turn a tribute into a fight, which would be the surest sign that the coalition Graham held together has already begun to fracture without him.</div>
+  </div>
+
+  <div class="section-hdr">Enforcement and the Country</div>
+
+  <div class="story">
+    <span class="tag">Immigration</span><span class="tag">Maine</span>
+    <div class="story-headline"><a href="https://www.npr.org/2026/07/14/nx-s1-5891859/man-killed-in-ice-shooting-was-not-subject-of-arrest-warrant-maine-sen-king-says" target="_blank" rel="noopener">Man killed in ICE shooting was not subject of arrest warrant, Maine Sen. King says</a></div>
+    <div class="story-meta">NPR &middot; cross-corroborated</div>
+    <div class="story-synopsis">An ICE officer fatally shot a 26-year-old Colombian man in Biddeford who was not the subject of the warrant the agents were serving, per NPR and CBS News, with the Department of Homeland Security saying the officer fired fearing for public safety, per The Hill, and Representative Pingree pressing for answers, per NPR. A fatal shooting of a bystander during an enforcement operation is the kind of incident that hardens a policy fight into a specific accounting, and Maine's delegation is demanding exactly that. The competing frames are already set: the agency invokes officer safety, the delegation questions why lethal force was used against someone not named in the warrant. What resolves the dispute is not rhetoric but the record, body-worn footage, the operational report, and the independent review, and whether they are released with enough speed and candor to survive scrutiny. Held as a developing story pending that record.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Antitrust</span><span class="tag">Media</span>
+    <div class="story-headline"><a href="https://www.politico.com/news/2026/07/13/states-sue-block-paramount-warner-bros-00994835" target="_blank" rel="noopener">California, 11 other states sue to block Paramount's Warner Bros. deal</a></div>
+    <div class="story-meta">Politico &middot; cross-corroborated</div>
+    <div class="story-synopsis">A dozen states led by California sued to block the Paramount Skydance merger with Warner Bros. Discovery, per Politico, with CBS News and The Hill carrying the antitrust filing. State attorneys general stepping in front of a media megamerger is a signal about where antitrust energy now lives: with the states, acting collectively, when they judge federal enforcement insufficient or misaligned. The media-consolidation stakes are the familiar ones, fewer owners of more distribution and content, but the procedural story is the one to track, because a multistate coalition can impose real delay and discovery costs even on a deal federal regulators might wave through. The case will test how much leverage states retain over national market structure, and the answer shapes every large merger that follows.</div>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Washington &middot; The Register and the Data</div>
+    <p style="font-size:13px;">A routine day in the Federal Register: nineteen entries, no executive orders and no proclamations. The notable items are an Office of Management and Budget revision to the North American Industry Classification System statistical directive, a Department of Homeland Security insider-threat information collection under review, a DHS notice rescinding earlier guidance to federal financial-assistance recipients, a Treasury sanctions action, and a Coast Guard safety zone for Charleston Harbor. On the macro dashboard the readings hold steady: unemployment at 4.2 percent, initial jobless claims at 215,000, the ten-year Treasury at 4.56 and the two-year at 4.21, with the federal funds rate at 3.62. The calm macro backdrop is the contrast the oil move is playing out against, and the bond market's read of the blockade so far is contained: the ten-year ticked up, not out, which says the market is pricing an energy shock, not a growth scare, at least for now.</p>
+  </div>
+
+</div>
+
+<!-- DEEP READS TAB -->
+<div id="tab-deepreads" class="tab-panel">
+
+  <div class="section-hdr">Deep Reads</div>
+
+  <div class="story">
+    <span class="tag">Hormuz</span><span class="tag">Strategy</span>
+    <div class="story-headline"><a href="https://foreignpolicy.com/2026/07/13/trump-strait-hormuz-tolls-shipping-us-blockade-iran/" target="_blank" rel="noopener">Trump Is Taking a Page Out of Iran's Playbook</a></div>
+    <div class="story-meta">Foreign Policy &middot; essay</div>
+    <div class="story-synopsis">Foreign Policy argues the toll-and-blockade approach borrows the exact logic Iran has used for years: treat the strait as leverage to be priced and denied rather than a commons to be kept open. The parallel is the essay's sharpest instrument, and it lands on the day the policy becomes real. If the American case against Iran has been that no state should be able to hold global shipping hostage, then charging for passage adopts the premise while changing the collector. The piece is the necessary counterweight to the coverage treating the blockade as simply tougher Iran policy, because it names the cost that toughness carries: the freedom-of-navigation norm the United States built its maritime primacy on does not survive being monetized by its chief guarantor. Read it against the Strategic tab's South China Sea anniversary, where the same logic is already Beijing's.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Iran</span><span class="tag">Deterrence</span>
+    <div class="story-headline"><a href="https://warontherocks.com/outgunned-but-not-outplayed-irans-theory-of-victory/" target="_blank" rel="noopener">Outgunned, But Not Outplayed: Iran's Theory of Victory</a></div>
+    <div class="story-meta">War on the Rocks &middot; essay</div>
+    <div class="story-synopsis">War on the Rocks reconstructs Iran's actual theory of victory, which is not to defeat American forces but to make the cost of containing Iran exceed what Washington will pay over time. The framework explains the otherwise puzzling target choices of the past week, strikes on Gulf neighbors and Emirati shipping rather than American warships, as moves in a war of attrition and legitimacy, not a war of decisive battle. The essay's value this morning is diagnostic: it lets the reader grade the blockade against Iran's strategy rather than against a hypothetical clean victory. A toll and a blockade raise the price of transit, which is exactly the terrain Iran has chosen to fight on, so the question the piece forces is whether the United States is imposing costs on Iran or entering the cost-imposition contest on Iran's preferred ground. Written before the blockade, it reads like a map of it.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Iran</span><span class="tag">Politics</span>
+    <div class="story-headline"><a href="https://smallwarsjournal.com/2026/07/14/rally-around-the-flag-2026-iran-conflict/" target="_blank" rel="noopener">From Washington to Tehran: Rally-Around-the-Flag Effects in an Age of Regional Conflict</a></div>
+    <div class="story-meta">Small Wars Journal &middot; essay</div>
+    <div class="story-synopsis">Small Wars Journal examines the rally-around-the-flag dynamic on both sides of the Iran conflict, the domestic-approval boost that external confrontation reliably delivers, and its expiration date. The two-capital framing is what elevates it above the usual treatment. Both governments draw short-term cohesion from the fight, which lowers the near-term political cost of escalation for each and helps explain why neither has strong incentive to be the first to de-escalate. The essay's discipline is in the decay curve: rally effects fade as costs accumulate and as the initial threat narrative wears, which is why the interesting political question is not this week's approval bump but the point where casualties, prices, and duration invert the sign. Read alongside the Domestic tab's succession fight, because a shorthanded Senate and a rallying public are the political conditions under which a War Powers clock is easiest to let run.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Russia</span><span class="tag">Force Design</span>
+    <div class="story-headline"><a href="https://warontherocks.com/a-return-to-mass-russian-force-expansion-in-the-war-with-ukraine/" target="_blank" rel="noopener">A Return to Mass: Russian Force Expansion in the War with Ukraine</a></div>
+    <div class="story-meta">War on the Rocks &middot; essay</div>
+    <div class="story-synopsis">War on the Rocks documents Russia's deliberate return to mass, rebuilding a large force through expansion and mobilization rather than betting on a leaner, higher-technology model. The argument cuts against the reigning assumption that precision and drones have made mass obsolete, and it deserves a serious hearing precisely because the drone-warfare narrative has become reflexive. Russia is choosing quantity as a strategy, wagering that a battlefield of cheap attrition rewards the side that can regenerate formations faster than it loses them. Set it beside the Defense tab's Ukrainian drone campaign and the tension is productive: one side is proving that cheap systems can impose enormous cost, the other is betting that enough mass absorbs that cost and grinds forward anyway. The next year of the war is a live test of which theory the terrain rewards, and the answer will reshape force design well beyond this conflict.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Russia</span><span class="tag">War Termination</span>
+    <div class="story-headline"><a href="https://www.foreignaffairs.com/russia/putin-will-turn-cease-fire-weapon" target="_blank" rel="noopener">Putin Will Turn a Cease-Fire Into a Weapon</a></div>
+    <div class="story-meta">Foreign Affairs &middot; essay</div>
+    <div class="story-synopsis">Foreign Affairs argues that any cease-fire in Ukraine would function for Moscow as a tool of continued war by other means, a pause to reconstitute, relitigate, and resume on better terms. The caution is the essay's spine, and it applies well past Ukraine: it is a warning about mistaking the cessation of shooting for the end of a war, and it lands in a week when the Iran ceasefire has just collapsed into open campaign. The piece pairs naturally with this morning's Iran story, because both cases turn on the same distinction between a settlement that ends a conflict and a pause that redistributes advantage within it. The skeptical counter is that treating every cease-fire as a trap forecloses the negotiated exits wars occasionally do produce, and the honest reader holds both: cease-fires can be weapons, and refusing all of them can be its own kind of trap.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Budget</span><span class="tag">War Costs</span>
+    <div class="story-headline"><a href="https://www.csis.org/analysis/war-costs-make-third-876-billion-supplemental-request" target="_blank" rel="noopener">War Costs Make Up a Third of the $87.6 Billion Supplemental Request</a></div>
+    <div class="story-meta">Center for Strategic and International Studies &middot; analysis</div>
+    <div class="story-synopsis">A Center for Strategic and International Studies analysis breaks down an $87.6 billion supplemental request and finds war costs account for roughly a third of it. The number is the fiscal spine under this week's headlines. A blockade campaign, replenishment for two theaters, and force protection across the Gulf all convert into line items, and a supplemental is how a government pays for a war it did not budget for in the base request. The analysis is the antidote to abstract talk of American bandwidth, because it puts a dollar figure on the sustainment the campaign requires and shows how quickly a widening war eats a supplemental originally scoped for other priorities. Read it beside the Strategic tab's budget story: the political fight over a lopsided request and the accounting of what the wars actually cost are the same problem seen from two ends, and both point at the same constraint, throughput of money and munitions alike.</div>
+  </div>
+
+</div>
+
+<!-- SOCIAL/SIGNAL TAB -->
+<div id="tab-social" class="tab-panel">
+
+  <div class="section-hdr">Signal Summary</div>
+  <p class="throughline">The strongest cross-source thread this morning is that the regional detail of the escalation is running ahead of standard Western coverage. Analyst and regional feeds converged on the specifics that anchor the blockade story, the Emirati-tanker strike, the named target set across southern Iran, and the mechanics of a 20 percent transit toll, while the wider press cycle was still absorbing the blockade as a headline. A second thread ties the Gulf to the Indo-Pacific: the tenth anniversary of the South China Sea tribunal ruling drew fresh attention to how a great power prices and polices contested water, and several analytic threads paired it explicitly with the Hormuz toll as two versions of the same maritime-order question. A third, quieter thread runs through European strategic autonomy, panels and assessments on how the continent would sustain deterrence with less American backfill, which is the analytic underside of the Bastille Day parade. The connective tissue across all three is a single question the daily churn keeps fragmenting: who gets to set the terms on the sea, and at what price.</p>
+
+  <div class="section-hdr">Institutional OSINT</div>
+
+  <div class="story">
+    <span class="tag">ISW</span><span class="tag">Iran</span>
+    <div class="story-headline"><a href="https://understandingwar.org/research/middle-east/iran-update-special-report-july-13-2026/" target="_blank" rel="noopener">Iran Update Special Report, July 13, 2026</a></div>
+    <div class="story-meta">Institute for the Study of War &middot; institutional assessment</div>
+    <div class="story-synopsis">The Institute for the Study of War's special report is the disciplined document to read against a morning of maximal claims from both capitals, because its method marks what is asserted as asserted and what is observed as observed. The specific value today is on the blockade and the strike geography: as social and regional channels report a widened target set and the mechanics of enforcement, the assessment is where those reports get held against imagery and official statements before they harden into settled fact. On a day when the strait's legal status is itself a contested claim, that arm's-length treatment is not caution for its own sake, it is the product, and it is the right first stop before trusting any single account of what the third night of strikes actually hit.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">ISW</span><span class="tag">Ukraine</span>
+    <div class="story-headline"><a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-13-2026/" target="_blank" rel="noopener">Russian Offensive Campaign Assessment, July 13, 2026</a></div>
+    <div class="story-meta">Institute for the Study of War &middot; institutional assessment</div>
+    <div class="story-synopsis">The companion assessment on the eastern front is the corrective to a news cycle that keeps filing Ukraine as background while the Gulf takes the front page. The past days' record, tankers struck in the Sea of Azov, refineries hit deep inside Russia, a return-to-mass debate over Russian force expansion, is exactly the multi-domain picture the daily assessment integrates while headlines scatter it. Read it for the terrain and tempo underneath the Bastille Day pledges, because the aid Europe is staging to sustain is spent against the offensive this document tracks, and the two wars' shared munitions arithmetic runs through both the Gulf blockade and the Donbas line. The assessment is where the maritime drone campaign gets situated against the ground war it is meant to influence.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">CFR</span><span class="tag">Iran</span>
+    <div class="story-headline"><a href="https://www.cfr.org/global-conflict-tracker/conflict/confrontation-between-united-states-and-iran" target="_blank" rel="noopener">Iran's War With Israel and the United States, Global Conflict Tracker</a></div>
+    <div class="story-meta">Council on Foreign Relations &middot; institutional tracker</div>
+    <div class="story-synopsis">The Council on Foreign Relations conflict tracker is the standing reference for keeping the current escalation in its longer arc rather than reading each night's strikes as a fresh event. On a morning when a blockade and a toll change the war's character, the value of a maintained timeline is that it shows what is genuinely new, an American claim to own the strait and charge for it, against what is continuation, the exchange of strikes and the contest over Hormuz that has run for weeks. Use it as the scaffolding under the daily churn: the tracker anchors the sequence of decisions that brought the two states from ceasefire framework to open campaign, which is the context a single day's headline cannot supply.</div>
+  </div>
+
+  <div class="story" data-unsourced="intentional">
+    <span class="tag">OSINT</span><span class="tag">Strike Geography</span>
+    <div class="story-headline">Third-night target set across southern Iran outruns independent verification</div>
+    <div class="story-meta">Single source, tracking &middot; no verified article URL</div>
+    <div class="story-synopsis">Regional media and defense-watcher accounts circulated claims through the night of a widened third-night target set across southern Iran, including strikes near Bushehr, Bandar Abbas, and the island of Abu Musa, and of enforcement details around the announced Hormuz toll. None of it is independently confirmed: the sourcing runs through regional channels, the specific target and damage claims lack official corroboration, and no reliable battle-damage assessment is public. Held as a tracking item because the named sites, if confirmed, would mark a meaningful geographic widening from maritime-related infrastructure toward Iran's coastal and port depth. The observables to watch are commercial satellite imagery of the named locations and any official accounting of strike objectives, not further amplification of the same regional sourcing. The blockade's enforcement mechanics deserve the same skepticism until the first boardings, if any, are documented rather than described.</div>
+  </div>
+
+</div>
+
+<!-- LOCAL TAB -->
+<div id="tab-local" class="tab-panel">
+
+  <div class="section-hdr">Joint Base Charleston / 437 AW</div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Joint Base Charleston &middot; Steady State</div>
+    <p style="font-size:13px;">Steady state at the joint base, with no verified operational news in the past day. The 437th Airlift Wing and its reserve associate, the 315th Airlift Wing, continue normal mobility operations. On the water nearby, the Federal Register carries a routine Coast Guard safety zone for Charleston Harbor, the standard administrative traffic of a busy port and not an operational event. Current field conditions at Charleston are one click away via the KCHS aviation link in the weather bar above. A mobility hub running quietly during a two-theater war is worth noting precisely because the tempo elsewhere is not quiet, and the airlift fleet that would feel any surge has, for now, a normal week.</p>
+  </div>
+
+  <div class="section-hdr">Lowcountry</div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Berkeley County &middot; Growth</div>
+    <p style="font-size:13px;">A new 2,000-acre development is advancing in Berkeley County over resident objections, per <a href="https://www.live5news.com/video/2026/07/14/video-new-2000-acre-berkeley-county-development-advances-despite-resident-concerns/?outputType=amp" target="_blank" rel="noopener">Live 5 News</a>, the latest entry in the Lowcountry's running collision between growth and the road, water, and school capacity meant to carry it. Two thousand acres is not a subdivision, it is a small town's worth of future traffic and drainage, and the residents raising concerns are making the same argument that has surfaced in every corridor fight from Highway 41 to Cainhoy: the approvals run ahead of the infrastructure, and the gap becomes someone's commute and someone's flooded street a few years on. The county vote is where that tension actually gets priced, and it keeps getting settled on the side of the rooftops.</p>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Charleston &middot; The Working Harbor</div>
+    <p style="font-size:13px;">Charleston removed and destroyed nine abandoned boats from the Stono River as it works down a backlog of derelict vessels, per the <a href="https://www.postandcourier.com/charleston_sc/abandoned-boats-stono-river-removed/article_fc9c3edc-07b8-431f-8001-cb33e24cb315.html" target="_blank" rel="noopener">Post and Courier</a>. Abandoned boats are the unglamorous underside of a boating region: they leak fuel, snag navigation, and become the public's problem to remove once an owner walks away. Clearing nine at once is real progress on a backlog that grows quietly every storm season, and it pairs with a flood advisory that ran for inland Berkeley County on heavy rain, per <a href="https://www.thestate.com/news/weather-news/article316496884.html" target="_blank" rel="noopener">The State</a>. Both are the Lowcountry's water, working and rising, showing up on the municipal ledger.</p>
+  </div>
+
+  <div class="section-hdr">Food</div>
+
+  <div class="story">
+    <span class="tag">Charleston</span><span class="tag">Food</span>
+    <div class="story-headline"><a href="https://www.postandcourier.com/food/mark-bolchoz-cane-pazzo-dashi-restaurant-north-charleston/article_c9685a98-ceb6-496c-810f-6e0c5d98a3ba.html" target="_blank" rel="noopener">New restaurant to open in the former Dashi space in North Charleston</a></div>
+    <div class="story-meta">Post and Courier &middot; food beat</div>
+    <div class="story-synopsis">Restaurateur Mark Bolchoz plans a new concept called Cane Pazzo in the North Charleston space that Dashi vacated in June, per the Post and Courier. The turnover is the Lowcountry restaurant economy working as it does: a closing is rarely the end of a room, just its next tenant, and North Charleston's dining corridor has become the region's proving ground for concepts that want city energy without peninsula rents. A named operator taking over a known space is the kind of small signal worth logging, because it tracks where the food scene's momentum is actually pooling, and lately that is up the neck rather than on the tourist blocks south of Calhoun.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Charleston</span><span class="tag">Food</span>
+    <div class="story-headline"><a href="https://www.postandcourier.com/business/retail/el-molino-charleston-sc-mexican-restaurant-taco-hanahan/article_58fc192a-a467-4ec6-82ad-ca2a475ecee3.html" target="_blank" rel="noopener">Local favorite El Molino to add a fourth Charleston-area taco spot</a></div>
+    <div class="story-meta">Post and Courier &middot; food beat</div>
+    <div class="story-synopsis">El Molino is opening a fourth Charleston-area location, this one in Hanahan, per the Post and Courier. A local taqueria expanding to a fourth store is the quiet counter-story to the closing-and-reopening churn: a homegrown concept that has found its formula and is scaling it into the suburbs on its own terms rather than a national chain moving in. Hanahan is a telling choice, workaday and residential, the kind of market that rewards a proven local name over a splashy downtown debut. It is a small business success story of the sort that rarely makes the national food press but tells you more about a region's actual eating habits than any award does.</div>
+  </div>
+
+  <div class="section-hdr">Activities</div>
+
+  <div class="story">
+    <span class="tag">Charleston</span><span class="tag">Arts</span>
+    <div class="story-headline"><a href="https://www.postandcourier.com/arts-culture/north-charleston-pops-orchestra-2026-season/article_1f6576d0-f630-4067-a0d1-5b45eee7f2e6.html" target="_blank" rel="noopener">New North Charleston Pops! season brings the music of Sinatra, Alicia Keys, and Harry Potter</a></div>
+    <div class="story-meta">Post and Courier &middot; arts beat</div>
+    <div class="story-synopsis">The North Charleston Pops! announced a new season spanning Sinatra, Alicia Keys, and film scores including Harry Potter, per the Post and Courier. A pops orchestra's season announcement is the sort of steady cultural signal that says something about a place's civic health: the Lowcountry's arts calendar is not only Spoleto and its high-season peers but a year-round pops program pitched at families and casual concertgoers on the North Charleston side of the harbor. The programming, standards, pop, and movie music, is built to fill seats rather than win prizes, and that is the point. A region that sustains an accessible orchestra season is one whose cultural life reaches past the festival weeks, which is the harder and more durable achievement.</div>
+  </div>
+
+</div>
+
+<!-- LIGHTER FARE TAB -->
+<div id="tab-lighter" class="tab-panel">
+
+  <div class="section-hdr">Lighter Fare</div>
+
+  <div class="story">
+    <span class="tag">World Cup</span>
+    <div class="story-headline"><a href="https://www.npr.org/2026/07/14/nx-s1-5891860/2026-world-cup-fifa-spain-france-argentina-england-semifinals" target="_blank" rel="noopener">The star-studded World Cup semifinals kick off with France vs. Spain</a></div>
+    <div class="story-meta">NPR &middot; cross-corroborated</div>
+    <div class="story-synopsis">The home World Cup reached its semifinals with France and Spain opening the round, per NPR, and Spain advancing behind a birthday-week performance from teenage star Lamine Yamal, per Al Jazeera. The tournament has outrun every projection even with the host side long gone, and the final four is a murderers' row of European and South American pedigree, exactly the marquee the organizers hoped a home World Cup would deliver. The American summer has organized its weekends around teams most viewers adopted a month ago, which is the sport's old lesson relearned: the stage sells itself once the football is this good, and the host country turned out to be a venue that did not need its own team to fill the seats.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Cycling</span>
+    <div class="story-headline"><a href="https://www.theguardian.com/sport/2026/jul/13/how-tadej-pogacar-became-the-new-patron-of-the-tour-de-france-peloton" target="_blank" rel="noopener">How Tadej Pogacar became the new patron of the Tour de France peloton</a></div>
+    <div class="story-meta">The Guardian &middot; single source</div>
+    <div class="story-synopsis">The Guardian traces how Tadej Pogacar has become the peloton's patron, the old cycling term for the rider whose authority sets the tone of a race beyond mere results. The role is a throwback to an era when the strongest rider policed the unwritten rules of the road, and Pogacar's ascension to it says as much about his standing as any yellow jersey. He has reached the point where his preferences shape how the race is ridden, which is a soft power that outlasts any single Tour. The human detail underneath is the sport's perennial one: dominance in cycling is lonely and total, and the patron is respected more than loved. For now the mountains belong to him, and the peloton rides to his tempo whether it wants to or not.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Cycling</span>
+    <div class="story-headline"><a href="https://www.lemonde.fr/en/sports/article/2026/07/14/tour-de-france-2026-quinn-simmons-the-aggressive-captain-america-a-peloton-outlier-and-fan-favorite_6755450_9.html" target="_blank" rel="noopener">Tour de France 2026: Quinn Simmons, the aggressive Captain America and fan favorite</a></div>
+    <div class="story-meta">Le Monde &middot; single source</div>
+    <div class="story-synopsis">Le Monde profiles Quinn Simmons, the American rider whose aggressive, all-or-nothing style has made him a peloton outlier and a crowd favorite at this year's Tour. Simmons is the counterweight to the patron story: not the strongest rider, but the most entertaining, the kind of attacker who animates a stage by refusing to ride it safely. Cycling needs both archetypes, the metronomic champion who wins and the reckless breakaway artist who makes the winning interesting, and the American in the loud kit has claimed the second role with relish. The nickname is affectionate and a little ironic, and the racing behind it is real. He may not stand on the top step in Paris, but he is one of the reasons casual fans keep watching the stages that the favorites treat as procedural.</div>
+  </div>
+
+</div>
+
+</div><!-- /page -->
+
+<!-- MARKET TICKER -->
+<div class="ticker-wrap" aria-label="Market ticker">
+  <div class="ticker-track" id="ticker-track">
+    <span class="ticker-group" id="ticker-group">
+      <span class="ticker-item"><span class="ticker-lbl">S&amp;P 500</span> <span class="ticker-val">7,515</span> <span class="dn">-0.79%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">DOW</span> <span class="ticker-val">52,499</span> <span class="dn">-0.26%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">NASDAQ</span> <span class="ticker-val">25,873</span> <span class="dn">-1.55%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">VIX</span> <span class="ticker-val">17.3</span> <span class="up">+1.05%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">WTI</span> <span class="ticker-val">$80.61</span> <span class="up">+1.23%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">BRENT</span> <span class="ticker-val">$86.83</span> <span class="up">+2.50%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">GOLD</span> <span class="ticker-val">$4,024</span> <span class="ticker-lbl">+0.02% (prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">10Y UST</span> <span class="ticker-val">4.61%</span> <span class="up">+0.88%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">DXY</span> <span class="ticker-val">101.1</span> <span class="dn">-0.09%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">BTC</span> <span class="ticker-val">$62,490</span> <span class="up">+0.36%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">FED FUNDS</span> <span class="ticker-val">3.62%</span> <span class="ticker-lbl">(FRED latest)</span></span>
+    </span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>THE SWAP REPORT &middot; Tuesday, July 14, 2026 &middot; Morning Edition</div>
+  <div style="opacity:0.6;">For SWAP &middot; Distribution restricted &middot; Not for public release</div>
+</footer>
+
+<script>
+var currentTheme = 'warm';
+function setTheme(t, btn) {
+  currentTheme = t;
+  document.body.setAttribute('data-theme', t);
+  document.querySelectorAll('.theme-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+}
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+var wxLat = 37, wxLon = -95, wxZoom = 4, wxLayerName = 'temperature-2m';
+var ICAO_TABLE = {
+  'KCHS': [32.8986, -80.0405], 'KLTS': [34.6671, -99.2667],
+  'KDEN': [39.8561, -104.6737], 'KATL': [33.6407, -84.4277],
+  'KDFW': [32.8998, -97.0403], 'KLAX': [33.9425, -118.4081],
+  'KJFK': [40.6413, -73.7781], 'KORD': [41.9742, -87.9073],
+  'EGLL': [51.4775, -0.4614], 'RJTT': [35.5533, 139.7811]
+};
+function buildWxSrc() {
+  return 'https://www.ventusky.com/?p=' + wxLat + ';' + wxLon + ';' + wxZoom + '&l=' + wxLayerName;
+}
+function wxLayer(btn, layer) {
+  wxLayerName = layer;
+  document.querySelectorAll('.wx-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById('wx-iframe').src = buildWxSrc();
+}
+function wxSearch() {
+  var q = document.getElementById('wx-input').value.trim();
+  if (!q) return;
+  var latLonRe = /^(-?\d+\.?\d*),\s*(-?\d+\.?\d*)$/;
+  var m = q.match(latLonRe);
+  if (m) { wxLat = parseFloat(m[1]); wxLon = parseFloat(m[2]); wxZoom = 8; document.getElementById('wx-iframe').src = buildWxSrc(); return; }
+  var icao = q.toUpperCase();
+  if (ICAO_TABLE[icao]) { wxLat = ICAO_TABLE[icao][0]; wxLon = ICAO_TABLE[icao][1]; wxZoom = 9; document.getElementById('wx-iframe').src = buildWxSrc(); return; }
+  fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + encodeURIComponent(q) + '&count=1')
+    .then(function(r){ return r.json(); })
+    .then(function(d){ if (d.results && d.results.length > 0) { wxLat = d.results[0].latitude; wxLon = d.results[0].longitude; wxZoom = 8; document.getElementById('wx-iframe').src = buildWxSrc(); } })
+    .catch(function(){});
+}
+(function(){
+  var grp = document.getElementById('ticker-group');
+  if (grp) {
+    var clone = grp.cloneNode(true);
+    clone.id = '';
+    document.getElementById('ticker-track').appendChild(clone);
+  }
+})();
+</script>
+</body>
+</html>
