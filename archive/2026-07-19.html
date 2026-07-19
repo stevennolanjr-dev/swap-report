@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE SWAP REPORT: Morning Edition, July 19, 2026</title>
+<meta property="og:title" content="THE SWAP REPORT: Morning Edition, July 19, 2026">
+<meta property="og:url" content="https://theswap.report/">
+<meta property="og:description" content="Sunday, July 19, 2026. Day 142 of the Iran war: two US service members are killed and one is left missing after an Iranian missile and drone barrage on a base in Jordan, the first American combat deaths of the war, and Washington answers with an eighth straight night of strikes it says are meant to punish the Revolutionary Guard. Iran returns fire on Gulf bases in Kuwait and Bahrain and a Kurdish camp near Erbil. Russia hits Kyiv with the largest ballistic missile barrage of the war while Ukraine strikes oil and logistics deep inside Russia. At home, polling makes the Iran war the least popular US conflict since surveys began, Ralph Norman enters the race for Lindsey Graham's open Senate seat against the president's pick, and the Tate brothers are arrested in Miami.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f0e8;
+  --surface: #fffdf8;
+  --border: #d4c9b8;
+  --text: #1a1a1a;
+  --muted: #666666;
+  --accent: #8b0000;
+  --tab-inactive: #e8e2d8;
+  --tab-active: #fffdf8;
+  --header-bg: #ede8df;
+  --tab-bg: #e8e2d8;
+  --tag-bg: #8b0000;
+  --tag-text: #ffffff;
+  --watch-bg: #fff8f0;
+  --watch-border: #c8a06a;
+  --card-bg: #fffdf8;
+  --hover-bg: rgba(139,0,0,0.06);
+  --footer-bg: #ede8df;
+  --footer-text: #666666;
+}
+[data-theme="light"] {
+  --bg: #ffffff; --surface: #ffffff; --border: #e0e0e0; --text: #111111;
+  --muted: #555555; --accent: #8b0000; --tab-inactive: #f0f0f0;
+  --tab-active: #ffffff; --header-bg: #f5f5f5; --tab-bg: #eeeeee;
+  --watch-bg: #fff8f0; --watch-border: #c8a06a; --card-bg: #ffffff;
+  --hover-bg: rgba(139,0,0,0.05); --footer-bg: #f0f0f0; --footer-text: #555555;
+}
+[data-theme="dark"] {
+  --bg: #1a1a2e; --surface: #16213e; --border: #2a2a4a; --text: #e0e0e0;
+  --muted: #a0a0b0; --accent: #cc3333; --tab-inactive: #1e1e3a;
+  --tab-active: #16213e; --header-bg: #1e1e3a; --tab-bg: #1e1e3a;
+  --watch-bg: #1e1e2e; --watch-border: #8b6a3a; --card-bg: #16213e;
+  --hover-bg: rgba(204,51,51,0.08); --footer-bg: #1e1e3a; --footer-text: #a0a0b0;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: Georgia, 'Times New Roman', serif; font-size: 15px; line-height: 1.6; }
+.page { max-width: 960px; margin: 0 auto; background: var(--bg); }
+.masthead { background: var(--bg); padding: 24px 24px 16px; border-bottom: 2px solid var(--accent); display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; }
+.masthead-left { flex: 1; }
+.masthead-title { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 22px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); }
+.masthead-meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); margin-top: 4px; }
+.masthead-epigraph { font-style: italic; font-size: 13px; color: var(--muted); margin-top: 4px; font-family: Georgia, serif; }
+.theme-btns { display: flex; gap: 6px; align-items: center; padding-top: 4px; }
+.theme-btn { background: var(--tab-bg); border: 1px solid var(--border); color: var(--text); cursor: pointer; font-size: 14px; padding: 4px 8px; border-radius: 3px; }
+.theme-btn.active { background: var(--accent); color: #fff; }
+.edition-bar { background: var(--header-bg); color: var(--muted); border-bottom: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 5px 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.edition-bar a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.wx-section { padding: 12px 20px; background: var(--surface); border-bottom: 1px solid var(--border); }
+.wx-iframe { width: 100%; height: 320px; border: 1px solid var(--border); border-radius: 4px; display: block; }
+.wx-controls { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; align-items: center; }
+.wx-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 8px; border: 1px solid var(--border); background: var(--tab-bg); color: var(--text); cursor: pointer; border-radius: 3px; }
+.wx-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.wx-search { display: flex; gap: 6px; margin-bottom: 8px; }
+.wx-search input { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 3px; flex: 1; }
+.wx-search button { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 10px; background: var(--accent); color: #fff; border: none; border-radius: 3px; cursor: pointer; }
+.wx-credit { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 6px; }
+.wx-credit a { color: var(--accent); text-underline-offset: 2px; }
+.tab-bar { display: flex; background: var(--tab-bg); border-bottom: 2px solid var(--border); overflow-x: auto; padding: 0 20px; gap: 2px; }
+.tab-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 8px 14px; border: none; background: transparent; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap; transition: color 0.15s; letter-spacing: 1px; text-transform: uppercase; }
+.tab-btn:hover { color: var(--accent); }
+.tab-btn.active { color: var(--accent); background: var(--tab-active); border-bottom-color: var(--accent); }
+.tab-panel { display: none; padding: 20px; }
+.tab-panel.active { display: block; }
+.section-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 4px; margin: 20px 0 12px; }
+.section-hdr:first-child { margin-top: 0; }
+.bluf-box { background: rgba(139,0,0,0.05); border-left: 4px solid var(--accent); padding: 14px 16px; margin-bottom: 20px; border-radius: 0 4px 4px 0; }
+.bluf-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.bluf-box ul { padding-left: 18px; }
+.bluf-box li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; }
+.story { background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; padding: 12px 14px; margin-bottom: 10px; transition: background 0.15s; }
+.story:hover { background: var(--hover-bg); }
+.story-headline { font-size: 15px; font-weight: bold; line-height: 1.4; margin-bottom: 4px; }
+.story-headline a { color: var(--text); text-decoration: none; }
+.story-headline a:hover { color: var(--accent); text-decoration: underline; }
+.story-meta { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-bottom: 6px; }
+.story-synopsis { font-size: 13px; color: var(--text); line-height: 1.5; }
+.tag { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; background: var(--tag-bg); color: var(--tag-text); padding: 2px 6px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+.watch-item { background: var(--watch-bg); border-left: 3px solid var(--watch-border); padding: 10px 12px; margin-bottom: 10px; border-radius: 0 4px 4px 0; }
+.watch-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+.throughline { font-size: 13px; color: var(--text); line-height: 1.6; margin-bottom: 16px; }
+.aged-badge { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 10px; color: #fff; vertical-align: middle; margin-right: 6px; }
+.aged-green { background: #2d7a3d; }
+.aged-yellow { background: #b8860b; }
+.aged-red { background: #8b0000; }
+.ticker-wrap { background: #111; color: #e8e8e8; overflow: hidden; padding: 8px 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; white-space: nowrap; }
+.ticker-track { display: inline-block; animation: ticker-slide 90s linear infinite; will-change: transform; }
+.ticker-wrap:hover .ticker-track { animation-play-state: paused; }
+@keyframes ticker-slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; white-space: normal; display: block; } }
+.ticker-item { display: inline-block; margin: 0 18px; }
+.ticker-lbl { color: #999; font-size: 11px; }
+.ticker-val { color: #e8e8e8; font-weight: 600; }
+.ticker-sep { color: #444; margin: 0 4px; }
+.up { color: #3dcc5a; }
+.dn { color: #ff5a5a; }
+footer { background: var(--footer-bg); color: var(--footer-text); font-family: 'IBM Plex Mono', monospace; font-size: 10px; padding: 16px 24px; margin-top: 32px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.top-story { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 14px; }
+.tnum { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: var(--accent); min-width: 26px; padding-top: 2px; flex-shrink: 0; }
+.tbody { flex: 1; }
+@media (max-width: 600px) { .masthead { padding: 16px; } .tab-panel { padding: 14px; } footer { flex-direction: column; } }
+@media (max-width: 480px) { .top-story { gap: 8px; } .tnum { font-size: 11px; min-width: 20px; } }
+</style>
+</head>
+<body data-theme="warm">
+<div style="background:#8b0000;color:#fff;padding:8px 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-align:center;">Archived edition &middot; 2026-07-19 &middot; <a href="../index.html" style="color:#fff;text-decoration:underline;">Back to today's brief</a> &middot; <a href="index.html" style="color:#fff;text-decoration:underline;">Archive index</a></div>
+
+
+<div class="page">
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-left">
+    <div class="masthead-title">THE SWAP REPORT</div>
+    <div class="masthead-meta">SUNDAY, JULY 19, 2026 &nbsp;|&nbsp; MORNING EDITION</div>
+    <div class="masthead-epigraph">For one hundred forty-one nights the war's cost was carried by others. On the one hundred forty-second it was carried home, in the names of two Americans killed on a base in Jordan.</div>
+  </div>
+  <div class="theme-btns">
+    <button class="theme-btn active" onclick="setTheme('warm',this)" title="Warm">&#9728;</button>
+    <button class="theme-btn" onclick="setTheme('light',this)" title="Light">&#128305;</button>
+    <button class="theme-btn" onclick="setTheme('dark',this)" title="Dark">&#9790;</button>
+  </div>
+</div>
+
+<!-- EDITION BAR -->
+<div class="edition-bar">
+  <span>Iran War Day 142: two US service members are killed and one is missing after an Iranian missile and drone barrage on a base in Jordan, the first American combat deaths of the war, and Washington answers with an eighth straight night of strikes it says are meant to punish the Revolutionary Guard</span>
+  <span>|</span>
+  <span>Iran returns fire on Gulf bases in Kuwait and Bahrain and a Kurdish camp near Erbil, while Russia hits Kyiv with the largest ballistic missile barrage of the war and Ukraine strikes oil and logistics deep inside Russia</span>
+  <span>|</span>
+  <span>At home, polling makes the Iran war the least popular US conflict since surveys began, Ralph Norman enters the race for Lindsey Graham's open Senate seat against the president's pick, and the Tate brothers are arrested in Miami</span>
+  <span>|</span>
+  <a href="https://theswap.report/">theswap.report</a>
+  <span>|</span>
+  <a href="https://theswap.report/archive/">Archive</a>
+</div>
+
+<!-- WEATHER -->
+<div class="wx-section">
+  <div class="wx-search">
+    <input type="text" id="wx-input" placeholder="Search: lat,lon or ICAO or city name" onkeydown="if(event.key==='Enter')wxSearch()">
+    <button onclick="wxSearch()">Go</button>
+  </div>
+  <div class="wx-controls">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);margin-right:4px;">LAYER:</span>
+    <button class="wx-btn active" onclick="wxLayer(this,'temperature-2m')">Temp</button>
+    <button class="wx-btn" onclick="wxLayer(this,'wind-10m')">Wind</button>
+    <button class="wx-btn" onclick="wxLayer(this,'rain-3h')">Rain</button>
+    <button class="wx-btn" onclick="wxLayer(this,'clouds')">Clouds</button>
+    <button class="wx-btn" onclick="wxLayer(this,'radar')">Radar</button>
+    <button class="wx-btn" onclick="wxLayer(this,'gust')">Gust</button>
+  </div>
+  <iframe id="wx-iframe" class="wx-iframe" src="https://www.ventusky.com/?p=37;-95;4&amp;l=temperature-2m" allowfullscreen></iframe>
+  <div class="wx-credit">Interactive weather: <a href="https://www.ventusky.com" target="_blank" rel="noopener">Ventusky</a> &nbsp;|&nbsp; Aviation: <a href="https://aviationweather.gov/data/metar/?id=KCHS&amp;taf=true" target="_blank" rel="noopener">KCHS METAR/TAF</a> (437 AW / Joint Base Charleston)</div>
+</div>
+
+
+
+<!-- TAB BAR -->
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('overview',this)">Overview</button>
+  <button class="tab-btn" onclick="showTab('defense',this)">Defense</button>
+  <button class="tab-btn" onclick="showTab('strategic',this)">Strategic</button>
+  <button class="tab-btn" onclick="showTab('domestic',this)">Domestic</button>
+  <button class="tab-btn" onclick="showTab('deepreads',this)">Deep Reads</button>
+  <button class="tab-btn" onclick="showTab('social',this)">Social/Signal</button>
+  <button class="tab-btn" onclick="showTab('local',this)">Local</button>
+  <button class="tab-btn" onclick="showTab('lighter',this)">Lighter Fare</button>
+</div>
+
+<!-- OVERVIEW TAB -->
+<div id="tab-overview" class="tab-panel active">
+
+  <div class="bluf-box">
+    <div class="bluf-hdr">Bottom Line Up Front</div>
+    <ul>
+      <li><strong>The war took its first American lives.</strong> Two US service members were killed and one left missing after an Iranian missile and drone barrage on a base in Jordan, per Air and Space Forces Magazine, US Central Command's confirmation carried across the wires, the first American combat deaths since the campaign began.</li>
+      <li><strong>Washington answered with an eighth straight night of strikes.</strong> The US launched a further round of attacks it framed as punishment of the Revolutionary Guard for the Jordan deaths, per Al Jazeera, moving the campaign from open-ended pressure to explicit retaliation for lost troops.</li>
+      <li><strong>Iran returned fire across the Gulf.</strong> Tehran reported fresh missile and drone attacks on Kuwait and set off air-raid sirens in Bahrain, per the Times of Israel, while Kurdish fighters reported an Iranian strike on a camp near Erbil, widening the war along its edges.</li>
+      <li><strong>Russia hit Kyiv with the largest ballistic barrage of the war.</strong> Dozens of missiles pounded the Ukrainian capital in what Kyiv called the heaviest ballistic attack since the invasion began, per the Guardian, as Ukraine struck a Russian oil refinery in Stavropol Krai and targets in occupied territory, per the Kyiv Independent.</li>
+      <li><strong>At home, the war turns unpopular and a Senate race opens.</strong> Polling now makes the Iran war the least popular US conflict since surveys began, per The Economist, as Ralph Norman entered the race for Lindsey Graham's open Senate seat against the president's endorsed pick, per the Post and Courier, and the Tate brothers were arrested in Miami on new British charges.</li>
+    </ul>
+  </div>
+
+  <div class="section-hdr">The Through-Line</div>
+  <p class="throughline">For twenty weeks the Iran war has cost Iranians their water and power, cost the Gulf its shipping lane, and cost the market its calm, but it had not cost American lives, and that single fact was the quiet floor under a distant campaign. This morning the floor gave way. Two service members are dead and one is missing after an Iranian barrage on a base in Jordan, and the war crosses the line that changes its politics and its logic at once. A conflict fought with airframes and ordnance against an adversary's infrastructure is an argument about strategy; a conflict that returns flag-draped coffins is an argument about sacrifice, and the two are not governed by the same rules. Watch how fast the language shifted. The eighth night of strikes was not described as continued pressure or as shaping; it was described as punishment for the killing of Americans, which is the vocabulary of retaliation, and retaliation runs on a casualty ledger rather than a signaling ladder. Each side now owes the other a response measured in blood, and that math has its own momentum, harder to halt than the escalation-by-instrument the week had tracked from disabling to boarding to mining. The domestic reading arrives on the same morning: polling makes this the least popular American war since the question has been asked, which means the deaths land not on a public rallying to a cause but on one that had already turned against it. A war losing at home the day it starts costing lives is a war whose clock has changed, because the pressure to answer the enemy and the pressure to end the thing now pull in the same direction, toward escalation as the fastest route to a finish nobody has defined.</p>
+
+  <div class="section-hdr">How It Aged</div>
+  <p class="throughline"><span class="aged-badge aged-green">Held</span> The forecast landed inside a day, and it is the uncomfortable kind of correct. Saturday's edition read the retaliation as already reaching American forces, noting the Hill's report that Iranian attacks had injured US troops in Jordan that week, and called that the fastest path from a war of infrastructure to a war of casualties. That path was walked within twenty-four hours: the injuries became deaths, and the war has its first Americans killed. The structural read that a campaign describing itself as shaping would keep expanding, and that Iran would mirror American moves rather than absorb them, also held, with Iran answering the eighth night by striking Kuwait and Bahrain and a Kurdish camp near Erbil. Grade it green, and register what green means here: not vindication but a warning that came true. The honest edge of the call is that forecasting the direction of an escalation is easier than forecasting the moment it converts, and the moment arrived faster and heavier than the word injured had signaled. The lesson to carry forward is the one the ledger now enforces: once retaliation is priced in blood, the next rung is not a choice between escalation and restraint, it is a choice between escalation and a settlement neither capital has been willing to name.</p>
+
+  <div class="section-hdr">Today's Top Stories</div>
+
+  <div class="top-story">
+    <span class="tnum">01</span>
+    <div class="tbody">
+      <div class="story">
+        <span class="tag">Iran</span><span class="tag">US Casualties</span>
+        <div class="story-headline"><a href="https://www.airandspaceforces.com/2-americans-killed-one-missing-as-iran-attacks-u-s-base-in-jordan/" target="_blank" rel="noopener">Two Americans killed, one missing as Iran attacks US base in Jordan</a></div>
+        <div class="story-meta">Air and Space Forces Magazine &middot; cross-corroborated</div>
+        <div class="story-synopsis">Two US service members were killed and one is missing after an Iranian missile and drone attack on a base in Jordan, per Air and Space Forces Magazine, with US Central Command confirming the deaths and the reporting carried across Military Times, Stars and Stripes, NBC News, and Politico. These are the first American combat deaths of the war, and their weight is out of proportion to their number. A war fought against an adversary's ships and utilities can be argued as strategy and absorbed as news; a war that kills Americans on a base becomes a matter of sacrifice and demands an answer the public can see. Jordan is the tell in the geography, because the base struck sits well outside the Gulf theater where the strikes and the blockade have concentrated, which means Iran is reaching for American targets across the region's breadth rather than trading blows only over Hormuz. The missing service member is its own agony and its own strategic variable, because a search or a recovery under fire can pull forces and attention in ways a clean casualty count does not. This sits at the top of the brief because it is the event that reorders the war: every decision downstream, the tempo of strikes, the appetite in Congress, the mood of a public already sour on the conflict, now runs through the fact that the war has started coming home.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="top-story">
+    <span class="tnum">02</span>
+    <div class="tbody">
+      <div class="story">
+        <span class="tag">Retaliation</span><span class="tag">IRGC</span>
+        <div class="story-headline"><a href="https://www.aljazeera.com/news/2026/7/19/us-launches-eighth-consecutive-night-of-attacks-on-iran?traffic_source=rss" target="_blank" rel="noopener">US launches eighth consecutive night of attacks on Iran as Iran returns fire on Gulf bases</a></div>
+        <div class="story-meta">Al Jazeera &middot; cross-corroborated</div>
+        <div class="story-synopsis">The US carried out an eighth straight night of strikes it cast as punishment of the Revolutionary Guard for the Jordan deaths, per Al Jazeera, with the Times of Israel reporting the strikes were aimed explicitly at the IRGC and France 24 tracking Washington's vow to shift the shape of its response. The framing is the story. For a week the campaign was described in the open-ended language of pressure, and this morning it was named as retaliation for killed Americans, which narrows the war's purpose to a demand the public can grasp and a bar the enemy can measure. That clarity is also a trap, because a strike sold as punishment invites the question of whether the punishment landed, and a strike sold as pressure never had to answer it. Iran did not wait to reply: it reported fresh attacks on Kuwait, set air-raid sirens sounding in Bahrain, and hit a Kurdish camp near Erbil, mirroring the American escalation across the map rather than concentrating it. The exchange is now a two-way retaliation on a casualty ledger, each side owing the other a visible answer, and that is a harder machine to stop than the instrument-by-instrument climb the week had been tracking. Filed as the retaliation cycle made explicit, and the morning the war's logic changed from signaling to settling scores.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="top-story">
+    <span class="tnum">03</span>
+    <div class="tbody">
+      <div class="story">
+        <span class="tag">Iran</span><span class="tag">Diplomacy</span>
+        <div class="story-headline"><a href="https://www.japantimes.co.jp/news/2026/07/19/world/us-strikes-iran-punish-two-troops-killed/" target="_blank" rel="noopener">US strikes Iran to 'punish' it for attack that killed two troops</a></div>
+        <div class="story-meta">The Japan Times &middot; cross-corroborated</div>
+        <div class="story-synopsis">The US struck Iran to punish it for the attack that killed two American troops, per the Japan Times, and Le Monde reported Iran's supreme leader answering with a threat of unforgettable lessons, the rhetorical ceiling above the actual exchange of fire. The dueling vocabularies are worth reading closely, because punishment and lesson are both words that promise more than a single strike delivers, and both commit their speakers to a further move if the other side does not fold. That is the danger of naming a retaliation: it converts a tactical exchange into a contest of resolve, where backing down reads as weakness and matching the enemy reads as strength, and neither capital has defined the settlement that would let either climb down without losing face. The diplomacy that might arrest the cycle is nearly invisible in the reporting, crowded out by the strikes and the threats, which is itself the warning. A war that has begun killing the other side's citizens and framing every answer as punishment has fewer offramps than a war of infrastructure and signaling, because the domestic price of restraint rises the moment the coffins are yours. Logged as the escalation-of-language story under the escalation of fire, and the reason the next forty-eight hours turn on whether either government can find a word other than punishment.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="top-story">
+    <span class="tnum">04</span>
+    <div class="tbody">
+      <div class="story">
+        <span class="tag">Ukraine</span><span class="tag">Russia</span>
+        <div class="story-headline"><a href="https://www.theguardian.com/world/2026/jul/19/dozens-of-russian-missiles-pound-kyiv-ukraine-in-major-attack" target="_blank" rel="noopener">Dozens of Russian missiles pound Kyiv in major attack</a></div>
+        <div class="story-meta">The Guardian &middot; cross-corroborated</div>
+        <div class="story-synopsis">Russia hit Kyiv with dozens of missiles in what Ukraine called its largest ballistic barrage of the war, per the Guardian, with Deutsche Welle and the Kyiv Independent reporting explosions across the capital and civilians who did not have time to reach shelter. The scale is the message: a record ballistic salvo aimed at the capital is Moscow demonstrating that the campaign against Iran has not bought Ukraine any relief, and that Russia can still surge mass fires when it chooses. The timing invites the comparison the day keeps making, a second war of chokepoints and deep strikes running in parallel with the Gulf, because Ukraine answered by striking a Russian oil refinery in Stavropol Krai and targets in occupied Crimea and Luhansk, reaching past the front to the fuel and logistics behind it. The same cheap, patient methods contesting Hormuz are contesting Russia's own supply lines, and the largest barrage of the war reads in part as Moscow's frustration that it cannot stop them. Read alongside the Iran coverage, the morning offers one lesson twice: the decisive terrain of both wars is now the infrastructure and the waterways behind the lines, and the side that can reach them cheaply holds leverage its front-line map does not show.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="top-story">
+    <span class="tnum">05</span>
+    <div class="tbody">
+      <div class="story">
+        <span class="tag">Iran</span><span class="tag">Public Opinion</span>
+        <div class="story-headline"><a href="https://www.economist.com/united-states/2026/07/19/the-iran-war-is-americas-least-popular-since-polls-began" target="_blank" rel="noopener">The Iran war is America's least popular since polls began</a></div>
+        <div class="story-meta">The Economist &middot; analysis</div>
+        <div class="story-synopsis">Polling now makes the Iran war the least popular American conflict since the question has been asked, per The Economist, a finding that lands with unusual force on the morning the war claims its first American lives. The two facts together define the political problem: a public that had already turned against the campaign is now being asked to absorb its human cost, which is the opposite of the rally-round-the-flag dynamic that historically follows the first casualties of a war the country believes in. When the belief is absent, the deaths do not consolidate support, they sharpen the question of what the dying is for, and that question is the one neither the strikes nor the punishment framing answers. The essay's value is in quantifying the gap between the war Washington is fighting and the war the country is willing to back, a gap that has been widening all along and that the Jordan deaths will now stress-test in real time. For a president who attends a World Cup final this afternoon while flag-draped transfers are arranged, the split screen is the political weather of the week. Filed as the domestic anchor under the day's news, and the measure of how little cushion the war's managers have if the casualty count climbs.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- DEFENSE TAB -->
+<div id="tab-defense" class="tab-panel">
+
+  <div class="section-hdr">The First Americans Killed</div>
+
+  <div class="story">
+    <span class="tag">Iran</span><span class="tag">Jordan</span>
+    <div class="story-headline"><a href="https://www.stripes.com/theaters/middle_east/2026-07-18/iran-attack-2-americans-kia-22299945.html" target="_blank" rel="noopener">Iranian attack in Jordan kills 2 US service members, leaves 1 missing</a></div>
+    <div class="story-meta">Stars and Stripes &middot; cross-corroborated</div>
+    <div class="story-synopsis">An Iranian missile and drone attack on a base in Jordan killed two US service members and left one missing, per Stars and Stripes, with Central Command confirming the toll and Task and Purpose, Military Times, and The War Zone carrying the same account. For the force, this is the event the tempo made likely and the posture could not fully prevent. Basing thousands of troops across the region to enable and defend a strike campaign puts them within reach of an adversary that has spent the war demonstrating it will answer across the map, and a base in Jordan is exactly the kind of exposed node a mirroring strategy targets. The missing service member is the sharpest operational problem, because a recovery effort in a contested environment competes for the intelligence, aircraft, and attention the strike campaign is also consuming, and the imperative to bring an American home does not bend to the war plan's priorities. The deeper readiness question the deaths pose is force protection under a campaign that has no defined end, since every additional night of strikes is another night the troops enabling them are targets. Logged as the story that turns an abstract escalation into names, and the reason the next decisions about tempo will be made with casualties on the table.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Retaliation</span><span class="tag">Strikes</span>
+    <div class="story-headline"><a href="https://www.timesofisrael.com/us-launches-8th-night-of-strikes-on-iran-to-punish-irgc-for-deadly-jordan-attack/" target="_blank" rel="noopener">US launches 8th night of strikes on Iran to 'punish' IRGC for deadly Jordan attack</a></div>
+    <div class="story-meta">The Times of Israel &middot; cross-corroborated</div>
+    <div class="story-synopsis">The US opened an eighth consecutive night of strikes described as punishment of the Revolutionary Guard for the Jordan deaths, per the Times of Israel, with the US saying it targeted the IRGC forces responsible. The shift from an open-ended campaign to a named retaliation is a change in the mission the strikes serve, and it carries an operational demand the pressure framing did not. Punishment implies a target set tied to the perpetrators, which requires attributing the Jordan attack to specific units and locations and then reaching them, a harder intelligence and targeting problem than sustaining a general tempo against fixed infrastructure. It also sets an expectation of effect: a strike that punishes is supposed to deter the next attack, and if Iran answers anyway, as it did this morning against Kuwait and Bahrain, the punishment logic pushes toward a heavier follow-on rather than a pause. The munitions and sortie cost the week has been tracking now compounds, because a retaliatory surge on top of eight nights of strikes draws down the same finite inventories faster. Filed as the campaign's turn from pressure to reprisal, and the point where the strike list stops being about Iran's capabilities and starts being about Iran's account.</div>
+  </div>
+
+  <div class="section-hdr">Elsewhere in the Force</div>
+
+  <div class="story">
+    <span class="tag">Space Force</span><span class="tag">Personnel</span>
+    <div class="story-headline"><a href="https://taskandpurpose.com/news/space-force-identifies-cedric-eneluna-vandenberg/" target="_blank" rel="noopener">Space Force identifies airman killed in accident at Vandenberg</a></div>
+    <div class="story-meta">Task and Purpose &middot; single source</div>
+    <div class="story-synopsis">The Space Force has identified the airman killed in an accident at Vandenberg Space Force Base, per Task and Purpose, a reminder on a day dominated by combat deaths that the force loses people to the ordinary hazards of the job as well. Vandenberg is the heart of the nation's space-launch and missile-test enterprise, a busy industrial installation where the work is dangerous in the mundane ways heavy operations always are, and an accidental death there is its own loss to a service still building its identity and its culture. The story rates inclusion because the Space Force remains the least understood of the branches to most readers, its people invisible behind the satellites and the launches, and naming an airman lost in an accident is a small corrective to that abstraction. It also sits against the war's casualties as a quiet reminder that the human cost of the military is continuous and not only the product of enemy fire. Logged with the respect it warrants, and as the week's note that the force absorbs losses on many fronts at once, most of them far from the headlines.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Pentagon</span><span class="tag">Policy</span>
+    <div class="story-headline"><a href="https://www.japantimes.co.jp/news/2026/07/19/world/doctors-question-pentagon-testosterone-screening/" target="_blank" rel="noopener">Doctors question evidence behind Pentagon plan for testosterone screening</a></div>
+    <div class="story-meta">The Japan Times &middot; cross-corroborated</div>
+    <div class="story-synopsis">Physicians are questioning the evidence behind a Pentagon plan to screen troops' testosterone levels, per the Japan Times, with the Guardian reporting medical experts who see little scientific basis for the proposal. The dispute is a small window into a recurring tension in defense personnel policy, between initiatives that signal a cultural posture and interventions that rest on clinical evidence, and the doctors' objection is that this one leads with the former. Mass physiological screening of a force is expensive, invasive, and consequential for the careers of those flagged, which makes the strength of the underlying science the threshold question, and medical professionals saying the science is thin is a warning the policy is solving for something other than health. The episode fits a pattern of personnel decisions driven by a view of what a warrior force should look like rather than by the readiness data, and it invites the same scrutiny the vaccine-mandate reversals did about where lawful policy ends and cultural signaling begins. Filed as the personnel-policy story worth watching for whether evidence or posture wins, because a screening program built on contested science is a program likely to cost more in trust and careers than it returns in readiness.</div>
+  </div>
+
+</div>
+
+<!-- STRATEGIC TAB -->
+<div id="tab-strategic" class="tab-panel">
+
+  <div class="section-hdr">The War's Nuclear Echo</div>
+
+  <div class="story">
+    <span class="tag">Japan</span><span class="tag">Proliferation</span>
+    <div class="story-headline"><a href="https://www.japantimes.co.jp/news/2026/07/19/japan/politics/koizumi-japan-nuclear-weapons-debate/" target="_blank" rel="noopener">Japan 'cannot avoid' nuclear weapons debate, defense chief Koizumi says</a></div>
+    <div class="story-meta">The Japan Times &middot; single source</div>
+    <div class="story-synopsis">Japan's defense chief says the country cannot avoid a debate about nuclear weapons, per the Japan Times, a remark that would have been unthinkable from an official in Tokyo not long ago and that reads as a ripple of the wider disorder. For the sole nation to suffer atomic attack, even opening the question is a profound shift, and it does not happen in isolation: it happens while a nuclear-threshold state is being bombed nightly, while proliferation norms look brittle, and while allies quietly wonder how durable American security guarantees are under a president who treats alliances as transactions. The defense chief's framing, that the debate cannot be avoided, is careful, not a call to build, but the careful version is still a marker that the taboo has thinned. The strategic stakes reach past Japan, because a Japanese nuclear conversation is watched intently in Seoul and Canberra, and a region that starts hedging against a weakening US umbrella is a region drifting toward the multipolar nuclear future the nonproliferation order was built to prevent. Read it as the clearest sign this week that the Iran war's deepest costs may be measured not in the Gulf but in the assumptions allies make about their own security, and in the options they begin to consider once those assumptions crack.</div>
+  </div>
+
+  <div class="section-hdr">Russia's Largest Barrage, Ukraine's Deep Strikes</div>
+
+  <div class="story">
+    <span class="tag">Ukraine</span><span class="tag">Deep Strike</span>
+    <div class="story-headline"><a href="https://kyivindependent.com/ukraine-reportedly-strikes-russian-oil-refinery-in-stavropol-krai-hits-targets-in-occupied-crimea-luhansk/" target="_blank" rel="noopener">Ukraine strikes Russian oil refinery in Stavropol Krai, hits targets in occupied Crimea and Luhansk</a></div>
+    <div class="story-meta">The Kyiv Independent &middot; cross-corroborated</div>
+    <div class="story-synopsis">Ukraine struck a Russian oil refinery in Stavropol Krai and hit targets in occupied Crimea and Luhansk, per the Kyiv Independent, hours after Russia hit Kyiv with the largest ballistic barrage of the war, per Deutsche Welle. The two-way tempo is the strategic picture: Russia surges mass fires at the capital to demonstrate reach and impose cost, and Ukraine answers not by matching the salvo but by reaching deep into Russia's energy and logistics, the sustainment that keeps the war funded and supplied. It is the same asymmetric logic playing out in the Gulf, where a weaker power contests a stronger one not on the front but on the arteries behind it, and Ukraine's refinery strikes are the land-and-air version of the chokepoint war. The record barrage on Kyiv reads in part as Moscow's frustration that its own oil and rail are no longer safe, a punishment for damage it cannot prevent. The strategic question underneath is endurance: whether Ukraine's deep-strike campaign degrades Russia's war economy faster than Russia's mass fires degrade Ukraine's cities and morale, a race between two theories of pressure that the front line does not capture. Filed as the eastern war's parallel to the Gulf, and the reminder that the campaign against Iran has bought Ukraine nothing.</div>
+  </div>
+
+  <div class="section-hdr">Europe Realigns Around the Crisis</div>
+
+  <div class="story">
+    <span class="tag">Hungary</span><span class="tag">Europe</span>
+    <div class="story-headline"><a href="https://www.theguardian.com/world/2026/jul/18/hungarys-president-agrees-to-stand-down-after-law-change-ends-his-term" target="_blank" rel="noopener">Hungary's president agrees to stand down after law change ends his term</a></div>
+    <div class="story-meta">The Guardian &middot; cross-corroborated</div>
+    <div class="story-synopsis">Hungary's president has agreed to stand down after a law change ended his term, per the Guardian, with the Kyiv Independent and the Times of Israel reporting the amendment as part of the reordering underway since Peter Magyar's challenge broke the old governing arrangement. Le Monde adds that the new government is already dismantling the think-tank apparatus of the previous era, the institutional machinery of a decade of illiberal governance. The story matters beyond Budapest because Hungary has been the internal brake on European unity toward Russia and Ukraine, the member state most willing to slow sanctions and soften pressure on Moscow, and a genuine change at the top of its politics could loosen that brake. A Europe recalibrating its eastern policy at the same moment Russia launches its largest barrage of the war and the United States is consumed by the Gulf is a Europe whose internal alignment carries more weight than usual, because the continent may have to do more for Ukraine precisely as Washington's attention is elsewhere. Read it as the quieter structural shift under the week's louder violence, the possibility that the European coalition on Ukraine firms up as one of its most reluctant members changes course. Whether the shift is real or cosmetic is the thing to watch as the new government's foreign posture takes shape.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Lebanon</span><span class="tag">Middle East</span>
+    <div class="story-headline"><a href="https://www.scmp.com/news/world/middle-east/article/3361099/lebanons-president-meet-trump-push-israeli-withdrawal?utm_source=rss_feed" target="_blank" rel="noopener">Lebanon's president to meet Trump, push for Israeli withdrawal</a></div>
+    <div class="story-meta">South China Morning Post &middot; cross-corroborated</div>
+    <div class="story-synopsis">Lebanon's president has departed for Washington to meet Trump and press for an Israeli withdrawal, per the South China Morning Post and the Times of Israel, a diplomatic errand that runs straight into the regional war the Gulf crisis has inflamed. The visit is a reminder that the Middle East's older confrontations have not paused for the Iran campaign, they have been folded into it, and Lebanon sits on the seam where Iran's network, Israel's security demands, and American leverage all meet. A Lebanese president seeking American help to move Israel is testing whether Washington, deep in its own fight with Tehran, still has the bandwidth and the will to broker on a secondary front, and the answer shapes whether Lebanon stabilizes or slides further into the orbit of the war. The meeting also measures the administration's appetite for the patient diplomacy that the Gulf strikes have crowded out, because a president framing his Iran policy as punishment is a president whose regional partners will read his willingness to press Israel as a signal of how the wider order is being managed. Filed as the diplomatic thread worth tracking under the war's noise, and a small test of whether American attention can hold two Middle Eastern problems at once.</div>
+  </div>
+
+</div>
+
+<!-- DOMESTIC TAB -->
+<div id="tab-domestic" class="tab-panel">
+
+  <div class="section-hdr">The Senate After Graham</div>
+
+  <div class="story">
+    <span class="tag">Senate</span><span class="tag">South Carolina</span>
+    <div class="story-headline"><a href="https://www.postandcourier.com/news/ralph-norman-runs-for-us-senate-sc/article_238b2f76-ec41-49d7-acf1-b79f2180b269.html" target="_blank" rel="noopener">Ralph Norman enters race for Lindsey Graham's open Senate seat</a></div>
+    <div class="story-meta">Post and Courier &middot; cross-corroborated</div>
+    <div class="story-synopsis">Representative Ralph Norman has entered the race for the South Carolina Senate seat left open by Lindsey Graham's death, per the Post and Courier, jumping in despite the president's endorsement of Graham's sister Darline for the seat. The move is the answer to the question Saturday's coverage flagged, whether a presidential blessing would clear the field, and the answer is no. Norman running against the endorsed candidate turns a special election into a live test of how much a Trump endorsement is worth when a state's own ambitious members decide it is contestable, and a sitting House Republican willing to defy the president's pick is a data point about the ceiling of that influence in a midterm year. The dynastic logic of elevating a fallen senator's sister was always going to draw challengers, and Norman's entry converts the awkwardness into an actual contest, one whose result will be read nationally as a proxy for the president's grip on the party. The stakes reach past the seat itself, because a primary fought and lost against Trump's choice would embolden other Republicans weighing their own independence, and a primary won by his pick would reaffirm the hold. Filed as the week's most consequential domestic race, and the clearest current measure of the endorsement's real reach.</div>
+  </div>
+
+  <div class="section-hdr">The War at Home</div>
+
+  <div class="story">
+    <span class="tag">ICE</span><span class="tag">Colorado</span>
+    <div class="story-headline"><a href="https://www.cbsnews.com/news/employee-who-works-at-aurora-ice-processing-center-arrested-accused-of-shooting-and-injuring-colorado-protester/" target="_blank" rel="noopener">Employee at Aurora ICE center arrested, accused of shooting and injuring a Colorado protester</a></div>
+    <div class="story-meta">CBS News &middot; single source</div>
+    <div class="story-synopsis">An employee of the Aurora ICE processing center has been arrested and accused of shooting and injuring a protester in Colorado, per CBS News, the latest flashpoint in a summer of rising friction around immigration enforcement. The story lands in a charged context: it follows a shooting tied to an ICE facility in Maine flagged in earlier coverage and comes amid weekend protests against detention and enforcement operations across several cities. An enforcement employee accused of shooting a demonstrator is the kind of incident that hardens both sides of the immigration fight at once, read by opponents as proof of a system turning violent and by defenders as an isolated act, and the facts of who fired and why will be contested along exactly those lines. The broader pattern worth tracking is the escalation of confrontation around detention facilities, which have become the physical stage for a national argument, and each violent incident raises the temperature and the stakes of the next protest. Logged with care given the disputed facts, and as the domestic tension that runs beneath a week the foreign war otherwise dominates, a reminder that the country's sharpest fights are not all overseas.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">2020</span><span class="tag">Fact-Check</span>
+    <div class="story-headline"><a href="https://thedispatch.com/article/fact-check-trump-speech-election-security/" target="_blank" rel="noopener">Fact-checking Trump's election security speech</a></div>
+    <div class="story-meta">The Dispatch &middot; cross-corroborated</div>
+    <div class="story-synopsis">The Dispatch fact-checks the president's primetime election-security address and finds the central claims unsupported by the evidence offered, per its review, with the Hill reporting Homeland Security officials pressing the initiative even as the documents cited undercut it. The piece is the analytical follow to the story earlier coverage flagged, that the declassified material the president invoked to allege 2020 interference actually assessed US election systems as difficult to manipulate. A methodical fact-check matters here beyond the immediate claims because the argument is being used to justify a policy push, and a policy built on a factual foundation the source documents contradict is a policy that will not survive scrutiny in court or in the record. The domestic cost is the familiar one: a party asked to choose between echoing a claim the paperwork rebuts and distancing itself in an election year, with the added diplomatic drag of an unsubstantiated charge against China that Beijing has rejected as fabricated. Filed as the accountability read on a political initiative built on contested evidence, and the reason the election-security push is likely to generate more controversy than durable policy.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Courts</span><span class="tag">Tate</span>
+    <div class="story-headline"><a href="https://www.npr.org/2026/07/18/g-s1-134475/tate-brothers-arrested-miami" target="_blank" rel="noopener">The Tate brothers are arrested in Miami, US Marshals Service says</a></div>
+    <div class="story-meta">NPR &middot; cross-corroborated</div>
+    <div class="story-synopsis">Andrew and Tristan Tate have been arrested in Miami as British prosecutors bring new rape and trafficking charges, per NPR, with Politico, CBS News, and NBC News confirming the US Marshals took the brothers into custody. The arrest reopens a long transatlantic legal saga around the influencer brothers, whose case has become a proxy in the culture war over masculinity, online celebrity, and the reach of the law across borders. The mechanics now turn on extradition, whether the US will hand the brothers to British authorities on the new charges, a process that runs through the courts and the diplomatic relationship and that their prominence and political sympathizers will complicate. The story rates domestic attention because the Tates are not merely defendants but a movement's symbols, and how the US handles a British extradition request for figures with a devoted online following and allies in political circles is a test of whether celebrity and ideology bend the ordinary operation of the law. Logged as the legal story with the loudest cultural echo, and one whose resolution will be watched as a signal about accountability for the influencer class.</div>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Washington &middot; A Quiet Register, Steady Numbers</div>
+    <p style="font-size:13px;">The presidential paperwork is quiet on a Sunday, with no new executive orders or proclamations in the Federal Register over the weekend window, so the domestic action sits in the politics rather than the docket. The macro dashboard holds steady even as the war premium moves through energy: unemployment at 4.2 percent, initial jobless claims down at 208,000, the ten-year Treasury at 4.57 and the two-year at 4.16, with the federal funds rate at 3.63. Calm labor and bond readings under a spiking oil price and a stock market that closed the week lower is the split the month keeps producing, the real economy steady while the war's cost registers in crude and equities. The number to watch is not on this dashboard but in the Sunday-night futures open, which will be the first market to price the American deaths, since the cash market closed Friday before Jordan.</p>
+  </div>
+
+</div>
+
+<!-- DEEP READS TAB -->
+<div id="tab-deepreads" class="tab-panel">
+
+  <div class="section-hdr">Deep Reads</div>
+
+  <div class="story">
+    <span class="tag">Iran</span><span class="tag">Politics of War</span>
+    <div class="story-headline"><a href="https://www.thebulwark.com/p/two-american-soldiers-killed-as-trumps" target="_blank" rel="noopener">Two American Soldiers Killed as Trump's Iran War Spirals</a></div>
+    <div class="story-meta">The Bulwark &middot; analysis</div>
+    <div class="story-synopsis">The Bulwark delivers the argument the morning demands, that the deaths in Jordan mark the point where a war of choice becomes a war the country cannot look away from, and where the absence of a defined objective stops being an abstraction and starts costing lives. The essay's force is in refusing the comfort of the retaliation framing: punishing the Revolutionary Guard answers the demand for a response, but it does not answer what the war is for, and a campaign that spirals from pressure to reprisal without a stated end is one whose escalation is driven by the last blow rather than by a strategy. The piece traces how an open-ended air campaign generates its own momentum, each night making the next necessary and each casualty making restraint politically costlier, until the war is sustained by its own logic rather than by a purpose anyone can name. Its value is as the domestic-strategic spine under the day's news, the case that the first American deaths should force the question the strikes have deferred, what victory in this war would even look like. Read it against the Economist's polling in the Overview as the two halves of one problem: a war losing the public and now costing lives, still without a definition of success to justify either.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Force Structure</span><span class="tag">Drones</span>
+    <div class="story-headline"><a href="https://www.theatlantic.com/ideas/2026/07/us-military-tech-drones/687945/?utm_source=feed" target="_blank" rel="noopener">Fighter Jets Are Passé</a></div>
+    <div class="story-meta">The Atlantic &middot; analysis</div>
+    <div class="story-synopsis">The Atlantic makes the provocative case that the era of the crewed fighter jet is ending, and that the future of air power belongs to cheap, attritable, autonomous systems that the current force is buying too slowly. The essay lands with unusual timing, because the same week has the US surging fifth-generation fighters toward the Gulf and Ukraine and Iran both demonstrating that small drones can contest seas and strike deep for a fraction of a jet's cost. The argument is not that fighters are useless but that the ratio is wrong, that a defense budget still anchored on exquisite crewed platforms is optimizing for the last war while the cheap-denial revolution reshapes the next, and that mass and cost now matter as much as capability. Its value is in forcing the force-structure question the budget fights keep circling: whether the country can shift procurement toward quantity and autonomy fast enough to matter, against an institutional and industrial base built around the expensive and the few. Read it as the conceptual companion to the week's chokepoint wars, where a handful of cheap systems have imposed costs that no amount of tonnage has reversed, and as the argument for why the drone, not the jet, is the aircraft of the moment.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Europe</span><span class="tag">Missile Defense</span>
+    <div class="story-headline"><a href="https://www.economist.com/europe/2026/07/19/closing-europes-dangerous-missile-gap" target="_blank" rel="noopener">Closing Europe's dangerous missile gap</a></div>
+    <div class="story-meta">The Economist &middot; analysis</div>
+    <div class="story-synopsis">The Economist examines the gap between the missile threat Europe faces and the missile defenses it has fielded, and argues that closing it is now a strategic priority the continent can no longer defer to Washington. The essay's timing is sharp against a week when Russia launched its largest ballistic barrage of the war at Kyiv and the United States is absorbed in the Gulf, a pairing that makes the European deficit concrete: the mass-fires threat is real and rising, and the American attention that might have backstopped Europe is committed elsewhere. The analysis treats missile defense not as a technical procurement question but as a test of European strategic autonomy, whether the continent can build the integrated air and missile defense that its own security now requires rather than continuing to rely on an American umbrella that looks less certain by the month. Its value is in connecting the dots the daily cycle scatters, that the record barrage on Kyiv, the strain on US attention, and the thinning of alliance guarantees are one problem with one answer, a Europe that invests in its own defense. Read it beside the Japan nuclear story in the Strategic tab as evidence that allies across two theaters are drawing the same conclusion at once, that the security they assumed is no longer guaranteed and the hedging has begun.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Russia</span><span class="tag">Home Front</span>
+    <div class="story-headline"><a href="https://www.lemonde.fr/en/international/article/2026/07/19/war-is-undermining-social-contract-between-putin-and-russians_6755611_4.html" target="_blank" rel="noopener">War is undermining the social contract between Putin and Russians</a></div>
+    <div class="story-meta">Le Monde &middot; analysis</div>
+    <div class="story-synopsis">Le Monde traces the slow erosion of the bargain that has underpinned Putin's rule, the implicit deal trading political quiescence for stability and rising living standards, and argues the long war is grinding that contract down. The essay is the corrective to a view of Russia as a monolith that can absorb any cost, showing instead a wartime economy straining under the demands of the front, an inflation and labor squeeze the state manages but cannot cure, and a population whose patience is a resource being spent rather than replenished. Its analytical value is in treating the Russian home front as a strategic variable, the same lens the Ukraine coverage applies to Kyiv's cohesion, because a regime that has to buy loyalty with wages it can no longer easily fund is a regime with a vulnerability that deep strikes on its oil revenue directly exploit. The piece pairs naturally with the Kyiv Independent report on Ukraine's refinery strikes: the deep-strike campaign is not only military, it is economic, aimed at the revenue that funds the contract Le Monde describes. Read it as the long-horizon companion to the eastern war, the argument that Russia's endurance is finite and measurable, and that the pressure on its economy is pressure on the politics that sustain the war.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">China</span><span class="tag">Space</span>
+    <div class="story-headline"><a href="https://www.nationalreview.com/2026/07/chinas-reusable-rocket-breakthrough-demands-a-private-space-response/" target="_blank" rel="noopener">China's reusable rocket breakthrough demands a private space response</a></div>
+    <div class="story-meta">National Review &middot; analysis</div>
+    <div class="story-synopsis">National Review argues that China's progress toward reusable rockets is a strategic challenge the United States should answer by doubling down on its commercial launch sector rather than on state programs. The essay's timing rhymes with the week's space news, India reaching orbit with a private rocket noted in the Lighter tab, and its point is that reusability is the technology that turns space access from a prestige capability into an industrial one, collapsing the cost of putting mass in orbit and with it the economics of everything from satellite constellations to military resilience in space. A China that masters reusable launch narrows an American advantage that has rested heavily on a single dominant commercial provider, and the piece's prescription is to widen the US base of private launch capability rather than let the lead concentrate and ossify. Its value is in framing space launch as a competition of industrial models, state-directed against market-driven, and in arguing the American answer to Chinese progress is more commercial competition, not less. Read it as the economics-of-space companion to the harder China coverage, and as a reminder that the contest with Beijing is being run as much in cost curves and launch cadence as in fleets and missiles.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Soft Power</span><span class="tag">World Cup</span>
+    <div class="story-headline"><a href="https://www.atlanticcouncil.org/content-series/inflection-points/messis-last-dance-and-americas-arrival/" target="_blank" rel="noopener">Messi's last dance and America's arrival</a></div>
+    <div class="story-meta">Atlantic Council &middot; analysis</div>
+    <div class="story-synopsis">The Atlantic Council reads this afternoon's World Cup final as a marker of something larger than sport, the arrival of the United States as a genuine home for the world's game and the soft-power dividend that hosting the tournament has paid. The essay is a welcome widening of the lens on a grim week, arguing that a country able to stage the planet's biggest sporting event, fill its stadiums, and win over a public long indifferent to soccer is demonstrating a form of power that airframes and sanctions do not measure. Its analytical value is in taking soft power seriously as a strategic asset at a moment when American hard power is committed and American popularity abroad is strained, because the capacity to convene the world for a celebration is its own kind of influence, and the tournament has been a rare American export that generated goodwill rather than friction. The piece is not naive about the split screen, a World Cup final on the same day as flag-draped transfers from Jordan, but it holds that the two are both true and that the cultural reach is real. Read it as the reminder that the instruments of national power are broader than the ones this week has been spending, and as the strategic frame under the Lighter tab's spectacle.</div>
+  </div>
+
+</div>
+
+<!-- SOCIAL/SIGNAL TAB -->
+<div id="tab-social" class="tab-panel">
+
+  <div class="section-hdr">Signal Summary</div>
+  <p class="throughline">The disciplined read this morning runs through the institutional assessments rather than the flood of claim and counter-claim, and the honest center is a set of facts that outrun their confirmation. The pivotal event, the Iranian barrage that killed two Americans and left one missing in Jordan, is confirmed by US Central Command, which anchors it, but the surrounding claims are softer: Iran's assertion that it struck Kuwait and Bahrain, Bahrain's report of interception, the Kurdish account of a strike near Erbil, and the American claim that the eighth night's strikes hit the specific Revolutionary Guard forces responsible for Jordan. Each is doing strategic work ahead of independent verification, and the right first move is to hold them against imagery, host-nation confirmation, and the arm's-length assessments before treating any single account as settled. The status of the missing service member is the thread with the highest human and operational stakes and the least public clarity, and it deserves patience rather than speculation. A second theme runs through the eastern front, where Russia's largest ballistic barrage of the war and Ukraine's deep strikes on Russian oil and logistics show reach on both sides even as the war's political and economic undercurrents pull at each capital's cohesion. The connective question across both wars is the one the daily churn keeps fragmenting: what is actually confirmed on the ground and in the water, as against what each government says is true on a morning when the claims are moving markets and shaping the next strike.</p>
+
+  <div class="section-hdr">Institutional OSINT</div>
+
+  <div class="story">
+    <span class="tag">ISW</span><span class="tag">Iran</span>
+    <div class="story-headline"><a href="https://understandingwar.org/research/middle-east/iran-update-special-report-july-18-2026/" target="_blank" rel="noopener">Iran Update Special Report, July 18, 2026</a></div>
+    <div class="story-meta">Institute for the Study of War &middot; institutional assessment</div>
+    <div class="story-synopsis">The Institute for the Study of War's special report is the document to read against a morning of competing claims, because its method marks what is asserted as asserted and what is observed as observed. Its value today is on exactly the threads the daily coverage cannot yet nail down: the attribution of the Jordan barrage, the widening of Iranian retaliation onto Kuwait and Bahrain, and the target set of the American response. As national sources on both sides announce strikes, interceptions, and casualties faster than they can be confirmed, the assessment is where those claims get held against imagery and independent reporting before they harden into settled fact. On a day when the market and the next round of strikes are both keying off claims the record has not caught up to, that arm's-length treatment is the product, not caution for its own sake. It is the right first stop before trusting any single account of who hit what, what was intercepted, and whether the American strikes reached the forces Washington says it targeted.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">ISW</span><span class="tag">Ukraine</span>
+    <div class="story-headline"><a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-18-2026/" target="_blank" rel="noopener">Russian Offensive Campaign Assessment, July 18, 2026</a></div>
+    <div class="story-meta">Institute for the Study of War &middot; institutional assessment</div>
+    <div class="story-synopsis">The companion assessment on the eastern front is the corrective to a cycle that keeps filing Ukraine as background while the Gulf takes the page. The record it integrates, Russia's record ballistic barrage on Kyiv, Ukraine's deep strikes on Russian oil and logistics, and the state of the front underneath both, is the multi-domain picture the daily assessment holds together while headlines scatter it. Read it for the terrain and tempo beneath the largest salvo of the war, because a record barrage is a claim about intensity that the assessment situates against the actual movement of the front, which mass fires on a capital do not by themselves change. The report is also where the deep-strike question gets adjudicated, whether Ukraine's reach into Russian refineries and rail is bending the war economy or merely stinging it, judged against evidence rather than announcement. It is the disciplined ground truth for a war the Middle East keeps pushing off the front page, and the check on reading either the barrage or the deep strikes as decisive before the record supports it.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">ISW</span><span class="tag">Retaliation Map</span>
+    <div class="story-headline"><a href="https://understandingwar.org/map/iranian-and-axis-retaliatory-strikes-in-the-middle-east-july-18-2026/" target="_blank" rel="noopener">Iranian and Axis Retaliatory Strikes in the Middle East, July 18, 2026</a></div>
+    <div class="story-meta">Institute for the Study of War &middot; institutional assessment</div>
+    <div class="story-synopsis">The Institute's mapping of Iranian and axis retaliatory strikes is the geographic answer to a question the day's claims raise in the abstract: how wide the war has actually spread. A map that plots the confirmed and reported strikes across Jordan, the Gulf states, Iraq, and beyond is the tool for seeing whether Iran's retaliation is concentrating on a few axes or dispersing across the region, and dispersion is the pattern that matters most, because a war fought at many points at once is harder to de-escalate and harder to defend against than one fought over a single strait. On the morning the Jordan strike killed Americans and Iran answered against Kuwait and Bahrain, the map is the disciplined way to weigh the breadth of the threat against the noise of individual claims, and to distinguish the strikes that are confirmed from the ones still riding on a single national source. Read it as the spatial companion to the Iran Update, the picture that turns a scatter of retaliation reports into a legible geography of how far, and in how many directions, the war has now reached.</div>
+  </div>
+
+  <div class="story" data-unsourced="intentional">
+    <span class="tag">OSINT</span><span class="tag">Verification Gap</span>
+    <div class="story-headline">The missing service member, the Gulf interceptions, and the Erbil strike outrun confirmation</div>
+    <div class="story-meta">Single source, tracking &middot; no verified article URL</div>
+    <div class="story-synopsis">Several threads from official and analyst channels are worth tracking but not yet independently settled. First, the status of the missing US service member after the Jordan barrage is the highest-stakes unknown, and the observable to watch is confirmed recovery or accounting from Central Command rather than speculation from unofficial sources. Second, Iran's claim to have struck Kuwait and a Bahrain target, and Bahrain's report that it intercepted the attack, come from national sources on both sides ahead of a settled account, and the tell is host-nation and independent confirmation of what was hit and what was stopped. Third, the reported Iranian strike on a Kurdish camp near Erbil is asserted through fighters' own channels ahead of wider verification, and the observable is corroboration from Iraqi or coalition sources. Fourth, the American claim that the eighth night's strikes hit the specific Revolutionary Guard forces responsible for the Jordan attack is an attribution that will be tested by battle-damage reporting and independent assessment, not by the announcement alone. Held as tracking items pending harder confirmation than the current channels provide, because the strikes, the markets, and the political reaction are all moving on claims the record has not yet caught up to.</div>
+  </div>
+
+</div>
+
+<!-- LOCAL TAB -->
+<div id="tab-local" class="tab-panel">
+
+  <div class="section-hdr">Joint Base Charleston / 437 AW</div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Joint Base Charleston &middot; Steady State</div>
+    <p style="font-size:13px;">No verified Joint Base Charleston news surfaced in the local or defense pool this morning, and the honest read is a normal Sunday for the 437th Airlift Wing and its reserve associate, the 315th Airlift Wing. That ordinary tempo is worth noting in a week when the mobility enterprise Charleston belongs to is exactly what a widening two-theater war leans on: fighters are flowing toward the Gulf, munitions are being spent at a rate that strains the logistics tail, and now casualties in Jordan add aeromedical and personnel-movement demands to the airlift picture. A mobility hub running a routine schedule is the baseline against which any surge would show, and the surge Charleston would feel first is the one that follows exactly this kind of escalation. Current field conditions are one click away via the KCHS aviation link in the weather bar above. The absence of operational drama here is the point, not a gap in coverage: for now, the wing that would carry a lift surge is on a normal week.</p>
+  </div>
+
+  <div class="section-hdr">Lowcountry</div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Charleston &middot; An Airline Bets on the Lowcountry</div>
+    <p style="font-size:13px;">Breeze Airways' chief executive is betting big on Charleston as one of the carrier's top US markets, per the <a href="https://www.postandcourier.com/business/tourism/breeze-airways-david-neeleman-charleston-south-carolina-airports/article_3402ea2e-b923-4c65-abec-c3ef3d717b52.html" target="_blank" rel="noopener">Post and Courier</a>, a vote of confidence in the region's travel demand from a founder with a long record in the airline business. The read is that Charleston's tourism draw and its growing population have made it a market worth building a route map around, and a low-cost carrier expanding here is the kind of infrastructure decision that shapes how connected, and how visited, the Lowcountry becomes. More flights mean more visitors and more convenience for residents, but also more pressure on a peninsula and an airport already straining against the region's popularity, the familiar Charleston tension between growth and the character that drives it. Logged as the economic-development note worth following, because an airline's market bet is a bet on the trajectory of the place, and the flights it adds will help set the pace of the growth the city keeps trying to manage.</p>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">North Charleston &middot; A Hospital Takes Shape</div>
+    <p style="font-size:13px;">Roper's planned North Charleston hospital is starting to take shape, per the <a href="https://www.postandcourier.com/charleston_sc/roper-hospital-north-charleston-pedicab-james-island-roundabout/article_9412823b-47ed-4a22-98e2-e206ff4026cf.html" target="_blank" rel="noopener">Post and Courier</a>, a significant addition to health-care capacity in a fast-growing part of the region. A new hospital is one of the surer signals of where a metro area expects its people to be, a long-term, capital-heavy commitment that follows population rather than chasing it, and North Charleston drawing that investment says something about how the region's center of gravity is shifting. The project also raises the practical questions that follow any major medical facility, from traffic and staffing to how it fits the existing network of care, and its progress is worth tracking as a marker of the area's growth made concrete in steel and beds. Filed as the development story with real consequence for residents, because where the hospitals go is where the region is betting its future households will live.</p>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Charleston &middot; A Filling Station's Second Life</div>
+    <p style="font-size:13px;">A onetime Charleston filling station that touched off a debate about historic preservation and reuse is getting new life, per the <a href="https://www.postandcourier.com/business/real_estate/charleston-historic-preservation-gas-stations/article_596b9851-1e6c-47b3-97b4-cbb0025839bb.html" target="_blank" rel="noopener">Post and Courier</a>, a small story that sits on a genuine Charleston fault line. The city's identity is bound up in what it preserves and how, and an old gas station is exactly the kind of modest, unglamorous structure that tests whether preservation means only grand houses or also the everyday architecture that tells a place's fuller history. Adaptive reuse, turning a dated commercial building into something the neighborhood can use again, is the compromise between freezing a city in amber and bulldozing its texture, and how Charleston handles the humble cases sets the precedent for the rest. Filed as the preservation-and-reuse note that captures the Lowcountry's running argument with itself, over how a historic city grows without erasing the ordinary past that makes it what it is.</p>
+  </div>
+
+  <div class="section-hdr">Activities</div>
+
+  <div class="story">
+    <span class="tag">Charleston</span><span class="tag">Soccer</span>
+    <div class="story-headline"><a href="https://www.postandcourier.com/sports/national_sports/world-cup-final-spain-argentina-ben-pirmann-picks/article_91220897-2207-4f04-9dcc-22a2b7c22c00.html" target="_blank" rel="noopener">Charleston Battery coach breaks down the Spain-Argentina World Cup final</a></div>
+    <div class="story-meta">Post and Courier &middot; sports beat</div>
+    <div class="story-synopsis">With the World Cup final between Spain and Argentina set for this afternoon, the Charleston Battery's coach breaks down the matchup and offers his pick, per the Post and Courier, a professional's read on the weekend's biggest game with a hometown byline. The Battery, the Lowcountry's second-division club and one of the oldest in American soccer, give Charleston a genuine stake in a sport whose American moment this tournament has cemented, and the coach's tactical breakdown is the kind of local expertise that turns a global final into a shared Charleston event. For a city that packs its calendar with festivals in spring and slows in the summer heat, a World Cup final with a Battery voice guiding the watch is a real reason to gather. Filed as the weekend's Charleston sporting note, and a reminder that the Lowcountry's soccer identity runs deeper than the tournament passing through the country this summer.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Charleston</span><span class="tag">Baseball</span>
+    <div class="story-headline"><a href="https://www.live5news.com/2026/07/18/riverdogs-drop-series-opener-with-columbia-5-4/" target="_blank" rel="noopener">RiverDogs drop series opener with Columbia, 5-4</a></div>
+    <div class="story-meta">Live 5 News &middot; sports beat</div>
+    <div class="story-synopsis">The Charleston RiverDogs dropped their series opener against Columbia by a run, 5-4, per Live 5 News, the kind of close summer-night result that is the texture of minor-league baseball in the Lowcountry. The RiverDogs are a Charleston institution as much as a team, their downtown ballpark a warm-weather gathering place where the score matters less than the evening, and a one-run loss in a midsummer series is exactly the ordinary rhythm that makes the season a fixture of local life. For families looking for something to do on a hot weekend, a RiverDogs game remains one of the city's genuine low-cost pleasures, and the series with Columbia rolls on regardless of the opener. Filed as the weekend's dependable Charleston pastime, the small civic pleasure that runs all summer whatever else the week holds.</div>
+  </div>
+
+</div>
+
+<!-- LIGHTER FARE TAB -->
+<div id="tab-lighter" class="tab-panel">
+
+  <div class="section-hdr">Lighter Fare</div>
+
+  <div class="story">
+    <span class="tag">World Cup</span><span class="tag">Final</span>
+    <div class="story-headline"><a href="https://www.npr.org/2026/07/19/nx-s1-5899071/2026-world-cup-fifa-argentina-spain-final-championship" target="_blank" rel="noopener">Argentina and Spain, with stars Messi and Yamal, meet in the World Cup final</a></div>
+    <div class="story-meta">NPR &middot; cross-corroborated</div>
+    <div class="story-synopsis">Argentina and Spain meet this afternoon in the World Cup final, with Lionel Messi and the young Spanish star Lamine Yamal headlining a matchup of generations, per NPR, the crescendo of a tournament that has finally won America over. The storyline writes itself: Messi, likely playing his last World Cup, against Yamal, the teenager cast as the game's future, one dynasty's twilight against another's dawn, for the sport's biggest prize on US soil. Staging the final in front of a sold-out crowd, with the president and other heads of state expected, is the payoff of a decades-long American bet that soccer would take root here, and the football itself is the draw, Spain's passing game against Argentina's flair over ninety minutes and maybe more. Charleston has its own small stake through the Battery coach's breakdown noted in the Local tab. Filed as the weekend's genuine spectacle, and the rare event that pulls a divided and weary country toward the same screen for the same ninety minutes.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Track</span><span class="tag">Record</span>
+    <div class="story-headline"><a href="https://www.cbsnews.com/news/mens-mile-record-broken-first-time-since-1999-josh-kerr/" target="_blank" rel="noopener">Men's mile record broken for the first time since 1999</a></div>
+    <div class="story-meta">CBS News &middot; cross-corroborated</div>
+    <div class="story-synopsis">The men's mile world record has fallen for the first time since 1999, per CBS News, a milestone in one of track's most storied events and the end of a mark that stood for more than a quarter century. The mile holds a particular romance in running, the distance where the four-minute barrier once seemed a physical limit and every fraction of a second since has been hard-won, and a new record after twenty-six years is the kind of achievement that reaches beyond the sport's regular audience. It is also a quiet testament to how far training, nutrition, and technology have pushed human performance, each generation of runners standing on the last to shave a little more off a time that already seemed near the edge of the possible. Filed as the week's genuine feat of human excellence, a reminder amid heavier news that people are still finding new ways to run faster than anyone ever has, and that some records fall only once in a generation.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Freedom</span><span class="tag">Cuba</span>
+    <div class="story-headline"><a href="https://www.npr.org/2026/07/19/nx-s1-5899494/cuban-artist-exile-us" target="_blank" rel="noopener">Cuban dissident artist arrives in US after five years in prison</a></div>
+    <div class="story-meta">NPR &middot; cross-corroborated</div>
+    <div class="story-synopsis">A Cuban dissident artist has arrived in the United States after five years in prison, per NPR, with the State Department confirming his release into exile and outlets from Al Jazeera to Deutsche Welle carrying the story. The artist's imprisonment had become a cause for free-expression advocates, a case that put a face on the price of dissent under Havana's government, and his arrival is the rare piece of good news in a week short of it. Exile is a bittersweet freedom, release purchased at the cost of home, and the story carries the ambivalence of a man who gains his liberty only by losing his country, a trade many of the world's dissidents know. Still, a prison door opening is a prison door opening, and a artist who spent five years behind one for his work walking free is worth marking. Filed as the week's note of release, a reminder that some of the world's cages still open, and that the freedom to make art is a thing people will pay years of their lives to keep.</div>
+  </div>
+
+</div>
+
+</div><!-- /page -->
+
+<!-- MARKET TICKER -->
+<div class="ticker-wrap" aria-label="Market ticker">
+  <div class="ticker-track" id="ticker-track">
+    <span class="ticker-group" id="ticker-group">
+      <span class="ticker-item"><span class="ticker-lbl">S&amp;P 500</span> <span class="ticker-val">7,458</span> <span class="dn">-1.01%</span> <span class="ticker-lbl">(Fri close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">DOW</span> <span class="ticker-val">52,146</span> <span class="dn">-0.77%</span> <span class="ticker-lbl">(Fri close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">NASDAQ</span> <span class="ticker-val">25,520</span> <span class="dn">-1.40%</span> <span class="ticker-lbl">(Fri close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">VIX</span> <span class="ticker-val">18.8</span> <span class="up">+12.33%</span> <span class="ticker-lbl">(Fri close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">WTI</span> <span class="ticker-val">$81.78</span> <span class="up">+3.31%</span> <span class="ticker-lbl">(Fri close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">BRENT</span> <span class="ticker-val">$88.10</span> <span class="up">+3.59%</span> <span class="ticker-lbl">(Fri close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">GOLD</span> <span class="ticker-val">$4,019</span> <span class="up">+0.58%</span> <span class="ticker-lbl">(Fri close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">10Y UST</span> <span class="ticker-val">4.54%</span> <span class="dn">-0.61%</span> <span class="ticker-lbl">(Fri close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">DXY</span> <span class="ticker-val">100.8</span> <span class="ticker-lbl">-0.01% (Fri close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">BTC</span> <span class="ticker-val">$64,474</span> <span class="dn">-0.49%</span> <span class="ticker-lbl">(Fri close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">FED FUNDS</span> <span class="ticker-val">3.63%</span> <span class="ticker-lbl">(FRED latest)</span></span>
+    </span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>THE SWAP REPORT &middot; Sunday, July 19, 2026 &middot; Morning Edition</div>
+  <div style="opacity:0.6;">For SWAP &middot; Distribution restricted &middot; Not for public release</div>
+</footer>
+
+<script>
+var currentTheme = 'warm';
+function setTheme(t, btn) {
+  currentTheme = t;
+  document.body.setAttribute('data-theme', t);
+  document.querySelectorAll('.theme-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+}
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+var wxLat = 37, wxLon = -95, wxZoom = 4, wxLayerName = 'temperature-2m';
+var ICAO_TABLE = {
+  'KCHS': [32.8986, -80.0405], 'KLTS': [34.6671, -99.2667],
+  'KDEN': [39.8561, -104.6737], 'KATL': [33.6407, -84.4277],
+  'KDFW': [32.8998, -97.0403], 'KLAX': [33.9425, -118.4081],
+  'KJFK': [40.6413, -73.7781], 'KORD': [41.9742, -87.9073],
+  'EGLL': [51.4775, -0.4614], 'RJTT': [35.5533, 139.7811]
+};
+function buildWxSrc() {
+  return 'https://www.ventusky.com/?p=' + wxLat + ';' + wxLon + ';' + wxZoom + '&l=' + wxLayerName;
+}
+function wxLayer(btn, layer) {
+  wxLayerName = layer;
+  document.querySelectorAll('.wx-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById('wx-iframe').src = buildWxSrc();
+}
+function wxSearch() {
+  var q = document.getElementById('wx-input').value.trim();
+  if (!q) return;
+  var latLonRe = /^(-?\d+\.?\d*),\s*(-?\d+\.?\d*)$/;
+  var m = q.match(latLonRe);
+  if (m) { wxLat = parseFloat(m[1]); wxLon = parseFloat(m[2]); wxZoom = 8; document.getElementById('wx-iframe').src = buildWxSrc(); return; }
+  var icao = q.toUpperCase();
+  if (ICAO_TABLE[icao]) { wxLat = ICAO_TABLE[icao][0]; wxLon = ICAO_TABLE[icao][1]; wxZoom = 9; document.getElementById('wx-iframe').src = buildWxSrc(); return; }
+  fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + encodeURIComponent(q) + '&count=1')
+    .then(function(r){ return r.json(); })
+    .then(function(d){ if (d.results && d.results.length > 0) { wxLat = d.results[0].latitude; wxLon = d.results[0].longitude; wxZoom = 8; document.getElementById('wx-iframe').src = buildWxSrc(); } })
+    .catch(function(){});
+}
+(function(){
+  var grp = document.getElementById('ticker-group');
+  if (grp) {
+    var clone = grp.cloneNode(true);
+    clone.id = '';
+    document.getElementById('ticker-track').appendChild(clone);
+  }
+})();
+</script>
+</body>
+</html>
