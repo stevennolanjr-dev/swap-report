@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE SWAP REPORT: Morning Edition, July 25, 2026</title>
+<meta property="og:title" content="THE SWAP REPORT: Morning Edition, July 25, 2026">
+<meta property="og:url" content="https://theswap.report/">
+<meta property="og:description" content="Saturday, July 25, 2026. Day 148 of the Iran war: the Pentagon revises its count of the war's dead downward and draws an accountability backlash, Hormuz transits stay low as the Houthis resume Red Sea attacks, the tariff wall widens as gas prices climb, and the ICC dismisses its own chief prosecutor.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f0e8;
+  --surface: #fffdf8;
+  --border: #d4c9b8;
+  --text: #1a1a1a;
+  --muted: #666666;
+  --accent: #8b0000;
+  --tab-inactive: #e8e2d8;
+  --tab-active: #fffdf8;
+  --header-bg: #ede8df;
+  --tab-bg: #e8e2d8;
+  --tag-bg: #8b0000;
+  --tag-text: #ffffff;
+  --watch-bg: #fff8f0;
+  --watch-border: #c8a06a;
+  --card-bg: #fffdf8;
+  --hover-bg: rgba(139,0,0,0.06);
+  --footer-bg: #ede8df;
+  --footer-text: #666666;
+}
+[data-theme="light"] {
+  --bg: #ffffff; --surface: #ffffff; --border: #e0e0e0; --text: #111111;
+  --muted: #555555; --accent: #8b0000; --tab-inactive: #f0f0f0;
+  --tab-active: #ffffff; --header-bg: #f5f5f5; --tab-bg: #eeeeee;
+  --watch-bg: #fff8f0; --watch-border: #c8a06a; --card-bg: #ffffff;
+  --hover-bg: rgba(139,0,0,0.05); --footer-bg: #f0f0f0; --footer-text: #555555;
+}
+[data-theme="dark"] {
+  --bg: #1a1a2e; --surface: #16213e; --border: #2a2a4a; --text: #e0e0e0;
+  --muted: #a0a0b0; --accent: #cc3333; --tab-inactive: #1e1e3a;
+  --tab-active: #16213e; --header-bg: #1e1e3a; --tab-bg: #1e1e3a;
+  --watch-bg: #1e1e2e; --watch-border: #8b6a3a; --card-bg: #16213e;
+  --hover-bg: rgba(204,51,51,0.08); --footer-bg: #1e1e3a; --footer-text: #a0a0b0;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: Georgia, 'Times New Roman', serif; font-size: 15px; line-height: 1.6; }
+.page { max-width: 960px; margin: 0 auto; background: var(--bg); }
+.masthead { background: var(--bg); padding: 24px 24px 16px; border-bottom: 2px solid var(--accent); display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; }
+.masthead-left { flex: 1; }
+.masthead-title { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 22px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); }
+.masthead-meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); margin-top: 4px; }
+.masthead-epigraph { font-style: italic; font-size: 13px; color: var(--muted); margin-top: 4px; font-family: Georgia, serif; }
+.theme-btns { display: flex; gap: 6px; align-items: center; padding-top: 4px; }
+.theme-btn { background: var(--tab-bg); border: 1px solid var(--border); color: var(--text); cursor: pointer; font-size: 14px; padding: 4px 8px; border-radius: 3px; }
+.theme-btn.active { background: var(--accent); color: #fff; }
+.edition-bar { background: var(--header-bg); color: var(--muted); border-bottom: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 5px 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.edition-bar a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.wx-section { padding: 12px 20px; background: var(--surface); border-bottom: 1px solid var(--border); }
+.wx-iframe { width: 100%; height: 320px; border: 1px solid var(--border); border-radius: 4px; display: block; }
+.wx-controls { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; align-items: center; }
+.wx-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 8px; border: 1px solid var(--border); background: var(--tab-bg); color: var(--text); cursor: pointer; border-radius: 3px; }
+.wx-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.wx-search { display: flex; gap: 6px; margin-bottom: 8px; }
+.wx-search input { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 3px; flex: 1; }
+.wx-search button { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 10px; background: var(--accent); color: #fff; border: none; border-radius: 3px; cursor: pointer; }
+.wx-credit { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 6px; }
+.wx-credit a { color: var(--accent); text-underline-offset: 2px; }
+.tab-bar { display: flex; background: var(--tab-bg); border-bottom: 2px solid var(--border); overflow-x: auto; padding: 0 20px; gap: 2px; }
+.tab-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 8px 14px; border: none; background: transparent; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap; transition: color 0.15s; letter-spacing: 1px; text-transform: uppercase; }
+.tab-btn:hover { color: var(--accent); }
+.tab-btn.active { color: var(--accent); background: var(--tab-active); border-bottom-color: var(--accent); }
+.tab-panel { display: none; padding: 20px; }
+.tab-panel.active { display: block; }
+.section-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 4px; margin: 20px 0 12px; }
+.section-hdr:first-child { margin-top: 0; }
+.bluf-box { background: rgba(139,0,0,0.05); border-left: 4px solid var(--accent); padding: 14px 16px; margin-bottom: 20px; border-radius: 0 4px 4px 0; }
+.bluf-hdr { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.bluf-box ul { padding-left: 18px; }
+.bluf-box li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; }
+.story { background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; padding: 12px 14px; margin-bottom: 10px; transition: background 0.15s; }
+.story:hover { background: var(--hover-bg); }
+.story-headline { font-size: 15px; font-weight: bold; line-height: 1.4; margin-bottom: 4px; }
+.story-headline a { color: var(--text); text-decoration: none; }
+.story-headline a:hover { color: var(--accent); text-decoration: underline; }
+.story-meta { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-bottom: 6px; }
+.story-synopsis { font-size: 13px; color: var(--text); line-height: 1.5; }
+.tag { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; background: var(--tag-bg); color: var(--tag-text); padding: 2px 6px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+.watch-item { background: var(--watch-bg); border-left: 3px solid var(--watch-border); padding: 10px 12px; margin-bottom: 10px; border-radius: 0 4px 4px 0; }
+.watch-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+.throughline { font-size: 13px; color: var(--text); line-height: 1.6; margin-bottom: 16px; }
+.aged-badge { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 10px; color: #fff; vertical-align: middle; margin-right: 6px; }
+.aged-green { background: #2d7a3d; }
+.aged-yellow { background: #b8860b; }
+.aged-red { background: #8b0000; }
+.ticker-wrap { background: #111; color: #e8e8e8; overflow: hidden; padding: 8px 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; white-space: nowrap; }
+.ticker-track { display: inline-block; animation: ticker-slide 90s linear infinite; will-change: transform; }
+.ticker-wrap:hover .ticker-track { animation-play-state: paused; }
+@keyframes ticker-slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; white-space: normal; display: block; } }
+.ticker-item { display: inline-block; margin: 0 18px; }
+.ticker-lbl { color: #999; font-size: 11px; }
+.ticker-val { color: #e8e8e8; font-weight: 600; }
+.ticker-sep { color: #444; margin: 0 4px; }
+.up { color: #3dcc5a; }
+.dn { color: #ff5a5a; }
+footer { background: var(--footer-bg); color: var(--footer-text); font-family: 'IBM Plex Mono', monospace; font-size: 10px; padding: 16px 24px; margin-top: 32px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.top-story { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 14px; }
+.tnum { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: var(--accent); min-width: 26px; padding-top: 2px; flex-shrink: 0; }
+.tbody { flex: 1; }
+@media (max-width: 600px) { .masthead { padding: 16px; } .tab-panel { padding: 14px; } footer { flex-direction: column; } }
+@media (max-width: 480px) { .top-story { gap: 8px; } .tnum { font-size: 11px; min-width: 20px; } }
+</style>
+</head>
+
+<body data-theme="warm">
+<div style="background:#8b0000;color:#fff;padding:8px 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-align:center;">Archived edition &middot; 2026-07-25 &middot; <a href="../index.html" style="color:#fff;text-decoration:underline;">Back to today's brief</a> &middot; <a href="index.html" style="color:#fff;text-decoration:underline;">Archive index</a></div>
+
+
+<div class="page">
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-left">
+    <div class="masthead-title">THE SWAP REPORT</div>
+    <div class="masthead-meta">SATURDAY, JULY 25, 2026 &nbsp;|&nbsp; MORNING EDITION</div>
+    <div class="masthead-epigraph">The Pentagon revised the war's dead downward and the Red Sea answered by resuming fire; one number is now disputed, the other is not.</div>
+  </div>
+  <div class="theme-btns">
+    <button class="theme-btn active" onclick="setTheme('warm',this)" title="Warm">&#9728;</button>
+    <button class="theme-btn" onclick="setTheme('light',this)" title="Light">&#128305;</button>
+    <button class="theme-btn" onclick="setTheme('dark',this)" title="Dark">&#9790;</button>
+  </div>
+</div>
+
+<!-- EDITION BAR -->
+<div class="edition-bar">
+  <span>Iran War Day 148: the Pentagon lowers its count of the war's dead and wounded, drawing questions and outrage, as critics call it a bid to hide the toll</span>
+  <span>|</span>
+  <span>The chokepoint war persists: Hormuz transits stay low and the Houthis resume attacks in the Red Sea, keeping the insurance-priced blockade in force</span>
+  <span>|</span>
+  <span>At home, the tariff wall widens as gas prices and inflation risk climb, and the president works a rescheduled correspondents' dinner three months after the May attack</span>
+  <span>|</span>
+  <a href="https://theswap.report/">theswap.report</a>
+  <span>|</span>
+  <a href="https://theswap.report/archive/">Archive</a>
+</div>
+
+<!-- WEATHER -->
+<div class="wx-section">
+  <div class="wx-search">
+    <input type="text" id="wx-input" placeholder="Search: lat,lon or ICAO or city name" onkeydown="if(event.key==='Enter')wxSearch()">
+    <button onclick="wxSearch()">Go</button>
+  </div>
+  <div class="wx-controls">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);margin-right:4px;">LAYER:</span>
+    <button class="wx-btn active" onclick="wxLayer(this,'temperature-2m')">Temp</button>
+    <button class="wx-btn" onclick="wxLayer(this,'wind-10m')">Wind</button>
+    <button class="wx-btn" onclick="wxLayer(this,'rain-3h')">Rain</button>
+    <button class="wx-btn" onclick="wxLayer(this,'clouds')">Clouds</button>
+    <button class="wx-btn" onclick="wxLayer(this,'radar')">Radar</button>
+    <button class="wx-btn" onclick="wxLayer(this,'gust')">Gust</button>
+  </div>
+  <iframe id="wx-iframe" class="wx-iframe" src="https://www.ventusky.com/?p=37;-95;4&amp;l=temperature-2m" allowfullscreen></iframe>
+  <div class="wx-credit">Interactive weather: <a href="https://www.ventusky.com" target="_blank" rel="noopener">Ventusky</a> &nbsp;|&nbsp; Aviation: <a href="https://aviationweather.gov/data/metar/?id=KCHS&amp;taf=true" target="_blank" rel="noopener">KCHS METAR/TAF</a> (437 AW / Joint Base Charleston)</div>
+</div>
+
+<!-- TAB BAR -->
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('overview',this)">Overview</button>
+  <button class="tab-btn" onclick="showTab('defense',this)">Defense</button>
+  <button class="tab-btn" onclick="showTab('strategic',this)">Strategic</button>
+  <button class="tab-btn" onclick="showTab('domestic',this)">Domestic</button>
+  <button class="tab-btn" onclick="showTab('deepreads',this)">Deep Reads</button>
+  <button class="tab-btn" onclick="showTab('social',this)">Social/Signal</button>
+  <button class="tab-btn" onclick="showTab('local',this)">Local</button>
+  <button class="tab-btn" onclick="showTab('lighter',this)">Lighter Fare</button>
+</div>
+
+<!-- OVERVIEW TAB -->
+<div id="tab-overview" class="tab-panel active">
+
+  <div class="bluf-box">
+    <div class="bluf-hdr">Bottom Line Up Front</div>
+    <ul>
+      <li><strong>The war's own casualty ledger is now contested.</strong> The Pentagon lowered its count of Americans killed and wounded in the Iran war, sparking questions and outrage, per ABC News, with a Bulwark analysis framing the revision as an effort to hide the toll rather than correct it; a downward revision of the one number the public can least verify, arriving in the same week the supplemental put the war's cost on the record, converts an accounting question into a trust question.</li>
+      <li><strong>The chokepoint war did not take the weekend off.</strong> Hormuz transits remain low and the Houthis resumed attacks in the Red Sea, per USNI News, which keeps the insurance-priced blockade the brief has tracked since mid-July in force; the pattern is enforcement tempo holding, not the truce some readers expected from the mediator signals late last week.</li>
+      <li><strong>The tariff wall widened while the price tag reached the pump.</strong> The administration is swapping one set of tariffs for a broader set on forced-labor grounds, per Foreign Policy, and NBC News reports the Iran war and the tariffs together pushing gas prices and inflation risk back up; the second economic front the July 24 brief flagged is now landing on the same consumers watching the war.</li>
+      <li><strong>The president worked a rescheduled correspondents' dinner three months after the May attack.</strong> He returned to the White House Correspondents' Dinner with a measured tribute and sharp attacks on the press, per Politico, with NPR, the BBC, and Axios all carrying the redo; the event is the clearest marker yet of a return to a normal political calendar even as the war runs into its fifth month.</li>
+      <li><strong>An international institution turned on its own.</strong> The International Criminal Court dismissed chief prosecutor Karim Khan over sexual misconduct allegations, per France 24 in a six-outlet convergence; the removal of the prosecutor who drove the court's highest-profile cases is a governance shock for an institution the United States has spent years alternately ignoring and sanctioning.</li>
+    </ul>
+  </div>
+
+  <div class="section-hdr">The Through-Line</div>
+  <p class="throughline">Saturday was a day about which numbers can be trusted, and who gets to set them. The Pentagon revised the count of the war's dead downward, and the revision is the story more than the figure, because a casualty count is the one wartime statistic a democracy is supposed to hold as sacred and unmanipulated; move it in the direction that flatters the policy, in the week the war's costs went on the congressional record, and you have not corrected an error, you have taught every reader to discount the official ledger. That distrust does not stay contained. It spreads to the numbers the government cannot revise, and the market spent the day pricing exactly those: crude and gasoline moving on the war and the tariffs together, per NBC, a chokepoint blockade the Pentagon cannot talk down because it lives in insurance premiums and ship tracks rather than press releases, per USNI. The pattern across the day is a widening gap between administered numbers and observed ones. The casualty count is administered, and it fell. The oil price is observed, and it held its war premium. The tariff schedule is administered, and it grew. The gas price is observed, and it followed. When the numbers a government controls diverge from the numbers it cannot, the controlled ones lose their authority first, and Saturday was a day that divergence became visible in a single news cycle. The correspondents' dinner, with its measured tribute and its sharp attacks, was the same contest in a different room: who narrates, and whether the narration survives contact with what everyone can already see.</p>
+
+  <div class="section-hdr">How It Aged</div>
+  <p class="throughline"><span class="aged-badge aged-green">Held</span> <span class="aged-badge aged-yellow">Complicated</span> Friday's brief argued the tanker war had become the war, and that the reroute economy and the insurance-priced blockade would keep working regardless of any single day's diplomatic noise. That call held cleanly: July 25 opened with USNI reporting Hormuz transits still low and the Houthis resuming Red Sea attacks, which is the blockade sustaining exactly as the July 24 coverage said it would, and the mediator signals that eased oil late Thursday did not translate into any de-escalation on the water. The green is earned. The yellow belongs to a subtler July 24 claim: that the war's costs had become legible, and that legible costs change behavior. The costs did become legible enough that the accounting is now being actively fought over, which is the harder version of the same story. The Pentagon's downward revision of the casualty count, per ABC News, and the accountability backlash it drew, per The Bulwark, mean the ledger the Friday brief treated as a fixed and sobering fact is itself now a moving target. Legibility, it turns out, invites revision; a number that matters enough to change behavior is a number worth disputing, and the party that owns the tally has the pen. The July 24 confidence that the costs were on the record needs that caveat: they are on a record, and the record is now contested.</p>
+
+  <div class="section-hdr">Today's Top Stories</div>
+
+  <div class="top-story">
+    <span class="tnum">01</span>
+    <div class="tbody">
+      <div class="story">
+        <span class="tag">Accountability</span><span class="tag">Casualties</span>
+        <div class="story-headline"><a href="https://abcnews.com/US/pentagon-lowers-count-iran-war-dead-wounded-sparking/story?id=135043063" target="_blank" rel="noopener">The Pentagon lowers the war's death toll, and the number becomes the story</a></div>
+        <div class="story-meta">ABC News &middot; cross-corroborated</div>
+        <div class="story-synopsis">The Pentagon lowered its official count of Americans killed and wounded in the Iran war, sparking questions and outrage, per ABC News, and a Bulwark analysis carries the sharper charge, that the department is hiding the number of troops killed rather than correcting a tally, per The Bulwark. Set the specific figures aside, because the public cannot audit them and this brief will not pretend to; the structural fact is what matters. A casualty count is the load-bearing statistic of a war's domestic politics, the one number that converts abstract policy into personal cost, and it is also the number a government controls most directly and can verify least independently. Revising it downward in the same week a $67.1 billion supplemental put the war's price on the congressional record, per the coverage the July 23 brief tracked, invites the least charitable reading, and the least charitable reading is the one that spreads. The Bulwark's companion editorial makes the civil-military argument explicitly: support for the troops and demand for accounting are the same obligation, not competing ones, per The Bulwark, and a force asked to fight a war whose costs are being managed downward for political convenience is owed better than a curated number. The practical stakes sit next week, when the Senate takes up the sanctions package and the supplemental math again, because a casualty figure nobody trusts poisons every adjacent number in the same debate. Filed as the lead because the war's accounting just became a fight over the accountant.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="top-story">
+    <span class="tnum">02</span>
+    <div class="tbody">
+      <div class="story">
+        <span class="tag">Red Sea</span><span class="tag">Chokepoints</span>
+        <div class="story-headline"><a href="https://news.usni.org/2026/07/24/hormuz-transits-remain-low-houthis-resume-attacks-in-red-sea" target="_blank" rel="noopener">Hormuz stays quiet, the Red Sea starts up again: the blockade holds its tempo</a></div>
+        <div class="story-meta">USNI News &middot; cross-corroborated</div>
+        <div class="story-synopsis">Hormuz transits remain low and the Houthis have resumed attacks in the Red Sea, per USNI News, which is the single cleanest confirmation this week that the chokepoint war is a durable condition rather than a spasm. The mediator signals that pulled oil off $100 late Thursday raised a reasonable question, whether the pressure campaign was winding down; Saturday answered it, and the answer is no. Transit volumes through the Strait of Hormuz staying depressed means the insurance-and-avoidance mechanism the brief has tracked is still setting the strait's effective capacity, independent of whether any Iranian vessel physically closes it, and the resumption of Red Sea strikes means the enforcement tempo on the second front is being maintained at whatever rate keeps premiums prohibitive. Read the two facts together and the strategic picture is a two-lane blockade running on its own logic: Hormuz throttled by risk pricing, the Bab el-Mandeb approaches throttled by missile threat, and the reroute economy the July 24 brief documented, Chinese hulls exiting south, Asian buyers renegotiating flows, Gulf terminals bypassing Hormuz, hardening into the new normal with every quiet week. The open variable remains suppression, whether the promised punishment campaign can find and service launch infrastructure faster than it regenerates, and Saturday's resumption of attacks is a data point on the pessimistic side of that question. Filed as the war's economic engine, still running.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="top-story">
+    <span class="tnum">03</span>
+    <div class="tbody">
+      <div class="story">
+        <span class="tag">Trade</span><span class="tag">Inflation</span>
+        <div class="story-headline"><a href="https://foreignpolicy.com/2026/07/24/us-tariffs-forced-labor-trump-section-301-trade-protectionism/" target="_blank" rel="noopener">Trading one tariff wall for a bigger one, as the bill reaches the pump</a></div>
+        <div class="story-meta">Foreign Policy &middot; cross-corroborated</div>
+        <div class="story-synopsis">Foreign Policy frames the week's trade move as a swap, one set of tariffs traded for an even broader set justified on forced-labor grounds, and the framing is the analysis: a genuinely labor-based action would be firm-specific and evidence-bound, while a flag-wide, double-digit wall on 60 countries is an industrial policy wearing a human-rights label. The macroeconomic bill is now visible where voters feel it. NBC News reports the Iran war and the tariffs together pushing gas prices up and reviving inflation risk, per NBC, which is the convergence of the two fronts this brief has kept in separate tabs, the shooting war repricing crude through the straits and the trade war repricing everything imported, landing on the same household in the same month. Cato's markets analysis supplies the fiscal counterweight worth holding, arguing the bond market is not addicted to tariff revenue and will not treat the duties as a durable funding source, per the Cato Institute, which matters because it undercuts the revenue rationale the administration reaches for when the protectionist one draws fire. The July 24 brief called tariffs the second front the administration opened against the trading system itself; the July 25 data adds the domestic incidence, the part that moves elections rather than markets. The legal exposure remains real, because Section 301 actions are reviewable and breadth invites challenge. Filed as the economy's slow-motion policy shock, now measurable at the gas station.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="top-story">
+    <span class="tnum">04</span>
+    <div class="tbody">
+      <div class="story">
+        <span class="tag">Politics</span><span class="tag">Press</span>
+        <div class="story-headline"><a href="https://www.politico.com/news/2026/07/24/trump-returns-to-whcd-with-measured-tribute-and-sharp-attacks-after-may-shooting-01012115" target="_blank" rel="noopener">The president returns to the correspondents' dinner, three months after May</a></div>
+        <div class="story-meta">Politico &middot; cross-corroborated</div>
+        <div class="story-synopsis">The president returned to a rescheduled White House Correspondents' Dinner with a measured tribute and sharp attacks on the press, per Politico, in an event NPR frames as a redo of the gathering disrupted by the May attack, per NPR, with the BBC and Axios rounding out the coverage. The dinner is worth a lead slot less for anything said at the podium than for what its occurrence signals: a return to the ordinary rhythms of the political calendar, black-tie press ritual included, running concurrently with a war in its fifth month and a casualty count under dispute. The juxtaposition is the analysis. A polity that can hold its self-referential media banquet on schedule is either demonstrating admirable institutional continuity or performing a normalcy the facts do not support, and reasonable readers will split on which. The speech itself ran the now-familiar two-track, gestures of unity braided with attacks on the outlets in the room, and the pairing is the governing style in miniature: the tribute keeps the institution in the tent, the attacks keep it on notice. For a brief whose Overview lead is a fight over whether the government's numbers can be trusted, a night spent litigating the press's credibility in front of the press is the same argument moved to friendlier acoustics. Filed as the week's marker of a political calendar snapping back to normal while the war does not.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="top-story">
+    <span class="tnum">05</span>
+    <div class="tbody">
+      <div class="story">
+        <span class="tag">International Law</span><span class="tag">Institutions</span>
+        <div class="story-headline"><a href="https://www.france24.com/en/europe/20260724-icc-chief-prosecutor-karim-khan-dismissed-over-sexual-misconduct-allegations-sources-say" target="_blank" rel="noopener">The ICC dismisses its own chief prosecutor</a></div>
+        <div class="story-meta">France 24 &middot; cross-corroborated (six sources)</div>
+        <div class="story-synopsis">The International Criminal Court dismissed chief prosecutor Karim Khan over sexual misconduct allegations, per France 24, in the day's widest international convergence, with the BBC, Deutsche Welle, the Financial Times, Le Monde, and the South China Morning Post all carrying it. The removal is a governance shock for an institution that has spent recent years at the center of the era's hardest legal-political fights, and Khan was the prosecutor who drove its highest-profile cases; losing him under these circumstances hands the court's many adversaries a ready argument about its credibility while forcing a leadership vacuum onto every open docket at once. For an American readership the item carries a particular ambivalence, because Washington's posture toward the court has run from cold indifference to active sanction, and an institution the United States neither joins nor fully opposes now faces an internal crisis that will shape what international justice can and cannot do in the next decade. The sourcing convergence is worth naming: six independent outlets across four countries carried the dismissal within the same window, which is about as corroborated as a breaking governance story gets before the official paperwork lands. The deeper question the removal raises is procedural, whether the court's own accountability mechanisms worked as designed or buckled under external pressure, and the answer will matter more than the personnel change. Filed as the international ledger's entry, a self-inflicted wound at an institution that could least afford one.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- DEFENSE TAB -->
+<div id="tab-defense" class="tab-panel">
+
+  <div class="section-hdr">The Accounting</div>
+
+  <div class="story">
+    <span class="tag">Casualties</span><span class="tag">Oversight</span>
+    <div class="story-headline"><a href="https://abcnews.com/US/pentagon-lowers-count-iran-war-dead-wounded-sparking/story?id=135043063" target="_blank" rel="noopener">A revised casualty count, and the accountability fight it started</a></div>
+    <div class="story-meta">ABC News &middot; cross-corroborated</div>
+    <div class="story-synopsis">The Pentagon's downward revision of the Iran war's dead and wounded, per ABC News, is the Defense tab's lead because it sits at the intersection of every other item here: force management, oversight, and the credibility a fighting institution needs to sustain a war into month five. A Bulwark editorial makes the civil-military stakes plain, arguing that supporting the troops and demanding accountability are one obligation, per The Bulwark, and a companion piece frames the revision as concealment rather than correction, per The Bulwark. The professional reader's concern is narrower than the political one and more serious for it: casualty reporting is a chain-of-custody function, and any perception that the count is being managed for optics corrodes the trust that makes the reporting worth having, from the family notification officer to the congressional oversight staffer. The department will argue methodology, reconciliation of preliminary and confirmed figures, the ordinary friction of counting in an active theater, and some of that will be legitimate. The problem is timing and direction: a revision that happens to lower the politically salient number in the week the supplemental is being fought is the kind of coincidence that a skeptical Congress will not extend the benefit of the doubt. Watch whether the armed services committees ask for the underlying data, because that request, not the headline, is where this either resolves or metastasizes. Filed as the tab's organizing problem: the war's numbers and who is trusted to keep them.</div>
+  </div>
+
+  <div class="section-hdr">The Industrial Ledger</div>
+
+  <div class="story">
+    <span class="tag">Procurement</span><span class="tag">Maritime Strike</span>
+    <div class="story-headline"><a href="https://news.usni.org/2026/07/24/u-s-navy-orders-low-cost-missiles-to-expand-fleet-allied-long-range-maritime-strike-capabilities" target="_blank" rel="noopener">The Navy buys cheap missiles by the lot while the B-21 line quietly widens</a></div>
+    <div class="story-meta">USNI News &middot; cross-corroborated</div>
+    <div class="story-synopsis">The Navy ordered low-cost missiles to expand fleet and allied long-range maritime strike capacity, per USNI News, and the word that matters is low-cost, because the cost-per-shot arithmetic the brief has tracked since the drone salvos began is now driving procurement doctrine, not just commentary. A magazine emptied faster than it can be refilled forces two responses at once: buy rounds cheap enough to spend, and build platforms cheap enough to lose, and the week supplied both halves. On the platform side, The War Zone reports that a pathway to a larger B-21 Raider fleet was baked into the production ramp-up deal, per The War Zone, which is the long-range strike leg hedging against exactly the kind of contested-access fight the Pacific tab keeps flagging. The enterprise's back office moved too: Oracle inked a $7 billion deal to consolidate Pentagon software purchases, per Breaking Defense, and the VA signed a $1.6 billion contract to integrate AI across its functions, per Stars and Stripes, two software-consolidation plays that are the unglamorous plumbing of a force trying to buy efficiency where it cannot buy more magazine. Read the four items as one balance sheet: cheaper munitions, a wider bomber line, and consolidated software spend are the moves of an institution optimizing for a long war it cannot outspend. The affordable-mass turn is real, and the missiles are the leading edge of it. Filed as the procurement week that showed its logic.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Force Flow</span><span class="tag">Europe</span>
+    <div class="story-headline"><a href="https://taskandpurpose.com/news/army-general-kevin-admiral-europe/" target="_blank" rel="noopener">A new commander for Army Europe and Africa, with the Atlantic's other end busy</a></div>
+    <div class="story-meta">Task &amp; Purpose &middot; cross-corroborated (three sources)</div>
+    <div class="story-synopsis">The Pentagon picked Lt. Gen. Kevin Admiral to lead US Army Europe and Africa, per Task &amp; Purpose, a nomination carried by Air Force Times and Military Times in a three-outlet convergence. The billet is not a quiet one this year. Army Europe and Africa owns the continental sustainment and reinforcement mission at a moment when the Ukraine war grinds on, the electronic-warfare and force-flow signals the July 24 brief tracked, EA-37Bs into Fairford, the UK contemplating homeland air defense, run through European basing, and the same theater's logistics backbone is being drawn on for a Middle East war two theaters south. A command transition at USAREUR-AF is therefore a personnel story with an operational subtext: whoever holds the seat is managing the reinforcement math for two active theaters that share a single Atlantic pipeline. The nomination still faces the Senate, which is stacking a crowded confirmation and legislative calendar against a recess clock, and the timeline is worth a watch because unfilled or acting senior commands are their own kind of friction in a period that has none to spare. The item files quietly next to the procurement ledger above: the force that fights the next phase of both wars is being manned and equipped inside the budget fight over the current one. Filed as the leadership entry, with the theater it serves anything but calm.</div>
+  </div>
+
+  <div class="section-hdr">The Pacific Does Not Pause</div>
+
+  <div class="story">
+    <span class="tag">Indo-Pacific</span><span class="tag">Airpower</span>
+    <div class="story-headline"><a href="https://news.usni.org/2026/07/24/usni-news-western-pacific-pulse-july-24-2026" target="_blank" rel="noopener">The Western Pacific keeps its own tempo while two wars pull west</a></div>
+    <div class="story-meta">USNI News &middot; cross-corroborated</div>
+    <div class="story-synopsis">USNI's Western Pacific Pulse is the standing reminder that the theater American strategy calls decisive runs on a schedule indifferent to the Middle East's, per USNI News, and this week's entries sit alongside a piece of allied-airpower news worth pairing with it: what Breaking Defense learned about the Global Combat Air Programme at the Farnborough Airshow, per Breaking Defense, the trilateral sixth-generation fighter that is Britain, Italy, and Japan's answer to a contested-access future. The two items bracket the Pacific's real problem set. Presence and posture, the Pulse's daily currency of transits, exercises, and gray-zone frictions, are the near-term game; next-generation combat mass like GCAP is the long-term one, and both are competing for the same attention and industrial capacity the Iran war is consuming. The strategic worry the brief keeps returning to is bandwidth: every interceptor spent over the Red Sea, every command billet managed for two theaters at once, every dollar of the supplemental, is a resource not postured toward the Taiwan Strait, and Beijing reads the same ledger Washington does. The Deep Reads tab carries the sharper version of this in the War on the Rocks essay on China's evolving approach to Taipei. For the Defense tab the point is narrower and sufficient: the Pacific did not pause this week, it never does, and the force is being asked to hold it while fighting elsewhere. Filed as the other theater's steady pull.</div>
+  </div>
+
+  <div class="section-hdr">Watch Items</div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Watch: Airpower &middot; The Warthog Gets a Reprieve Bill</div>
+    <p style="font-size:13px;">The BRRRRT Act would delay Air Force attempts to eliminate the A-10 Warthog, per <a href="https://www.stripes.com/branches/air_force/2026-07-24/congress-air-force-a-10-warthog-22357617.html" target="_blank" rel="noopener">Stars and Stripes</a>, the latest round in a divestment fight Congress has reopened for a decade running. The legislative instinct to preserve the close-air-support airframe collides with a service that wants the force structure and the ramp space for platforms built to survive contested airspace the A-10 was not. The watch is whether a war consuming munitions and attention gives the divestment argument new force, or whether the same war's appetite for cheap, proven mass gives the Warthog's defenders theirs; both sides can now cite the Iran war for their case, which is how retirement fights become permanent.</p>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Watch: Undersea &middot; Hunting the Uncrewed Threat</div>
+    <p style="font-size:13px;">The Coast Guard is seeking technology to hunt and kill uncrewed underwater vehicles, per <a href="https://www.twz.com/sea/u-s-coast-guard-seeking-technology-to-hunt-and-kill-uncrewed-underwater-vehicles" target="_blank" rel="noopener">The War Zone</a>, and the Federal Register carried a related primary document overnight, a Navy Record of Decision for the Surveillance Towed Array Sensor System, per the <a href="https://www.federalregister.gov/documents/2026/07/24/2026-15011/notice-of-availability-of-record-of-decision-for-the-surveillance-towed-array-sensor-system" target="_blank" rel="noopener">Federal Register</a>. Read together, they mark the undersea domain moving up the priority list: the same autonomy revolution that put cheap drones over every battlefield is arriving beneath the surface, and the sensing and interdiction tools to counter it are only now being solicited. The watch is how fast the requirement turns into a fielded capability, because the threat is proliferating faster than the counter.</p>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Watch: Homeland &middot; The Guard Builds in the Capital</div>
+    <p style="font-size:13px;">The National Guard awarded a $292 million contract for apartment-style housing for troops on the District of Columbia deployment, per <a href="https://www.stripes.com/theaters/us/2026-07-24/national-guard-dc-housing-292-million-22356655.html" target="_blank" rel="noopener">Stars and Stripes</a>, a figure that prices the permanence of the capital mission more honestly than any statement about it. Temporary deployments do not get purpose-built housing; nine-figure housing contracts are the tell that the posture is expected to last. The watch is whether the appropriation and the mission's legal footing keep pace with the construction, because a barracks outlasts the order that justified it, and the physical infrastructure of a standing capital presence is the kind of fact that quietly settles a contested question.</p>
+  </div>
+
+</div>
+
+<!-- STRATEGIC TAB -->
+<div id="tab-strategic" class="tab-panel">
+
+  <div class="section-hdr">The Escalation Board</div>
+
+  <div class="story">
+    <span class="tag">Iran</span><span class="tag">Coercion</span>
+    <div class="story-headline"><a href="https://www.csis.org/analysis/why-united-states-and-iran-keep-fighting-while-they-negotiate" target="_blank" rel="noopener">Fighting and negotiating at once: the war's stable, ugly equilibrium</a></div>
+    <div class="story-meta">Center for Strategic and International Studies &middot; institutional analysis</div>
+    <div class="story-synopsis">CSIS supplies the frame the week's escalation news keeps demanding: an explanation of why the United States and Iran keep fighting while they negotiate, per the Center for Strategic and International Studies, and the answer is that for both sides the fighting is the negotiation, each strike and each mediated message a bid to set the terms of a talk neither can afford to abandon or to win outright. That equilibrium explains the pattern the brief has watched all week, the mediator signal that eased oil on Thursday coexisting with resumed Red Sea attacks on Saturday, per USNI, because the parties are not choosing between war and diplomacy but running both as a single instrument. The Council on Foreign Relations asks the companion question directly, how the Iran war ends, per the Council on Foreign Relations in a two-outlet convergence, and the honest reading of both pieces is that the war lacks a termination theory on either side, which is the condition under which conflicts persist not because anyone wants them but because no one has designed an exit. The Clausewitzian point sits underneath: war as a continuation of policy assumes a policy with an object, and a coercion campaign that cannot name what compliance would buy has substituted momentum for aim. The two think-tank pieces together are the week's most useful strategic reading precisely because they refuse the false comfort that talking means stopping. Filed as the board's center square, where the fighting and the talking are the same move.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Trade War</span><span class="tag">Bond Market</span>
+    <div class="story-headline"><a href="https://www.cato.org/blog/bond-market-not-addicted-tariff-revenue-side-hustle" target="_blank" rel="noopener">The revenue story the tariffs cannot tell</a></div>
+    <div class="story-meta">Cato Institute &middot; analysis</div>
+    <div class="story-synopsis">Cato's argument that the bond market is not addicted to tariff revenue, per the Cato Institute, is the necessary counterweight to the administration's fiscal rationale for the widening trade wall, and it deserves the strategic tab because the claim, if right, removes a leg from the policy's public defense. The administration reaches for two justifications when the tariffs draw fire: a national-security-and-labor rationale, contested in the Overview and Domestic tabs, and a revenue rationale, that the duties fund the government and discipline the deficit. Cato's point is that the bond market, the actual arbiter of whether the United States can borrow cheaply, treats tariff revenue as neither large nor durable enough to matter to the fiscal path, which means the revenue argument is rhetoric aimed at voters rather than a signal the markets price. That distinction matters strategically because it clarifies what the tariffs are actually for: not funding but leverage and protection, the same instrument-of-statecraft logic the CSIS piece above applies to the shooting war. A trade measure sold as revenue but built as coercion invites the legal challenge the Foreign Policy analysis flagged, because courts examine stated purpose. The macro backdrop makes the read concrete: with the 10-year Treasury near 4.7 percent and drifting up on war and tariff premium, the bond market is pricing risk, not applauding revenue. Filed as the economic-war ledger's fine print, where the stated rationale and the real one diverge.</div>
+  </div>
+
+  <div class="section-hdr">The Wider Board</div>
+
+  <div class="story">
+    <span class="tag">Ukraine</span><span class="tag">Civil-Military</span>
+    <div class="story-headline"><a href="https://foreignpolicy.com/2026/07/24/protest-fedorov-zelensky-firing-ukraine/" target="_blank" rel="noopener">Ukraine's cardboard Maidan: the street reappears as the war grinds on</a></div>
+    <div class="story-meta">Foreign Policy &middot; essay</div>
+    <div class="story-synopsis">Foreign Policy reports that protests over a firing, the removal of a popular official, brought Ukrainians back into the streets in what it calls a cardboard Maidan, an argument that the people still matter, per Foreign Policy, and the piece pairs with the war's operational continuity to make a civil-military point the brief has been tracking since the command shakeup. The daily campaign assessment shows the fighting proceeding without visible discontinuity, per the Institute for the Study of War's July 24 Russian Offensive Campaign Assessment, and the coexistence of street protest and battlefield steadiness is itself the finding: a society can contest its leadership's decisions openly while its army holds the line, which is the democratic resilience thesis the July 24 brief weighed against the fragility one. The early evidence continues to lean toward resilience, but the essay's warning is worth holding, that a wartime government firing popular figures spends legitimacy it will need for the war's harder phases, and the street is where that account gets audited. RAND supplies the diplomatic angle the protests do not, arguing Europe could help get Ukraine and Russia to the negotiating table, per RAND, a reminder that the war's exit, like Iran's, waits on a termination design no combatant has yet produced. Filed as the war Europe cannot leave, contesting its politics without dropping its guard.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">China</span><span class="tag">Taiwan</span>
+    <div class="story-headline"><a href="https://smallwarsjournal.com/2026/07/24/chinas-new-vision-for-capturing-taipei-war-on-the-rocks/" target="_blank" rel="noopener">China's new vision for capturing Taipei, read while Washington looks elsewhere</a></div>
+    <div class="story-meta">Small Wars Journal / War on the Rocks &middot; essay</div>
+    <div class="story-synopsis">War on the Rocks, carried via Small Wars Journal, lays out an argument that Beijing's approach to seizing Taipei is evolving away from the amphibious-invasion set piece Western planning fixates on and toward something harder to deter, per Small Wars Journal, and the essay earns the strategic slot because it names the assumption American deterrence rests on and then contests it. If the People's Liberation Army's theory of victory shifts from a cross-strait landing toward decapitation, coercion, and the rapid political collapse of Taipei's will, then the force American planners have optimized against, the invasion fleet in the strait, is guarding the wrong door. The timing sharpens the point: this analysis arrives in a month when the United States is visibly committed elsewhere, spending interceptors over the Red Sea and managing command billets across two active theaters, and the piece's implicit argument is that Beijing is watching the solvency test the Iran war has become and drawing conclusions about American bandwidth. The professional caution is warranted, because visions of a bloodless Taipei collapse have a long and mostly unfulfilled history, and Taiwan's own agency and the strait's brute geography remain the deterrents they always were. But the essay's discipline, name the deterrent's load-bearing assumption and ask whether it still holds, is the right one. Read it against the Defense tab's Pacific entry. Filed as the theater the whole strategy is supposedly organized around, evolving while attention is committed to two others.</div>
+  </div>
+
+  <div class="section-hdr">Watch Items</div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Watch: International Law &middot; The Court Turns on Itself</div>
+    <p style="font-size:13px;">The International Criminal Court dismissed chief prosecutor Karim Khan over misconduct allegations, per <a href="https://www.france24.com/en/europe/20260724-icc-chief-prosecutor-karim-khan-dismissed-over-sexual-misconduct-allegations-sources-say" target="_blank" rel="noopener">France 24</a> in a six-outlet convergence covered in the Overview. The strategic dimension is what the leadership vacuum does to the court's leverage: every open investigation loses its driving prosecutor at once, and adversaries of international justice gain a credibility argument for free. The watch is whether the court's internal accountability process is seen to have worked or buckled, because the answer sets how much moral authority the institution carries into its next confrontation with a great power.</p>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Watch: Cyber &middot; The Incident Nobody Has to Report</div>
+    <p style="font-size:13px;">Lawfare examines when reporting an AI security incident is not mandatory, per <a href="https://www.lawfaremedia.org/article/when-reporting-an-ai-security-incident-is-not-mandatory" target="_blank" rel="noopener">Lawfare</a>, a gap in the emerging governance regime with direct strategic weight. If the disclosure rules for AI failures and compromises carry exemptions wide enough to swallow the requirement, then the public and the regulators lose visibility into exactly the class of incident, model compromise, data poisoning, autonomous-system failure, that a competitor could exploit at scale. The watch is whether the reporting architecture hardens before an incident forces the issue, because governance written after the crisis tends to be written badly.</p>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Watch: Sanctions &middot; The Financial Perimeter Widens</div>
+    <p style="font-size:13px;">The Treasury moved to formalize a designation against the Huione Group as a financial institution of primary money-laundering concern, per the <a href="https://www.federalregister.gov/documents/2026/07/24/2026-15030/proposed-amendment-to-the-definition-of-huione-group-a-financial-institution-operating-outside-the" target="_blank" rel="noopener">Federal Register</a>, and the State Department posted a statutory debarment under the Arms Export Control Act, per the <a href="https://www.federalregister.gov/documents/2026/07/24/2026-15042/bureau-of-political-military-affairs-statutory-debarment-under-the-arms-export-control-act-and-the" target="_blank" rel="noopener">Federal Register</a>. The two primary documents mark the quiet, durable side of economic statecraft running underneath the loud tariff wall: the financial and export-control perimeter tightening one designation at a time. The watch is cumulative, whether the steady accretion of these measures compounds into the kind of systemic fragmentation the July 24 brief flagged, where every actor hedges against exposure to everyone else.</p>
+  </div>
+
+</div>
+
+<!-- DOMESTIC TAB -->
+<div id="tab-domestic" class="tab-panel">
+
+  <div class="section-hdr">The Executive Economy</div>
+
+  <div class="story">
+    <span class="tag">Tariffs</span><span class="tag">Inflation</span>
+    <div class="story-headline"><a href="https://www.nbcnews.com/business/consumer/iran-war-gas-prices-mortgage-rates-rcna588816" target="_blank" rel="noopener">The war and the tariffs meet at the gas pump</a></div>
+    <div class="story-meta">NBC News &middot; cross-corroborated</div>
+    <div class="story-synopsis">NBC News reports the Iran war and the tariffs together pushing gas prices higher and reviving inflation risk, per NBC, and the story matters because it collapses two policy fronts the brief has kept separate into a single number a household actually watches. The war reprices crude through the straits, the tariffs reprice everything imported, and the pump reads the sum. Foreign Policy's framing of the trade action as a swap of one tariff wall for a broader one, per Foreign Policy, is the supply-side companion, and the Cato analysis in the Strategic tab removes the revenue defense, leaving protection and leverage as the tariffs' actual purposes. The macro tape underneath, per the FRED series, prices the strain honestly: fed funds at 3.63, the 10-year at 4.71 and drifting up with war and tariff premium, the 2-year at 4.37, headline and core CPI both elevated, initial jobless claims still low at 187,000, and unemployment at 4.2 percent, a curve carrying inflation risk and a labor market not yet cracking. That combination, rising prices without rising unemployment, is the hardest one for policy, because it removes the usual excuse for cutting rates while the political pressure to relieve consumers builds. On July 5 the brief argued the administration was converting funding mechanics into leverage instruments; the tariffs are that doctrine applied to the border, and the pump is where voters feel it. Filed as the domestic economy's convergence point, where two wars land on one receipt.</div>
+  </div>
+
+  <div class="section-hdr">The Ledger</div>
+
+  <div class="story">
+    <span class="tag">Elections</span><span class="tag">Senate</span>
+    <div class="story-headline"><a href="https://www.npr.org/2026/07/25/nx-s1-5902982/democrats-maine-senate-race" target="_blank" rel="noopener">Maine Democrats scramble to replace their candidate in a must-win race</a></div>
+    <div class="story-meta">NPR &middot; cross-corroborated</div>
+    <div class="story-synopsis">Democrats in Maine gathered to replace Graham Platner in the race against Susan Collins, per NPR, a mid-cycle candidate swap in one of the handful of seats that will decide Senate control, and the scramble is worth the ledger slot because of what it reveals about both parties' 2026 math. Collins is among the most durable survivors in modern Senate politics, and the Democratic effort to find a replacement candidate who can beat her, after their first choice faltered, is the kind of forced improvisation that either produces a stronger nominee or signals a bench thinner than the map requires. The race sits inside the broader succession and primary churn the brief has tracked across several states, from the South Carolina field forming around Lindsey Graham's seat to the contested nominations elsewhere, and the through-line is a cycle in which incumbency is unusually contested and both parties are managing candidate-quality problems in the seats that matter most. For a Domestic tab whose lead is a fight over whether the government's numbers can be trusted, an election cycle is the mechanism by which that trust gets priced, and Maine is one of the places the price will be set. Filed as the ledger's electoral entry, a must-win seat changing its variables mid-race.</div>
+  </div>
+
+  <div class="section-hdr">Watch Items</div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Watch: Public Health &middot; Measles at a Generational High</div>
+    <p style="font-size:13px;">Measles cases hit their highest level since 1991, per a <a href="https://www.cato.org/news-releases/measles-cases-hit-highest-level-1991-cato-expert-responds" target="_blank" rel="noopener">Cato Institute</a> release responding to the data, and a two-carton problem became a national one: 1.6 million cartons of eggs were recalled over potential salmonella contamination, per <a href="https://www.cbsnews.com/news/egg-recall-salmonella-midwest-poultry-kroger/" target="_blank" rel="noopener">CBS News</a>. The pairing is coincidental but the theme is not, a public-health system managing both a preventable-disease resurgence and a food-safety recall in the same week, each a test of institutional trust of the kind the Overview lead examines. The watch on measles is the vaccination-policy debate the case count reopens; the watch on the recall is the ordinary competence of the food-safety machinery, which usually works and is noticed only when it does not.</p>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Watch: Courts &middot; The Court-Packing Argument Returns</div>
+    <p style="font-size:13px;">National Review argues Senator Sheldon Whitehouse's court-packing plan is unconstitutional, per <a href="https://www.nationalreview.com/2026/07/sheldon-whitehouses-court-packing-plan-is-unconstitutional/" target="_blank" rel="noopener">National Review</a>, reopening a structural fight over the judiciary that never fully closed. The piece is an opinion and reads as one, but the debate it joins is real and recurring: the size and composition of the courts is back on the table as both parties war over the judiciary's role, and the constitutional arguments on both sides are being sharpened for a fight that will outlast this Congress. The watch is whether the proposal gains any institutional traction or stays a messaging vehicle, because the difference determines whether this is a genuine reform push or a base-tending exercise.</p>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Watch: Space &middot; Starship Flies Again</div>
+    <p style="font-size:13px;">Starship completed its first test flight since SpaceX's public offering, per <a href="https://www.dw.com/en/starship-completes-1st-test-flight-since-spacex-ipo/a-78107347?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Deutsche Welle</a>, a test-program milestone with a new financial audience now watching every launch. The flight belongs in the Domestic ledger because the company's move to public markets ties the national spaceflight program more tightly to quarterly investor sentiment, and a test cadence that once answered only to engineering now answers to a share price too. The watch is whether public-market discipline speeds the program or distorts its risk tolerance, because a test campaign optimized for the next earnings call is a different animal from one optimized for the next design iteration.</p>
+  </div>
+
+</div>
+
+<!-- DEEP READS TAB -->
+<div id="tab-deepreads" class="tab-panel">
+
+  <div class="section-hdr">Deep Reads</div>
+
+  <div class="story">
+    <span class="tag">CFR</span><span class="tag">War Termination</span>
+    <div class="story-headline"><a href="https://www.cfr.org/articles/how-does-the-iran-war-end" target="_blank" rel="noopener">How Does the Iran War End?</a></div>
+    <div class="story-meta">Council on Foreign Relations &middot; essay</div>
+    <div class="story-synopsis">The Council on Foreign Relations asks the question the war's fifth month makes unavoidable and the combatants keep avoiding: how it ends. The essay's value is in refusing the easy answers, decisive strike, negotiated settlement, mutual exhaustion, and showing why each founders on the same missing element, a termination theory either side could execute. A decisive strike assumes a target set whose destruction ends the threat, which the interceptor arithmetic and the mountain-sanctuary geography this brief has tracked both dispute. A negotiated settlement assumes a bargain each government could sell at home, which the coercion-without-a-named-exit pattern the Strategic tab documents makes hard to construct. Mutual exhaustion assumes a clock, and the reroute economy and the cost-imposition strategy have made the war cheaper to sustain than to escalate out of. Read alongside the CSIS piece on fighting-while-negotiating, the two form the week's core argument: this war persists not from anyone's appetite but from a design failure, the absence on both sides of a plausible path from the current condition to a better one. The Clausewitzian frame is exact, war as continuation of policy requires a policy with an object, and a conflict whose object has dissolved into momentum is the hardest kind to end. Read it as the strategic reader's homework for the sanctions-bill week ahead, where the question of the war's end gets its next legislative test.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">The Atlantic</span><span class="tag">Gulf</span>
+    <div class="story-headline"><a href="https://www.theatlantic.com/ideas/2026/07/saudi-arabia-trump-nuclear-deal/688064/?utm_source=feed" target="_blank" rel="noopener">The Saudis Learn the Truth About Trump</a></div>
+    <div class="story-meta">The Atlantic &middot; essay</div>
+    <div class="story-synopsis">The Atlantic reads the Saudi nuclear deal's late complications as a lesson Riyadh is absorbing about the terms of American partnership, and the essay is the analytical companion to the proliferation file the July 24 brief held open under a hedge. The argument is that the kingdom, having negotiated for enrichment rights and reportedly signed, discovered the deal conditioned after the fact on Saudi normalization with Israel, and that the sequence, agreement first, price attached second, is itself the education: American commitments in this administration are renegotiable instruments, not fixed guarantees, and a partner planning around them must price that volatility in. Read against the Hudson analysis the brief cited Friday, which paired the Houthi blockade and the enrichment bargain as one story, the Atlantic supplies the Saudi-side psychology: a kingdom under blockade, negotiating its nuclear future, learning in real time what protection is worth and what it must therefore hold in its own hands. The essay's edge is its implication for nonproliferation, because a Saudi Arabia that concludes American guarantees are conditional is a Saudi Arabia with more reason, not less, to want an independent fuel cycle, which inverts the deal's stated purpose. Held as an argument, not a finding, because the deal's text remains unseen and essays that read foreign leaders' minds carry their own risk. Read it as the Gulf file's psychological layer, and pair it with the Tablet piece below on the Levant's parallel disappointment.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">The Bulwark</span><span class="tag">Escalation</span>
+    <div class="story-headline"><a href="https://www.thebulwark.com/p/the-second-iran-war" target="_blank" rel="noopener">The Second Iran War?</a></div>
+    <div class="story-meta">The Bulwark &middot; essay</div>
+    <div class="story-synopsis">The Bulwark poses the question the president's "massive attack" language forced into the open: whether the current campaign is sliding from the war it has been into a second, larger one with different aims and a different risk profile. The essay's discipline is in distinguishing escalation within a war from the opening of a new one, and arguing that the threatened expansion, deeper strikes, frozen-asset seizure, a widened target set, would cross from the former into the latter without the deliberation the transition deserves. The piece pairs naturally with the same outlet's accountability coverage in the Overview and Defense tabs, because a war whose casualty count is being revised downward is precisely the war least prepared, politically, to absorb a deliberate escalation; the public ledger and the strategic ambition are moving in opposite directions. The counterargument the essay engages is the deterrence case, that a bigger threatened blow is what finally produces the compliance the coercion campaign has not, and the response is the one the CFR and CSIS pieces above develop, that coercion without a named exit converts pressure into momentum regardless of the blow's size. Read it as the escalation debate's civil-military conscience, insisting that the decision to widen a war is a decision, not a drift, and that the drift is the danger. The war's second act, if it comes, should come by choice and with the count honest. Filed as the week's argument against sleepwalking.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">War on the Rocks</span><span class="tag">Taiwan</span>
+    <div class="story-headline"><a href="https://smallwarsjournal.com/2026/07/24/chinas-new-vision-for-capturing-taipei-war-on-the-rocks/" target="_blank" rel="noopener">China's New Vision for Capturing Taipei</a></div>
+    <div class="story-meta">War on the Rocks / Small Wars Journal &middot; essay</div>
+    <div class="story-synopsis">War on the Rocks argues that the People's Liberation Army's concept for taking Taipei is shifting away from the amphibious invasion Western planning is built to defeat and toward a faster, more political theory of victory, and the essay is the week's most consequential Pacific reading because it targets the assumption American deterrence rests on. If Beijing's preferred path runs through decapitation, blockade, information dominance, and the rapid collapse of Taipei's will rather than a contested landing, then the invasion-focused force posture is defending against the scenario least likely to be run. The essay is strongest in forcing the reader to separate the enemy's capabilities from the enemy's intentions and to notice that deterrence calibrated against the wrong scenario is not deterrence at all. It is weakest where such arguments usually are, in underweighting the friction any coercive-collapse strategy faces against a society that has spent a decade preparing to resist one, and in treating Taiwanese will as a variable Beijing controls rather than one it must overcome. The Clausewitzian caution applies: plans that assume the enemy's rapid moral collapse have a poor historical record, because the enemy gets a vote. Read it as the strategic companion to the Defense tab's Pacific entry, and as the reason the bandwidth the Iran war consumes is not a bookkeeping detail but a deterrence variable Beijing is actively pricing. Filed as the essay to argue with before the next Taiwan headline.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Lawfare</span><span class="tag">AI Governance</span>
+    <div class="story-headline"><a href="https://www.lawfaremedia.org/article/when-reporting-an-ai-security-incident-is-not-mandatory" target="_blank" rel="noopener">When Reporting an AI Security Incident Is Not Mandatory</a></div>
+    <div class="story-meta">Lawfare &middot; essay</div>
+    <div class="story-synopsis">Lawfare's examination of the gaps in AI incident-reporting requirements is the week's quiet but load-bearing governance read, because it maps where the emerging rules for artificial intelligence stop, and the stops are where the risk accumulates. The essay's contribution is to show that the disclosure regime for AI failures, compromises, and misuse carries exemptions and definitional ambiguities wide enough that a serious incident could go unreported without anyone breaking a rule, which means the regulators, the public, and the next potential victim lose visibility into exactly the events a maturing governance system most needs to see. The strategic stakes connect directly to the Defense and Strategic tabs: the same autonomy revolution filling battlefields with cheap drones and prompting the Coast Guard to hunt uncrewed underwater vehicles is proceeding in a civilian governance vacuum, and a compromise of a model underlying critical infrastructure or a defense application is the kind of incident that disclosure rules exist to surface early. The essay is careful and legal rather than alarmist, which is its strength; it is describing an architecture with holes, not predicting a specific catastrophe. The policy lesson is the familiar one that governance written after a crisis is written badly, and the window to write it well is now, before an unreported incident forces the issue. Read it as the civilian half of the autonomy story the military tabs have been telling all week.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Tablet</span><span class="tag">Levant</span>
+    <div class="story-headline"><a href="https://www.tabletmag.com/sections/israel-middle-east/articles/trump-lebanese-fantasy" target="_blank" rel="noopener">Trump's Lebanese Fantasy</a></div>
+    <div class="story-meta">Tablet Magazine &middot; essay</div>
+    <div class="story-synopsis">Tablet's critique of the administration's Lebanon policy argues that the hope for a quick realignment of Lebanese politics, a disarmed Hezbollah, a compliant Beirut, a Levant reordered to fit a regional bargain, mistakes wish for plan, and the essay earns the Deep Reads slot as the skeptical counterpoint to the week's regional-realignment optimism. The piece pairs instructively with the Atlantic's Saudi essay above, because both examine the gap between the administration's declared Middle East architecture and the local realities that architecture assumes away. Where the Saudi story is about a partner learning American guarantees are conditional, the Lebanon story is about an adversary-adjacent state whose internal balance no external bargain can simply rewrite, and the essay's warning is that treating Lebanon as a variable to be set rather than a system to be navigated is how ambitious regional designs meet their friction. The July 24 brief flagged the Levant file as strategic again because the Abraham Accords condition attached to the Saudi deal reopened it; Tablet supplies the reason that file is harder than the deal-making frame allows. The essay is opinionated and comes from a clear editorial vantage, which the reader should weigh, but its core caution, that the ceasefire that is not a ceasefire and the politics that will not be reordered on schedule are the ground truth, is sound. Read it as the Levant's reality check against the regional-bargain optimism. Filed as the file the realignment story keeps needing to answer.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">The Atlantic</span><span class="tag">2026 Politics</span>
+    <div class="story-headline"><a href="https://www.theatlantic.com/newsletters/2026/07/five-theories-of-jon-ossoff-moment-senate-presidential-candidate/688066/?utm_source=feed" target="_blank" rel="noopener">Five Theories of the Jon Ossoff Moment</a></div>
+    <div class="story-meta">The Atlantic &middot; essay</div>
+    <div class="story-synopsis">The Atlantic offers five competing explanations for why a Georgia senator has become a figure of outsized national attention, and the essay is worth the domestic-politics slot precisely because it resists settling on one, modeling the analytical humility the moment deserves. The five theories, ranging from generational turnover to media dynamics to the structural incentives of a closely divided Senate, are each partly right and none sufficient, and the piece's value is in showing how a single political phenomenon can be read through that many frames without any of them being obviously wrong. For a brief whose recurring theme this week is contested narration, whose numbers, whose account, whose frame, the essay is a useful meta-text: it demonstrates that even low-stakes political interpretation is a contest of stories, and that the honest analyst names the alternatives rather than picking the flattering one. The connection to the Maine race in the Domestic tab is direct, because both are episodes in a 2026 cycle whose shape is still forming and whose interpreters are reaching for frameworks faster than the evidence supports. Read it as the week's reminder that confident single-cause explanations of political moments are usually the least reliable ones, and that five theories honestly held beats one theory prematurely closed. Filed as the lighter end of the serious reading, a lesson in interpretive discipline wearing a personality profile's clothes.</div>
+  </div>
+
+</div>
+
+<!-- SOCIAL/SIGNAL TAB -->
+<div id="tab-social" class="tab-panel">
+
+  <div class="section-hdr">Signal Summary</div>
+  <p class="throughline">The open-source day sorted, as it has all week, into the confirmed, the claimed, and the disputed, and Saturday added a new category worth watching: the revised. Confirmed by institutional tracking and ship data: Hormuz transits still low, Red Sea attacks resumed, the blockade holding its enforcement tempo. Claimed and still unbanked: the standing set of Iranian assertions about strikes on US facilities that host nations have not corroborated on the record, which the assessment layer continues to mark as asserted rather than established. Disputed, and this is the day's sharpest signal: the war's own casualty count, revised downward by the department that owns it and challenged as concealment by outside critics, which moves a number from the confirmed column into the contested one and, in doing so, teaches every reader to weigh official figures against independent ones. That is the meta-signal of the day, the erosion of a shared factual baseline, and it is visible not in any single feed but in the pattern: the numbers institutions control are being managed while the numbers markets and sensors control keep telling a steadier, harder story. The institutional assessment layer is the right instrument for exactly this environment, because its discipline is to separate the observed from the announced, and the gap between those two categories is where the week's real risk lives. When a government's administered figures and the world's observed ones diverge, the observed ones are the safer bet, and Saturday widened the divergence.</p>
+
+  <div class="section-hdr">Institutional OSINT</div>
+
+  <div class="story">
+    <span class="tag">ISW</span><span class="tag">Iran</span>
+    <div class="story-headline"><a href="https://understandingwar.org/research/middle-east/iran-update-special-report-july-24-2026/" target="_blank" rel="noopener">Iran Update Special Report, July 24, 2026</a></div>
+    <div class="story-meta">Institute for the Study of War &middot; institutional assessment</div>
+    <div class="story-synopsis">The Institute for the Study of War's latest Iran special report is the baseline document for a day whose central story is a number in dispute, and the assessment layer is precisely the right instrument for a fact environment where the government's own figures have become contestable. The report's standing discipline, marking the asserted as asserted and the observed as observed, is the corrective the casualty-count controversy demands: an independent tracking product does not revise a politically salient number in a convenient direction, because it has no policy to flatter. Three of the day's open threads map onto its lanes. First, the enforcement tempo of the Red Sea campaign, where the resumption USNI reported gets tested against the assessment's read on Houthi launch capacity and Iranian resupply. Second, the standing Iranian strike claims against US facilities, where host-nation silence continues to be weighed against Tehran's announcement patterns, and the report's refusal to bank the unconfirmed is the model the official ledger just failed to follow. Third, the degradation curve underneath the "massive attack" decision, because the case for a bigger strike rests on an estimate of what remains to be struck, and that estimate is an intelligence product, not a talking point. Read it before the day's claims and revisions harden into premises. The value of the assessment layer rises exactly when the administered numbers become unreliable, and Saturday was such a day.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">ISW</span><span class="tag">Ukraine</span>
+    <div class="story-headline"><a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-24-2026/" target="_blank" rel="noopener">Russian Offensive Campaign Assessment, July 24, 2026</a></div>
+    <div class="story-meta">Institute for the Study of War &middot; institutional assessment</div>
+    <div class="story-synopsis">The daily campaign assessment carries the empirical answer to the civil-military question the Strategic tab's cardboard-Maidan coverage raised: whether Ukraine's political turbulence is showing up in its fighting. The early read through the assessment's control-of-terrain tracking is that it is not, that the war's operational tempo is proceeding without the discontinuities, delayed rotations, altered fires patterns, exploited axes, that a genuine command or morale crisis would produce. That steadiness, set against open street protest over a leadership firing, is the resilience finding the July 24 brief weighed against the fragility one, and the assessment layer is where anecdote gets tested against terrain data rather than mood. The report is also the right frame for the war's economic dimension, the deep strikes on Russian logistics and the pressure on Black Sea shipping, because whether those reflect a deliberate campaign design or opportunistic tempo is an intelligence question the assessments are built to answer. For this tab's purposes the Ukraine assessment and the Iran assessment above make one point together: in a week when administered numbers proved movable, the independent tracking products that separate the observed from the announced are the load-bearing documents, and both wars are better understood through them than through any combatant's press release. Watch the next week of maps for whether the Ukrainian steadiness holds through the political churn. Filed as the war Europe cannot leave, still legible through the assessment layer.</div>
+  </div>
+
+  <div class="story" data-unsourced="intentional">
+    <span class="tag">OSINT</span><span class="tag">Verification Gap</span>
+    <div class="story-headline">The revised count, the resumed attacks, and the claims still waiting on a host nation</div>
+    <div class="story-meta">Single source, tracking &middot; no verified article URL</div>
+    <div class="story-synopsis">Three threads stay on the tracking ledger ahead of independent confirmation, and Saturday reshuffled which is most urgent. First and newest: the downward revision of the war's casualty count is a claim about a number, and the honest open-source posture is to treat the revised figure and the original as competing assertions until the underlying methodology is disclosed, because neither the department nor its critics has put auditable data on the public record, and a number the public cannot verify is exactly the kind that benefits from institutional skepticism. Second: the resumption of Red Sea attacks confirms enforcement tempo but leaves the suppression question open, whether the promised punishment campaign can find and service launch infrastructure faster than it regenerates, a contest the last two years of Red Sea operations suggest is harder than any ultimatum implies. Third: the standing Iranian claims of strikes on US facilities remain asserted through Iranian channels alone, and continued host-nation silence is itself ambiguous information, capable of meaning nothing happened or that hosts prefer not to advertise what did. Held as tracking items because the war's decisions and its narrations continue to outrun its verifiable evidence, and Saturday's lesson is that the evidence gap now includes the government's own figures. The discipline that applies to Tehran's claims applies to everyone's numbers: bank the observed, hold the announced.</div>
+  </div>
+
+</div>
+
+<!-- LOCAL TAB -->
+<div id="tab-local" class="tab-panel">
+
+  <div class="section-hdr">Joint Base Charleston / 437 AW</div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Charleston Airfield &middot; A Visiting Guard Squadron Trains on the Ramp</div>
+    <p style="font-size:13px;">A visiting Air National Guard force support squadron built readiness during annual training at Joint Base Charleston this week, per imagery posted to <a href="https://www.dvidshub.net/image/9827664/134-fss-airmen-build-readiness-during-annual-training-joint-base-charleston" target="_blank" rel="noopener">DVIDS</a>, the kind of routine reserve-component workup that keeps the total-force machine current and uses Charleston's ramp and facilities as the training ground. On day 148 of a war that runs through the mobility enterprise the 437th and 315th feed, a base hosting another wing's annual training reads as a hub doing its steady work, infrastructure and instruction, without operational headlines. The weekend variable is the sky: heavy rain drove a flood watch and, at points, a flash flood warning across the Lowcountry, per <a href="https://www.thestate.com/news/weather-news/article316651016.html" target="_blank" rel="noopener">The State</a>, the kind of saturation event that slows ramps and soaks low approaches. Current field conditions are one click away via the KCHS aviation link in the weather bar above.</p>
+  </div>
+
+  <div class="section-hdr">Lowcountry</div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Veterans &middot; Tunnel to Towers Opens a Village in North Charleston</div>
+    <p style="font-size:13px;">The first veterans moved into a new Tunnel to Towers housing development in North Charleston, per the <a href="https://www.postandcourier.com/charleston_sc/veteran-housing-tunnel-to-towers-north-charleston/article_e23097f1-7c17-4d23-a614-7ed8d1bb83d1.html" target="_blank" rel="noopener">Post and Courier</a>, with <a href="https://www.live5news.com/video/2026/07/24/video-tunnel-towers-opens-veterans-village-north-charleston-offering-veterans-more-than-place-live/?outputType=amp" target="_blank" rel="noopener">Live 5 News</a> reporting the Veterans Village offers more than a place to live. The project is the kind of concrete civic good that rarely leads a news cycle and matters more than most that do: permanent supportive housing for veterans in a metro where cost and availability have squeezed exactly that population. Two local outlets carried the opening, and for a base community whose service members eventually become the veterans such projects serve, it is the local story with the longest tail. Filed as the Lowcountry's best entry of the week.</p>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Public Safety &middot; A Fatal Fire and a Cold Case Closed From Abroad</div>
+    <p style="font-size:13px;">Three adults died in a North Charleston house fire, with authorities investigating the cause, per the <a href="https://www.postandcourier.com/news/crime/north-charleston-house-fire-3-dead/article_8ee41b43-2fa7-484a-ae7b-08498ede7f42.html" target="_blank" rel="noopener">Post and Courier</a> and <a href="https://www.counton2.com/news/north-charleston-house-fire-leaves-three-dead-officials-investigate/" target="_blank" rel="noopener">WCBD</a>, a loss neighbors are still absorbing. In an unrelated but striking development, a former Charleston police officer wanted in his wife's 2005 killing was caught in China and brought back to face charges, per the <a href="https://www.postandcourier.com/news/daniel-hiers-charleston-cop-flash-flooding-sc/article_fed01e4e-b33e-4666-a3e0-c006b126cb8c.html" target="_blank" rel="noopener">Post and Courier</a>, a two-decade cold case closing through an international extraction. The two items bracket the county's week: an ongoing tragedy under investigation and a long-open wound finally moving toward a courtroom.</p>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-lbl">Development &middot; The Cannon Street Hotel Clears Its Hurdle</div>
+    <p style="font-size:13px;">A long-delayed Cannon Street hotel cleared a key hurdle after Charleston settled a zoning dispute, per the <a href="https://www.postandcourier.com/business/tourism/cannon-street-hotel-charleston-zoning-patriots-point/article_adf894c7-9f06-4500-9c94-571b83bf2997.html" target="_blank" rel="noopener">Post and Courier</a>, the kind of peninsula land-use fight that decides the city's texture one parcel at a time. The tourism-versus-neighborhood tension the project embodies is Charleston's permanent argument, and each settled dispute nudges the balance. Worth a watch as the development proceeds, because the terms of the settlement, not the groundbreaking, are where the precedent for the next contested block gets set.</p>
+  </div>
+
+  <div class="section-hdr">Food</div>
+
+  <div class="story" data-unsourced="intentional">
+    <span class="tag">Hanahan</span><span class="tag">Development</span>
+    <div class="story-headline">Blackwells Corner: a Hanahan town center names its first tenants</div>
+    <div class="story-meta">Post and Courier &middot; single source, tracking</div>
+    <div class="story-synopsis">A forthcoming town center in Hanahan called Blackwells Corner has announced early tenants including a pizzeria, a wine bar, and a coffee shop, per Post and Courier coverage of the development. The item earns a Food card because of where it lands rather than what it serves: the Lowcountry's specialty-food economy continuing to grow outside the peninsula, north of the neck, into the suburbs where the rooftops now support the kind of dining that once required downtown foot traffic. Hanahan getting a walkable cluster of independent food and drink is the same suburban-maturation story the brief has tracked through Mount Pleasant and North Charleston, a food economy widening its footprint rather than merely intensifying downtown. For families weighing a weekend drive that stays on the mainland side of the bridges, it is a new option worth logging. The development is early and the openings are announced rather than open, so this files as a tracking item on the concrete signal of named tenants; the ribbon-cuttings will tell whether the concept holds. Filed for the suburbs the peninsula's food culture keeps colonizing, one town center at a time.</div>
+  </div>
+
+  <div class="story" data-unsourced="intentional">
+    <span class="tag">Charleston</span><span class="tag">Festival</span>
+    <div class="story-headline">Charleston Wine + Food opens Culinary Village pre-sale</div>
+    <div class="story-meta">Charleston Wine + Food &middot; single source, tracking</div>
+    <div class="story-synopsis">Charleston Wine + Food has opened pre-sale access to Culinary Village tickets for the next festival, with the early window carrying a promotional draw, per festival announcements covered locally. The item files as a Food card because Charleston Wine + Food is the region's marquee culinary event and its ticketing calendar is a planning signal for the food-minded, the pre-sale being the moment the festival economy starts organizing the winter and spring calendar. The Culinary Village is the festival's central marketplace, and pre-sale access is the practical news for anyone who intends to go, because the marquee sessions sell through. The broader beat context is a Charleston food scene that treats the festival as an anchor institution rather than a one-off, a fixture the city's restaurants, chefs, and visitors plan around a season ahead. Filed as the calendar item for the Lowcountry food faithful, logged early because the pre-sale window is the point. Verify dates and availability through the festival directly before planning around them.</div>
+  </div>
+
+  <div class="section-hdr">Activities</div>
+
+  <div class="story">
+    <span class="tag">Charleston</span><span class="tag">Baseball</span>
+    <div class="story-headline"><a href="https://www.live5news.com/2026/07/24/morgan-tosses-gem-riverdogs-2-0-win/" target="_blank" rel="noopener">The RiverDogs are home, and the pitching is dealing</a></div>
+    <div class="story-meta">Live 5 News &middot; sports beat</div>
+    <div class="story-synopsis">The Charleston RiverDogs are in the middle of a home stand at The Joe, and the pitching is carrying it: a starter tossed a gem in a 2-0 shutout win, per <a href="https://www.live5news.com/2026/07/24/morgan-tosses-gem-riverdogs-2-0-win/" target="_blank" rel="noopener">Live 5 News</a>, and the club backed it up the next night in a 6-4 win over the Warbirds, per <a href="https://www.live5news.com/video/2026/07/25/video-warbirds-4-riverdogs-6/?outputType=amp" target="_blank" rel="noopener">Live 5 News</a>. Low-A baseball at Joseph P. Riley Jr. Park is the Lowcountry's most reliable low-commitment summer evening, cheap seats, a river breeze once the sun drops, and a ballpark that has made an art of the between-innings promotion. A rain-threatened weekend is the only asterisk; the flood watch above may push a first pitch or two. For a family looking for something to do that does not require a plan, the home stand is the easy answer. Filed for the evenings that just need somewhere to be, and a team giving them a reason to stay to the ninth.</div>
+  </div>
+
+</div>
+
+<!-- LIGHTER FARE TAB -->
+<div id="tab-lighter" class="tab-panel">
+
+  <div class="section-hdr">Lighter Fare</div>
+
+  <div class="story">
+    <span class="tag">Space</span><span class="tag">Wonder</span>
+    <div class="story-headline"><a href="https://www.dw.com/en/starship-completes-1st-test-flight-since-spacex-ipo/a-78107347?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">The biggest rocket ever built flew again, now with shareholders watching</a></div>
+    <div class="story-meta">Deutsche Welle &middot; cross-corroborated</div>
+    <div class="story-synopsis">Starship, the largest launch vehicle ever built, completed another test flight, its first since SpaceX went public, per Deutsche Welle, and the item earns the lighter slot for the plain wonder of it before the finance angle intrudes: a stainless-steel skyscraper lifting off the Texas coast on a column of methane fire remains one of the few genuinely astonishing spectacles the news reliably produces. The engineering story is the good one. Each test is a deliberate experiment, and the program's willingness to fly hardware to failure and learn from the wreckage is the iterative philosophy that has made the company what it is. The new wrinkle, a public shareholder base now watching every launch, adds a subplot the Domestic tab takes more seriously, but for the Lighter Fare reader the point is the older and simpler one: people built a machine the size of a building, stood it on its tail, and lit it, and it worked well enough to fly again. The war and the tariffs and the contested numbers will all be there Monday. For a Saturday morning, a rocket the size of a Navy destroyer clearing the tower is a fine thing to picture. Filed with coffee and a view of the sky, because some engineering is just beautiful.</div>
+  </div>
+
+  <div class="story">
+    <span class="tag">Charleston</span><span class="tag">Culture</span>
+    <div class="story-headline"><a href="https://www.live5news.com/video/2026/07/24/video-lowcountry-native-charlamagne-tha-god-receive-hollywood-walk-fame-star/?outputType=amp" target="_blank" rel="noopener">A Lowcountry son gets his star on the Walk of Fame</a></div>
+    <div class="story-meta">Live 5 News &middot; culture beat</div>
+    <div class="story-synopsis">Charlamagne tha God, the radio host and media figure who grew up in Moncks Corner just up the road from Charleston, will receive a star on the Hollywood Walk of Fame, per Live 5 News, and the Lowcountry gets to claim one of its own on a very public stage. The item files as lighter fare with a note of local pride: the arc from a small Berkeley County town to a coveted terrazzo star is the kind of hometown-makes-good story that plays well in the region that produced it, whatever a reader thinks of the broadcasting. The Walk of Fame is equal parts genuine honor and Hollywood marketing machine, and the honest lighter-fare take holds both truths at once, that the recognition is real and that the institution granting it is a tourism attraction with a publicist. For the Lowcountry the relevant fact is simpler and warmer: a kid from Moncks Corner is getting a star, and the people who knew the place he came from get to feel a little of the reflected shine. Filed as the week's hometown-pride entry, with the bridge from the Lowcountry to Los Angeles a little shorter this morning.</div>
+  </div>
+
+  <div class="story" data-unsourced="intentional">
+    <span class="tag">Science</span><span class="tag">Mathematics</span>
+    <div class="story-headline">A Fields Medal, and the third woman ever to win one</div>
+    <div class="story-meta">Quanta Magazine &middot; single source, tracking</div>
+    <div class="story-synopsis">The mathematician Hong Wang won a 2026 Fields Medal, becoming only the third woman ever to receive the discipline's highest honor, per a Quanta Magazine profile of her work and rising recognition. The item earns a lighter-fare slot as a clean look at achievement at the summit of pure mathematics, a field whose deepest results are largely invisible to the public precisely because they are so abstract, and whose top prize, awarded only every four years and only to mathematicians under forty, carries a mystique the sciences with Nobel Prizes cannot match. The human story is the accessible one, a career of hard, patient work on problems most people will never see, recognized at the level the field reserves for the transformative. That only three women have received the medal in its near-century of existence is a fact that carries its own quiet weight about who has been welcomed into the discipline's highest rooms and when, and a third name on that short list is worth noting for the door it holds open. The mathematics itself will reward the curious reader willing to follow a good explainer down the rabbit hole. Filed as the week's reminder that some of the most important human work is also the quietest, and that a medal every four years is how one field says this one mattered.</div>
+  </div>
+
+</div>
+
+</div><!-- /page -->
+
+<!-- MARKET TICKER -->
+<div class="ticker-wrap" aria-label="Market ticker">
+  <div class="ticker-track" id="ticker-track">
+    <span class="ticker-group" id="ticker-group">
+      <span class="ticker-item"><span class="ticker-lbl">S&amp;P 500</span> <span class="ticker-val">7,408</span> <span class="dn">-1.21%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">DOW</span> <span class="ticker-val">51,712</span> <span class="dn">-0.97%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">NASDAQ</span> <span class="ticker-val">25,138</span> <span class="dn">-2.15%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">VIX</span> <span class="ticker-val">18.7</span> <span class="dn">-0.16%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">WTI</span> <span class="ticker-val">$89.21</span> <span class="dn">-2.98%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">BRENT</span> <span class="ticker-val">$91.55</span> <span class="dn">-9.10%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">GOLD</span> <span class="ticker-val">$4,055</span> <span class="up">+0.60%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">10Y UST</span> <span class="ticker-val">4.70%</span> <span class="up">+0.99%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">DXY</span> <span class="ticker-val">101.4</span> <span>-0.04%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">BTC</span> <span class="ticker-val">$65,027</span> <span>-0.04%</span> <span class="ticker-lbl">(prev close)</span></span><span class="ticker-sep">&#8226;</span>
+      <span class="ticker-item"><span class="ticker-lbl">FED FUNDS</span> <span class="ticker-val">3.63%</span> <span class="ticker-lbl">(FRED latest)</span></span>
+    </span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>THE SWAP REPORT &middot; Saturday, July 25, 2026 &middot; Morning Edition</div>
+  <div style="opacity:0.6;">For SWAP &middot; Distribution restricted &middot; Not for public release</div>
+</footer>
+
+<script>
+var currentTheme = 'warm';
+function setTheme(t, btn) {
+  currentTheme = t;
+  document.body.setAttribute('data-theme', t);
+  document.querySelectorAll('.theme-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+}
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+var wxLat = 37, wxLon = -95, wxZoom = 4, wxLayerName = 'temperature-2m';
+var ICAO_TABLE = {
+  'KCHS': [32.8986, -80.0405], 'KLTS': [34.6671, -99.2667],
+  'KDEN': [39.8561, -104.6737], 'KATL': [33.6407, -84.4277],
+  'KDFW': [32.8998, -97.0403], 'KLAX': [33.9425, -118.4081],
+  'KJFK': [40.6413, -73.7781], 'KORD': [41.9742, -87.9073],
+  'EGLL': [51.4775, -0.4614], 'RJTT': [35.5533, 139.7811]
+};
+function buildWxSrc() {
+  return 'https://www.ventusky.com/?p=' + wxLat + ';' + wxLon + ';' + wxZoom + '&l=' + wxLayerName;
+}
+function wxLayer(btn, layer) {
+  wxLayerName = layer;
+  document.querySelectorAll('.wx-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById('wx-iframe').src = buildWxSrc();
+}
+function wxSearch() {
+  var q = document.getElementById('wx-input').value.trim();
+  if (!q) return;
+  var latLonRe = /^(-?\d+\.?\d*),\s*(-?\d+\.?\d*)$/;
+  var m = q.match(latLonRe);
+  if (m) { wxLat = parseFloat(m[1]); wxLon = parseFloat(m[2]); wxZoom = 8; document.getElementById('wx-iframe').src = buildWxSrc(); return; }
+  var icao = q.toUpperCase();
+  if (ICAO_TABLE[icao]) { wxLat = ICAO_TABLE[icao][0]; wxLon = ICAO_TABLE[icao][1]; wxZoom = 9; document.getElementById('wx-iframe').src = buildWxSrc(); return; }
+  fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + encodeURIComponent(q) + '&count=1')
+    .then(function(r){ return r.json(); })
+    .then(function(d){ if (d.results && d.results.length > 0) { wxLat = d.results[0].latitude; wxLon = d.results[0].longitude; wxZoom = 8; document.getElementById('wx-iframe').src = buildWxSrc(); } })
+    .catch(function(){});
+}
+(function(){
+  var grp = document.getElementById('ticker-group');
+  if (grp) {
+    var clone = grp.cloneNode(true);
+    clone.id = '';
+    document.getElementById('ticker-track').appendChild(clone);
+  }
+})();
+</script>
+</body>
+</html>
